@@ -61,6 +61,7 @@
       - file: software/applications/openfoam
       - file: software/applications/paraview
       - file: software/applications/R
+      - file: software/applications/schrodinger
       - file: software/applications/stata
       - file: software/applications/visit
       - file: software/applications/vmd

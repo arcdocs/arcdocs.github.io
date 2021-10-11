@@ -19,6 +19,7 @@ This page is an overview of the applications section of software available on th
 - [OpenFoam](./openfoam)
 - [Paraview](./paraview)
 - [R](./R)
+- [Schrodinger](./schrodinger)
 - [Stata](./stata)
 - [VisIt](./visit)
 - [VMD](./vmd)

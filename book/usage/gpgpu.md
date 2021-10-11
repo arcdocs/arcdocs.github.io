@@ -2,6 +2,8 @@
 
 The HPC systems at Leeds also include general purpose GPU facilities for GPU-accelerated code. These differ between [ARC3](#arc3) and [ARC4](#arc4) but can be requested through the job submission script process as outlined below.
 
+GPUs are not available on the login nodes, so a job must be submitted with the required arguments to run code that requires GPUs.  Specific guidance on the required parameters for using a GPU are listed below, but general guidance on submitting jobs to the queues can be found in the [Batch jobs](batchjob) section.
+
 ## CUDA Module
 
 To use the GPU cards you will need to ensure that the NVIDIA CUDA toolkit module is loaded into your environment:

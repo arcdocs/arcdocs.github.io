@@ -25,7 +25,7 @@ The batch scheduler allows both interactive and batch jobs to be submitted durin
 The following will launch Matlab interactively, displaying the full GUI:
 
 ```bash
-$ qrsh -V -l h_rt=hh:mm:ss matlab -desktop -singleCompThread
+$ qrsh -V -l h_rt=hh:mm:ss,h_vmem=4G matlab -desktop -singleCompThread
 ```
 
 In the above command `hh:mm:ss` is the length of time the shell will exist for, `-V` exports the the current environment.
@@ -35,15 +35,15 @@ The parameter `-singleCompThread` ensures that Matlab will run only on a single 
 For example, to request a matlab interactive session for 6 hours:
 
 ```bash
-$ qrsh -V -l h_rt=6:00:00 matlab -desktop -singleCompThread
+$ qrsh -V -l h_rt=6:00:00,h_vmem=4G matlab -desktop -singleCompThread
 ```
 Alternatively, the following will launch an interactive session in a matlab session that is within the existing terminal:
 
 ```bash
-$ qrsh -pty y -V -l h_rt=6:00:00 matlab -nodesktop -singleCompThread
+$ qrsh -pty y -V -l h_rt=6:00:00,h_vmem=4G matlab -nodesktop -singleCompThread
 ```
 
-Where, `hh:mm:ss` is the length of time the interactive session will exist for.
+Where, `hh:mm:ss` is the length of time the interactive session will exist for and `h_vmem` specifies an amount of memory required.
 
 ### Batch Execution
 

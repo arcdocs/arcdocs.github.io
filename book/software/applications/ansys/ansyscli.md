@@ -84,29 +84,4 @@ $ qsub ansys.sh
 
 ### GPU execution using the batch queues
 
-Ansys supports the use of GPUs, although we have no data on the performance speed up for typical jobs, but as a starting point, you may want something like this:
-
-```bash
-#!/bin/bash
-# use current working directory
-#$ -cwd
-# Request three hours of runtime
-#$ -l h_rt=3:00:00
-# Run on 1 GPUs on ARC4 (using coproc_p100=1 on ARC3)
-#$ -l coproc_v100=1
-# define license and load module
-module add ansys/2020R2
-export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
-#Launch the executable
-ansys202 -np $NSLOTS -acc nvidia -p ANSYS -b -i example.inp -o example.out
-```
-
-The file can be submitted to the queue by typing this (assuming you'd written the above into a file called ansys.sh):
-
-```bash
-$ qsub ansys.sh
-```
-
-````{admonition} GPU performance
-You really want to make sure that this gives you a significant performance advantage by using a GPU compared with running a standard CPU job.  Please do let us know how you get on with this if you do experiment with GPU acceleration, as this is currently untested.
-````
+Ansys supports the use of GPUs, although this isn't known to work correctly on ARC4.  If you have experimented with this on ARC4, and have a recipe for running Ansys on the GPUs, please get in touch, and we can document it here.

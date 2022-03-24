@@ -76,9 +76,9 @@ A script must then be created that will request resources from the queuing syste
 # Load matlab module
 module add user
 module add matlab
-# run matlab using command file
+# run matlab script in the current directory (cosplot.m)
 # -nodisplay flag should be given to suppress graphics
-matlab -nodisplay < cosplot.m
+matlab -nodisplay -batch cosplot
 ```
 
 ```{note}
@@ -91,7 +91,7 @@ This can be submitted to the batch scheduler system using:
 $ qsub runmatlab.sh
 ```
 
-The output file `matlab/test/plot.ps` can be viewed with Ghostscript using the command `gs matlab/test/plot.ps`.
+The output file `matlab_test_plot.ps` can be viewed with Ghostscript using the command `gs matlab_test_plot.ps`.
 
 ## Parallel Matlab jobs
 
@@ -100,6 +100,13 @@ Recent versions of Matlab support three methods of making use of multiple CPU co
 1. Multi-threaded support in various Matlab routines and toolboxes
 2. Multiple "worker" support (on a single host)
 3. Multiple "worker" support (on multiple hosts)
+
+````{admonition} Tip
+If you use a mix of threads and workers, you may find performance suffers unless you ignore certain scheduler hints.  Add this line to your job script before running Matlab:
+```
+unset GOMP_CPU_AFFINITY KMP_AFFINITY
+```
+````
 
 ### Multi-threaded support
 
@@ -162,7 +169,7 @@ It may be useful to try combining both Matlab's multithreading and Distributed C
 
 To do this:
 
-- Use the above method for changing *h_rt* to edit the cluster profile but instead change *use_np_syntax* to *true*. This will caluse entire compute nodes to be allocated to the pool.
+- Use the above method for changing *h_rt* to edit the cluster profile but instead change *use_np_syntax* to *true*. This will cause entire compute nodes to be allocated to the pool.
 - Repeat steps 1-4 again, but then change the value for *NumThreads* (instead of modifying the *AdditionalProperties* box). This will tell Matlab to multithread and it will also cause *NumThread* cores to be allocated to each worker.
 - Since entire compute nodes are allocated, please select 'sensible' values for the number of workers and the number of cores per worker to make good use of the allocated resources. For example, on ARC3's 24 core compute nodes, the number of workers in the pool multiplied by *NumThreads* should be a multiple of 24.
 

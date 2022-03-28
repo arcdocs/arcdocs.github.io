@@ -1,6 +1,6 @@
 # Fluent
 
-Once the license and module have been set up correctly, Fluent can be run both in serial and in parallel.
+Once the license and module have been set up correctly, Fluent can be run both in serial and in parallel.  We generally recommend running Fluent either in serial for short test jobs, or in parallel on whole nodes, to ensure consistent good performance.
 
 ## Running Fluent in Serial mode
 
@@ -97,17 +97,19 @@ There are three ways of launching Fluent to work in parallel:
 - As an [interactive session](../../../usage/interactive)
 - As a [batch job](../../../usage/batchjob)
 
-To launch an [interactive session](../../../usage/interactive) on many compute nodes, load the ansys module and type the following at the command prompt:
+To launch an [interactive session](../../../usage/interactive) with high resource requirements, load the ansys module and type the following at the command prompt:
 
 ```bash
-$ qrsh -cwd -V -l h_rt=<hh:mm:ss> -l h_vmem=<vmem> -pe ib <np> fluent <dim> -rsh
+$ qrsh -cwd -V -l h_rt=<hh:mm:ss> -l nodes=<nodes> fluent <dim> -rsh
 ```
 
-In the above commands `hh:mm:ss` is the length of real-time the shell will exist for and `np` is the number of processes requested. `dim` is the dimension/precision of the fluent process (e.g. 3ddp for 3-D double precision). E.g. the to launch fluent for 6 hours on 16 processors:
+In the above commands `hh:mm:ss` is the length of real-time the shell will exist for and `nodes` is the number of nodes requested. `dim` is the dimension/precision of the fluent process (e.g. 3ddp for 3-D double precision). E.g. the to launch fluent for 6 hours on 40 processors on ARC4:
 
 ```bash
-$ qrsh -cwd -V -l h_rt=6:00:00 -pe ib 16 fluent 2d -rsh
+$ qrsh -cwd -V -l h_rt=6:00:00 -l nodes=1 fluent 2d -rsh
 ```
+
+We'd not normally recommend running Fluent interactively on the HPC though, as you're almost always better running batch jobs.
 
 ### Running a large mesh interactively
 
@@ -138,8 +140,8 @@ Then a job submission script (`fluent_para.sh`) should be created, that requests
 #$ -cwd
 # Request three hours of runtime
 #$ -l h_rt=3:00:00
-# Run on 32 processors
-#$ -pe ib 32
+# Run on 40 processors on ARC4
+#$ -l nodes=1
 # define license and load module
 module add ansys/2020R2
 export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
@@ -147,7 +149,7 @@ export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
 fluent -g -i test_para.jou 3ddp -rsh
 ```
 
-In this case, the 3-dimensional, double precision module is launched on 32 processors. The `-g` option will suppress the GUI and `-i` specifies the name of the input journal file. The file can be submitted to the queue by typing:
+In this case, the 3-dimensional, double precision module is launched on 40 processors. The `-g` option will suppress the GUI and `-i` specifies the name of the input journal file. The file can be submitted to the queue by typing:
 
 ```bash
 $ qsub fluent_para.sh
@@ -165,13 +167,13 @@ Fluent supports the use of GPUs, although we've not currently seen significant b
 #$ -cwd
 # Request three hours of runtime
 #$ -l h_rt=3:00:00
-# Run on 4 GPUs on ARC4 (using coproc_p100=4 on ARC3)
-#$ -l coproc_v100=4
+# Run on 1 GPU on ARC4 (using coproc_p100=1 on ARC3)
+#$ -l coproc_v100=1
 # define license and load module
 module add ansys/2020R2
 export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
 #Launch the executable
-fluent -g -i -gpgpu=4 test_para.jou 3ddp -rsh
+fluent -g -i -gpgpu=1 test_para.jou 3ddp -rsh
 ```
 
 ## Running with old version of Fluent v15 or below
@@ -192,7 +194,7 @@ fluent -g -i test_para.jou 3ddp -pib -sgeup
 
 ## Additional notes
 
-There are also known inefficiencies when running fluent on part nodes on ARC.  For optimal performance, run fluent on whole nodes.  For example, to run on a single node:
+There are also known inefficiencies when running fluent on part nodes on ARC, which is why the above examples all use `-l nodes=<nodes>` to ensure exclusive access to nodes.  For optimal performance, run fluent on whole nodes.  For example, to run on a single node:
 
 ```bash
 #!/bin/bash
@@ -209,4 +211,4 @@ export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
 fluent -g -i test_para.jou 3ddp -rsh
 ```
 
-You will wait slightly longer for a whole node than for the previous allocation method, but your code may run significantly faster.
+You will wait slightly longer for a whole node than using the scattered allocation model (`-pe ib 40`), but your code is likely to run significantly faster.

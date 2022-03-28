@@ -516,7 +516,23 @@ Use "rclone [command] --help" for more information about a command.
 Use "rclone help flags" for to see the global flags.
 Use "rclone help backends" for a list of supported services.
 ```
- 
+#### Using shared folders
+
+If you want to access a folder that has been shared with you on OneDrive you can add the folder to "My Files" in the OneDrive web interface and it will then be available through your rclone connection:
+
+Go to your OneDrive home page and click on Shared
+
+![Example Shared folder link](../assets/img/filetransfer/rclone-shared.png)
+
+Find the folder you want to access and click on the three dots to the right
+
+![Example Actions link](../assets/img/filetransfer/rclone-actions.png)
+
+Click on "Add shortcut to My files"
+
+![Example shortcut link](../assets/img/filetransfer/rclone-add-shortcut.png)
+
+The shared folder will now appear in My files and also in your rclone connection.
 
 ### SFTP
 

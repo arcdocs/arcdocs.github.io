@@ -400,6 +400,8 @@ e/n/d/r/c/s/q> q
 
 #### Using rclone on HPC
 
+One of our users has written a small utility to make it easier to copy multiple files from OneDrive onto ARC. If you don't fancy the command line options below, you might want to take a look at: https://foqueiroz.github.io/web/public/arc/index.html
+
 Once you've set up the remote drive, you don't need to do it again. To list files from OneDrive (list files in [directory] if given):
 
 ```bash

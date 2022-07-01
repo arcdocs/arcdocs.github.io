@@ -1264,7 +1264,7 @@ title="Print to PDF"
 <p>R is a programming language and software environment initially developed for statistical and graphical computing. It has grown in popularity and is used for a diverse range of research problems.</p>
 <div class="section" id="selecting-an-r-version">
 <h2>Selecting an R version<a class="headerlink" href="#selecting-an-r-version" title="Permalink to this headline">¶</a></h2>
-<p>The default version of R available on ARC3 and ARC4 as a module is R/3.6.1. You can load this module with the command:</p>
+<p>There are multiple versions of R installed on ARC3/4.  You can load the default version of R available on each with the command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add R
 </pre></div>
 </div>
@@ -1296,19 +1296,19 @@ tests. Exit the R console by typing.</p>
 <div class="section" id="running-through-an-interactive-shell">
 <h2>Running through an interactive shell<a class="headerlink" href="#running-through-an-interactive-shell" title="Permalink to this headline">¶</a></h2>
 <p>The following will launch R interactively via the batch queues.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qrsh -cwd -V -l <span class="nv">h_rt</span><span class="o">=</span> R 
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qrsh -cwd -V-l <span class="nv">h_rt</span><span class="o">=</span>&lt;time&gt;,h_vmem<span class="o">=</span>&lt;mem&gt; R
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">&lt;startup_flag&gt;</span></code> can be <code class="docutils literal notranslate"><span class="pre">--save</span></code> ,<code class="docutils literal notranslate"><span class="pre">--no-save</span></code> or <code class="docutils literal notranslate"><span class="pre">--vanilla</span></code> . I have used <code class="docutils literal notranslate"><span class="pre">--vanilla</span></code> but information on the meaning of these flags can is <a class="reference external" href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html">here</a>.
-In the above command, is the length of real-time the shell will exist for. e.g. to run R for 6 hours:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qrsh -cwd -V -l <span class="nv">h_rt</span><span class="o">=</span><span class="m">6</span>:00:00 R --vanilla
+<p>In the above command,<code class="docutils literal notranslate"><span class="pre">&lt;time&gt;</span></code> is the length of real-time the shell will exist for, and <code class="docutils literal notranslate"><span class="pre">&lt;mem&gt;</span></code> is how much memory you’re requesting. e.g. to run R for 6 hours, with 4G of RAM:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qrsh -cwd -V -l <span class="nv">h_rt</span><span class="o">=</span><span class="m">6</span>:00:00,h_vmem<span class="o">=</span>4G R --vanilla
 </pre></div>
 </div>
 <p>This will run R from within the terminal from which it was launched.</p>
+<p>Follow this link for further information on the <a class="reference external" href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/Startup">meaning of R startup flags</a>.</p>
 </div>
 <div class="section" id="batch-execution">
 <h2>Batch Execution<a class="headerlink" href="#batch-execution" title="Permalink to this headline">¶</a></h2>
-<p>To run R in batch-mode you must first generate a list of commands for R to process in a file, e.g. [r.in]. You needed to make sure that this file is executable. You can do this by running the command [chmod u+x .sh]. You can check this by running the command <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-la</span></code> and the information for that line will contain an <code class="docutils literal notranslate"><span class="pre">x</span></code> for execute like this <code class="docutils literal notranslate"><span class="pre">-rwxr--r--</span></code>.</p>
+<p>To run R in batch-mode you must first generate a list of commands for R to process in a file, e.g. <code class="docutils literal notranslate"><span class="pre">example.R</span></code>.</p>
 <p>A script must then be created that will request resources from the queuing system and launch the R executable; script <code class="docutils literal notranslate"><span class="pre">runR.sh</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1"># Run in current working directory and use current environment</span>
@@ -1320,15 +1320,13 @@ In the above command, is the length of real-time the shell will exist for. e.g. 
 <span class="c1"># Load R module</span>
 module add R
 <span class="c1"># run R using command file</span>
-<span class="c1"># CMD BATCH flag should be given to suppress graphics</span>
-R CMD BATCH r.in r.out
+Rscript example.R
 </pre></div>
 </div>
 <p>This can be submitted to the queuing system using:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qsub runR.sh
 </pre></div>
 </div>
-<p>The files for a simple R test example are available to download in this tar file, <a class="reference download internal" download="" href="../../_downloads/d0ab854610fba6242a32bb7def51fa14/R.tar"><code class="xref download docutils literal notranslate"><span class="pre">R.tar</span></code></a>.</p>
 </div>
 <div class="section" id="installing-r-packages">
 <h2>Installing R packages<a class="headerlink" href="#installing-r-packages" title="Permalink to this headline">¶</a></h2>
@@ -1342,6 +1340,7 @@ R CMD BATCH r.in r.out
 </pre></div>
 </div>
 <p>This will install the package and any dependencies that are required. It will do this by creating a local library (in your home directory by default) where it saves the package binaries and archives. The package should then be accessible from subsequent R interactive sessions and batch jobs.</p>
+<p>If you’re using a conda installed version of R, these will install into your conda environment instead.</p>
 </div>
 </div>
 

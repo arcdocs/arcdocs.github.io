@@ -4,7 +4,7 @@ R is a programming language and software environment initially developed for sta
 
 ## Selecting an R version
 
-The default version of R available on ARC3 and ARC4 as a module is R/3.6.1. You can load this module with the command:
+There are multiple versions of R installed on ARC3/4.  You can load the default version of R available on each with the command:
 
 ```bash
 $ module add R
@@ -45,21 +45,22 @@ q()
 The following will launch R interactively via the batch queues.
 
 ```bash
-$ qrsh -cwd -V -l h_rt= R 
+$ qrsh -cwd -V-l h_rt=<time>,h_vmem=<mem> R
 ```
 
-The `<startup_flag>` can be `--save` ,`--no-save` or `--vanilla` . I have used `--vanilla` but information on the meaning of these flags can is [here](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html).
-In the above command, is the length of real-time the shell will exist for. e.g. to run R for 6 hours:
+In the above command,`<time>` is the length of real-time the shell will exist for, and `<mem>` is how much memory you're requesting. e.g. to run R for 6 hours, with 4G of RAM:
 
 ```bash
-$ qrsh -cwd -V -l h_rt=6:00:00 R --vanilla
+$ qrsh -cwd -V -l h_rt=6:00:00,h_vmem=4G R --vanilla
 ```
 
 This will run R from within the terminal from which it was launched.
 
+Follow this link for further information on the [meaning of R startup flags](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/Startup).
+
 ## Batch Execution
 
-To run R in batch-mode you must first generate a list of commands for R to process in a file, e.g. [r.in]. You needed to make sure that this file is executable. You can do this by running the command [chmod u+x .sh]. You can check this by running the command `ls -la` and the information for that line will contain an `x` for execute like this `-rwxr--r--`.
+To run R in batch-mode you must first generate a list of commands for R to process in a file, e.g. `example.R`.
 
 A script must then be created that will request resources from the queuing system and launch the R executable; script `runR.sh`:
 
@@ -74,8 +75,7 @@ A script must then be created that will request resources from the queuing syste
 # Load R module
 module add R
 # run R using command file
-# CMD BATCH flag should be given to suppress graphics
-R CMD BATCH r.in r.out
+Rscript example.R
 ```
 
 This can be submitted to the queuing system using:
@@ -83,8 +83,6 @@ This can be submitted to the queuing system using:
 ```bash
 $ qsub runR.sh
 ```
-
-The files for a simple R test example are available to download in this tar file, {download}`R.tar <../../assets/wp/2016/01/R.tar>`.
 
 ## Installing R packages
 
@@ -103,3 +101,5 @@ and then from within R, install the package:
 ```
 
 This will install the package and any dependencies that are required. It will do this by creating a local library (in your home directory by default) where it saves the package binaries and archives. The package should then be accessible from subsequent R interactive sessions and batch jobs.
+
+If you're using a conda installed version of R, these will install into your conda environment instead.

@@ -1,6 +1,6 @@
 # Numerical Libraries
 
-There are several versions of  BLAS (Basic Linear Algebra Subprograms) and LAPACK (Linear Algebra PACKage) numerical libraries installed on the system. There are four versions available on ARC3, Intel's Maths Kernel Library (MKL) library, Automatically Tuned Linear Algebra Software (ATLAS) and the original Netlib. All these libraries, aside from Netlib, are optimised to run on the available hardware. Netlib reference versions are only installed for completeness and we advise that you use one of the other implementations wherever possible.
+There are several versions of BLAS (Basic Linear Algebra Subprograms) and LAPACK (Linear Algebra PACKage) numerical libraries installed on the system. There are a number of versions available on ARC3/4, Intel's Maths Kernel Library (MKL) library, Automatically Tuned Linear Algebra Software (ATLAS) and the original Netlib. All these libraries, aside from Netlib, are optimised to run on the available hardware. Netlib reference versions are only installed for completeness and we advise that you use one of the other implementations wherever possible.
 
 ## Setting the module environment
 

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UDUNITS &#8212; ARC Documentation</title>
+    <title>Numerical Libraries &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -46,12 +46,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://arcdocs.leeds.ac.uk/software/libraries/udunits.html" />
+    <link rel="canonical" href="https://arcdocs.leeds.ac.uk/software/libraries/linalg.html" />
     <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Valgrind" href="valgrind.html" />
-    <link rel="prev" title="TAU" href="tau.html" />
+    <link rel="next" title="Armadillo" href="armadillo.html" />
+    <link rel="prev" title="Libraries" href="start.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -588,8 +588,8 @@ const thebe_selector_output = ".output, .cell_output"
      </i>
     </label>
     <ul class="current">
-     <li class="toctree-l3">
-      <a class="reference internal" href="linalg.html">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
        Numerical Libraries
       </a>
      </li>
@@ -888,8 +888,8 @@ const thebe_selector_output = ".output, .cell_output"
        TAU
       </a>
      </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
+     <li class="toctree-l3">
+      <a class="reference internal" href="udunits.html">
        UDUNITS
       </a>
      </li>
@@ -1081,7 +1081,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/arcdocs/arcdocs-jupyterbook/issues/new?title=Issue%20on%20page%20%2Fsoftware/libraries/udunits.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/arcdocs/arcdocs-jupyterbook/issues/new?title=Issue%20on%20page%20%2Fsoftware/libraries/linalg.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1098,7 +1098,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/arcdocs/arcdocs-jupyterbook/edit/working-master/book/software/libraries/udunits.md"
+        <a href="https://github.com/arcdocs/arcdocs-jupyterbook/edit/working-master/book/software/libraries/linalg.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1126,7 +1126,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/software/libraries/udunits.md"
+        <a href="../../_sources/software/libraries/linalg.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1186,14 +1186,28 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#licensing">
-   Licensing
+  <a class="reference internal nav-link" href="#setting-the-module-environment">
+   Setting the module environment
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-udunits-module-on-the-hpc">
-   The UDUNITS module on the HPC
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compiler-flags">
+     Compiler Flags
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fortran">
+       Fortran
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#c">
+       C
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1204,7 +1218,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>UDUNITS</h1>
+                <h1>Numerical Libraries</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1215,14 +1229,28 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#licensing">
-   Licensing
+  <a class="reference internal nav-link" href="#setting-the-module-environment">
+   Setting the module environment
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-udunits-module-on-the-hpc">
-   The UDUNITS module on the HPC
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compiler-flags">
+     Compiler Flags
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fortran">
+       Fortran
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#c">
+       C
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1234,40 +1262,65 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="udunits">
-<h1>UDUNITS<a class="headerlink" href="#udunits" title="Permalink to this headline">¶</a></h1>
-<p>The UDUNITS package supports units of physical quantities. Its C library provides for arithmetic manipulation of units and for conversion of numeric values between compatible units. The package contains an extensive unit database, which is in XML format and user-extendable. The package also contains a command-line utility for investigating units and converting values.</p>
-<p>Read more about UDUNITS on their <a class="reference external" href="https://www.unidata.ucar.edu/software/udunits/">website</a>.</p>
-<div class="section" id="licensing">
-<h2>Licensing<a class="headerlink" href="#licensing" title="Permalink to this headline">¶</a></h2>
-<p>License available on the <a class="reference external" href="https://github.com/Unidata/UDUNITS-2/blob/master/COPYRIGHT">project GitHub</a>.</p>
-</div>
-<div class="section" id="the-udunits-module-on-the-hpc">
-<h2>The UDUNITS module on the HPC<a class="headerlink" href="#the-udunits-module-on-the-hpc" title="Permalink to this headline">¶</a></h2>
-<p>The UDUNITS module can be loaded into your environment with the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add udunits
+  <div class="section" id="numerical-libraries">
+<h1>Numerical Libraries<a class="headerlink" href="#numerical-libraries" title="Permalink to this headline">¶</a></h1>
+<p>There are several versions of BLAS (Basic Linear Algebra Subprograms) and LAPACK (Linear Algebra PACKage) numerical libraries installed on the system. There are a number of versions available on ARC3/4, Intel’s Maths Kernel Library (MKL) library, Automatically Tuned Linear Algebra Software (ATLAS) and the original Netlib. All these libraries, aside from Netlib, are optimised to run on the available hardware. Netlib reference versions are only installed for completeness and we advise that you use one of the other implementations wherever possible.</p>
+<div class="section" id="setting-the-module-environment">
+<h2>Setting the module environment<a class="headerlink" href="#setting-the-module-environment" title="Permalink to this headline">¶</a></h2>
+<p>All available modules can be listed via the <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">avail</span></code> command. Numerical libraries will be listed under the <code class="docutils literal notranslate"><span class="pre">/apps/Modules/libraries</span></code> heading.
+To load a specific library, e.g. MKL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module load mkl
 </pre></div>
 </div>
-<p>The UDUNITS module is available on ARC3:</p>
-<table class="colwidths-given table">
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 50%" />
-<col style="width: 25%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>System</p></th>
-<th class="head"><p>Version</p></th>
-<th class="head"><p>Command</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>ARC3</p></td>
-<td><p>udunits 2.2.26</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">add</span> <span class="pre">udunits/2.2.26</span></code></p></td>
-</tr>
-</tbody>
-</table>
+<p>to switch to another version of the libraries, e.g. Atlas:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module switch mkl atlas
+</pre></div>
+</div>
+<p>This will load the appropriate libraries and paths for your chosen compiler and bit environments.</p>
+<div class="section" id="compiler-flags">
+<h3>Compiler Flags<a class="headerlink" href="#compiler-flags" title="Permalink to this headline">¶</a></h3>
+<p>To simplify linking to the various versions of the numerical libraries, loading the modules as described above will also set up customised environment variables, <code class="docutils literal notranslate"><span class="pre">$ARC_LINALG_FFLAGS</span></code> for use with Fortran and <code class="docutils literal notranslate"><span class="pre">$ARC_LINALG_CFLAGS</span></code> for C. For the multi-threaded versions of the libraries use <code class="docutils literal notranslate"><span class="pre">$ARC_LINALG_MT_FFLAGS</span></code> for Fortran and <code class="docutils literal notranslate"><span class="pre">$ARC_LINALG_MT_CFLAGS</span></code> for C.</p>
+<div class="section" id="fortran">
+<h4>Fortran<a class="headerlink" href="#fortran" title="Permalink to this headline">¶</a></h4>
+<p>For instance, to compile a simple Fortran program, named <code class="docutils literal notranslate"><span class="pre">matmul.f90</span></code> with the MKL library, first load the module:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module load mkl
+</pre></div>
+</div>
+<p>and to compile the code, with the default Intel compiler use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ifort -o matmul matmul.f90 $ARC_LINALG_FFLAGS
+</pre></div>
+</div>
+<p>To switch to the GNU compiler and a different version of the libraries, e.g. ATLAS:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module switch intel gnu
+$ module switch mkl atlas
+</pre></div>
+</div>
+<p>To compile and link to the libraries use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ gfortran -o matmul matmul.f90 $ARC_LINALG_FFLAGS
+</pre></div>
+</div>
+</div>
+<div class="section" id="c">
+<h4>C<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h4>
+<p>To compile a simple C program, named <code class="docutils literal notranslate"><span class="pre">matmul.c</span></code> with the MKL library, first load the module</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module load mkl
+</pre></div>
+</div>
+<p>and to compile the code, with the default Intel compiler use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ icc -o matmul matmul.c $ARC_LINALG_CFLAGS
+</pre></div>
+</div>
+<p>To switch to the GNU compiler and a different version of the libraries, e.g. ATLAS:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module switch intel gnu
+$ module switch mkl atlas
+</pre></div>
+</div>
+<p>To compile and link to the libraries use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ gcc -o matmul matmul.f90 $ARC_LINALG_CFLAGS
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -1298,17 +1351,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="tau.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="start.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">TAU</p>
+            <p class="prev-next-title">Libraries</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="valgrind.html" title="next page">
+    <a class='right-next' id="next-link" href="armadillo.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Valgrind</p>
+        <p class="prev-next-title">Armadillo</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

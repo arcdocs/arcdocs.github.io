@@ -2,6 +2,10 @@
 
 This page is an overview of the libraries section of software available on the HPC.
 
+## Notes
+
+[Linear Algebra Libraries](./linalg)
+
 ## Libraries Index
 
 - [Armadillo](./armadillo)

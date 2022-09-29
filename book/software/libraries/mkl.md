@@ -46,3 +46,7 @@ The MKL module is available on ARC3 and ARC4:
   - `module add mkl/2017.1(default)`
 
 ```
+
+## Additional Notes
+
+Please also refer to the general notes on how to use [Linear Algebra Libraries](./linalg) on ARC.

@@ -109,6 +109,7 @@
       - file: software/infrastructure/vtune.md
     - file: software/libraries/start
       sections:
+      - file: software/libraries/linalg.md
       - file: software/libraries/armadillo.md
       - file: software/libraries/atlas.md
       - file: software/libraries/boost.md

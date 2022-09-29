@@ -80,4 +80,4 @@ $ qsub -hold_jid <jobname> job2.sh
 ```
 
 If you give several jobs the same name, then the job will be held until all the named jobs have been completed.
-See [Batch jobs](https://arcdocs.leeds.ac.uk/usage/batchjob.html?#list-of-sge-options) for more details on `hold_jid`.
+See [Batch jobs](./batchjob.html#list-of-sge-options) for more details on `hold_jid`.

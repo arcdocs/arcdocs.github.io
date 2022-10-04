@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>File Transfer &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1350,11 +1354,11 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="file-transfer">
-<h1>File Transfer<a class="headerlink" href="#file-transfer" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="file-transfer">
+<h1>File Transfer<a class="headerlink" href="#file-transfer" title="Permalink to this headline">#</a></h1>
 <p>Moving files onto and off the HPC systems is a crucial part of any researchers workflow and on this page we’ll outline a number of approaches for performing file transfer.</p>
-<div class="section" id="using-mobaxterm">
-<h2>Using MobaXTerm<a class="headerlink" href="#using-mobaxterm" title="Permalink to this headline">¶</a></h2>
+<section id="using-mobaxterm">
+<h2>Using MobaXTerm<a class="headerlink" href="#using-mobaxterm" title="Permalink to this headline">#</a></h2>
 <p>Windows users who make use of MobaXTerm can take advantage of some builtin tools for file management. By default when a user connects to ARC through MobaXTerm files are displayed in the left-hand file explorer window (highlighted in red).</p>
 <p><img alt="Highlighted the MobaXTerm File explorer" src="../_images/mobaWindow1.png" /></p>
 <p>In this file explorer we can see all the folders and files within the directory path specified at the top (in this example <code class="docutils literal notranslate"><span class="pre">/home/home01/medacola/</span></code>), we can change this directory path if we wish to look in a different directory (that we have permission to view).</p>
@@ -1367,17 +1371,17 @@ title="Print to PDF"
 <p>We can also download files and directories from HPC to our local machine using this drag and drop approach with MobaXTerm, shown below.</p>
 <p><img alt="Example gif of dragging and dropping directory from HPC onto local machine" src="../_images/mobaWindow1download.gif" /></p>
 <p>This allows us to performance basic file transfer steps using the MobaXTerm GUI. We can also make use of the MobaXTerm terminal to perform command based file transfer as outlined the in next section <a class="reference external" href="#Using-a-Terminal">Using a Terminal</a>.</p>
-</div>
-<div class="section" id="using-a-terminal">
-<h2>Using a Terminal<a class="headerlink" href="#using-a-terminal" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="using-a-terminal">
+<h2>Using a Terminal<a class="headerlink" href="#using-a-terminal" title="Permalink to this headline">#</a></h2>
 <p>We can also download and upload files to HPC using commands in a Terminal. The following steps will outline the use of two commands <code class="docutils literal notranslate"><span class="pre">scp</span></code> and <code class="docutils literal notranslate"><span class="pre">rsync</span></code> that allow for file transfer from a local machine to a remote machine or vice versa.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>MobaXTerm users</strong> <br>
 If you’re using MobaXTerm’s local terminal make sure you’ve configured it properly using the steps outlined in <a class="reference external" href="logon.html#configuring-mobaxterm-terminal">Logging on</a>.</p>
 </div>
-<div class="section" id="using-scp">
-<h3>Using scp<a class="headerlink" href="#using-scp" title="Permalink to this headline">¶</a></h3>
+<section id="using-scp">
+<h3>Using scp<a class="headerlink" href="#using-scp" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">scp</span></code> command stands for the secure copy protocol. It uses <code class="docutils literal notranslate"><span class="pre">ssh</span></code> to connect to a remote computer and copy the file or directory to that remote host. As with all linux commands it also have a number of additonal options which you can learn more about by checking its manual page by running <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">scp</span></code>.</p>
 <p>The standard format of the <code class="docutils literal notranslate"><span class="pre">scp</span></code> command is <code class="docutils literal notranslate"><span class="pre">scp</span> <span class="pre">/path/to/file/to/copy</span> <span class="pre">/path/to/location/to/copy/to</span></code> where we specify the path to the file we want to copy and then the path to the location where we want it copied to. This looks much like a standard <code class="docutils literal notranslate"><span class="pre">cp</span></code> command but the power of <code class="docutils literal notranslate"><span class="pre">scp</span></code> comes from allowing us to specify either of these paths on another remote machine. We do this by adding at the start of the path <code class="docutils literal notranslate"><span class="pre">user&#64;remote:</span></code> for instance to get files from my personal /nobackup i’d specify <code class="docutils literal notranslate"><span class="pre">medacola&#64;arc4.leeds.ac.uk:/nobackup/medacola</span></code>, note the comma between the path and the remote address as this won’t work without the comma. Using <code class="docutils literal notranslate"><span class="pre">scp</span></code> will prompt us for our password for both remote-access and ARC4 itself as we need to log in to the remote computer to perform the copy.</p>
 <ol>
@@ -1415,9 +1419,9 @@ results.data                                          <span class="m">100</span>
 </div>
 </li>
 </ol>
-</div>
-<div class="section" id="using-rsync">
-<h3>Using rsync<a class="headerlink" href="#using-rsync" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="using-rsync">
+<h3>Using rsync<a class="headerlink" href="#using-rsync" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">rsync</span></code> command is another file transfer command that is considered more versatile than <code class="docutils literal notranslate"><span class="pre">scp</span></code> especially for large file transfers as it enables for interrupted transfers to continue from the point at which they were interrupted rather than starting from the beginning.</p>
 <p>There are also a number of additional options that can be used with the <code class="docutils literal notranslate"><span class="pre">rsync</span></code> command, in particular these examples will make use of the options <code class="docutils literal notranslate"><span class="pre">-avn</span></code>, where <code class="docutils literal notranslate"><span class="pre">-v</span></code> is for verbose, <code class="docutils literal notranslate"><span class="pre">-a</span></code> is for archive mode, and <code class="docutils literal notranslate"><span class="pre">-n</span></code> is for dry run which allows <code class="docutils literal notranslate"><span class="pre">rsync</span></code> to do a trial run with no changes made (often useful for checking everything works).</p>
 <ol>
@@ -1480,12 +1484,12 @@ total size is <span class="m">0</span>  speedup is <span class="m">0</span>.00
 </div>
 </li>
 </ol>
-</div>
-</div>
-<div class="section" id="other-file-transfer-options">
-<h2>Other file transfer options<a class="headerlink" href="#other-file-transfer-options" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="smbclient">
-<h3>smbclient<a class="headerlink" href="#smbclient" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="other-file-transfer-options">
+<h2>Other file transfer options<a class="headerlink" href="#other-file-transfer-options" title="Permalink to this headline">#</a></h2>
+<section id="smbclient">
+<h3>smbclient<a class="headerlink" href="#smbclient" title="Permalink to this headline">#</a></h3>
 <p>It is also possible to transfer files from your University <code class="docutils literal notranslate"><span class="pre">M</span> <span class="pre">drive</span></code> and from the shared <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">drive</span></code> using the <code class="docutils literal notranslate"><span class="pre">smbclient</span></code> tool. This is a command line tool included by default on ARC that allows for file transfer experience similar to SFTP <a class="reference external" href="#sftp">(outlined below)</a>.</p>
 <p>To connect to your <code class="docutils literal notranslate"><span class="pre">M</span> <span class="pre">drive</span></code> you are required to know the ds path to your M drive. This should follow the pattern <code class="docutils literal notranslate"><span class="pre">\\ds.leeds.ac.uk\&lt;group&gt;\&lt;groupNUMBER&gt;\</span></code>. Connecting to the shared N drive is possible using the folowing ds path <code class="docutils literal notranslate"><span class="pre">\\ds.leeds.ac.uk\shared\</span></code>.</p>
 <p>Once you know the ds path to your M drive you can connect to it within the <code class="docutils literal notranslate"><span class="pre">smbclient</span></code> when on ARC using the command:</p>
@@ -1507,12 +1511,12 @@ smb: <span class="se">\\</span>medacola<span class="se">\\</span>&gt;
 putting file testfile as <span class="se">\\</span>medacola<span class="se">\\</span>testfile <span class="o">(</span><span class="m">0</span>.0 kb/s<span class="o">)</span> <span class="o">(</span>average <span class="m">0</span>.0 kb/s<span class="o">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="rclone">
-<h3>rclone<a class="headerlink" href="#rclone" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="rclone">
+<h3>rclone<a class="headerlink" href="#rclone" title="Permalink to this headline">#</a></h3>
 <p>When transferring large data sets from external sources, it is useful to be able to connect directly to the external sources (such as OneDrive, DropBox, Google Cloud, etc) from ARC to transfer the data sets more efficiently. You can do this using a tool called Rclone which is installed on both ARC3 and ARC4. You will need to configure a remote shell connection with X11 forwarding (e.g. on ARC4 using <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-Y</span> <span class="pre">user&#64;arc4.leeds.ac.uk</span></code>) before you can use it.</p>
-<div class="section" id="adding-a-new-onedrive-remote-to-rclone">
-<h4>Adding a new OneDrive remote to Rclone<a class="headerlink" href="#adding-a-new-onedrive-remote-to-rclone" title="Permalink to this headline">¶</a></h4>
+<section id="adding-a-new-onedrive-remote-to-rclone">
+<h4>Adding a new OneDrive remote to Rclone<a class="headerlink" href="#adding-a-new-onedrive-remote-to-rclone" title="Permalink to this headline">#</a></h4>
 <p>Start Rclone in configuration mode:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ rclone config
 </pre></div>
@@ -1689,9 +1693,9 @@ q<span class="o">)</span> Quit config
 e/n/d/r/c/s/q&gt; q
 </pre></div>
 </div>
-</div>
-<div class="section" id="using-rclone-on-hpc">
-<h4>Using rclone on HPC<a class="headerlink" href="#using-rclone-on-hpc" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="using-rclone-on-hpc">
+<h4>Using rclone on HPC<a class="headerlink" href="#using-rclone-on-hpc" title="Permalink to this headline">#</a></h4>
 <p>Once you’ve set up the remote drive, you don’t need to do it again. To list files from OneDrive (list files in [directory] if given):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ rclone ls onedrive:<span class="o">[</span>directory<span class="o">]</span>
 </pre></div>
@@ -1797,9 +1801,9 @@ Use &quot;rclone help flags&quot; for to see the global flags.
 Use &quot;rclone help backends&quot; for a list of supported services.
 </pre></div>
 </div>
-</div>
-<div class="section" id="using-shared-folders">
-<h4>Using shared folders<a class="headerlink" href="#using-shared-folders" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="using-shared-folders">
+<h4>Using shared folders<a class="headerlink" href="#using-shared-folders" title="Permalink to this headline">#</a></h4>
 <p>If you want to access a folder that has been shared with you on OneDrive you can add the folder to “My Files” in the OneDrive web interface and it will then be available through your rclone connection:</p>
 <p>Go to your OneDrive home page and click on Shared</p>
 <p><img alt="Example Shared folder link" src="../_images/rclone-shared.png" /></p>
@@ -1808,10 +1812,10 @@ Use &quot;rclone help backends&quot; for a list of supported services.
 <p>Click on “Add shortcut to My files”</p>
 <p><img alt="Example shortcut link" src="../_images/rclone-add-shortcut.png" /></p>
 <p>The shared folder will now appear in My files and also in your rclone connection.</p>
-</div>
-</div>
-<div class="section" id="sftp">
-<h3>SFTP<a class="headerlink" href="#sftp" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="sftp">
+<h3>SFTP<a class="headerlink" href="#sftp" title="Permalink to this headline">#</a></h3>
 <p>University HPC also allows for the SSH File Transfer Protocol (SFTP) client to be used for file transfer. MobaXTerm, macOS and most Linux distributions come with an SFTP client pre-installed as part of the SSH client so you should be able to use SFTP from the get go. SFTP works in the same way as <code class="docutils literal notranslate"><span class="pre">scp</span></code> but provides for a more expanded experience transfering files (allowing you to change directory and list directory contents).</p>
 <p>You can connect to HPC (in this example ARC4) using SFTP as follows:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># remember to use your username!</span>
@@ -1828,18 +1832,18 @@ Fetching /home/home01/issev001/test_sub.sh to test_sub.sh
 </pre></div>
 </div>
 <p>You can find more SFTP commands by using the <code class="docutils literal notranslate"><span class="pre">help</span></code> or <code class="docutils literal notranslate"><span class="pre">?</span></code> command within the <code class="docutils literal notranslate"><span class="pre">sftp&gt;</span></code> prompt.</p>
-<div class="section" id="sftp-graphical-clients">
-<h4>SFTP graphical clients<a class="headerlink" href="#sftp-graphical-clients" title="Permalink to this headline">¶</a></h4>
+<section id="sftp-graphical-clients">
+<h4>SFTP graphical clients<a class="headerlink" href="#sftp-graphical-clients" title="Permalink to this headline">#</a></h4>
 <p>If you’d rather use a graphical application to handle file transfers you can use a number of free programs that handle SFTP connections.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://cyberduck.io/">Cyberduck</a> - macOS and Windows</p></li>
 <li><p><a class="reference external" href="https://filezilla-project.org/">FileZilla</a> - Windows, macOS and Linux</p></li>
 </ul>
 <p>We do not provide support for these applications so please ensure you read the documentation carefully, especially around configuring for work off campus.</p>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

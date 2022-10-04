@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Gurobi &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1272,11 +1276,11 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="gurobi">
-<h1>Gurobi<a class="headerlink" href="#gurobi" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="gurobi">
+<h1>Gurobi<a class="headerlink" href="#gurobi" title="Permalink to this headline">#</a></h1>
 <p>The <a class="reference external" href="https://www.gurobi.com/">Gurobi</a> mathmatical optimisation solver is available to use on HPC. You can find the official documentation on their <a class="reference external" href="https://www.gurobi.com/documentation/9.1/">website</a>.</p>
-<div class="section" id="gurobi-module">
-<h2>Gurobi module<a class="headerlink" href="#gurobi-module" title="Permalink to this headline">¶</a></h2>
+<section id="gurobi-module">
+<h2>Gurobi module<a class="headerlink" href="#gurobi-module" title="Permalink to this headline">#</a></h2>
 <p>To access the Gurobi solver you need to load the <code class="docutils literal notranslate"><span class="pre">gurobi</span></code> module. You can do this with the command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add <span class="nb">test</span> gurobi
 </pre></div>
@@ -1291,8 +1295,8 @@ GRB_LICENSE_FILE
 GUROBI_R_PKG
 </pre></div>
 </div>
-<div class="section" id="python-setup">
-<h3>Python setup<a class="headerlink" href="#python-setup" title="Permalink to this headline">¶</a></h3>
+<section id="python-setup">
+<h3>Python setup<a class="headerlink" href="#python-setup" title="Permalink to this headline">#</a></h3>
 <p>To use Gurobi in a python script you will need to install the Gurobipy package. You can do this using either <code class="docutils literal notranslate"><span class="pre">pip</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code> with the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># installing with pip</span>
 $ pip install --user -i https://pypi.gurobi.com gurobipy
@@ -1302,9 +1306,9 @@ $ conda install -c gurobi gurobi
 </pre></div>
 </div>
 <p>You can then use the Gurobi Python API by adding the line <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">gurobi</span></code> to your python script and calling functions from the module.</p>
-</div>
-<div class="section" id="r-setup">
-<h3>R setup<a class="headerlink" href="#r-setup" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="r-setup">
+<h3>R setup<a class="headerlink" href="#r-setup" title="Permalink to this headline">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The Gurobi R package is currently only available for R version 4.0.3</p>
@@ -1319,8 +1323,8 @@ $ R -e <span class="s2">&quot;install.packages(c(&#39;</span><span class="nv">$G
 </pre></div>
 </div>
 <p>Once you have installed the package you can then load it within the R environment using the line <code class="docutils literal notranslate"><span class="pre">library(gurobi)</span></code>. Once the package is loaded you can use Gurobi R API functions to use the solver.</p>
-<div class="section" id="installing-r-4-0-3-via-anaconda-module">
-<h4>Installing R 4.0.3 via Anaconda module<a class="headerlink" href="#installing-r-4-0-3-via-anaconda-module" title="Permalink to this headline">¶</a></h4>
+<section id="installing-r-4-0-3-via-anaconda-module">
+<h4>Installing R 4.0.3 via Anaconda module<a class="headerlink" href="#installing-r-4-0-3-via-anaconda-module" title="Permalink to this headline">#</a></h4>
 <p>You can install R 4.0.3 on the HPC by using the Anaconda module via the conda package manager. In its simplest form you can do this with the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add the anaconda module</span>
 $ module add anaconda
@@ -1332,10 +1336,10 @@ $ conda create -n R403 -c conda-forge r-base<span class="o">=</span><span class=
 $ <span class="nb">source</span> activate R403
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="matlab-setup">
-<h3>Matlab setup<a class="headerlink" href="#matlab-setup" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="matlab-setup">
+<h3>Matlab setup<a class="headerlink" href="#matlab-setup" title="Permalink to this headline">#</a></h3>
 <p>To configure MATLAB to use the Gurobi module you will need to have loaded the Gurobi module and within the MATLAB command window run the following commands:</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% change directory into the Gurobi matlab directory</span><span class="w"></span>
 <span class="nb">cd</span><span class="p">(</span><span class="nb">getenv</span><span class="p">(</span><span class="s">&quot;GUROBI_HOME&quot;</span><span class="p">)</span><span class="o">+</span><span class="s">&quot;/matlab&quot;</span><span class="p">)</span><span class="w"></span>
@@ -1350,9 +1354,9 @@ $ <span class="nb">source</span> activate R403
 </pre></div>
 </div>
 <p>Once you have run <code class="docutils literal notranslate"><span class="pre">gurobi_setup</span></code> you should now have access to the Gurobi MATLAB API and can run Gurobi specific functions.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

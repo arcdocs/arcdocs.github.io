@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Remote Graphics – X2GO &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1187,8 +1191,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="remote-graphics-x2go">
-<h1>Remote Graphics – X2GO<a class="headerlink" href="#remote-graphics-x2go" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="remote-graphics-x2go">
+<h1>Remote Graphics – X2GO<a class="headerlink" href="#remote-graphics-x2go" title="Permalink to this headline">#</a></h1>
 <p>The faculty of Earth and Environment are already users of X2GO and have
 excellent documentation on their web site:</p>
 <p><a class="reference external" href="https://www.environment.leeds.ac.uk/wiki/view/IT/LinuxRemoteX2Go">https://www.environment.leeds.ac.uk/wiki/view/IT/LinuxRemoteX2Go</a></p>
@@ -1214,7 +1218,7 @@ places on the window where you need to provide information on the image below.</
 <p>The information needs is:</p>
 <ol class="simple">
 <li><p>The name of the session – I have used arc3</p></li>
-<li><p>The name of the host which is arc3.leeds.ac.uk</p></li>
+<li><p>The name of the host which is <a class="reference external" href="http://arc3.leeds.ac.uk">arc3.leeds.ac.uk</a></p></li>
 <li><p>Your userid</p></li>
 <li><p>Select the option “Published Applications”</p></li>
 </ol>
@@ -1246,8 +1250,8 @@ paraview --mesa-llvm
 <p>Normally when you login you are allocated login1 or login2 randomly. If you
 wish to restart a X2GO session then you need to login explicitly to the login
 node that you paused the session on. If you want to use this feature then you
-will need to explicitly login to login1.arc3.leeds.ac.uk or
-login2.arc3.leeds.ac.uk.</p>
+will need to explicitly login to <a class="reference external" href="http://login1.arc3.leeds.ac.uk">login1.arc3.leeds.ac.uk</a> or
+<a class="reference external" href="http://login2.arc3.leeds.ac.uk">login2.arc3.leeds.ac.uk</a>.</p>
 <p>We have not currently tested all the modes that you can login with. The shells
 available with the way I have described are xterm or MATE Terminal.</p>
 <p>When I initially logged in, an error window popped up which said something
@@ -1259,7 +1263,7 @@ your session and in the shared folder tab de-select the use ssh port
 forwarding … option.</p>
 <p>To speed up your session try the 2m-jpg option in the <code class="docutils literal notranslate"><span class="pre">Connection</span></code> tab of the
 <code class="docutils literal notranslate"><span class="pre">session</span> <span class="pre">preferences</span></code>, which will reduce the number of colours displayed.</p>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {

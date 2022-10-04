@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Allinea &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1264,15 +1268,15 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="allinea">
-<h1>Allinea<a class="headerlink" href="#allinea" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="allinea">
+<h1>Allinea<a class="headerlink" href="#allinea" title="Permalink to this headline">#</a></h1>
 <p>Allinea is a debugging tool for C, C++ and Fortran 90 produced by Allinea Software Ltd. who are now owned by ARM.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can also use the <a class="reference internal" href="arm-forge.html"><span class="doc std std-doc">Arm Forge module</span></a> for a more recent version of the Allinea tool</p>
 </div>
-<div class="section" id="allinea-serial-and-parallel-debugging-and-profiling">
-<h2>Allinea – serial and parallel debugging and profiling<a class="headerlink" href="#allinea-serial-and-parallel-debugging-and-profiling" title="Permalink to this headline">¶</a></h2>
+<section id="allinea-serial-and-parallel-debugging-and-profiling">
+<h2>Allinea – serial and parallel debugging and profiling<a class="headerlink" href="#allinea-serial-and-parallel-debugging-and-profiling" title="Permalink to this headline">#</a></h2>
 <p>Allinea’s DDT and MAP applications are installed: these are primarily provided to help parallel application writers to debug or profile their applications (that is, to correct or to discover how the application is performing). They are useful for serial, MPI, OpenMP and CUDA codes.</p>
 <p>DDT, the debugger, offers a compelling alternative to attaching gdb sessions to individual processes. It offers a simple GUI allowing a clean visual overview of the entire parallel program.</p>
 <p>MAP, the profiler, offers a low-overhead method to obtain information of MPI, CPU and memory use over a program’s run.</p>
@@ -1281,10 +1285,10 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>Although basic usage is covered below, please refer to the Allinea documentation. A copy of this is held on the system (at <code class="docutils literal notranslate"><span class="pre">$ALLINEA_HOME/doc/userguide.pdf</span></code> once the allinea module is loaded)</p>
-<p>Website is: https://www.arm.com/products/development-tools/server-and-hpc/forge</p>
-</div>
-<div class="section" id="licensing">
-<h2>Licensing<a class="headerlink" href="#licensing" title="Permalink to this headline">¶</a></h2>
+<p>Website is: <a class="reference external" href="https://www.arm.com/products/development-tools/server-and-hpc/forge">https://www.arm.com/products/development-tools/server-and-hpc/forge</a></p>
+</section>
+<section id="licensing">
+<h2>Licensing<a class="headerlink" href="#licensing" title="Permalink to this headline">#</a></h2>
 <p>Please note that we have a limited number of DDT and MAP license tokens (32 as of October 2014). Each running GUI consumes 1 token. Each rank of a running MPI process being debugged or profiled also consumes 1 token.</p>
 <p>Once the GUI or application exits, those tokens are returned and able to be used by others.
 Launching the GUI</p>
@@ -1296,9 +1300,9 @@ Launching the GUI</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>map
 </pre></div>
 </div>
-</div>
-<div class="section" id="submit-interactively-to-the-batch-queues">
-<h2>Submit interactively to the batch queues<a class="headerlink" href="#submit-interactively-to-the-batch-queues" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="submit-interactively-to-the-batch-queues">
+<h2>Submit interactively to the batch queues<a class="headerlink" href="#submit-interactively-to-the-batch-queues" title="Permalink to this headline">#</a></h2>
 <p>The normal procedure is to launch the GUI on the login node and then use it’s functionality to automatically submit the job to the queue. DDT will wait for the job to start and then automatically attach itself to the running processes.</p>
 <p>Launch the DDT or MAP GUI and click on <strong>Run</strong>. Fill out the job details, such as:</p>
 <ul class="simple">
@@ -1324,9 +1328,9 @@ Launching the GUI</p>
 <p>The GUI will show the output from qstat in a new window and start at the appropriate time.</p>
 <p>If you need access to a particular set of resources for debugging purposes at a specific time, please <a class="reference external" href="https://it.leeds.ac.uk/it?id=sc_cat_item&amp;sys_id=7587b2530f675f00a82247ece1050eda">contact us</a> to discuss arranging an <em>advanced reservation</em>.
 Submit non-interactively to the batch queues</p>
-</div>
-<div class="section" id="create-a-job-submission-script-of-the-form-and-submit-to-the-batch-queue-with-qsub-command">
-<h2>Create a job submission script of the form and submit to the batch queue with qsub command<a class="headerlink" href="#create-a-job-submission-script-of-the-form-and-submit-to-the-batch-queue-with-qsub-command" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="create-a-job-submission-script-of-the-form-and-submit-to-the-batch-queue-with-qsub-command">
+<h2>Create a job submission script of the form and submit to the batch queue with qsub command<a class="headerlink" href="#create-a-job-submission-script-of-the-form-and-submit-to-the-batch-queue-with-qsub-command" title="Permalink to this headline">#</a></h2>
 <p>For MAP:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -l h_rt=1:0:0</span>
 <span class="c1">#$ -l np=16</span>
@@ -1341,13 +1345,13 @@ module load allinea
 ddt -n <span class="nv">$NSLOTS</span> -offline myjob.txt  
 </pre></div>
 </div>
-</div>
-<div class="section" id="further-support">
-<h2>Further support<a class="headerlink" href="#further-support" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="further-support">
+<h2>Further support<a class="headerlink" href="#further-support" title="Permalink to this headline">#</a></h2>
 <p>Allinea provide a range of training and support materials, including:</p>
 <p>A Youtube channel</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>OpenFoam &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1406,26 +1410,26 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="openfoam">
-<h1>OpenFoam<a class="headerlink" href="#openfoam" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="openfoam">
+<h1>OpenFoam<a class="headerlink" href="#openfoam" title="Permalink to this headline">#</a></h1>
 <p>OpenFOAM is an open-source set of C++ based command tools which can be used to perform Computational Fluid Dynamics simulations, it is entirely based inside the terminal and has no direct user interface. Results from the simulations can be viewed by running the command <code class="docutils literal notranslate"><span class="pre">paraFoam</span></code> to launch an external viewing application. This wiki will run through how to set up a case for running OpenFoam, as well as listing some of the basic tips on performing a simulation without error, primarily using the software available inside Mechanical Engineering.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For users of openfoam/v1906 you will need to execute the line <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">$FOAM_SRC_FILE</span></code> before getting access to OpenFoam command line executeables.</p>
 </div>
-<div class="section" id="overview-of-case-setup">
-<h2>Overview of case setup<a class="headerlink" href="#overview-of-case-setup" title="Permalink to this headline">¶</a></h2>
+<section id="overview-of-case-setup">
+<h2>Overview of case setup<a class="headerlink" href="#overview-of-case-setup" title="Permalink to this headline">#</a></h2>
 <p>An OpenFoam case will consist of 3 separate directories:</p>
 <ol class="simple">
 <li><p>The ‘0’ time folder, this is where the files which contain the boundary and initial conditions for each of the variables being calculated are stored.</p></li>
 <li><p>The ‘constant’ folder, this contains the transport properties ditionary, the settings for the particular RANS/LES model being used and the ‘polymesh’ folder which stores the blockMesh file used in the mesh creation stage.</p></li>
 <li><p>The ‘system’ folder, which contains the control dictionary which handles the time step and solver settings and the files used to control the solver schemes and tolerances of the variables.</p></li>
 </ol>
-<p>Before setting up any of the fields or solver settings, it is important to understand which type of solver your particular case will require. OpenFoam has several different types of solvers, a complete list of which can be found inside the user guide at: http://www.openfoam.com/documentation/</p>
+<p>Before setting up any of the fields or solver settings, it is important to understand which type of solver your particular case will require. OpenFoam has several different types of solvers, a complete list of which can be found inside the user guide at: <a class="reference external" href="http://www.openfoam.com/documentation/">http://www.openfoam.com/documentation/</a></p>
 <p>Useful information on how to install the required modules and the submission of scripts to the queuing system can be found at the bottom of this page.</p>
-</div>
-<div class="section" id="building-the-computational-domain">
-<h2>Building the computational domain<a class="headerlink" href="#building-the-computational-domain" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="building-the-computational-domain">
+<h2>Building the computational domain<a class="headerlink" href="#building-the-computational-domain" title="Permalink to this headline">#</a></h2>
 <p>Once you have decided which solver will be best for your particular case, the first thing to do is to create the computational domain and mesh it. There are two ways to go about this, the first is to use OpenFoams own application, blockmesh and the second is to import a file meshed using an external piece of software which can then be converted for use with OpenFoam.</p>
 <p><strong>BlockMesh:</strong> In my personal experience with blockMesh, it is both time-consuming and difficult to understand when starting out with this software. The lack of any kind of visual interface means that even the simplest errors are difficult to spot without viewing your mesh in an application such as paraFoam, the way in which the blocks of the mesh are defined can be found in the userguide and are not too taxing for simple and small geometries, however when modelling more complex shapes with small details requires far more effort.</p>
 <p>The blockMesh file is located in the ‘polymesh’ directory of the ‘constant’ folder in the openFoam case, to build the mesh, simple type the command:</p>
@@ -1449,18 +1453,18 @@ title="Print to PDF"
 <li><p>Have all pre-mesh checks been passed including quality histograms, etc?</p></li>
 </ol>
 <p>If your geometry is meshed to the correct standard then it can be exported for use in OpenFoam, there is an optional step to set the boundary conditions at this stage as you can perform this task once the mesh is in OpenFoam format. but it may be easier to set up at this stage.</p>
-</div>
-<div class="section" id="setting-boundary-conditions-for-export-and-changing-filetype">
-<h2>Setting boundary conditions for export and changing filetype<a class="headerlink" href="#setting-boundary-conditions-for-export-and-changing-filetype" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="setting-boundary-conditions-for-export-and-changing-filetype">
+<h2>Setting boundary conditions for export and changing filetype<a class="headerlink" href="#setting-boundary-conditions-for-export-and-changing-filetype" title="Permalink to this headline">#</a></h2>
 <p>From the taskbar in ICEM, select the ‘boundary conditions’ option under x and assign each feature the appropriate condition e.g. pressureOutlet, velocityInlet, solidWall, etc, these conditions will be passed through to openFoam along with the model geometry and mesh, this means that the initial conditions files in the ‘0’ directory will be set up ready for use and should not require any alteration after this point.</p>
 <p>To save your model ready for export, it must be in the Fluent_V6 format, solver settings and the like can remain at default and there is no need to check any additional options in the save boxes. This single model file can now be transferred into your OpenFoam case directory. To convert the file for use, type the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fluent3DMeshToFoam</span>
 </pre></div>
 </div>
 <p>It is a good idea at this point to run checkMesh to ensure that the process has gone smoothly and there have been no errors which may affect the simulation. This mesh can now be viewed in paraFoam.</p>
-</div>
-<div class="section" id="control-dictionary-settings">
-<h2>Control dictionary settings<a class="headerlink" href="#control-dictionary-settings" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="control-dictionary-settings">
+<h2>Control dictionary settings<a class="headerlink" href="#control-dictionary-settings" title="Permalink to this headline">#</a></h2>
 <p>When the geometry has been set up, either by importing or manual generation, the settings for the case need attention. What solver you are using for the case must be entered in the controlDict file located in the “system” folder. This will typically be the first line underneath the header, a practical example of this can be found in the tutorials section of the OpenFoam installation (tutorials can be viewed on your own local installation). Most of the other settings in the controlDict file can remain untouched however should you want to alter the timestep and how often the results of t your simulation are written to disk, the following options will be of interest:</p>
 <p><strong>deltaT</strong> – this controls the timestep and is how much time elapses in seconds between each set of calculations performed. A lower timestep results in far better accuracy but takes longer to run, a reasonable value to begin with is 1e-04 or 1e-05. As a rule of thumb, an estimated value can be (1/Reynolds Number of the flow).</p>
 <p><strong>writeControl</strong> – there are two settings for this option, either: runTime or timeStep. runTime means that the writeInterval is specified in seconds and the given value will be how long, in seconds, it will be between each set of results written to disk. e.g. if deltaT is set to 1e-05 and writeInterval is set to 1e-04, the results will be written to disk every 10 steps. timeStep will mean that an integer should be specified as to how many steps it will be between each recording e.g. a value of 3 will write the results every 3rd timestep.</p>
@@ -1469,10 +1473,10 @@ title="Print to PDF"
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">libs</span> <span class="p">(</span><span class="s2">&quot;libs.so&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>where “relevant extension” leads to the correct library for the application e.g. libsuserRAS.so, for your own compiled RAS turbulence models.</p>
-</div>
-<div class="section" id="ras-les-properties-and-transportdict">
-<h2>RAS/LES properties and transportDict<a class="headerlink" href="#ras-les-properties-and-transportdict" title="Permalink to this headline">¶</a></h2>
+<p>where “relevant extension” leads to the correct library for the application e.g. <a class="reference external" href="http://libsuserRAS.so">libsuserRAS.so</a>, for your own compiled RAS turbulence models.</p>
+</section>
+<section id="ras-les-properties-and-transportdict">
+<h2>RAS/LES properties and transportDict<a class="headerlink" href="#ras-les-properties-and-transportdict" title="Permalink to this headline">#</a></h2>
 <p>Depending upon whether you are using a RAS or LES based models, there are several files which must be present in the “constant” folder. The first of the these is general to either type of case and is called “transportDict”. This contains the properties for the type of transport model relevant to the solver and the required properties of the fluid under examination. e.g. a simple example for a newtonian model requires the kinematic viscosity property in order to run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">transportModel</span> <span class="n">Newtonian</span><span class="p">;</span>
 
@@ -1481,31 +1485,31 @@ title="Print to PDF"
 </div>
 <p>The type of model must be specified along with the name of the fluid property, its correct dimensionSet and a value. The dimensionSet allows OpenFOAm to determine the units of the quantity in question.</p>
 <p>The second file will either be: RASProperties or LESProperties depending upon the type of simulation required, in essence they accomplish the same job which is to identify which model should be used with the solver along with any required coefficients not present elsewhere in the code. A typical file structure will be as follows:</p>
-<div class="section" id="rasproperties">
-<h3>RASProperties<a class="headerlink" href="#rasproperties" title="Permalink to this headline">¶</a></h3>
+<section id="rasproperties">
+<h3>RASProperties<a class="headerlink" href="#rasproperties" title="Permalink to this headline">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">RASModel</span>          <span class="n">kOmegaSST</span>
 <span class="n">printcoeffs</span>          <span class="n">off</span><span class="p">;</span>
 <span class="n">turbulence</span>          <span class="n">on</span><span class="p">;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="lesproperties">
-<h3>LESProperties<a class="headerlink" href="#lesproperties" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="lesproperties">
+<h3>LESProperties<a class="headerlink" href="#lesproperties" title="Permalink to this headline">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LESModel</span>            <span class="n">Smagornisky</span><span class="p">;</span>
 <span class="n">printCoeffs</span>           <span class="n">off</span><span class="p">;</span>
 <span class="n">delta</span>                    <span class="n">vanDriest</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>The option to turn off turbulence is only present in the RAS Model as this will run in a laminar state disregarding all turbulent calculations within the solver. The deltas option in LES allows the user to define which settings to use with the solver, other options include: prandtl, CubeRootVol and smoothCoeffs depending upon what is necessary for the LES simulation. Note that for other types of solvers, files representing the details of which chemical models/combustion properties may also be required for the case to be set up correctly; these are just two examples of the more common problems which may be encountered.</p>
-</div>
-</div>
-<div class="section" id="fvschemes-and-fvsolutions">
-<h2>fvSchemes and fvSolutions<a class="headerlink" href="#fvschemes-and-fvsolutions" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="fvschemes-and-fvsolutions">
+<h2>fvSchemes and fvSolutions<a class="headerlink" href="#fvschemes-and-fvsolutions" title="Permalink to this headline">#</a></h2>
 <p>Before the setting up of the boundary and initial conditions for each of the fields to be solved, they must be declared and assigned a solver scheme along with any required model settings. The <strong>fvSchemes</strong> file contains the schemes which will be used to solve the model equations and each term present in the transport equations must be assigned a scheme. Depending upon the choice, they can improve stability or the solution so it is important to choose an appropriate scheme for the term being solved. If the name of the discretisation scheme should be entered incorrectly than error will be encountered when trying to run the simulation along with a list of the available schemes.</p>
 <p>The <strong>fvSolution</strong> file contains the solver scheme, preconditioner and tolerance for each field, alteration of these values can result in either better or worse convergence for the solution along with its accuracy, the tighter the tolerance, the more accurate the value but may take longer to solve or even fail to converge properly. The other set of commands present in the file deal with the controls relevant to the solver such as the relaxation factors (SIMPLE) or the number of correction steps (PISO), These controls must be set correctly for the solver to run, in many cases, the default values can be set to those found in the tutorials section for the relevant solver. A further rule of thumb is that the relaxation factors for pressure and velocity (p/u) in SIMPLE cases should total to a value of 1, frequently this is (0.3/0.7).</p>
-</div>
-<div class="section" id="initial-fields-and-their-boundary-conditions">
-<h2>Initial Fields and their boundary conditions<a class="headerlink" href="#initial-fields-and-their-boundary-conditions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="initial-fields-and-their-boundary-conditions">
+<h2>Initial Fields and their boundary conditions<a class="headerlink" href="#initial-fields-and-their-boundary-conditions" title="Permalink to this headline">#</a></h2>
 <p>Once the mesh has been successfully created and the settings for the solver established along with the run-time, the initial values for all the fields being solved need to be assigned to the appropriate location on the model. All values for the initial time step will be located in the time folder marked:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span>
 </pre></div>
@@ -1544,9 +1548,9 @@ title="Print to PDF"
 <p><strong>fixedValue 0</strong> = a value set at 0 which can be used to represent an impermeable surface through which no flow can occur at or through. Typically used as a setup condition for velocity at domain walls.</p>
 <p>More complex boundary conditions including functions which vary with time (e.g. pulse inlet) and gradient scales can be implemeted either through those functions desribed in the manual/tutorial cases or through the extra utility: swak4Foam, references to which can be found <a class="reference external" href="http://openfoamwiki.net/index.php/Contrib/swak4Foam">here</a></p>
 <p>It is important to note that each field which is being solved e.g. pressure, velocity, will require its own file in the ‘0’ time directory before the simulation will run correctly. Attempting to run this with an incomplete setup will provoke an error message, frequently telling the user what is missing from the directory in question.</p>
-</div>
-<div class="section" id="running-a-simulation-and-viewing-the-results">
-<h2>Running a simulation and viewing the results<a class="headerlink" href="#running-a-simulation-and-viewing-the-results" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="running-a-simulation-and-viewing-the-results">
+<h2>Running a simulation and viewing the results<a class="headerlink" href="#running-a-simulation-and-viewing-the-results" title="Permalink to this headline">#</a></h2>
 <p>In order to begin a simulation, simply move to the directory in which all 3 directories relevant to the case are present and type the name of the solver you wish to run in the terminal e.g.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ simpleFoam
 </pre></div>
@@ -1556,9 +1560,9 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>This will launch the viewing application recommended for use with OpenFoam, paraView. Pressing the green ‘play’ button on the taskbar will run through each set of results mapped onto the mesh, various data extraction tools can then be employed for analysis.</p>
-</div>
-<div class="section" id="general-advice-and-starting-tips">
-<h2>General advice and starting tips<a class="headerlink" href="#general-advice-and-starting-tips" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="general-advice-and-starting-tips">
+<h2>General advice and starting tips<a class="headerlink" href="#general-advice-and-starting-tips" title="Permalink to this headline">#</a></h2>
 <p>To begin with, run the tutorial cases (incompressible flow) for a few time steps and then examine the results. Attempt to alter the settings in the initial conditions for velocity/pressure to get a feel what alterations provoke which errors or how they affect the flow. Do not try and code anything from scratch for either simple model setups or your own solvers, try and find a tutorial case similar to what you require, copy and paste the 3 directories over to your own folder and alter step by step.</p>
 <p>When coding your own solvers/models compile using wmake/wmake libso as necessary and make sure to add the appropriate library to controlDict file otherwise your files will not be recognised. The easiest to use incompressible flow solvers, depending upon requirements are: icoFoam, pisoFoam and SimpleFoam.</p>
 <p>Some compressible solvers may not be entirely complete/have a number of errors and may require modification before correctly working, check the <a class="reference external" href="http://www.cfd-online.com/Forums/openfoam/">CFD-online forums</a> for references/advice in
@@ -1570,12 +1574,12 @@ these matters.</p>
 <p>A finer mesh is a better mesh, coarse meshes can produce poor results.</p>
 <p>Ensure that when calculating values for boundary conditions that all units you use are in SI form and are declared as such in OpenFOAM. If the units do not match the scale of your domain (e.g. m/s vs a domain in mm) the results will be inaccurate.</p>
 <p>An initial estimate for the length scale/turbulence intensity may be required before certain boundary conditions can be correctly assigned a value.</p>
-</div>
-<div class="section" id="running-openfoam">
-<h2>Running OpenFOAM<a class="headerlink" href="#running-openfoam" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="running-openfoam">
+<h2>Running OpenFOAM<a class="headerlink" href="#running-openfoam" title="Permalink to this headline">#</a></h2>
 <p>OpenFOAM is a free, open source CFD software package; this does not require a license to use.</p>
-<div class="section" id="setting-up-the-environment">
-<h3>Setting up the environment<a class="headerlink" href="#setting-up-the-environment" title="Permalink to this headline">¶</a></h3>
+<section id="setting-up-the-environment">
+<h3>Setting up the environment<a class="headerlink" href="#setting-up-the-environment" title="Permalink to this headline">#</a></h3>
 <p>The openfoam installed on our systems is compiled with a gnu compiler rather than the intel one which is the default in your environment. Before you can load the openfoam module you will need to switch compilers.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module sw intel gnu/4.8.1
 $ module load openfoam
@@ -1589,20 +1593,20 @@ $ module load openfoam
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">source</span> <span class="nv">$FOAM_SRC_FILE</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="launching-on-the-front-end">
-<h3>Launching on the front end<a class="headerlink" href="#launching-on-the-front-end" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="launching-on-the-front-end">
+<h3>Launching on the front end<a class="headerlink" href="#launching-on-the-front-end" title="Permalink to this headline">#</a></h3>
 <p>Visualisation of OpenFOAM results can be done using paraFoam at the command prompt. You need to have an openfoam case file to do this fully:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ paraFoam
 </pre></div>
 </div>
 <p>If you’re visualising large data sets this should not be done on thelogin nodes, since this can use a considerable amount of RAM and CPU. Instead, this should be done using an interactive job with SGE.</p>
-</div>
-<div class="section" id="using-sun-grid-engine">
-<h3>Using Sun Grid Engine<a class="headerlink" href="#using-sun-grid-engine" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="using-sun-grid-engine">
+<h3>Using Sun Grid Engine<a class="headerlink" href="#using-sun-grid-engine" title="Permalink to this headline">#</a></h3>
 <p>Sun Grid engine allows both interactive and batch jobs to be submitted during which users will have exclusive access to the resources they request.</p>
-<div class="section" id="running-through-an-interactive-shell">
-<h4>Running through an interactive shell<a class="headerlink" href="#running-through-an-interactive-shell" title="Permalink to this headline">¶</a></h4>
+<section id="running-through-an-interactive-shell">
+<h4>Running through an interactive shell<a class="headerlink" href="#running-through-an-interactive-shell" title="Permalink to this headline">#</a></h4>
 <p>The following will launch paraFoam interactively, displaying the full GUI:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qrsh -cwd -V -l <span class="nv">h_rt</span><span class="o">=</span> paraFoam
 </pre></div>
@@ -1612,9 +1616,9 @@ $ module load openfoam
 </pre></div>
 </div>
 <p>This will run paraFoam within the terminal from which it was launched.</p>
-</div>
-<div class="section" id="batch-execution">
-<h4>Batch Execution<a class="headerlink" href="#batch-execution" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="batch-execution">
+<h4>Batch Execution<a class="headerlink" href="#batch-execution" title="Permalink to this headline">#</a></h4>
 <p>To run OpenFOAM in batch-mode you first need to setup your case.</p>
 <p>A script must then be created that will request resources from the queuing system and launch the desired OpenFOAM executables; script <code class="docutils literal notranslate"><span class="pre">runfoam.sh</span></code> :</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
@@ -1633,9 +1637,9 @@ icoFoam
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qsub runfoam.sh
 </pre></div>
 </div>
-</div>
-<div class="section" id="parallel-execution">
-<h4>Parallel Execution<a class="headerlink" href="#parallel-execution" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="parallel-execution">
+<h4>Parallel Execution<a class="headerlink" href="#parallel-execution" title="Permalink to this headline">#</a></h4>
 <p>If you’ve configured your OpenFOAM job to be solved in parallel, you need to submit it differently. It uses OpenMPI under the hood, so this is an example of a suitable submission script:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -l h_rt=00:10:00</span>
 <span class="c1">#$ -l h_vmem=2G</span>
@@ -1653,10 +1657,10 @@ mpirun -np <span class="nv">$NSLOTS</span> interFoam -parallel
 </pre></div>
 </div>
 <p>Will give 16 cores as before, but this time with 4 processes per core and so 4 nodes overall. The available memory per node (32GB) is therefore allocated across 4 cores (ie. ppn=4) and so 8GB per node will be allocated.</p>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

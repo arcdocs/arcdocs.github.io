@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>DL_POLY &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1316,33 +1320,33 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="dl-poly">
-<h1>DL_POLY<a class="headerlink" href="#dl-poly" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="dl-poly">
+<h1>DL_POLY<a class="headerlink" href="#dl-poly" title="Permalink to this headline">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>DL_POLY is a general purpose molecular dynamics simulation tool developed and provisioned for UK academia. You can read more about it on the <a class="reference external" href="https://www.scd.stfc.ac.uk/Pages/DL_POLY.aspx">DL_POLY web page</a>.</p>
-</div>
-<div class="section" id="licensing">
-<h2>Licensing<a class="headerlink" href="#licensing" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="licensing">
+<h2>Licensing<a class="headerlink" href="#licensing" title="Permalink to this headline">#</a></h2>
 <p>To access this software you need to agree to the license terms, please submit a request to the Research Computing team via our <a class="reference external" href="https://it.leeds.ac.uk/it?id=sc_cat_item&amp;sys_id=7587b2530f675f00a82247ece1050eda">contact form</a> confirming you accept the license terms and wish to be added to the DL_POLY user group.</p>
 <p>The licence terms are available on the <a class="reference internal" href="dlpoly/license.html"><span class="doc std std-doc">DLpoly license page</span></a>.</p>
-</div>
-<div class="section" id="loading-the-module">
-<h2>Loading the module<a class="headerlink" href="#loading-the-module" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="loading-the-module">
+<h2>Loading the module<a class="headerlink" href="#loading-the-module" title="Permalink to this headline">#</a></h2>
 <p>DL_POLY versions 4.08 and 4.09 are currently available on ARC3 and 4.09 on ARC4.
 You can add the DL_POLY module by using the command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add dl_poly/4.09
 </pre></div>
 </div>
 <p>This adds the DL_POLY executable files to your environment and must be included in your job submission script to ensure your jobs can also access DL_POLY.</p>
-</div>
-<div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="dl-poly-4-09">
-<h3>DL_POLY 4.09<a class="headerlink" href="#dl-poly-4-09" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h2>
+<section id="dl-poly-4-09">
+<h3>DL_POLY 4.09<a class="headerlink" href="#dl-poly-4-09" title="Permalink to this headline">#</a></h3>
 <p>DL_POLY 4.09 is built with to both run in serial and in parallel depending on the resources available using the single executable <code class="docutils literal notranslate"><span class="pre">DLPOLY.Z</span></code>.</p>
-<div class="section" id="parallel-execution">
-<h4>Parallel execution<a class="headerlink" href="#parallel-execution" title="Permalink to this headline">¶</a></h4>
+<section id="parallel-execution">
+<h4>Parallel execution<a class="headerlink" href="#parallel-execution" title="Permalink to this headline">#</a></h4>
 <p>An example job submission script that calls DLpoly is shown below:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -cwd -V</span>
 <span class="c1">#$ -l h_rt=48:00:00</span>
@@ -1354,9 +1358,9 @@ mpirun -np <span class="nv">$NSLOTS</span> DLPOLY.Z
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qsub dlpoly.sh
 </pre></div>
 </div>
-</div>
-<div class="section" id="serial-execution">
-<h4>Serial execution<a class="headerlink" href="#serial-execution" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="serial-execution">
+<h4>Serial execution<a class="headerlink" href="#serial-execution" title="Permalink to this headline">#</a></h4>
 <p>DL_POLY can be run in serial using the same executeable without prepending the call with <code class="docutils literal notranslate"><span class="pre">mpirun</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -cwd -V</span>
 <span class="c1">#$ -l h_rt=48:00:00</span>
@@ -1367,13 +1371,13 @@ DLPOLY.Z
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qsub dlpoly_serial.sh
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="dl-poly-4-08">
-<h3>DL_POLY 4.08<a class="headerlink" href="#dl-poly-4-08" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="dl-poly-4-08">
+<h3>DL_POLY 4.08<a class="headerlink" href="#dl-poly-4-08" title="Permalink to this headline">#</a></h3>
 <p>Version 4.08 is built on ARC3 and has a slightly different executable that can be used as follows:</p>
-<div class="section" id="job-submission-example">
-<h4>Job submission example<a class="headerlink" href="#job-submission-example" title="Permalink to this headline">¶</a></h4>
+<section id="job-submission-example">
+<h4>Job submission example<a class="headerlink" href="#job-submission-example" title="Permalink to this headline">#</a></h4>
 <p>An example job submission script that calls to the <code class="docutils literal notranslate"><span class="pre">DL_POLY.Z.parallel</span></code> executable and requests multiple cores over Infiniband.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -cwd -V</span>
 <span class="c1">#$ -l h_rt=48:00:00</span>
@@ -1382,12 +1386,12 @@ mpirun DLPOLY.Z.parallel
 </pre></div>
 </div>
 <p>The same executable can also be used to run a job in serial.</p>
+</section>
+</section>
+</section>
 <div class="toctree-wrapper compound">
 </div>
-</div>
-</div>
-</div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {

@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Ansys &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1294,12 +1298,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="ansys">
-<h1>Ansys<a class="headerlink" href="#ansys" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="ansys">
+<h1>Ansys<a class="headerlink" href="#ansys" title="Permalink to this headline">#</a></h1>
 <p>Versions of Ansys Fluent and CFX are installed for Leeds researchers who have access to either their own or a departmental license. This supports the Infiniband interconnect so can be used for jobs of &gt;24 (for ARC3) or &gt;40 (for ARC4) processors in size.</p>
 <p>Information on Ansys can be found on the <a class="reference external" href="http://www.ansys.com/en-GB">Ansys web site</a>.</p>
-<div class="section" id="setting-up-the-license">
-<h2>Setting up the license<a class="headerlink" href="#setting-up-the-license" title="Permalink to this headline">¶</a></h2>
+<section id="setting-up-the-license">
+<h2>Setting up the license<a class="headerlink" href="#setting-up-the-license" title="Permalink to this headline">#</a></h2>
 <p>The license is obtained by setting the <code class="docutils literal notranslate"><span class="pre">ANSYSLMD_LICENSE_FILE</span></code> variable. To set it in bash do:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;port&gt;@&lt;host&gt;
 </pre></div>
@@ -1313,25 +1317,25 @@ title="Print to PDF"
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add ansys/17.1
 </pre></div>
 </div>
-<div class="section" id="running-fluent">
-<h3><a class="reference internal" href="ansys/fluent.html"><span class="doc std std-doc">Running Fluent</span></a><a class="headerlink" href="#running-fluent" title="Permalink to this headline">¶</a></h3>
+<section id="running-fluent">
+<h3><a class="reference internal" href="ansys/fluent.html"><span class="doc std std-doc">Running Fluent</span></a><a class="headerlink" href="#running-fluent" title="Permalink to this headline">#</a></h3>
 <p>Fluent specific information can be found by clicking the link above.</p>
-</div>
-<div class="section" id="running-cfx">
-<h3><a class="reference internal" href="ansys/cfx.html"><span class="doc std std-doc">Running CFX</span></a><a class="headerlink" href="#running-cfx" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="running-cfx">
+<h3><a class="reference internal" href="ansys/cfx.html"><span class="doc std std-doc">Running CFX</span></a><a class="headerlink" href="#running-cfx" title="Permalink to this headline">#</a></h3>
 <p>CFX specific information can be found by clicking the link above.</p>
-</div>
-<div class="section" id="running-chemkin">
-<h3><a class="reference internal" href="ansys/chemkin.html"><span class="doc std std-doc">Running Chemkin</span></a><a class="headerlink" href="#running-chemkin" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="running-chemkin">
+<h3><a class="reference internal" href="ansys/chemkin.html"><span class="doc std std-doc">Running Chemkin</span></a><a class="headerlink" href="#running-chemkin" title="Permalink to this headline">#</a></h3>
 <p>Chemkin specific information can be found by clicking the link above.</p>
-</div>
-<div class="section" id="running-ansys-cli">
-<h3><a class="reference internal" href="ansys/ansyscli.html"><span class="doc std std-doc">Running Ansys CLI</span></a><a class="headerlink" href="#running-ansys-cli" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="running-ansys-cli">
+<h3><a class="reference internal" href="ansys/ansyscli.html"><span class="doc std std-doc">Running Ansys CLI</span></a><a class="headerlink" href="#running-ansys-cli" title="Permalink to this headline">#</a></h3>
 <p>Ansys CLI specific information can be found by clicking the link above.</p>
-</div>
-</div>
-<div class="section" id="additional-step-for-using-ansys-the-first-time">
-<h2>Additional Step for Using Ansys the First Time<a class="headerlink" href="#additional-step-for-using-ansys-the-first-time" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="additional-step-for-using-ansys-the-first-time">
+<h2>Additional Step for Using Ansys the First Time<a class="headerlink" href="#additional-step-for-using-ansys-the-first-time" title="Permalink to this headline">#</a></h2>
 <p>Before running the Ansys module for the first time, there is a per-user setting that chooses whether commercial (default) or academic licenses should be used.</p>
 <p><strong>For research purposes you should normally be using the academic licenses, unless you are untertaking commercially funded research.</strong></p>
 <p><strong>Check with your supervisor if you need clarification on this.</strong></p>
@@ -1359,10 +1363,10 @@ title="Print to PDF"
 <p><img alt="Finally select the academic license option." src="../../_images/ansys_license3.jpg" /></p>
 <p>Select <strong>OK</strong>, then exit the license manager.</p>
 <p>This will configure Ansys (both Fluent and CFX) to use Academic licenses for all future use.</p>
+</section>
 <div class="toctree-wrapper compound">
 </div>
-</div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {

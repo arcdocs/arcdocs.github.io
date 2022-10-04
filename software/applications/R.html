@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>R &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1264,11 +1268,11 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="r">
-<h1>R<a class="headerlink" href="#r" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="r">
+<h1>R<a class="headerlink" href="#r" title="Permalink to this headline">#</a></h1>
 <p>R is a programming language and software environment initially developed for statistical and graphical computing. It has grown in popularity and is used for a diverse range of research problems.</p>
-<div class="section" id="selecting-an-r-version">
-<h2>Selecting an R version<a class="headerlink" href="#selecting-an-r-version" title="Permalink to this headline">¶</a></h2>
+<section id="selecting-an-r-version">
+<h2>Selecting an R version<a class="headerlink" href="#selecting-an-r-version" title="Permalink to this headline">#</a></h2>
 <p>There are multiple versions of R installed on ARC3/4.  You can load the default version of R available on each with the command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add R
 </pre></div>
@@ -1285,9 +1289,9 @@ $ <span class="nb">source</span> activate r4
 </pre></div>
 </div>
 <p>You can then use this version of R as outlined in the rest of this page. For more information on the conda commands used here check the <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html#managing-conda">conda documentation</a>.</p>
-</div>
-<div class="section" id="launching-on-the-front-end">
-<h2>Launching on the front end<a class="headerlink" href="#launching-on-the-front-end" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="launching-on-the-front-end">
+<h2>Launching on the front end<a class="headerlink" href="#launching-on-the-front-end" title="Permalink to this headline">#</a></h2>
 <p>R can be launched by entering its name at the command prompt; i.e.:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ R
 </pre></div>
@@ -1297,9 +1301,9 @@ tests. Exit the R console by typing.</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="nf">q</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="running-through-an-interactive-shell">
-<h2>Running through an interactive shell<a class="headerlink" href="#running-through-an-interactive-shell" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="running-through-an-interactive-shell">
+<h2>Running through an interactive shell<a class="headerlink" href="#running-through-an-interactive-shell" title="Permalink to this headline">#</a></h2>
 <p>The following will launch R interactively via the batch queues.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qrsh -cwd -V-l <span class="nv">h_rt</span><span class="o">=</span>&lt;time&gt;,h_vmem<span class="o">=</span>&lt;mem&gt; R
 </pre></div>
@@ -1310,9 +1314,9 @@ tests. Exit the R console by typing.</p>
 </div>
 <p>This will run R from within the terminal from which it was launched.</p>
 <p>Follow this link for further information on the <a class="reference external" href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/Startup">meaning of R startup flags</a>.</p>
-</div>
-<div class="section" id="batch-execution">
-<h2>Batch Execution<a class="headerlink" href="#batch-execution" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="batch-execution">
+<h2>Batch Execution<a class="headerlink" href="#batch-execution" title="Permalink to this headline">#</a></h2>
 <p>To run R in batch-mode you must first generate a list of commands for R to process in a file, e.g. <code class="docutils literal notranslate"><span class="pre">example.R</span></code>.</p>
 <p>A script must then be created that will request resources from the queuing system and launch the R executable; script <code class="docutils literal notranslate"><span class="pre">runR.sh</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
@@ -1332,9 +1336,9 @@ Rscript example.R
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qsub runR.sh
 </pre></div>
 </div>
-</div>
-<div class="section" id="installing-r-packages">
-<h2>Installing R packages<a class="headerlink" href="#installing-r-packages" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="installing-r-packages">
+<h2>Installing R packages<a class="headerlink" href="#installing-r-packages" title="Permalink to this headline">#</a></h2>
 <p>Given the large number of R packages available and pace of development, it is preferable that users install the packages they need as opposed to using a centrally provided set of packages.</p>
 <p>To install package <code class="docutils literal notranslate"><span class="pre">foo</span></code>, start an R session by entering its name at the command prompt; i.e.:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ R
@@ -1346,8 +1350,8 @@ Rscript example.R
 </div>
 <p>This will install the package and any dependencies that are required. It will do this by creating a local library (in your home directory by default) where it saves the package binaries and archives. The package should then be accessible from subsequent R interactive sessions and batch jobs.</p>
 <p>If you’re using a conda installed version of R, these will install into your conda environment instead.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

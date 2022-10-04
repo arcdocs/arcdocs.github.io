@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>VisIt &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1302,10 +1306,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="visit">
-<h1>VisIt<a class="headerlink" href="#visit" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="visit">
+<h1>VisIt<a class="headerlink" href="#visit" title="Permalink to this headline">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://visit.llnl.gov">VisIt</a> is a data analysis and visualisation
 application, developed to be able to analyse large datasets. We show
 here how to start the program on our facilities; however, please refer
@@ -1325,14 +1329,14 @@ taking advantage of the CPU, memory and storage resources available.
 Although not making use of the acceleration that graphics cards provide,
 it can allow larger datasets that cannot fit onto a graphics card to be
 analysed.</p>
-</div>
-<div class="section" id="running-visit-on-the-arc-systems">
-<h2>Running VisIt on the ARC Systems<a class="headerlink" href="#running-visit-on-the-arc-systems" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="running-visit-on-the-arc-systems">
+<h2>Running VisIt on the ARC Systems<a class="headerlink" href="#running-visit-on-the-arc-systems" title="Permalink to this headline">#</a></h2>
 <p>Please note that these methods depend on your workstation having an X
 server running and for you to have enabled X11 forwarding through your
 SSH client.</p>
-<div class="section" id="on-a-cluster-login-node-quick-start">
-<h3>On a cluster login node (quick start)<a class="headerlink" href="#on-a-cluster-login-node-quick-start" title="Permalink to this headline">¶</a></h3>
+<section id="on-a-cluster-login-node-quick-start">
+<h3>On a cluster login node (quick start)<a class="headerlink" href="#on-a-cluster-login-node-quick-start" title="Permalink to this headline">#</a></h3>
 <p>Recommended for very short or undemanding pieces of work. Login to the
 cluster and execute:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ module load visit
@@ -1341,9 +1345,9 @@ $ visit
 </div>
 <p>Please note that, as they are shared between all users, it is important
 not to tackle large pieces of work on the login nodes.</p>
-</div>
-<div class="section" id="on-the-cluster-compute-nodes">
-<h3>On the cluster compute nodes<a class="headerlink" href="#on-the-cluster-compute-nodes" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="on-the-cluster-compute-nodes">
+<h3>On the cluster compute nodes<a class="headerlink" href="#on-the-cluster-compute-nodes" title="Permalink to this headline">#</a></h3>
 <p>Recommended for larger pieces of work:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ module load visit
 $ qrsh -cwd -V -l h_rt=&lt;hh:mm:ss&gt; -l h_vmem=&lt;vmem&gt; visit
@@ -1358,10 +1362,10 @@ $ qrsh -cwd -V -l h_rt=&lt;hh:mm:ss&gt; -l h_vmem=&lt;vmem&gt; -pe ib &lt;num&gt
 will be run for, <vmem> is the amount of memory required per core (e.g.
 “1G” for 1 GB RAM), and <num> is the number of cores required (please note
 it appears twice in the command).</p>
-</div>
-</div>
-<div class="section" id="running-visit-on-your-workstation-offload-storage-and-processing-to-the-arc-systems">
-<h2>Running VisIT on your workstation, offload storage and processing to the ARC systems<a class="headerlink" href="#running-visit-on-your-workstation-offload-storage-and-processing-to-the-arc-systems" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="running-visit-on-your-workstation-offload-storage-and-processing-to-the-arc-systems">
+<h2>Running VisIT on your workstation, offload storage and processing to the ARC systems<a class="headerlink" href="#running-visit-on-your-workstation-offload-storage-and-processing-to-the-arc-systems" title="Permalink to this headline">#</a></h2>
 <p>Recommended where the graphical interface (menu items, etc.) feels
 sluggish, or where the best possible performance is required.</p>
 <p>Select a version number from the list of installed versions of visit,
@@ -1374,8 +1378,8 @@ is provided by executing the following command on the cluster:</p>
 <p>If installing on a Windows platform, you will be asked to select the
 desired network configuration and given a choice of a number of
 institutions. Please select <code class="docutils literal notranslate"><span class="pre">None</span></code> .</p>
-<div class="section" id="configure-for-remote-execution">
-<h3>Configure for remote execution<a class="headerlink" href="#configure-for-remote-execution" title="Permalink to this headline">¶</a></h3>
+<section id="configure-for-remote-execution">
+<h3>Configure for remote execution<a class="headerlink" href="#configure-for-remote-execution" title="Permalink to this headline">#</a></h3>
 <p>Once installed, start the program and then exit it: this will create a
 number of directories.</p>
 <p>Then, download the files corresponding to the cluster you wish to use:</p>
@@ -1404,9 +1408,9 @@ see it, click on the <code class="docutils literal notranslate"><span class="pre
 <li><p>Close the window with the <code class="docutils literal notranslate"><span class="pre">Dismiss</span></code> button</p></li>
 <li><p>Save settings with the <code class="docutils literal notranslate"><span class="pre">Options-&gt;Save</span> <span class="pre">Settings</span></code> menu item</p></li>
 </ol>
-</div>
-<div class="section" id="launch-remote-execution">
-<h3>Launch remote execution<a class="headerlink" href="#launch-remote-execution" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="launch-remote-execution">
+<h3>Launch remote execution<a class="headerlink" href="#launch-remote-execution" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>With VisIt running on your workstation, select menu item <code class="docutils literal notranslate"><span class="pre">File-&gt;Open</span> <span class="pre">file...</span></code> to open the <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">open</span></code> window.</p></li>
 <li><p>There will be a drop-down text box marked <code class="docutils literal notranslate"><span class="pre">Host</span></code> . Click on its arrow, which should show a
@@ -1432,10 +1436,10 @@ RAM per requested process).</p></li>
 started running, use VisIt normally.</p>
 <p>To double-check what resources are in use, select the menu item
 <code class="docutils literal notranslate"><span class="pre">File-&gt;Compute</span> <span class="pre">Engines...</span></code></p>
-</div>
-</div>
-<div class="section" id="developing-plugins-with-visit">
-<h2>Developing plugins with VisIt<a class="headerlink" href="#developing-plugins-with-visit" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="developing-plugins-with-visit">
+<h2>Developing plugins with VisIt<a class="headerlink" href="#developing-plugins-with-visit" title="Permalink to this headline">#</a></h2>
 <p>When developing plugins to extend the software it is probably useful to
 use the same development environment used to build VisIt, in order to
 minimise compatibility problems between different C++ compilers, etc. If
@@ -1449,8 +1453,8 @@ $ echo $VISIT_BUILD_MODULES
 gnu/native openmpi mkl qt
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

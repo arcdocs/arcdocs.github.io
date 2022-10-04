@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Interactive jobs &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1244,16 +1248,16 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="interactive-jobs">
-<h1>Interactive jobs<a class="headerlink" href="#interactive-jobs" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="interactive-jobs">
+<h1>Interactive jobs<a class="headerlink" href="#interactive-jobs" title="Permalink to this headline">#</a></h1>
 <p>It is also possible to runs jobs in interactive mode on both ARC3 and ARC4. This means rather than queueing for your job to run on the batch system you request resource for an interactive sessions via the shell. When the resource becomes available an interactive shell session is created in which you can run code directly on compute resource.</p>
 <p>This process still involves requesting resource and queueing for that resource under the <a class="reference external" href="./batchjob#fair-share-policy">fair-share policy</a> so be prepared to wait if you request a significant amount of resource.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>We strongly discourage users from using interactive sessions for interactive code development using platforms like jupyter, spyder or Rstudio. Code development should be done before deploying code on the HPC.</p>
 </div>
-<div class="section" id="interactive-jobs-on-compute-nodes">
-<h2>Interactive jobs on compute nodes<a class="headerlink" href="#interactive-jobs-on-compute-nodes" title="Permalink to this headline">¶</a></h2>
+<section id="interactive-jobs-on-compute-nodes">
+<h2>Interactive jobs on compute nodes<a class="headerlink" href="#interactive-jobs-on-compute-nodes" title="Permalink to this headline">#</a></h2>
 <p>You can request an interactive session on a standard compute node by using the command <code class="docutils literal notranslate"><span class="pre">qrsh</span></code>. As with submitting a batch job you will also need to pass it options to specify how much resource you wish to request.</p>
 <p>For instance to request an interactive session for 15 minutes with access to 2 cores each with 4 GB of memory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qrsh -l <span class="nv">h_rt</span><span class="o">=</span><span class="m">00</span>:15:00,h_vmem<span class="o">=</span>4G -pe smp <span class="m">2</span>
@@ -1270,24 +1274,24 @@ title="Print to PDF"
 <p class="admonition-title">Note</p>
 <p>If you have made changed to your environment on the login nodes these will <strong>not</strong> be preserved when connecting to an interactive session and you will be required to rerun <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span></code> commands. Connecting to an interactive session does create a new login shell which means any commands in your <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> are executed when you connect.</p>
 </div>
-</div>
-<div class="section" id="interactive-mpi-jobs">
-<h2>Interactive MPI jobs<a class="headerlink" href="#interactive-mpi-jobs" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="interactive-mpi-jobs">
+<h2>Interactive MPI jobs<a class="headerlink" href="#interactive-mpi-jobs" title="Permalink to this headline">#</a></h2>
 <p>For development and testing purposes, it might be convenient to run MPI jobs in interactive mode and have them launch fairly quickly. In this case it would be advisable to use the <code class="docutils literal notranslate"><span class="pre">-l</span> <span class="pre">placement=scatter</span></code> option.</p>
 <p>This will likely get the job to launch fairly quickly at the expense of performance. For instance to run <code class="docutils literal notranslate"><span class="pre">mympiprogram</span></code> for 30 minutes on 4 cores with 1GB memory each from the currrent directory and using the current environment, use:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qrsh -l <span class="nv">h_rt</span><span class="o">=</span><span class="m">0</span>:30:0,h_vmem<span class="o">=</span>1G,placement<span class="o">=</span>scatter -pe ib <span class="m">4</span> mpirun ./mympiprogram
 </pre></div>
 </div>
-</div>
-<div class="section" id="interactive-jobs-on-gpu-nodes">
-<h2>Interactive jobs on GPU nodes<a class="headerlink" href="#interactive-jobs-on-gpu-nodes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="interactive-jobs-on-gpu-nodes">
+<h2>Interactive jobs on GPU nodes<a class="headerlink" href="#interactive-jobs-on-gpu-nodes" title="Permalink to this headline">#</a></h2>
 <p>If you want to use a GPU interactively instead of submitting a job to the GPU nodes you need to request a coprocessor and specify your shell as part of your <code class="docutils literal notranslate"><span class="pre">qrsh</span></code>, ie:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qrsh -l <span class="nv">h_rt</span><span class="o">=</span><span class="m">2</span>:0:0,coproc_k80<span class="o">=</span><span class="m">1</span> -pty y bash
 </pre></div>
 </div>
 <p>This will give you a bash session on a k80 GPU node for two hours, using one half of the resources on that GPU node.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

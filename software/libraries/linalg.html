@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Numerical Libraries &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1262,11 +1266,11 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="numerical-libraries">
-<h1>Numerical Libraries<a class="headerlink" href="#numerical-libraries" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="numerical-libraries">
+<h1>Numerical Libraries<a class="headerlink" href="#numerical-libraries" title="Permalink to this headline">#</a></h1>
 <p>There are several versions of BLAS (Basic Linear Algebra Subprograms) and LAPACK (Linear Algebra PACKage) numerical libraries installed on the system. There are a number of versions available on ARC3/4, Intel’s Maths Kernel Library (MKL) library, Automatically Tuned Linear Algebra Software (ATLAS) and the original Netlib. All these libraries, aside from Netlib, are optimised to run on the available hardware. Netlib reference versions are only installed for completeness and we advise that you use one of the other implementations wherever possible.</p>
-<div class="section" id="setting-the-module-environment">
-<h2>Setting the module environment<a class="headerlink" href="#setting-the-module-environment" title="Permalink to this headline">¶</a></h2>
+<section id="setting-the-module-environment">
+<h2>Setting the module environment<a class="headerlink" href="#setting-the-module-environment" title="Permalink to this headline">#</a></h2>
 <p>All available modules can be listed via the <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">avail</span></code> command. Numerical libraries will be listed under the <code class="docutils literal notranslate"><span class="pre">/apps/Modules/libraries</span></code> heading.
 To load a specific library, e.g. MKL:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module load mkl
@@ -1277,11 +1281,11 @@ To load a specific library, e.g. MKL:</p>
 </pre></div>
 </div>
 <p>This will load the appropriate libraries and paths for your chosen compiler and bit environments.</p>
-<div class="section" id="compiler-flags">
-<h3>Compiler Flags<a class="headerlink" href="#compiler-flags" title="Permalink to this headline">¶</a></h3>
+<section id="compiler-flags">
+<h3>Compiler Flags<a class="headerlink" href="#compiler-flags" title="Permalink to this headline">#</a></h3>
 <p>To simplify linking to the various versions of the numerical libraries, loading the modules as described above will also set up customised environment variables, <code class="docutils literal notranslate"><span class="pre">$ARC_LINALG_FFLAGS</span></code> for use with Fortran and <code class="docutils literal notranslate"><span class="pre">$ARC_LINALG_CFLAGS</span></code> for C. For the multi-threaded versions of the libraries use <code class="docutils literal notranslate"><span class="pre">$ARC_LINALG_MT_FFLAGS</span></code> for Fortran and <code class="docutils literal notranslate"><span class="pre">$ARC_LINALG_MT_CFLAGS</span></code> for C.</p>
-<div class="section" id="fortran">
-<h4>Fortran<a class="headerlink" href="#fortran" title="Permalink to this headline">¶</a></h4>
+<section id="fortran">
+<h4>Fortran<a class="headerlink" href="#fortran" title="Permalink to this headline">#</a></h4>
 <p>For instance, to compile a simple Fortran program, named <code class="docutils literal notranslate"><span class="pre">matmul.f90</span></code> with the MKL library, first load the module:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module load mkl
 </pre></div>
@@ -1299,9 +1303,9 @@ $ module switch mkl atlas
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ gfortran -o matmul matmul.f90 $ARC_LINALG_FFLAGS
 </pre></div>
 </div>
-</div>
-<div class="section" id="c">
-<h4>C<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="c">
+<h4>C<a class="headerlink" href="#c" title="Permalink to this headline">#</a></h4>
 <p>To compile a simple C program, named <code class="docutils literal notranslate"><span class="pre">matmul.c</span></code> with the MKL library, first load the module</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module load mkl
 </pre></div>
@@ -1319,10 +1323,10 @@ $ module switch mkl atlas
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ gcc -o matmul matmul.f90 $ARC_LINALG_CFLAGS
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

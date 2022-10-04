@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>IDL &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1244,11 +1248,11 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="idl">
-<h1>IDL<a class="headerlink" href="#idl" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="idl">
+<h1>IDL<a class="headerlink" href="#idl" title="Permalink to this headline">#</a></h1>
 <p>IDL is a data analysis programming language. Only authorised users can use IDL. You can view more details about IDL at the <a class="reference external" href="http://www.exelisvis.co.uk/ProductsServices/IDL.aspx">vendor website</a></p>
-<div class="section" id="getting-started">
-<h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<section id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">#</a></h2>
 <p>In order to use IDL on the ARC clusters, you will need to contact your supervisor for licence server information. This will normally be provided as a <code class="docutils literal notranslate"><span class="pre">port</span></code> and a <code class="docutils literal notranslate"><span class="pre">machine</span> <span class="pre">name</span></code> in the format <code class="docutils literal notranslate"><span class="pre">port&#64;machine</span></code>.</p>
 <p>You will need to set the <code class="docutils literal notranslate"><span class="pre">LM_LICENSE_FILE</span></code> environment variable before you use IDL:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">LM_LICENSE_FILE</span><span class="o">=</span>port@machine:<span class="nv">$LM_LICENSE_FILE</span>
@@ -1259,9 +1263,9 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>and then run the application by entering the command <code class="docutils literal notranslate"><span class="pre">idl</span></code>.</p>
-</div>
-<div class="section" id="running-idl-as-a-batch-job">
-<h2>Running IDL as a batch job<a class="headerlink" href="#running-idl-as-a-batch-job" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="running-idl-as-a-batch-job">
+<h2>Running IDL as a batch job<a class="headerlink" href="#running-idl-as-a-batch-job" title="Permalink to this headline">#</a></h2>
 <p>An example job submission script that runs IDL is shown below:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -V -cwd</span>
 <span class="c1">#$ -l h_rt=6:00:00</span>
@@ -1281,9 +1285,9 @@ idl
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qsub idl_script.sh
 </pre></div>
 </div>
-</div>
-<div class="section" id="running-idl-as-an-interactive-job-on-the-compute-nodes">
-<h2>Running IDL as an interactive job on the compute nodes<a class="headerlink" href="#running-idl-as-an-interactive-job-on-the-compute-nodes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="running-idl-as-an-interactive-job-on-the-compute-nodes">
+<h2>Running IDL as an interactive job on the compute nodes<a class="headerlink" href="#running-idl-as-an-interactive-job-on-the-compute-nodes" title="Permalink to this headline">#</a></h2>
 <p>IDL can also be launched as an interactive job on a compute node through <code class="docutils literal notranslate"><span class="pre">qrsh</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">LM_LICENSE_FILE</span><span class="o">=</span>port@machine:<span class="nv">$LM_LICENSE_FILE</span>
 module load idl
@@ -1297,8 +1301,8 @@ qrsh -cwd -V -l <span class="nv">h_rt</span><span class="o">=</span><span class=
 You may find you have to submit the request a few times until it is successful.</p>
 </div>
 <p>You can read more about interactive sessions on HPC in the <a class="reference internal" href="../../usage/interactive.html"><span class="doc std std-doc">Useage section</span></a>.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

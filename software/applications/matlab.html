@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>MATLAB &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1390,26 +1394,26 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="matlab">
-<h1>MATLAB<a class="headerlink" href="#matlab" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="matlab">
+<h1>MATLAB<a class="headerlink" href="#matlab" title="Permalink to this headline">#</a></h1>
 <p>Matlab is installed on the HPC clusters and is licensed for academic use only.</p>
-<div class="section" id="setting-up-the-environment">
-<h2>Setting up the environment<a class="headerlink" href="#setting-up-the-environment" title="Permalink to this headline">¶</a></h2>
+<section id="setting-up-the-environment">
+<h2>Setting up the environment<a class="headerlink" href="#setting-up-the-environment" title="Permalink to this headline">#</a></h2>
 <p>All required environment variables can be set by loading the Matlab module, to do this type the command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add matlab
 </pre></div>
 </div>
 <p>Matlab is now centrally licenced and managed so there is no need to set a licence server before using it.</p>
-</div>
-<div class="section" id="running-on-the-login-nodes">
-<h2>Running on the login nodes<a class="headerlink" href="#running-on-the-login-nodes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="running-on-the-login-nodes">
+<h2>Running on the login nodes<a class="headerlink" href="#running-on-the-login-nodes" title="Permalink to this headline">#</a></h2>
 <p>Matlab can be launched by entering the <code class="docutils literal notranslate"><span class="pre">matlab</span></code> command in the terminal. This will start a matlab session either in the terminal or in a new window (if you have connected with <a class="reference external" href="../../getting_started/logon.html#graphics-forwarding-x11">X-forwarding</a>). Please note that this method should not be used for long computational use.</p>
-</div>
-<div class="section" id="running-through-the-batch-scheduler">
-<h2>Running through the batch scheduler<a class="headerlink" href="#running-through-the-batch-scheduler" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="running-through-the-batch-scheduler">
+<h2>Running through the batch scheduler<a class="headerlink" href="#running-through-the-batch-scheduler" title="Permalink to this headline">#</a></h2>
 <p>The batch scheduler allows both interactive and batch jobs to be submitted during which users will have exclusive access to the resources they request.</p>
-<div class="section" id="running-through-an-interactive-shell">
-<h3>Running through an interactive shell<a class="headerlink" href="#running-through-an-interactive-shell" title="Permalink to this headline">¶</a></h3>
+<section id="running-through-an-interactive-shell">
+<h3>Running through an interactive shell<a class="headerlink" href="#running-through-an-interactive-shell" title="Permalink to this headline">#</a></h3>
 <p>The following will launch Matlab interactively, displaying the full GUI:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qrsh -V -l <span class="nv">h_rt</span><span class="o">=</span>hh:mm:ss matlab -desktop -singleCompThread
 </pre></div>
@@ -1425,9 +1429,9 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>Where, <code class="docutils literal notranslate"><span class="pre">hh:mm:ss</span></code> is the length of time the interactive session will exist for.</p>
-</div>
-<div class="section" id="batch-execution">
-<h3>Batch Execution<a class="headerlink" href="#batch-execution" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="batch-execution">
+<h3>Batch Execution<a class="headerlink" href="#batch-execution" title="Permalink to this headline">#</a></h3>
 <p>To run matlab in batch-mode you must first generate a list of commands for matlab to process in a <code class="docutils literal notranslate"><span class="pre">.m</span></code> file.</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% MATLAB M-file example to approximate a sawtooth</span><span class="w"></span>
 <span class="c">% with a truncated Fourier expansion.</span><span class="w"></span>
@@ -1466,10 +1470,10 @@ matlab -nodisplay -batch cosplot
 </pre></div>
 </div>
 <p>The output file <code class="docutils literal notranslate"><span class="pre">matlab_test_plot.ps</span></code> can be viewed with Ghostscript using the command <code class="docutils literal notranslate"><span class="pre">gs</span> <span class="pre">matlab_test_plot.ps</span></code>.</p>
-</div>
-</div>
-<div class="section" id="parallel-matlab-jobs">
-<h2>Parallel Matlab jobs<a class="headerlink" href="#parallel-matlab-jobs" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="parallel-matlab-jobs">
+<h2>Parallel Matlab jobs<a class="headerlink" href="#parallel-matlab-jobs" title="Permalink to this headline">#</a></h2>
 <p>Recent versions of Matlab support three methods of making use of multiple CPU cores:</p>
 <ol class="simple">
 <li><p>Multi-threaded support in various Matlab routines and toolboxes</p></li>
@@ -1483,20 +1487,20 @@ matlab -nodisplay -batch cosplot
 </pre></div>
 </div>
 </div>
-<div class="section" id="multi-threaded-support">
-<h3>Multi-threaded support<a class="headerlink" href="#multi-threaded-support" title="Permalink to this headline">¶</a></h3>
+<section id="multi-threaded-support">
+<h3>Multi-threaded support<a class="headerlink" href="#multi-threaded-support" title="Permalink to this headline">#</a></h3>
 <p>This is the simplest method of allowing Matlab to use more than one CPU core. Many functions and toolboxes, for example <code class="docutils literal notranslate"><span class="pre">fft()</span></code> and various linear algebra routines, automatically make use of multiple cores where available.</p>
 <p>To do this, we would recommend adding the flag <code class="docutils literal notranslate"><span class="pre">-l</span> <span class="pre">nodes=1,ppn=1</span></code> to your qsub command and job scripts. This will ask for an entire compute node. Note that this will <strong>NOT</strong> speed up Matlab while it is not using functions that are able to take advantage of multiple cores.</p>
 <p>Please see the Matlab product documentation for details on what functions are multithreaded.</p>
-</div>
-<div class="section" id="multiple-worker-support-on-a-single-host">
-<h3>Multiple “worker” support (on a single host)<a class="headerlink" href="#multiple-worker-support-on-a-single-host" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="multiple-worker-support-on-a-single-host">
+<h3>Multiple “worker” support (on a single host)<a class="headerlink" href="#multiple-worker-support-on-a-single-host" title="Permalink to this headline">#</a></h3>
 <p>Matlab can launch multiple copies of itself, called workers, that are able to communicate and share work between them. This functionality is called the Parallel Toolbox and you may need to adjust code to work properly in this fashion. For example, <code class="docutils literal notranslate"><span class="pre">for</span></code> loops that can be run in parallel may be distributed across all workers by use of the <code class="docutils literal notranslate"><span class="pre">parfor</span></code> Matlab command.</p>
 <p>To do this, launch a parallel job, for example by adding the <code class="docutils literal notranslate"><span class="pre">-pe</span> <span class="pre">smp</span> <span class="pre">8</span></code> flag to the qrsh or qsub commands from above. This requests 8 cores on a single compute node and stores the number of cores granted in the <code class="docutils literal notranslate"><span class="pre">NSLOTS</span></code> environment variable. Once it has started, execute the Matlab command <code class="docutils literal notranslate"><span class="pre">parpool('local',</span> <span class="pre">8)</span></code> or, more generally, <code class="docutils literal notranslate"><span class="pre">parpool('local',</span> <span class="pre">str2num(getenv('NSLOTS')))</span></code>, which in this case would launch 8 workers.</p>
 <p>According to Matlab’s documentation, there may be a limit on the number of workers that can be requested in this way; however, this has been tested on ARC3 on up to 24 cores.</p>
-</div>
-<div class="section" id="multiple-worker-support-on-multiple-hosts">
-<h3>Multiple “worker” support (on multiple hosts)<a class="headerlink" href="#multiple-worker-support-on-multiple-hosts" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="multiple-worker-support-on-multiple-hosts">
+<h3>Multiple “worker” support (on multiple hosts)<a class="headerlink" href="#multiple-worker-support-on-multiple-hosts" title="Permalink to this headline">#</a></h3>
 <p>The multiple workers in the Parallel Toolbox can be spread across multiple hosts in order to make use of a greater number of cores and/or memory: Matlab calls this the Distributed Computing Server. Although this is very similar technology, Mathworks license it differently: at the time of writing we can only support a maximum of 32 distributed workers - please get in touch with the reserach computing team via our <a class="reference external" href="https://it.leeds.ac.uk/it?id=sc_cat_item&amp;sys_id=7587b2530f675f00a82247ece1050eda">contact form</a> if you have any queries about this.</p>
 <p>The same code that can make use of the Parallel Toolbox can also make use of Distributed Computing Server; however, there are currently a few setup steps required and the method of launching it is different.</p>
 <div class="admonition note">
@@ -1537,8 +1541,8 @@ on ARC)</em></p>
 <li><p>Select the value for <em>h_rt</em>, <em>h_vmem</em> or <em>qsub_args</em> and modify accordingly.</p></li>
 <li><p>Click on <em>Done</em> button (bottom right)</p></li>
 </ol>
-<div class="section" id="hybrid-multiple-workers-and-multithreading-parallelisation">
-<h4>Hybrid multiple workers and multithreading parallelisation<a class="headerlink" href="#hybrid-multiple-workers-and-multithreading-parallelisation" title="Permalink to this headline">¶</a></h4>
+<section id="hybrid-multiple-workers-and-multithreading-parallelisation">
+<h4>Hybrid multiple workers and multithreading parallelisation<a class="headerlink" href="#hybrid-multiple-workers-and-multithreading-parallelisation" title="Permalink to this headline">#</a></h4>
 <p>It may be useful to try combining both Matlab’s multithreading and Distributed Computing Server features (for example, your Matlab code spends all its time in a parfor loop and each trip through that loop spends all of its time in multithreaded routines like fft()): if appropriate, this would make the best use of our limited Distributed Computing Server licenses.</p>
 <p>To do this:</p>
 <ul class="simple">
@@ -1546,18 +1550,18 @@ on ARC)</em></p>
 <li><p>Repeat steps 1-4 again, but then change the value for <em>NumThreads</em> (instead of modifying the <em>AdditionalProperties</em> box). This will tell Matlab to multithread and it will also cause <em>NumThread</em> cores to be allocated to each worker.</p></li>
 <li><p>Since entire compute nodes are allocated, please select ‘sensible’ values for the number of workers and the number of cores per worker to make good use of the allocated resources. For example, on ARC3’s 24 core compute nodes, the number of workers in the pool multiplied by <em>NumThreads</em> should be a multiple of 24.</p></li>
 </ul>
-</div>
-<div class="section" id="troubleshooting-distributed-computing-server">
-<h4>Troubleshooting Distributed Computing Server:<a class="headerlink" href="#troubleshooting-distributed-computing-server" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="troubleshooting-distributed-computing-server">
+<h4>Troubleshooting Distributed Computing Server:<a class="headerlink" href="#troubleshooting-distributed-computing-server" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p><em>No matter how many workers I ask for, parpool reports there is only 1 worker!</em> MPI has probably not been configured correctly and Matlab is running multiple workers that cannot communicate with each other. Ensure you have copied mpiLibConf.m (see above) and restart Matlab.</p></li>
 <li><p><em>When the pool is shutdown, the job goes into an error state (“Eqw”).</em> Matlab often deletes the files associated with the jobs it submits before the jobs themselves are deleted. If this happens, please qdel the job manually.</p></li>
 </ul>
-</div>
-</div>
-</div>
-<div class="section" id="gpu-matlab-jobs">
-<h2>GPU Matlab jobs<a class="headerlink" href="#gpu-matlab-jobs" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="gpu-matlab-jobs">
+<h2>GPU Matlab jobs<a class="headerlink" href="#gpu-matlab-jobs" title="Permalink to this headline">#</a></h2>
 <p>Matlab can take advantage of GPU hardware. To do this, first launch Matlab inside a job where GPU resources have been requested (see
 <a class="reference internal" href="../../usage/gpgpu.html"><span class="doc std std-doc">here</span></a>). Within Matlab, the <code class="docutils literal notranslate"><span class="pre">gpuDevices</span></code> command will provide details of the available GPU(s):</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">gpuDevice</span><span class="w"></span>
@@ -1591,16 +1595,16 @@ on ARC)</em></p>
 </div>
 <p>Please see the main Matlab product documentation for writing code to use GPUs.</p>
 <p>Multiple GPUs can also be taken advantage of; however, this must be in conjunction with the Parallel Toolbox feature (see the above section on parallel jobs and the Matlab website) as a single worker can only use one GPU at a time.</p>
-</div>
-<div class="section" id="compiling-matlab">
-<h2>Compiling Matlab<a class="headerlink" href="#compiling-matlab" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="compiling-matlab">
+<h2>Compiling Matlab<a class="headerlink" href="#compiling-matlab" title="Permalink to this headline">#</a></h2>
 <p>To run a large number of matlab jobs simultaneously it may be necessary to use the matlab compiler to create a stand-alone application. This will also avoid using too many license tokens. For a full description of the compiler please look at the in-program help or the <a class="reference external" href="http://www.mathworks.co.uk/help/toolbox/compiler/index.html">Matlab compiler user guide</a>.</p>
-<div class="section" id="code-preparation">
-<h3>Code preparation<a class="headerlink" href="#code-preparation" title="Permalink to this headline">¶</a></h3>
+<section id="code-preparation">
+<h3>Code preparation<a class="headerlink" href="#code-preparation" title="Permalink to this headline">#</a></h3>
 <p><em><strong>Script</strong></em> m-files cannot be compiled directly, first they have to be converted to <em><strong>function</strong></em> m-files. In general, this is a case of wrapping the main section of code within a function. For more details look at <a class="reference external" href="http://www-rohan.sdsu.edu/doc/matlab/toolbox/compiler/ch03get9.html">converting script m-files</a> section in the user guide.</p>
-</div>
-<div class="section" id="compiling">
-<h3>Compiling<a class="headerlink" href="#compiling" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="compiling">
+<h3>Compiling<a class="headerlink" href="#compiling" title="Permalink to this headline">#</a></h3>
 <p>The Matlab compiler makes use of the GNU C compilers and as the Intel compiler is loaded by default you shouldswitch to the correct version of GNU compiler via the command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module switch intel gnu
 </pre></div>
@@ -1615,9 +1619,9 @@ on ARC)</em></p>
 <li><p><code class="docutils literal notranslate"><span class="pre">your_program</span></code>, which is the compiled code.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">runyourprogram.sh</span></code>, which is the wrapper to run your compiled code.</p></li>
 </ul>
-</div>
-<div class="section" id="running-the-application">
-<h3>Running the application<a class="headerlink" href="#running-the-application" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="running-the-application">
+<h3>Running the application<a class="headerlink" href="#running-the-application" title="Permalink to this headline">#</a></h3>
 <p>Once the matlab module is loaded, you can run your stand-alone application via the wrapper and specifing the correct path to various Matlab components. This can easily be done via the environment variable <code class="docutils literal notranslate"><span class="pre">$MATLAB_HOME</span></code>. An example job script for submission to the batch queue would look like:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Export current environment  </span>
 <span class="c1">#$ -V</span>
@@ -1629,9 +1633,9 @@ module add matlab
 ./run_your_program.sh <span class="nv">$MATLAB_HOME</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

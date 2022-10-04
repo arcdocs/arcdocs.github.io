@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Batch jobs &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1326,11 +1330,11 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="batch-jobs">
-<h1>Batch jobs<a class="headerlink" href="#batch-jobs" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="batch-jobs">
+<h1>Batch jobs<a class="headerlink" href="#batch-jobs" title="Permalink to this headline">#</a></h1>
 <p>The computational power of the HPC facilities at Leeds is organised through a batch job scheduling system. This involves users submitting a script that outlines the resources required, and the program to be run, to the scheduler which allocates that job a position in the queue of jobs. The scheduler software that runs on both ARC3 and ARC4 is <a class="reference external" href="https://arc.liv.ac.uk/trac/SGE">Son of Grid Engine</a>, plus locally developed and implemented patches.</p>
-<div class="section" id="job-scripts">
-<h2>Job scripts<a class="headerlink" href="#job-scripts" title="Permalink to this headline">¶</a></h2>
+<section id="job-scripts">
+<h2>Job scripts<a class="headerlink" href="#job-scripts" title="Permalink to this headline">#</a></h2>
 <p>The scripts submitted are referred to as <strong>job scripts</strong> or <strong>job submission scripts</strong>. These are shell scripts (files ending <code class="docutils literal notranslate"><span class="pre">.sh</span></code>) and at a bare minimum specify:</p>
 <ul class="simple">
 <li><p>how long the job needs to run for</p></li>
@@ -1343,8 +1347,8 @@ title="Print to PDF"
 <li><p><a class="reference external" href="#monitoring-jobs"><code class="docutils literal notranslate"><span class="pre">qstat</span></code></a> - checks the status of submitted jobs</p></li>
 <li><p><a class="reference external" href="#deleting-jobs"><code class="docutils literal notranslate"><span class="pre">qdel</span></code></a> - deletes a specified job from the queue</p></li>
 </ul>
-<div class="section" id="writing-jobs-scripts-on-hpc">
-<h3>Writing jobs scripts on HPC<a class="headerlink" href="#writing-jobs-scripts-on-hpc" title="Permalink to this headline">¶</a></h3>
+<section id="writing-jobs-scripts-on-hpc">
+<h3>Writing jobs scripts on HPC<a class="headerlink" href="#writing-jobs-scripts-on-hpc" title="Permalink to this headline">#</a></h3>
 <p>We encourage users to write their job submission scripts using text editor tools available on ARC3 and ARC4 such as:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">nano</span></code> (recommended for beginners)</p></li>
@@ -1359,9 +1363,9 @@ title="Print to PDF"
 <code class="docutils literal notranslate"><span class="pre">/bin/bash^M:</span> <span class="pre">bad</span> <span class="pre">interpreter:</span> <span class="pre">No</span> <span class="pre">such</span> <span class="pre">file</span> <span class="pre">or</span> <span class="pre">directory</span></code> <br>
 You can use the command <code class="docutils literal notranslate"><span class="pre">dos2unix</span> <span class="pre">job_script.sh</span></code> on HPC to convert your script to the correct line endings.</p>
 </div>
-</div>
-<div class="section" id="the-hello-world-job-script">
-<h3>The Hello world job script<a class="headerlink" href="#the-hello-world-job-script" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="the-hello-world-job-script">
+<h3>The Hello world job script<a class="headerlink" href="#the-hello-world-job-script" title="Permalink to this headline">#</a></h3>
 <p>In this basic hello world job script example we’ve got a job script called <code class="docutils literal notranslate"><span class="pre">job_script1.sh</span></code> that requests a single core, 1GB of RAM, and 15 minutes of run time in order to run some R code.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1">#R single core submission script</span>
 
@@ -1393,9 +1397,9 @@ Your job <span class="m">42</span> <span class="o">(</span><span class="s2">&quo
 <p><strong>Array jobs</strong> <br>
 If you intend to runs multiple similar jobs with the same resource specification, we recommend using the <a class="reference internal" href="taskarrays.html"><span class="doc std std-doc">task array system</span></a>.</p>
 </div>
-</div>
-<div class="section" id="resource-specification">
-<h3>Resource specification<a class="headerlink" href="#resource-specification" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="resource-specification">
+<h3>Resource specification<a class="headerlink" href="#resource-specification" title="Permalink to this headline">#</a></h3>
 <p>The job script specified above includes a number of lines that request some amount of compute resource for our job. This is defined by the syntax <code class="docutils literal notranslate"><span class="pre">#$</span> <span class="pre">&lt;option&gt;</span></code>. These lines are commented out of the shell script but are read by the scheduler to determine how much compute resource is required and thus how to fit the job into the queue.</p>
 <p>The first things we specify in the example script above were:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -V -cwd</span>
@@ -1423,8 +1427,8 @@ If you intend to runs multiple similar jobs with the same resource specification
 </pre></div>
 </div>
 <p>The option <code class="docutils literal notranslate"><span class="pre">-m</span></code> will specify that we wish to receive an email about the job, in this case <code class="docutils literal notranslate"><span class="pre">be</span></code> at the start and the end of the job. This will automatically be sent to your University of Leeds email address.</p>
-<div class="section" id="list-of-sge-options">
-<h4>List of SGE options<a class="headerlink" href="#list-of-sge-options" title="Permalink to this headline">¶</a></h4>
+<section id="list-of-sge-options">
+<h4>List of SGE options<a class="headerlink" href="#list-of-sge-options" title="Permalink to this headline">#</a></h4>
 <table class="colwidths-given table">
 <colgroup>
 <col style="width: 20%" />
@@ -1520,10 +1524,10 @@ If you intend to runs multiple similar jobs with the same resource specification
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="section" id="monitoring-jobs">
-<h3>Monitoring jobs<a class="headerlink" href="#monitoring-jobs" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="monitoring-jobs">
+<h3>Monitoring jobs<a class="headerlink" href="#monitoring-jobs" title="Permalink to this headline">#</a></h3>
 <p>Once you’ve submitted a job you can monitor its progress in the queue using the command <code class="docutils literal notranslate"><span class="pre">qstat</span> <span class="pre">JOBID</span></code> where <code class="docutils literal notranslate"><span class="pre">JOBID</span></code> is the unique numeric ID of your submitted job.</p>
 <p>In the example below we’ve just submitted a job and want to check its status in the queue.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qstat <span class="m">54</span>
@@ -1556,8 +1560,8 @@ $ qstat -u <span class="s1">&#39;*&#39;</span>
 <span class="c1"># will return the entire queue</span>
 </pre></div>
 </div>
-<div class="section" id="deleting-jobs">
-<h4>Deleting jobs<a class="headerlink" href="#deleting-jobs" title="Permalink to this headline">¶</a></h4>
+<section id="deleting-jobs">
+<h4>Deleting jobs<a class="headerlink" href="#deleting-jobs" title="Permalink to this headline">#</a></h4>
 <p>Sometimes a situation might arise where you need to delete one of your submitted jobs from the queue. You can do this with the straightforward command <code class="docutils literal notranslate"><span class="pre">qdel</span> <span class="pre">JOBID</span></code> where <code class="docutils literal notranslate"><span class="pre">JOBID</span></code> is the unique numeric ID of the job we wish to delete.</p>
 <p>When the job is successfully deleted we get the following output:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qdel <span class="m">42</span>
@@ -1568,10 +1572,10 @@ exuser has deleted job <span class="m">42</span>
 <p class="admonition-title">Note</p>
 <p>You can only use <code class="docutils literal notranslate"><span class="pre">qdel</span></code> to delete your own submitted jobs from the queue, so don’t try and be smart and clear the queue just for your jobs as it won’t work.</p>
 </div>
-</div>
-</div>
-<div class="section" id="job-output">
-<h3>Job output<a class="headerlink" href="#job-output" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="job-output">
+<h3>Job output<a class="headerlink" href="#job-output" title="Permalink to this headline">#</a></h3>
 <p>When a job runs it produces two output files by default even if you haven’t specified your code to write a results file. These contain information from the standard output and standard error produced by your job and are are named following the pattern <code class="docutils literal notranslate"><span class="pre">submission_script.sh.oJOBID</span></code> and <code class="docutils literal notranslate"><span class="pre">submission_script.sh.eJOBID</span></code>. Where <code class="docutils literal notranslate"><span class="pre">submission_script.sh</span></code> is the name of your job script and <code class="docutils literal notranslate"><span class="pre">JOBID</span></code> is the unique numeric ID of the job when it was submitted.</p>
 <p>For example, if we submitted a job called <code class="docutils literal notranslate"><span class="pre">test_run.sh</span></code> and it was given the job ID <code class="docutils literal notranslate"><span class="pre">4689</span></code> we’d expect the following files produced alongside any results files:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>test_run.sh.o4689
@@ -1579,9 +1583,9 @@ test_run.sh.e4689
 </pre></div>
 </div>
 <p>Both these files contain useful information about how the job progressed and are especially useful if your job encountered an error. You can read more about using these files to help troubleshoot problems in the <a class="reference internal" href="troubleshooting.html"><span class="doc std std-doc">troubleshooting section</span></a>.</p>
-</div>
-<div class="section" id="job-holding">
-<h3>Job holding<a class="headerlink" href="#job-holding" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="job-holding">
+<h3>Job holding<a class="headerlink" href="#job-holding" title="Permalink to this headline">#</a></h3>
 <p>Often a workflow can involve a number of steps in a process, where each steps requires the outputs of the previous and should only start when the previous step completes. The scheduler has a system of job dependencies built into it that allows you to submit a series of jobs and specify that jobs should be on hold until another job has completed.</p>
 <p>For instance you could do this with two submission scripts <code class="docutils literal notranslate"><span class="pre">job1.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">job2.sh</span></code>, where <code class="docutils literal notranslate"><span class="pre">job2.sh</span></code> should only begin once <code class="docutils literal notranslate"><span class="pre">job1.sh</span></code> has finished. You can specify this when submitting jobs as follows:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qsub job1.sh
@@ -1593,9 +1597,9 @@ Your job <span class="m">627</span> <span class="o">(</span><span class="s2">&qu
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">job2.sh</span></code> will then be held in the queue until <code class="docutils literal notranslate"><span class="pre">job1.sh</span></code> is completed.</p>
 <p>This allows for developing a workflow of jobs that run one after another to complete long stepwise tasks.</p>
-</div>
-<div class="section" id="fair-share-policy">
-<h3>Fair-share policy<a class="headerlink" href="#fair-share-policy" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="fair-share-policy">
+<h3>Fair-share policy<a class="headerlink" href="#fair-share-policy" title="Permalink to this headline">#</a></h3>
 <p>The fair-share policy is two-tiered policy that takes into account the usage of a faculty as a whole and the past usage of the user. In the first tier of the policy faculties are allocated a share of the queue space on the basis of funding, meaning that faculties do not have equal shares of system capacity. The fair-share policy then determines an initial faculty level priority based on the faculties share and the total usage by all faculty member users.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1614,9 +1618,9 @@ Your job <span class="m">627</span> <span class="o">(</span><span class="s2">&qu
 <p>There is no test queue on the ARC service. To help determine your most efficient usage we recommend submit small test jobs.
 The smaller the jobs the less time it will wait in the queue and the less impact it will have on your priority.</p>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

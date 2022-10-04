@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Logging on &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1248,8 +1252,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="logging-on">
-<h1>Logging on<a class="headerlink" href="#logging-on" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="logging-on">
+<h1>Logging on<a class="headerlink" href="#logging-on" title="Permalink to this headline">#</a></h1>
 <p>Once you have an account you’ll be able to connect to the University HPC systems using a secure shell (SSH). In this section we’ll cover the various methods for connecting which differ depending on your operating system (Windows, macOS/Linux) and whether you’re on or off campus.</p>
 <p>The rest of this page covers setting your machine up with the appropriate software for connecting.
 Other pages in this section are outlined below.</p>
@@ -1259,28 +1263,28 @@ Other pages in this section are outlined below.</p>
 <li><p><a class="reference internal" href="logon/x11-graphics.html"><span class="doc std std-doc">Setting up X11 graphical forwarding for graphical applications</span></a></p></li>
 <li><p><a class="reference internal" href="logon/fingerprint-details.html"><span class="doc std std-doc">Details on host fingerprints when connecting</span></a></p></li>
 </ul>
-<div class="section" id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h2>
 <p>Before you can begin connecting to the University HPC systems you’ll need to complete the following setup:</p>
 <ul class="simple">
 <li><p>Have requested and had confirmation that your HPC account has been created. You can find out more on our <a class="reference internal" href="request_hpc_acct.html"><span class="doc std std-doc">Requesting a HPC Account page</span></a></p></li>
 <li><p>Have an SSH client installed on your device. See below for different details depending on your operating system (<a class="reference external" href="#macos-linux-terminal">MacOS/Linux</a> or <a class="reference external" href="#installing-mobaxterm">Windows</a>)</p></li>
 </ul>
-<div class="section" id="macos-linux-terminal">
-<h3>MacOS/Linux Terminal<a class="headerlink" href="#macos-linux-terminal" title="Permalink to this headline">¶</a></h3>
+<section id="macos-linux-terminal">
+<h3>MacOS/Linux Terminal<a class="headerlink" href="#macos-linux-terminal" title="Permalink to this headline">#</a></h3>
 <p>If you are a MacOS or Linux user you will probably have an SSH client already installed that can be used via the Terminal application on your device.</p>
 <p>Open the Terminal application and you’re ready to to connect. Next you’ll need to read more about <a class="reference external" href="./logon/logon-campus.html#connecting-from-linux-macos-systems">Connecting on campus</a> or <a class="reference external" href="./logon/logon-off-campus.html#connecting-from-linux-macos-systems">Connecting from off campus</a> depending on your circumstances.</p>
-</div>
-<div class="section" id="installing-mobaxterm">
-<h3>Installing MobaXTerm<a class="headerlink" href="#installing-mobaxterm" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="installing-mobaxterm">
+<h3>Installing MobaXTerm<a class="headerlink" href="#installing-mobaxterm" title="Permalink to this headline">#</a></h3>
 <p>To get started you need to install MobaXTerm. You can do this by downloading the <strong>Portable Home edition</strong> <a class="reference external" href="https://mobaxterm.mobatek.net/download-home-edition.html">(Click here to go to the download page)</a> which is a .zip file containing the software. You can follow the steps in the below video to help walkthrough getting set up.</p>
 <iframe src="https://mymedia.leeds.ac.uk/Mediasite/Play/7c25b8af4c7f43f7898efeba0ec6dd311d" width="100%" height="300" frameborder="0" marginwidth="0" marginheight="0" scrolling="auto" allowfullscreen="allowfullscreen" style="display:block;"> </iframe>
 <p>Once you’ve got MobaXTerm on your computer you’re ready to learn about how to connect to the HPC systems. Next you’ll need to read more about <a class="reference external" href="./logon/logon-campus.html#connecting-from-windows">Connecting on campus</a> or <a class="reference external" href="./logon/logon-off-campus.html#connecting-from-windows">Connecting from off campus</a> depending on your circumstances.</p>
+</section>
+</section>
 <div class="toctree-wrapper compound">
 </div>
-</div>
-</div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {

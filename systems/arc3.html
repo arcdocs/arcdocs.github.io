@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>ARC3 &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1396,70 +1400,70 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="arc3">
-<h1>ARC3<a class="headerlink" href="#arc3" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="operating-system">
-<h2>Operating system<a class="headerlink" href="#operating-system" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="arc3">
+<h1>ARC3<a class="headerlink" href="#arc3" title="Permalink to this headline">#</a></h1>
+<section id="operating-system">
+<h2>Operating system<a class="headerlink" href="#operating-system" title="Permalink to this headline">#</a></h2>
 <p>ARC3 is the third phase of the ARC service here at Leeds and provides a Linux-based HPC service, based on the CentOS 7 distribution.</p>
-</div>
-<div class="section" id="initial-hardware-configuration">
-<h2>Initial Hardware Configuration<a class="headerlink" href="#initial-hardware-configuration" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="compute">
-<h3>Compute<a class="headerlink" href="#compute" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="initial-hardware-configuration">
+<h2>Initial Hardware Configuration<a class="headerlink" href="#initial-hardware-configuration" title="Permalink to this headline">#</a></h2>
+<section id="compute">
+<h3>Compute<a class="headerlink" href="#compute" title="Permalink to this headline">#</a></h3>
 <p>All compute are Broadwell E5-2650v4 CPUs: Clock rate for non-AVX instructions is 2.2GHz and for AVX instructions is 1.8GHz. memory bandwidth per core is 800MHz/core System will turbo where it can. Using fewer cores will mean active cores can turbo more. The are 3 types of node.</p>
-<div class="section" id="standard-nodes">
-<h4>Standard nodes<a class="headerlink" href="#standard-nodes" title="Permalink to this headline">¶</a></h4>
+<section id="standard-nodes">
+<h4>Standard nodes<a class="headerlink" href="#standard-nodes" title="Permalink to this headline">#</a></h4>
 <p>252 nodes with 24 cores and 128GB of memory each and an SSD within the node with 100GB of storage. This provides <strong>6048</strong> cores of <strong>standard compute</strong>. These are the default nodes for jobs and do not need to be requested explicitly.</p>
-</div>
-<div class="section" id="high-memory-nodes">
-<h4>High memory nodes<a class="headerlink" href="#high-memory-nodes" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="high-memory-nodes">
+<h4>High memory nodes<a class="headerlink" href="#high-memory-nodes" title="Permalink to this headline">#</a></h4>
 <p>4 nodes with 24 cores and 768GB of memory each and a hard disk drive within the node with 800GB of storage. This provides 96 cores of <strong>high memory compute</strong>.
 These can be requested by adding this line to submission scripts:</p>
 <p><code class="docutils literal notranslate"><span class="pre">#$</span> <span class="pre">-l</span> <span class="pre">node_type=24core-768G</span></code></p>
-</div>
-<div class="section" id="gpgpu-nodes">
-<h4>GPGPU nodes<a class="headerlink" href="#gpgpu-nodes" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="gpgpu-nodes">
+<h4>GPGPU nodes<a class="headerlink" href="#gpgpu-nodes" title="Permalink to this headline">#</a></h4>
 <p>2 nodes each with 24 cores, 128GB of system memory, a hard disk drive within the node with 800GB of storage and <strong>2 x NVIDIA K80s</strong>.</p>
 <p>6 nodes each with 24 cores, 256GB of system memory, a hard disk drive within the node with 800GB of storage and <strong>4 x NVIDIA P100s</strong></p>
-</div>
-<div class="section" id="intel-xeon-phi-nodes">
-<h4>Intel Xeon Phi nodes<a class="headerlink" href="#intel-xeon-phi-nodes" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="intel-xeon-phi-nodes">
+<h4>Intel Xeon Phi nodes<a class="headerlink" href="#intel-xeon-phi-nodes" title="Permalink to this headline">#</a></h4>
 <p>2 nodes each with a single Intel <strong>Xeon Phi Knight’s Landing</strong> processor, 96GB system memory, 16GB MCDRAM and a 800GB hard drive.</p>
-</div>
-<div class="section" id="lustre-storage">
-<h4>Lustre Storage<a class="headerlink" href="#lustre-storage" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="lustre-storage">
+<h4>Lustre Storage<a class="headerlink" href="#lustre-storage" title="Permalink to this headline">#</a></h4>
 <p>Two fail-over pairs delivering 4GB/s via the InfiniBand network to 836TB usable storage on /nobackup</p>
-</div>
-</div>
-<div class="section" id="network">
-<h3>Network<a class="headerlink" href="#network" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="infiniband">
-<h4>InfiniBand<a class="headerlink" href="#infiniband" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="network">
+<h3>Network<a class="headerlink" href="#network" title="Permalink to this headline">#</a></h3>
+<section id="infiniband">
+<h4>InfiniBand<a class="headerlink" href="#infiniband" title="Permalink to this headline">#</a></h4>
 <p>The compute nodes are connected with Infiniband FDR of 56Gbit/s (vs. a QDR of 40Gbit/s on ARC2) in a 2:1 blocking topology, built up from non-blocking islands of 24 nodes.</p>
-</div>
-<div class="section" id="gigabit">
-<h4>Gigabit<a class="headerlink" href="#gigabit" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="gigabit">
+<h4>Gigabit<a class="headerlink" href="#gigabit" title="Permalink to this headline">#</a></h4>
 <p>Management and general networks facilitating system boot. All other traffic carried over the InfiniBand Network.</p>
-</div>
-</div>
-</div>
-<div class="section" id="other-general-notes">
-<h2>Other general notes<a class="headerlink" href="#other-general-notes" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="other-general-notes">
+<h2>Other general notes<a class="headerlink" href="#other-general-notes" title="Permalink to this headline">#</a></h2>
 <p>When compiling codes with the Intel compiler, the most appropriate flag to use is:</p>
 <p><code class="docutils literal notranslate"><span class="pre">-xCORE-AVX2</span></code>
 Broadwell CPUs should be better at maintaining performance when mixing AVX/non-AVX instructions in the same program.</p>
 <p>Users with a keen eye will notice that there are a number of other queues available on the ARC3 machine which will redirect jobs to nodes that are not listed here. These are private nodes purchased for the exclusive use of certain research groups at the University. If you believe that you should be able to access these nodes, please speak to your PI or Supervisor in the first instance.</p>
-</div>
-<div class="section" id="network-topology">
-<h2>Network Topology<a class="headerlink" href="#network-topology" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="network-topology">
+<h2>Network Topology<a class="headerlink" href="#network-topology" title="Permalink to this headline">#</a></h2>
 <p>There are 2 login nodes and 2 head nodes. All nodes are connected to the InfiniBand network and use it to transfer all user data.</p>
-</div>
-<div class="section" id="lustre-file-system">
-<h2>Lustre File System<a class="headerlink" href="#lustre-file-system" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="lustre-file-system">
+<h2>Lustre File System<a class="headerlink" href="#lustre-file-system" title="Permalink to this headline">#</a></h2>
 <p>A large amount of infrastructure is dedicated to the Lustre parallel filesystem, which is mounted on /nobackup. This is accessed over infiniband, and is configured to deliver ~5GB/s from a 836TB filesystem. It is possible to tune the filesystem in a more-extreme (or conservative) manner, however this configuration achieves a sensible compromise between data integrity and performance.</p>
-</div>
-<div class="section" id="using-the-k80-gpu-nodes">
-<h2>Using the K80 GPU nodes<a class="headerlink" href="#using-the-k80-gpu-nodes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="using-the-k80-gpu-nodes">
+<h2>Using the K80 GPU nodes<a class="headerlink" href="#using-the-k80-gpu-nodes" title="Permalink to this headline">#</a></h2>
 <p>Adding one of the following lines to a submission script will allocate:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1476,9 +1480,9 @@ Broadwell CPUs should be better at maintaining performance when mixing AVX/non-A
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="using-the-p100-gpu-nodes">
-<h2>Using the P100 GPU nodes<a class="headerlink" href="#using-the-p100-gpu-nodes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="using-the-p100-gpu-nodes">
+<h2>Using the P100 GPU nodes<a class="headerlink" href="#using-the-p100-gpu-nodes" title="Permalink to this headline">#</a></h2>
 <p>Adding one of the following lines to a submission script will allocate:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1501,9 +1505,9 @@ Broadwell CPUs should be better at maintaining performance when mixing AVX/non-A
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="using-the-xeon-phi-knl-nodes">
-<h2>Using the Xeon Phi KNL nodes<a class="headerlink" href="#using-the-xeon-phi-knl-nodes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="using-the-xeon-phi-knl-nodes">
+<h2>Using the Xeon Phi KNL nodes<a class="headerlink" href="#using-the-xeon-phi-knl-nodes" title="Permalink to this headline">#</a></h2>
 <p>Add this line:</p>
 <p><code class="docutils literal notranslate"><span class="pre">#$</span> <span class="pre">-l</span> <span class="pre">node_type=256thread-112G</span></code>
 to a submission script to allocate this node to a job.</p>
@@ -1531,8 +1535,8 @@ to a submission script to allocate this node to a job.</p>
 </table>
 <p>When compiling for the KNL using the Intel compiler, make sure you use the <code class="docutils literal notranslate"><span class="pre">-xMIC-AVX512</span></code> compile flag.</p>
 <p>As there are more ways to configure these systems than there are nodes, please check the output of qstat -g c (looking for the lines starting with 256thread-112G), to see how they are currently configured. Please get in touch if you wish to evaluate the performance of Knights Landing in a mode that is unavailable.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

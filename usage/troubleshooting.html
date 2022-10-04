@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Troubleshooting jobs on HPC &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1284,16 +1288,16 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="troubleshooting-jobs-on-hpc">
-<h1>Troubleshooting jobs on HPC<a class="headerlink" href="#troubleshooting-jobs-on-hpc" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="troubleshooting-jobs-on-hpc">
+<h1>Troubleshooting jobs on HPC<a class="headerlink" href="#troubleshooting-jobs-on-hpc" title="Permalink to this headline">#</a></h1>
 <p>Sometimes things go wrong when we use HPC. This is a fact of life. This can be for many reasons, sometimes it can be HPC related, sometimes it might be to do more specifically with the code you’re running.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Whilst the Research Computing team provide support for the HPC we can’t troubleshoot specific problems you might have with individual languages or scientific software packages. In those cases we’ll advise you to speak to your supervisor or contact the original developers for support.</p>
 </div>
 <p>This page will aim to cover some of the most common problems people encounter when using the HPC and provide you with the tools you’ll need to fix things or in some cases work out what’s going wrong.</p>
-<div class="section" id="failures-submitting-your-job">
-<h2>Failures submitting your job<a class="headerlink" href="#failures-submitting-your-job" title="Permalink to this headline">¶</a></h2>
+<section id="failures-submitting-your-job">
+<h2>Failures submitting your job<a class="headerlink" href="#failures-submitting-your-job" title="Permalink to this headline">#</a></h2>
 <p>When you submit a job to the scheduler it performs a number of quick checks to ensure it knows what you’re requesting. If you’ve provided any incorrect parameters you will recieve an error after using the <code class="docutils literal notranslate"><span class="pre">qsub</span></code> command.</p>
 <p>If this happens check the following in your submission script:</p>
 <ul class="simple">
@@ -1308,9 +1312,9 @@ verification: found suitable queue<span class="o">(</span>s<span class="o">)</sp
 </pre></div>
 </div>
 <p>This output tells us our job script is acceptable to the scheduler and should enter the queue.</p>
-</div>
-<div class="section" id="failures-during-the-job-run">
-<h2>Failures during the job run<a class="headerlink" href="#failures-during-the-job-run" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="failures-during-the-job-run">
+<h2>Failures during the job run<a class="headerlink" href="#failures-during-the-job-run" title="Permalink to this headline">#</a></h2>
 <p>Jobs can fail during the job run for a wide variety of reasons such as:</p>
 <ul class="simple">
 <li><p>insufficient resources, if your job tries to use more memory or run for more time than requested the job is automatically killed by the scheduler</p></li>
@@ -1325,15 +1329,15 @@ verification: found suitable queue<span class="o">(</span>s<span class="o">)</sp
 <li><p>syntax errors in your submission script</p></li>
 <li><p>permission errors prevent file read or write</p></li>
 </ul>
-</div>
-<div class="section" id="job-output-and-error-files">
-<h2>Job output and error files<a class="headerlink" href="#job-output-and-error-files" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="job-output-and-error-files">
+<h2>Job output and error files<a class="headerlink" href="#job-output-and-error-files" title="Permalink to this headline">#</a></h2>
 <p>Whenever a job runs on HPC a number of output files are created by default by the scheduler. These are separate to any output files you’ve programmed to be produced and should be inspected closely if your job is failing.</p>
 <p>Typically, we should expect a job to produce a output file and an error file following the naming pattern <code class="docutils literal notranslate"><span class="pre">submission_script.sh.oJOBID</span></code> and <code class="docutils literal notranslate"><span class="pre">submission_script.sh.eJOBID</span></code> respectively. Where <code class="docutils literal notranslate"><span class="pre">submission_script.sh</span></code> is the name of your job script and <code class="docutils literal notranslate"><span class="pre">JOBID</span></code> is the unique numeric ID of the job when it was submitted.</p>
 <p>If a job fails one of the first places to check for more information are these output and error files.</p>
-</div>
-<div class="section" id="queue-accounting-data">
-<h2>Queue accounting data<a class="headerlink" href="#queue-accounting-data" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="queue-accounting-data">
+<h2>Queue accounting data<a class="headerlink" href="#queue-accounting-data" title="Permalink to this headline">#</a></h2>
 <p>Another useful tool for troubleshooting problems with jobs is the accounting data captured by the scheduler during the course of a job run. You retrieve this data by using the command <code class="docutils literal notranslate"><span class="pre">qacct</span> <span class="pre">-j</span> <span class="pre">JOBID</span></code> (where <code class="docutils literal notranslate"><span class="pre">JOBID</span></code> is the unique numeric ID of your job). This can take some time to return (especially on ARC3) but will eventually return a large data table that looks as follows:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qacct -j <span class="nv">42</span>
 <span class="o">==============================================================</span>
@@ -1384,30 +1388,30 @@ category     -l <span class="nv">env</span><span class="o">=</span>centos7,h_rt<
 </pre></div>
 </div>
 <p>This contains alot of informations but often the most useful rows to check are the lines <code class="docutils literal notranslate"><span class="pre">maxvmem</span></code> and <code class="docutils literal notranslate"><span class="pre">ru_wallclock</span></code>. These contain values that correspond to the amount of memory and time used by the job which can be useful for <a class="reference external" href="#troubleshooting-job-aborted-errors">troubleshooting aborted jobs</a>.</p>
-</div>
-<div class="section" id="windows-newline-character-errors">
-<h2>Windows newline character errors<a class="headerlink" href="#windows-newline-character-errors" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="windows-newline-character-errors">
+<h2>Windows newline character errors<a class="headerlink" href="#windows-newline-character-errors" title="Permalink to this headline">#</a></h2>
 <p>Job scripts written on Windows computers contain different invisible line ending characters to those used on Unix systems. This can lead to job submission failures that leave the following message in your job error files:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/bin/bash^M: bad interpreter: No such file or directory
 </pre></div>
 </div>
 <p>This can easily be resolved using the command line tool <code class="docutils literal notranslate"><span class="pre">dos2unix</span></code> which is pre-installed on all HPC systems. To convert a job submission script that was written on a Windows system to run on the HPC just run the command <code class="docutils literal notranslate"><span class="pre">dos2unix</span> <span class="pre">job_script.sh</span></code> to correct the line endings characters.</p>
-</div>
-<div class="section" id="job-exit-status">
-<h2>Job exit status<a class="headerlink" href="#job-exit-status" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="job-exit-status">
+<h2>Job exit status<a class="headerlink" href="#job-exit-status" title="Permalink to this headline">#</a></h2>
 <p>All jobs return an exit status at the end of the job. An exit status of 0 corresponds to a successful completion of the script that was run. A non-zero exit status suggests an error occured during the running of a job and so the job was not able to complete.</p>
 <p>It’s important to note that an exit status of 0 does not mean your code ran properly or that your results are correct. It simply means the code ran without an errors.</p>
 <p>You can find the exit status of your job as a value in the output of the queue accounting command <a class="reference external" href="#queue-accounting-data"><code class="docutils literal notranslate"><span class="pre">qacct</span></code></a>.</p>
-</div>
-<div class="section" id="troubleshooting-job-aborted-errors">
-<h2>Troubleshooting Job Aborted errors<a class="headerlink" href="#troubleshooting-job-aborted-errors" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="troubleshooting-job-aborted-errors">
+<h2>Troubleshooting Job Aborted errors<a class="headerlink" href="#troubleshooting-job-aborted-errors" title="Permalink to this headline">#</a></h2>
 <p>The most common reason a job is aborted is because the job tried to use more resources (memory or time) than was initial specified in the job submission script. If this happens you will find the following line in the job email or in the <code class="docutils literal notranslate"><span class="pre">qacct</span> <span class="pre">-j</span> <span class="pre">JOBID</span></code> output:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>failed qmaster enforced h_rt, h_cpu, or h_vmem limit
 </pre></div>
 </div>
 <p>This tells us that the scheduler killed the job because it enforced a limit on either time, CPU or memory. To probe this further you should use the queue accounting command <a class="reference external" href="#queue-accounting-data"><code class="docutils literal notranslate"><span class="pre">qacct</span></code></a> to retrieve the accounting information for the job in question and check the values for <code class="docutils literal notranslate"><span class="pre">maxvmem</span></code> and <code class="docutils literal notranslate"><span class="pre">ru_wallclock</span></code> and whether those values are equal to or greater than the amount of memory or time requested. You can then update your resource request lines in your job submission script to prevent the job being aborted in the future.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

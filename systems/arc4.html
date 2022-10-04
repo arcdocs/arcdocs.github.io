@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>ARC4 &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1366,70 +1370,70 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="arc4">
-<h1>ARC4<a class="headerlink" href="#arc4" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="operating-system">
-<h2>Operating system<a class="headerlink" href="#operating-system" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="arc4">
+<h1>ARC4<a class="headerlink" href="#arc4" title="Permalink to this headline">#</a></h1>
+<section id="operating-system">
+<h2>Operating system<a class="headerlink" href="#operating-system" title="Permalink to this headline">#</a></h2>
 <p>ARC4 is our latest HPC cluster here at Leeds and provides a Linux-based HPC service, based on the CentOS 7 distribution.</p>
-</div>
-<div class="section" id="initial-hardware-configuration">
-<h2>Initial Hardware Configuration<a class="headerlink" href="#initial-hardware-configuration" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="compute">
-<h3>Compute<a class="headerlink" href="#compute" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="initial-hardware-configuration">
+<h2>Initial Hardware Configuration<a class="headerlink" href="#initial-hardware-configuration" title="Permalink to this headline">#</a></h2>
+<section id="compute">
+<h3>Compute<a class="headerlink" href="#compute" title="Permalink to this headline">#</a></h3>
 <p>All compute nodes contain Intel Xeon Gold 6138 CPUs (‘Sky Lake’)</p>
 <p>The clock rate for non-AVX instructions is 2.0GHz and for AVX and AVX-512 instructions will be a little reduced from this.</p>
 <p>Memory bandwidth per core is 800MHz.</p>
 <p>System will turbo where it can. Using fewer cores will mean active cores can turbo more.</p>
 <p>There are three types of node on this cluster: <strong>standard nodes</strong>; <strong>high memory nodes</strong> and <strong>GPU nodes</strong>.</p>
-<div class="section" id="standard-nodes">
-<h4>Standard nodes<a class="headerlink" href="#standard-nodes" title="Permalink to this headline">¶</a></h4>
+<section id="standard-nodes">
+<h4>Standard nodes<a class="headerlink" href="#standard-nodes" title="Permalink to this headline">#</a></h4>
 <p>149 nodes with 40 cores and 192GB of memory each and an SSD within the node with 170GB of storage. This provides <strong>5960</strong> cores of <strong>standard compute</strong>.</p>
 <p>These are the default nodes for jobs and do not need to be requested explicitly.</p>
-</div>
-<div class="section" id="high-memory-nodes">
-<h4>High memory nodes<a class="headerlink" href="#high-memory-nodes" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="high-memory-nodes">
+<h4>High memory nodes<a class="headerlink" href="#high-memory-nodes" title="Permalink to this headline">#</a></h4>
 <p>2 nodes with 40 cores and 768GB of memory each and a hard disk drive within the node with 800GB of storage. This provides 80 cores of <strong>high memory compute</strong>.</p>
 <p>These can be requested by adding this line to submission scripts:</p>
 <p><code class="docutils literal notranslate"><span class="pre">#$</span> <span class="pre">-l node_type=40core-768G</span></code></p>
-</div>
-<div class="section" id="gpgpu-nodes">
-<h4>GPGPU nodes<a class="headerlink" href="#gpgpu-nodes" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="gpgpu-nodes">
+<h4>GPGPU nodes<a class="headerlink" href="#gpgpu-nodes" title="Permalink to this headline">#</a></h4>
 <p>3 nodes each with 40 cores, 192GB of system memory, a hard disk drive within the node with 800GB of storage and <strong>4 x NVIDIA V100 GPUs</strong>.
 <a class="reference external" href="#using-the-v100-gpu-nodes">See GPU section below</a> on how to access these nodes</p>
-</div>
-</div>
-<div class="section" id="lustre-storage">
-<h3>Lustre Storage<a class="headerlink" href="#lustre-storage" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="lustre-storage">
+<h3>Lustre Storage<a class="headerlink" href="#lustre-storage" title="Permalink to this headline">#</a></h3>
 <p>Two fail-over pairs delivering 11GB/s via the InfiniBand network to <strong>1.2PB</strong> usable storage on <strong>/nobackup</strong></p>
-</div>
-<div class="section" id="network">
-<h3>Network<a class="headerlink" href="#network" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="infiniband">
-<h4>InfiniBand<a class="headerlink" href="#infiniband" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="network">
+<h3>Network<a class="headerlink" href="#network" title="Permalink to this headline">#</a></h3>
+<section id="infiniband">
+<h4>InfiniBand<a class="headerlink" href="#infiniband" title="Permalink to this headline">#</a></h4>
 <p>The compute nodes are connected with Infiniband EDR of 100Gbit/s (vs. a FDR of 56Gbit/s on ARC3) in a 2:1 blocking topology, built up from non-blocking islands of 24 nodes.</p>
-</div>
-<div class="section" id="gigabit">
-<h4>Gigabit<a class="headerlink" href="#gigabit" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="gigabit">
+<h4>Gigabit<a class="headerlink" href="#gigabit" title="Permalink to this headline">#</a></h4>
 <p>Management and general networks facilitating system boot. All other traffic carried over the InfiniBand Network.</p>
-</div>
-</div>
-</div>
-<div class="section" id="other-general-notes">
-<h2>Other general notes<a class="headerlink" href="#other-general-notes" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="other-general-notes">
+<h2>Other general notes<a class="headerlink" href="#other-general-notes" title="Permalink to this headline">#</a></h2>
 <p>When compiling codes with the Intel compiler, the most appropriate flag to use is <code class="docutils literal notranslate"><span class="pre">-xCORE-AVX2</span></code>
 Sky Lake CPUs should be better at maintaining performance when mixing AVX/non-AVX instructions in the same program.</p>
 <p>Users with a keen eye will notice that there are a number of other queues available on the ARC4 machine which will redirect jobs to nodes that are not listed here. These are private nodes purchased for the exclusive use of certain research groups at the University. If you believe that you should be able to access these nodes, please speak to your PI or Supervisor in the first instance.</p>
-</div>
-<div class="section" id="network-topology">
-<h2>Network Topology<a class="headerlink" href="#network-topology" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="network-topology">
+<h2>Network Topology<a class="headerlink" href="#network-topology" title="Permalink to this headline">#</a></h2>
 <p>There are 2 login nodes and 2 head nodes. All nodes are connected to the InfiniBand network and use it to transfer all user data.</p>
-</div>
-<div class="section" id="lustre-file-system">
-<h2>Lustre File System<a class="headerlink" href="#lustre-file-system" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="lustre-file-system">
+<h2>Lustre File System<a class="headerlink" href="#lustre-file-system" title="Permalink to this headline">#</a></h2>
 <p>A large amount of infrastructure is dedicated to the Lustre parallel filesystem, which is mounted on /nobackup. This is accessed over Infiniband, and is configured to deliver ~11GB/s from a 1.2PB filesystem. It is possible to tune the filesystem in a more-extreme (or conservative) manner, however this configuration achieves a sensible compromise between data integrity and performance.</p>
-</div>
-<div class="section" id="using-the-v100-gpu-nodes">
-<h2>Using the V100 GPU nodes<a class="headerlink" href="#using-the-v100-gpu-nodes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="using-the-v100-gpu-nodes">
+<h2>Using the V100 GPU nodes<a class="headerlink" href="#using-the-v100-gpu-nodes" title="Permalink to this headline">#</a></h2>
 <p>Adding one of the following lines to a submission script will allocate:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1452,8 +1456,8 @@ Sky Lake CPUs should be better at maintaining performance when mixing AVX/non-AV
 </tr>
 </tbody>
 </table>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

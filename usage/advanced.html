@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Advanced Job Examples &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1248,10 +1252,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="advanced-job-examples">
-<h1>Advanced Job Examples<a class="headerlink" href="#advanced-job-examples" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="submitting-mixed-mode-jobs">
-<h2>Submitting Mixed Mode Jobs<a class="headerlink" href="#submitting-mixed-mode-jobs" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="advanced-job-examples">
+<h1>Advanced Job Examples<a class="headerlink" href="#advanced-job-examples" title="Permalink to this headline">#</a></h1>
+<section id="submitting-mixed-mode-jobs">
+<h2>Submitting Mixed Mode Jobs<a class="headerlink" href="#submitting-mixed-mode-jobs" title="Permalink to this headline">#</a></h2>
 <p>The ‘mixed mode’ (MPI+OpenMP) programming model typically involves MPI processes running across nodes and OpenMP threads upon each node with the total number of processes (MPI*OpenMP) equalling the number of physical processor cores.</p>
 <p>Your code will need to call MPI_Init and make use of OpenMP directives. You will compile your code using an MPI wrapper and enabling OpenMP support, for example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mpif90 -openmp example.f90 -o mixed.exe
@@ -1275,8 +1279,8 @@ mpirun ./a.out
 </div>
 <p>There are 24 cores per node on ARC3 , so you would typically ensure <code class="docutils literal notranslate"><span class="pre">ppn</span></code>*<code class="docutils literal notranslate"><span class="pre">tpp</span></code>=24.<br />
 There are 40 cores per node on ARC4 , so you would typically ensure <code class="docutils literal notranslate"><span class="pre">ppn</span></code>*<code class="docutils literal notranslate"><span class="pre">tpp</span></code>=40.</p>
-<div class="section" id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
 <p>Using ARC4, To run an MPI+OpenMP executable mixed.exe with 80 MPI processes each launching 4 OpenMP threads, the following submission script would be needed:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -V </span>
 <span class="c1">#$ -cwd</span>
@@ -1296,10 +1300,10 @@ mpirun ./mixed.exe
 </pre></div>
 </div>
 <p>Note that the <code class="docutils literal notranslate"><span class="pre">OMP_NUM_THREADS</span></code> environment variable is automatically set by the batch system and so you do not need to set this in your environment.</p>
-</div>
-</div>
-<div class="section" id="job-dependencies">
-<h2>Job Dependencies<a class="headerlink" href="#job-dependencies" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="job-dependencies">
+<h2>Job Dependencies<a class="headerlink" href="#job-dependencies" title="Permalink to this headline">#</a></h2>
 <p>The SGE scheduler allows you to submit a job but then hold them in the queue until certain job dependencies are met, ie. it will hold the job until a previous job (or number of jobs have completed).</p>
 <p>To do this, submit the first job as normal:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qsub job1.sh
@@ -1317,8 +1321,8 @@ mpirun ./mixed.exe
 </div>
 <p>If you give several jobs the same name, then the job will be held until all the named jobs have been completed.
 See <a class="reference external" href="./batchjob.html#list-of-sge-options">Batch jobs</a> for more details on <code class="docutils literal notranslate"><span class="pre">hold_jid</span></code>.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

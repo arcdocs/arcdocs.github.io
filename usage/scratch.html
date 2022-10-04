@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Temporary/Scratch Storage on Compute nodes &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1258,21 +1262,21 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="temporary-scratch-storage-on-compute-nodes">
-<h1>Temporary/Scratch Storage on Compute nodes<a class="headerlink" href="#temporary-scratch-storage-on-compute-nodes" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="temporary-scratch-storage-on-compute-nodes">
+<h1>Temporary/Scratch Storage on Compute nodes<a class="headerlink" href="#temporary-scratch-storage-on-compute-nodes" title="Permalink to this headline">#</a></h1>
 <p>Each HPC compute node contains a limited amount of dedicated storage and its capacity and performance is different for each type of node. As this storage is local to the compute node, it can offer more predictable performance than writing to the high performance filesystem, <a class="reference internal" href="../getting_started/nobackup.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">/nobackup</span></code></span></a> , which is shared between all compute nodes</p>
 <p>On our previous clusters, such storage is available for use by jobs – mostly under <code class="docutils literal notranslate"><span class="pre">/scratch</span></code> and via the directory name contained in the <code class="docutils literal notranslate"><span class="pre">$TMPDIR</span></code> environment variable, but also a small amount under <code class="docutils literal notranslate"><span class="pre">/tmp</span></code>. However, jobs could not reserve the local space they need and so could fail unexpectedly if another job running on the same node was also writing to local disk.</p>
 <p>On ARC3 and ARC4, if a job wishes to use the compute node disk, this should be explicitly requested by the job.</p>
-<div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h2>
 <p>Summary:</p>
 <ul class="simple">
 <li><p>Use of <code class="docutils literal notranslate"><span class="pre">/tmp</span></code> should be <strong>avoided</strong>, as it is relatively small and space usage is uncontrolled</p></li>
 <li><p>Use of <code class="docutils literal notranslate"><span class="pre">/scratch</span></code> should be <strong>avoided</strong>, as this is now the same storage as <code class="docutils literal notranslate"><span class="pre">/tmp</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">$TMPDIR</span></code> within a job refers to a per-job directory which has been assigned dedicated storage for the job</p></li>
 </ul>
-<div class="section" id="arc3-local-disk-specifications">
-<h3>ARC3 local disk specifications<a class="headerlink" href="#arc3-local-disk-specifications" title="Permalink to this headline">¶</a></h3>
+<section id="arc3-local-disk-specifications">
+<h3>ARC3 local disk specifications<a class="headerlink" href="#arc3-local-disk-specifications" title="Permalink to this headline">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>ssd - refers to a solid state disk, which has excellent performance characteristics for reading and writing <br>
@@ -1321,9 +1325,9 @@ hdd - refers to a mechanical hard disk with a spinning platter, which has good p
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="arc4-local-disk-specifications">
-<h3>ARC4 local disk specifications<a class="headerlink" href="#arc4-local-disk-specifications" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="arc4-local-disk-specifications">
+<h3>ARC4 local disk specifications<a class="headerlink" href="#arc4-local-disk-specifications" title="Permalink to this headline">#</a></h3>
 <table class="colwidths-given table">
 <colgroup>
 <col style="width: 20%" />
@@ -1361,9 +1365,9 @@ hdd - refers to a mechanical hard disk with a spinning platter, which has good p
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="requesting-local-disk">
-<h3>Requesting local disk<a class="headerlink" href="#requesting-local-disk" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="requesting-local-disk">
+<h3>Requesting local disk<a class="headerlink" href="#requesting-local-disk" title="Permalink to this headline">#</a></h3>
 <p><a class="reference internal" href="batchjob.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">qsub</span></code></span></a> options for requesting local disk on ARC3 and ARC4:</p>
 <table class="colwidths-given table">
 <colgroup>
@@ -1407,9 +1411,9 @@ hdd - refers to a mechanical hard disk with a spinning platter, which has good p
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

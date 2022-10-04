@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>General Purpose GPU &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1310,12 +1314,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="general-purpose-gpu">
-<h1>General Purpose GPU<a class="headerlink" href="#general-purpose-gpu" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="general-purpose-gpu">
+<h1>General Purpose GPU<a class="headerlink" href="#general-purpose-gpu" title="Permalink to this headline">#</a></h1>
 <p>The HPC systems at Leeds also include general purpose GPU facilities for GPU-accelerated code. These differ between <a class="reference external" href="#arc3">ARC3</a> and <a class="reference external" href="#arc4">ARC4</a> but can be requested through the job submission script process as outlined below.</p>
 <p>GPUs are not available on the login nodes, so a job must be submitted with the required arguments to run code that requires GPUs.  Specific guidance on the required parameters for using a GPU are listed below, but general guidance on submitting jobs to the queues can be found in the <a class="reference internal" href="batchjob.html"><span class="doc std std-doc">Batch jobs</span></a> section.</p>
-<div class="section" id="cuda-module">
-<h2>CUDA Module<a class="headerlink" href="#cuda-module" title="Permalink to this headline">¶</a></h2>
+<section id="cuda-module">
+<h2>CUDA Module<a class="headerlink" href="#cuda-module" title="Permalink to this headline">#</a></h2>
 <p>To use the GPU cards you will need to ensure that the NVIDIA CUDA toolkit module is loaded into your environment:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module load cuda
 <span class="c1"># This needs to be done before compiling or running GPU code</span>
@@ -1331,18 +1335,18 @@ title="Print to PDF"
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ nvidia-smi -L
 </pre></div>
 </div>
-</div>
-<div class="section" id="arc3">
-<h2>ARC3<a class="headerlink" href="#arc3" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="arc3">
+<h2>ARC3<a class="headerlink" href="#arc3" title="Permalink to this headline">#</a></h2>
 <p>The ARC3 system is the first cluster at Leeds to include GPU accelerator technologies. These include:</p>
 <ul class="simple">
 <li><p>2 nodes each with 24 cores, 128GB of system memory, a hard disk drive within the node with 800GB capacity and 2 x NVIDIA K80 24Gbytes</p></li>
 <li><p>6 nodes each with 24 cores, 256GB of system memory, an SSD within the node with 650GB capacity and 4 x NVIDIA P100 12Gbytes</p></li>
 </ul>
-<div class="section" id="usage">
-<h3>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="k80-gpu">
-<h4>K80 GPU<a class="headerlink" href="#k80-gpu" title="Permalink to this headline">¶</a></h4>
+<section id="usage">
+<h3>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h3>
+<section id="k80-gpu">
+<h4>K80 GPU<a class="headerlink" href="#k80-gpu" title="Permalink to this headline">#</a></h4>
 <p>To request K80 GPU resource you should use the flag:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -l coproc_k80=&lt;cards_per_compute_node&gt;</span>
 </pre></div>
@@ -1367,9 +1371,9 @@ title="Print to PDF"
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="p100-gpu">
-<h4>P100 GPU<a class="headerlink" href="#p100-gpu" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="p100-gpu">
+<h4>P100 GPU<a class="headerlink" href="#p100-gpu" title="Permalink to this headline">#</a></h4>
 <p>To request P100 GPU resource you should use the flag:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -l coproc_p100=&lt;cards_per_compute_node&gt;</span>
 </pre></div>
@@ -1400,19 +1404,19 @@ title="Print to PDF"
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-</div>
-<div class="section" id="arc4">
-<h2>ARC4<a class="headerlink" href="#arc4" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="arc4">
+<h2>ARC4<a class="headerlink" href="#arc4" title="Permalink to this headline">#</a></h2>
 <p>The ARC4 system also comes with the following GPU resources:</p>
 <ul class="simple">
 <li><p>3 nodes each with 40 cores, 192GB of system memory, an SSD within the node with 128GB capacity and 4 x NVIDIA V100 32Gbytes</p></li>
 </ul>
-<div class="section" id="id1">
-<h3>Usage<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="v100-gpu">
-<h4>V100 GPU<a class="headerlink" href="#v100-gpu" title="Permalink to this headline">¶</a></h4>
+<section id="id1">
+<h3>Usage<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<section id="v100-gpu">
+<h4>V100 GPU<a class="headerlink" href="#v100-gpu" title="Permalink to this headline">#</a></h4>
 <p>To request V100 GPU resource you should use the flag:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -l coproc_v100=&lt;cards_per_compute_node&gt;</span>
 </pre></div>
@@ -1443,10 +1447,10 @@ title="Print to PDF"
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

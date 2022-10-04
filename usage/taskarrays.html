@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Task arrays &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1288,10 +1292,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="task-arrays">
-<h1>Task arrays<a class="headerlink" href="#task-arrays" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="when-to-use-task-arrays">
-<h2>When to use task arrays<a class="headerlink" href="#when-to-use-task-arrays" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="task-arrays">
+<h1>Task arrays<a class="headerlink" href="#task-arrays" title="Permalink to this headline">#</a></h1>
+<section id="when-to-use-task-arrays">
+<h2>When to use task arrays<a class="headerlink" href="#when-to-use-task-arrays" title="Permalink to this headline">#</a></h2>
 <p>Situations often arise when you want to run many almost identical jobs simultaneously, perhaps running the same program many times but changing the input data or some argument or parameter. One possible solution is to write a Python or Perl script to create all the qsub files and then write a BASH script to execute them. This is very time consuming and might end up submitting many more jobs to the queue than you actually need to. This is a typical problem suited to an SGE task array.</p>
 <ul class="simple">
 <li><p>only one qsub command is issued (and only one qdel command would be required to delete all jobs)</p></li>
@@ -1299,9 +1303,9 @@ title="Print to PDF"
 <li><p>the load on the SGE submit node is much less than that of submitting many separate jobs</p></li>
 <li><p>it is much easier for the user (you) to keep track of your related jobs</p></li>
 </ul>
-</div>
-<div class="section" id="how-to-use-task-arrays">
-<h2>How to use task arrays<a class="headerlink" href="#how-to-use-task-arrays" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="how-to-use-task-arrays">
+<h2>How to use task arrays<a class="headerlink" href="#how-to-use-task-arrays" title="Permalink to this headline">#</a></h2>
 <p>The easiest way to think of a task array is as a job script with a built-in FOR loop. It makes use of an environment variable created by Sun Grid Engine- <code class="docutils literal notranslate"><span class="pre">$SGE_TASK_ID</span></code> . Consider this simple job submission script ( my_script.sh ):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use current working directory and current modules</span>
 <span class="c1">#$ -cwd -V</span>
@@ -1342,19 +1346,19 @@ mkdir myjob-<span class="nv">$SGE_TASK_ID</span>
 ../myprog-two &lt; one.output &gt; two.output
 </pre></div>
 </div>
-</div>
-<div class="section" id="the-sge-loop-counter">
-<h2>The SGE ‘loop counter’<a class="headerlink" href="#the-sge-loop-counter" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-sge-loop-counter">
+<h2>The SGE ‘loop counter’<a class="headerlink" href="#the-sge-loop-counter" title="Permalink to this headline">#</a></h2>
 <p>These examples use <code class="docutils literal notranslate"><span class="pre">$SGE_TASK_ID</span></code> starting at 1 and incrementing by 1 to some upper bound. It is a little more flexible than this however.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -t 200-445:5</span>
 </pre></div>
 </div>
 <p>would allow <code class="docutils literal notranslate"><span class="pre">$SGE_TASK_ID</span></code> to take values from 200 (lower bound) to 445 (upper bound), incrementing by 5.</p>
-</div>
-<div class="section" id="further-examples">
-<h2>Further examples<a class="headerlink" href="#further-examples" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="random-filenames">
-<h3>Random filenames<a class="headerlink" href="#random-filenames" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="further-examples">
+<h2>Further examples<a class="headerlink" href="#further-examples" title="Permalink to this headline">#</a></h2>
+<section id="random-filenames">
+<h3>Random filenames<a class="headerlink" href="#random-filenames" title="Permalink to this headline">#</a></h3>
 <p>The previous examples require all input files to be neatly indexed by number, but often this is not the case. If you have a list of randomly named files, then it is still possible to use <code class="docutils literal notranslate"><span class="pre">$SGE_TASK_ID</span></code> . Assume that you have a text file files.txt listing all of your input filenames (one per line) and that you know how many files you have (50 in the example below):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use current working directory and current modules</span>
 <span class="c1">#$ -cwd -V</span>
@@ -1369,9 +1373,9 @@ mkdir myjob-<span class="nv">$SGE_TASK_ID</span>
 </pre></div>
 </div>
 <p>As the ‘loop’ in the script executes, it will read the filenames one by one from files.txt , assign them to the variable $infile and direct them into your program.</p>
-</div>
-<div class="section" id="restricting-the-maximum-number-of-concurrent-tasks">
-<h3>Restricting the maximum number of concurrent tasks<a class="headerlink" href="#restricting-the-maximum-number-of-concurrent-tasks" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="restricting-the-maximum-number-of-concurrent-tasks">
+<h3>Restricting the maximum number of concurrent tasks<a class="headerlink" href="#restricting-the-maximum-number-of-concurrent-tasks" title="Permalink to this headline">#</a></h3>
 <p>In some situations it might be necessary to restrict the maximum number of tasks running at any point in time. This is a useful feature to ensure that your jobs don’t restrict other user jobs running.</p>
 <p>To do this, add a -tc clause to the submission script:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -t 1-5000</span>
@@ -1379,10 +1383,10 @@ mkdir myjob-<span class="nv">$SGE_TASK_ID</span>
 </pre></div>
 </div>
 <p>This would run 5000 tasks but limit just 50 to run at any point in time.</p>
-</div>
-</div>
-<div class="section" id="using-the-sge-environment-variables">
-<h2>Using the SGE environment variables<a class="headerlink" href="#using-the-sge-environment-variables" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="using-the-sge-environment-variables">
+<h2>Using the SGE environment variables<a class="headerlink" href="#using-the-sge-environment-variables" title="Permalink to this headline">#</a></h2>
 <p>The scheduler sets a number of environment variables during array jobs: <code class="docutils literal notranslate"><span class="pre">$SGE_TASK_FIRST</span></code> , <code class="docutils literal notranslate"><span class="pre">$SGE_TASK_LAST</span></code> and <code class="docutils literal notranslate"><span class="pre">$SGE_STEP_SIZE</span></code>. If you need your script to make things happen at the start or end of an array job, then this script shows how this can be done:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use current working directory and current modules</span>
 <span class="c1">#$ -cwd -V</span>
@@ -1402,8 +1406,8 @@ mkdir myjob-<span class="nv">$SGE_TASK_ID</span>
 <span class="k">fi</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

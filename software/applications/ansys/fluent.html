@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Fluent &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1322,11 +1326,11 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="fluent">
-<h1>Fluent<a class="headerlink" href="#fluent" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="fluent">
+<h1>Fluent<a class="headerlink" href="#fluent" title="Permalink to this headline">#</a></h1>
 <p>Once the license and module have been set up correctly, Fluent can be run both in serial and in parallel.  We generally recommend running Fluent either in serial for short test jobs, or in parallel on whole nodes, to ensure consistent good performance.</p>
-<div class="section" id="running-fluent-in-serial-mode">
-<h2>Running Fluent in Serial mode<a class="headerlink" href="#running-fluent-in-serial-mode" title="Permalink to this headline">¶</a></h2>
+<section id="running-fluent-in-serial-mode">
+<h2>Running Fluent in Serial mode<a class="headerlink" href="#running-fluent-in-serial-mode" title="Permalink to this headline">#</a></h2>
 <p>There are three ways in which to launch fluent in serial:</p>
 <ul class="simple">
 <li><p>On login nodes</p></li>
@@ -1337,8 +1341,8 @@ title="Print to PDF"
 <p class="admonition-title">Note</p>
 <p>When launching the Fluent GUI you must have an X-server running locally and have enabled <a class="reference external" href="../../../getting_started/logon.html#graphics-forwarding-x11">X11 forwarding</a> through your SSH client.</p>
 </div>
-<div class="section" id="using-on-login-nodes">
-<h3>Using on Login nodes<a class="headerlink" href="#using-on-login-nodes" title="Permalink to this headline">¶</a></h3>
+<section id="using-on-login-nodes">
+<h3>Using on Login nodes<a class="headerlink" href="#using-on-login-nodes" title="Permalink to this headline">#</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Please note you should not run full experiments on the login nodes. Only use this method for quick tests!</p>
@@ -1348,9 +1352,9 @@ title="Print to PDF"
 $ fluent
 </pre></div>
 </div>
-</div>
-<div class="section" id="running-interactively-through-the-batch-queues">
-<h3>Running interactively through the batch queues<a class="headerlink" href="#running-interactively-through-the-batch-queues" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="running-interactively-through-the-batch-queues">
+<h3>Running interactively through the batch queues<a class="headerlink" href="#running-interactively-through-the-batch-queues" title="Permalink to this headline">#</a></h3>
 <p>To launch fluent in serial in an <a class="reference internal" href="../../../usage/interactive.html"><span class="doc std std-doc">interactive session</span></a>, use the following commands in the terminal:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qrsh -cwd -V -l <span class="nv">h_rt</span><span class="o">=</span>&lt;hh:mm:ss&gt; -l <span class="nv">h_vmem</span><span class="o">=</span>&lt;vmem&gt; fluent &lt;dim&gt;
 </pre></div>
@@ -1360,9 +1364,9 @@ $ fluent
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qrsh -cwd -V -l <span class="nv">h_rt</span><span class="o">=</span><span class="m">6</span>:00:00 -l <span class="nv">h_vmem</span><span class="o">=</span>2G fluent 3ddp
 </pre></div>
 </div>
-</div>
-<div class="section" id="running-through-the-batch-queues">
-<h3>Running through the batch queues<a class="headerlink" href="#running-through-the-batch-queues" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="running-through-the-batch-queues">
+<h3>Running through the batch queues<a class="headerlink" href="#running-through-the-batch-queues" title="Permalink to this headline">#</a></h3>
 <p>When running through the <a class="reference internal" href="../../../usage/batchjob.html"><span class="doc std std-doc">batch queues</span></a>, no interactive input is possible. It is possible to create a journal file which contains all of the commands that would normally be entered within fluent, e.g. file test.jou :</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">file</span><span class="o">/</span><span class="n">read</span><span class="o">-</span><span class="n">case</span> <span class="n">test</span><span class="o">.</span><span class="n">cas</span>
 <span class="n">file</span><span class="o">/</span><span class="n">read</span><span class="o">-</span><span class="n">data</span> <span class="n">test</span><span class="o">.</span><span class="n">dat</span>
@@ -1399,10 +1403,10 @@ module add ansys/2020R2
 fluent 3ddp -g -i test.jou
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="running-in-parallel">
-<h2>Running in parallel<a class="headerlink" href="#running-in-parallel" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="running-in-parallel">
+<h2>Running in parallel<a class="headerlink" href="#running-in-parallel" title="Permalink to this headline">#</a></h2>
 <p>There are three ways of launching Fluent to work in parallel:</p>
 <ul class="simple">
 <li><p>On login nodes</p></li>
@@ -1418,14 +1422,14 @@ fluent 3ddp -g -i test.jou
 </pre></div>
 </div>
 <p>We’d not normally recommend running Fluent interactively on the HPC though, as you’re almost always better running batch jobs.</p>
-<div class="section" id="running-a-large-mesh-interactively">
-<h3>Running a large mesh interactively<a class="headerlink" href="#running-a-large-mesh-interactively" title="Permalink to this headline">¶</a></h3>
+<section id="running-a-large-mesh-interactively">
+<h3>Running a large mesh interactively<a class="headerlink" href="#running-a-large-mesh-interactively" title="Permalink to this headline">#</a></h3>
 <p>Occasionally, you will need to have interactive access to a large model that requires large amounts of memory and/or cores.
 Whilst it might be possible to use a login node to do this for a short period of time, this is not a preferred option as the login nodes are a shared resource.</p>
 <p>However, you can request an interactive session on the backend compute nodes to do this.</p>
-</div>
-<div class="section" id="parallel-execution-through-the-batch-queues">
-<h3>Parallel execution through the batch queues<a class="headerlink" href="#parallel-execution-through-the-batch-queues" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="parallel-execution-through-the-batch-queues">
+<h3>Parallel execution through the batch queues<a class="headerlink" href="#parallel-execution-through-the-batch-queues" title="Permalink to this headline">#</a></h3>
 <p>Parallel execution via the batch queues is performed by combination of the techniques mentioned above. Firstly a journal file (<code class="docutils literal notranslate"><span class="pre">test_para.jou</span></code>) should be created to control the parallel run, without the aid of the GUI file:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">file</span><span class="o">/</span><span class="n">read</span><span class="o">-</span><span class="n">case</span> <span class="n">test_para</span><span class="o">.</span><span class="n">cas</span>
 <span class="n">file</span><span class="o">/</span><span class="n">read</span><span class="o">-</span><span class="n">data</span> <span class="n">test_para</span><span class="o">.</span><span class="n">dat</span>
@@ -1456,9 +1460,9 @@ fluent -g -i test_para.jou 3ddp -rsh
 </pre></div>
 </div>
 <p>The job will be run once the requested resources become available.</p>
-</div>
-<div class="section" id="gpu-execution-using-the-batch-queues">
-<h3>GPU execution using the batch queues<a class="headerlink" href="#gpu-execution-using-the-batch-queues" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="gpu-execution-using-the-batch-queues">
+<h3>GPU execution using the batch queues<a class="headerlink" href="#gpu-execution-using-the-batch-queues" title="Permalink to this headline">#</a></h3>
 <p>Fluent supports the use of GPUs, although we’ve not currently seen significant benefit from doing so on ARC.  To submit a GPU job:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1"># use current working directory</span>
@@ -1474,10 +1478,10 @@ module add ansys/2020R2
 fluent -g -i -gpgpu<span class="o">=</span><span class="m">1</span> test_para.jou 3ddp -rsh
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="running-with-old-version-of-fluent-v15-or-below">
-<h2>Running with old version of Fluent v15 or below<a class="headerlink" href="#running-with-old-version-of-fluent-v15-or-below" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="running-with-old-version-of-fluent-v15-or-below">
+<h2>Running with old version of Fluent v15 or below<a class="headerlink" href="#running-with-old-version-of-fluent-v15-or-below" title="Permalink to this headline">#</a></h2>
 <p>When running Fluent v15 or below in parallel batch mode, additional parameters need to be added to the Fluent command line in the batch submission script.</p>
 <p>Taking the script in the previous section as an example, the line:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fluent -g -i test_para.jou 3ddp -rsh
@@ -1487,9 +1491,9 @@ fluent -g -i -gpgpu<span class="o">=</span><span class="m">1</span> test_para.jo
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fluent -g -i test_para.jou 3ddp -pib -sgeup
 </pre></div>
 </div>
-</div>
-<div class="section" id="additional-notes">
-<h2>Additional notes<a class="headerlink" href="#additional-notes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="additional-notes">
+<h2>Additional notes<a class="headerlink" href="#additional-notes" title="Permalink to this headline">#</a></h2>
 <p>There are also known inefficiencies when running fluent on part nodes on ARC, which is why the above examples all use <code class="docutils literal notranslate"><span class="pre">-l</span> <span class="pre">nodes=&lt;nodes&gt;</span></code> to ensure exclusive access to nodes.  For optimal performance, run fluent on whole nodes.  For example, to run on a single node:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1"># use current working directory</span>
@@ -1506,8 +1510,8 @@ fluent -g -i test_para.jou 3ddp -rsh
 </pre></div>
 </div>
 <p>You will wait slightly longer for a whole node than using the scattered allocation model (<code class="docutils literal notranslate"><span class="pre">-pe</span> <span class="pre">ib</span> <span class="pre">40</span></code>), but your code is likely to run significantly faster.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

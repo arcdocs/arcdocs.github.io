@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Linux basics &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1234,8 +1238,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="linux-basics">
-<h1>Linux basics<a class="headerlink" href="#linux-basics" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="linux-basics">
+<h1>Linux basics<a class="headerlink" href="#linux-basics" title="Permalink to this headline">#</a></h1>
 <p>The HPC systems at Leeds run on a variant of the Linux operating system and we interact with the system using a command-line interface (CLI) rather than a graphical user interface (GUI) which we often use on personal computers.
 The command line allows you to interact with the operating system through a series of commands that we type in and are executed after we hit the Enter key.</p>
 <table class="colwidths-auto table">
@@ -1248,12 +1252,12 @@ The command line allows you to interact with the operating system through a seri
 </tr>
 </tbody>
 </table>
-<div class="section" id="linux-tutorial">
-<h2>Linux Tutorial<a class="headerlink" href="#linux-tutorial" title="Permalink to this headline">¶</a></h2>
+<section id="linux-tutorial">
+<h2>Linux Tutorial<a class="headerlink" href="#linux-tutorial" title="Permalink to this headline">#</a></h2>
 <p>If you’re totally new to Linux and the command line strongly encourage you to attend our training sessions <a class="reference external" href="https://arc.leeds.ac.uk/training/courses/hpc0/">HPC0: Introduction to Linux</a> and <a class="reference external" href="https://arc.leeds.ac.uk/training/courses/hpc1/">HPC1: Introduction to HPC at Leeds</a>. These run throughout the year and provide a good basic introduction to both Linux and how to use the HPC at Leeds. If you’d like to learn more about Linux and the command line in your own time we also strongly recommend the Software Carpentries lesson on the <a class="reference external" href="http://swcarpentry.github.io/shell-novice/">Unix shell</a> which offers a step-by-step tutorial you can take at your own pace.</p>
-</div>
-<div class="section" id="some-helpful-shell-commands">
-<h2>Some helpful shell commands<a class="headerlink" href="#some-helpful-shell-commands" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="some-helpful-shell-commands">
+<h2>Some helpful shell commands<a class="headerlink" href="#some-helpful-shell-commands" title="Permalink to this headline">#</a></h2>
 <p>Commands in the terminal (or shell) follow a common pattern:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">command</span> &lt;options prefixed with - or --&gt; &lt;arguments&gt;
 </pre></div>
@@ -1314,8 +1318,8 @@ The command line allows you to interact with the operating system through a seri
 </tr>
 </tbody>
 </table>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

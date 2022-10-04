@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Anaconda &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1320,15 +1324,15 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="anaconda">
-<h1>Anaconda<a class="headerlink" href="#anaconda" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="anaconda">
+<h1>Anaconda<a class="headerlink" href="#anaconda" title="Permalink to this headline">#</a></h1>
 <p>Anaconda is a distribution of Python and R for scientific computing that includes the conda package manager system which aids with reproducibility. You can read more about Anaconda on their <a class="reference external" href="https://www.anaconda.com/products/individual">website</a>.</p>
 <div class="tip admonition">
 <p class="admonition-title">Tip</p>
 <p>Anaconda is our actively supported Python distribution on both ARC3 and ARC4.</p>
 </div>
-<div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h2>
 <p>To access the anaconda module use the command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module load anaconda
 </pre></div>
@@ -1359,15 +1363,15 @@ title="Print to PDF"
 <p class="admonition-title">Note</p>
 <p>We recommend, however, that you do not use the base environment but create and activate custom environments built to the specifications you need for your projects.</p>
 </div>
-<div class="section" id="what-is-a-conda-environment">
-<h3>What is a conda environment?<a class="headerlink" href="#what-is-a-conda-environment" title="Permalink to this headline">¶</a></h3>
+<section id="what-is-a-conda-environment">
+<h3>What is a conda environment?<a class="headerlink" href="#what-is-a-conda-environment" title="Permalink to this headline">#</a></h3>
 <p>Conda environments are a form of python virtual environments, a self contained directory that contains a particular version of python plus a number of specific python packages. Conda allows us to create and manage several of these separate environments at the same time.</p>
 <p><img alt="Conda environment graphic" src="../../_images/conda-env2.jpg" />
 Image Copyright © <a class="reference external" href="https://geohackweek.github.io/datasharing/01-conda-tutorial/">geohackweek</a></p>
 <p>Each environments packages and installed python versions are isolated from one another preventing notorious package ‘dependency hell’ situations. Conda also allows us to share environment specifications through the creation of simple text files, aiding reproducibility.</p>
-</div>
-<div class="section" id="creating-custom-environments">
-<h3>Creating custom environments<a class="headerlink" href="#creating-custom-environments" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="creating-custom-environments">
+<h3>Creating custom environments<a class="headerlink" href="#creating-custom-environments" title="Permalink to this headline">#</a></h3>
 <p>To create a new Python 3 environment with the Pandas, Numpy and Scipy libraries named example_env_1, use the command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda create --name example_env_1 <span class="nv">python</span><span class="o">=</span><span class="m">3</span> numpy scipy pandas
 </pre></div>
@@ -1391,8 +1395,8 @@ conda deactivate
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda env list
 </pre></div>
 </div>
-<div class="section" id="first-time-conda-setup">
-<h4>First time .conda setup<a class="headerlink" href="#first-time-conda-setup" title="Permalink to this headline">¶</a></h4>
+<section id="first-time-conda-setup">
+<h4>First time .conda setup<a class="headerlink" href="#first-time-conda-setup" title="Permalink to this headline">#</a></h4>
 <p>By default conda stores files relating to environments in the <code class="docutils literal notranslate"><span class="pre">.conda</span></code> directory which lives in your home directory. This <code class="docutils literal notranslate"><span class="pre">.conda</span></code> directory can often get quite large with all the different packages installed for different environments which can fill up a users <a class="reference external" href="../../getting_started/nobackup#HOME-directory">home directory quota</a>.</p>
 <p>To avoid this you can use the following steps to move your <code class="docutils literal notranslate"><span class="pre">.conda</span></code> directory to your <a class="reference internal" href="../../getting_started/nobackup.html"><span class="doc std std-doc">/nobackup directory</span></a> instead.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~
@@ -1409,10 +1413,10 @@ $ ln -s /nobackup/<span class="nv">$USER</span>/.conda ~/.conda
 </pre></div>
 </div>
 <p>For the full conda documentation please consult their <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">website</a>.</p>
-</div>
-</div>
-<div class="section" id="conda-channels">
-<h3>Conda channels<a class="headerlink" href="#conda-channels" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="conda-channels">
+<h3>Conda channels<a class="headerlink" href="#conda-channels" title="Permalink to this headline">#</a></h3>
 <p>Conda provides packages via channels. Channels are hosted locations where packages are sorted and maintained. Packages you install are downloaded from these remote channels which are URLs to directories containing conda packages. The <code class="docutils literal notranslate"><span class="pre">conda</span></code> command searches the channels you have configured for the packages you have requested and by default it searches the anaconda channel.</p>
 <p>You can specify a channel to use in your <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code> command using the <code class="docutils literal notranslate"><span class="pre">--channel/-c</span></code> option, for instance:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda install -c conda-forge r
@@ -1424,21 +1428,21 @@ $ ln -s /nobackup/<span class="nv">$USER</span>/.conda ~/.conda
 $ conda config --add channels bioconda
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="example-conda-environments">
-<h2>Example conda environments<a class="headerlink" href="#example-conda-environments" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="example-conda-environments">
+<h2>Example conda environments<a class="headerlink" href="#example-conda-environments" title="Permalink to this headline">#</a></h2>
 <p>Below we cover some examples of more generic conda environments HPC users might wish to create depending on their research.</p>
-<div class="section" id="creating-a-python-2-environment">
-<h3>Creating a Python 2 environment<a class="headerlink" href="#creating-a-python-2-environment" title="Permalink to this headline">¶</a></h3>
+<section id="creating-a-python-2-environment">
+<h3>Creating a Python 2 environment<a class="headerlink" href="#creating-a-python-2-environment" title="Permalink to this headline">#</a></h3>
 <p>Whilst Python 2 is no longer supported by the <a class="reference external" href="https://www.python.org/doc/sunset-python-2/">Python Software Foundation</a> we occasionally come across code that still requires Python 2.</p>
 <p>You can use <code class="docutils literal notranslate"><span class="pre">conda</span></code> to create a specific python 2.7 environment with the example below:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda create -n project2 <span class="nv">python</span><span class="o">=</span><span class="m">2</span>.7
 </pre></div>
 </div>
-</div>
-<div class="section" id="creating-an-r-environment">
-<h3>Creating an R environment<a class="headerlink" href="#creating-an-r-environment" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="creating-an-r-environment">
+<h3>Creating an R environment<a class="headerlink" href="#creating-an-r-environment" title="Permalink to this headline">#</a></h3>
 <p>Although Conda was originally designed to manage Python, it’s just as happy dealing with R. If you need to have multiple different versions of R available for testing purposes you can create separate R environments for each one.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1449,18 +1453,18 @@ $ conda create -n r_env r-base r-essentials
 </pre></div>
 </div>
 <p>You are able to install R packages directly through conda rather than using CRAN. However, not all R packages on CRAN are available on conda and so you will need to be aware of this when configuring your environment. You are still able to install CRAN packages into conda-installed R and it will install these R packages within your conda environment.</p>
-<div class="section" id="installing-r-with-conda-forge">
-<h4>Installing R with conda-forge<a class="headerlink" href="#installing-r-with-conda-forge" title="Permalink to this headline">¶</a></h4>
+<section id="installing-r-with-conda-forge">
+<h4>Installing R with conda-forge<a class="headerlink" href="#installing-r-with-conda-forge" title="Permalink to this headline">#</a></h4>
 <p>If you wish to use R versions later than 3.6.1 you will need to use the <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> channel for installing R.</p>
 <p>For example installing R 4.0.3:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a conda environment in which we install R 4.0.3 from the conda forge channel</span>
 $ conda create -n r403 -c conda-forge r-base<span class="o">=</span><span class="m">4</span>.0.3
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

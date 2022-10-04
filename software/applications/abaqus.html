@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Abaqus &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1314,15 +1318,15 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="abaqus">
-<h1>Abaqus<a class="headerlink" href="#abaqus" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="abaqus">
+<h1>Abaqus<a class="headerlink" href="#abaqus" title="Permalink to this headline">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>The purpose of this guide is to get the first few models running with generic options so that you can start getting results back and have a working system that you can modify to suit the specific needs of your work. Because of this there will not be an in depth discussion of the wide range of options and commands available, however there are extensive help files available from the command line.</p>
 <p>Typing <code class="docutils literal notranslate"><span class="pre">help</span></code> will give a list of built-in commands, <code class="docutils literal notranslate"><span class="pre">help</span></code> will then give more specific information on that command eg. <code class="docutils literal notranslate"><span class="pre">help</span> <span class="pre">help</span></code> gives you information about the help command. Entering <code class="docutils literal notranslate"><span class="pre">info</span> <span class="pre">info</span></code> will open a help manual and <code class="docutils literal notranslate"><span class="pre">info</span> <span class="pre">&lt;command&gt;</span></code> will give specific information about that command eg. <code class="docutils literal notranslate"><span class="pre">info</span> <span class="pre">qsub</span></code> details the qsub command which submits a job to the queue.</p>
-</div>
-<div class="section" id="licence-management">
-<h2>Licence Management<a class="headerlink" href="#licence-management" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="licence-management">
+<h2>Licence Management<a class="headerlink" href="#licence-management" title="Permalink to this headline">#</a></h2>
 <p>Abaqus is a licensed application with a limited number of license tokens. Running an Abaqus analysis requires more than one token. The number of tokens needed (T) is given by the formula T = int(5 x N^0.422) where N is the number of cpu cores. More simply, for common job sizes the numbers are:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1359,16 +1363,16 @@ title="Print to PDF"
 </table>
 <p><strong>Good practice</strong> would recommend not to run 5 jobs using 12 CPU cores each (that would require 70 license tokens, i.e. over half the available number of tokens).</p>
 <p>For information, Abaqus scales efficiently to 4 processors, relatively well to 8 processors but poorly further. Trying to run a job over more that 8 to 12 CPU cores won’t increase the performances (and running over more than the number of CPU cores per node will even decrease the performance).</p>
-</div>
-<div class="section" id="preparation">
-<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">#</a></h2>
 <p>First of all you will need an account on the facility and a suitable piece of software to access it. I will be using WinSCP to do this so keep in mind that if you are using an alternative this may have an effect.</p>
 <p>Running an Abaqus job from the command line, which is how you perform an analysis, uses an input file with the extension <code class="docutils literal notranslate"><span class="pre">.inp</span></code>. This can be created from your model file in the Abaqus CAE by right clicking the job in the model tree and selecting <code class="docutils literal notranslate"><span class="pre">Write</span> <span class="pre">Input</span></code>.
 This can also be done from the job manager. This will create a file called <code class="docutils literal notranslate"><span class="pre">&lt;job_name&gt;.inp</span></code> which is what Abaqus will use.</p>
 <p>When logged in you will have a home directory (WinSCP should send you here automatically). If you select the open directory option above the remote directory window and select <code class="docutils literal notranslate"><span class="pre">Add</span></code> in the <code class="docutils literal notranslate"><span class="pre">Session</span> <span class="pre">bookmarks</span></code> tab it will save a bookmark to this directory which make it easier to navigate around. When working on the facility you should use the /nobackup directory as it has more working space and faster data speeds. Make a new directory in /nobackup and place the input file you wish to analyse in there (also bookmark this directory as well).</p>
-</div>
-<div class="section" id="setting-up-a-job">
-<h2>Setting Up a Job<a class="headerlink" href="#setting-up-a-job" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="setting-up-a-job">
+<h2>Setting Up a Job<a class="headerlink" href="#setting-up-a-job" title="Permalink to this headline">#</a></h2>
 <p>There are two sections to a job submission, the first describes the job to the queue system and the second tells Abaqus to perform the analysis and gives it the information it needs. The information for both is contained in a script file held in your /nobackup directory. This script file is a text file with the extension .sh and can be created by right-clicking in the remote directory window and selecting <code class="docutils literal notranslate"><span class="pre">New</span></code> and <code class="docutils literal notranslate"><span class="pre">File</span></code>.</p>
 <p>In this script starting the line with a hash ( <code class="docutils literal notranslate"><span class="pre">#</span></code> ) symbol followed by a space comments out the line so that it will be skipped when the program is run. This allows you to leave notes within the code or save lines that you do not want active at the time but may need later. Starting with a hash-dollar (<code class="docutils literal notranslate"><span class="pre">#$</span></code> ) and then a space tells the system that this is a command to set up the queue. Having nothing preceding the line means that it will be used by Abaqus to set up the analysis.</p>
 <p>For a simple script that will run an analysis on a single core use the following, note that the lines have been numbered for clarity but these numbers are not a part of the code:</p>
@@ -1395,9 +1399,9 @@ abaqus <span class="nv">memory</span><span class="o">=</span>&lt;amount_of_RAM_a
 <p><code class="docutils literal notranslate"><span class="pre">&lt;job_name&gt;</span></code> is the name of the job, the output files will be named <code class="docutils literal notranslate"><span class="pre">&lt;job_name&gt;.&lt;extension&gt;</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;nobackup_directory&gt;</span></code> is the path of the directory you created in /nobackup. For example if you made a directory on /nobackup called <code class="docutils literal notranslate"><span class="pre">username</span></code> the value for would be <code class="docutils literal notranslate"><span class="pre">/nobackup/username</span></code> . Note that the double quotation marks surrounding the directory path are to be typed in.</p>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;license_port&gt;</span></code> is the port where the Abaqus license you are using is located and <code class="docutils literal notranslate"><span class="pre">&lt;license_server&gt;</span></code> is the server for the same license. These details depend on the departmental license you are using and should be available by making a general request to IT.</p>
-</div>
-<div class="section" id="parallel-processors">
-<h2>Parallel Processors<a class="headerlink" href="#parallel-processors" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="parallel-processors">
+<h2>Parallel Processors<a class="headerlink" href="#parallel-processors" title="Permalink to this headline">#</a></h2>
 <p>To make use of several cpu cores to run your analysis use a script file in the form:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -l h_rt=&lt;run_time&gt;</span>
 <span class="c1">#$ -l h_vmem=&lt;amount_of_RAM_queue&gt;</span>
@@ -1414,13 +1418,13 @@ abaqus <span class="nv">memory</span><span class="o">=</span>&lt;amount_of_RAM_a
 <p class="admonition-title">Note</p>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;amount_of_RAM_abaqus&gt;</span></code> is the amount of memory Abaqus will devote to the solver. There are other memory overheads required by Abaqus. Thus, you will need to define <code class="docutils literal notranslate"><span class="pre">&lt;amount_of_RAM_abaqus&gt;</span></code> to be less than the total memory requested from the queues to allow for this. For instance if you request two cores at <code class="docutils literal notranslate"><span class="pre">2Gb</span></code> each, then set <code class="docutils literal notranslate"><span class="pre">memory=3000m</span></code> for example, which would allow <code class="docutils literal notranslate"><span class="pre">1Gb</span></code> for memory overheads.</p>
 </div>
-</div>
-<div class="section" id="submitting-a-job">
-<h2>Submitting a Job<a class="headerlink" href="#submitting-a-job" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="submitting-a-job">
+<h2>Submitting a Job<a class="headerlink" href="#submitting-a-job" title="Permalink to this headline">#</a></h2>
 <p>To then submit a job you use the command line in WinSCP or the comparable program that you are using. Enter <code class="docutils literal notranslate"><span class="pre">qsub</span> <span class="pre">&lt;script_file_name&gt;</span></code> where the <code class="docutils literal notranslate"><span class="pre">&lt;script_file_name&gt;</span></code> is the name of the file created above that holds the settings for the job. Therefore if this file is called <code class="docutils literal notranslate"><span class="pre">job_submission.sh</span></code> then you would type <code class="docutils literal notranslate"><span class="pre">qsub</span> <span class="pre">job_submission.sh</span></code> . If the submission is successful the command line response should confirm this and give a job ID. The status of your jobs can be queried with the line <code class="docutils literal notranslate"><span class="pre">qstat</span> <span class="pre">-f</span></code> . When the job starts and ends you should receive a confirmation email and the results of the analysis will be placed into your /nobackup directory.</p>
-</div>
-<div class="section" id="example-script">
-<h2>Example Script<a class="headerlink" href="#example-script" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="example-script">
+<h2>Example Script<a class="headerlink" href="#example-script" title="Permalink to this headline">#</a></h2>
 <p>Just to provide an example script with some numbers in place, for a
 model requesting 12Gb of memory and 4 hours to run an analysis of the
 file <code class="docutils literal notranslate"><span class="pre">input.inp</span></code> :</p>
@@ -1434,9 +1438,9 @@ module add abaqus
 abaqus <span class="nv">memory</span><span class="o">=</span>12000mb <span class="nv">cpus</span><span class="o">=</span><span class="nv">$NSLOTS</span> <span class="nv">input</span><span class="o">=</span>input.inp <span class="nv">job</span><span class="o">=</span>input <span class="nv">mp_mode</span><span class="o">=</span>threads int
 </pre></div>
 </div>
-</div>
-<div class="section" id="user-defined-fortran-subroutines">
-<h2>User Defined Fortran subroutines<a class="headerlink" href="#user-defined-fortran-subroutines" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="user-defined-fortran-subroutines">
+<h2>User Defined Fortran subroutines<a class="headerlink" href="#user-defined-fortran-subroutines" title="Permalink to this headline">#</a></h2>
 <p>To include user defined Fortran subroutines, e.g. <code class="docutils literal notranslate"><span class="pre">exampleroutine.f</span></code> , you will need to prepend the licence for the compiler to the licence path, <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">LM_LICENSE_FILE=&lt;license_port&gt;&#64;&lt;license_server&gt;:$LM_LICENSE_FILE</span></code> .</p>
 <p>For example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -l h_rt=4:00:00</span>
@@ -1449,9 +1453,9 @@ abaqus <span class="nv">memory</span><span class="o">=</span>12000mb <span class
 </pre></div>
 </div>
 <p>This ensures that <strong>both</strong> Abaqus and the system default Intel Fortran compiler are able to access their relevant licence servers.</p>
-</div>
-<div class="section" id="scratch-disk-space">
-<h2>Scratch disk space<a class="headerlink" href="#scratch-disk-space" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="scratch-disk-space">
+<h2>Scratch disk space<a class="headerlink" href="#scratch-disk-space" title="Permalink to this headline">#</a></h2>
 <p>By default abaqus uses the fast local storage of nodes for scratch space.  1Gbyte per core is allocated as standard, but you can increase this as required.  For example, to allocate 4Gbytes per core:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -l disk=4G</span>
 </pre></div>
@@ -1462,9 +1466,9 @@ abaqus <span class="nv">memory</span><span class="o">=</span>12000mb <span class
 abaqus <span class="nv">memory</span><span class="o">=</span>12000mb <span class="nv">input</span><span class="o">=</span>input.inp <span class="nv">job</span><span class="o">=</span>input <span class="nv">user</span><span class="o">=</span>exampleroutine <span class="nv">scratch</span><span class="o">=</span><span class="s2">&quot;/nobackup/</span><span class="nv">$USER</span><span class="s2">/scratch&quot;</span> <span class="k">in</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="checkpointing">
-<h2>Checkpointing<a class="headerlink" href="#checkpointing" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="checkpointing">
+<h2>Checkpointing<a class="headerlink" href="#checkpointing" title="Permalink to this headline">#</a></h2>
 <p>Users sometimes find that their jobs take longer than the 48 hours permitted by the scheduler to complete. Providing that your model does not automatically re-mesh (for example, after a fracture), you may be able to make use of Abaqus’ built-in checkpointing function.</p>
 <p>This will create a <strong>restart</strong> file (.res file extension) from which a job that is killed can be restarted.</p>
 <ol>
@@ -1484,8 +1488,8 @@ abaqus <span class="nv">memory</span><span class="o">=</span>12000mb <span class
 </div>
 </li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

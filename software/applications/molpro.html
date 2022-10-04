@@ -4,7 +4,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Molpro &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -19,28 +20,31 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -1258,28 +1262,28 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="molpro">
-<h1>Molpro<a class="headerlink" href="#molpro" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="setting-up-the-environment">
-<h2>Setting up the environment<a class="headerlink" href="#setting-up-the-environment" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="molpro">
+<h1>Molpro<a class="headerlink" href="#molpro" title="Permalink to this headline">#</a></h1>
+<section id="setting-up-the-environment">
+<h2>Setting up the environment<a class="headerlink" href="#setting-up-the-environment" title="Permalink to this headline">#</a></h2>
 <p>To set up the environment load the version of the software that you want to use. For example for version <code class="docutils literal notranslate"><span class="pre">2010.1.25</span></code> use:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add molpro/2010.1.25
 </pre></div>
 </div>
-</div>
-<div class="section" id="scratch-files">
-<h2>Scratch files<a class="headerlink" href="#scratch-files" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="scratch-files">
+<h2>Scratch files<a class="headerlink" href="#scratch-files" title="Permalink to this headline">#</a></h2>
 <p>Molpro writes a larges amount of temporary or scratch files. By default these are written to <code class="docutils literal notranslate"><span class="pre">/scratch</span></code> directory on compute nodes. The <code class="docutils literal notranslate"><span class="pre">/scratch</span></code> directories are usually fairly small and may fill up quickly causing jobs to fail. In this case, to avoid these failures you may need to change the location of the scratch files. You can redirect these scratch files to your directory on the high speed filesystem <code class="docutils literal notranslate"><span class="pre">/nobackup</span></code> , using the <code class="docutils literal notranslate"><span class="pre">-d</span></code> switch. For example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ molpro -d /nobackup/your_scratch_directory
 </pre></div>
 </div>
 <p>The directory <code class="docutils literal notranslate"><span class="pre">/nobackup/your_scratch_directory</span></code> is a directory that you create in the <code class="docutils literal notranslate"><span class="pre">/nobackup</span></code> area. This is most likely to be in your <code class="docutils literal notranslate"><span class="pre">/nobackup</span></code> area. Read more about the <code class="docutils literal notranslate"><span class="pre">/nobackup</span></code> filesystem <a class="reference internal" href="../../getting_started/nobackup.html"><span class="doc std std-doc">here</span></a>.</p>
 <p>It is best to use the version of molpro installed on the system as it is installed and tested to run most efficiently but if you do choose to install your own version of molpro you will need to configure it so that it uses the <code class="docutils literal notranslate"><span class="pre">/scratch</span></code> area or you should use the <code class="docutils literal notranslate"><span class="pre">-d</span> <span class="pre">$TMPDIR</span></code> or <code class="docutils literal notranslate"><span class="pre">-d</span> <span class="pre">/scratch</span></code> in your command line when you submit your job to the batch system.</p>
-</div>
-<div class="section" id="example-job-scripts">
-<h2>Example job scripts<a class="headerlink" href="#example-job-scripts" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="serial-job-submission">
-<h3>Serial job submission<a class="headerlink" href="#serial-job-submission" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="example-job-scripts">
+<h2>Example job scripts<a class="headerlink" href="#example-job-scripts" title="Permalink to this headline">#</a></h2>
+<section id="serial-job-submission">
+<h3>Serial job submission<a class="headerlink" href="#serial-job-submission" title="Permalink to this headline">#</a></h3>
 <p>To run jobs through the batch scheduler, you need to submit them by using the command <code class="docutils literal notranslate"><span class="pre">qsub</span> <span class="pre">&lt;script</span> <span class="pre">name&gt;</span></code> . The command to launch the serial version of molpro is <code class="docutils literal notranslate"><span class="pre">molpro</span></code> . Below is an example job script. The example script below requests 1Gb RAM for 2 hours, using the current environment and running from the current working directory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#$ -l h_rt=2:0:0</span>
@@ -1289,9 +1293,9 @@ title="Print to PDF"
 molpro -d /nobackup/your_scratch_directory
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

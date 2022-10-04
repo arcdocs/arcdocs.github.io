@@ -1,199 +1,175 @@
-# these comments are borrowed from https://github.com/alan-turing-institute/the-turing-way/blob/master/book/website/_toc.yml
-# Each entry has the following schema:
-#
-# - title: mytitle   # Title of chapter or subchapter
-#   file: myfile  # filename relative to the  folder.
-#   sections:  # Contains a list of more entries that make up the chapter's subchapters
-#
-# Below are some special values that trigger specific behavior:
-# - header: My Header  # Will insert a header with no link in the sidebar
-
-# ===== Main Landing Page ========================================
-- file: welcome
-
-# ===== Getting started ==========================================
+format: jb-article
+root: welcome
+sections:
 - file: getting_started/start
   sections:
-    - file: getting_started/request_hpc_acct
-    - file: getting_started/request_install
-    - file: getting_started/logon
-      sections:
-        - file: getting_started/logon/logon-campus
-        - file: getting_started/logon/logon-off-campus
-        - file: getting_started/logon/x11-graphics
-        - file: getting_started/logon/fingerprint-details        
-    - file: getting_started/linuxbasics
-    - file: getting_started/nobackup
-    - file: getting_started/file_transfer
-    - file: getting_started/x2go
-
-
-# ===== Usage ==========================================
+  - file: getting_started/request_hpc_acct
+  - file: getting_started/request_install
+  - file: getting_started/logon
+    sections:
+    - file: getting_started/logon/logon-campus
+    - file: getting_started/logon/logon-off-campus
+    - file: getting_started/logon/x11-graphics
+    - file: getting_started/logon/fingerprint-details
+  - file: getting_started/linuxbasics
+  - file: getting_started/nobackup
+  - file: getting_started/file_transfer
+  - file: getting_started/x2go
 - file: usage/start
   sections:
-    - file: usage/batchjob
-    - file: usage/interactive
-    - file: usage/troubleshooting
-    - file: usage/taskarrays
-    - file: usage/gpgpu
-    - file: usage/scratch
-    - file: usage/advanced
-    - file: usage/acknowledgement
-
-# ===== Software ==========================================
+  - file: usage/batchjob
+  - file: usage/interactive
+  - file: usage/troubleshooting
+  - file: usage/taskarrays
+  - file: usage/gpgpu
+  - file: usage/scratch
+  - file: usage/advanced
+  - file: usage/acknowledgement
 - file: software/start
   sections:
-    - file: software/applications/start
+  - file: software/applications/start
+    sections:
+    - file: software/applications/abaqus
+    - file: software/applications/amber
+    - file: software/applications/ansys
       sections:
-      - file: software/applications/abaqus
-      - file: software/applications/amber
-      - file: software/applications/ansys
-        sections:
-        - file: software/applications/ansys/ansyscli
-        - file: software/applications/ansys/cfx
-        - file: software/applications/ansys/fluent
-        - file: software/applications/ansys/chemkin
-      - file: software/applications/cesm
-      - file: software/applications/comsol
-      - file: software/applications/dl_poly
-        sections:
-        - file: software/applications/dlpoly/license
-      - file: software/applications/gaussian
-      - file: software/applications/gromacs
-      - file: software/applications/gurobi
-      - file: software/applications/idl
-      - file: software/applications/matlab
-      - file: software/applications/molpro
-      - file: software/applications/namd
-      - file: software/applications/openfoam
-      - file: software/applications/paraview
-      - file: software/applications/R
-      - file: software/applications/schrodinger
-      - file: software/applications/stata
-      - file: software/applications/visit
-      - file: software/applications/vmd
-    - file: software/compilers/start
+      - file: software/applications/ansys/ansyscli
+      - file: software/applications/ansys/cfx
+      - file: software/applications/ansys/fluent
+      - file: software/applications/ansys/chemkin
+    - file: software/applications/cesm
+    - file: software/applications/comsol
+    - file: software/applications/dl_poly
       sections:
-      - file: software/compilers/anaconda
-      - file: software/compilers/cuda
-      - file: software/compilers/gnu
-      - file: software/compilers/go
-      - file: software/compilers/intel
-      - file: software/compilers/java
-      - file: software/compilers/julia
-      - file: software/compilers/llvm
-      - file: software/compilers/lua
-      - file: software/compilers/pgi
-      - file: software/compilers/python
-      - file: software/compilers/yasm
-    - file: software/infrastructure/start
-      sections:
-      - file: software/infrastructure/advisor.md
-      - file: software/infrastructure/allinea.md
-      - file: software/infrastructure/arm-forge.md
-      - file: software/infrastructure/bazel.md
-      - file: software/infrastructure/cmake.md
-      - file: software/infrastructure/gdb.md
-      - file: software/infrastructure/git.md
-      - file: software/infrastructure/inspector.md
-      - file: software/infrastructure/licenses.md
-      - file: software/infrastructure/parallel.md
-      - file: software/infrastructure/sge.md
-      - file: software/infrastructure/singularity.md
-      - file: software/infrastructure/subversion.md
-      - file: software/infrastructure/system.md
-      - file: software/infrastructure/test.md
-      - file: software/infrastructure/unison.md
-      - file: software/infrastructure/user.md
-      - file: software/infrastructure/virtualgl.md
-      - file: software/infrastructure/vtune.md
-    - file: software/libraries/start
-      sections:
-      - file: software/libraries/linalg.md
-      - file: software/libraries/armadillo.md
-      - file: software/libraries/atlas.md
-      - file: software/libraries/boost.md
-      - file: software/libraries/cgal.md
-      - file: software/libraries/cube.md
-      - file: software/libraries/cudnn.md
-      - file: software/libraries/darshan.md
-      - file: software/libraries/dyninst.md
-      - file: software/libraries/eigen.md
-      - file: software/libraries/extrae.md
-      - file: software/libraries/ffmpeg.md
-      - file: software/libraries/fftw.md
-      - file: software/libraries/gdal.md
-      - file: software/libraries/geos.md
-      - file: software/libraries/glew.md
-      - file: software/libraries/glfw.md
-      - file: software/libraries/glpk.md
-      - file: software/libraries/gsl.md
-      - file: software/libraries/gstreamer.md
-      - file: software/libraries/hdf5.md
-      - file: software/libraries/hpctoolkit.md
-      - file: software/libraries/hypre.md
-      - file: software/libraries/intelmpi.md
-      - file: software/libraries/itac.md
-      - file: software/libraries/libdwarf.md
-      - file: software/libraries/libx264.md
-      - file: software/libraries/libxmlplusplus.md
-      - file: software/libraries/matlab-runtime.md
-      - file: software/libraries/mdbtools.md
-      - file: software/libraries/mesa.md
-      - file: software/libraries/mkl.md
-      - file: software/libraries/mpe2.md
-      - file: software/libraries/mpiP.md
-      - file: software/libraries/must.md
-      - file: software/libraries/mvapich2.md
-      - file: software/libraries/nag-matlab.md
-      - file: software/libraries/netcdf.md
-      - file: software/libraries/netlib.md
-      - file: software/libraries/ompP.md
-      - file: software/libraries/opencv.md
-      - file: software/libraries/openmpi.md
-      - file: software/libraries/openslide.md
-      - file: software/libraries/openspeedshop.md
-      - file: software/libraries/osmesa.md
-      - file: software/libraries/otf2.md
-      - file: software/libraries/papi.md
-      - file: software/libraries/paraver.md
-      - file: software/libraries/pdt.md
-      - file: software/libraries/petsc.md
-      - file: software/libraries/pgplot.md
-      - file: software/libraries/python-libs.md
-      - file: software/libraries/qt.md
-      - file: software/libraries/root.md
-      - file: software/libraries/scalasca.md
-      - file: software/libraries/scorep.md
-      - file: software/libraries/silo.md
-      - file: software/libraries/suitesparse.md
-      - file: software/libraries/superlu.md
-      - file: software/libraries/tau.md
-      - file: software/libraries/udunits.md
-      - file: software/libraries/valgrind.md
-      - file: software/libraries/vtk.md
-      - file: software/libraries/zeromq.md
-
-# ===== Systems ==========================================
+      - file: software/applications/dlpoly/license
+    - file: software/applications/gaussian
+    - file: software/applications/gromacs
+    - file: software/applications/gurobi
+    - file: software/applications/idl
+    - file: software/applications/matlab
+    - file: software/applications/molpro
+    - file: software/applications/namd
+    - file: software/applications/openfoam
+    - file: software/applications/paraview
+    - file: software/applications/R
+    - file: software/applications/schrodinger
+    - file: software/applications/stata
+    - file: software/applications/visit
+    - file: software/applications/vmd
+  - file: software/compilers/start
+    sections:
+    - file: software/compilers/anaconda
+    - file: software/compilers/cuda
+    - file: software/compilers/gnu
+    - file: software/compilers/go
+    - file: software/compilers/intel
+    - file: software/compilers/java
+    - file: software/compilers/julia
+    - file: software/compilers/llvm
+    - file: software/compilers/lua
+    - file: software/compilers/pgi
+    - file: software/compilers/python
+    - file: software/compilers/yasm
+  - file: software/infrastructure/start
+    sections:
+    - file: software/infrastructure/advisor.md
+    - file: software/infrastructure/allinea.md
+    - file: software/infrastructure/arm-forge.md
+    - file: software/infrastructure/bazel.md
+    - file: software/infrastructure/cmake.md
+    - file: software/infrastructure/gdb.md
+    - file: software/infrastructure/git.md
+    - file: software/infrastructure/inspector.md
+    - file: software/infrastructure/licenses.md
+    - file: software/infrastructure/parallel.md
+    - file: software/infrastructure/sge.md
+    - file: software/infrastructure/singularity.md
+    - file: software/infrastructure/subversion.md
+    - file: software/infrastructure/system.md
+    - file: software/infrastructure/test.md
+    - file: software/infrastructure/unison.md
+    - file: software/infrastructure/user.md
+    - file: software/infrastructure/virtualgl.md
+    - file: software/infrastructure/vtune.md
+  - file: software/libraries/start
+    sections:
+    - file: software/libraries/linalg.md
+    - file: software/libraries/armadillo.md
+    - file: software/libraries/atlas.md
+    - file: software/libraries/boost.md
+    - file: software/libraries/cgal.md
+    - file: software/libraries/cube.md
+    - file: software/libraries/cudnn.md
+    - file: software/libraries/darshan.md
+    - file: software/libraries/dyninst.md
+    - file: software/libraries/eigen.md
+    - file: software/libraries/extrae.md
+    - file: software/libraries/ffmpeg.md
+    - file: software/libraries/fftw.md
+    - file: software/libraries/gdal.md
+    - file: software/libraries/geos.md
+    - file: software/libraries/glew.md
+    - file: software/libraries/glfw.md
+    - file: software/libraries/glpk.md
+    - file: software/libraries/gsl.md
+    - file: software/libraries/gstreamer.md
+    - file: software/libraries/hdf5.md
+    - file: software/libraries/hpctoolkit.md
+    - file: software/libraries/hypre.md
+    - file: software/libraries/intelmpi.md
+    - file: software/libraries/itac.md
+    - file: software/libraries/libdwarf.md
+    - file: software/libraries/libx264.md
+    - file: software/libraries/libxmlplusplus.md
+    - file: software/libraries/matlab-runtime.md
+    - file: software/libraries/mdbtools.md
+    - file: software/libraries/mesa.md
+    - file: software/libraries/mkl.md
+    - file: software/libraries/mpe2.md
+    - file: software/libraries/mpiP.md
+    - file: software/libraries/must.md
+    - file: software/libraries/mvapich2.md
+    - file: software/libraries/nag-matlab.md
+    - file: software/libraries/netcdf.md
+    - file: software/libraries/netlib.md
+    - file: software/libraries/ompP.md
+    - file: software/libraries/opencv.md
+    - file: software/libraries/openmpi.md
+    - file: software/libraries/openslide.md
+    - file: software/libraries/openspeedshop.md
+    - file: software/libraries/osmesa.md
+    - file: software/libraries/otf2.md
+    - file: software/libraries/papi.md
+    - file: software/libraries/paraver.md
+    - file: software/libraries/pdt.md
+    - file: software/libraries/petsc.md
+    - file: software/libraries/pgplot.md
+    - file: software/libraries/python-libs.md
+    - file: software/libraries/qt.md
+    - file: software/libraries/root.md
+    - file: software/libraries/scalasca.md
+    - file: software/libraries/scorep.md
+    - file: software/libraries/silo.md
+    - file: software/libraries/suitesparse.md
+    - file: software/libraries/superlu.md
+    - file: software/libraries/tau.md
+    - file: software/libraries/udunits.md
+    - file: software/libraries/valgrind.md
+    - file: software/libraries/vtk.md
+    - file: software/libraries/zeromq.md
 - file: systems/start
   sections:
-    - file: systems/arc4
-    - file: systems/arc3
-    - file: systems/cloud-computing
-    - file: systems/secure-systems
-
-# ===== Guidance =========================================
+  - file: systems/arc4
+  - file: systems/arc3
+  - file: systems/cloud-computing
+  - file: systems/secure-systems
 - file: guidance/start
   sections:
-    - file: guidance/data_management
-    - file: guidance/software_management
-    - file: guidance/software_licensing
-    - file: guidance/recommended_platforms
-    - file: guidance/recommended_courses
-
-# ===== Training ==========================================
+  - file: guidance/data_management
+  - file: guidance/software_management
+  - file: guidance/software_licensing
+  - file: guidance/recommended_platforms
+  - file: guidance/recommended_courses
 - url: https://arc.leeds.ac.uk/training/
   title: Training
-
-# ===== Contact ==========================================
 - file: contact/start

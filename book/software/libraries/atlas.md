@@ -40,3 +40,7 @@ The ATLAS module is available on ARC3:
   - `module add atlas/3.10.3`
 
 ```
+
+## Additional Notes
+
+Please also refer to the general notes on how to use [Linear Algebra Libraries](./linalg) on ARC.

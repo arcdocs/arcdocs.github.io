@@ -44,3 +44,7 @@ The netlib module is available on ARC3 and ARC4:
   - `module add netlib/3.8.0`
 
 ```
+
+## Additional Notes
+
+Please also refer to the general notes on how to use [Linear Algebra Libraries](./linalg) on ARC.

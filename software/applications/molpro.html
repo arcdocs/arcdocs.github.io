@@ -1209,6 +1209,16 @@ title="Print to PDF"
      Serial job submission
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mpp-job-submission">
+     MPP job submission
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mppx-job-submission">
+     MPPX job submission
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1250,6 +1260,16 @@ title="Print to PDF"
      Serial job submission
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mpp-job-submission">
+     MPP job submission
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mppx-job-submission">
+     MPPX job submission
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1266,31 +1286,71 @@ title="Print to PDF"
 <h1>Molpro<a class="headerlink" href="#molpro" title="Permalink to this headline">#</a></h1>
 <section id="setting-up-the-environment">
 <h2>Setting up the environment<a class="headerlink" href="#setting-up-the-environment" title="Permalink to this headline">#</a></h2>
-<p>To set up the environment load the version of the software that you want to use. For example for version <code class="docutils literal notranslate"><span class="pre">2010.1.25</span></code> use:</p>
+<p>To set up the environment load the version of the software that you want to
+use. For example for version <code class="docutils literal notranslate"><span class="pre">2010.1.25</span></code> use:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add molpro/2010.1.25
 </pre></div>
 </div>
 </section>
 <section id="scratch-files">
 <h2>Scratch files<a class="headerlink" href="#scratch-files" title="Permalink to this headline">#</a></h2>
-<p>Molpro writes a larges amount of temporary or scratch files. By default these are written to <code class="docutils literal notranslate"><span class="pre">/scratch</span></code> directory on compute nodes. The <code class="docutils literal notranslate"><span class="pre">/scratch</span></code> directories are usually fairly small and may fill up quickly causing jobs to fail. In this case, to avoid these failures you may need to change the location of the scratch files. You can redirect these scratch files to your directory on the high speed filesystem <code class="docutils literal notranslate"><span class="pre">/nobackup</span></code> , using the <code class="docutils literal notranslate"><span class="pre">-d</span></code> switch. For example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ molpro -d /nobackup/your_scratch_directory
+<p>Molpro writes a larges amount of temporary or scratch files. By default these
+are written to the <code class="docutils literal notranslate"><span class="pre">/tmp</span></code> directory on compute nodes. The <code class="docutils literal notranslate"><span class="pre">/tmp</span></code> directories
+are usually fairly small and may fill up quickly causing jobs to fail. In this
+case, to avoid these failures you may need to change the location of the
+scratch files. You can redirect these scratch files to another directory, such
+as the local SSD, or an area on /nobackup using the <code class="docutils literal notranslate"><span class="pre">-d</span></code> argument, e.g.:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use locally allocated space</span>
+$ molpro -d <span class="nv">$TMPDIR</span>
+<span class="c1"># or if this is insufficient</span>
+$ molpro -d /nobackup/your_scratch_directory
 </pre></div>
 </div>
-<p>The directory <code class="docutils literal notranslate"><span class="pre">/nobackup/your_scratch_directory</span></code> is a directory that you create in the <code class="docutils literal notranslate"><span class="pre">/nobackup</span></code> area. This is most likely to be in your <code class="docutils literal notranslate"><span class="pre">/nobackup</span></code> area. Read more about the <code class="docutils literal notranslate"><span class="pre">/nobackup</span></code> filesystem <a class="reference internal" href="../../getting_started/nobackup.html"><span class="doc std std-doc">here</span></a>.</p>
-<p>It is best to use the version of molpro installed on the system as it is installed and tested to run most efficiently but if you do choose to install your own version of molpro you will need to configure it so that it uses the <code class="docutils literal notranslate"><span class="pre">/scratch</span></code> area or you should use the <code class="docutils literal notranslate"><span class="pre">-d</span> <span class="pre">$TMPDIR</span></code> or <code class="docutils literal notranslate"><span class="pre">-d</span> <span class="pre">/scratch</span></code> in your command line when you submit your job to the batch system.</p>
+<p>The directory <code class="docutils literal notranslate"><span class="pre">/nobackup/your_scratch_directory</span></code> is a directory that you create
+in the <code class="docutils literal notranslate"><span class="pre">/nobackup</span></code> area. Read more about the <code class="docutils literal notranslate"><span class="pre">/nobackup</span></code> filesystem
+<a class="reference internal" href="../../getting_started/nobackup.html"><span class="doc std std-doc">here</span></a>.</p>
 </section>
 <section id="example-job-scripts">
 <h2>Example job scripts<a class="headerlink" href="#example-job-scripts" title="Permalink to this headline">#</a></h2>
 <section id="serial-job-submission">
 <h3>Serial job submission<a class="headerlink" href="#serial-job-submission" title="Permalink to this headline">#</a></h3>
-<p>To run jobs through the batch scheduler, you need to submit them by using the command <code class="docutils literal notranslate"><span class="pre">qsub</span> <span class="pre">&lt;script</span> <span class="pre">name&gt;</span></code> . The command to launch the serial version of molpro is <code class="docutils literal notranslate"><span class="pre">molpro</span></code> . Below is an example job script. The example script below requests 1Gb RAM for 2 hours, using the current environment and running from the current working directory:</p>
+<p>To run jobs through the batch scheduler, you need to submit them by using the
+command <code class="docutils literal notranslate"><span class="pre">qsub</span> <span class="pre">&lt;script</span> <span class="pre">name&gt;</span></code>.  Below is an example job script. The example
+script below requests 1Gb RAM per core, and a single core for 2 hours, using
+the current environment and running from the current working directory.  It
+runs the molpro script called <code class="docutils literal notranslate"><span class="pre">example.com</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#$ -l h_rt=2:0:0</span>
 <span class="c1">#$ -l h_vmem=1G</span>
 <span class="c1">#$ -V</span>
 <span class="c1">#$ -cwd</span>
-molpro -d /nobackup/your_scratch_directory
+molpro -d <span class="nv">$TMPDIR</span> example.com
+</pre></div>
+</div>
+</section>
+<section id="mpp-job-submission">
+<h3>MPP job submission<a class="headerlink" href="#mpp-job-submission" title="Permalink to this headline">#</a></h3>
+<p>This is the same as the serial version, but asks for 8 cores and uses the MPP mode.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#$ -l h_rt=2:0:0</span>
+<span class="c1">#$ -l h_vmem=1G</span>
+<span class="c1">#$ -pe smp 8</span>
+<span class="c1">#$ -V</span>
+<span class="c1">#$ -cwd</span>
+molprop -n <span class="nv">$NSLOTS</span> -d <span class="nv">$TMPDIR</span> example.com
+</pre></div>
+</div>
+</section>
+<section id="mppx-job-submission">
+<h3>MPPX job submission<a class="headerlink" href="#mppx-job-submission" title="Permalink to this headline">#</a></h3>
+<p>This is the same as the serial version, but asks for 8 cores and uses the MPPX mode.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#$ -l h_rt=2:0:0</span>
+<span class="c1">#$ -l h_vmem=1G</span>
+<span class="c1">#$ -pe smp 8</span>
+<span class="c1">#$ -V</span>
+<span class="c1">#$ -cwd</span>
+molprox -t <span class="nv">$NSLOTS</span> -d <span class="nv">$TMPDIR</span> example.com
 </pre></div>
 </div>
 </section>

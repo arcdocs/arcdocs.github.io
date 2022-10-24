@@ -15,13 +15,13 @@ You can request an interactive session on a standard compute node by using the c
 For instance to request an interactive session for 15 minutes with access to 2 cores each with 4 GB of memory:
 
 ```bash
-$ qrsh -l h_rt=00:15:00,h_vmem=4G -pe smp 2
+$ qrsh -l h_rt=00:15:00,h_vmem=4G -pe smp 2 -pty y bash
 ```
 
 This sends the request to the queue and the prompt will wait until the session can be started. When it starts the prompt will return but appear changed from our initial prompt.
 
 ```bash
-[exuser@login2.arc4 ~]$ qrsh -l h_rt=00:15:00,h_vmem=4G -pe smp 2
+[exuser@login2.arc4 ~]$ qrsh -l h_rt=00:15:00,h_vmem=4G -pe smp 2 -pty y bash
 
 [exuser@d10s2b4.arc4 ~]$
 ```

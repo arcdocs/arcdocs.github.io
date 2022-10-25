@@ -1260,11 +1260,11 @@ title="Print to PDF"
 <h2>Interactive jobs on compute nodes<a class="headerlink" href="#interactive-jobs-on-compute-nodes" title="Permalink to this headline">#</a></h2>
 <p>You can request an interactive session on a standard compute node by using the command <code class="docutils literal notranslate"><span class="pre">qrsh</span></code>. As with submitting a batch job you will also need to pass it options to specify how much resource you wish to request.</p>
 <p>For instance to request an interactive session for 15 minutes with access to 2 cores each with 4 GB of memory:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qrsh -l <span class="nv">h_rt</span><span class="o">=</span><span class="m">00</span>:15:00,h_vmem<span class="o">=</span>4G -pe smp <span class="m">2</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qrsh -l <span class="nv">h_rt</span><span class="o">=</span><span class="m">00</span>:15:00,h_vmem<span class="o">=</span>4G -pe smp <span class="m">2</span> -pty y bash
 </pre></div>
 </div>
 <p>This sends the request to the queue and the prompt will wait until the session can be started. When it starts the prompt will return but appear changed from our initial prompt.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>exuser@login2.arc4 ~<span class="o">]</span>$ qrsh -l <span class="nv">h_rt</span><span class="o">=</span><span class="m">00</span>:15:00,h_vmem<span class="o">=</span>4G -pe smp <span class="m">2</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>exuser@login2.arc4 ~<span class="o">]</span>$ qrsh -l <span class="nv">h_rt</span><span class="o">=</span><span class="m">00</span>:15:00,h_vmem<span class="o">=</span>4G -pe smp <span class="m">2</span> -pty y bash
 
 <span class="o">[</span>exuser@d10s2b4.arc4 ~<span class="o">]</span>$
 </pre></div>

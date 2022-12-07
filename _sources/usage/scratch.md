@@ -66,18 +66,18 @@ hdd - refers to a mechanical hard disk with a spinning platter, which has good p
 * - Standard
   - 149
   - 192GB
-  - 170GB
+  - 128GB
   - ssd
 * - High Memory
   - 2
   - 768GB
   - 800GB
-  - hdd
+  - ssd
 * - GPGPU
   - 3 – each with 4 NVIDIA V100 GPUs
   - 192GB
-  - 800GB
-  - hdd
+  - 128B
+  - ssd
 ```
 
 ### Requesting local disk

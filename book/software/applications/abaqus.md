@@ -49,6 +49,7 @@ For a simple script that will run an analysis on a single core use the following
 #$ -cwd  -V
 module add abaqus
 export LM_LICENSE_FILE=<license_port>@<license_server>:$LM_LICENSE_FILE
+export ABAQUSLM_LICENSE_FILE=$LM_LICENSE_FILE
 abaqus memory=<amount_of_RAM_abaqus> input=<input_file> job=<job_name> int
 ```
 
@@ -88,6 +89,7 @@ To make use of several cpu cores to run your analysis use a script file in the f
 #$ -cwd  -V
 module add abaqus
 export LM_LICENSE_FILE=<license_port>@<license_server>:$LM_LICENSE_FILE
+export ABAQUSLM_LICENSE_FILE=$LM_LICENSE_FILE
 abaqus memory=<amount_of_RAM_abaqus> cpus=$NSLOTS input=<input_file> job=<job_name> mp_mode=threads int
 ```
 
@@ -115,6 +117,7 @@ file `input.inp` :
 #$ -cwd  -V
 module add abaqus
 export LM_LICENSE_FILE=<license_port>@<license_server>:$LM_LICENSE_FILE
+export ABAQUSLM_LICENSE_FILE=$LM_LICENSE_FILE
 abaqus memory=12000mb cpus=$NSLOTS input=input.inp job=input mp_mode=threads int
 ```
 
@@ -131,6 +134,7 @@ For example:
 #$ -cwd  -V
 module add abaqus
 export LM_LICENSE_FILE=<license_port>@<license_server>:$LM_LICENSE_FILE
+export ABAQUSLM_LICENSE_FILE=$LM_LICENSE_FILE
 abaqus memory=12000mb input=input.inp job=input user=exampleroutine int
 ```
 

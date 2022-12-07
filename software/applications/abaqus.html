@@ -1382,6 +1382,7 @@ This can also be done from the job manager. This will create a file called <code
 <span class="c1">#$ -cwd  -V</span>
 module add abaqus
 <span class="nb">export</span> <span class="nv">LM_LICENSE_FILE</span><span class="o">=</span>&lt;license_port&gt;@&lt;license_server&gt;:<span class="nv">$LM_LICENSE_FILE</span>
+<span class="nb">export</span> <span class="nv">ABAQUSLM_LICENSE_FILE</span><span class="o">=</span><span class="nv">$LM_LICENSE_FILE</span>
 abaqus <span class="nv">memory</span><span class="o">=</span>&lt;amount_of_RAM_abaqus&gt; <span class="nv">input</span><span class="o">=</span>&lt;input_file&gt; <span class="nv">job</span><span class="o">=</span>&lt;job_name&gt; int
 </pre></div>
 </div>
@@ -1410,6 +1411,7 @@ abaqus <span class="nv">memory</span><span class="o">=</span>&lt;amount_of_RAM_a
 <span class="c1">#$ -cwd  -V</span>
 module add abaqus
 <span class="nb">export</span> <span class="nv">LM_LICENSE_FILE</span><span class="o">=</span>&lt;license_port&gt;@&lt;license_server&gt;:<span class="nv">$LM_LICENSE_FILE</span>
+<span class="nb">export</span> <span class="nv">ABAQUSLM_LICENSE_FILE</span><span class="o">=</span><span class="nv">$LM_LICENSE_FILE</span>
 abaqus <span class="nv">memory</span><span class="o">=</span>&lt;amount_of_RAM_abaqus&gt; <span class="nv">cpus</span><span class="o">=</span><span class="nv">$NSLOTS</span> <span class="nv">input</span><span class="o">=</span>&lt;input_file&gt; <span class="nv">job</span><span class="o">=</span>&lt;job_name&gt; <span class="nv">mp_mode</span><span class="o">=</span>threads int
 </pre></div>
 </div>
@@ -1435,6 +1437,7 @@ file <code class="docutils literal notranslate"><span class="pre">input.inp</spa
 <span class="c1">#$ -cwd  -V</span>
 module add abaqus
 <span class="nb">export</span> <span class="nv">LM_LICENSE_FILE</span><span class="o">=</span>&lt;license_port&gt;@&lt;license_server&gt;:<span class="nv">$LM_LICENSE_FILE</span>
+<span class="nb">export</span> <span class="nv">ABAQUSLM_LICENSE_FILE</span><span class="o">=</span><span class="nv">$LM_LICENSE_FILE</span>
 abaqus <span class="nv">memory</span><span class="o">=</span>12000mb <span class="nv">cpus</span><span class="o">=</span><span class="nv">$NSLOTS</span> <span class="nv">input</span><span class="o">=</span>input.inp <span class="nv">job</span><span class="o">=</span>input <span class="nv">mp_mode</span><span class="o">=</span>threads int
 </pre></div>
 </div>
@@ -1449,6 +1452,7 @@ abaqus <span class="nv">memory</span><span class="o">=</span>12000mb <span class
 <span class="c1">#$ -cwd  -V</span>
 module add abaqus
 <span class="nb">export</span> <span class="nv">LM_LICENSE_FILE</span><span class="o">=</span>&lt;license_port&gt;@&lt;license_server&gt;:<span class="nv">$LM_LICENSE_FILE</span>
+<span class="nb">export</span> <span class="nv">ABAQUSLM_LICENSE_FILE</span><span class="o">=</span><span class="nv">$LM_LICENSE_FILE</span>
 abaqus <span class="nv">memory</span><span class="o">=</span>12000mb <span class="nv">input</span><span class="o">=</span>input.inp <span class="nv">job</span><span class="o">=</span>input <span class="nv">user</span><span class="o">=</span>exampleroutine int
 </pre></div>
 </div>

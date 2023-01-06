@@ -1282,7 +1282,7 @@ title="Print to PDF"
 <section id="gurobi-module">
 <h2>Gurobi module<a class="headerlink" href="#gurobi-module" title="Permalink to this headline">#</a></h2>
 <p>To access the Gurobi solver you need to load the <code class="docutils literal notranslate"><span class="pre">gurobi</span></code> module. You can do this with the command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add <span class="nb">test</span> gurobi
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span><span class="nb">test</span><span class="w"> </span>gurobi
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1299,10 +1299,10 @@ GUROBI_R_PKG
 <h3>Python setup<a class="headerlink" href="#python-setup" title="Permalink to this headline">#</a></h3>
 <p>To use Gurobi in a python script you will need to install the Gurobipy package. You can do this using either <code class="docutils literal notranslate"><span class="pre">pip</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code> with the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># installing with pip</span>
-$ pip install --user -i https://pypi.gurobi.com gurobipy
+$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>-i<span class="w"> </span>https://pypi.gurobi.com<span class="w"> </span>gurobipy
 
 <span class="c1"># installing with conda</span>
-$ conda install -c gurobi gurobi
+$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>gurobi<span class="w"> </span>gurobi
 </pre></div>
 </div>
 <p>You can then use the Gurobi Python API by adding the line <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">gurobi</span></code> to your python script and calling functions from the module.</p>
@@ -1315,11 +1315,11 @@ $ conda install -c gurobi gurobi
 </div>
 <p>To use Gurobi with the R language you need to install the R <code class="docutils literal notranslate"><span class="pre">gurobi</span></code> package and the R package <a class="reference external" href="https://cran.r-project.org/web/packages/slam/index.html"><code class="docutils literal notranslate"><span class="pre">slam</span></code></a>. This is <strong>not</strong> on CRAN so to install this on ARC3/ARC4 you must install the package using one of the following methods:</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># install Gurobi and slam within the R console</span>
-<span class="o">&gt;</span> <span class="nf">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;GUROBI_R_PKG&quot;</span><span class="p">),</span><span class="s">&quot;slam&quot;</span><span class="p">))</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="nf">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="nf">Sys.getenv</span><span class="p">(</span><span class="s">&quot;GUROBI_R_PKG&quot;</span><span class="p">),</span><span class="s">&quot;slam&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># install Gurobi and slam from the shell</span>
-$ R -e <span class="s2">&quot;install.packages(c(&#39;</span><span class="nv">$GUROBI_R_PKG</span><span class="s2">&#39;,&#39;slam&#39;))&quot;</span>
+$<span class="w"> </span>R<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;install.packages(c(&#39;</span><span class="nv">$GUROBI_R_PKG</span><span class="s2">&#39;,&#39;slam&#39;))&quot;</span>
 </pre></div>
 </div>
 <p>Once you have installed the package you can then load it within the R environment using the line <code class="docutils literal notranslate"><span class="pre">library(gurobi)</span></code>. Once the package is loaded you can use Gurobi R API functions to use the solver.</p>
@@ -1327,13 +1327,13 @@ $ R -e <span class="s2">&quot;install.packages(c(&#39;</span><span class="nv">$G
 <h4>Installing R 4.0.3 via Anaconda module<a class="headerlink" href="#installing-r-4-0-3-via-anaconda-module" title="Permalink to this headline">#</a></h4>
 <p>You can install R 4.0.3 on the HPC by using the Anaconda module via the conda package manager. In its simplest form you can do this with the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># add the anaconda module</span>
-$ module add anaconda
+$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>anaconda
 
 <span class="c1"># create a conda environment in which we install R 4.0.3 from the conda forge channel</span>
-$ conda create -n R403 -c conda-forge r-base<span class="o">=</span><span class="m">4</span>.0.3
+$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>R403<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>r-base<span class="o">=</span><span class="m">4</span>.0.3
 
 <span class="c1"># to enter the environment and use R 4.0.3</span>
-$ <span class="nb">source</span> activate R403
+$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>R403
 </pre></div>
 </div>
 </section>
@@ -1341,16 +1341,16 @@ $ <span class="nb">source</span> activate R403
 <section id="matlab-setup">
 <h3>Matlab setup<a class="headerlink" href="#matlab-setup" title="Permalink to this headline">#</a></h3>
 <p>To configure MATLAB to use the Gurobi module you will need to have loaded the Gurobi module and within the MATLAB command window run the following commands:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% change directory into the Gurobi matlab directory</span><span class="w"></span>
-<span class="nb">cd</span><span class="p">(</span><span class="nb">getenv</span><span class="p">(</span><span class="s">&quot;GUROBI_HOME&quot;</span><span class="p">)</span><span class="o">+</span><span class="s">&quot;/matlab&quot;</span><span class="p">)</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% change directory into the Gurobi matlab directory</span>
+<span class="nb">cd</span><span class="p">(</span><span class="nb">getenv</span><span class="p">(</span><span class="s">&quot;GUROBI_HOME&quot;</span><span class="p">)</span><span class="o">+</span><span class="s">&quot;/matlab&quot;</span><span class="p">)</span>
 
-<span class="c">% run the gurobi_setup.m file to configure MATLAB</span><span class="w"></span>
-<span class="n">gurobi_setup</span><span class="w"></span>
+<span class="c">% run the gurobi_setup.m file to configure MATLAB</span>
+<span class="n">gurobi_setup</span>
 </pre></div>
 </div>
 <p>This adds the Gurobi MATLAB directory to your MATLAB path in your current MATLAB session. To permanently save this directory to your MATLAB path you can use the following commands after performing the above:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% save your current (updated) MATLAB path in your home directory</span><span class="w"></span>
-<span class="nb">savepath</span><span class="p">(</span><span class="nb">getenv</span><span class="p">(</span><span class="s">&quot;HOME&quot;</span><span class="p">)</span><span class="o">+</span><span class="s">&quot;/pathdef.m&quot;</span><span class="p">)</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% save your current (updated) MATLAB path in your home directory</span>
+<span class="nb">savepath</span><span class="p">(</span><span class="nb">getenv</span><span class="p">(</span><span class="s">&quot;HOME&quot;</span><span class="p">)</span><span class="o">+</span><span class="s">&quot;/pathdef.m&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Once you have run <code class="docutils literal notranslate"><span class="pre">gurobi_setup</span></code> you should now have access to the Gurobi MATLAB API and can run Gurobi specific functions.</p>

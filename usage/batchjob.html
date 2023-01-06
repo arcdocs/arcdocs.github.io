@@ -1382,13 +1382,13 @@ You can use the command <code class="docutils literal notranslate"><span class="
 <span class="c1">#$ -m be</span>
 
 <span class="c1">#Now run the job</span>
-module load R
-R CMD BATCH R.in R.out
+module<span class="w"> </span>load<span class="w"> </span>R
+R<span class="w"> </span>CMD<span class="w"> </span>BATCH<span class="w"> </span>R.in<span class="w"> </span>R.out
 </pre></div>
 </div>
 <p>We can submit this script to the scheduler by using <code class="docutils literal notranslate"><span class="pre">qsub</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qsub job_script1.sh
-Your job <span class="m">42</span> <span class="o">(</span><span class="s2">&quot;job_script1.sh&quot;</span><span class="o">)</span> has been submitted
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>job_script1.sh
+Your<span class="w"> </span>job<span class="w"> </span><span class="m">42</span><span class="w"> </span><span class="o">(</span><span class="s2">&quot;job_script1.sh&quot;</span><span class="o">)</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>submitted
 </pre></div>
 </div>
 <p>This returns some text to confirm our job has been submitted and provides us with the jobs unique ID number (in this case 42).</p>
@@ -1530,10 +1530,10 @@ If you intend to runs multiple similar jobs with the same resource specification
 <h3>Monitoring jobs<a class="headerlink" href="#monitoring-jobs" title="Permalink to this headline">#</a></h3>
 <p>Once you’ve submitted a job you can monitor its progress in the queue using the command <code class="docutils literal notranslate"><span class="pre">qstat</span> <span class="pre">JOBID</span></code> where <code class="docutils literal notranslate"><span class="pre">JOBID</span></code> is the unique numeric ID of your submitted job.</p>
 <p>In the example below we’ve just submitted a job and want to check its status in the queue.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qstat <span class="m">54</span>
-job-ID  prior   name       user         state submit/start at     queue                          slots ja-task-ID 
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qstat<span class="w"> </span><span class="m">54</span>
+job-ID<span class="w">  </span>prior<span class="w">   </span>name<span class="w">       </span>user<span class="w">         </span>state<span class="w"> </span>submit/start<span class="w"> </span>at<span class="w">     </span>queue<span class="w">                          </span>slots<span class="w"> </span>ja-task-ID<span class="w"> </span>
 -----------------------------------------------------------------------------------------------------------------
- <span class="m">54</span> <span class="m">0</span>.00000 test_sub.s exuser     qw    <span class="m">08</span>/21/2019 <span class="m">14</span>:09:08                                    <span class="m">1</span>        
+<span class="w"> </span><span class="m">54</span><span class="w"> </span><span class="m">0</span>.00000<span class="w"> </span>test_sub.s<span class="w"> </span>exuser<span class="w">     </span>qw<span class="w">    </span><span class="m">08</span>/21/2019<span class="w"> </span><span class="m">14</span>:09:08<span class="w">                                    </span><span class="m">1</span><span class="w">        </span>
 </pre></div>
 </div>
 <p>Using <code class="docutils literal notranslate"><span class="pre">qstat</span></code> returns a table with the following columns:</p>
@@ -1553,10 +1553,10 @@ job-ID  prior   name       user         state submit/start at     queue         
 <p>If you run <code class="docutils literal notranslate"><span class="pre">qstat</span></code> expecting an output and nothing happens and your prompt is returned it means you have no jobs currently in the queue. This suggests your job has completed.</p>
 </div>
 <p>You can also pass the <code class="docutils literal notranslate"><span class="pre">qstat</span></code> command a number of additional arguments to view the queue or other users queues.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qstat -u <span class="s1">&#39;username&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qstat<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;username&#39;</span>
 <span class="c1"># where username is your own or another username</span>
 
-$ qstat -u <span class="s1">&#39;*&#39;</span>
+$<span class="w"> </span>qstat<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;*&#39;</span>
 <span class="c1"># will return the entire queue</span>
 </pre></div>
 </div>
@@ -1564,8 +1564,8 @@ $ qstat -u <span class="s1">&#39;*&#39;</span>
 <h4>Deleting jobs<a class="headerlink" href="#deleting-jobs" title="Permalink to this headline">#</a></h4>
 <p>Sometimes a situation might arise where you need to delete one of your submitted jobs from the queue. You can do this with the straightforward command <code class="docutils literal notranslate"><span class="pre">qdel</span> <span class="pre">JOBID</span></code> where <code class="docutils literal notranslate"><span class="pre">JOBID</span></code> is the unique numeric ID of the job we wish to delete.</p>
 <p>When the job is successfully deleted we get the following output:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qdel <span class="m">42</span>
-exuser has deleted job <span class="m">42</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qdel<span class="w"> </span><span class="m">42</span>
+exuser<span class="w"> </span>has<span class="w"> </span>deleted<span class="w"> </span>job<span class="w"> </span><span class="m">42</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1588,11 +1588,11 @@ test_run.sh.e4689
 <h3>Job holding<a class="headerlink" href="#job-holding" title="Permalink to this headline">#</a></h3>
 <p>Often a workflow can involve a number of steps in a process, where each steps requires the outputs of the previous and should only start when the previous step completes. The scheduler has a system of job dependencies built into it that allows you to submit a series of jobs and specify that jobs should be on hold until another job has completed.</p>
 <p>For instance you could do this with two submission scripts <code class="docutils literal notranslate"><span class="pre">job1.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">job2.sh</span></code>, where <code class="docutils literal notranslate"><span class="pre">job2.sh</span></code> should only begin once <code class="docutils literal notranslate"><span class="pre">job1.sh</span></code> has finished. You can specify this when submitting jobs as follows:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qsub job1.sh
-Your job <span class="m">626</span> <span class="o">(</span><span class="s2">&quot;job1.sh&quot;</span><span class="o">)</span> has been submitted
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>job1.sh
+Your<span class="w"> </span>job<span class="w"> </span><span class="m">626</span><span class="w"> </span><span class="o">(</span><span class="s2">&quot;job1.sh&quot;</span><span class="o">)</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>submitted
 
-$ qsub -hold_jid <span class="m">626</span> job2.sh
-Your job <span class="m">627</span> <span class="o">(</span><span class="s2">&quot;job2.sh&quot;</span><span class="o">)</span> has been submitted
+$<span class="w"> </span>qsub<span class="w"> </span>-hold_jid<span class="w"> </span><span class="m">626</span><span class="w"> </span>job2.sh
+Your<span class="w"> </span>job<span class="w"> </span><span class="m">627</span><span class="w"> </span><span class="o">(</span><span class="s2">&quot;job2.sh&quot;</span><span class="o">)</span><span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>submitted
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">job2.sh</span></code> will then be held in the queue until <code class="docutils literal notranslate"><span class="pre">job1.sh</span></code> is completed.</p>

@@ -1260,19 +1260,19 @@ title="Print to PDF"
 <section id="module-system">
 <h2>Module system<a class="headerlink" href="#module-system" title="Permalink to this headline">#</a></h2>
 <p>A large number of applications are available through the module system and can be loaded with the <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">add</span></code> command, in this example where <code class="docutils literal notranslate"><span class="pre">name_of_module</span></code> is the name of the module you wish to load:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module add name_of_module
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>add<span class="w"> </span>name_of_module
 </pre></div>
 </div>
 <p>By default this will load the latest (highest version number) of the software available. To use a specific version number, you should explicitly state this in the module statement, so to use AMBER v12, specify:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module add amber/12
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>add<span class="w"> </span>amber/12
 </pre></div>
 </div>
 <p>To see a full list of the available modules use:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module avail
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>avail
 </pre></div>
 </div>
 <p>You can also find the modules you currently have loaded with the module command <code class="docutils literal notranslate"><span class="pre">list</span></code>, for instance:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module list
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>list
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1280,11 +1280,11 @@ title="Print to PDF"
 <p>Loaded modules are specific to a given login session of your shell. This means you’ll find modules you’ve loaded previously are not automatically loaded when you next login. You can automatically load a module when you login by adding the <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">add</span> <span class="pre">name_of_module</span></code> line to bottom of your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>.</p>
 </div>
 <p>You can also remove modules with the <code class="docutils literal notranslate"><span class="pre">remove</span></code> command, in this example <code class="docutils literal notranslate"><span class="pre">name_of_module</span></code> is the name of the module we wish to remove:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module remove name_of_module
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>remove<span class="w"> </span>name_of_module
 </pre></div>
 </div>
 <p>Sometimes we want to switch a loaded module for another, for instance we might want to swap the automatically loaded intel compiler for a gnu compiler. We can do this with the <code class="docutils literal notranslate"><span class="pre">switch</span></code> command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module switch intel gnu/6.3.0
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>switch<span class="w"> </span>intel<span class="w"> </span>gnu/6.3.0
 </pre></div>
 </div>
 <p>If you require additional software or applications installing, please <a class="reference external" href="https://it.leeds.ac.uk/it?id=sc_cat_item&amp;sys_id=48d5a6d70f275f00a82247ece1050ea0">contact us</a>. However, we do not install all software as modules and may provide you guidance about how to install your desired application yourself.</p>

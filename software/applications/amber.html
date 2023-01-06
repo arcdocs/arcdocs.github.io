@@ -1247,17 +1247,17 @@ title="Print to PDF"
 link</a>. You are recommended to
 print out and sign a copy for your own reference.</p>
 <p>To access Amber, load its module through:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module load amber
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>amber
 </pre></div>
 </div>
 <p>This sets the <code class="docutils literal notranslate"><span class="pre">AMBERHOME</span></code> environment variable and your path to include the <code class="docutils literal notranslate"><span class="pre">bin</span></code> directory, with common executables as follows:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$AMBERHOME</span>/bin/sander <span class="c1"># Serial version of SANDER</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$AMBERHOME</span>/bin/sander<span class="w"> </span><span class="c1"># Serial version of SANDER</span>
 
-<span class="nv">$AMBERHOME</span>/bin/sander.MPI   <span class="c1"># built to run over Infiniband</span>
+<span class="nv">$AMBERHOME</span>/bin/sander.MPI<span class="w">   </span><span class="c1"># built to run over Infiniband</span>
 
-<span class="nv">$AMBERHOME</span>/bin/pmemd  <span class="c1"># Serial version of PMEMD</span>
+<span class="nv">$AMBERHOME</span>/bin/pmemd<span class="w">  </span><span class="c1"># Serial version of PMEMD</span>
 
-<span class="nv">$AMBERHOME</span>/bin/pmemd.MPI   <span class="c1"># pmemd built to run over Infiniband</span>
+<span class="nv">$AMBERHOME</span>/bin/pmemd.MPI<span class="w">   </span><span class="c1"># pmemd built to run over Infiniband</span>
 </pre></div>
 </div>
 </section>
@@ -1268,17 +1268,17 @@ print out and sign a copy for your own reference.</p>
 <span class="c1">#$ -cwd</span>
 <span class="c1">#$ -l h_rt=48:00:00</span>
 <span class="c1">#$ -pe ib 16</span>
-module add amber
+module<span class="w"> </span>add<span class="w"> </span>amber
 
 <span class="nv">l</span><span class="o">=</span>md19
 <span class="nv">f</span><span class="o">=</span>md20
-mpirun pmemd.MPI  -O -i <span class="nv">$f</span>.in -o <span class="nv">$f</span>.out -inf <span class="nv">$f</span>.inf <span class="se">\</span>
-        -c gc90turn10wat.<span class="nv">$l</span> -ref gc90turn10wat.<span class="nv">$l</span> -r gc90turn10wat.<span class="nv">$f</span> <span class="se">\</span>
-        -p gc90turn10wat.top -x gc90turn10wat<span class="nv">$f</span>.x -e gc90turn10wat<span class="nv">$f</span>.ene
+mpirun<span class="w"> </span>pmemd.MPI<span class="w">  </span>-O<span class="w"> </span>-i<span class="w"> </span><span class="nv">$f</span>.in<span class="w"> </span>-o<span class="w"> </span><span class="nv">$f</span>.out<span class="w"> </span>-inf<span class="w"> </span><span class="nv">$f</span>.inf<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>-c<span class="w"> </span>gc90turn10wat.<span class="nv">$l</span><span class="w"> </span>-ref<span class="w"> </span>gc90turn10wat.<span class="nv">$l</span><span class="w"> </span>-r<span class="w"> </span>gc90turn10wat.<span class="nv">$f</span><span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>-p<span class="w"> </span>gc90turn10wat.top<span class="w"> </span>-x<span class="w"> </span>gc90turn10wat<span class="nv">$f</span>.x<span class="w"> </span>-e<span class="w"> </span>gc90turn10wat<span class="nv">$f</span>.ene
 </pre></div>
 </div>
 <p>This script can be submitted to the batch queues with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qsub run.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>run.sh
 </pre></div>
 </div>
 </section>

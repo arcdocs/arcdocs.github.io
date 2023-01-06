@@ -1341,7 +1341,7 @@ title="Print to PDF"
 <section id="accessing-the-software">
 <h2>Accessing the software<a class="headerlink" href="#accessing-the-software" title="Permalink to this headline">#</a></h2>
 <p>To make COMSOL available in your environment, enter the command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module load comsol
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>comsol
 </pre></div>
 </div>
 </section>
@@ -1361,14 +1361,14 @@ title="Print to PDF"
 <span class="c1">#the line below sets the number of cores and nodes</span>
 <span class="c1">#$ -l nodes=1</span>
 
-module load comsol/5.1
-<span class="nb">export</span> <span class="nv">LM_LICENSE_FILE</span><span class="o">=</span>&lt;port@server&gt;:<span class="nv">$LM_LICENSE_FILE</span>
-comsol batch -np <span class="nv">$NSLOTS</span> -tmpdir <span class="nv">$TMPDIR</span> -inputfile input.mph -outputfile outphysics.mph -recoverydir /nobackup/<span class="nv">$USER</span>/comsolrecovery
+module<span class="w"> </span>load<span class="w"> </span>comsol/5.1
+<span class="nb">export</span><span class="w"> </span><span class="nv">LM_LICENSE_FILE</span><span class="o">=</span>&lt;port@server&gt;:<span class="nv">$LM_LICENSE_FILE</span>
+comsol<span class="w"> </span>batch<span class="w"> </span>-np<span class="w"> </span><span class="nv">$NSLOTS</span><span class="w"> </span>-tmpdir<span class="w"> </span><span class="nv">$TMPDIR</span><span class="w"> </span>-inputfile<span class="w"> </span>input.mph<span class="w"> </span>-outputfile<span class="w"> </span>outphysics.mph<span class="w"> </span>-recoverydir<span class="w"> </span>/nobackup/<span class="nv">$USER</span>/comsolrecovery
 </pre></div>
 </div>
 <p>In the script above:</p>
 <p>Change <code class="docutils literal notranslate"><span class="pre">&lt;port&#64;server&gt;</span></code> to the license server details obtained from your supervisor. For example if you are given <code class="docutils literal notranslate"><span class="pre">1322&#64;server</span></code> :</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">LM_LICENSE_FILE</span><span class="o">=</span><span class="m">1322</span>@server:<span class="nv">$LM_LICENSE_FILE</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">LM_LICENSE_FILE</span><span class="o">=</span><span class="m">1322</span>@server:<span class="nv">$LM_LICENSE_FILE</span>
 </pre></div>
 </div>
 </section>

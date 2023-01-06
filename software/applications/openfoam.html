@@ -1552,11 +1552,11 @@ title="Print to PDF"
 <section id="running-a-simulation-and-viewing-the-results">
 <h2>Running a simulation and viewing the results<a class="headerlink" href="#running-a-simulation-and-viewing-the-results" title="Permalink to this headline">#</a></h2>
 <p>In order to begin a simulation, simply move to the directory in which all 3 directories relevant to the case are present and type the name of the solver you wish to run in the terminal e.g.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ simpleFoam
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>simpleFoam
 </pre></div>
 </div>
 <p>and the case should begin to run, at the time specified in the controlDict, a set of results will be written to a folder with the title of that particular timestep. This will contain multiple files, each with the values of a variable for every cell in the model. To view this data, type in the command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ paraFoam
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>paraFoam
 </pre></div>
 </div>
 <p>This will launch the viewing application recommended for use with OpenFoam, paraView. Pressing the green ‘play’ button on the taskbar will run through each set of results mapped onto the mesh, various data extraction tools can then be employed for analysis.</p>
@@ -1581,23 +1581,23 @@ these matters.</p>
 <section id="setting-up-the-environment">
 <h3>Setting up the environment<a class="headerlink" href="#setting-up-the-environment" title="Permalink to this headline">#</a></h3>
 <p>The openfoam installed on our systems is compiled with a gnu compiler rather than the intel one which is the default in your environment. Before you can load the openfoam module you will need to switch compilers.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module sw intel gnu/4.8.1
-$ module load openfoam
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>sw<span class="w"> </span>intel<span class="w"> </span>gnu/4.8.1
+$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>openfoam
 </pre></div>
 </div>
 <p>The environment is not yet fully loaded. To check what you need to do you can run the command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module <span class="nb">help</span> openfoam
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span><span class="nb">help</span><span class="w"> </span>openfoam
 </pre></div>
 </div>
 <p>Next run the following command to access the openFoam command line variables:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">source</span> <span class="nv">$FOAM_SRC_FILE</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span><span class="nv">$FOAM_SRC_FILE</span>
 </pre></div>
 </div>
 </section>
 <section id="launching-on-the-front-end">
 <h3>Launching on the front end<a class="headerlink" href="#launching-on-the-front-end" title="Permalink to this headline">#</a></h3>
 <p>Visualisation of OpenFOAM results can be done using paraFoam at the command prompt. You need to have an openfoam case file to do this fully:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ paraFoam
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>paraFoam
 </pre></div>
 </div>
 <p>If you’re visualising large data sets this should not be done on thelogin nodes, since this can use a considerable amount of RAM and CPU. Instead, this should be done using an interactive job with SGE.</p>
@@ -1608,11 +1608,11 @@ $ module load openfoam
 <section id="running-through-an-interactive-shell">
 <h4>Running through an interactive shell<a class="headerlink" href="#running-through-an-interactive-shell" title="Permalink to this headline">#</a></h4>
 <p>The following will launch paraFoam interactively, displaying the full GUI:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qrsh -cwd -V -l <span class="nv">h_rt</span><span class="o">=</span> paraFoam
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qrsh<span class="w"> </span>-cwd<span class="w"> </span>-V<span class="w"> </span>-l<span class="w"> </span><span class="nv">h_rt</span><span class="o">=</span><span class="w"> </span>paraFoam
 </pre></div>
 </div>
 <p>In the above command, <code class="docutils literal notranslate"><span class="pre">&lt;hh:mm:ss&gt;</span></code> is the length of real-time the shell will exist for, <code class="docutils literal notranslate"><span class="pre">-cwd</span></code> indicated the current working directory and <code class="docutils literal notranslate"><span class="pre">-V</span></code> exports the the current environment.CHECK-code e.g. to run paraFoam for 1 hour:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qrsh -cwd -V -l <span class="nv">h_rt</span><span class="o">=</span><span class="m">1</span>:00:00 paraFoam
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qrsh<span class="w"> </span>-cwd<span class="w"> </span>-V<span class="w"> </span>-l<span class="w"> </span><span class="nv">h_rt</span><span class="o">=</span><span class="m">1</span>:00:00<span class="w"> </span>paraFoam
 </pre></div>
 </div>
 <p>This will run paraFoam within the terminal from which it was launched.</p>
@@ -1627,14 +1627,14 @@ $ module load openfoam
 <span class="c1"># Set a 6 hour limit</span>
 <span class="c1">#$ -l h_rt=6:00:00</span>
 <span class="c1"># Load OpenFOAM module</span>
-module add <span class="nb">test</span> openfoam
+module<span class="w"> </span>add<span class="w"> </span><span class="nb">test</span><span class="w"> </span>openfoam
 <span class="c1"># Run actual OpenFoam commands</span>
 blockMesh
 icoFoam
 </pre></div>
 </div>
 <p>This can be submitted to the queuing system using:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qsub runfoam.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>runfoam.sh
 </pre></div>
 </div>
 </section>
@@ -1645,10 +1645,10 @@ icoFoam
 <span class="c1">#$ -l h_vmem=2G</span>
 <span class="c1">#$ -l np=16</span>
 <span class="c1">#$ -cwd -V</span>
-<span class="nb">export</span> <span class="nv">MPI_BUFFER_SIZE</span><span class="o">=</span><span class="m">8192</span>
-module purge
-module add bit/64 gnu openmpi <span class="nb">test</span> openfoam
-mpirun -np <span class="nv">$NSLOTS</span> interFoam -parallel
+<span class="nb">export</span><span class="w"> </span><span class="nv">MPI_BUFFER_SIZE</span><span class="o">=</span><span class="m">8192</span>
+module<span class="w"> </span>purge
+module<span class="w"> </span>add<span class="w"> </span>bit/64<span class="w"> </span>gnu<span class="w"> </span>openmpi<span class="w"> </span><span class="nb">test</span><span class="w"> </span>openfoam
+mpirun<span class="w"> </span>-np<span class="w"> </span><span class="nv">$NSLOTS</span><span class="w"> </span>interFoam<span class="w"> </span>-parallel
 </pre></div>
 </div>
 <p>This will request 16 cores and exclusive access to the nodes. This results in 1 node being allocated and 2GB memory per core.</p>

@@ -1295,8 +1295,8 @@ run both in serial and in parallel.</p>
 <p>Please note you should not run full experiments on the login nodes. Only use this method for quick tests, or interactive exploring of the tool.</p>
 </div>
 <p>Once the Ansys module is loaded, Ansys can be run using a command with the version number included in the executable name.  For Ansys 2020R2, this is as follows:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add ansys/2020R2
-$ ansys202 -g
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>ansys/2020R2
+$<span class="w"> </span>ansys202<span class="w"> </span>-g
 </pre></div>
 </div>
 <p>This runs it graphically, so it’s important you have X forwarding enabled or are using <a class="reference internal" href="../../../getting_started/x2go.html"><span class="doc std std-doc">X2Go</span></a>.</p>
@@ -1311,9 +1311,9 @@ $ ansys202 -g
 <span class="c1"># Request three hours of runtime</span>
 <span class="c1">#$ -l h_rt=3:00:00</span>
 <span class="c1">#Launch the executable</span>
-module add ansys/2020R2
-<span class="nb">export</span> <span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
-ansys202 -p ANSYS -b -i example.inp -o example.out
+module<span class="w"> </span>add<span class="w"> </span>ansys/2020R2
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
+ansys202<span class="w"> </span>-p<span class="w"> </span>ANSYS<span class="w"> </span>-b<span class="w"> </span>-i<span class="w"> </span>example.inp<span class="w"> </span>-o<span class="w"> </span>example.out
 </pre></div>
 </div>
 <p>In this case, we’re running the Ansys CLI with:</p>
@@ -1339,7 +1339,7 @@ ansys202 -p ANSYS -b -i example.inp -o example.out
 </tbody>
 </table>
 <p>The file can be submitted to the queue by typing this (assuming you’d written the above into a file called <a class="reference external" href="http://ansys.sh">ansys.sh</a>):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qsub ansys.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>ansys.sh
 </pre></div>
 </div>
 </section>
@@ -1354,14 +1354,14 @@ ansys202 -p ANSYS -b -i example.inp -o example.out
 <span class="c1"># Run on 8 processors</span>
 <span class="c1">#$ -pe smp 8</span>
 <span class="c1"># define license and load module</span>
-module add ansys/2020R2
-<span class="nb">export</span> <span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
+module<span class="w"> </span>add<span class="w"> </span>ansys/2020R2
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
 <span class="c1">#Launch the executable</span>
-ansys202 -np <span class="nv">$NSLOTS</span> -p ANSYS -b -i example.inp -o example.out
+ansys202<span class="w"> </span>-np<span class="w"> </span><span class="nv">$NSLOTS</span><span class="w"> </span>-p<span class="w"> </span>ANSYS<span class="w"> </span>-b<span class="w"> </span>-i<span class="w"> </span>example.inp<span class="w"> </span>-o<span class="w"> </span>example.out
 </pre></div>
 </div>
 <p>The file can be submitted to the queue by typing this (assuming you’d written the above into a file called <a class="reference external" href="http://ansys.sh">ansys.sh</a>):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qsub ansys.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>ansys.sh
 </pre></div>
 </div>
 <section id="gpu-execution-using-the-batch-queues">
@@ -1375,16 +1375,16 @@ ansys202 -np <span class="nv">$NSLOTS</span> -p ANSYS -b -i example.inp -o examp
 <span class="c1"># Run on 1 GPUs on ARC4 (using coproc_p100=1 on ARC3)</span>
 <span class="c1">#$ -l coproc_v100=1</span>
 <span class="c1"># define license and load module</span>
-module add ansys/2020R2
-<span class="nb">export</span> <span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
+module<span class="w"> </span>add<span class="w"> </span>ansys/2020R2
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
 <span class="c1"># Fix to make it launch correctly</span>
-<span class="nb">unset</span> PE_HOSTFILE
+<span class="nb">unset</span><span class="w"> </span>PE_HOSTFILE
 <span class="c1">#Launch the executable</span>
-ansys202 -np <span class="nv">$NSLOTS</span> -acc nvidia -na <span class="nv">$ARC_SGE_RESOURCE_COPROC_V100</span> -p ANSYS -b -i example.inp -o example.out
+ansys202<span class="w"> </span>-np<span class="w"> </span><span class="nv">$NSLOTS</span><span class="w"> </span>-acc<span class="w"> </span>nvidia<span class="w"> </span>-na<span class="w"> </span><span class="nv">$ARC_SGE_RESOURCE_COPROC_V100</span><span class="w"> </span>-p<span class="w"> </span>ANSYS<span class="w"> </span>-b<span class="w"> </span>-i<span class="w"> </span>example.inp<span class="w"> </span>-o<span class="w"> </span>example.out
 </pre></div>
 </div>
 <p>The file can be submitted to the queue by typing this (assuming you’d written the above into a file called <a class="reference external" href="http://ansys.sh">ansys.sh</a>):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qsub ansys.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>ansys.sh
 </pre></div>
 </div>
 <div class="admonition-gpu-performance admonition">

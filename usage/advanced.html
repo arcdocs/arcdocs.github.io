@@ -1258,7 +1258,7 @@ title="Print to PDF"
 <h2>Submitting Mixed Mode Jobs<a class="headerlink" href="#submitting-mixed-mode-jobs" title="Permalink to this headline">#</a></h2>
 <p>The ‘mixed mode’ (MPI+OpenMP) programming model typically involves MPI processes running across nodes and OpenMP threads upon each node with the total number of processes (MPI*OpenMP) equalling the number of physical processor cores.</p>
 <p>Your code will need to call MPI_Init and make use of OpenMP directives. You will compile your code using an MPI wrapper and enabling OpenMP support, for example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mpif90 -openmp example.f90 -o mixed.exe
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mpif90<span class="w"> </span>-openmp<span class="w"> </span>example.f90<span class="w"> </span>-o<span class="w"> </span>mixed.exe
 </pre></div>
 </div>
 <p>You will need to determine <code class="docutils literal notranslate"><span class="pre">ppn</span></code>, the number of MPI processes per node, and <code class="docutils literal notranslate"><span class="pre">tpp</span></code>, the number of OpenMP threads per MPI process.</p>
@@ -1267,14 +1267,14 @@ title="Print to PDF"
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -V </span>
 <span class="c1">#$ -l hr_t=01:00:00 </span>
 <span class="c1">#$ -l nodes=&lt;nodes&gt;, ppn=&lt;ppn&gt;, tpp=&lt;tpp&gt;</span>
-mpirun ./a.out
+mpirun<span class="w"> </span>./a.out
 </pre></div>
 </div>
 <p>or</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -V</span>
 <span class="c1">#$ -l hr_t=01:00:00 </span>
 <span class="c1">#$ -l np=&lt;np&gt;, ppn=&lt;ppn&gt;, tpp=&lt;tpp&gt; </span>
-mpirun ./a.out
+mpirun<span class="w"> </span>./a.out
 </pre></div>
 </div>
 <p>There are 24 cores per node on ARC3 , so you would typically ensure <code class="docutils literal notranslate"><span class="pre">ppn</span></code>*<code class="docutils literal notranslate"><span class="pre">tpp</span></code>=24.<br />
@@ -1286,7 +1286,7 @@ There are 40 cores per node on ARC4 , so you would typically ensure <code class=
 <span class="c1">#$ -cwd</span>
 <span class="c1">#$ -l hr_t=01:00:00 </span>
 <span class="c1">#$ -l np=80, ppn=10, tpp=4 </span>
-mpirun ./mixed.exe
+mpirun<span class="w"> </span>./mixed.exe
 </pre></div>
 </div>
 <p>This will allocate 8 nodes (=8*40=320 cores).
@@ -1296,7 +1296,7 @@ Each node will have 10 MPI processes, each of which will have 4 OpenMP threads (
 <span class="c1">#$ -cwd</span>
 <span class="c1">#$ -l hr_t=01:00:00 </span>
 <span class="c1">#$ -l nodes=8, ppn=10, tpp=4 </span>
-mpirun ./mixed.exe
+mpirun<span class="w"> </span>./mixed.exe
 </pre></div>
 </div>
 <p>Note that the <code class="docutils literal notranslate"><span class="pre">OMP_NUM_THREADS</span></code> environment variable is automatically set by the batch system and so you do not need to set this in your environment.</p>
@@ -1306,17 +1306,17 @@ mpirun ./mixed.exe
 <h2>Job Dependencies<a class="headerlink" href="#job-dependencies" title="Permalink to this headline">#</a></h2>
 <p>The SGE scheduler allows you to submit a job but then hold them in the queue until certain job dependencies are met, ie. it will hold the job until a previous job (or number of jobs have completed).</p>
 <p>To do this, submit the first job as normal:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qsub job1.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>job1.sh
 </pre></div>
 </div>
 <p>As usual, the scheduler will give you a job ID <code class="docutils literal notranslate"><span class="pre">&lt;jobid&gt;</span></code>.</p>
 <p>if you then want to submit another job that is dependent on the first one completing, use the <code class="docutils literal notranslate"><span class="pre">-hold_jid</span></code> option for qsub:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qsub -hold_jid &lt;jobid&gt; job2.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>-hold_jid<span class="w"> </span>&lt;jobid&gt;<span class="w"> </span>job2.sh
 </pre></div>
 </div>
 <p>Job 2 will remain in the queue until job 1 has completed.</p>
 <p>Alternatively, if you have given the job a name (using the <code class="docutils literal notranslate"><span class="pre">-N</span></code> option), then you can put a hold on subsequent jobs using the name instead:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qsub -hold_jid &lt;jobname&gt; job2.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>-hold_jid<span class="w"> </span>&lt;jobname&gt;<span class="w"> </span>job2.sh
 </pre></div>
 </div>
 <p>If you give several jobs the same name, then the job will be held until all the named jobs have been completed.

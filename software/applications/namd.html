@@ -1267,8 +1267,8 @@ title="Print to PDF"
 <span class="c1"># Run in the current directory</span>
 <span class="c1">#$ -cwd</span>
 
-module add namd/2.13
-mpirun namd2 name_of_config_file.conf &gt; output_log_file.log
+module<span class="w"> </span>add<span class="w"> </span>namd/2.13
+mpirun<span class="w"> </span>namd2<span class="w"> </span>name_of_config_file.conf<span class="w"> </span>&gt;<span class="w"> </span>output_log_file.log
 </pre></div>
 </div>
 <p>This example requests 8 cores for 12 hours, with each core limited to 1Gb of RAM.  It assumes that you are submitting the job from the directory containing your input files.</p>
@@ -1288,8 +1288,8 @@ mpirun namd2 name_of_config_file.conf &gt; output_log_file.log
 <span class="c1"># Run in the current directory</span>
 <span class="c1">#$ -cwd</span>
 
-module add namd/2.13gpu
-namd2 +idlepoll +p<span class="si">${</span><span class="nv">NSLOTS</span><span class="si">}</span> name_of_config_file.conf &gt; output_log_file.log
+module<span class="w"> </span>add<span class="w"> </span>namd/2.13gpu
+namd2<span class="w"> </span>+idlepoll<span class="w"> </span>+p<span class="si">${</span><span class="nv">NSLOTS</span><span class="si">}</span><span class="w"> </span>name_of_config_file.conf<span class="w"> </span>&gt;<span class="w"> </span>output_log_file.log
 </pre></div>
 </div>
 <p>This example requests 1 GPU, which comes with 1/4 of the resources available on the machine - in this case that means 10 cores and 48Gbytes of RAM.  It assumes that you are submitting the job from the directory containing your input files.</p>

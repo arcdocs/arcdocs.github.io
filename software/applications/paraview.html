@@ -1356,13 +1356,13 @@ title="Print to PDF"
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="http://www.paraview.org/">Paraview</a> is a data analysis and visualisation application, developed to be able to analyse large datasets. We show here how to start the program on our facilities; however, please refer to the project documentation for details on how to use the application itself.  You can also use <a class="reference internal" href="../../getting_started/x2go.html"><span class="doc std std-doc">X2GO</span></a> when you login and the images will render better and you will get rid of the OpenGL warnings that may appear.</p>
 <p>Although paraview is flexible in the way it is deployed, the simplest method of invoking it is to run these commands on a login node:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add paraview
-$ paraview --mesa-llvm <span class="p">&amp;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>paraview
+$<span class="w"> </span>paraview<span class="w"> </span>--mesa-llvm<span class="w"> </span><span class="p">&amp;</span>
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add mesa paraview
-$ paraview <span class="p">&amp;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>mesa<span class="w"> </span>paraview
+$<span class="w"> </span>paraview<span class="w"> </span><span class="p">&amp;</span>
 </pre></div>
 </div>
 <p>This will provide the core functionality. More complicated methods are described below, offering different levels of performance. For example, the graphical interface can be run locally on a low-end workstation/laptop, while the rendering takes place in parallel on the cluster – taking advantage of the CPU, memory and storage resources available. Although not making use of the acceleration that graphics cards provide, it can allow larger datasets that cannot fit onto a graphics card to be analysed.</p>
@@ -1374,13 +1374,13 @@ $ paraview <span class="p">&amp;</span>
 <section id="on-a-cluster-login-node-quick-start">
 <h3>On a cluster login node (quick start)<a class="headerlink" href="#on-a-cluster-login-node-quick-start" title="Permalink to this headline">#</a></h3>
 <p>Recommended for very short or undemanding pieces of work. Login to the cluster and execute:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add paraview
-$ paraview --mesa-llvm
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>paraview
+$<span class="w"> </span>paraview<span class="w"> </span>--mesa-llvm
 </pre></div>
 </div>
 <p>If you’re not using X2Go, then depending on your own local machine, you may find that doesn’t work.  Try this instead:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add mesa paraview
-$ paraview <span class="p">&amp;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>mesa<span class="w"> </span>paraview
+$<span class="w"> </span>paraview<span class="w"> </span><span class="p">&amp;</span>
 </pre></div>
 </div>
 <p>Please note that, as they are shared between all users, it is important not to tackle very large pieces of work on the login nodes.</p>
@@ -1398,7 +1398,7 @@ $ qrsh -cwd -V -l h_rt=&lt;hh:mm:ss&gt; -l h_vmem=&lt;vmem&gt; paraview --mesa-l
 <h3>On your local workstation<a class="headerlink" href="#on-your-local-workstation" title="Permalink to this headline">#</a></h3>
 <p>Recommended where the graphical interface (menu items, etc.) feels sluggish, or where the best possible performance is required.</p>
 <p>Select a version number from the list of installed versions of the paraview server, then download and install a copy of that version appropriate to your machine from the <a class="reference external" href="http://www.paraview.org/">ParaView website</a>. The list of installed versions is provided by the command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module avail paraview-osmesa
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>avail<span class="w"> </span>paraview-osmesa
 </pre></div>
 </div>
 <p>Once installed and running, it can be used to connect to a paraview server running on the cluster (see below).</p>
@@ -1408,15 +1408,15 @@ $ qrsh -cwd -V -l h_rt=&lt;hh:mm:ss&gt; -l h_vmem=&lt;vmem&gt; paraview --mesa-l
 <h2>Running the paraview server<a class="headerlink" href="#running-the-paraview-server" title="Permalink to this headline">#</a></h2>
 <p>The paraview server does not need to be run on the same computer as the graphical interface and takes on the role of file access and graphics rendering. Warning – there is no authentication step when connecting to a paraview server! Between the time of start of the server and the time at which a client is connected to it, anyone logged into the cluster can connect a client to it!</p>
 <p>Once started, it will print a line of the form:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Accepting connection<span class="o">(</span>s<span class="o">)</span>: hostname:port
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Accepting<span class="w"> </span>connection<span class="o">(</span>s<span class="o">)</span>:<span class="w"> </span>hostname:port
 </pre></div>
 </div>
 <p>Please take a note of <code class="docutils literal notranslate"><span class="pre">hostname</span></code> and <code class="docutils literal notranslate"><span class="pre">port</span></code> – they will be needed to connect the graphical interface. The hostname will include the specific login node which the server is running on.</p>
 <section id="on-a-cluster-login-node">
 <h3>On a cluster login node<a class="headerlink" href="#on-a-cluster-login-node" title="Permalink to this headline">#</a></h3>
 <p>Recommended for very short or undemanding pieces of work. Login to the cluster and execute:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add paraview-osmesa
-$ pvserver --server-port<span class="o">=</span>&lt;port&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>paraview-osmesa
+$<span class="w"> </span>pvserver<span class="w"> </span>--server-port<span class="o">=</span>&lt;port&gt;
 </pre></div>
 </div>
 <p>For <code class="docutils literal notranslate"><span class="pre">&lt;port&gt;</span></code>, please select a number between 10000 and 20000.</p>

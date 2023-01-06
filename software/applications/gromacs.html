@@ -1292,12 +1292,12 @@ title="Print to PDF"
 <h2>Setting the module environment<a class="headerlink" href="#setting-the-module-environment" title="Permalink to this headline">#</a></h2>
 <p>A number of versions of Gromacs are available on the facility.</p>
 <p>To load gromacs into your environment when you log in, use (for example):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add gromacs/4.5.3
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>gromacs/4.5.3
 </pre></div>
 </div>
 <p>This will now provide you with access to the gromacs executeables from the command line.</p>
 <p>Alternatively you can load the default version of gromacs installed on ARC with the command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add gromacs
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>gromacs
 </pre></div>
 </div>
 <p>Will load the executables for the default 4.6.3 version.</p>
@@ -1353,12 +1353,12 @@ title="Print to PDF"
 <span class="c1">#$ -cwd -V </span>
 <span class="c1"># request 10 hours of runtime</span>
 <span class="c1">#$ -l h_rt=10:00:00</span>
-mdrun_d  &lt;args&gt;
+mdrun_d<span class="w">  </span>&lt;args&gt;
 </pre></div>
 </div>
 <p>This requests 10 hours of runtime, to run in the current directory <code class="docutils literal notranslate"><span class="pre">-cwd</span></code> and using the current environment <code class="docutils literal notranslate"><span class="pre">-V</span></code>, using the double precision version of mdrun, and where <code class="docutils literal notranslate"><span class="pre">&lt;args&gt;</span></code> represents the arguments to mdrun. More memory per core can be requested, 2Gb for instance, by adding the line <code class="docutils literal notranslate"><span class="pre">#$</span> <span class="pre">-l</span> <span class="pre">h_vmem=2G</span></code> to the script. You can find more submission options on the <a class="reference external" href="../../usage/batchjob.html#list-of-sge-options">batch job page</a>.</p>
 <p>The script can be submitted with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qsub example_serial.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>example_serial.sh
 </pre></div>
 </div>
 </section>
@@ -1372,13 +1372,13 @@ mdrun_d  &lt;args&gt;
 <span class="c1">#$ -l h_rt=10:00:00</span>
 <span class="c1"># request 4 cores</span>
 <span class="c1">#$ -pe ib 4</span>
-mpirun mdrun_mpi_d &lt;args&gt;
+mpirun<span class="w"> </span>mdrun_mpi_d<span class="w"> </span>&lt;args&gt;
 </pre></div>
 </div>
 <p>This requests 10 hours of runtime, to run in the current directory <code class="docutils literal notranslate"><span class="pre">-cwd</span></code>, using the current environment <code class="docutils literal notranslate"><span class="pre">-V</span></code>, running on 4 cores <code class="docutils literal notranslate"><span class="pre">-pe</span> <span class="pre">ib</span> <span class="pre">4</span></code>, using the double precision parallel version of mdrun, and where <code class="docutils literal notranslate"><span class="pre">&lt;args&gt;</span></code> represents the arguments to <code class="docutils literal notranslate"><span class="pre">mdrun</span></code> .</p>
 <p>More memory per core can be requested, 2Gb for instance, by adding the line <code class="docutils literal notranslate"><span class="pre">#$</span> <span class="pre">-l</span> <span class="pre">h_vmem=2G</span></code> to the script. You can find more submission options on the <a class="reference external" href="../../usage/batchjob.html#list-of-sge-options">batch job page</a>.</p>
 <p>The script can be submitted with:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qsub example_parallel.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>example_parallel.sh
 </pre></div>
 </div>
 </section>

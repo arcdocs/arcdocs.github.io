@@ -1348,20 +1348,20 @@ title="Print to PDF"
 <p>Please note you should not run full experiments on the login nodes. Only use this method for quick tests!</p>
 </div>
 <p>Once the Ansys module is loaded, fluent can be run by entering its name at the command prompt:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add ansys
-$ fluent
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>ansys
+$<span class="w"> </span>fluent
 </pre></div>
 </div>
 </section>
 <section id="running-interactively-through-the-batch-queues">
 <h3>Running interactively through the batch queues<a class="headerlink" href="#running-interactively-through-the-batch-queues" title="Permalink to this headline">#</a></h3>
 <p>To launch fluent in serial in an <a class="reference internal" href="../../../usage/interactive.html"><span class="doc std std-doc">interactive session</span></a>, use the following commands in the terminal:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qrsh -cwd -V -l <span class="nv">h_rt</span><span class="o">=</span>&lt;hh:mm:ss&gt; -l <span class="nv">h_vmem</span><span class="o">=</span>&lt;vmem&gt; fluent &lt;dim&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qrsh<span class="w"> </span>-cwd<span class="w"> </span>-V<span class="w"> </span>-l<span class="w"> </span><span class="nv">h_rt</span><span class="o">=</span>&lt;hh:mm:ss&gt;<span class="w"> </span>-l<span class="w"> </span><span class="nv">h_vmem</span><span class="o">=</span>&lt;vmem&gt;<span class="w"> </span>fluent<span class="w"> </span>&lt;dim&gt;
 </pre></div>
 </div>
 <p>In the above command, <code class="docutils literal notranslate"><span class="pre">hh:mm:ss</span></code> is the length of real-time the shell will exist for, <code class="docutils literal notranslate"><span class="pre">vmem</span></code> is the amount of memory required, <code class="docutils literal notranslate"><span class="pre">dim</span></code> is the dimension/precision of the fluent process (e.g. <code class="docutils literal notranslate"><span class="pre">2d</span></code> for two dimension, single precision).</p>
 <p>For example, to launch the fluent GUI in an <a class="reference internal" href="../../../usage/interactive.html"><span class="doc std std-doc">interactive session</span></a> for 3D double precision, issue:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qrsh -cwd -V -l <span class="nv">h_rt</span><span class="o">=</span><span class="m">6</span>:00:00 -l <span class="nv">h_vmem</span><span class="o">=</span>2G fluent 3ddp
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qrsh<span class="w"> </span>-cwd<span class="w"> </span>-V<span class="w"> </span>-l<span class="w"> </span><span class="nv">h_rt</span><span class="o">=</span><span class="m">6</span>:00:00<span class="w"> </span>-l<span class="w"> </span><span class="nv">h_vmem</span><span class="o">=</span>2G<span class="w"> </span>fluent<span class="w"> </span>3ddp
 </pre></div>
 </div>
 </section>
@@ -1384,11 +1384,11 @@ $ fluent
 <span class="c1"># Request three hours of runtime</span>
 <span class="c1">#$ -l h_rt=3:00:00</span>
 <span class="c1">#Launch the executable</span>
-fluent 3ddp -g -i test.jou
+fluent<span class="w"> </span>3ddp<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </span>test.jou
 </pre></div>
 </div>
 <p>In this case, the 3-dimensional, double precision module is launched, however this can be interchanged with any other modules. The <code class="docutils literal notranslate"><span class="pre">-g</span></code> option will suppress the GUI and <code class="docutils literal notranslate"><span class="pre">-i</span></code> specifies the name of the input journal file. The file can be submitted to the queue by typing:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qsub fluent.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>fluent.sh
 </pre></div>
 </div>
 <p>The above job submission script assumes that the Ansys module is loaded and license is defined. If desired, the module command can be loaded into the job submission script (removing the <code class="docutils literal notranslate"><span class="pre">-V</span></code>):</p>
@@ -1398,9 +1398,9 @@ fluent 3ddp -g -i test.jou
 <span class="c1"># Request three hours of runtime</span>
 <span class="c1">#$ -l h_rt=3:00:00</span>
 <span class="c1">#Launch the executable</span>
-module add ansys/2020R2
-<span class="nb">export</span> <span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
-fluent 3ddp -g -i test.jou
+module<span class="w"> </span>add<span class="w"> </span>ansys/2020R2
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
+fluent<span class="w"> </span>3ddp<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </span>test.jou
 </pre></div>
 </div>
 </section>
@@ -1414,11 +1414,11 @@ fluent 3ddp -g -i test.jou
 <li><p>As a <a class="reference internal" href="../../../usage/batchjob.html"><span class="doc std std-doc">batch job</span></a></p></li>
 </ul>
 <p>To launch an <a class="reference internal" href="../../../usage/interactive.html"><span class="doc std std-doc">interactive session</span></a> with high resource requirements, load the ansys module and type the following at the command prompt:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qrsh -cwd -V -l <span class="nv">h_rt</span><span class="o">=</span>&lt;hh:mm:ss&gt; -l <span class="nv">nodes</span><span class="o">=</span>&lt;nodes&gt; fluent &lt;dim&gt; -rsh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qrsh<span class="w"> </span>-cwd<span class="w"> </span>-V<span class="w"> </span>-l<span class="w"> </span><span class="nv">h_rt</span><span class="o">=</span>&lt;hh:mm:ss&gt;<span class="w"> </span>-l<span class="w"> </span><span class="nv">nodes</span><span class="o">=</span>&lt;nodes&gt;<span class="w"> </span>fluent<span class="w"> </span>&lt;dim&gt;<span class="w"> </span>-rsh
 </pre></div>
 </div>
 <p>In the above commands <code class="docutils literal notranslate"><span class="pre">hh:mm:ss</span></code> is the length of real-time the shell will exist for and <code class="docutils literal notranslate"><span class="pre">nodes</span></code> is the number of nodes requested. <code class="docutils literal notranslate"><span class="pre">dim</span></code> is the dimension/precision of the fluent process (e.g. 3ddp for 3-D double precision). E.g. the to launch fluent for 6 hours on 40 processors on ARC4:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qrsh -cwd -V -l <span class="nv">h_rt</span><span class="o">=</span><span class="m">6</span>:00:00 -l <span class="nv">nodes</span><span class="o">=</span><span class="m">1</span> fluent 2d -rsh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qrsh<span class="w"> </span>-cwd<span class="w"> </span>-V<span class="w"> </span>-l<span class="w"> </span><span class="nv">h_rt</span><span class="o">=</span><span class="m">6</span>:00:00<span class="w"> </span>-l<span class="w"> </span><span class="nv">nodes</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>fluent<span class="w"> </span>2d<span class="w"> </span>-rsh
 </pre></div>
 </div>
 <p>We’d not normally recommend running Fluent interactively on the HPC though, as you’re almost always better running batch jobs.</p>
@@ -1449,14 +1449,14 @@ Whilst it might be possible to use a login node to do this for a short period of
 <span class="c1"># Run on 40 processors on ARC4</span>
 <span class="c1">#$ -l nodes=1</span>
 <span class="c1"># define license and load module</span>
-module add ansys/2020R2
-<span class="nb">export</span> <span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
+module<span class="w"> </span>add<span class="w"> </span>ansys/2020R2
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
 <span class="c1">#Launch the executable</span>
-fluent -g -i test_para.jou 3ddp -rsh
+fluent<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </span>test_para.jou<span class="w"> </span>3ddp<span class="w"> </span>-rsh
 </pre></div>
 </div>
 <p>In this case, the 3-dimensional, double precision module is launched on 40 processors. The <code class="docutils literal notranslate"><span class="pre">-g</span></code> option will suppress the GUI and <code class="docutils literal notranslate"><span class="pre">-i</span></code> specifies the name of the input journal file. The file can be submitted to the queue by typing:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qsub fluent_para.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>fluent_para.sh
 </pre></div>
 </div>
 <p>The job will be run once the requested resources become available.</p>
@@ -1472,10 +1472,10 @@ fluent -g -i test_para.jou 3ddp -rsh
 <span class="c1"># Run on 1 GPU on ARC4 (using coproc_p100=1 on ARC3)</span>
 <span class="c1">#$ -l coproc_v100=1</span>
 <span class="c1"># define license and load module</span>
-module add ansys/2020R2
-<span class="nb">export</span> <span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
+module<span class="w"> </span>add<span class="w"> </span>ansys/2020R2
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
 <span class="c1">#Launch the executable</span>
-fluent -g -i -gpgpu<span class="o">=</span><span class="m">1</span> test_para.jou 3ddp -rsh
+fluent<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </span>-gpgpu<span class="o">=</span><span class="m">1</span><span class="w"> </span>test_para.jou<span class="w"> </span>3ddp<span class="w"> </span>-rsh
 </pre></div>
 </div>
 </section>
@@ -1484,11 +1484,11 @@ fluent -g -i -gpgpu<span class="o">=</span><span class="m">1</span> test_para.jo
 <h2>Running with old version of Fluent v15 or below<a class="headerlink" href="#running-with-old-version-of-fluent-v15-or-below" title="Permalink to this headline">#</a></h2>
 <p>When running Fluent v15 or below in parallel batch mode, additional parameters need to be added to the Fluent command line in the batch submission script.</p>
 <p>Taking the script in the previous section as an example, the line:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fluent -g -i test_para.jou 3ddp -rsh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fluent<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </span>test_para.jou<span class="w"> </span>3ddp<span class="w"> </span>-rsh
 </pre></div>
 </div>
 <p>Should be switched to:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fluent -g -i test_para.jou 3ddp -pib -sgeup
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fluent<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </span>test_para.jou<span class="w"> </span>3ddp<span class="w"> </span>-pib<span class="w"> </span>-sgeup
 </pre></div>
 </div>
 </section>
@@ -1503,10 +1503,10 @@ fluent -g -i -gpgpu<span class="o">=</span><span class="m">1</span> test_para.jo
 <span class="c1"># Run on 1 nodes (24 cores on ARC3, 40 cores on ARC4)</span>
 <span class="c1">#$ -l nodes=1</span>
 <span class="c1"># define license and load module</span>
-module add ansys/2020R2
-<span class="nb">export</span> <span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
+module<span class="w"> </span>add<span class="w"> </span>ansys/2020R2
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
 <span class="c1">#Launch the executable</span>
-fluent -g -i test_para.jou 3ddp -rsh
+fluent<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </span>test_para.jou<span class="w"> </span>3ddp<span class="w"> </span>-rsh
 </pre></div>
 </div>
 <p>You will wait slightly longer for a whole node than using the scattered allocation model (<code class="docutils literal notranslate"><span class="pre">-pe</span> <span class="pre">ib</span> <span class="pre">40</span></code>), but your code is likely to run significantly faster.</p>

@@ -1334,29 +1334,29 @@ title="Print to PDF"
 <section id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h2>
 <p>To access the anaconda module use the command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module load anaconda
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>anaconda
 </pre></div>
 </div>
 <p>This will make available the <a class="reference external" href="https://docs.conda.io/en/latest/">Conda package management tool</a>, but it will not load any environment. You may wish to load and use the <code class="docutils literal notranslate"><span class="pre">base</span></code> environment which has the default Python 3.7.4 and the Python packages made available in the <a class="reference external" href="https://docs.anaconda.com/anaconda/reference/release-notes/#anaconda-2019-10-october-15-2019">Anaconda 2019.10 release</a>.</p>
 <p>To enter the <code class="docutils literal notranslate"><span class="pre">base</span></code> environment:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">source</span> activate base
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>base
 </pre></div>
 </div>
 <p>This will adjust your prompt and add a prefix with the environments name surrounded by parentheses e.g. (base).</p>
 <p>You can see the packages and versions available in the base environment:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda list
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>list
 </pre></div>
 </div>
 <p>You can exit an environment after use:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda deactivate
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>deactivate
 </pre></div>
 </div>
 <p>To delete an environment (and all associated files) you no longer need:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda remove --name my_env --all
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>remove<span class="w"> </span>--name<span class="w"> </span>my_env<span class="w"> </span>--all
 </pre></div>
 </div>
 <p>To view all available environments:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda env list
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>env<span class="w"> </span>list
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1373,43 +1373,43 @@ Image Copyright © <a class="reference external" href="https://geohackweek.githu
 <section id="creating-custom-environments">
 <h3>Creating custom environments<a class="headerlink" href="#creating-custom-environments" title="Permalink to this headline">#</a></h3>
 <p>To create a new Python 3 environment with the Pandas, Numpy and Scipy libraries named example_env_1, use the command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda create --name example_env_1 <span class="nv">python</span><span class="o">=</span><span class="m">3</span> numpy scipy pandas
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>example_env_1<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span><span class="w"> </span>numpy<span class="w"> </span>scipy<span class="w"> </span>pandas
 </pre></div>
 </div>
 <p>Here we have used the <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/commands/create.html"><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span></code></a> command, we specify a name for our environment using the <code class="docutils literal notranslate"><span class="pre">--name/-n</span></code> option and then the packages we want to be installed, and if we require specific versions we include that in the pattern <code class="docutils literal notranslate"><span class="pre">&lt;package&gt;=&lt;versionNumber&gt;</span></code>.</p>
 <p>You’ll note that during the installation process that Conda will attempt to install the enviroment and it’s constituent packages in your home directory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">## Package Plan ##</span>
 
-environment location: /home/home02/issev001/.conda/envs/example_env_1
+environment<span class="w"> </span>location:<span class="w"> </span>/home/home02/issev001/.conda/envs/example_env_1
 
-To load this environment:
+To<span class="w"> </span>load<span class="w"> </span>this<span class="w"> </span>environment:
 
-<span class="nb">source</span> activate example_env_1
+<span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>example_env_1
 
-and to deactivate it after use:
+and<span class="w"> </span>to<span class="w"> </span>deactivate<span class="w"> </span>it<span class="w"> </span>after<span class="w"> </span>use:
 
-conda deactivate
+conda<span class="w"> </span>deactivate
 </pre></div>
 </div>
 <p>At any time, you can list your Conda environments (whether in your home directory or elsewhere):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda env list
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>env<span class="w"> </span>list
 </pre></div>
 </div>
 <section id="first-time-conda-setup">
 <h4>First time .conda setup<a class="headerlink" href="#first-time-conda-setup" title="Permalink to this headline">#</a></h4>
 <p>By default conda stores files relating to environments in the <code class="docutils literal notranslate"><span class="pre">.conda</span></code> directory which lives in your home directory. This <code class="docutils literal notranslate"><span class="pre">.conda</span></code> directory can often get quite large with all the different packages installed for different environments which can fill up a users <a class="reference external" href="../../getting_started/nobackup#HOME-directory">home directory quota</a>.</p>
 <p>To avoid this you can use the following steps to move your <code class="docutils literal notranslate"><span class="pre">.conda</span></code> directory to your <a class="reference internal" href="../../getting_started/nobackup.html"><span class="doc std std-doc">/nobackup directory</span></a> instead.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~
 
 <span class="c1"># create these directories if they don&#39;t already exist</span>
-$ mkdir -p .conda /nobackup/<span class="nv">$USER</span>
+$<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>.conda<span class="w"> </span>/nobackup/<span class="nv">$USER</span>
 
 <span class="c1"># move the .conda directory to your nobackup directory (here represented as $USER)</span>
-$ mv ~/.conda /nobackup/<span class="nv">$USER</span>/
+$<span class="w"> </span>mv<span class="w"> </span>~/.conda<span class="w"> </span>/nobackup/<span class="nv">$USER</span>/
 
 <span class="c1"># create a symlink between your .conda directory you&#39;ve just moved</span>
 <span class="c1"># back into your home directory</span>
-$ ln -s /nobackup/<span class="nv">$USER</span>/.conda ~/.conda
+$<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/nobackup/<span class="nv">$USER</span>/.conda<span class="w"> </span>~/.conda
 </pre></div>
 </div>
 <p>For the full conda documentation please consult their <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">website</a>.</p>
@@ -1419,13 +1419,13 @@ $ ln -s /nobackup/<span class="nv">$USER</span>/.conda ~/.conda
 <h3>Conda channels<a class="headerlink" href="#conda-channels" title="Permalink to this headline">#</a></h3>
 <p>Conda provides packages via channels. Channels are hosted locations where packages are sorted and maintained. Packages you install are downloaded from these remote channels which are URLs to directories containing conda packages. The <code class="docutils literal notranslate"><span class="pre">conda</span></code> command searches the channels you have configured for the packages you have requested and by default it searches the anaconda channel.</p>
 <p>You can specify a channel to use in your <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code> command using the <code class="docutils literal notranslate"><span class="pre">--channel/-c</span></code> option, for instance:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda install -c conda-forge r
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>r
 </pre></div>
 </div>
 <p>This install command will install the R language using the <a class="reference external" href="https://conda-forge.org/"><code class="docutils literal notranslate"><span class="pre">conda-forge</span></code></a> channel.</p>
 <p>You can also add channels to your conda configuration, so they are always searched whenever you attempt to install packages.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># in this example adding the bioconda channel</span>
-$ conda config --add channels bioconda
+$<span class="w"> </span>conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>bioconda
 </pre></div>
 </div>
 </section>
@@ -1437,7 +1437,7 @@ $ conda config --add channels bioconda
 <h3>Creating a Python 2 environment<a class="headerlink" href="#creating-a-python-2-environment" title="Permalink to this headline">#</a></h3>
 <p>Whilst Python 2 is no longer supported by the <a class="reference external" href="https://www.python.org/doc/sunset-python-2/">Python Software Foundation</a> we occasionally come across code that still requires Python 2.</p>
 <p>You can use <code class="docutils literal notranslate"><span class="pre">conda</span></code> to create a specific python 2.7 environment with the example below:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda create -n project2 <span class="nv">python</span><span class="o">=</span><span class="m">2</span>.7
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>project2<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">2</span>.7
 </pre></div>
 </div>
 </section>
@@ -1449,7 +1449,7 @@ $ conda config --add channels bioconda
 <p>The r conda channel currently only has R versions up to 3.6.1. For more recent versions please see below for installing R using the conda-forge channel.</p>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># this will use the r conda channel</span>
-$ conda create -n r_env r-base r-essentials
+$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>r_env<span class="w"> </span>r-base<span class="w"> </span>r-essentials
 </pre></div>
 </div>
 <p>You are able to install R packages directly through conda rather than using CRAN. However, not all R packages on CRAN are available on conda and so you will need to be aware of this when configuring your environment. You are still able to install CRAN packages into conda-installed R and it will install these R packages within your conda environment.</p>
@@ -1458,7 +1458,7 @@ $ conda create -n r_env r-base r-essentials
 <p>If you wish to use R versions later than 3.6.1 you will need to use the <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> channel for installing R.</p>
 <p>For example installing R 4.0.3:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a conda environment in which we install R 4.0.3 from the conda forge channel</span>
-$ conda create -n r403 -c conda-forge r-base<span class="o">=</span><span class="m">4</span>.0.3
+$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>r403<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>r-base<span class="o">=</span><span class="m">4</span>.0.3
 </pre></div>
 </div>
 </section>

@@ -1335,7 +1335,7 @@ title="Print to PDF"
 <h2>Loading the module<a class="headerlink" href="#loading-the-module" title="Permalink to this headline">#</a></h2>
 <p>DL_POLY versions 4.08 and 4.09 are currently available on ARC3 and 4.09 on ARC4.
 You can add the DL_POLY module by using the command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add dl_poly/4.09
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>dl_poly/4.09
 </pre></div>
 </div>
 <p>This adds the DL_POLY executable files to your environment and must be included in your job submission script to ensure your jobs can also access DL_POLY.</p>
@@ -1351,11 +1351,11 @@ You can add the DL_POLY module by using the command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -cwd -V</span>
 <span class="c1">#$ -l h_rt=48:00:00</span>
 <span class="c1">#$ -pe ib 16</span>
-mpirun -np <span class="nv">$NSLOTS</span> DLPOLY.Z
+mpirun<span class="w"> </span>-np<span class="w"> </span><span class="nv">$NSLOTS</span><span class="w"> </span>DLPOLY.Z
 </pre></div>
 </div>
 <p>This requests 48 hours of runtime on 16 processes spread over Infiniband. It can be submitted to the queue with the command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qsub dlpoly.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>dlpoly.sh
 </pre></div>
 </div>
 </section>
@@ -1368,7 +1368,7 @@ DLPOLY.Z
 </pre></div>
 </div>
 <p>To submit the above script do:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qsub dlpoly_serial.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>dlpoly_serial.sh
 </pre></div>
 </div>
 </section>
@@ -1382,7 +1382,7 @@ DLPOLY.Z
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -cwd -V</span>
 <span class="c1">#$ -l h_rt=48:00:00</span>
 <span class="c1">#$ -pe ib 16</span>
-mpirun DLPOLY.Z.parallel
+mpirun<span class="w"> </span>DLPOLY.Z.parallel
 </pre></div>
 </div>
 <p>The same executable can also be used to run a job in serial.</p>

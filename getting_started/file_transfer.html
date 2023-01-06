@@ -1387,34 +1387,34 @@ If you’re using MobaXTerm’s local terminal make sure you’ve configured it 
 <ol>
 <li><p>Uploading files and directories from local machine to remote machine</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># we have a file called helloworld.py we want to move to ARC4</span>
-$ ls
-helloworld.py README.md
+$<span class="w"> </span>ls
+helloworld.py<span class="w"> </span>README.md
 <span class="c1"># we can see the file is in my current directory</span>
-$ scp helloworld.py medacola@arc4.leeds.ac.uk:/nobackup/medacola
-helloworld.py                                            <span class="m">100</span>%    <span class="m">0</span>     <span class="m">0</span>.0KB/s   <span class="m">00</span>:00
+$<span class="w"> </span>scp<span class="w"> </span>helloworld.py<span class="w"> </span>medacola@arc4.leeds.ac.uk:/nobackup/medacola
+helloworld.py<span class="w">                                            </span><span class="m">100</span>%<span class="w">    </span><span class="m">0</span><span class="w">     </span><span class="m">0</span>.0KB/s<span class="w">   </span><span class="m">00</span>:00
 </pre></div>
 </div>
 <p>Uploading directories works in the same way but requires the addition of the <code class="docutils literal notranslate"><span class="pre">scp</span> <span class="pre">-r</span></code> option, which specifies we copy items recursively.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># say we want to transfer the directory containing helloworld.py</span>
-$ <span class="nb">cd</span> ..
-$ ls 
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
+$<span class="w"> </span>ls<span class="w"> </span>
 File_transfer_folder
-$ scp -r File_transfer_folder medacola@arc4.leeds.ac.uk:/nobackup/medacola
-File_transfer_folder                                            <span class="m">100</span>%    <span class="m">0</span>     <span class="m">0</span>.0KB/s   <span class="m">00</span>:00
+$<span class="w"> </span>scp<span class="w"> </span>-r<span class="w"> </span>File_transfer_folder<span class="w"> </span>medacola@arc4.leeds.ac.uk:/nobackup/medacola
+File_transfer_folder<span class="w">                                            </span><span class="m">100</span>%<span class="w">    </span><span class="m">0</span><span class="w">     </span><span class="m">0</span>.0KB/s<span class="w">   </span><span class="m">00</span>:00
 </pre></div>
 </div>
 </li>
 <li><p>Downloading files and directories from remote machine to local machine</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># we have a file called results.data on ARC4 we want to download to our local machine</span>
 <span class="c1"># from our local machine we do the following</span>
-$ scp medacola@arc4.leeds.ac.uk:/nobackup/medacola/Project1/results.data /home/medacola/Downloads
-results.data                                          <span class="m">100</span>%    <span class="m">0</span>     <span class="m">0</span>.0KB/s   <span class="m">00</span>:00
+$<span class="w"> </span>scp<span class="w"> </span>medacola@arc4.leeds.ac.uk:/nobackup/medacola/Project1/results.data<span class="w"> </span>/home/medacola/Downloads
+results.data<span class="w">                                          </span><span class="m">100</span>%<span class="w">    </span><span class="m">0</span><span class="w">     </span><span class="m">0</span>.0KB/s<span class="w">   </span><span class="m">00</span>:00
 </pre></div>
 </div>
 <p>Downloading directories from HPC to your local machine operates in much the same way described above.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># from our local machine we do the following</span>
-$ scp -r medacola@arc4.leeds.ac.uk:/nobackup/medacola/Project1/ /home/medacola/Downloads
-results.data                                          <span class="m">100</span>%    <span class="m">0</span>     <span class="m">0</span>.0KB/s   <span class="m">00</span>:00
+$<span class="w"> </span>scp<span class="w"> </span>-r<span class="w"> </span>medacola@arc4.leeds.ac.uk:/nobackup/medacola/Project1/<span class="w"> </span>/home/medacola/Downloads
+results.data<span class="w">                                          </span><span class="m">100</span>%<span class="w">    </span><span class="m">0</span><span class="w">     </span><span class="m">0</span>.0KB/s<span class="w">   </span><span class="m">00</span>:00
 </pre></div>
 </div>
 </li>
@@ -1427,59 +1427,59 @@ results.data                                          <span class="m">100</span>
 <ol>
 <li><p>Uploading files and directories from local machine to remote machine</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># we have a file called helloworld.py we want to move to ARC4</span>
-$ ls
-helloworld.py README.md
+$<span class="w"> </span>ls
+helloworld.py<span class="w"> </span>README.md
 <span class="c1"># we can see the file is in my current directory</span>
-$ rsync -avn helloworld.py medacola@arc4.leeds.ac.uk:/nobackup/medacola
+$<span class="w"> </span>rsync<span class="w"> </span>-avn<span class="w"> </span>helloworld.py<span class="w"> </span>medacola@arc4.leeds.ac.uk:/nobackup/medacola
 helloworld.py
 
-sent <span class="m">26</span> bytes  received <span class="m">70</span> bytes  <span class="m">4</span>.47 bytes/sec
-total size is <span class="m">0</span>  speedup is <span class="m">0</span>.00 <span class="o">(</span>DRY RUN<span class="o">)</span>
+sent<span class="w"> </span><span class="m">26</span><span class="w"> </span>bytes<span class="w">  </span>received<span class="w"> </span><span class="m">70</span><span class="w"> </span>bytes<span class="w">  </span><span class="m">4</span>.47<span class="w"> </span>bytes/sec
+total<span class="w"> </span>size<span class="w"> </span>is<span class="w"> </span><span class="m">0</span><span class="w">  </span>speedup<span class="w"> </span>is<span class="w"> </span><span class="m">0</span>.00<span class="w"> </span><span class="o">(</span>DRY<span class="w"> </span>RUN<span class="o">)</span>
 
 <span class="c1"># as we&#39;re happy with the above dry run we now run the command again with -n</span>
-$ rsync -av helloworld.py medacola@arc4.leeds.ac.uk:/nobackup/medacola
+$<span class="w"> </span>rsync<span class="w"> </span>-av<span class="w"> </span>helloworld.py<span class="w"> </span>medacola@arc4.leeds.ac.uk:/nobackup/medacola
 helloworld.py
 
-sent <span class="m">26</span> bytes  received <span class="m">70</span> bytes  <span class="m">4</span>.47 bytes/sec
-total size is <span class="m">0</span>  speedup is <span class="m">0</span>.00
+sent<span class="w"> </span><span class="m">26</span><span class="w"> </span>bytes<span class="w">  </span>received<span class="w"> </span><span class="m">70</span><span class="w"> </span>bytes<span class="w">  </span><span class="m">4</span>.47<span class="w"> </span>bytes/sec
+total<span class="w"> </span>size<span class="w"> </span>is<span class="w"> </span><span class="m">0</span><span class="w">  </span>speedup<span class="w"> </span>is<span class="w"> </span><span class="m">0</span>.00
 </pre></div>
 </div>
 <p>Uploading directories works in the exact same way as above but requires you to ensure you include a trailing <code class="docutils literal notranslate"><span class="pre">/</span></code> after the directory you wish to upload.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># say we want to transfer the directory containing helloworld.py</span>
-$ <span class="nb">cd</span> ..
-$ ls 
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
+$<span class="w"> </span>ls<span class="w"> </span>
 File_transfer_folder
-$ rsync -av File_transfer_folder/ medacola@arc4.leeds.ac.uk:/nobackup/medacola
+$<span class="w"> </span>rsync<span class="w"> </span>-av<span class="w"> </span>File_transfer_folder/<span class="w"> </span>medacola@arc4.leeds.ac.uk:/nobackup/medacola
 
-receiving incremental file list
+receiving<span class="w"> </span>incremental<span class="w"> </span>file<span class="w"> </span>list
 ./
 helloworld.py
 README.md
 
-sent <span class="m">40</span> bytes  received <span class="m">128</span> bytes  <span class="m">6</span>.34 bytes/sec
-total size is <span class="m">0</span>  speedup is <span class="m">0</span>.00 
+sent<span class="w"> </span><span class="m">40</span><span class="w"> </span>bytes<span class="w">  </span>received<span class="w"> </span><span class="m">128</span><span class="w"> </span>bytes<span class="w">  </span><span class="m">6</span>.34<span class="w"> </span>bytes/sec
+total<span class="w"> </span>size<span class="w"> </span>is<span class="w"> </span><span class="m">0</span><span class="w">  </span>speedup<span class="w"> </span>is<span class="w"> </span><span class="m">0</span>.00<span class="w"> </span>
 </pre></div>
 </div>
 </li>
 <li><p>Downloading files and directories from remote machine to local machine</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># we have a file called results.data on ARC4 we want to download to our local machine</span>
 <span class="c1"># from our local machine we do the following</span>
-$ rsync -av medacola@arc4.leeds.ac.uk:/nobackup/medacola/Project1/results.data /home/medacola/Downloads
+$<span class="w"> </span>rsync<span class="w"> </span>-av<span class="w"> </span>medacola@arc4.leeds.ac.uk:/nobackup/medacola/Project1/results.data<span class="w"> </span>/home/medacola/Downloads
 results.data
 
-sent <span class="m">26</span> bytes  received <span class="m">70</span> bytes  <span class="m">4</span>.47 bytes/sec
-total size is <span class="m">0</span>  speedup is <span class="m">0</span>.00
+sent<span class="w"> </span><span class="m">26</span><span class="w"> </span>bytes<span class="w">  </span>received<span class="w"> </span><span class="m">70</span><span class="w"> </span>bytes<span class="w">  </span><span class="m">4</span>.47<span class="w"> </span>bytes/sec
+total<span class="w"> </span>size<span class="w"> </span>is<span class="w"> </span><span class="m">0</span><span class="w">  </span>speedup<span class="w"> </span>is<span class="w"> </span><span class="m">0</span>.00
 </pre></div>
 </div>
 <p>Downloading directories from HPC to your local machine operates in much the same way described above.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># from our local machine we do the following</span>
-$ rsync -av medacola@arc4.leeds.ac.uk:/nobackup/medacola/Project1/ /home/medacola/Downloads
-receiving incremental file list
+$<span class="w"> </span>rsync<span class="w"> </span>-av<span class="w"> </span>medacola@arc4.leeds.ac.uk:/nobackup/medacola/Project1/<span class="w"> </span>/home/medacola/Downloads
+receiving<span class="w"> </span>incremental<span class="w"> </span>file<span class="w"> </span>list
 ./
 results.data
 
-sent <span class="m">40</span> bytes  received <span class="m">128</span> bytes  <span class="m">6</span>.34 bytes/sec
-total size is <span class="m">0</span>  speedup is <span class="m">0</span>.00 
+sent<span class="w"> </span><span class="m">40</span><span class="w"> </span>bytes<span class="w">  </span>received<span class="w"> </span><span class="m">128</span><span class="w"> </span>bytes<span class="w">  </span><span class="m">6</span>.34<span class="w"> </span>bytes/sec
+total<span class="w"> </span>size<span class="w"> </span>is<span class="w"> </span><span class="m">0</span><span class="w">  </span>speedup<span class="w"> </span>is<span class="w"> </span><span class="m">0</span>.00<span class="w"> </span>
 </pre></div>
 </div>
 </li>
@@ -1493,22 +1493,22 @@ total size is <span class="m">0</span>  speedup is <span class="m">0</span>.00
 <p>It is also possible to transfer files from your University <code class="docutils literal notranslate"><span class="pre">M</span> <span class="pre">drive</span></code> and from the shared <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">drive</span></code> using the <code class="docutils literal notranslate"><span class="pre">smbclient</span></code> tool. This is a command line tool included by default on ARC that allows for file transfer experience similar to SFTP <a class="reference external" href="#sftp">(outlined below)</a>.</p>
 <p>To connect to your <code class="docutils literal notranslate"><span class="pre">M</span> <span class="pre">drive</span></code> you are required to know the ds path to your M drive. This should follow the pattern <code class="docutils literal notranslate"><span class="pre">\\ds.leeds.ac.uk\&lt;group&gt;\&lt;groupNUMBER&gt;\</span></code>. Connecting to the shared N drive is possible using the folowing ds path <code class="docutils literal notranslate"><span class="pre">\\ds.leeds.ac.uk\shared\</span></code>.</p>
 <p>Once you know the ds path to your M drive you can connect to it within the <code class="docutils literal notranslate"><span class="pre">smbclient</span></code> when on ARC using the command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ smbclient -U medacola //ds.leeds.ac.uk/****/****/ --directory medacola <span class="c1"># **** signify removed content</span>
-Enter DS<span class="se">\\</span>medacola<span class="se">\&#39;</span>s password:
-Try <span class="s2">&quot;help&quot;</span> to get a list of possible commands.
-smb: <span class="se">\\</span>&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>smbclient<span class="w"> </span>-U<span class="w"> </span>medacola<span class="w"> </span>//ds.leeds.ac.uk/****/****/<span class="w"> </span>--directory<span class="w"> </span>medacola<span class="w"> </span><span class="c1"># **** signify removed content</span>
+Enter<span class="w"> </span>DS<span class="se">\\</span>medacola<span class="se">\&#39;</span>s<span class="w"> </span>password:
+Try<span class="w"> </span><span class="s2">&quot;help&quot;</span><span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span>a<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>possible<span class="w"> </span>commands.
+smb:<span class="w"> </span><span class="se">\\</span>&gt;
 </pre></div>
 </div>
 <p>You are prompted to log in using your standard University of Leeds password and once successful the prompt switches to the clients prompt <code class="docutils literal notranslate"><span class="pre">smb:</span> <span class="pre">\&gt;</span></code>. The option <code class="docutils literal notranslate"><span class="pre">--directory</span></code> is used here to specify that we want to log into a specific <code class="docutils literal notranslate"><span class="pre">M</span> <span class="pre">drive</span></code> (if you don’t include this you’ll be logged in a level up from your person M drive and need to <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">USERNAME</span></code> into your personal M drive). You can get a list of all possible commands for this prompt by typing <code class="docutils literal notranslate"><span class="pre">help</span></code> and using this client to download files will download them into the directory you were in on ARC when you used the <code class="docutils literal notranslate"><span class="pre">smbclient</span></code> command. You can leave the <code class="docutils literal notranslate"><span class="pre">smbclient</span></code> anytime by typing <code class="docutils literal notranslate"><span class="pre">exit</span></code> to return to ARC.</p>
 <p>To download files from your M drive onto the current directory you’re in on ARC you’d do the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>smb: <span class="se">\\</span>medacola<span class="se">\\</span>&gt; get test.sh
-getting file <span class="se">\\</span>medacola<span class="se">\\</span>test.sh of size <span class="m">19</span> as test.sh <span class="o">(</span><span class="m">18</span>.6 KiloBytes/sec<span class="o">)</span> <span class="o">(</span>average <span class="m">18</span>.6 KiloBytes/sec<span class="o">)</span>
-smb: <span class="se">\\</span>medacola<span class="se">\\</span>&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>smb:<span class="w"> </span><span class="se">\\</span>medacola<span class="se">\\</span>&gt;<span class="w"> </span>get<span class="w"> </span>test.sh
+getting<span class="w"> </span>file<span class="w"> </span><span class="se">\\</span>medacola<span class="se">\\</span>test.sh<span class="w"> </span>of<span class="w"> </span>size<span class="w"> </span><span class="m">19</span><span class="w"> </span>as<span class="w"> </span>test.sh<span class="w"> </span><span class="o">(</span><span class="m">18</span>.6<span class="w"> </span>KiloBytes/sec<span class="o">)</span><span class="w"> </span><span class="o">(</span>average<span class="w"> </span><span class="m">18</span>.6<span class="w"> </span>KiloBytes/sec<span class="o">)</span>
+smb:<span class="w"> </span><span class="se">\\</span>medacola<span class="se">\\</span>&gt;
 </pre></div>
 </div>
 <p>To upload a file from ARC to your M drive (In this instance on ARC I have a file called <code class="docutils literal notranslate"><span class="pre">testfile</span></code> in my current directory I want to transfer to my M drive) we use the following command on ARC:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ smbclient -U medacola //ds.leeds.ac.uk/****/****/ --directory medacola -c <span class="s1">&#39;put &quot;testfile&quot;&#39;</span>
-putting file testfile as <span class="se">\\</span>medacola<span class="se">\\</span>testfile <span class="o">(</span><span class="m">0</span>.0 kb/s<span class="o">)</span> <span class="o">(</span>average <span class="m">0</span>.0 kb/s<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>smbclient<span class="w"> </span>-U<span class="w"> </span>medacola<span class="w"> </span>//ds.leeds.ac.uk/****/****/<span class="w"> </span>--directory<span class="w"> </span>medacola<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;put &quot;testfile&quot;&#39;</span>
+putting<span class="w"> </span>file<span class="w"> </span>testfile<span class="w"> </span>as<span class="w"> </span><span class="se">\\</span>medacola<span class="se">\\</span>testfile<span class="w"> </span><span class="o">(</span><span class="m">0</span>.0<span class="w"> </span>kb/s<span class="o">)</span><span class="w"> </span><span class="o">(</span>average<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>kb/s<span class="o">)</span>
 </pre></div>
 </div>
 </section>
@@ -1518,110 +1518,110 @@ putting file testfile as <span class="se">\\</span>medacola<span class="se">\\</
 <section id="adding-a-new-onedrive-remote-to-rclone">
 <h4>Adding a new OneDrive remote to Rclone<a class="headerlink" href="#adding-a-new-onedrive-remote-to-rclone" title="Permalink to this headline">#</a></h4>
 <p>Start Rclone in configuration mode:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ rclone config
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>rclone<span class="w"> </span>config
 </pre></div>
 </div>
 <p>Rclone will display its configuration menu. Choose the New remote option by entering n and pressing Enter:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ rclone config
-No remotes found - make a new one
-n<span class="o">)</span> New remote
-s<span class="o">)</span> Set configuration password
-q<span class="o">)</span> Quit config
-n/s/q&gt; n
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>rclone<span class="w"> </span>config
+No<span class="w"> </span>remotes<span class="w"> </span>found<span class="w"> </span>-<span class="w"> </span>make<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>one
+n<span class="o">)</span><span class="w"> </span>New<span class="w"> </span>remote
+s<span class="o">)</span><span class="w"> </span>Set<span class="w"> </span>configuration<span class="w"> </span>password
+q<span class="o">)</span><span class="w"> </span>Quit<span class="w"> </span>config
+n/s/q&gt;<span class="w"> </span>n
 </pre></div>
 </div>
 <p>Next enter the name you want to use for the new remote connection (I use onedrive here but you can choose whatever you want):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>name&gt; onedrive
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>name&gt;<span class="w"> </span>onedrive
 </pre></div>
 </div>
 <p>After pressing <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, a list of supported storage types is shown. You should select the Microsoft OneDrive option (currently 19 but may change in the future):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Type of storage to configure.
-Enter a string value. Press Enter <span class="k">for</span> the default <span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
-Choose a number from below, or <span class="nb">type</span> <span class="k">in</span> your own value
- <span class="m">1</span> / A stackable unification remote, which can appear to merge the contents of several remotes
-   <span class="se">\ </span><span class="s2">&quot;union&quot;</span>
- <span class="m">2</span> / Alias <span class="k">for</span> a existing remote
-   <span class="se">\ </span><span class="s2">&quot;alias&quot;</span>
- <span class="m">3</span> / Amazon Drive
-   <span class="se">\ </span><span class="s2">&quot;amazon cloud drive&quot;</span>
- <span class="m">4</span> / Amazon S3 Compliant Storage Provider <span class="o">(</span>AWS, Alibaba, Ceph, Digital Ocean, Dreamhost, IBM COS, Minio, etc<span class="o">)</span>
-   <span class="se">\ </span><span class="s2">&quot;s3&quot;</span>
- <span class="m">5</span> / Backblaze B2
-   <span class="se">\ </span><span class="s2">&quot;b2&quot;</span>
- <span class="m">6</span> / Box
-   <span class="se">\ </span><span class="s2">&quot;box&quot;</span>
- <span class="m">7</span> / Cache a remote
-   <span class="se">\ </span><span class="s2">&quot;cache&quot;</span>
- <span class="m">8</span> / Dropbox
-   <span class="se">\ </span><span class="s2">&quot;dropbox&quot;</span>
- <span class="m">9</span> / Encrypt/Decrypt a remote
-   <span class="se">\ </span><span class="s2">&quot;crypt&quot;</span>
-<span class="m">10</span> / FTP Connection
-   <span class="se">\ </span><span class="s2">&quot;ftp&quot;</span>
-<span class="m">11</span> / Google Cloud Storage <span class="o">(</span>this is not Google Drive<span class="o">)</span>
-   <span class="se">\ </span><span class="s2">&quot;google cloud storage&quot;</span>
-<span class="m">12</span> / Google Drive
-   <span class="se">\ </span><span class="s2">&quot;drive&quot;</span>
-<span class="m">13</span> / Hubic
-   <span class="se">\ </span><span class="s2">&quot;hubic&quot;</span>
-<span class="m">14</span> / JottaCloud
-   <span class="se">\ </span><span class="s2">&quot;jottacloud&quot;</span>
-<span class="m">15</span> / Koofr
-   <span class="se">\ </span><span class="s2">&quot;koofr&quot;</span>
-<span class="m">16</span> / Local Disk
-   <span class="se">\ </span><span class="s2">&quot;local&quot;</span>
-<span class="m">17</span> / Mega
-   <span class="se">\ </span><span class="s2">&quot;mega&quot;</span>
-<span class="m">18</span> / Microsoft Azure Blob Storage
-   <span class="se">\ </span><span class="s2">&quot;azureblob&quot;</span>
-<span class="m">19</span> / Microsoft OneDrive
-   <span class="se">\ </span><span class="s2">&quot;onedrive&quot;</span>
-<span class="m">20</span> / OpenDrive
-   <span class="se">\ </span><span class="s2">&quot;opendrive&quot;</span>
-<span class="m">21</span> / Openstack Swift <span class="o">(</span>Rackspace Cloud Files, Memset Memstore, OVH<span class="o">)</span>
-   <span class="se">\ </span><span class="s2">&quot;swift&quot;</span>
-<span class="m">22</span> / Pcloud
-   <span class="se">\ </span><span class="s2">&quot;pcloud&quot;</span>
-<span class="m">23</span> / QingCloud Object Storage
-   <span class="se">\ </span><span class="s2">&quot;qingstor&quot;</span>
-<span class="m">24</span> / SSH/SFTP Connection
-   <span class="se">\ </span><span class="s2">&quot;sftp&quot;</span>
-<span class="m">25</span> / Webdav
-   <span class="se">\ </span><span class="s2">&quot;webdav&quot;</span>
-<span class="m">26</span> / Yandex Disk
-   <span class="se">\ </span><span class="s2">&quot;yandex&quot;</span>
-<span class="m">27</span> / http Connection
-   <span class="se">\ </span><span class="s2">&quot;http&quot;</span>
-Storage&gt; <span class="m">19</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Type<span class="w"> </span>of<span class="w"> </span>storage<span class="w"> </span>to<span class="w"> </span>configure.
+Enter<span class="w"> </span>a<span class="w"> </span>string<span class="w"> </span>value.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span><span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
+Choose<span class="w"> </span>a<span class="w"> </span>number<span class="w"> </span>from<span class="w"> </span>below,<span class="w"> </span>or<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>own<span class="w"> </span>value
+<span class="w"> </span><span class="m">1</span><span class="w"> </span>/<span class="w"> </span>A<span class="w"> </span>stackable<span class="w"> </span>unification<span class="w"> </span>remote,<span class="w"> </span>which<span class="w"> </span>can<span class="w"> </span>appear<span class="w"> </span>to<span class="w"> </span>merge<span class="w"> </span>the<span class="w"> </span>contents<span class="w"> </span>of<span class="w"> </span>several<span class="w"> </span>remotes
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;union&quot;</span>
+<span class="w"> </span><span class="m">2</span><span class="w"> </span>/<span class="w"> </span>Alias<span class="w"> </span><span class="k">for</span><span class="w"> </span>a<span class="w"> </span>existing<span class="w"> </span>remote
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;alias&quot;</span>
+<span class="w"> </span><span class="m">3</span><span class="w"> </span>/<span class="w"> </span>Amazon<span class="w"> </span>Drive
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;amazon cloud drive&quot;</span>
+<span class="w"> </span><span class="m">4</span><span class="w"> </span>/<span class="w"> </span>Amazon<span class="w"> </span>S3<span class="w"> </span>Compliant<span class="w"> </span>Storage<span class="w"> </span>Provider<span class="w"> </span><span class="o">(</span>AWS,<span class="w"> </span>Alibaba,<span class="w"> </span>Ceph,<span class="w"> </span>Digital<span class="w"> </span>Ocean,<span class="w"> </span>Dreamhost,<span class="w"> </span>IBM<span class="w"> </span>COS,<span class="w"> </span>Minio,<span class="w"> </span>etc<span class="o">)</span>
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;s3&quot;</span>
+<span class="w"> </span><span class="m">5</span><span class="w"> </span>/<span class="w"> </span>Backblaze<span class="w"> </span>B2
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;b2&quot;</span>
+<span class="w"> </span><span class="m">6</span><span class="w"> </span>/<span class="w"> </span>Box
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;box&quot;</span>
+<span class="w"> </span><span class="m">7</span><span class="w"> </span>/<span class="w"> </span>Cache<span class="w"> </span>a<span class="w"> </span>remote
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;cache&quot;</span>
+<span class="w"> </span><span class="m">8</span><span class="w"> </span>/<span class="w"> </span>Dropbox
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;dropbox&quot;</span>
+<span class="w"> </span><span class="m">9</span><span class="w"> </span>/<span class="w"> </span>Encrypt/Decrypt<span class="w"> </span>a<span class="w"> </span>remote
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;crypt&quot;</span>
+<span class="m">10</span><span class="w"> </span>/<span class="w"> </span>FTP<span class="w"> </span>Connection
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;ftp&quot;</span>
+<span class="m">11</span><span class="w"> </span>/<span class="w"> </span>Google<span class="w"> </span>Cloud<span class="w"> </span>Storage<span class="w"> </span><span class="o">(</span>this<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>Google<span class="w"> </span>Drive<span class="o">)</span>
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;google cloud storage&quot;</span>
+<span class="m">12</span><span class="w"> </span>/<span class="w"> </span>Google<span class="w"> </span>Drive
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;drive&quot;</span>
+<span class="m">13</span><span class="w"> </span>/<span class="w"> </span>Hubic
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;hubic&quot;</span>
+<span class="m">14</span><span class="w"> </span>/<span class="w"> </span>JottaCloud
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;jottacloud&quot;</span>
+<span class="m">15</span><span class="w"> </span>/<span class="w"> </span>Koofr
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;koofr&quot;</span>
+<span class="m">16</span><span class="w"> </span>/<span class="w"> </span>Local<span class="w"> </span>Disk
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;local&quot;</span>
+<span class="m">17</span><span class="w"> </span>/<span class="w"> </span>Mega
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;mega&quot;</span>
+<span class="m">18</span><span class="w"> </span>/<span class="w"> </span>Microsoft<span class="w"> </span>Azure<span class="w"> </span>Blob<span class="w"> </span>Storage
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;azureblob&quot;</span>
+<span class="m">19</span><span class="w"> </span>/<span class="w"> </span>Microsoft<span class="w"> </span>OneDrive
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;onedrive&quot;</span>
+<span class="m">20</span><span class="w"> </span>/<span class="w"> </span>OpenDrive
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;opendrive&quot;</span>
+<span class="m">21</span><span class="w"> </span>/<span class="w"> </span>Openstack<span class="w"> </span>Swift<span class="w"> </span><span class="o">(</span>Rackspace<span class="w"> </span>Cloud<span class="w"> </span>Files,<span class="w"> </span>Memset<span class="w"> </span>Memstore,<span class="w"> </span>OVH<span class="o">)</span>
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;swift&quot;</span>
+<span class="m">22</span><span class="w"> </span>/<span class="w"> </span>Pcloud
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;pcloud&quot;</span>
+<span class="m">23</span><span class="w"> </span>/<span class="w"> </span>QingCloud<span class="w"> </span>Object<span class="w"> </span>Storage
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;qingstor&quot;</span>
+<span class="m">24</span><span class="w"> </span>/<span class="w"> </span>SSH/SFTP<span class="w"> </span>Connection
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;sftp&quot;</span>
+<span class="m">25</span><span class="w"> </span>/<span class="w"> </span>Webdav
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;webdav&quot;</span>
+<span class="m">26</span><span class="w"> </span>/<span class="w"> </span>Yandex<span class="w"> </span>Disk
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;yandex&quot;</span>
+<span class="m">27</span><span class="w"> </span>/<span class="w"> </span>http<span class="w"> </span>Connection
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;http&quot;</span>
+Storage&gt;<span class="w"> </span><span class="m">19</span>
 </pre></div>
 </div>
 <p>For the next 2 steps, just accept the defaults by pressing <code class="docutils literal notranslate"><span class="pre">Enter</span></code> twice:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>** See <span class="nb">help</span> <span class="k">for</span> onedrive backend at: https://rclone.org/onedrive/ **
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>**<span class="w"> </span>See<span class="w"> </span><span class="nb">help</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>onedrive<span class="w"> </span>backend<span class="w"> </span>at:<span class="w"> </span>https://rclone.org/onedrive/<span class="w"> </span>**
 
-Microsoft App Client Id
-Leave blank normally.
-Enter a string value. Press Enter <span class="k">for</span> the default <span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
+Microsoft<span class="w"> </span>App<span class="w"> </span>Client<span class="w"> </span>Id
+Leave<span class="w"> </span>blank<span class="w"> </span>normally.
+Enter<span class="w"> </span>a<span class="w"> </span>string<span class="w"> </span>value.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span><span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
 client_id&gt;
-Microsoft App Client Secret
-Leave blank normally.
-Enter a string value. Press Enter <span class="k">for</span> the default <span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
+Microsoft<span class="w"> </span>App<span class="w"> </span>Client<span class="w"> </span>Secret
+Leave<span class="w"> </span>blank<span class="w"> </span>normally.
+Enter<span class="w"> </span>a<span class="w"> </span>string<span class="w"> </span>value.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span><span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
 client_secret&gt;
 </pre></div>
 </div>
 <p>Unless you need to edit the advanced configuration, choose <code class="docutils literal notranslate"><span class="pre">n</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Edit advanced config? <span class="o">(</span>y/n<span class="o">)</span>
-y<span class="o">)</span> Yes
-n<span class="o">)</span> No
-y/n&gt; n
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Edit<span class="w"> </span>advanced<span class="w"> </span>config?<span class="w"> </span><span class="o">(</span>y/n<span class="o">)</span>
+y<span class="o">)</span><span class="w"> </span>Yes
+n<span class="o">)</span><span class="w"> </span>No
+y/n&gt;<span class="w"> </span>n
 </pre></div>
 </div>
 <p>Choose <code class="docutils literal notranslate"><span class="pre">y</span></code> to auto config:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Remote config
-Use auto config?
- * Say Y <span class="k">if</span> not sure
- * Say N <span class="k">if</span> you are working on a remote or headless machine
-y<span class="o">)</span> Yes
-n<span class="o">)</span> No
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Remote<span class="w"> </span>config
+Use<span class="w"> </span>auto<span class="w"> </span>config?
+<span class="w"> </span>*<span class="w"> </span>Say<span class="w"> </span>Y<span class="w"> </span><span class="k">if</span><span class="w"> </span>not<span class="w"> </span>sure
+<span class="w"> </span>*<span class="w"> </span>Say<span class="w"> </span>N<span class="w"> </span><span class="k">if</span><span class="w"> </span>you<span class="w"> </span>are<span class="w"> </span>working<span class="w"> </span>on<span class="w"> </span>a<span class="w"> </span>remote<span class="w"> </span>or<span class="w"> </span>headless<span class="w"> </span>machine
+y<span class="o">)</span><span class="w"> </span>Yes
+n<span class="o">)</span><span class="w"> </span>No
 y/n&gt;
 </pre></div>
 </div>
@@ -1649,48 +1649,48 @@ y/n&gt;
 </pre></div>
 </div>
 <p>Then pick the drive to use. You’ll probably only be shown one so pick <code class="docutils literal notranslate"><span class="pre">0</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Found <span class="m">1</span> drives, please <span class="k">select</span> the one you want to use:
-<span class="m">0</span>: OneDrive <span class="o">(</span>business<span class="o">)</span> <span class="nv">id</span><span class="o">=</span>b!MGKmGPBYpUiy2O_SW3nOnWBvZUtBKjpIlZdW32xCnkCTXxII3LCbRYYJ-VSAWKuR
-Chose drive to use:&gt; <span class="m">0</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Found<span class="w"> </span><span class="m">1</span><span class="w"> </span>drives,<span class="w"> </span>please<span class="w"> </span><span class="k">select</span><span class="w"> </span>the<span class="w"> </span>one<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>use:
+<span class="m">0</span>:<span class="w"> </span>OneDrive<span class="w"> </span><span class="o">(</span>business<span class="o">)</span><span class="w"> </span><span class="nv">id</span><span class="o">=</span>b!MGKmGPBYpUiy2O_SW3nOnWBvZUtBKjpIlZdW32xCnkCTXxII3LCbRYYJ-VSAWKuR
+Chose<span class="w"> </span>drive<span class="w"> </span>to<span class="w"> </span>use:&gt;<span class="w"> </span><span class="m">0</span>
 </pre></div>
 </div>
 <p>Confirm your choice:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Found drive <span class="s1">&#39;root&#39;</span> of <span class="nb">type</span> <span class="s1">&#39;business&#39;</span>, URL: https://leeds365-my.sharepoint.com/personal/issokc_leeds_ac_uk/Documents
-Is that okay?
-y<span class="o">)</span> Yes
-n<span class="o">)</span> No
-y/n&gt; y
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Found<span class="w"> </span>drive<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="w"> </span>of<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="s1">&#39;business&#39;</span>,<span class="w"> </span>URL:<span class="w"> </span>https://leeds365-my.sharepoint.com/personal/issokc_leeds_ac_uk/Documents
+Is<span class="w"> </span>that<span class="w"> </span>okay?
+y<span class="o">)</span><span class="w"> </span>Yes
+n<span class="o">)</span><span class="w"> </span>No
+y/n&gt;<span class="w"> </span>y
 </pre></div>
 </div>
 <p>Then confirm creation of the remote:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>--------------------
 <span class="o">[</span>onedrive<span class="o">]</span>
-<span class="nb">type</span> <span class="o">=</span> onedrive
-<span class="nv">token</span> <span class="o">=</span> <span class="o">{</span><span class="s2">&quot;access_token&quot;</span>: &lt;token information&gt;<span class="o">}</span>
-<span class="nv">drive_id</span> <span class="o">=</span> &lt;drive id&gt;
-<span class="nv">drive_type</span> <span class="o">=</span> business
+<span class="nb">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>onedrive
+<span class="nv">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="s2">&quot;access_token&quot;</span>:<span class="w"> </span>&lt;token<span class="w"> </span>information&gt;<span class="o">}</span>
+<span class="nv">drive_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;drive<span class="w"> </span>id&gt;
+<span class="nv">drive_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>business
 --------------------
-y<span class="o">)</span> Yes this is OK
-e<span class="o">)</span> Edit this remote
-d<span class="o">)</span> Delete this remote
-y/e/d&gt; y
+y<span class="o">)</span><span class="w"> </span>Yes<span class="w"> </span>this<span class="w"> </span>is<span class="w"> </span>OK
+e<span class="o">)</span><span class="w"> </span>Edit<span class="w"> </span>this<span class="w"> </span>remote
+d<span class="o">)</span><span class="w"> </span>Delete<span class="w"> </span>this<span class="w"> </span>remote
+y/e/d&gt;<span class="w"> </span>y
 </pre></div>
 </div>
 <p>Now quit Rclone configuration by pressing <code class="docutils literal notranslate"><span class="pre">q</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Current remotes:
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Current<span class="w"> </span>remotes:
 
-Name                 <span class="nv">Type</span>
-<span class="o">====</span>                 <span class="o">====</span>
-onedrive             onedrive
+Name<span class="w">                 </span><span class="nv">Type</span>
+<span class="o">====</span><span class="w">                 </span><span class="o">====</span>
+onedrive<span class="w">             </span>onedrive
 
-e<span class="o">)</span> Edit existing remote
-n<span class="o">)</span> New remote
-d<span class="o">)</span> Delete remote
-r<span class="o">)</span> Rename remote
-c<span class="o">)</span> Copy remote
-s<span class="o">)</span> Set configuration password
-q<span class="o">)</span> Quit config
-e/n/d/r/c/s/q&gt; q
+e<span class="o">)</span><span class="w"> </span>Edit<span class="w"> </span>existing<span class="w"> </span>remote
+n<span class="o">)</span><span class="w"> </span>New<span class="w"> </span>remote
+d<span class="o">)</span><span class="w"> </span>Delete<span class="w"> </span>remote
+r<span class="o">)</span><span class="w"> </span>Rename<span class="w"> </span>remote
+c<span class="o">)</span><span class="w"> </span>Copy<span class="w"> </span>remote
+s<span class="o">)</span><span class="w"> </span>Set<span class="w"> </span>configuration<span class="w"> </span>password
+q<span class="o">)</span><span class="w"> </span>Quit<span class="w"> </span>config
+e/n/d/r/c/s/q&gt;<span class="w"> </span>q
 </pre></div>
 </div>
 </section>
@@ -1698,47 +1698,47 @@ e/n/d/r/c/s/q&gt; q
 <h4>Using rclone on HPC<a class="headerlink" href="#using-rclone-on-hpc" title="Permalink to this headline">#</a></h4>
 <p>One of our users has written a small utility to make it easier to copy multiple files from OneDrive onto ARC. If you don’t fancy the command line options below, you might want to take a look at: <a class="reference external" href="https://foqueiroz.github.io/web/public/arc/index.html">Copy multiple files from OneDrive to ARC</a></p>
 <p>Once you’ve set up the remote drive, you don’t need to do it again. To list files from OneDrive (list files in [directory] if given):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ rclone ls onedrive:<span class="o">[</span>directory<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>rclone<span class="w"> </span>ls<span class="w"> </span>onedrive:<span class="o">[</span>directory<span class="o">]</span>
 </pre></div>
 </div>
 <p>To copy file <file> from directory [directory] in OneDrive to your current local directory:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ rclone copy onedrive:<span class="o">[</span>path<span class="o">]</span>/&lt;file&gt; .
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>rclone<span class="w"> </span>copy<span class="w"> </span>onedrive:<span class="o">[</span>path<span class="o">]</span>/&lt;file&gt;<span class="w"> </span>.
 </pre></div>
 </div>
 <p>To copy a directory from OneDrive to your current local directory:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ rclone copy onedrive:&lt;path&gt; .
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>rclone<span class="w"> </span>copy<span class="w"> </span>onedrive:&lt;path&gt;<span class="w"> </span>.
 </pre></div>
 </div>
 <p>To copy your entire /nobackup directory to OneDrive:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ rclone copy /nobackup/&lt;username&gt; onedrive:ARC4-nobackup
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>rclone<span class="w"> </span>copy<span class="w"> </span>/nobackup/&lt;username&gt;<span class="w"> </span>onedrive:ARC4-nobackup
 </pre></div>
 </div>
 <p>To browse the files on your OneDrive using an interactive viewer. Use the arrow keys to navigate (up and down move through the list, right enters a directory, left moves up a directory):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ rclone ncdu onedrive:
-rclone ncdu v1.47.0 - use the arrow keys to navigate, press ? <span class="k">for</span> <span class="nb">help</span>
--- onedrive: ------------------------------------------------------------------------
-  <span class="m">3</span>.515G <span class="o">[</span><span class="c1">##########] /ansoft</span>
- <span class="m">29</span>.992M <span class="o">[</span>          <span class="o">]</span> /ARC4-nobackup
- <span class="m">24</span>.652M <span class="o">[</span>          <span class="o">]</span>  ubuntu.simg
- <span class="m">12</span>.293M <span class="o">[</span>          <span class="o">]</span>  SPuRS.mdb
- <span class="m">10</span>.877M <span class="o">[</span>          <span class="o">]</span> /Apps
-  <span class="m">6</span>.977M <span class="o">[</span>          <span class="o">]</span> /Microsoft Teams Chat Files
-  <span class="m">6</span>.925M <span class="o">[</span>          <span class="o">]</span> /FacultyofEngineering
-  <span class="m">4</span>.205M <span class="o">[</span>          <span class="o">]</span> /srds
-  <span class="m">1</span>.074M <span class="o">[</span>          <span class="o">]</span> /SIS
-<span class="m">510</span>.584k <span class="o">[</span>          <span class="o">]</span> /OfficeDesign
-<span class="m">250</span>.469k <span class="o">[</span>          <span class="o">]</span> /RSECon2019
-<span class="m">173</span>.565k <span class="o">[</span>          <span class="o">]</span> /GDPR
- <span class="m">99</span>.808k <span class="o">[</span>          <span class="o">]</span> /Admin
- <span class="m">55</span>.359k <span class="o">[</span>          <span class="o">]</span> /AppDev
- <span class="m">29</span>.371k <span class="o">[</span>          <span class="o">]</span> /Computing Website
- <span class="m">18</span>.120k <span class="o">[</span>          <span class="o">]</span> /fengsrv1
- <span class="m">13</span>.299k <span class="o">[</span>          <span class="o">]</span> /Research Computing
- <span class="m">12</span>.548k <span class="o">[</span>          <span class="o">]</span>  Document1.docx
- <span class="m">11</span>.941k <span class="o">[</span>          <span class="o">]</span>  Document.docx
-  <span class="m">8</span>.503k <span class="o">[</span>          <span class="o">]</span> /Azure
-       <span class="m">0</span> <span class="o">[</span>          <span class="o">]</span> /Attachments
-Total usage: <span class="m">3</span>.611G, Objects: <span class="m">853</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>rclone<span class="w"> </span>ncdu<span class="w"> </span>onedrive:
+rclone<span class="w"> </span>ncdu<span class="w"> </span>v1.47.0<span class="w"> </span>-<span class="w"> </span>use<span class="w"> </span>the<span class="w"> </span>arrow<span class="w"> </span>keys<span class="w"> </span>to<span class="w"> </span>navigate,<span class="w"> </span>press<span class="w"> </span>?<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nb">help</span>
+--<span class="w"> </span>onedrive:<span class="w"> </span>------------------------------------------------------------------------
+<span class="w">  </span><span class="m">3</span>.515G<span class="w"> </span><span class="o">[</span><span class="c1">##########] /ansoft</span>
+<span class="w"> </span><span class="m">29</span>.992M<span class="w"> </span><span class="o">[</span><span class="w">          </span><span class="o">]</span><span class="w"> </span>/ARC4-nobackup
+<span class="w"> </span><span class="m">24</span>.652M<span class="w"> </span><span class="o">[</span><span class="w">          </span><span class="o">]</span><span class="w">  </span>ubuntu.simg
+<span class="w"> </span><span class="m">12</span>.293M<span class="w"> </span><span class="o">[</span><span class="w">          </span><span class="o">]</span><span class="w">  </span>SPuRS.mdb
+<span class="w"> </span><span class="m">10</span>.877M<span class="w"> </span><span class="o">[</span><span class="w">          </span><span class="o">]</span><span class="w"> </span>/Apps
+<span class="w">  </span><span class="m">6</span>.977M<span class="w"> </span><span class="o">[</span><span class="w">          </span><span class="o">]</span><span class="w"> </span>/Microsoft<span class="w"> </span>Teams<span class="w"> </span>Chat<span class="w"> </span>Files
+<span class="w">  </span><span class="m">6</span>.925M<span class="w"> </span><span class="o">[</span><span class="w">          </span><span class="o">]</span><span class="w"> </span>/FacultyofEngineering
+<span class="w">  </span><span class="m">4</span>.205M<span class="w"> </span><span class="o">[</span><span class="w">          </span><span class="o">]</span><span class="w"> </span>/srds
+<span class="w">  </span><span class="m">1</span>.074M<span class="w"> </span><span class="o">[</span><span class="w">          </span><span class="o">]</span><span class="w"> </span>/SIS
+<span class="m">510</span>.584k<span class="w"> </span><span class="o">[</span><span class="w">          </span><span class="o">]</span><span class="w"> </span>/OfficeDesign
+<span class="m">250</span>.469k<span class="w"> </span><span class="o">[</span><span class="w">          </span><span class="o">]</span><span class="w"> </span>/RSECon2019
+<span class="m">173</span>.565k<span class="w"> </span><span class="o">[</span><span class="w">          </span><span class="o">]</span><span class="w"> </span>/GDPR
+<span class="w"> </span><span class="m">99</span>.808k<span class="w"> </span><span class="o">[</span><span class="w">          </span><span class="o">]</span><span class="w"> </span>/Admin
+<span class="w"> </span><span class="m">55</span>.359k<span class="w"> </span><span class="o">[</span><span class="w">          </span><span class="o">]</span><span class="w"> </span>/AppDev
+<span class="w"> </span><span class="m">29</span>.371k<span class="w"> </span><span class="o">[</span><span class="w">          </span><span class="o">]</span><span class="w"> </span>/Computing<span class="w"> </span>Website
+<span class="w"> </span><span class="m">18</span>.120k<span class="w"> </span><span class="o">[</span><span class="w">          </span><span class="o">]</span><span class="w"> </span>/fengsrv1
+<span class="w"> </span><span class="m">13</span>.299k<span class="w"> </span><span class="o">[</span><span class="w">          </span><span class="o">]</span><span class="w"> </span>/Research<span class="w"> </span>Computing
+<span class="w"> </span><span class="m">12</span>.548k<span class="w"> </span><span class="o">[</span><span class="w">          </span><span class="o">]</span><span class="w">  </span>Document1.docx
+<span class="w"> </span><span class="m">11</span>.941k<span class="w"> </span><span class="o">[</span><span class="w">          </span><span class="o">]</span><span class="w">  </span>Document.docx
+<span class="w">  </span><span class="m">8</span>.503k<span class="w"> </span><span class="o">[</span><span class="w">          </span><span class="o">]</span><span class="w"> </span>/Azure
+<span class="w">       </span><span class="m">0</span><span class="w"> </span><span class="o">[</span><span class="w">          </span><span class="o">]</span><span class="w"> </span>/Attachments
+Total<span class="w"> </span>usage:<span class="w"> </span><span class="m">3</span>.611G,<span class="w"> </span>Objects:<span class="w"> </span><span class="m">853</span>
 </pre></div>
 </div>
 <p>Get help on rclone:</p>
@@ -1820,16 +1820,16 @@ Use &quot;rclone help backends&quot; for a list of supported services.
 <p>University HPC also allows for the SSH File Transfer Protocol (SFTP) client to be used for file transfer. MobaXTerm, macOS and most Linux distributions come with an SFTP client pre-installed as part of the SSH client so you should be able to use SFTP from the get go. SFTP works in the same way as <code class="docutils literal notranslate"><span class="pre">scp</span></code> but provides for a more expanded experience transfering files (allowing you to change directory and list directory contents).</p>
 <p>You can connect to HPC (in this example ARC4) using SFTP as follows:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># remember to use your username!</span>
-$ sftp USERNAME@arc4.leeds.ac.uk
+$<span class="w"> </span>sftp<span class="w"> </span>USERNAME@arc4.leeds.ac.uk
 sftp&gt;
 </pre></div>
 </div>
 <p>This will prompt for passwords and once logged in will change the prompt to <code class="docutils literal notranslate"><span class="pre">sftp&gt;</span></code>. From here we can download list the current directory we’re in on the remote end with <code class="docutils literal notranslate"><span class="pre">ls</span></code> and download files into the directory on our local machine where we executed the <code class="docutils literal notranslate"><span class="pre">sftp</span></code> command with the <code class="docutils literal notranslate"><span class="pre">get</span></code> command.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sftp&gt; ls
-project test_file.sh super_function.py
-sftp&gt; get test_file.sh
-Fetching /home/home01/issev001/test_sub.sh to test_sub.sh
-/home/home01/issev001/test_sub.sh                     <span class="m">100</span>%  <span class="m">174</span>     <span class="m">1</span>.8KB/s   <span class="m">00</span>:00
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sftp&gt;<span class="w"> </span>ls
+project<span class="w"> </span>test_file.sh<span class="w"> </span>super_function.py
+sftp&gt;<span class="w"> </span>get<span class="w"> </span>test_file.sh
+Fetching<span class="w"> </span>/home/home01/issev001/test_sub.sh<span class="w"> </span>to<span class="w"> </span>test_sub.sh
+/home/home01/issev001/test_sub.sh<span class="w">                     </span><span class="m">100</span>%<span class="w">  </span><span class="m">174</span><span class="w">     </span><span class="m">1</span>.8KB/s<span class="w">   </span><span class="m">00</span>:00
 </pre></div>
 </div>
 <p>You can find more SFTP commands by using the <code class="docutils literal notranslate"><span class="pre">help</span></code> or <code class="docutils literal notranslate"><span class="pre">?</span></code> command within the <code class="docutils literal notranslate"><span class="pre">sftp&gt;</span></code> prompt.</p>

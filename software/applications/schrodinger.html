@@ -1376,7 +1376,7 @@ title="Print to PDF"
 <p>To run Schrodinger suite programs a license is required and limits the number of cores available. You will be unable to load any schrodinger suite tools until you have specified the relevant license server information which you should request from your supervisor or department.</p>
 <p>You will then need to set an environment variable when logged into ARC3/ARC4 that specifies the license host address and port number as follows:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is an example</span>
-$ <span class="nb">export</span> <span class="nv">SCHROD_LICENSE_FILE</span><span class="o">=</span>&lt;port&gt;@&lt;host&gt;
+$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">SCHROD_LICENSE_FILE</span><span class="o">=</span>&lt;port&gt;@&lt;host&gt;
 </pre></div>
 </div>
 <p>You will also need to include this within any job submission scripts to ensure your jobs don’t terminate early because they haven’t got the license server configured.</p>
@@ -1384,16 +1384,16 @@ $ <span class="nb">export</span> <span class="nv">SCHROD_LICENSE_FILE</span><spa
 <section id="documentation">
 <h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">#</a></h2>
 <p>Documentation is available for Schrodinger on ARC3/ARC4. It is possible to load this directly on ARC3/ARC4 when connecting with <a class="reference external" href="../../getting_started/logon#graphics-forwarding-x11">X11 graphical forwarding</a>, using FireFox to open the HTML documentation pages with the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add schrodinger/2020-1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>schrodinger/2020-1
 
-$ firefox <span class="nv">$SCHRODINGER_HOME</span>/docs/Documentation.htm
+$<span class="w"> </span>firefox<span class="w"> </span><span class="nv">$SCHRODINGER_HOME</span>/docs/Documentation.htm
 </pre></div>
 </div>
 </section>
 <section id="basic-usage">
 <h2>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">#</a></h2>
 <p>To access some of the Schrodinger suite of tools you can load the module with the command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add schrodinger/2020-1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>schrodinger/2020-1
 </pre></div>
 </div>
 <p>This allows you to access a number of executables from the command line and adds a new environment variable <code class="docutils literal notranslate"><span class="pre">$SCHRODINGER_HOME</span></code> from which it is possible to access more executables via the <code class="docutils literal notranslate"><span class="pre">$SCHRODINGER_HOME/utilities</span></code> directory.</p>
@@ -1406,7 +1406,7 @@ $ firefox <span class="nv">$SCHRODINGER_HOME</span>/docs/Documentation.htm
 </div>
 <p>Maestro is the primary graphic user interface to the Schrodinger suite of tools and can be used to submit jobs directly to the scheduling system.</p>
 <p>To start maestro you will need to have added the schrodinger module and set the license server environment variable, after which you can run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ maestro 
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>maestro<span class="w"> </span>
 </pre></div>
 </div>
 <p>This will load up a separate window containing the maestro GUI.</p>
@@ -1423,7 +1423,7 @@ $ firefox <span class="nv">$SCHRODINGER_HOME</span>/docs/Documentation.htm
 <p>Current licensing restrictions mean glide is only able to run on one core at any one time.</p>
 </div>
 <p>Glide is a tool that allows for high speed computation docking for screening large numbers of compounds. It is available from the command line or can be specified from within the Maestro GUI. You can access the glide documentation on ARC4 using the following command (if you are connected with <a class="reference external" href="../../getting_started/logon#graphics-forwarding-x11">X11 graphical forwarding</a>).</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ xdg-open <span class="nv">$SCHRODINGER_HOME</span>/docs/glide_user_manual/glide_intro.htm
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>xdg-open<span class="w"> </span><span class="nv">$SCHRODINGER_HOME</span>/docs/glide_user_manual/glide_intro.htm
 </pre></div>
 </div>
 <section id="usage-through-command-line">
@@ -1443,7 +1443,7 @@ $ firefox <span class="nv">$SCHRODINGER_HOME</span>/docs/Documentation.htm
 <h4>Creating a job submission file<a class="headerlink" href="#creating-a-job-submission-file" title="Permalink to this headline">#</a></h4>
 <p>Now that we’ve transferred our files onto the HPC we’re ready to start creating a job submission file to submit our glide job to the scheduler. Maestro helps make this relatively easy by creating the <code class="docutils literal notranslate"><span class="pre">.sh</span></code> file we encountered earlier that contains most of the command we need to include in our job submission file.</p>
 <p>Take this example <code class="docutils literal notranslate"><span class="pre">maestro.sh</span></code> for the input file <code class="docutils literal notranslate"><span class="pre">glide-dock_SP_1.in</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SCHRODINGER</span><span class="si">}</span><span class="s2">/glide&quot;</span> glide-dock_SP_1.in -OVERWRITE -adjust -HOST localhost:2 -TMPLAUNCHDIR
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SCHRODINGER</span><span class="si">}</span><span class="s2">/glide&quot;</span><span class="w"> </span>glide-dock_SP_1.in<span class="w"> </span>-OVERWRITE<span class="w"> </span>-adjust<span class="w"> </span>-HOST<span class="w"> </span>localhost:2<span class="w"> </span>-TMPLAUNCHDIR
 </pre></div>
 </div>
 <p>This gives us the barebones of what we need to include in our job submission file with some slight changes outlined below:</p>
@@ -1451,10 +1451,10 @@ $ firefox <span class="nv">$SCHRODINGER_HOME</span>/docs/Documentation.htm
 <span class="c1">#$ -l h_rt=00:15:00</span>
 <span class="c1">#$ -l h_vmem=1G</span>
 
-module add schrodinger/2020-1
-<span class="nb">export</span> <span class="nv">SCHROD_LICENSE_FILE</span><span class="o">=</span>&lt;port&gt;@&lt;host&gt;
+module<span class="w"> </span>add<span class="w"> </span>schrodinger/2020-1
+<span class="nb">export</span><span class="w"> </span><span class="nv">SCHROD_LICENSE_FILE</span><span class="o">=</span>&lt;port&gt;@&lt;host&gt;
 
-<span class="s2">&quot;</span><span class="si">${</span><span class="nv">SCHRODINGER_HOME</span><span class="si">}</span><span class="s2">/glide&quot;</span> -OVERWRITE -adjust -LOCAL -WAIT -DEBUG glide-dock_SP_1.in
+<span class="s2">&quot;</span><span class="si">${</span><span class="nv">SCHRODINGER_HOME</span><span class="si">}</span><span class="s2">/glide&quot;</span><span class="w"> </span>-OVERWRITE<span class="w"> </span>-adjust<span class="w"> </span>-LOCAL<span class="w"> </span>-WAIT<span class="w"> </span>-DEBUG<span class="w"> </span>glide-dock_SP_1.in
 </pre></div>
 </div>
 <p>Here we’ve specified to use the glide executable that exists within the <code class="docutils literal notranslate"><span class="pre">$SCHRODINGER_HOME</span></code> directory, we set the job to overwrite (<code class="docutils literal notranslate"><span class="pre">-OVERWRITE</span></code>) any previous job files, we set <code class="docutils literal notranslate"><span class="pre">-adjust</span></code> to allow the job to determine the size of subjobs automatically, <code class="docutils literal notranslate"><span class="pre">-LOCAL</span></code> means the job writes any output files to the current directory rather than a temporary directory, <code class="docutils literal notranslate"><span class="pre">-WAIT</span></code> means the job does not return the prompt until the job completes (this <strong>must</strong> be set when submitting a job to the scheduler), <code class="docutils literal notranslate"><span class="pre">-DEBUG</span></code> includes details of the job control operation in the log file that is produced during the run.</p>
@@ -1483,7 +1483,7 @@ This is something we aren’t familiar with, maybe you are and can contribute to
 <div><p>The Covalent Docking protocol addresses the process as follows. First, it determines whether ligands can associate with the receptor in a suitable pose. This is done by mutating the reactive residue on the receptor to glycine, so that the pose of the side chain does not unduly influence the association of the ligand, then docking the ligands with Glide, with constraints between the reactive residue and the reactive group on the ligand. Once suitable poses are found, the receptor is restored, and the poses of the side chain on the reactive residue are explored in the presence of the associated ligand, to find the best poses for reaction. The covalent bond is formed, and the ligand and reactive residue are minimized to relieve strain. The poses for a given ligand are clustered, and a representative pose is chosen from each cluster. These poses undergo a full minimization, and the representatives are ranked by their Prime energy.</p>
 </div></blockquote>
 <p>You can read more about using covalent docking from the Schrodinger documentation that can be read directly on ARC4 using the following command (if you are connected with <a class="reference external" href="../../getting_started/logon#graphics-forwarding-x11">X11 graphical forwarding</a>).</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ xdg-open <span class="nv">$SCHRODINGER_HOME</span>/docs/covalent_docking_user_manual/covalent_docking.htm
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>xdg-open<span class="w"> </span><span class="nv">$SCHRODINGER_HOME</span>/docs/covalent_docking_user_manual/covalent_docking.htm
 </pre></div>
 </div>
 <section id="requirements">
@@ -1494,10 +1494,10 @@ This is something we aren’t familiar with, maybe you are and can contribute to
 </div></blockquote>
 <p>You can configure passwordless ssh between compute and login nodes with the following steps on ARC3:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># create an RSA key with no passphrase</span>
-$ ssh-keygen -N <span class="s2">&quot;&quot;</span> -t rsa -f ~/.ssh/id_rsa
+$<span class="w"> </span>ssh-keygen<span class="w"> </span>-N<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-f<span class="w"> </span>~/.ssh/id_rsa
 
 <span class="c1"># copy this key to your authorized_keys file</span>
-$ ssh-copy-id login1.arc3
+$<span class="w"> </span>ssh-copy-id<span class="w"> </span>login1.arc3
 </pre></div>
 </div>
 <p>Once these steps are complete and you can ssh from <code class="docutils literal notranslate"><span class="pre">dc1s0b1a.arc3</span></code> to <code class="docutils literal notranslate"><span class="pre">login1.arc3</span></code> without inputting a password you have correctly configured your account and can submit covalent docking issues without the <code class="docutils literal notranslate"><span class="pre">timeout</span></code> errors.</p>

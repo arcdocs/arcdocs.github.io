@@ -1316,7 +1316,7 @@ title="Print to PDF"
 <span class="c1">#$ -t 1-150</span>
 
 <span class="c1"># Run the application passing in the input and output filenames</span>
-./myprog &lt; data.<span class="nv">$SGE_TASK_ID</span> &gt; results.<span class="nv">$SGE_TASK_ID</span>
+./myprog<span class="w"> </span>&lt;<span class="w"> </span>data.<span class="nv">$SGE_TASK_ID</span><span class="w"> </span>&gt;<span class="w"> </span>results.<span class="nv">$SGE_TASK_ID</span>
 </pre></div>
 </div>
 <p>It would be executed through the queues as normal using qsub my_script.sh .</p>
@@ -1334,16 +1334,16 @@ files and put all output files into the same directory (the current working dire
 <span class="c1">#$ -t 1-150</span>
 
 <span class="c1">#create directory based on jobID</span>
-mkdir myjob-<span class="nv">$SGE_TASK_ID</span>
+mkdir<span class="w"> </span>myjob-<span class="nv">$SGE_TASK_ID</span>
 
 <span class="c1">#change directory into the one just created</span>
-<span class="nb">cd</span> myjob-<span class="nv">$SGE_TASK_ID</span>
+<span class="nb">cd</span><span class="w"> </span>myjob-<span class="nv">$SGE_TASK_ID</span>
 
 <span class="c1">#execute a program from the folder above this one, putting the results here</span>
-../myprog-one &gt; one.output
+../myprog-one<span class="w"> </span>&gt;<span class="w"> </span>one.output
 
 <span class="c1">#execute a different program from the folder above this taking the file created (one.output) as input and putting the results here</span>
-../myprog-two &lt; one.output &gt; two.output
+../myprog-two<span class="w"> </span>&lt;<span class="w"> </span>one.output<span class="w"> </span>&gt;<span class="w"> </span>two.output
 </pre></div>
 </div>
 </section>
@@ -1367,9 +1367,9 @@ mkdir myjob-<span class="nv">$SGE_TASK_ID</span>
 
 <span class="c1">#$ -t 1-150</span>
 
-<span class="nv">infile</span><span class="o">=</span><span class="k">$(</span>sed -n -e <span class="s2">&quot;</span><span class="nv">$SGE_TASK_ID</span><span class="s2"> p&quot;</span> jobfile1.txt<span class="k">)</span>
+<span class="nv">infile</span><span class="o">=</span><span class="k">$(</span>sed<span class="w"> </span>-n<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$SGE_TASK_ID</span><span class="s2"> p&quot;</span><span class="w"> </span>jobfile1.txt<span class="k">)</span>
 
-./myprog &lt; <span class="nv">$infile</span>
+./myprog<span class="w"> </span>&lt;<span class="w"> </span><span class="nv">$infile</span>
 </pre></div>
 </div>
 <p>As the ‘loop’ in the script executes, it will read the filenames one by one from files.txt , assign them to the variable $infile and direct them into your program.</p>
@@ -1395,14 +1395,14 @@ mkdir myjob-<span class="nv">$SGE_TASK_ID</span>
 
 <span class="c1">#$ -t 1-50</span>
 
-<span class="k">if</span><span class="o">[</span> <span class="nv">$SGE_TASK_ID</span> <span class="o">==</span> <span class="nv">$SGE_TASK_FIRST</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-  <span class="c1"># do first-task stuff here</span>
+<span class="k">if</span><span class="o">[</span><span class="w"> </span><span class="nv">$SGE_TASK_ID</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">$SGE_TASK_FIRST</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="c1"># do first-task stuff here</span>
 <span class="k">fi</span>
 
 <span class="c1"># do normal job processing tasks here</span>
 
-<span class="k">if</span> <span class="o">[</span> <span class="nv">$SGE_TASK_ID</span> <span class="o">==</span> <span class="nv">$SGE_TASK_LAST</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-  <span class="c1"># do last-task stuff here</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$SGE_TASK_ID</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">$SGE_TASK_LAST</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="c1"># do last-task stuff here</span>
 <span class="k">fi</span>
 </pre></div>
 </div>

@@ -1288,7 +1288,7 @@ title="Print to PDF"
 <h2>Setting up the environment<a class="headerlink" href="#setting-up-the-environment" title="Permalink to this headline">#</a></h2>
 <p>To set up the environment load the version of the software that you want to
 use. For example for version <code class="docutils literal notranslate"><span class="pre">2010.1.25</span></code> use:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add molpro/2010.1.25
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>molpro/2010.1.25
 </pre></div>
 </div>
 </section>
@@ -1301,9 +1301,9 @@ case, to avoid these failures you may need to change the location of the
 scratch files. You can redirect these scratch files to another directory, such
 as the local SSD, or an area on /nobackup using the <code class="docutils literal notranslate"><span class="pre">-d</span></code> argument, e.g.:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use locally allocated space</span>
-$ molpro -d <span class="nv">$TMPDIR</span>
+$<span class="w"> </span>molpro<span class="w"> </span>-d<span class="w"> </span><span class="nv">$TMPDIR</span>
 <span class="c1"># or if this is insufficient</span>
-$ molpro -d /nobackup/your_scratch_directory
+$<span class="w"> </span>molpro<span class="w"> </span>-d<span class="w"> </span>/nobackup/your_scratch_directory
 </pre></div>
 </div>
 <p>The directory <code class="docutils literal notranslate"><span class="pre">/nobackup/your_scratch_directory</span></code> is a directory that you create
@@ -1324,7 +1324,7 @@ runs the molpro script called <code class="docutils literal notranslate"><span c
 <span class="c1">#$ -l h_vmem=1G</span>
 <span class="c1">#$ -V</span>
 <span class="c1">#$ -cwd</span>
-molpro -d <span class="nv">$TMPDIR</span> example.com
+molpro<span class="w"> </span>-d<span class="w"> </span><span class="nv">$TMPDIR</span><span class="w"> </span>example.com
 </pre></div>
 </div>
 </section>
@@ -1337,7 +1337,7 @@ molpro -d <span class="nv">$TMPDIR</span> example.com
 <span class="c1">#$ -pe smp 8</span>
 <span class="c1">#$ -V</span>
 <span class="c1">#$ -cwd</span>
-molprop -n <span class="nv">$NSLOTS</span> -d <span class="nv">$TMPDIR</span> example.com
+molprop<span class="w"> </span>-n<span class="w"> </span><span class="nv">$NSLOTS</span><span class="w"> </span>-d<span class="w"> </span><span class="nv">$TMPDIR</span><span class="w"> </span>example.com
 </pre></div>
 </div>
 </section>
@@ -1350,7 +1350,7 @@ molprop -n <span class="nv">$NSLOTS</span> -d <span class="nv">$TMPDIR</span> ex
 <span class="c1">#$ -pe smp 8</span>
 <span class="c1">#$ -V</span>
 <span class="c1">#$ -cwd</span>
-molprox -t <span class="nv">$NSLOTS</span> -d <span class="nv">$TMPDIR</span> example.com
+molprox<span class="w"> </span>-t<span class="w"> </span><span class="nv">$NSLOTS</span><span class="w"> </span>-d<span class="w"> </span><span class="nv">$TMPDIR</span><span class="w"> </span>example.com
 </pre></div>
 </div>
 </section>

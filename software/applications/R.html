@@ -1274,18 +1274,18 @@ title="Print to PDF"
 <section id="selecting-an-r-version">
 <h2>Selecting an R version<a class="headerlink" href="#selecting-an-r-version" title="Permalink to this headline">#</a></h2>
 <p>There are multiple versions of R installed on ARC3/4.  You can load the default version of R available on each with the command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add R
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>R
 </pre></div>
 </div>
 <p>However, if you want another version of R you can install it through the conda packagement system included in the Anaconda module. For example to install R/4.0.3 you would do the following:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the anaconda module</span>
-$ module load anaconda
+$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>anaconda
 
 <span class="c1"># use conda to create an environment in which we install r version 4.0.3, using the conda forge channel</span>
-$ conda create -n r4 -c conda-forge r-base<span class="o">=</span><span class="m">4</span>.0.3
+$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>r4<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>r-base<span class="o">=</span><span class="m">4</span>.0.3
 
 <span class="c1"># activate and enter this new environment</span>
-$ <span class="nb">source</span> activate r4
+$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>r4
 </pre></div>
 </div>
 <p>You can then use this version of R as outlined in the rest of this page. For more information on the conda commands used here check the <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html#managing-conda">conda documentation</a>.</p>
@@ -1293,7 +1293,7 @@ $ <span class="nb">source</span> activate r4
 <section id="launching-on-the-front-end">
 <h2>Launching on the front end<a class="headerlink" href="#launching-on-the-front-end" title="Permalink to this headline">#</a></h2>
 <p>R can be launched by entering its name at the command prompt; i.e.:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ R
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>R
 </pre></div>
 </div>
 <p>Please note that this method should not be used apart from for quick
@@ -1305,11 +1305,11 @@ tests. Exit the R console by typing.</p>
 <section id="running-through-an-interactive-shell">
 <h2>Running through an interactive shell<a class="headerlink" href="#running-through-an-interactive-shell" title="Permalink to this headline">#</a></h2>
 <p>The following will launch R interactively via the batch queues.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qrsh -cwd -V-l <span class="nv">h_rt</span><span class="o">=</span>&lt;time&gt;,h_vmem<span class="o">=</span>&lt;mem&gt; R
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qrsh<span class="w"> </span>-cwd<span class="w"> </span>-V-l<span class="w"> </span><span class="nv">h_rt</span><span class="o">=</span>&lt;time&gt;,h_vmem<span class="o">=</span>&lt;mem&gt;<span class="w"> </span>R
 </pre></div>
 </div>
 <p>In the above command,<code class="docutils literal notranslate"><span class="pre">&lt;time&gt;</span></code> is the length of real-time the shell will exist for, and <code class="docutils literal notranslate"><span class="pre">&lt;mem&gt;</span></code> is how much memory you’re requesting. e.g. to run R for 6 hours, with 4G of RAM:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qrsh -cwd -V -l <span class="nv">h_rt</span><span class="o">=</span><span class="m">6</span>:00:00,h_vmem<span class="o">=</span>4G R --vanilla
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qrsh<span class="w"> </span>-cwd<span class="w"> </span>-V<span class="w"> </span>-l<span class="w"> </span><span class="nv">h_rt</span><span class="o">=</span><span class="m">6</span>:00:00,h_vmem<span class="o">=</span>4G<span class="w"> </span>R<span class="w"> </span>--vanilla
 </pre></div>
 </div>
 <p>This will run R from within the terminal from which it was launched.</p>
@@ -1327,13 +1327,13 @@ tests. Exit the R console by typing.</p>
 <span class="c1">#Request more memory, the default is 1Gb</span>
 <span class="c1">#$ -l h_vmem=1536M</span>
 <span class="c1"># Load R module</span>
-module add R
+module<span class="w"> </span>add<span class="w"> </span>R
 <span class="c1"># run R using command file</span>
-Rscript example.R
+Rscript<span class="w"> </span>example.R
 </pre></div>
 </div>
 <p>This can be submitted to the queuing system using:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qsub runR.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>runR.sh
 </pre></div>
 </div>
 </section>
@@ -1341,11 +1341,11 @@ Rscript example.R
 <h2>Installing R packages<a class="headerlink" href="#installing-r-packages" title="Permalink to this headline">#</a></h2>
 <p>Given the large number of R packages available and pace of development, it is preferable that users install the packages they need as opposed to using a centrally provided set of packages.</p>
 <p>To install package <code class="docutils literal notranslate"><span class="pre">foo</span></code>, start an R session by entering its name at the command prompt; i.e.:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ R
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>R
 </pre></div>
 </div>
 <p>and then from within R, install the package:</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nf">install.packages</span><span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">)</span>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="w"> </span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This will install the package and any dependencies that are required. It will do this by creating a local library (in your home directory by default) where it saves the package binaries and archives. The package should then be accessible from subsequent R interactive sessions and batch jobs.</p>

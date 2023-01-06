@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Chemkin &#8212; ARC Documentation</title>
+    <title>RSM &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,12 +50,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://arcdocs.leeds.ac.uk/software/applications/ansys/chemkin.html" />
+    <link rel="canonical" href="https://arcdocs.leeds.ac.uk/software/applications/ansys/rsm.html" />
     <link rel="shortcut icon" href="../../../_static/favicon-32x32.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="CESM" href="../cesm.html" />
-    <link rel="prev" title="Fluent" href="fluent.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -115,7 +113,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../../getting_started/start.html">
    Getting Started
@@ -242,26 +240,26 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../start.html">
    Software
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active has-children">
+  <ul>
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../start.html">
      Applications
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
     <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul class="current">
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../abaqus.html">
        Abaqus
@@ -272,16 +270,16 @@ const thebe_selector_output = ".output, .cell_output"
        Amber
       </a>
      </li>
-     <li class="toctree-l3 current active has-children">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="../ansys.html">
        Ansys
       </a>
-      <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
       <label for="toctree-checkbox-6">
        <i class="fas fa-chevron-down">
        </i>
       </label>
-      <ul class="current">
+      <ul>
        <li class="toctree-l4">
         <a class="reference internal" href="ansyscli.html">
          Ansys CLI
@@ -297,8 +295,8 @@ const thebe_selector_output = ".output, .cell_output"
          Fluent
         </a>
        </li>
-       <li class="toctree-l4 current active">
-        <a class="current reference internal" href="#">
+       <li class="toctree-l4">
+        <a class="reference internal" href="chemkin.html">
          Chemkin
         </a>
        </li>
@@ -1085,7 +1083,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/arcdocs/arcdocs-jupyterbook/issues/new?title=Issue%20on%20page%20%2Fsoftware/applications/ansys/chemkin.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/arcdocs/arcdocs-jupyterbook/issues/new?title=Issue%20on%20page%20%2Fsoftware/applications/ansys/rsm.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1102,7 +1100,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/arcdocs/arcdocs-jupyterbook/edit/working-master/book/software/applications/ansys/chemkin.md"
+        <a href="https://github.com/arcdocs/arcdocs-jupyterbook/edit/working-master/book/software/applications/ansys/rsm.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1130,7 +1128,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../../_sources/software/applications/ansys/chemkin.md"
+        <a href="../../../_sources/software/applications/ansys/rsm.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1190,19 +1188,56 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-chemkin-arc4-only">
-   Running Chemkin (ARC4 only)
+  <a class="reference internal nav-link" href="#client-installation">
+   Client installation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#client-configuration">
+   Client configuration
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#developer-website">
-     Developer Website
+    <a class="reference internal nav-link" href="#generate-a-key">
+     Generate a key
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#getting-started">
-     Getting started
+    <a class="reference internal nav-link" href="#run-pagent">
+     Run Pagent
     </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-this-with-putty">
+     Test this with putty
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-an-environment-variable">
+     Set an environment variable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rsm-configuration">
+     RSM Configuration
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hpc-resource-tab">
+       HPC Resource tab
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#file-management-tab">
+       File Management tab
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#queues">
+       Queues
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -1215,7 +1250,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Chemkin</h1>
+                <h1>RSM</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1226,19 +1261,56 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-chemkin-arc4-only">
-   Running Chemkin (ARC4 only)
+  <a class="reference internal nav-link" href="#client-installation">
+   Client installation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#client-configuration">
+   Client configuration
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#developer-website">
-     Developer Website
+    <a class="reference internal nav-link" href="#generate-a-key">
+     Generate a key
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#getting-started">
-     Getting started
+    <a class="reference internal nav-link" href="#run-pagent">
+     Run Pagent
     </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-this-with-putty">
+     Test this with putty
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-an-environment-variable">
+     Set an environment variable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rsm-configuration">
+     RSM Configuration
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hpc-resource-tab">
+       HPC Resource tab
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#file-management-tab">
+       File Management tab
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#queues">
+       Queues
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -1252,28 +1324,110 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="chemkin">
-<h1>Chemkin<a class="headerlink" href="#chemkin" title="Permalink to this headline">#</a></h1>
-<section id="running-chemkin-arc4-only">
-<h2>Running Chemkin (ARC4 only)<a class="headerlink" href="#running-chemkin-arc4-only" title="Permalink to this headline">#</a></h2>
-<p>ANSYS Chemkin provides all the tools for fast, accurate combustion and reaction flow simulations.</p>
-<section id="developer-website">
-<h3>Developer Website<a class="headerlink" href="#developer-website" title="Permalink to this headline">#</a></h3>
-<p>More information about Chemkin can be found on the <a class="reference external" href="https://www.ansys.com/en-gb/products/fluids/ansys-chemkin-pro">Ansys Website</a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="rsm">
+<h1>RSM<a class="headerlink" href="#rsm" title="Permalink to this headline">#</a></h1>
+<p>Remote Solve Manager is a tool within Ansys that lets you manage jobs running
+on remote clusters.  Clearly this is of interest to people running Ansys on
+their desktops that would like to submit jobs to the HPC, pulling the results
+back to their desktop for review.</p>
+<p>These instructions document a method that’s been followed to make RSM work.  If
+you believe it can be improved, please get in touch.</p>
+<p>This example assumes you’re using Ansys 2022R1, and using ARC4.</p>
+<section id="client-installation">
+<h2>Client installation<a class="headerlink" href="#client-installation" title="Permalink to this headline">#</a></h2>
+<p>This has been tested from a system off campus, connected to the VPN, using
+Ansys 2022R1 run from <a class="reference external" href="https://appsanywhere.leeds.ac.uk">AppsAnywhere</a>.  It
+also depends on having a working install of putty installed and available in
+your path.</p>
 </section>
-<section id="getting-started">
-<h3>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">#</a></h3>
-<p>To use Chemkin, you must have connected to ARC using <a class="reference external" href="../../../getting_started/logon.md#Graphics-forwarding-(X11)">X graphical forwarding</a>, loaded ansys/19.2 and assigned licence server information.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>More details about using Ansys for the first time and setting license server details can be found on the <a class="reference external" href="../ansys.md#Additional-Step-for-Using-Ansys-the-First-Time">Ansys page</a>.</p>
-</div>
-<p>Then run the <code class="docutils literal notranslate"><span class="pre">run_chemkin.sh</span></code> script passing it the argument Pro to start up Chemkin.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>ansys
-
-$<span class="w"> </span>run_chemkin.sh<span class="w"> </span>Pro
+<section id="client-configuration">
+<h2>Client configuration<a class="headerlink" href="#client-configuration" title="Permalink to this headline">#</a></h2>
+<section id="generate-a-key">
+<h3>Generate a key<a class="headerlink" href="#generate-a-key" title="Permalink to this headline">#</a></h3>
+<p>Run PuTTYgen.  Select Ed25519 as your chosen key type, and click Generate.  Set
+a suitable key comment (I’ve used ansys-test) and set a password on the key.
+Click save private key, and save it to a suitable location.  Save the public
+key, and save it alongside the private key.</p>
+<p>In the text box showing your public key, select all, and copy this to your
+clipboard, as we’ll need to add this to ARC4.</p>
+<p>SSH into ARC4 as you would normally, edit <code class="docutils literal notranslate"><span class="pre">~/.ssh/authorized_keys</span></code>, and append
+the string you copied to this file.</p>
+</section>
+<section id="run-pagent">
+<h3>Run Pagent<a class="headerlink" href="#run-pagent" title="Permalink to this headline">#</a></h3>
+<p>This agent process needs to be running to handle the authentication.  Once you
+start it, if it’s not already open, double click its icon in your task bar and
+select Add Key.  Browse to where you saved the private key, and select it.
+Enter the password you set when you created the key.  Close Pagent (which
+leaves it running in the taskbar).</p>
+</section>
+<section id="test-this-with-putty">
+<h3>Test this with putty<a class="headerlink" href="#test-this-with-putty" title="Permalink to this headline">#</a></h3>
+<p>Run putty
+Enter <a class="reference external" href="http://arc4.leeds.ac.uk">arc4.leeds.ac.uk</a> as the host
+Accept the host key (you can verify this against the fingerprint here)
+Enter your username</p>
+<p>If all has gone well, this connects using your key, and doesn’t prompt for a
+password.  At this point, edit your ~/.bashrc file and add these two lines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>module add ansys/2022R1
+export AWP_ROOT221=$ANSYS_HOME/v221
 </pre></div>
 </div>
+<p>For Ansys 2021R2, use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>module add ansys/2021R2
+export AWP_ROOT212=$ANSYS_HOME/v212
+</pre></div>
+</div>
+</section>
+<section id="set-an-environment-variable">
+<h3>Set an environment variable<a class="headerlink" href="#set-an-environment-variable" title="Permalink to this headline">#</a></h3>
+<p>In order for Ansys to find your key, you appear to need to set a KEYPATH
+environment variable.  Click Start, and type “environ”.  You should be offered
+“Edit environment variables for your account”.  Click it.</p>
+<p>Under “User variables” click the New button.  Put KEYPATH into the Variable
+name box, and click Browse File.  Find the private key you created earlier.
+Click OK, exiting that tool</p>
+</section>
+<section id="rsm-configuration">
+<h3>RSM Configuration<a class="headerlink" href="#rsm-configuration" title="Permalink to this headline">#</a></h3>
+<p>Start the RSM Configuration tool from the Start Menu, Ansys 2022 R1, RSM
+Configuration 2022 R1.</p>
+<p>Click the Add HPC Resource button, top left.</p>
+<section id="hpc-resource-tab">
+<h4>HPC Resource tab<a class="headerlink" href="#hpc-resource-tab" title="Permalink to this headline">#</a></h4>
+<p>Name: ARC4
+HPC type: UGE (SGE)
+Submit host: <a class="reference external" href="http://arc4.leeds.ac.uk">arc4.leeds.ac.uk</a>
+Shared memory parallel: smp
+Distributed parallel: ib
+UGE Job submission arguments: <code class="docutils literal notranslate"><span class="pre">-l</span> <span class="pre">h_rt=48:0:0</span></code>
+Deselect Use SSH protocol for inter and intra-node communication (Linux only)</p>
+<p>Select Use SSH or custom communication to the submit host
+Enter you username for Account name</p>
+<p>Click Apply</p>
+</section>
+<section id="file-management-tab">
+<h4>File Management tab<a class="headerlink" href="#file-management-tab" title="Permalink to this headline">#</a></h4>
+<p>Select External mechanism for file transfer (SCP via SSH)
+Set the Staging directory path to where you want to store these files on ARC.
+For example, /nobackup/alice/ansys-rsm</p>
+<p>Click Apply</p>
+<p>You need to ensure that this directory exists, so if necessary, SSH onto ARC4
+and create this directory at this point.</p>
+</section>
+<section id="queues">
+<h4>Queues<a class="headerlink" href="#queues" title="Permalink to this headline">#</a></h4>
+<p>Click Import/Refresh HPC queues.
+This should then show you all the queues it has found on ARC4.  Deselect the
+one it has selected, and select the queue you want to use.  If you’re not use,
+use 40core-192G.q.</p>
+<p>Click Apply.</p>
+<p>You now have a Submit button on the row for 40core-192G.q.  Click this.</p>
+<p>If everything’s gone well above, you should now have a green tick under the
+status, and you can review the generated report.  This is a sign that you’ve
+managed to copy data to and from ARC4, and submit a job to the queue which has
+run.</p>
+</section>
 </section>
 </section>
 </section>
@@ -1305,20 +1459,6 @@ $<span class="w"> </span>run_chemkin.sh<span class="w"> </span>Pro
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="fluent.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Fluent</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../cesm.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">CESM</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>

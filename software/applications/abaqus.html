@@ -1380,10 +1380,10 @@ This can also be done from the job manager. This will create a file called <code
 <span class="c1">#$ -l h_vmem=&lt;amount_of_RAM_queue&gt;</span>
 <span class="c1">#$ -m be</span>
 <span class="c1">#$ -cwd  -V</span>
-module add abaqus
-<span class="nb">export</span> <span class="nv">LM_LICENSE_FILE</span><span class="o">=</span>&lt;license_port&gt;@&lt;license_server&gt;:<span class="nv">$LM_LICENSE_FILE</span>
-<span class="nb">export</span> <span class="nv">ABAQUSLM_LICENSE_FILE</span><span class="o">=</span><span class="nv">$LM_LICENSE_FILE</span>
-abaqus <span class="nv">memory</span><span class="o">=</span>&lt;amount_of_RAM_abaqus&gt; <span class="nv">input</span><span class="o">=</span>&lt;input_file&gt; <span class="nv">job</span><span class="o">=</span>&lt;job_name&gt; int
+module<span class="w"> </span>add<span class="w"> </span>abaqus
+<span class="nb">export</span><span class="w"> </span><span class="nv">LM_LICENSE_FILE</span><span class="o">=</span>&lt;license_port&gt;@&lt;license_server&gt;:<span class="nv">$LM_LICENSE_FILE</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ABAQUSLM_LICENSE_FILE</span><span class="o">=</span><span class="nv">$LM_LICENSE_FILE</span>
+abaqus<span class="w"> </span><span class="nv">memory</span><span class="o">=</span>&lt;amount_of_RAM_abaqus&gt;<span class="w"> </span><span class="nv">input</span><span class="o">=</span>&lt;input_file&gt;<span class="w"> </span><span class="nv">job</span><span class="o">=</span>&lt;job_name&gt;<span class="w"> </span>int
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;run_time&gt;</span></code> is the amount of time you are requesting from the queue, entered in the format <code class="docutils literal notranslate"><span class="pre">hh:mm:ss</span></code> . If the job finishes before this it is fine but if the job takes longer it will cancel when this time runs out so be sure to give more time than you think you will need to avoid jobs failing midway through, keep in mind however that requesting more time makes scheduling the jobs more difficult and the maximum run time is 48 hours.</p>
@@ -1409,10 +1409,10 @@ abaqus <span class="nv">memory</span><span class="o">=</span>&lt;amount_of_RAM_a
 <span class="c1">#$ -m be</span>
 <span class="c1">#$ -pe smp &lt;number_cores&gt;</span>
 <span class="c1">#$ -cwd  -V</span>
-module add abaqus
-<span class="nb">export</span> <span class="nv">LM_LICENSE_FILE</span><span class="o">=</span>&lt;license_port&gt;@&lt;license_server&gt;:<span class="nv">$LM_LICENSE_FILE</span>
-<span class="nb">export</span> <span class="nv">ABAQUSLM_LICENSE_FILE</span><span class="o">=</span><span class="nv">$LM_LICENSE_FILE</span>
-abaqus <span class="nv">memory</span><span class="o">=</span>&lt;amount_of_RAM_abaqus&gt; <span class="nv">cpus</span><span class="o">=</span><span class="nv">$NSLOTS</span> <span class="nv">input</span><span class="o">=</span>&lt;input_file&gt; <span class="nv">job</span><span class="o">=</span>&lt;job_name&gt; <span class="nv">mp_mode</span><span class="o">=</span>threads int
+module<span class="w"> </span>add<span class="w"> </span>abaqus
+<span class="nb">export</span><span class="w"> </span><span class="nv">LM_LICENSE_FILE</span><span class="o">=</span>&lt;license_port&gt;@&lt;license_server&gt;:<span class="nv">$LM_LICENSE_FILE</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ABAQUSLM_LICENSE_FILE</span><span class="o">=</span><span class="nv">$LM_LICENSE_FILE</span>
+abaqus<span class="w"> </span><span class="nv">memory</span><span class="o">=</span>&lt;amount_of_RAM_abaqus&gt;<span class="w"> </span><span class="nv">cpus</span><span class="o">=</span><span class="nv">$NSLOTS</span><span class="w"> </span><span class="nv">input</span><span class="o">=</span>&lt;input_file&gt;<span class="w"> </span><span class="nv">job</span><span class="o">=</span>&lt;job_name&gt;<span class="w"> </span><span class="nv">mp_mode</span><span class="o">=</span>threads<span class="w"> </span>int
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;number_cores&gt;</span></code> is the number of cores you are requesting to be used for the analysis. <code class="docutils literal notranslate"><span class="pre">$NSLOTS</span></code> is an environmental variable, that is automatically set to equal <code class="docutils literal notranslate"><span class="pre">&lt;number_cores&gt;</span></code> , and is used to pass the number of cores to abaqus. Note that there will now be a difference between the two memory requests, as described above.</p>
@@ -1435,10 +1435,10 @@ file <code class="docutils literal notranslate"><span class="pre">input.inp</spa
 <span class="c1">#$ -m be</span>
 <span class="c1">#$ -pe smp 8</span>
 <span class="c1">#$ -cwd  -V</span>
-module add abaqus
-<span class="nb">export</span> <span class="nv">LM_LICENSE_FILE</span><span class="o">=</span>&lt;license_port&gt;@&lt;license_server&gt;:<span class="nv">$LM_LICENSE_FILE</span>
-<span class="nb">export</span> <span class="nv">ABAQUSLM_LICENSE_FILE</span><span class="o">=</span><span class="nv">$LM_LICENSE_FILE</span>
-abaqus <span class="nv">memory</span><span class="o">=</span>12000mb <span class="nv">cpus</span><span class="o">=</span><span class="nv">$NSLOTS</span> <span class="nv">input</span><span class="o">=</span>input.inp <span class="nv">job</span><span class="o">=</span>input <span class="nv">mp_mode</span><span class="o">=</span>threads int
+module<span class="w"> </span>add<span class="w"> </span>abaqus
+<span class="nb">export</span><span class="w"> </span><span class="nv">LM_LICENSE_FILE</span><span class="o">=</span>&lt;license_port&gt;@&lt;license_server&gt;:<span class="nv">$LM_LICENSE_FILE</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ABAQUSLM_LICENSE_FILE</span><span class="o">=</span><span class="nv">$LM_LICENSE_FILE</span>
+abaqus<span class="w"> </span><span class="nv">memory</span><span class="o">=</span>12000mb<span class="w"> </span><span class="nv">cpus</span><span class="o">=</span><span class="nv">$NSLOTS</span><span class="w"> </span><span class="nv">input</span><span class="o">=</span>input.inp<span class="w"> </span><span class="nv">job</span><span class="o">=</span>input<span class="w"> </span><span class="nv">mp_mode</span><span class="o">=</span>threads<span class="w"> </span>int
 </pre></div>
 </div>
 </section>
@@ -1450,10 +1450,10 @@ abaqus <span class="nv">memory</span><span class="o">=</span>12000mb <span class
 <span class="c1">#$ -l h_vmem=1500M</span>
 <span class="c1">#$ -m be</span>
 <span class="c1">#$ -cwd  -V</span>
-module add abaqus
-<span class="nb">export</span> <span class="nv">LM_LICENSE_FILE</span><span class="o">=</span>&lt;license_port&gt;@&lt;license_server&gt;:<span class="nv">$LM_LICENSE_FILE</span>
-<span class="nb">export</span> <span class="nv">ABAQUSLM_LICENSE_FILE</span><span class="o">=</span><span class="nv">$LM_LICENSE_FILE</span>
-abaqus <span class="nv">memory</span><span class="o">=</span>12000mb <span class="nv">input</span><span class="o">=</span>input.inp <span class="nv">job</span><span class="o">=</span>input <span class="nv">user</span><span class="o">=</span>exampleroutine int
+module<span class="w"> </span>add<span class="w"> </span>abaqus
+<span class="nb">export</span><span class="w"> </span><span class="nv">LM_LICENSE_FILE</span><span class="o">=</span>&lt;license_port&gt;@&lt;license_server&gt;:<span class="nv">$LM_LICENSE_FILE</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ABAQUSLM_LICENSE_FILE</span><span class="o">=</span><span class="nv">$LM_LICENSE_FILE</span>
+abaqus<span class="w"> </span><span class="nv">memory</span><span class="o">=</span>12000mb<span class="w"> </span><span class="nv">input</span><span class="o">=</span>input.inp<span class="w"> </span><span class="nv">job</span><span class="o">=</span>input<span class="w"> </span><span class="nv">user</span><span class="o">=</span>exampleroutine<span class="w"> </span>int
 </pre></div>
 </div>
 <p>This ensures that <strong>both</strong> Abaqus and the system default Intel Fortran compiler are able to access their relevant licence servers.</p>
@@ -1466,8 +1466,8 @@ abaqus <span class="nv">memory</span><span class="o">=</span>12000mb <span class
 </div>
 <p>Details on exactly how much local storage is available for your jobs can be found on the <a class="reference internal" href="../../usage/scratch.html"><span class="doc std std-doc">Scratch</span></a> page.</p>
 <p>If you need more than is available on a local node, you can use /nobackup.  You do this with the scratch parameter to abaqus, e.g.:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir -p /nobackup/<span class="nv">$USER</span>/scratch
-abaqus <span class="nv">memory</span><span class="o">=</span>12000mb <span class="nv">input</span><span class="o">=</span>input.inp <span class="nv">job</span><span class="o">=</span>input <span class="nv">user</span><span class="o">=</span>exampleroutine <span class="nv">scratch</span><span class="o">=</span><span class="s2">&quot;/nobackup/</span><span class="nv">$USER</span><span class="s2">/scratch&quot;</span> <span class="k">in</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>/nobackup/<span class="nv">$USER</span>/scratch
+abaqus<span class="w"> </span><span class="nv">memory</span><span class="o">=</span>12000mb<span class="w"> </span><span class="nv">input</span><span class="o">=</span>input.inp<span class="w"> </span><span class="nv">job</span><span class="o">=</span>input<span class="w"> </span><span class="nv">user</span><span class="o">=</span>exampleroutine<span class="w"> </span><span class="nv">scratch</span><span class="o">=</span><span class="s2">&quot;/nobackup/</span><span class="nv">$USER</span><span class="s2">/scratch&quot;</span><span class="w"> </span><span class="k">in</span>
 </pre></div>
 </div>
 </section>
@@ -1483,7 +1483,7 @@ abaqus <span class="nv">memory</span><span class="o">=</span>12000mb <span class
 <p>To the top of your input file and run your job as normal. It should produce a restart file with a <code class="docutils literal notranslate"><span class="pre">.res</span></code> file extension.</p>
 </li>
 <li><p>Run the restart analysis with</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>abaqus <span class="nv">job</span><span class="o">=</span>jobName <span class="nv">oldjob</span><span class="o">=</span>oldjobName ...
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>abaqus<span class="w"> </span><span class="nv">job</span><span class="o">=</span>jobName<span class="w"> </span><span class="nv">oldjob</span><span class="o">=</span>oldjobName<span class="w"> </span>...
 </pre></div>
 </div>
 <p>Where <code class="docutils literal notranslate"><span class="pre">oldJobName</span></code> is the initial input file and <code class="docutils literal notranslate"><span class="pre">newJobName</span></code> is a file which contains only the line:</p>

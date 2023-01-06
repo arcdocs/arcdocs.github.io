@@ -1222,6 +1222,13 @@ title="Print to PDF"
      </span>
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-the-remote-solve-manager">
+     <span class="xref myst">
+      Using the Remote Solve Manager
+     </span>
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1281,6 +1288,13 @@ title="Print to PDF"
      </span>
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-the-remote-solve-manager">
+     <span class="xref myst">
+      Using the Remote Solve Manager
+     </span>
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1305,16 +1319,16 @@ title="Print to PDF"
 <section id="setting-up-the-license">
 <h2>Setting up the license<a class="headerlink" href="#setting-up-the-license" title="Permalink to this headline">#</a></h2>
 <p>The license is obtained by setting the <code class="docutils literal notranslate"><span class="pre">ANSYSLMD_LICENSE_FILE</span></code> variable. To set it in bash do:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;port&gt;@&lt;host&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;port&gt;@&lt;host&gt;
 </pre></div>
 </div>
 <p>If accessing for the first time, there is an additional step (see the next section on this page) required to choose whether you are using commercial or academic licenses. To get the values of <code class="docutils literal notranslate"><span class="pre">&lt;port&gt;&#64;&lt;host&gt;</span></code> specific to your group/department please contact the Client IT Team via <a class="reference external" href="https://it.leeds.ac.uk/it">Service Now</a>.</p>
 <p>To make Ansys Fluent and CFX available for use:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add ansys
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>ansys
 </pre></div>
 </div>
 <p>To load a specific version of Ansys, specify this on the module command</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add ansys/17.1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>ansys/17.1
 </pre></div>
 </div>
 <section id="running-fluent">
@@ -1333,6 +1347,10 @@ title="Print to PDF"
 <h3><a class="reference internal" href="ansys/ansyscli.html"><span class="doc std std-doc">Running Ansys CLI</span></a><a class="headerlink" href="#running-ansys-cli" title="Permalink to this headline">#</a></h3>
 <p>Ansys CLI specific information can be found by clicking the link above.</p>
 </section>
+<section id="using-the-remote-solve-manager">
+<h3><a class="reference internal" href="ansys/rsm.html"><span class="doc std std-doc">Using the Remote Solve Manager</span></a><a class="headerlink" href="#using-the-remote-solve-manager" title="Permalink to this headline">#</a></h3>
+<p>Ansys RSM specific information can be found by clicking the link above.</p>
+</section>
 </section>
 <section id="additional-step-for-using-ansys-the-first-time">
 <h2>Additional Step for Using Ansys the First Time<a class="headerlink" href="#additional-step-for-using-ansys-the-first-time" title="Permalink to this headline">#</a></h2>
@@ -1341,16 +1359,16 @@ title="Print to PDF"
 <p><strong>Check with your supervisor if you need clarification on this.</strong></p>
 <p>You will need a SSH connection with X-forwarding enabled to configure this setting. For more information on how to connect to the ARC systems and to enable X-forwarding visit the <a class="reference external" href="../../getting_started/logon.html#graphics-forwarding-x11">Logging on page</a>.</p>
 <p>If you have not already done so, set the license server and port using the details provided by your supervisor:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;port&gt;@&lt;host&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;port&gt;@&lt;host&gt;
 </pre></div>
 </div>
 <p>Next, ensure that you have the Ansys module loaded for the particular version you wish to configure its licenses, e.g.:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module load ansys/17.1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>ansys/17.1
 </pre></div>
 </div>
 <p>For ansys version 17.1 (the latest version on the ARC clusters)</p>
 <p>You now need to launch the license administration interface. The simplest way to do this is to start cfx:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cfx5
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cfx5
 </pre></div>
 </div>
 <p>and select Tools/Ansys client Licensing Utility from the menu.</p>

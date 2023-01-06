@@ -1428,11 +1428,11 @@ On ARC4, Stata defaults to using the system Python 2.7 installation, which is no
 <p>We recommend taking the following steps to allow Stata to use the <a class="reference internal" href="../compilers/anaconda.html"><span class="doc std std-doc">Anaconda Python 3 distribution</span></a> that is installed on ARC4.</p>
 <p>First, create a new Conda environment using the Conda package manager tool, within which you can install your preferred Python version.
 Creating a <a class="reference external" href="../compilers/anaconda#creating-custom-environments">new Conda environment</a> allows you to separate the dependencies required for your Stata Python integration from any other Python dependencies you may have.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add <span class="nb">test</span> anaconda stata/16
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span><span class="nb">test</span><span class="w"> </span>anaconda<span class="w"> </span>stata/16
 
-$ conda create -n statapy <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10
+$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>statapy<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10
 
-$ <span class="nb">source</span> activate statapy
+$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>statapy
 </pre></div>
 </div>
 <p>Having activate our <code class="docutils literal notranslate"><span class="pre">statapy</span></code> environment we can now install any Python packages we require using <code class="docutils literal notranslate"><span class="pre">pip</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code>.</p>

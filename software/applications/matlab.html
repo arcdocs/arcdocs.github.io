@@ -1400,7 +1400,7 @@ title="Print to PDF"
 <section id="setting-up-the-environment">
 <h2>Setting up the environment<a class="headerlink" href="#setting-up-the-environment" title="Permalink to this headline">#</a></h2>
 <p>All required environment variables can be set by loading the Matlab module, to do this type the command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module add matlab
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>matlab
 </pre></div>
 </div>
 <p>Matlab is now centrally licenced and managed so there is no need to set a licence server before using it.</p>
@@ -1415,17 +1415,17 @@ title="Print to PDF"
 <section id="running-through-an-interactive-shell">
 <h3>Running through an interactive shell<a class="headerlink" href="#running-through-an-interactive-shell" title="Permalink to this headline">#</a></h3>
 <p>The following will launch Matlab interactively, displaying the full GUI:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qrsh -V -l <span class="nv">h_rt</span><span class="o">=</span>hh:mm:ss matlab -desktop -singleCompThread
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qrsh<span class="w"> </span>-V<span class="w"> </span>-l<span class="w"> </span><span class="nv">h_rt</span><span class="o">=</span>hh:mm:ss<span class="w"> </span>matlab<span class="w"> </span>-desktop<span class="w"> </span>-singleCompThread
 </pre></div>
 </div>
 <p>In the above command <code class="docutils literal notranslate"><span class="pre">hh:mm:ss</span></code> is the length of time the shell will exist for, <code class="docutils literal notranslate"><span class="pre">-V</span></code> exports the the current environment.</p>
 <p>The parameter <code class="docutils literal notranslate"><span class="pre">-singleCompThread</span></code> ensures that Matlab will run only on a single thread, since the default multiple threaded behaviour can cause problems.</p>
 <p>For example, to request a matlab interactive session for 6 hours:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qrsh -V -l <span class="nv">h_rt</span><span class="o">=</span><span class="m">6</span>:00:00 matlab -desktop -singleCompThread
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qrsh<span class="w"> </span>-V<span class="w"> </span>-l<span class="w"> </span><span class="nv">h_rt</span><span class="o">=</span><span class="m">6</span>:00:00<span class="w"> </span>matlab<span class="w"> </span>-desktop<span class="w"> </span>-singleCompThread
 </pre></div>
 </div>
 <p>Alternatively, the following will launch an interactive session in a matlab session that is within the existing terminal:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qrsh -pty y -V -l <span class="nv">h_rt</span><span class="o">=</span><span class="m">6</span>:00:00 matlab -nodesktop -singleCompThread
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qrsh<span class="w"> </span>-pty<span class="w"> </span>y<span class="w"> </span>-V<span class="w"> </span>-l<span class="w"> </span><span class="nv">h_rt</span><span class="o">=</span><span class="m">6</span>:00:00<span class="w"> </span>matlab<span class="w"> </span>-nodesktop<span class="w"> </span>-singleCompThread
 </pre></div>
 </div>
 <p>Where, <code class="docutils literal notranslate"><span class="pre">hh:mm:ss</span></code> is the length of time the interactive session will exist for.</p>
@@ -1433,20 +1433,20 @@ title="Print to PDF"
 <section id="batch-execution">
 <h3>Batch Execution<a class="headerlink" href="#batch-execution" title="Permalink to this headline">#</a></h3>
 <p>To run matlab in batch-mode you must first generate a list of commands for matlab to process in a <code class="docutils literal notranslate"><span class="pre">.m</span></code> file.</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% MATLAB M-file example to approximate a sawtooth</span><span class="w"></span>
-<span class="c">% with a truncated Fourier expansion.</span><span class="w"></span>
-<span class="n">nterms</span><span class="p">=</span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
-<span class="n">fourbypi</span><span class="p">=</span><span class="mf">4.0</span><span class="o">/</span><span class="nb">pi</span><span class="p">;</span><span class="w"></span>
-<span class="n">np</span><span class="p">=</span><span class="mi">100</span><span class="p">;</span><span class="w"></span>
-<span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">np</span><span class="p">)=</span><span class="nb">pi</span><span class="o">/</span><span class="mf">2.0</span><span class="p">;</span><span class="w"></span>
-<span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">np</span><span class="p">)=</span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="n">np</span><span class="p">);</span><span class="w"></span>
-<span class="k">for</span><span class="w"> </span><span class="n">k</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="n">nterms</span><span class="w"></span>
-<span class="n">twokm</span><span class="p">=</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="n">y</span><span class="p">=</span><span class="n">y</span><span class="o">-</span><span class="n">fourbypi</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">twokm</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">twokm</span>^<span class="mi">2</span><span class="p">;</span><span class="w"></span>
-<span class="k">end</span><span class="p">;</span><span class="w"></span>
-<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span><span class="w"></span>
-<span class="nb">print</span><span class="w"> </span><span class="o">-</span><span class="n">deps</span><span class="w"> </span><span class="n">matlab_test_plot</span><span class="p">.</span><span class="n">ps</span><span class="p">;</span><span class="w"></span>
-<span class="nb">quit</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% MATLAB M-file example to approximate a sawtooth</span>
+<span class="c">% with a truncated Fourier expansion.</span>
+<span class="n">nterms</span><span class="p">=</span><span class="mi">5</span><span class="p">;</span>
+<span class="n">fourbypi</span><span class="p">=</span><span class="mf">4.0</span><span class="o">/</span><span class="nb">pi</span><span class="p">;</span>
+<span class="n">np</span><span class="p">=</span><span class="mi">100</span><span class="p">;</span>
+<span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">np</span><span class="p">)=</span><span class="nb">pi</span><span class="o">/</span><span class="mf">2.0</span><span class="p">;</span>
+<span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">np</span><span class="p">)=</span><span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">,</span><span class="n">np</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="n">k</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="n">nterms</span>
+<span class="n">twokm</span><span class="p">=</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="n">y</span><span class="p">=</span><span class="n">y</span><span class="o">-</span><span class="n">fourbypi</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">twokm</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">twokm</span>^<span class="mi">2</span><span class="p">;</span>
+<span class="k">end</span><span class="p">;</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+<span class="nb">print</span><span class="w"> </span><span class="o">-</span><span class="n">deps</span><span class="w"> </span><span class="n">matlab_test_plot</span><span class="p">.</span><span class="n">ps</span><span class="p">;</span>
+<span class="nb">quit</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Please note that the last line must be: <code class="docutils literal notranslate"><span class="pre">quit;</span></code>.</p>
@@ -1454,11 +1454,11 @@ title="Print to PDF"
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set a 10 min limit</span>
 <span class="c1">#$ -l h_rt=0:10:00</span>
 <span class="c1"># Load matlab module</span>
-module add user
-module add matlab
+module<span class="w"> </span>add<span class="w"> </span>user
+module<span class="w"> </span>add<span class="w"> </span>matlab
 <span class="c1"># run matlab script in the current directory (cosplot.m)</span>
 <span class="c1"># -nodisplay flag should be given to suppress graphics</span>
-matlab -nodisplay -batch cosplot
+matlab<span class="w"> </span>-nodisplay<span class="w"> </span>-batch<span class="w"> </span>cosplot
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1466,7 +1466,7 @@ matlab -nodisplay -batch cosplot
 <p>To ensure the correct license variables are set we include <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">add</span> <span class="pre">user</span></code> within the job submission script.</p>
 </div>
 <p>This can be submitted to the batch scheduler system using:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ qsub runmatlab.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>runmatlab.sh
 </pre></div>
 </div>
 <p>The output file <code class="docutils literal notranslate"><span class="pre">matlab_test_plot.ps</span></code> can be viewed with Ghostscript using the command <code class="docutils literal notranslate"><span class="pre">gs</span> <span class="pre">matlab_test_plot.ps</span></code>.</p>
@@ -1564,33 +1564,33 @@ on ARC)</em></p>
 <h2>GPU Matlab jobs<a class="headerlink" href="#gpu-matlab-jobs" title="Permalink to this headline">#</a></h2>
 <p>Matlab can take advantage of GPU hardware. To do this, first launch Matlab inside a job where GPU resources have been requested (see
 <a class="reference internal" href="../../usage/gpgpu.html"><span class="doc std std-doc">here</span></a>). Within Matlab, the <code class="docutils literal notranslate"><span class="pre">gpuDevices</span></code> command will provide details of the available GPU(s):</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">gpuDevice</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">gpuDevice</span>
 
 <span class="w">    </span><span class="nb">ans</span><span class="w"> </span><span class="p">=</span><span class="w"> </span>
 
-<span class="w">      </span><span class="n">CUDADevice</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="nb">properties</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="n">CUDADevice</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="nb">properties</span><span class="p">:</span>
 
-<span class="w">                          </span><span class="n">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Tesla P100-PCIE-12GB&#39;</span><span class="w"></span>
-<span class="w">                         </span><span class="n">Index</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="w">             </span><span class="n">ComputeCapability</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;6.0&#39;</span><span class="w"></span>
-<span class="w">                </span><span class="n">SupportsDouble</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="w">                 </span><span class="n">DriverVersion</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="w"></span>
-<span class="w">                </span><span class="n">ToolkitVersion</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w"></span>
-<span class="w">            </span><span class="n">MaxThreadsPerBlock</span><span class="p">:</span><span class="w"> </span><span class="mi">1024</span><span class="w"></span>
-<span class="w">              </span><span class="n">MaxShmemPerBlock</span><span class="p">:</span><span class="w"> </span><span class="mi">49152</span><span class="w"></span>
-<span class="w">            </span><span class="n">MaxThreadBlockSize</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1024</span><span class="w"> </span><span class="mi">1024</span><span class="w"> </span><span class="mi">64</span><span class="p">]</span><span class="w"></span>
-<span class="w">                   </span><span class="n">MaxGridSize</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">2.1475e+09</span><span class="w"> </span><span class="mi">65535</span><span class="w"> </span><span class="mi">65535</span><span class="p">]</span><span class="w"></span>
-<span class="w">                     </span><span class="n">SIMDWidth</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="w"></span>
-<span class="w">                   </span><span class="n">TotalMemory</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2786e+10</span><span class="w"></span>
-<span class="w">               </span><span class="n">AvailableMemory</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2401e+10</span><span class="w"></span>
-<span class="w">           </span><span class="n">MultiprocessorCount</span><span class="p">:</span><span class="w"> </span><span class="mi">56</span><span class="w"></span>
-<span class="w">                  </span><span class="n">ClockRateKHz</span><span class="p">:</span><span class="w"> </span><span class="mi">1328500</span><span class="w"></span>
-<span class="w">                   </span><span class="n">ComputeMode</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Default&#39;</span><span class="w"></span>
-<span class="w">          </span><span class="n">GPUOverlapsTransfers</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="w">        </span><span class="n">KernelExecutionTimeout</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="w">              </span><span class="n">CanMapHostMemory</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="w">               </span><span class="n">DeviceSupported</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="w">                </span><span class="n">DeviceSelected</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">                          </span><span class="n">Name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Tesla P100-PCIE-12GB&#39;</span>
+<span class="w">                         </span><span class="n">Index</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">             </span><span class="n">ComputeCapability</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;6.0&#39;</span>
+<span class="w">                </span><span class="n">SupportsDouble</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                 </span><span class="n">DriverVersion</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span>
+<span class="w">                </span><span class="n">ToolkitVersion</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span>
+<span class="w">            </span><span class="n">MaxThreadsPerBlock</span><span class="p">:</span><span class="w"> </span><span class="mi">1024</span>
+<span class="w">              </span><span class="n">MaxShmemPerBlock</span><span class="p">:</span><span class="w"> </span><span class="mi">49152</span>
+<span class="w">            </span><span class="n">MaxThreadBlockSize</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1024</span><span class="w"> </span><span class="mi">1024</span><span class="w"> </span><span class="mi">64</span><span class="p">]</span>
+<span class="w">                   </span><span class="n">MaxGridSize</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">2.1475e+09</span><span class="w"> </span><span class="mi">65535</span><span class="w"> </span><span class="mi">65535</span><span class="p">]</span>
+<span class="w">                     </span><span class="n">SIMDWidth</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span>
+<span class="w">                   </span><span class="n">TotalMemory</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2786e+10</span>
+<span class="w">               </span><span class="n">AvailableMemory</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2401e+10</span>
+<span class="w">           </span><span class="n">MultiprocessorCount</span><span class="p">:</span><span class="w"> </span><span class="mi">56</span>
+<span class="w">                  </span><span class="n">ClockRateKHz</span><span class="p">:</span><span class="w"> </span><span class="mi">1328500</span>
+<span class="w">                   </span><span class="n">ComputeMode</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Default&#39;</span>
+<span class="w">          </span><span class="n">GPUOverlapsTransfers</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="n">KernelExecutionTimeout</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">              </span><span class="n">CanMapHostMemory</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">               </span><span class="n">DeviceSupported</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">                </span><span class="n">DeviceSelected</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
 </pre></div>
 </div>
 <p>Please see the main Matlab product documentation for writing code to use GPUs.</p>
@@ -1606,11 +1606,11 @@ on ARC)</em></p>
 <section id="compiling">
 <h3>Compiling<a class="headerlink" href="#compiling" title="Permalink to this headline">#</a></h3>
 <p>The Matlab compiler makes use of the GNU C compilers and as the Intel compiler is loaded by default you shouldswitch to the correct version of GNU compiler via the command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module switch intel gnu
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>switch<span class="w"> </span>intel<span class="w"> </span>gnu
 </pre></div>
 </div>
 <p>The compiler can be invoked from within Matlab or directly from the command line via the tool <code class="docutils literal notranslate"><span class="pre">mcc</span></code> . However, to get the code to compile in single threaded mode the compiler should be invoked directly from the command line. In general this would take the form:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mcc -R -singleCompThread  -m your_program.m
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mcc<span class="w"> </span>-R<span class="w"> </span>-singleCompThread<span class="w">  </span>-m<span class="w"> </span>your_program.m
 </pre></div>
 </div>
 <p>It is very important that you include the option <code class="docutils literal notranslate"><span class="pre">-R</span> <span class="pre">singleCompThread</span></code> when you use <code class="docutils literal notranslate"><span class="pre">mcc</span></code> to compile matlab code. Otherwise matlab will run in multi-threaded mode and cause problems when running through the batch queues.</p>
@@ -1628,9 +1628,9 @@ on ARC)</em></p>
 <span class="c1"># Set a 6 hour limit</span>
 <span class="c1">#$ -l h_rt=6:00:00</span>
 <span class="c1"># Load matlab module</span>
-module add matlab
+module<span class="w"> </span>add<span class="w"> </span>matlab
 <span class="c1">#set the path to Matlab runtime, via $MATLAB_HOME, run program via wrapper</span>
-./run_your_program.sh <span class="nv">$MATLAB_HOME</span>
+./run_your_program.sh<span class="w"> </span><span class="nv">$MATLAB_HOME</span>
 </pre></div>
 </div>
 </section>

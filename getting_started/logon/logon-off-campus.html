@@ -1315,13 +1315,13 @@ You will need to make sure you have <a class="reference external" href="https://
 <ol>
 <li><p>Open a Terminal on your Linux/macOS machine</p></li>
 <li><p>Create a directory called <code class="docutils literal notranslate"><span class="pre">.ssh</span></code> in your home directory (if one doesn’t already exist)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir ~/.ssh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>~/.ssh
 </pre></div>
 </div>
 </li>
 <li><p>Then open a text editor of your choice and create a file called <code class="docutils literal notranslate"><span class="pre">config</span></code> in your <code class="docutils literal notranslate"><span class="pre">.ssh</span></code> directory</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># for instance use the simple nano text editor</span>
-$ nano ~/.ssh/config
+$<span class="w"> </span>nano<span class="w"> </span>~/.ssh/config
 </pre></div>
 </div>
 </li>
@@ -1345,28 +1345,28 @@ User exuser
 </ol>
 <p>You should now run the normal SSH commands in the terminal specifying the host you wish to connect to.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># to connect to ARC4</span>
-$ ssh arc4.leeds.ac.uk
+$<span class="w"> </span>ssh<span class="w"> </span>arc4.leeds.ac.uk
 
 <span class="c1"># to connect to ARC3</span>
-$ ssh arc3.leeds.ac.uk
+$<span class="w"> </span>ssh<span class="w"> </span>arc3.leeds.ac.uk
 </pre></div>
 </div>
 <p>You’ll be prompted to login to <a class="reference external" href="http://remote-access.leeds.ac.uk">remote-access.leeds.ac.uk</a> first and may be presented with an interactive login that looks like below:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ssh arc4.leeds.ac.uk
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh<span class="w"> </span>arc4.leeds.ac.uk
 Password:
 </pre></div>
 </div>
 <p>After entering your password carefully if it is correct you will receive the Duo 2 factor authentication prompt.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ssh arc4.leeds.ac.uk
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ssh<span class="w"> </span>arc4.leeds.ac.uk
 Password:
-Duo two-factor login <span class="k">for</span> exuser@leeds.ac.uk
+Duo<span class="w"> </span>two-factor<span class="w"> </span>login<span class="w"> </span><span class="k">for</span><span class="w"> </span>exuser@leeds.ac.uk
 
-Enter a passcode or <span class="k">select</span> one of the following options:
+Enter<span class="w"> </span>a<span class="w"> </span>passcode<span class="w"> </span>or<span class="w"> </span><span class="k">select</span><span class="w"> </span>one<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>options:
 
- <span class="m">1</span>. Duo Push to +XX XXXX XXXXXXX
- <span class="m">2</span>. SMS passcodes to +XX XXXX XXXXXX <span class="o">(</span>next code starts with: <span class="m">2</span><span class="o">)</span>
+<span class="w"> </span><span class="m">1</span>.<span class="w"> </span>Duo<span class="w"> </span>Push<span class="w"> </span>to<span class="w"> </span>+XX<span class="w"> </span>XXXX<span class="w"> </span>XXXXXXX
+<span class="w"> </span><span class="m">2</span>.<span class="w"> </span>SMS<span class="w"> </span>passcodes<span class="w"> </span>to<span class="w"> </span>+XX<span class="w"> </span>XXXX<span class="w"> </span>XXXXXX<span class="w"> </span><span class="o">(</span>next<span class="w"> </span>code<span class="w"> </span>starts<span class="w"> </span>with:<span class="w"> </span><span class="m">2</span><span class="o">)</span>
 
-Passcode or option <span class="o">(</span><span class="m">1</span>-2<span class="o">)</span>:
+Passcode<span class="w"> </span>or<span class="w"> </span>option<span class="w"> </span><span class="o">(</span><span class="m">1</span>-2<span class="o">)</span>:
 </pre></div>
 </div>
 <p>Enter your prefered option and authenticate using Duo and you will be prompted to enter your password for ARC4.</p>
@@ -1384,17 +1384,17 @@ exuser@arc4.leeds.ac.uk&#39;s password:
 </pre></div>
 </div>
 <p>Again carefully enter your password and if you’ve entered it correctly you’ll see the ARC4 message of the day (shown below) and have successfully connected.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>              Advanced Research Computing Node <span class="m">4</span> <span class="o">(</span>arc4<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">              </span>Advanced<span class="w"> </span>Research<span class="w"> </span>Computing<span class="w"> </span>Node<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="o">(</span>arc4<span class="o">)</span>
 ________________________________________________________________________
 
-Information on using this facility may be obtained at the following URL:
+Information<span class="w"> </span>on<span class="w"> </span>using<span class="w"> </span>this<span class="w"> </span>facility<span class="w"> </span>may<span class="w"> </span>be<span class="w"> </span>obtained<span class="w"> </span>at<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>URL:
 http://www.arc.leeds.ac.uk
 
-    Please remember to acknowledge the use of ARC facilities <span class="k">in</span> your
-    papers<span class="p">;</span> details are on the website above.
+<span class="w">    </span>Please<span class="w"> </span>remember<span class="w"> </span>to<span class="w"> </span>acknowledge<span class="w"> </span>the<span class="w"> </span>use<span class="w"> </span>of<span class="w"> </span>ARC<span class="w"> </span>facilities<span class="w"> </span><span class="k">in</span><span class="w"> </span>your
+<span class="w">    </span>papers<span class="p">;</span><span class="w"> </span>details<span class="w"> </span>are<span class="w"> </span>on<span class="w"> </span>the<span class="w"> </span>website<span class="w"> </span>above.
 ________________________________________________________________________
 
-<span class="o">[</span>exuser@login1.arc4 ~<span class="o">]</span>$
+<span class="o">[</span>exuser@login1.arc4<span class="w"> </span>~<span class="o">]</span>$
 </pre></div>
 </div>
 </section>

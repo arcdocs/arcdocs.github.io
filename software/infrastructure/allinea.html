@@ -1281,7 +1281,7 @@ title="Print to PDF"
 <p>DDT, the debugger, offers a compelling alternative to attaching gdb sessions to individual processes. It offers a simple GUI allowing a clean visual overview of the entire parallel program.</p>
 <p>MAP, the profiler, offers a low-overhead method to obtain information of MPI, CPU and memory use over a program’s run.</p>
 <p>To use, please first execute:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module load allinea
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>allinea
 </pre></div>
 </div>
 <p>Although basic usage is covered below, please refer to the Allinea documentation. A copy of this is held on the system (at <code class="docutils literal notranslate"><span class="pre">$ALLINEA_HOME/doc/userguide.pdf</span></code> once the allinea module is loaded)</p>
@@ -1334,15 +1334,15 @@ Submit non-interactively to the batch queues</p>
 <p>For MAP:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -l h_rt=1:0:0</span>
 <span class="c1">#$ -l np=16</span>
-module load allinea
-map -n <span class="nv">$NSLOTS</span>  
+module<span class="w"> </span>load<span class="w"> </span>allinea
+map<span class="w"> </span>-n<span class="w"> </span><span class="nv">$NSLOTS</span><span class="w">  </span>
 </pre></div>
 </div>
 <p>For DDT (can be used for using tracepoints and memory debugging, etc.):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -l h_rt=1:0:0</span>
 <span class="c1">#$ -l np=16</span>
-module load allinea
-ddt -n <span class="nv">$NSLOTS</span> -offline myjob.txt  
+module<span class="w"> </span>load<span class="w"> </span>allinea
+ddt<span class="w"> </span>-n<span class="w"> </span><span class="nv">$NSLOTS</span><span class="w"> </span>-offline<span class="w"> </span>myjob.txt<span class="w">  </span>
 </pre></div>
 </div>
 </section>

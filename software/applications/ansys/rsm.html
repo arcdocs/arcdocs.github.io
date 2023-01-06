@@ -1337,7 +1337,7 @@ you believe it can be improved, please get in touch.</p>
 <h2>Client installation<a class="headerlink" href="#client-installation" title="Permalink to this headline">#</a></h2>
 <p>This has been tested from a system off campus, connected to the VPN, using
 Ansys 2022R1 run from <a class="reference external" href="https://appsanywhere.leeds.ac.uk">AppsAnywhere</a>.  It
-also depends on having a working install of putty installed and available in
+also depends on having a working install of <a class="reference external" href="https://www.putty.org">putty</a> installed and available in
 your path.</p>
 </section>
 <section id="client-configuration">
@@ -1364,7 +1364,7 @@ leaves it running in the taskbar).</p>
 <section id="test-this-with-putty">
 <h3>Test this with putty<a class="headerlink" href="#test-this-with-putty" title="Permalink to this headline">#</a></h3>
 <p>Run putty
-Enter <a class="reference external" href="http://arc4.leeds.ac.uk">arc4.leeds.ac.uk</a> as the host
+Enter <code class="docutils literal notranslate"><span class="pre">arc4.leeds.ac.uk</span></code> as the host
 Accept the host key (you can verify this against the fingerprint here)
 Enter your username</p>
 <p>If all has gone well, this connects using your key, and doesn’t prompt for a
@@ -1381,10 +1381,10 @@ export AWP_ROOT212=$ANSYS_HOME/v212
 </section>
 <section id="set-an-environment-variable">
 <h3>Set an environment variable<a class="headerlink" href="#set-an-environment-variable" title="Permalink to this headline">#</a></h3>
-<p>In order for Ansys to find your key, you appear to need to set a KEYPATH
+<p>In order for Ansys to find your key, you appear to need to set a <code class="docutils literal notranslate"><span class="pre">KEYPATH</span></code>
 environment variable.  Click Start, and type “environ”.  You should be offered
 “Edit environment variables for your account”.  Click it.</p>
-<p>Under “User variables” click the New button.  Put KEYPATH into the Variable
+<p>Under “User variables” click the New button.  Put <code class="docutils literal notranslate"><span class="pre">KEYPATH</span></code> into the Variable
 name box, and click Browse File.  Find the private key you created earlier.
 Click OK, exiting that tool</p>
 </section>
@@ -1410,7 +1410,7 @@ Enter you username for Account name</p>
 <h4>File Management tab<a class="headerlink" href="#file-management-tab" title="Permalink to this headline">#</a></h4>
 <p>Select External mechanism for file transfer (SCP via SSH)
 Set the Staging directory path to where you want to store these files on ARC.
-For example, /nobackup/alice/ansys-rsm</p>
+For example, <code class="docutils literal notranslate"><span class="pre">/nobackup/alice/ansys-rsm</span></code></p>
 <p>Click Apply</p>
 <p>You need to ensure that this directory exists, so if necessary, SSH onto ARC4
 and create this directory at this point.</p>

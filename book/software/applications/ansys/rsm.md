@@ -8,12 +8,12 @@ back to their desktop for review.
 These instructions document a method that's been followed to make RSM work.  If
 you believe it can be improved, please get in touch.
 
-This example assumes you're using Ansys 2021R2, and using ARC4.
+This example assumes you're using Ansys 2022R1, and using ARC4.
 
 ## Client installation
 
 This has been tested from a system off campus, connected to the VPN, using
-Ansys 2021R2 run from [AppsAnywhere](https://appsanywhere.leeds.ac.uk).  It
+Ansys 2022R1 run from [AppsAnywhere](https://appsanywhere.leeds.ac.uk).  It
 also depends on having a working install of putty installed and available in
 your path.
 
@@ -51,6 +51,12 @@ If all has gone well, this connects using your key, and doesn't prompt for a
 password.  At this point, edit your ~/.bashrc file and add these two lines:
 
 ```
+module add ansys/2022R1
+export AWP_ROOT221=$ANSYS_HOME/v221
+```
+
+For Ansys 2021R2, use:
+```
 module add ansys/2021R2
 export AWP_ROOT212=$ANSYS_HOME/v212
 ```
@@ -67,8 +73,8 @@ Click OK, exiting that tool
 
 ### RSM Configuration
 
-Start the RSM Configuration tool from the Start Menu, Ansys 2021 R2, RSM
-Configuration 2021 R2.
+Start the RSM Configuration tool from the Start Menu, Ansys 2022 R1, RSM
+Configuration 2022 R1.
 
 Click the Add HPC Resource button, top left.
 
@@ -89,7 +95,7 @@ Click Apply
 
 #### File Management tab
 
-Select External mechanism for file transfer (SCP, Custom)
+Select External mechanism for file transfer (SCP via SSH)
 Set the Staging directory path to where you want to store these files on ARC.
 For example, /nobackup/alice/ansys-rsm
 

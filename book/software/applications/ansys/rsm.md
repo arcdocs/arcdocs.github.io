@@ -14,7 +14,7 @@ This example assumes you're using Ansys 2022R1, and using ARC4.
 
 This has been tested from a system off campus, connected to the VPN, using
 Ansys 2022R1 run from [AppsAnywhere](https://appsanywhere.leeds.ac.uk).  It
-also depends on having a working install of putty installed and available in
+also depends on having a working install of [putty](https://www.putty.org) installed and available in
 your path.
 
 ## Client configuration
@@ -43,7 +43,7 @@ leaves it running in the taskbar).
 ### Test this with putty
 
 Run putty
-Enter arc4.leeds.ac.uk as the host
+Enter `arc4.leeds.ac.uk` as the host
 Accept the host key (you can verify this against the fingerprint here)
 Enter your username
 
@@ -63,11 +63,11 @@ export AWP_ROOT212=$ANSYS_HOME/v212
 
 ### Set an environment variable
 
-In order for Ansys to find your key, you appear to need to set a KEYPATH
+In order for Ansys to find your key, you appear to need to set a `KEYPATH`
 environment variable.  Click Start, and type "environ".  You should be offered
 "Edit environment variables for your account".  Click it.
 
-Under "User variables" click the New button.  Put KEYPATH into the Variable
+Under "User variables" click the New button.  Put `KEYPATH` into the Variable
 name box, and click Browse File.  Find the private key you created earlier.
 Click OK, exiting that tool
 
@@ -97,7 +97,7 @@ Click Apply
 
 Select External mechanism for file transfer (SCP via SSH)
 Set the Staging directory path to where you want to store these files on ARC.
-For example, /nobackup/alice/ansys-rsm
+For example, `/nobackup/alice/ansys-rsm`
 
 Click Apply
 

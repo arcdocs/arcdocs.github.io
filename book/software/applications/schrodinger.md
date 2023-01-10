@@ -49,7 +49,7 @@ Maestro is the primary graphic user interface to the Schrodinger suite of tools 
 To start maestro you will need to have added the schrodinger module and set the license server environment variable, after which you can run:
 
 ```bash
-$ maestro 
+$ maestro
 ```
 
 This will load up a separate window containing the maestro GUI.
@@ -121,7 +121,7 @@ WRITE_CSV   1
 ### Usage through Maestro
 
 ```{note} **Help wanted!** <br>
-This is something we aren't familiar with, maybe you are and can contribute to this help page! [Open an issue via GitHub](https://github.com/arcdocs/arcdocs.github.io/issues/new?title=Issue%20on%20page%20%2Fsoftware/applications/schrodinger.html&body=Your%20issue%20content%20here.) or contact us via https://bit.ly/arc-help 
+This is something we aren't familiar with, maybe you are and can contribute to this help page! [Open an issue via GitHub](https://github.com/arcdocs/arcdocs.github.io/issues/new?title=Issue%20on%20page%20%2Fsoftware/applications/schrodinger.html&body=Your%20issue%20content%20here.) or contact us via https://bit.ly/arc-help
 ```
 
 ## Covalent Docking

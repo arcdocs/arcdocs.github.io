@@ -10,7 +10,7 @@ Read more about OTF2 on their [website](https://scorepci.pages.jsc.fz-juelich.de
 
 
 
-## Licensing 
+## Licensing
 
 OTF2 is available under the BSD open source license that allows free usage for academic and commercial applications.
 

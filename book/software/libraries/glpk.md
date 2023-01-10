@@ -10,7 +10,7 @@ Read more about GLPK on their [website](https://www.gnu.org/software/glpk/).
 
 
 
-## Licensing 
+## Licensing
 
 Distributed under a GNU General Public License.
 

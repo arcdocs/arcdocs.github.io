@@ -76,7 +76,7 @@ For MAP:
 #$ -l h_rt=1:0:0
 #$ -l np=16
 module load allinea
-map -n $NSLOTS  
+map -n $NSLOTS
 ```
 
 For DDT (can be used for using tracepoints and memory debugging, etc.):
@@ -85,7 +85,7 @@ For DDT (can be used for using tracepoints and memory debugging, etc.):
 #$ -l h_rt=1:0:0
 #$ -l np=16
 module load allinea
-ddt -n $NSLOTS -offline myjob.txt  
+ddt -n $NSLOTS -offline myjob.txt
 ```
 
 ## Further support

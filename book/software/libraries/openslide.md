@@ -10,7 +10,7 @@ Read more about OpenSlide on their [website](https://openslide.org/).
 
 
 
-## Licensing 
+## Licensing
 
 Distributed under a GNU Lesser General Public License v2.
 

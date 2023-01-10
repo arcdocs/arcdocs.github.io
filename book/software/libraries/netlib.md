@@ -10,7 +10,7 @@ Read more about netlib on their [website](https://netlib.org/lapack).
 
 
 
-## Licensing 
+## Licensing
 
 Distributed under a BSD license.
 

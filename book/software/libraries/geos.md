@@ -10,7 +10,7 @@ Read more about GEOS on their [website](https://libgeos.org/).
 
 
 
-## Licensing 
+## Licensing
 
 GEOS is open source software available under the terms of GNU Lesser General Public License (LGPL).
 

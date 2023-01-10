@@ -10,7 +10,7 @@ Read more about extrae on their [website](https://tools.bsc.es/extrae).
 
 
 
-## Licensing 
+## Licensing
 
 Distributed under a GNU GPL v2 license.
 

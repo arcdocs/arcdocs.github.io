@@ -10,7 +10,7 @@ Read more about Valgrind on their [website](https://valgrind.org/).
 
 
 
-## Licensing 
+## Licensing
 
 Valgrind is Open Source / Free Software, and is freely available under the GNU General Public License, version 2.
 

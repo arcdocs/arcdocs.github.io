@@ -10,7 +10,7 @@ Read more about osmesa on their [website](http://www.mesa3d.org/).
 
 
 
-## Licensing 
+## Licensing
 
 Mesa and it's components are distributed under a number of different license conditions available to read on the [mesa website](https://docs.mesa3d.org/license.html).
 

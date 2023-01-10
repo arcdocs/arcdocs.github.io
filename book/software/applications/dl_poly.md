@@ -12,7 +12,7 @@ The licence terms are available on the [DLpoly license page](./dlpoly/license).
 
 ## Loading the module
 
-DL_POLY versions 4.08 and 4.09 are currently available on ARC3 and 4.09 on ARC4. 
+DL_POLY versions 4.08 and 4.09 are currently available on ARC3 and 4.09 on ARC4.
 You can add the DL_POLY module by using the command:
 
 ```bash

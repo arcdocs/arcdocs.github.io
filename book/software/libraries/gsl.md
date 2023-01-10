@@ -10,7 +10,7 @@ Read more about GSL on their [website](http://www.gnu.org/software/gsl/).
 
 
 
-## Licensing 
+## Licensing
 
 Distributed under a GNU GPL version 3 license.
 

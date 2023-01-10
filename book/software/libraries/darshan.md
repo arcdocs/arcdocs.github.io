@@ -10,7 +10,7 @@ Read more about darshan on their [website](https://github.com/darshan-hpc/darsha
 
 
 
-## Licensing 
+## Licensing
 
 Distributed under an [open source license](https://github.com/darshan-hpc/darshan/blob/main/COPYRIGHT).
 

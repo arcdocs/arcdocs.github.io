@@ -10,7 +10,7 @@ Read more about libdwarf on their [website](https://www.prevanders.net/dwarf.htm
 
 
 
-## Licensing 
+## Licensing
 
 Distributed under a GNU Lesser General Public License.
 

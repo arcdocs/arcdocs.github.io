@@ -24,4 +24,3 @@ If you have any questions that aren't discussed below, please let us know throug
 You can get in touch with the Research Computing Team at Leeds via the following channels:
 - Open an [issue](https://github.com/arcdocs/arcdocs.github.io/issues)
 - Email the Research Computing Team via the IT Service Desk [itservicedesk@leeds.ac.uk](mailto:itservicedesk@leeds.ac.uk)
-

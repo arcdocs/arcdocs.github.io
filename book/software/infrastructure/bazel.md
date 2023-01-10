@@ -29,4 +29,3 @@ The Arm forge module is available only on ARC3:
   - Bazel 0.7.0
   - `module add bazel/0.7.0`
 ```
-

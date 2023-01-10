@@ -10,7 +10,7 @@ Read more about PAPI on their [website](http://icl.cs.utk.edu/papi/).
 
 
 
-## Licensing 
+## Licensing
 
 Distributed with a permissive license on the [Bitbucket project page](https://bitbucket.org/icl/papi/wiki/Home).
 

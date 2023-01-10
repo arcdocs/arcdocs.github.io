@@ -10,7 +10,7 @@ Read more about HDF5 on their [website](https://www.hdfgroup.org/solutions/hdf5/
 
 
 
-## Licensing 
+## Licensing
 
 The HDF5 license is available to read on their [GitHub](https://github.com/HDFGroup/hdf5/blob/develop/COPYING).
 

@@ -10,7 +10,7 @@ Read more about GStreamer on their [website](https://gstreamer.freedesktop.org/)
 
 
 
-## Licensing 
+## Licensing
 
 Distributed under a GNU Lesser General Public License.
 

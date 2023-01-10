@@ -10,7 +10,7 @@ Read more about mpiP on their [website](http://mpip.sourceforge.net/).
 
 
 
-## Licensing 
+## Licensing
 
 This code is distributed with a permissive license available on the project's [GitHub page](https://github.com/LLNL/mpiP/tree/3.5#license).
 

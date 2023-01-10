@@ -10,7 +10,7 @@ Read more about MDBTools on their [website](https://github.com/brianb/mdbtools/)
 
 
 
-## Licensing 
+## Licensing
 
 Distributed under a GNU GPL license.
 

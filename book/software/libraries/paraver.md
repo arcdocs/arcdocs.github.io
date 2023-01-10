@@ -10,7 +10,7 @@ Read more about Paraver on their [website](https://tools.bsc.es/paraver).
 
 
 
-## Licensing 
+## Licensing
 
 Distributed under a GNU Lesser General Public License v2.
 

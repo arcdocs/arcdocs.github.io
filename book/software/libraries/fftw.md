@@ -10,7 +10,7 @@ Read more about FFTW on their [website](https://www.fftw.org/).
 
 
 
-## Licensing 
+## Licensing
 
 Released under the GNU General Public License (GPL, see [FFTW license](https://www.fftw.org/doc/License-and-Copyright.html)).
 

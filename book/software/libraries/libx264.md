@@ -10,7 +10,7 @@ Read more about libx264 on their [website](http://www.videolan.org/developers/x2
 
 
 
-## Licensing 
+## Licensing
 
 Distributed under a GNU GPL license.
 

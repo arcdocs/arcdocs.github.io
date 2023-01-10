@@ -10,7 +10,7 @@ Read more about netcdf on their [website](http://www.unidata.ucar.edu/software/n
 
 
 
-## Licensing 
+## Licensing
 
 Distributed under a proprietary license available on the [netCDF website](https://www.unidata.ucar.edu/software/netcdf/copyright.html).
 

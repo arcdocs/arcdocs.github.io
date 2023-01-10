@@ -6,7 +6,7 @@ Python-libs is a archive module on ARC3 and ARC4 containing a number of python p
 
 
 
-## Licensing 
+## Licensing
 
 Licenses differ between installed packages.
 

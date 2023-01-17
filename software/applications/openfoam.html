@@ -1420,7 +1420,8 @@ title="Print to PDF"
 <p>OpenFOAM is an open-source set of C++ based command tools which can be used to perform Computational Fluid Dynamics simulations, it is entirely based inside the terminal and has no direct user interface. Results from the simulations can be viewed by running the command <code class="docutils literal notranslate"><span class="pre">paraFoam</span></code> to launch an external viewing application. This wiki will run through how to set up a case for running OpenFoam, as well as listing some of the basic tips on performing a simulation without error, primarily using the software available inside Mechanical Engineering.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For users of openfoam/v1906 you will need to execute the line <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">$FOAM_SRC_FILE</span></code> before getting access to OpenFoam command line executeables.</p>
+<p>Versions older than v1906 may behave slightly differently, such as not requiring <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">$FOAM_SRC_FILE</span></code> but use of these versions is not covered by this documentation.  Usage described in this document assumes you’re using v1906 on ARC4, and may require some adjustment if using other versions, or using ARC3.</p>
+<p>It also assumes you’re using the default module environment, and haven’t altered compilers being used.  If you have, please adjust accordingly.</p>
 </div>
 <section id="overview-of-case-setup">
 <h2>Overview of case setup<a class="headerlink" href="#overview-of-case-setup" title="Permalink to this headline">#</a></h2>
@@ -1586,15 +1587,15 @@ these matters.</p>
 <section id="setting-up-the-environment">
 <h3>Setting up the environment<a class="headerlink" href="#setting-up-the-environment" title="Permalink to this headline">#</a></h3>
 <p>The openfoam installed on our systems is compiled with a gnu compiler rather than the intel one which is the default in your environment. Before you can load the openfoam module you will need to switch compilers.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>sw<span class="w"> </span>intel<span class="w"> </span>gnu/4.8.1
-$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>openfoam
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>swap<span class="w"> </span>intel<span class="w"> </span>gnu/6.3.0
+$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>openfoam/v1906
 </pre></div>
 </div>
 <p>The environment is not yet fully loaded. To check what you need to do you can run the command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span><span class="nb">help</span><span class="w"> </span>openfoam
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span><span class="nb">help</span><span class="w"> </span>openfoam/v1906
 </pre></div>
 </div>
-<p>Next run the following command to access the openFoam command line variables:</p>
+<p>For v1906, next run the following command to access the openFoam command line variables:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span><span class="nv">$FOAM_SRC_FILE</span>
 </pre></div>
 </div>
@@ -1613,10 +1614,10 @@ $<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </sp
 <section id="running-through-an-interactive-shell">
 <h4>Running through an interactive shell<a class="headerlink" href="#running-through-an-interactive-shell" title="Permalink to this headline">#</a></h4>
 <p>The following will launch paraFoam interactively, displaying the full GUI:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qrsh<span class="w"> </span>-cwd<span class="w"> </span>-V<span class="w"> </span>-l<span class="w"> </span><span class="nv">h_rt</span><span class="o">=</span><span class="w"> </span>paraFoam
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qrsh<span class="w"> </span>-cwd<span class="w"> </span>-V<span class="w"> </span>-l<span class="w"> </span><span class="nv">h_rt</span><span class="o">=</span>&lt;hh:mm:ss&gt;<span class="w"> </span>paraFoam
 </pre></div>
 </div>
-<p>In the above command, <code class="docutils literal notranslate"><span class="pre">&lt;hh:mm:ss&gt;</span></code> is the length of real-time the shell will exist for, <code class="docutils literal notranslate"><span class="pre">-cwd</span></code> indicated the current working directory and <code class="docutils literal notranslate"><span class="pre">-V</span></code> exports the the current environment.CHECK-code e.g. to run paraFoam for 1 hour:</p>
+<p>In the above command, <code class="docutils literal notranslate"><span class="pre">&lt;hh:mm:ss&gt;</span></code> is the length of real-time the shell will exist for, <code class="docutils literal notranslate"><span class="pre">-cwd</span></code> indicated the current working directory and <code class="docutils literal notranslate"><span class="pre">-V</span></code> exports the the current environment.  For example, to run paraFoam for 1 hour:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qrsh<span class="w"> </span>-cwd<span class="w"> </span>-V<span class="w"> </span>-l<span class="w"> </span><span class="nv">h_rt</span><span class="o">=</span><span class="m">1</span>:00:00<span class="w"> </span>paraFoam
 </pre></div>
 </div>
@@ -1625,14 +1626,16 @@ $<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </sp
 <section id="batch-execution">
 <h4>Batch Execution<a class="headerlink" href="#batch-execution" title="Permalink to this headline">#</a></h4>
 <p>To run OpenFOAM in batch-mode you first need to setup your case.</p>
-<p>A script must then be created that will request resources from the queuing system and launch the desired OpenFOAM executables; script <code class="docutils literal notranslate"><span class="pre">runfoam.sh</span></code> :</p>
+<p>A script must then be created that will request resources from the queuing system and launch the desired OpenFOAM executables; script <code class="docutils literal notranslate"><span class="pre">runfoam.sh</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1"># Run in current working directory</span>
 <span class="c1">#$ -cwd</span>
 <span class="c1"># Set a 6 hour limit</span>
 <span class="c1">#$ -l h_rt=6:00:00</span>
 <span class="c1"># Load OpenFOAM module</span>
-module<span class="w"> </span>add<span class="w"> </span><span class="nb">test</span><span class="w"> </span>openfoam
+module<span class="w"> </span>swap<span class="w"> </span>intel<span class="w"> </span>gnu/6.3.0
+module<span class="w"> </span>add<span class="w"> </span>openfoam/v1906
+<span class="nb">source</span><span class="w"> </span><span class="nv">$FOAM_SRC_FILE</span>
 <span class="c1"># Run actual OpenFoam commands</span>
 blockMesh
 icoFoam
@@ -1648,20 +1651,20 @@ icoFoam
 <p>If you’ve configured your OpenFOAM job to be solved in parallel, you need to submit it differently. It uses OpenMPI under the hood, so this is an example of a suitable submission script:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -l h_rt=00:10:00</span>
 <span class="c1">#$ -l h_vmem=2G</span>
-<span class="c1">#$ -l np=16</span>
+<span class="c1">#$ -l np=40</span>
 <span class="c1">#$ -cwd -V</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">MPI_BUFFER_SIZE</span><span class="o">=</span><span class="m">8192</span>
-module<span class="w"> </span>purge
-module<span class="w"> </span>add<span class="w"> </span>bit/64<span class="w"> </span>gnu<span class="w"> </span>openmpi<span class="w"> </span><span class="nb">test</span><span class="w"> </span>openfoam
-mpirun<span class="w"> </span>-np<span class="w"> </span><span class="nv">$NSLOTS</span><span class="w"> </span>interFoam<span class="w"> </span>-parallel
+module<span class="w"> </span>swap<span class="w"> </span>intel<span class="w"> </span>gnu/6.3.0
+module<span class="w"> </span>add<span class="w"> </span>openfoam/v1906
+<span class="nb">source</span><span class="w"> </span><span class="nv">$FOAM_SRC_FILE</span>
+mpirun<span class="w"> </span>interFoam<span class="w"> </span>-parallel
 </pre></div>
 </div>
-<p>This will request 16 cores and exclusive access to the nodes. This results in 1 node being allocated and 2GB memory per core.</p>
+<p>This will request 40 cores and exclusive access to the nodes. On ARC4, this results in a single node being allocated, with a full node’s memory split between those 16 cores.</p>
 <p>If more memory per core is required, then reduce the number of processes per node to split the available memory netween those active processes. For example,</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -l np=16,ppn=4</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -l np=40,ppn=10</span>
 </pre></div>
 </div>
-<p>Will give 16 cores as before, but this time with 4 processes per core and so 4 nodes overall. The available memory per node (32GB) is therefore allocated across 4 cores (ie. ppn=4) and so 8GB per node will be allocated.</p>
+<p>Will give 40 cores as before, but this time with 10 processes per node and so 4 nodes overall. The available memory per node is therefore allocated across four nodes rather than one and so four times the memory would be available per core compared to the previous example.</p>
 </section>
 </section>
 </section>

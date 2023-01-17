@@ -3,7 +3,7 @@
 OpenFOAM is an open-source set of C++ based command tools which can be used to perform Computational Fluid Dynamics simulations, it is entirely based inside the terminal and has no direct user interface. Results from the simulations can be viewed by running the command `paraFoam` to launch an external viewing application. This wiki will run through how to set up a case for running OpenFoam, as well as listing some of the basic tips on performing a simulation without error, primarily using the software available inside Mechanical Engineering.
 
 ```{note}
-Versions older than v1906 may behaves slightly differently, such as not requiring `source $FOAM_SRC_FILE` but use of these versions is not covered by this documentation.  Usage described in this document assumes you're using v1906 on ARC4, and may require some adjustment if using other versions, or using ARC3.
+Versions older than v1906 may behave slightly differently, such as not requiring `source $FOAM_SRC_FILE` but use of these versions is not covered by this documentation.  Usage described in this document assumes you're using v1906 on ARC4, and may require some adjustment if using other versions, or using ARC3.
 
 It also assumes you're using the default module environment, and haven't altered compilers being used.  If you have, please adjust accordingly.
 ```

@@ -48,7 +48,7 @@ They are useful complements to your studies and the various [Training Courses](h
 (openmp)=
 #### OpenMP
 - [Introduction to OpenMP](https://cvw.cac.cornell.edu/OpenMP/) from Cornell University
-- [Advanced OpenMP](http://www.archer.ac.uk/training/course-material/2019/06/AdvOpenMP-manch/L01-OpenMPBasics.pdf) from EPCC
+- [Advanced OpenMP](https://www.archer.ac.uk/training/course-material/2019/06/AdvOpenMP-manch/L01-OpenMPBasics.pdf) from EPCC
 
 (algorithms_and_data_structure)=
 ### Algorithms and Data Structures

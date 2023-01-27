@@ -9,6 +9,7 @@ They are useful complements to your studies and the various [Training Courses](h
 - [Software Engineering](software_engineering)
     - [Programming](programming)
         - [Python](python)
+        - [OpenMP](openmp)
     - [Algorithms and Data Structures](algorithms_and_data_structure)
     - [Distributed Systems](distributed_systems)
     - [Cloud Computing](cloud_computing)
@@ -43,6 +44,11 @@ They are useful complements to your studies and the various [Training Courses](h
     - [Video lectures](https://www.youtube.com/c/JohnDeNero/playlists).
 - [Python Distilled](https://www.dabeaz.com/python-distilled/), David Beazley, 2021.
     - [Course](https://dabeaz-course.github.io/practical-python/)
+
+(openmp)=
+#### OpenMP
+- [Introduction to OpenMP](https://cvw.cac.cornell.edu/OpenMP/) from Cornell University
+- [Advanced OpenMP](http://www.archer.ac.uk/training/course-material/2019/06/AdvOpenMP-manch/L01-OpenMPBasics.pdf) from EPCC
 
 (algorithms_and_data_structure)=
 ### Algorithms and Data Structures
@@ -154,4 +160,3 @@ They are useful complements to your studies and the various [Training Courses](h
 ### Weather and Climate
 
 - [Art of Climate Modeling](https://www.youtube.com/playlist?list=PL_cuIb7hx5lihu3Wq605u6kVGltXgEfDt), Paul Ullrich, UC Davis.
-

@@ -2,7 +2,7 @@
 
 Python is an interpreted, high-level and general-purpose programming language managed by the Python Software Foundation. You can read more at [Python.org](https://www.python.org/).
 
-```{warning} 
+```{warning}
 We actively recommend users use the [anaconda](./anaconda) module to manage their python environments.
 ```
 

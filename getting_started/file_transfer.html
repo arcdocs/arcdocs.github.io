@@ -1402,7 +1402,7 @@ helloworld.py<span class="w">                                            </span>
 <p>Uploading directories works in the same way but requires the addition of the <code class="docutils literal notranslate"><span class="pre">scp</span> <span class="pre">-r</span></code> option, which specifies we copy items recursively.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># say we want to transfer the directory containing helloworld.py</span>
 $<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
-$<span class="w"> </span>ls<span class="w"> </span>
+$<span class="w"> </span>ls
 File_transfer_folder
 $<span class="w"> </span>scp<span class="w"> </span>-r<span class="w"> </span>File_transfer_folder<span class="w"> </span>medacola@arc4.leeds.ac.uk:/nobackup/medacola
 File_transfer_folder<span class="w">                                            </span><span class="m">100</span>%<span class="w">    </span><span class="m">0</span><span class="w">     </span><span class="m">0</span>.0KB/s<span class="w">   </span><span class="m">00</span>:00
@@ -1452,7 +1452,7 @@ total<span class="w"> </span>size<span class="w"> </span>is<span class="w"> </sp
 <p>Uploading directories works in the exact same way as above but requires you to ensure you include a trailing <code class="docutils literal notranslate"><span class="pre">/</span></code> after the directory you wish to upload.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># say we want to transfer the directory containing helloworld.py</span>
 $<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
-$<span class="w"> </span>ls<span class="w"> </span>
+$<span class="w"> </span>ls
 File_transfer_folder
 $<span class="w"> </span>rsync<span class="w"> </span>-av<span class="w"> </span>File_transfer_folder/<span class="w"> </span>medacola@arc4.leeds.ac.uk:/nobackup/medacola
 
@@ -1462,7 +1462,7 @@ helloworld.py
 README.md
 
 sent<span class="w"> </span><span class="m">40</span><span class="w"> </span>bytes<span class="w">  </span>received<span class="w"> </span><span class="m">128</span><span class="w"> </span>bytes<span class="w">  </span><span class="m">6</span>.34<span class="w"> </span>bytes/sec
-total<span class="w"> </span>size<span class="w"> </span>is<span class="w"> </span><span class="m">0</span><span class="w">  </span>speedup<span class="w"> </span>is<span class="w"> </span><span class="m">0</span>.00<span class="w"> </span>
+total<span class="w"> </span>size<span class="w"> </span>is<span class="w"> </span><span class="m">0</span><span class="w">  </span>speedup<span class="w"> </span>is<span class="w"> </span><span class="m">0</span>.00
 </pre></div>
 </div>
 </li>
@@ -1484,7 +1484,7 @@ receiving<span class="w"> </span>incremental<span class="w"> </span>file<span cl
 results.data
 
 sent<span class="w"> </span><span class="m">40</span><span class="w"> </span>bytes<span class="w">  </span>received<span class="w"> </span><span class="m">128</span><span class="w"> </span>bytes<span class="w">  </span><span class="m">6</span>.34<span class="w"> </span>bytes/sec
-total<span class="w"> </span>size<span class="w"> </span>is<span class="w"> </span><span class="m">0</span><span class="w">  </span>speedup<span class="w"> </span>is<span class="w"> </span><span class="m">0</span>.00<span class="w"> </span>
+total<span class="w"> </span>size<span class="w"> </span>is<span class="w"> </span><span class="m">0</span><span class="w">  </span>speedup<span class="w"> </span>is<span class="w"> </span><span class="m">0</span>.00
 </pre></div>
 </div>
 </li>

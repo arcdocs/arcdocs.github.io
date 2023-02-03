@@ -10,7 +10,7 @@ Read more about atlas on their [website](http://math-atlas.sourceforge.net/).
 
 
 
-## Licensing 
+## Licensing
 
 ATLAS uses a BSD-style license, without the advertising clause. [Read it here](http://math-atlas.sourceforge.net/faq.html#license).
 

@@ -60,7 +60,7 @@ Select the MATE option.
 
 You can test it works by running vmd. Once you have the MATE shell type:
 
-    module load vmd 
+    module load vmd
     vmd
 
 ![A remote vmd session through X2GO](../assets/wp/2015/11/X2GO_vmd.png)

@@ -10,7 +10,7 @@ Read more about NAG-MATLAB on their [website](https://www.nag.co.uk/nag-toolbox-
 
 
 
-## Licensing 
+## Licensing
 
 Distributed under a commercial license available through the University.
 

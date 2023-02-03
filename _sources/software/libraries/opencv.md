@@ -10,7 +10,7 @@ Read more about opencv on their [website](https://opencv.org/).
 
 
 
-## Licensing 
+## Licensing
 
 Distributed under a BSD license.
 

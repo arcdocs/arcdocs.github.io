@@ -4,7 +4,7 @@ There are several versions of BLAS (Basic Linear Algebra Subprograms) and LAPACK
 
 ## Setting the module environment
 
-All available modules can be listed via the `module avail` command. Numerical libraries will be listed under the `/apps/Modules/libraries` heading. 
+All available modules can be listed via the `module avail` command. Numerical libraries will be listed under the `/apps/Modules/libraries` heading.
 To load a specific library, e.g. MKL:
 
 ```

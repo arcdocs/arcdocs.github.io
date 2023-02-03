@@ -110,7 +110,7 @@ hdd - refers to a mechanical hard disk with a spinning platter, which has good p
     (where task_id = 1 if the job is not part of a task array.)
 
     Please note that, for distributed parallel jobs, only the `$TMPDIR` on the compute node where the job script runs is saved.
-  - No copy by default. 
+  - No copy by default.
 * - `-l disk_usejobname`
   - When used in conjunction with the `-l disk_out=<directory>` option, the directory name that `$TMPDIR` is copied to at the end of the job is changed to `<directory>/<job_name>` , where `<job_name>` can be specified with the `-N <job_name>` option.
   - false

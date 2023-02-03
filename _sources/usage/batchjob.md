@@ -160,7 +160,7 @@ The option `-m` will specify that we wish to receive an email about the job, in 
   -
 * - `-P project_name`
   - Submit the job to a specific private node queue. Where `project_name` is the name of a private queue you have permission to submit to.
-  - 
+  -
 * - `-help`
   - Prints a list of options.
   -
@@ -192,9 +192,9 @@ In the example below we've just submitted a job and want to check its status in 
 
 ```bash
 $ qstat 54
-job-ID  prior   name       user         state submit/start at     queue                          slots ja-task-ID 
+job-ID  prior   name       user         state submit/start at     queue                          slots ja-task-ID
 -----------------------------------------------------------------------------------------------------------------
- 54 0.00000 test_sub.s exuser     qw    08/21/2019 14:09:08                                    1        
+ 54 0.00000 test_sub.s exuser     qw    08/21/2019 14:09:08                                    1
 
 ```
 

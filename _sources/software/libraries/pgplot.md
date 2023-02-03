@@ -10,7 +10,7 @@ Read more about PGPLOT on their [website](https://sites.astro.caltech.edu/~tjp/p
 
 
 
-## Licensing 
+## Licensing
 
 PGPLOT is not public-domain software. However, it is freely available for non-commercial use. The source code and documentation are copyrighted by California Institute of Technology, and may not be redistributed or placed on public Web servers without permission. The software is provided ``as is'' with no warranty.
 

@@ -186,7 +186,7 @@ Matlab can take advantage of GPU hardware. To do this, first launch Matlab insid
 ```matlab
     >> gpuDevice
 
-    ans = 
+    ans =
 
       CUDADevice with properties:
 
@@ -251,7 +251,7 @@ This compilation will yield two files of interest:
 Once the matlab module is loaded, you can run your stand-alone application via the wrapper and specifing the correct path to various Matlab components. This can easily be done via the environment variable `$MATLAB_HOME`. An example job script for submission to the batch queue would look like:
 
 ```bash
-# Export current environment  
+# Export current environment
 #$ -V
 # Set a 6 hour limit
 #$ -l h_rt=6:00:00

@@ -10,7 +10,7 @@ Read more about Silo on their [website](https://wci.llnl.gov/simulation/computer
 
 
 
-## Licensing 
+## Licensing
 
 Distributed under a BSD license.
 

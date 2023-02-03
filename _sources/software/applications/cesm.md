@@ -8,7 +8,7 @@ The Community Earth System Model ([CESM](https://www.cesm.ucar.edu/)) is a coupl
 
 - [ARC4 CESM Documentation](https://cesm2-arc4-rtd.readthedocs.io/en/latest/index.html)
 
-[CEMAC](https://www.cemac.leeds.ac.uk/) has ported CESM2.1.3 to ARC4 and maintains the linked documentation and the CESM directory on ARC4. 
+[CEMAC](https://www.cemac.leeds.ac.uk/) has ported CESM2.1.3 to ARC4 and maintains the linked documentation and the CESM directory on ARC4.
 
 To begin using CESM on ARC4, or to get help, please contact the CEMAC support.
 

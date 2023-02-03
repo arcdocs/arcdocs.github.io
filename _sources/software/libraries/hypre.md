@@ -10,7 +10,7 @@ Read more about HYPRE on their [website](http://www.llnl.gov/CASC/hypre).
 
 
 
-## Licensing 
+## Licensing
 
 HYPRE is distributed under the terms of both the MIT license and the Apache License (Version 2.0). Users may choose either license, at their option.
 

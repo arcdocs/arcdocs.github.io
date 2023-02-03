@@ -87,11 +87,11 @@ takes the form:
     # maximum allowed is 48 hours.
     #$ -l h_rt=06:00:00
 
-    # To get an email when the job begins and ends- fill in your 
+    # To get an email when the job begins and ends- fill in your
     #$ -m be
     #$ -M @leeds.ac.uk
 
-    # Request 8 cores from the machine. 
+    # Request 8 cores from the machine.
     #Current version of Stata can run on a maximum of 8 Cores
     #$ -l np=8
 
@@ -111,7 +111,7 @@ available please look at the page on [Batch jobs](../../usage/batchjob).
 
 ## Using Stata Python integration
 
-Stata allows for integration of Python within a Stata session. 
+Stata allows for integration of Python within a Stata session.
 From Stata 16 onwards it is possible to use Python from within Stata allowing you to embed and execute Python code directly.
 
 For this to work Stata needs to be able to find an installation of Python on your system.
@@ -119,7 +119,7 @@ On ARC4, Stata defaults to using the system Python 2.7 installation, which is no
 
 We recommend taking the following steps to allow Stata to use the [Anaconda Python 3 distribution](../compilers/anaconda) that is installed on ARC4.
 
-First, create a new Conda environment using the Conda package manager tool, within which you can install your preferred Python version. 
+First, create a new Conda environment using the Conda package manager tool, within which you can install your preferred Python version.
 Creating a [new Conda environment](../compilers/anaconda#creating-custom-environments) allows you to separate the dependencies required for your Stata Python integration from any other Python dependencies you may have.
 
 ```bash
@@ -149,7 +149,7 @@ To do this we need to set two settings in Stata `python_exec` and `python_userpa
       library path         /usr/lib64/python2.7/config/libpython2.7.so
 ```
 
-Here you can see the default setting uses the system installation of Python 2.7. 
+Here you can see the default setting uses the system installation of Python 2.7.
 We can change this with the following steps:
 
 1. Find out the absolute path to your Conda-installed `python` executable
@@ -158,8 +158,8 @@ We can change this with the following steps:
     This should return a path location to your Conda-installed Python.
 
     To find the correct path for `python_userpath` you will need to identify the location of `site-packages` in your Conda environment.
-    You can find this out by running ` python -c 'import sys; print(sys.path);'` in the shell. 
-    This will return for you a list of entries one of which will have a format of 
+    You can find this out by running ` python -c 'import sys; print(sys.path);'` in the shell.
+    This will return for you a list of entries one of which will have a format of
     `/home/home01/arcuser/.conda/envs/ENV_NAME/lib/PY_VERSION/site-packages`
     Where `ENV_NAME` is the name of your Conda environment and `PY_VERSION` is the version of Python you installed.
 

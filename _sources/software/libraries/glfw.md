@@ -10,7 +10,7 @@ Read more about GLFW on their [website](http://www.glfw.org/).
 
 
 
-## Licensing 
+## Licensing
 
 Distributed under a [zlib](https://www.glfw.org/license.html) license.
 

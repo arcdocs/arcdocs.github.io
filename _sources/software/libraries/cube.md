@@ -10,7 +10,7 @@ Read more about cube on their [website](https://www.scalasca.org/software/cube-4
 
 
 
-## Licensing 
+## Licensing
 
 Distributed under a new BSD style license. [Read it here](http://scalasca.org/scalasca/front_content.php?idart=1094).
 

@@ -1,6 +1,6 @@
 # Recommended Courses
 
-Here are some recommended online courses for various topics in research computing.  
+Here are some recommended online courses for various topics in research computing.
 
 They are useful complements to your studies and the various [Training Courses](https://arc.leeds.ac.uk/training/) we provide here.
 
@@ -30,7 +30,7 @@ They are useful complements to your studies and the various [Training Courses](h
     - [Applications](applications)
 - [Numerical Modelling](numerical_modelling)
     - [Weather and Climate](weather_and_climate)
-    
+
 (software_engineering)=
 ## Software Engineering
 
@@ -134,7 +134,7 @@ They are useful complements to your studies and the various [Training Courses](h
     - [Syllabus](https://cs230.stanford.edu/syllabus/), CS230, Stanford University.
 - [NYU Deep Learning](https://atcold.github.io/NYU-DLSP21/), Yann LeCun and Alfredo Canziani, NYU, 2021.
     - [Video lectures](https://www.youtube.com/playlist?list=PLLHTzKZzVU9e6xUfG10TkTWApKSZCzuBI).
-    
+
 (maths_for_machine_learning)=
 ### Maths for Machine Learning
 

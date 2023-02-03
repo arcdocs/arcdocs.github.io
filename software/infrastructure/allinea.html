@@ -1340,14 +1340,14 @@ Submit non-interactively to the batch queues</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -l h_rt=1:0:0</span>
 <span class="c1">#$ -l np=16</span>
 module<span class="w"> </span>load<span class="w"> </span>allinea
-map<span class="w"> </span>-n<span class="w"> </span><span class="nv">$NSLOTS</span><span class="w">  </span>
+map<span class="w"> </span>-n<span class="w"> </span><span class="nv">$NSLOTS</span>
 </pre></div>
 </div>
 <p>For DDT (can be used for using tracepoints and memory debugging, etc.):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -l h_rt=1:0:0</span>
 <span class="c1">#$ -l np=16</span>
 module<span class="w"> </span>load<span class="w"> </span>allinea
-ddt<span class="w"> </span>-n<span class="w"> </span><span class="nv">$NSLOTS</span><span class="w"> </span>-offline<span class="w"> </span>myjob.txt<span class="w">  </span>
+ddt<span class="w"> </span>-n<span class="w"> </span><span class="nv">$NSLOTS</span><span class="w"> </span>-offline<span class="w"> </span>myjob.txt
 </pre></div>
 </div>
 </section>

@@ -61,7 +61,7 @@ The standard format of the `scp` command is `scp /path/to/file/to/copy /path/to/
     ```bash
     # say we want to transfer the directory containing helloworld.py
     $ cd ..
-    $ ls 
+    $ ls
     File_transfer_folder
     $ scp -r File_transfer_folder medacola@arc4.leeds.ac.uk:/nobackup/medacola
     File_transfer_folder                                            100%    0     0.0KB/s   00:00
@@ -116,17 +116,17 @@ There are also a number of additional options that can be used with the `rsync` 
     ```bash
     # say we want to transfer the directory containing helloworld.py
     $ cd ..
-    $ ls 
+    $ ls
     File_transfer_folder
     $ rsync -av File_transfer_folder/ medacola@arc4.leeds.ac.uk:/nobackup/medacola
-    
+
     receiving incremental file list
     ./
     helloworld.py
     README.md
 
     sent 40 bytes  received 128 bytes  6.34 bytes/sec
-    total size is 0  speedup is 0.00 
+    total size is 0  speedup is 0.00
     ```
 
 2. Downloading files and directories from remote machine to local machine
@@ -151,7 +151,7 @@ There are also a number of additional options that can be used with the `rsync` 
     results.data
 
     sent 40 bytes  received 128 bytes  6.34 bytes/sec
-    total size is 0  speedup is 0.00 
+    total size is 0  speedup is 0.00
     ```
 
 ## Other file transfer options

@@ -10,7 +10,7 @@ Read more about SuperLU on their [website](https://portal.nersc.gov/project/spar
 
 
 
-## Licensing 
+## Licensing
 
 Distributed with a permissive [project specific license](https://portal.nersc.gov/project/sparse/superlu/License.txt).
 

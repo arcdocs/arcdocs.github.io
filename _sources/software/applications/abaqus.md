@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The purpose of this guide is to get the first few models running with generic options so that you can start getting results back and have a working system that you can modify to suit the specific needs of your work. Because of this there will not be an in depth discussion of the wide range of options and commands available, however there are extensive help files available from the command line. 
+The purpose of this guide is to get the first few models running with generic options so that you can start getting results back and have a working system that you can modify to suit the specific needs of your work. Because of this there will not be an in depth discussion of the wide range of options and commands available, however there are extensive help files available from the command line.
 
 Typing `help` will give a list of built-in commands, `help` will then give more specific information on that command eg. `help help` gives you information about the help command. Entering `info info` will open a help manual and `info <command>` will give specific information about that command eg. `info qsub` details the qsub command which submits a job to the queue.
 

@@ -10,7 +10,7 @@ Read more about dyninst on their [website](https://github.com/dyninst/dyninst).
 
 
 
-## Licensing 
+## Licensing
 
 Distributed under a GNU LESSER GENERAL PUBLIC LICENSE
 

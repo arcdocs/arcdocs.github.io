@@ -10,7 +10,7 @@ Read more about ROOT on their [website](https://root.cern/).
 
 
 
-## Licensing 
+## Licensing
 
 The ROOT system is being made available under the LGPL 2.1 or (at your option) any later version, which allows ROOT to be used in a wide range of open and closed environments.
 

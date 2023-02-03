@@ -1571,7 +1571,7 @@ on ARC)</em></p>
 <a class="reference internal" href="../../usage/gpgpu.html"><span class="doc std std-doc">here</span></a>). Within Matlab, the <code class="docutils literal notranslate"><span class="pre">gpuDevices</span></code> command will provide details of the available GPU(s):</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">gpuDevice</span>
 
-<span class="w">    </span><span class="nb">ans</span><span class="w"> </span><span class="p">=</span><span class="w"> </span>
+<span class="w">    </span><span class="nb">ans</span><span class="w"> </span><span class="p">=</span>
 
 <span class="w">      </span><span class="n">CUDADevice</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="nb">properties</span><span class="p">:</span>
 
@@ -1628,7 +1628,7 @@ on ARC)</em></p>
 <section id="running-the-application">
 <h3>Running the application<a class="headerlink" href="#running-the-application" title="Permalink to this headline">#</a></h3>
 <p>Once the matlab module is loaded, you can run your stand-alone application via the wrapper and specifing the correct path to various Matlab components. This can easily be done via the environment variable <code class="docutils literal notranslate"><span class="pre">$MATLAB_HOME</span></code>. An example job script for submission to the batch queue would look like:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Export current environment  </span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Export current environment</span>
 <span class="c1">#$ -V</span>
 <span class="c1"># Set a 6 hour limit</span>
 <span class="c1">#$ -l h_rt=6:00:00</span>

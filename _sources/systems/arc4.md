@@ -70,4 +70,3 @@ Adding one of the following lines to a submission script will allocate:
 |`#$ -l coproc_v100=2`| Two V100 cards, 20 CPU cores and 96GB system memory (half of the available resource on a V100 node)|
 |`#$ -l coproc_v100=3`|Three V100 cards, 30 CPU cores and 144GB system memory (three-quarters of the available resource on a V100 node)|
 |`#$ -l coproc_v100=4`|Four V100 cards, 40 CPU cores and 192GB system memory (all the available resource on a V100 node)|
-

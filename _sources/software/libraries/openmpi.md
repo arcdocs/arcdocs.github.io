@@ -10,7 +10,7 @@ Read more about OpenMPI on their [website](https://www.open-mpi.org/).
 
 
 
-## Licensing 
+## Licensing
 
 Distributed under a BSD license.
 

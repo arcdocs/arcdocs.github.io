@@ -10,7 +10,7 @@ Read more about PETSc on their [website](https://petsc.org/release/).
 
 
 
-## Licensing 
+## Licensing
 
 Distributed under a BSD license.
 

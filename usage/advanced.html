@@ -1269,38 +1269,38 @@ title="Print to PDF"
 <p>You will need to determine <code class="docutils literal notranslate"><span class="pre">ppn</span></code>, the number of MPI processes per node, and <code class="docutils literal notranslate"><span class="pre">tpp</span></code>, the number of OpenMP threads per MPI process.</p>
 <p>Additionally, you can either ask for a given number of nodes nodes or for the total number of MPI processes <code class="docutils literal notranslate"><span class="pre">np</span></code>. Note that <code class="docutils literal notranslate"><span class="pre">ppn</span></code> is related to <code class="docutils literal notranslate"><span class="pre">np</span></code> since <code class="docutils literal notranslate"><span class="pre">ppn</span></code> = <code class="docutils literal notranslate"><span class="pre">np</span></code>/nodes.</p>
 <p>Your submission script would then need to contain:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -V </span>
-<span class="c1">#$ -l hr_t=01:00:00 </span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -V</span>
+<span class="c1">#$ -l hr_t=01:00:00</span>
 <span class="c1">#$ -l nodes=&lt;nodes&gt;, ppn=&lt;ppn&gt;, tpp=&lt;tpp&gt;</span>
 mpirun<span class="w"> </span>./a.out
 </pre></div>
 </div>
 <p>or</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -V</span>
-<span class="c1">#$ -l hr_t=01:00:00 </span>
-<span class="c1">#$ -l np=&lt;np&gt;, ppn=&lt;ppn&gt;, tpp=&lt;tpp&gt; </span>
+<span class="c1">#$ -l hr_t=01:00:00</span>
+<span class="c1">#$ -l np=&lt;np&gt;, ppn=&lt;ppn&gt;, tpp=&lt;tpp&gt;</span>
 mpirun<span class="w"> </span>./a.out
 </pre></div>
 </div>
-<p>There are 24 cores per node on ARC3 , so you would typically ensure <code class="docutils literal notranslate"><span class="pre">ppn</span></code>*<code class="docutils literal notranslate"><span class="pre">tpp</span></code>=24.<br />
+<p>There are 24 cores per node on ARC3 , so you would typically ensure <code class="docutils literal notranslate"><span class="pre">ppn</span></code>*<code class="docutils literal notranslate"><span class="pre">tpp</span></code>=24.
 There are 40 cores per node on ARC4 , so you would typically ensure <code class="docutils literal notranslate"><span class="pre">ppn</span></code>*<code class="docutils literal notranslate"><span class="pre">tpp</span></code>=40.</p>
 <section id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
 <p>Using ARC4, To run an MPI+OpenMP executable mixed.exe with 80 MPI processes each launching 4 OpenMP threads, the following submission script would be needed:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -V </span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -V</span>
 <span class="c1">#$ -cwd</span>
-<span class="c1">#$ -l hr_t=01:00:00 </span>
-<span class="c1">#$ -l np=80, ppn=10, tpp=4 </span>
+<span class="c1">#$ -l hr_t=01:00:00</span>
+<span class="c1">#$ -l np=80, ppn=10, tpp=4</span>
 mpirun<span class="w"> </span>./mixed.exe
 </pre></div>
 </div>
 <p>This will allocate 8 nodes (=8*40=320 cores).
 Each node will have 10 MPI processes, each of which will have 4 OpenMP threads (so 10*4=40 processes per node in total, and 8*140=320 (=80MPI*4OpenMP) processes in total.</p>
 <p>Alternatively, the same effect can be achieved by:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -V </span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -V</span>
 <span class="c1">#$ -cwd</span>
-<span class="c1">#$ -l hr_t=01:00:00 </span>
-<span class="c1">#$ -l nodes=8, ppn=10, tpp=4 </span>
+<span class="c1">#$ -l hr_t=01:00:00</span>
+<span class="c1">#$ -l nodes=8, ppn=10, tpp=4</span>
 mpirun<span class="w"> </span>./mixed.exe
 </pre></div>
 </div>

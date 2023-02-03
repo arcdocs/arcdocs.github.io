@@ -10,7 +10,7 @@ Read more about Score-P on their [website](http://www.vi-hps.org/tools/score-p.h
 
 
 
-## Licensing 
+## Licensing
 
 Distributed under a BSD license.
 

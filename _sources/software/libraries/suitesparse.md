@@ -10,7 +10,7 @@ Read more about suitesparse on their [website](https://people.engr.tamu.edu/davi
 
 
 
-## Licensing 
+## Licensing
 
 Varied licenses are used for different packages and can be found in the [license file](https://github.com/DrTimothyAldenDavis/SuiteSparse/blob/master/LICENSE.txt).
 

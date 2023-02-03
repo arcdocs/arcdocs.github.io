@@ -1,4 +1,4 @@
-# VMD (Visual Molecular Dynamics) 
+# VMD (Visual Molecular Dynamics)
 
 ## Description
 

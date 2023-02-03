@@ -41,4 +41,3 @@ The Cmake module is available on ARC3 and ARC4:
   - Cmake 3.2.3
   - `module add cmake/3.2.3`
 ```
-

@@ -137,8 +137,8 @@ This guide asks a range of questions to consider when planning your data managem
 
 ### Training
 
-- [Information Security Essentials (Minerva)](https://minerva.leeds.ac.uk/ultra/organizations/_432953_1/cl/outline).  
-- [Information Security Advanced (Minerva)](https://minerva.leeds.ac.uk/ultra/organizations/_460079_1/cl/outline).  
+- [Information Security Essentials (Minerva)](https://minerva.leeds.ac.uk/ultra/organizations/_432953_1/cl/outline).
+- [Information Security Advanced (Minerva)](https://minerva.leeds.ac.uk/ultra/organizations/_460079_1/cl/outline).
   - For those who regularly handle classified data. Contact the IT Service Desk to gain access.
 
 ## Other resources

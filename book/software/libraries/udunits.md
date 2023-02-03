@@ -10,7 +10,7 @@ Read more about UDUNITS on their [website](https://www.unidata.ucar.edu/software
 
 
 
-## Licensing 
+## Licensing
 
 License available on the [project GitHub](https://github.com/Unidata/UDUNITS-2/blob/master/COPYRIGHT).
 

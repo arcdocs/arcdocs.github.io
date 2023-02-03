@@ -10,7 +10,7 @@ Read more about armadillo on their [website](http://arma.sourceforge.net/).
 
 
 
-## Licensing 
+## Licensing
 
 Distributed under the permissive Apache 2.0 license, useful for both open-source and proprietary (closed-source) software.
 

@@ -69,14 +69,14 @@ This guide asks a range of questions to consider when deciding which platform to
 
 ## Cost
 
-- *Azure*  
-  - When considering costs relating to research platforms it's important to think of cloud resources differently to on-campus hardware.  
-  - Cloud resources are typically not designed to be on all the time and all aspects of a cloud computational setup have costs associated i.e., you'll pay for your virtual machine (VM) whilst it's on, but you'll also need to pay for its storage, virtual network, and associated public IP address.  
-  - Therefore, when using cloud resources it's important to consider them as throwaway resources that you want to spin up to use, and after your experiments are complete, destroy the instance and its associated resources.  
+- *Azure*
+  - When considering costs relating to research platforms it's important to think of cloud resources differently to on-campus hardware.
+  - Cloud resources are typically not designed to be on all the time and all aspects of a cloud computational setup have costs associated i.e., you'll pay for your virtual machine (VM) whilst it's on, but you'll also need to pay for its storage, virtual network, and associated public IP address.
+  - Therefore, when using cloud resources it's important to consider them as throwaway resources that you want to spin up to use, and after your experiments are complete, destroy the instance and its associated resources.
   - Below are some suggestions for how to initially scope costs on Azure, how to minimise your spending, and tips for monitoring spending on Azure.
   - *Scoping costs for Azure resources*
     - Pre-determine your cloud work schedule. Cloud costs are on a usage basis, so planning (even approximately) how many hours of compute you'll need will make scoping your costs easier.
-    - Use the [Azure Price Calculator](https://azure.microsoft.com/en-gb/pricing/calculator/) to generate an approximate monthly budget for your cloud spend.  
+    - Use the [Azure Price Calculator](https://azure.microsoft.com/en-gb/pricing/calculator/) to generate an approximate monthly budget for your cloud spend.
   - *Tips for minimising spending on Azure*
     - Always turn off your VMs when you're not using them.
     - When tidying up a VM setup, make sure you also delete other associated resources such as Managed Disks, public IP address, and virtual network.
@@ -120,7 +120,7 @@ This guide asks a range of questions to consider when deciding which platform to
 - Register on Hartree SAFE (to manage your account)
   - Click [here](https://um.hartree.stfc.ac.uk/hartree/login.jsp) to register
   - Add your public SSH key following the instructions [here](https://stfc.service-now.com/kb?id=kb_article_view&sys_kb_id=318854b7db451410b40c9334ca9619ec)
-- Request to join the project  
+- Request to join the project
   - From within SAFE, click "Request join project"
   - Select: J2AD014 - University of Leeds
   - An project administrator, can then provide the access code, accept you onto the project, and add you to the relevant group

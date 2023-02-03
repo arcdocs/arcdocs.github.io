@@ -77,7 +77,7 @@ all files but the scratch file is easily accomplished by appropriate placement
 of the following command in the link 0 section of the Gaussian input file (its
 use is described in detail in the Gaussian manual):
 
-    %NoSave 
+    %NoSave
 
 ## Running the code
 
@@ -178,7 +178,7 @@ in the Gaussian input file:
 
 The above script can be submitted to the batch queues through the qsub command:
 
-    $ qsub 
+    $ qsub
 
 When it runs, it creates the input file, formaldehyde.com, and then runs the
 job, such that the .log file and .chk file are saved in the current working

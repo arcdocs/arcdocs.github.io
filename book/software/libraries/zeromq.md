@@ -10,7 +10,7 @@ Read more about ZeroMQ on their [website](https://zeromq.org/).
 
 
 
-## Licensing 
+## Licensing
 
 The libzmq library is licensed under the GNU Lesser General Public License V3 plus a static linking exception.
 

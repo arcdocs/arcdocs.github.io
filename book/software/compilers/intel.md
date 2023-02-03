@@ -31,7 +31,7 @@ There are several different versions of the Intel compiler available on ARC3 and
   - Intel 19.0.4 (default)
   - `module add intel/19.0.4`
 * - ARC3
-  - Intel 18.0.2 
+  - Intel 18.0.2
   - `module switch intel/17.0.1 intel/18.0.2`
 * - ARC4
   - Intel 17.0.1

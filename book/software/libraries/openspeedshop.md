@@ -10,7 +10,7 @@ Read more about Open|SpeedShop on their [website](http://www.openspeedshop.org/)
 
 
 
-## Licensing 
+## Licensing
 
 The infrastructure and base components of Open|SpeedShop are released as open source code primarily under LGPL.
 

@@ -10,7 +10,7 @@ Read more about cuDNN on their [website](https://developer.nvidia.com/cudnn).
 
 
 
-## Licensing 
+## Licensing
 
 The cuDNN license is available to read on the [NVIDIA website](https://docs.nvidia.com/deeplearning/cudnn/sla/index.html)
 

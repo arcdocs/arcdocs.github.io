@@ -10,7 +10,7 @@ Read more about GLEW on their [website](http://glew.sourceforge.net/).
 
 
 
-## Licensing 
+## Licensing
 
 Licensing arrangements for GLEW are described on their [GitHub page](https://github.com/nigels-com/glew#copyright-and-licensing).
 

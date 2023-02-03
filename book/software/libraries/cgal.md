@@ -10,7 +10,7 @@ Read more about CGAL on their [website](https://www.cgal.org/).
 
 
 
-## Licensing 
+## Licensing
 
 Releases 3.x were distributed under the Q Public License (QPL) and GNU Lesser General Public License, v2.1 (LGPL). Starting from release 4.0, CGAL is available under the GNU General Public License (GPL) and the LGPL v3+.
 

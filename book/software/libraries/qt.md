@@ -10,7 +10,7 @@ Read more about Qt on their [website](https://www.qt.io/).
 
 
 
-## Licensing 
+## Licensing
 
 Qt is available under various licenses: The Qt Company sells commercial licenses, but Qt is also available as free software under several versions of the GPL and the LGPL (Licensing FAQ).
 

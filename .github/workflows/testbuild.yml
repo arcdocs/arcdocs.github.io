@@ -26,4 +26,3 @@ jobs:
       run: |
         conda activate arcdocs-jb
         jupyter-book build ./book/
-

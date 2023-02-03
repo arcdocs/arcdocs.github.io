@@ -10,7 +10,7 @@ Read more about libxmlplusplus on their [website](http://libxmlplusplus.sourcefo
 
 
 
-## Licensing 
+## Licensing
 
 Distributed under a GNU Lesser General Public License v2.
 

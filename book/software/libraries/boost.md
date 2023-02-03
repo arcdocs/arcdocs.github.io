@@ -10,7 +10,7 @@ Read more about boost on their [website](https://www.boost.org/).
 
 
 
-## Licensing 
+## Licensing
 
 Distributed as open source under the [Boost software license](https://www.boost.org/users/license.html).
 

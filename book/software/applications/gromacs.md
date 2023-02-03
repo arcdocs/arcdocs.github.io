@@ -52,7 +52,7 @@ An example job submission script (`example_serial.sh`) that runs a gromacs execu
 
 ```bash
 #!/bin/bash
-#$ -cwd -V 
+#$ -cwd -V
 # request 10 hours of runtime
 #$ -l h_rt=10:00:00
 mdrun_d  <args>

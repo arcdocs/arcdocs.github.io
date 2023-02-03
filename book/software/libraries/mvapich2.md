@@ -10,7 +10,7 @@ Read more about MVAPICH2 on their [website](http://mvapich.cse.ohio-state.edu/).
 
 
 
-## Licensing 
+## Licensing
 
 Distributed under a BSD license.
 

@@ -28,6 +28,16 @@ $ cd arcdocs-jupyterbook
 # sometimes worth running jupyter-book clean book/ to remove old files
 $ jupyter-book build book/
 ```
+
+### pre-commit
+
+If you want to enable pre-commit so that it's automatically invoked when you do a commit:
+```{bash}
+pre-commit install
+```
+
+Now pre-commit will correct obvious mistakes with your commits, and flag up unfixable ones.
+
 ### Windows
 
 An important note is that there are currently known issues running JupyterBook on Windows ([see here for more (including workarounds)](https://jupyterbook.org/advanced/advanced.html#working-on-windows)).

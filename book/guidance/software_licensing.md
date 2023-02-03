@@ -1,6 +1,6 @@
 # Software Licensing
 
-This guide asks a range of questions to consider when planning how you license your software. Each question has resources for more information.  
+This guide asks a range of questions to consider when planning how you license your software. Each question has resources for more information.
 
 _This guide aims to highlight resources which may be useful for developing research software. It was not produced by lawyers, is not legal advice, and Research Computing is not responsible for the content referenced in this guide._
 

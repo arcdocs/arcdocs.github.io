@@ -10,7 +10,7 @@ Read more about Scalasca on their [website](http://www.scalasca.org/).
 
 
 
-## Licensing 
+## Licensing
 
 The entire code of Scalasca v2 is licensed under the [BSD-style license agreement.](https://www.scalasca.org/scalasca/software/scalasca-2.x/license.html)
 

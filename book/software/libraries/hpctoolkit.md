@@ -10,7 +10,7 @@ Read more about HPCToolkit on their [website](http://hpctoolkit.org/).
 
 
 
-## Licensing 
+## Licensing
 
 Distributed under a permissive license described on their [GitHub page](https://github.com/HPCToolkit/hpctoolkit/blob/master/README.License).
 

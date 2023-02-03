@@ -26,7 +26,7 @@ There are several different versions of Java available on ARC3 and ARC4 outlined
   - Java 8u172 (default)
   - `module add java/8u172`
 * - ARC3
-  - Java 13.0.1 
+  - Java 13.0.1
   - `module add java/13.0.1`
 * - ARC3
   - Java 10.0.1

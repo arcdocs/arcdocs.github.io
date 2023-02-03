@@ -10,7 +10,7 @@ Read more about GDAL on their [website](https://gdal.org/).
 
 
 
-## Licensing 
+## Licensing
 
 Released under an [X/MIT style Open Source License](https://gdal.org/license.html#license) by the Open Source Geospatial Foundation.
 

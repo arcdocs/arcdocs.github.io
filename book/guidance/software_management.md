@@ -116,9 +116,9 @@ _Examples are not an exhaustive list of possible options and many are Python-spe
 
 ### Training
 
-- [SWD3: Software development practices for Research](https://arc.leeds.ac.uk/training/courses/swd3/), Research Computing, University of Leeds.  
-- [SWD7: Introduction to reproducible workflows in Python](https://arc.leeds.ac.uk/training/courses/swd7/), Research Computing, University of Leeds.  
-- [Intermediate Research Software Development in Python](https://carpentries-incubator.github.io/python-intermediate-development/), The Carpentries.  
+- [SWD3: Software development practices for Research](https://arc.leeds.ac.uk/training/courses/swd3/), Research Computing, University of Leeds.
+- [SWD7: Introduction to reproducible workflows in Python](https://arc.leeds.ac.uk/training/courses/swd7/), Research Computing, University of Leeds.
+- [Intermediate Research Software Development in Python](https://carpentries-incubator.github.io/python-intermediate-development/), The Carpentries.
 
 ## Other general resources
 

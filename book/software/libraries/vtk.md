@@ -10,7 +10,7 @@ Read more about VTK on their [website](https://vtk.org/).
 
 
 
-## Licensing 
+## Licensing
 
 VTK is distributed under the OSI-approved BSD 3-clause License.
 

@@ -1239,6 +1239,11 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-with-fluent-19-2-or-below">
+   Running with Fluent 19.2 or below
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#running-with-old-version-of-fluent-v15-or-below">
    Running with old version of Fluent v15 or below
   </a>
@@ -1312,6 +1317,11 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-with-fluent-19-2-or-below">
+   Running with Fluent 19.2 or below
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#running-with-old-version-of-fluent-v15-or-below">
    Running with old version of Fluent v15 or below
   </a>
@@ -1353,14 +1363,13 @@ title="Print to PDF"
 <p>Please note you should not run full experiments on the login nodes. Only use this method for quick tests!</p>
 </div>
 <p>Once the Ansys module is loaded, fluent can be run by entering its name at the command prompt:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>ansys
-$<span class="w"> </span>fluent
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>fluent
 </pre></div>
 </div>
 </section>
 <section id="running-interactively-through-the-batch-queues">
 <h3>Running interactively through the batch queues<a class="headerlink" href="#running-interactively-through-the-batch-queues" title="Permalink to this headline">#</a></h3>
-<p>To launch fluent in serial in an <a class="reference internal" href="../../../usage/interactive.html"><span class="doc std std-doc">interactive session</span></a>, use the following commands in the terminal:</p>
+<p>Once the desired Ansys module has been loaded, to launch fluent in serial in an <a class="reference internal" href="../../../usage/interactive.html"><span class="doc std std-doc">interactive session</span></a>, use the following commands in the terminal:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qrsh<span class="w"> </span>-cwd<span class="w"> </span>-V<span class="w"> </span>-l<span class="w"> </span><span class="nv">h_rt</span><span class="o">=</span>&lt;hh:mm:ss&gt;<span class="w"> </span>-l<span class="w"> </span><span class="nv">h_vmem</span><span class="o">=</span>&lt;vmem&gt;<span class="w"> </span>fluent<span class="w"> </span>&lt;dim&gt;
 </pre></div>
 </div>
@@ -1389,6 +1398,7 @@ $<span class="w"> </span>fluent
 <span class="c1"># Request three hours of runtime</span>
 <span class="c1">#$ -l h_rt=3:00:00</span>
 <span class="c1">#Launch the executable</span>
+module<span class="w"> </span>add<span class="w"> </span>ansys/2020R2
 fluent<span class="w"> </span>3ddp<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </span>test.jou
 </pre></div>
 </div>
@@ -1419,11 +1429,11 @@ fluent<span class="w"> </span>3ddp<span class="w"> </span>-g<span class="w"> </s
 <li><p>As a <a class="reference internal" href="../../../usage/batchjob.html"><span class="doc std std-doc">batch job</span></a></p></li>
 </ul>
 <p>To launch an <a class="reference internal" href="../../../usage/interactive.html"><span class="doc std std-doc">interactive session</span></a> with high resource requirements, load the ansys module and type the following at the command prompt:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qrsh<span class="w"> </span>-cwd<span class="w"> </span>-V<span class="w"> </span>-l<span class="w"> </span><span class="nv">h_rt</span><span class="o">=</span>&lt;hh:mm:ss&gt;<span class="w"> </span>-l<span class="w"> </span><span class="nv">nodes</span><span class="o">=</span>&lt;nodes&gt;<span class="w"> </span>fluent<span class="w"> </span>&lt;dim&gt;<span class="w"> </span>-rsh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qrsh<span class="w"> </span>-cwd<span class="w"> </span>-V<span class="w"> </span>-l<span class="w"> </span><span class="nv">h_rt</span><span class="o">=</span>&lt;hh:mm:ss&gt;<span class="w"> </span>-l<span class="w"> </span><span class="nv">nodes</span><span class="o">=</span>&lt;nodes&gt;<span class="w"> </span>fluent<span class="w"> </span>&lt;dim&gt;<span class="w"> </span>-rsh<span class="w"> </span>-scheduler_tight_coupling
 </pre></div>
 </div>
 <p>In the above commands <code class="docutils literal notranslate"><span class="pre">hh:mm:ss</span></code> is the length of real-time the shell will exist for and <code class="docutils literal notranslate"><span class="pre">nodes</span></code> is the number of nodes requested. <code class="docutils literal notranslate"><span class="pre">dim</span></code> is the dimension/precision of the fluent process (e.g. 3ddp for 3-D double precision). E.g. the to launch fluent for 6 hours on 40 processors on ARC4:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qrsh<span class="w"> </span>-cwd<span class="w"> </span>-V<span class="w"> </span>-l<span class="w"> </span><span class="nv">h_rt</span><span class="o">=</span><span class="m">6</span>:00:00<span class="w"> </span>-l<span class="w"> </span><span class="nv">nodes</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>fluent<span class="w"> </span>2d<span class="w"> </span>-rsh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qrsh<span class="w"> </span>-cwd<span class="w"> </span>-V<span class="w"> </span>-l<span class="w"> </span><span class="nv">h_rt</span><span class="o">=</span><span class="m">6</span>:00:00<span class="w"> </span>-l<span class="w"> </span><span class="nv">nodes</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>fluent<span class="w"> </span>2d<span class="w"> </span>-rsh<span class="w"> </span>-scheduler_tight_coupling
 </pre></div>
 </div>
 <p>We’d not normally recommend running Fluent interactively on the HPC though, as you’re almost always better running batch jobs.</p>
@@ -1457,7 +1467,7 @@ Whilst it might be possible to use a login node to do this for a short period of
 module<span class="w"> </span>add<span class="w"> </span>ansys/2020R2
 <span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
 <span class="c1">#Launch the executable</span>
-fluent<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </span>test_para.jou<span class="w"> </span>3ddp<span class="w"> </span>-rsh
+fluent<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </span>test_para.jou<span class="w"> </span>3ddp<span class="w"> </span>-rsh<span class="w"> </span>-scheduler_tight_coupling
 </pre></div>
 </div>
 <p>In this case, the 3-dimensional, double precision module is launched on 40 processors. The <code class="docutils literal notranslate"><span class="pre">-g</span></code> option will suppress the GUI and <code class="docutils literal notranslate"><span class="pre">-i</span></code> specifies the name of the input journal file. The file can be submitted to the queue by typing:</p>
@@ -1480,10 +1490,14 @@ fluent<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </spa
 module<span class="w"> </span>add<span class="w"> </span>ansys/2020R2
 <span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
 <span class="c1">#Launch the executable</span>
-fluent<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </span>-gpgpu<span class="o">=</span><span class="m">1</span><span class="w"> </span>test_para.jou<span class="w"> </span>3ddp<span class="w"> </span>-rsh
+fluent<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </span>-gpgpu<span class="o">=</span><span class="m">1</span><span class="w"> </span>test_para.jou<span class="w"> </span>3ddp<span class="w"> </span>-rsh<span class="w"> </span>-scheduler_tight_coupling
 </pre></div>
 </div>
 </section>
+</section>
+<section id="running-with-fluent-19-2-or-below">
+<h2>Running with Fluent 19.2 or below<a class="headerlink" href="#running-with-fluent-19-2-or-below" title="Permalink to this headline">#</a></h2>
+<p>When running these versions, omit the <code class="docutils literal notranslate"><span class="pre">-scheduler_tight_coupling</span></code> parameter.</p>
 </section>
 <section id="running-with-old-version-of-fluent-v15-or-below">
 <h2>Running with old version of Fluent v15 or below<a class="headerlink" href="#running-with-old-version-of-fluent-v15-or-below" title="Permalink to this headline">#</a></h2>
@@ -1511,7 +1525,7 @@ fluent<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </spa
 module<span class="w"> </span>add<span class="w"> </span>ansys/2020R2
 <span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
 <span class="c1">#Launch the executable</span>
-fluent<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </span>test_para.jou<span class="w"> </span>3ddp<span class="w"> </span>-rsh
+fluent<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </span>test_para.jou<span class="w"> </span>3ddp<span class="w"> </span>-rsh<span class="w"> </span>-scheduler_tight_coupling
 </pre></div>
 </div>
 <p>You will wait slightly longer for a whole node than using the scattered allocation model (<code class="docutils literal notranslate"><span class="pre">-pe</span> <span class="pre">ib</span> <span class="pre">40</span></code>), but your code is likely to run significantly faster.</p>

@@ -23,13 +23,12 @@ Please note you should not run full experiments on the login nodes. Only use thi
 Once the Ansys module is loaded, fluent can be run by entering its name at the command prompt:
 
 ```bash
-$ module add ansys
 $ fluent
 ```
 
 ### Running interactively through the batch queues
 
-To launch fluent in serial in an [interactive session](../../../usage/interactive), use the following commands in the terminal:
+Once the desired Ansys module has been loaded, to launch fluent in serial in an [interactive session](../../../usage/interactive), use the following commands in the terminal:
 
 ```bash
 $ qrsh -cwd -V -l h_rt=<hh:mm:ss> -l h_vmem=<vmem> fluent <dim>
@@ -66,6 +65,7 @@ It is then necessary to construct a job submission script that will run fluent. 
 # Request three hours of runtime
 #$ -l h_rt=3:00:00
 #Launch the executable
+module add ansys/2020R2
 fluent 3ddp -g -i test.jou
 ```
 
@@ -100,13 +100,13 @@ There are three ways of launching Fluent to work in parallel:
 To launch an [interactive session](../../../usage/interactive) with high resource requirements, load the ansys module and type the following at the command prompt:
 
 ```bash
-$ qrsh -cwd -V -l h_rt=<hh:mm:ss> -l nodes=<nodes> fluent <dim> -rsh
+$ qrsh -cwd -V -l h_rt=<hh:mm:ss> -l nodes=<nodes> fluent <dim> -rsh -scheduler_tight_coupling
 ```
 
 In the above commands `hh:mm:ss` is the length of real-time the shell will exist for and `nodes` is the number of nodes requested. `dim` is the dimension/precision of the fluent process (e.g. 3ddp for 3-D double precision). E.g. the to launch fluent for 6 hours on 40 processors on ARC4:
 
 ```bash
-$ qrsh -cwd -V -l h_rt=6:00:00 -l nodes=1 fluent 2d -rsh
+$ qrsh -cwd -V -l h_rt=6:00:00 -l nodes=1 fluent 2d -rsh -scheduler_tight_coupling
 ```
 
 We'd not normally recommend running Fluent interactively on the HPC though, as you're almost always better running batch jobs.
@@ -146,7 +146,7 @@ Then a job submission script (`fluent_para.sh`) should be created, that requests
 module add ansys/2020R2
 export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
 #Launch the executable
-fluent -g -i test_para.jou 3ddp -rsh
+fluent -g -i test_para.jou 3ddp -rsh -scheduler_tight_coupling
 ```
 
 In this case, the 3-dimensional, double precision module is launched on 40 processors. The `-g` option will suppress the GUI and `-i` specifies the name of the input journal file. The file can be submitted to the queue by typing:
@@ -173,8 +173,12 @@ Fluent supports the use of GPUs, although we've not currently seen significant b
 module add ansys/2020R2
 export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
 #Launch the executable
-fluent -g -i -gpgpu=1 test_para.jou 3ddp -rsh
+fluent -g -i -gpgpu=1 test_para.jou 3ddp -rsh -scheduler_tight_coupling
 ```
+
+## Running with Fluent 19.2 or below
+
+When running these versions, omit the `-scheduler_tight_coupling` parameter.
 
 ## Running with old version of Fluent v15 or below
 
@@ -208,7 +212,7 @@ There are also known inefficiencies when running fluent on part nodes on ARC, wh
 module add ansys/2020R2
 export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
 #Launch the executable
-fluent -g -i test_para.jou 3ddp -rsh
+fluent -g -i test_para.jou 3ddp -rsh -scheduler_tight_coupling
 ```
 
 You will wait slightly longer for a whole node than using the scattered allocation model (`-pe ib 40`), but your code is likely to run significantly faster.

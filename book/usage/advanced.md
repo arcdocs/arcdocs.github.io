@@ -17,7 +17,7 @@ Your submission script would then need to contain:
 
 ```bash
 #$ -V
-#$ -l hr_t=01:00:00
+#$ -l h_rt=01:00:00
 #$ -l nodes=<nodes>, ppn=<ppn>, tpp=<tpp>
 mpirun ./a.out
 ```
@@ -25,7 +25,7 @@ or
 
 ```bash
 #$ -V
-#$ -l hr_t=01:00:00
+#$ -l h_rt=01:00:00
 #$ -l np=<np>, ppn=<ppn>, tpp=<tpp>
 mpirun ./a.out
 ```
@@ -37,7 +37,7 @@ Using ARC4, To run an MPI+OpenMP executable mixed.exe with 80 MPI processes each
 ```bash
 #$ -V
 #$ -cwd
-#$ -l hr_t=01:00:00
+#$ -l h_rt=01:00:00
 #$ -l np=80, ppn=10, tpp=4
 mpirun ./mixed.exe
 ```
@@ -48,7 +48,7 @@ Alternatively, the same effect can be achieved by:
 ```bash
 #$ -V
 #$ -cwd
-#$ -l hr_t=01:00:00
+#$ -l h_rt=01:00:00
 #$ -l nodes=8, ppn=10, tpp=4
 mpirun ./mixed.exe
 ```

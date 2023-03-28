@@ -23,6 +23,7 @@ sections:
   - file: usage/taskarrays
   - file: usage/gpgpu
   - file: usage/scratch
+  - file: usage/examples
   - file: usage/advanced
   - file: usage/acknowledgement
 - file: software/start

@@ -81,3 +81,51 @@ $ qsub -hold_jid <jobname> job2.sh
 
 If you give several jobs the same name, then the job will be held until all the named jobs have been completed.
 See [Batch jobs](./batchjob.html#list-of-sge-options) for more details on `hold_jid`.
+
+## Restartable jobs
+
+SGE supports jobs that exit telling the scheduler that they're not finished,
+and so should be rescheduled.  This is very useful when you have a long running
+job that ultimately will take longer than 48 hours to complete, but you can
+easily save the current progress as you go along.  Here is a dummy example to
+hopefully give you ideas on how this could be used:
+
+```bash
+#!/bin/bash
+#$ -l h_rt=0:10:0
+
+# Which subtask we're currently processing.  This script assumes we're only
+# completing one subtask per SGE job, but there's no reason you couldn't
+# process more.
+counter=1
+
+# Read the restartfile, if present, to continue from where we got up to
+if [ -f restartfile ];then
+  echo loading restart file
+  . restartfile
+fi
+
+# If we detected we've been restarted, we may need to run differently, so
+# here's how you could detect it.
+if [[ $RESTARTED == 1 ]];then
+  echo Auto-submitted job continuing
+fi
+
+# Complete a unit of work
+echo Doing work - counter: $counter
+
+# Increment the counter once we've done a unit of work
+let counter++
+
+# Write the next task number to the restartfile
+echo counter=$counter > restartfile
+
+# If we've not yet completed all our tasks, tell the scheduler that we'll need
+# to run again
+if [ $counter -le 10 ];then
+  exit 99
+fi
+
+# We've completed all tasks, so don't restart.
+echo Complete!
+```

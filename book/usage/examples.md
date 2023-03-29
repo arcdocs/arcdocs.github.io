@@ -107,10 +107,22 @@ mpirun example.bin
 ## MPI, using more than one node
 Running on more than one node is identical to running on a single node.  For
 more advanced examples, including mixed OpenMP/MPI codes, see the [Advanced
-examples](advanced.md).
+examples](advanced).
 ```bash
 #$ -cwd -V
 #$ -l h_rt=01:00:00
 #$ -l nodes=3
 mpirun example.bin
+```
+
+## Using a GPU
+Using a GPU uses simplified syntax, and like asking for a whole node, you don't
+need to ask for RAM/CPU/disk to go with the GPU.  Our page on [General Purpose
+GPU](gpgpu) provides more details.
+
+```bash
+#$ -cwd -V
+#$ -l h_rt=01:00:00
+#$ -l coproc_v100=1
+./example.bin
 ```

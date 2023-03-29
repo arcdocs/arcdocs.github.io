@@ -49,6 +49,9 @@ They are useful complements to your studies and the various [Training Courses](h
 #### OpenMP
 - [Introduction to OpenMP](https://cvw.cac.cornell.edu/OpenMP/) from Cornell University
 - [Advanced OpenMP](https://www.archer2.ac.uk/training/courses/221129-advanced-openmp/) from EPCC
+- [Programming your GPU with OpenMP](https://github.com/UoB-HPC/openmp-tutorial/) containing slides and exercises, from Bristol University, presented at SC22
+- [Intro to GPU Programming with the OpenMP API](https://www.youtube.com/watch?v=uVcvecgdW7g)
+- [OpenMP in Nvidia's HPC Compilers](https://www.openmp.org/wp-content/uploads/20210924-OpenMP-update-for-DOE.pdf)
 
 (algorithms_and_data_structure)=
 ### Algorithms and Data Structures

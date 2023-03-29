@@ -1,10 +1,11 @@
 # Job Examples
+Included here are a series of template job submissions, that may prove useful
+as a starting point for your own submission scripts.
 
 ## Serial
-
 A fairly minimal example to run a serial code, using a default allocation of
 1Gbyte of RAM, running for up to an hour, executing a binary `example.bin` in
-the current directory.
+the current directory, and importing the environment from the submitting shell.
 ```bash
 #$ -cwd -V
 #$ -l h_rt=01:00:00
@@ -12,9 +13,8 @@ the current directory.
 ```
 
 ## Serial, but needs more memory
-
-As above, but asking for additiona memory, so 4.8Gbytes of RAM, which is the
-amount that lines up with available cores on the machine on ARC4.
+As above, but asking for additional memory, so 4.8Gbytes of RAM, which is the
+amount that balances with available cores on machines on ARC4.
 ```bash
 #$ -cwd -V
 #$ -l h_rt=01:00:00
@@ -22,11 +22,11 @@ amount that lines up with available cores on the machine on ARC4.
 ./example.bin
 ```
 
+## Serial, but needs lots more memory
 If we find ourselves needing lots of memory per core (say above 10G) you may be
 better off targeting the large memory nodes.  Here we're asking for 200G, so we
 have to use the large memory nodes, as the normal nodes only have 192G
 available on ARC4.
-## Serial, but needs lots more memory
 ```bash
 #$ -cwd -V
 #$ -l h_rt=01:00:00
@@ -70,10 +70,33 @@ to use, it can be passed `$NSLOTS`.
 ./example.bin -t $NSLOTS
 ```
 
+## MPI, small, single node
+If you're wanting to run a small MPI job on a single node, you can run it as an smp job.
+```bash
+#$ -cwd -V
+#$ -l h_rt=01:00:00
+#$ -pe smp 8
+mpirun example.bin
+```
+
+## MPI, small, run anywhere
+If you're wanting to run an MPI job, and you're not sensitive to having all the
+processes on a single machine, you can ask for them to be spread anywhere
+across nodes.  There's no guarantee what the scattering is, so you may have 8
+cores on one node, spread across eight nodes, or somewhere in between.
+```bash
+#$ -cwd -V
+#$ -l h_rt=01:00:00
+#$ -pe ib 8
+mpirun example.bin
+```
+
 ## MPI, using a whole node
-Like with the threaded example, we assign a whole node.  `mpirun` itself
+Like with the threaded example, we can assign a whole node.  `mpirun` itself
 doesn't need to be told how many cores to run on, as it detects that
-automatically.
+automatically.  This delivers much more consistent compute performance than
+that previous two options, since you're the only job running on the nodes
+you're using.
 ```bash
 #$ -cwd -V
 #$ -l h_rt=01:00:00

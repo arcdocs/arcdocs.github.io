@@ -5,8 +5,8 @@ Once you have an account you'll be able to connect to the University HPC systems
 The rest of this page covers setting your machine up with the appropriate software for connecting.
 Other pages in this section are outlined below.
 
-- [Connecting from campus](./logon/logon-campus)
-- [Connecting from off-campus](./logon/logon-off-campus)
+- [Connecting from campus](./logon/logon-campus) (wired network)
+- [Connecting from off-campus](./logon/logon-off-campus) (this includes Eduroam)
 - [Setting up X11 graphical forwarding for graphical applications](./logon/x11-graphics)
 - [Details on host fingerprints when connecting](./logon/fingerprint-details)
 
@@ -30,3 +30,16 @@ To get started you need to install MobaXTerm. You can do this by downloading the
 <iframe src="https://mymedia.leeds.ac.uk/Mediasite/Play/7c25b8af4c7f43f7898efeba0ec6dd311d" width="100%" height="300" frameborder="0" marginwidth="0" marginheight="0" scrolling="auto" allowfullscreen="allowfullscreen" style="display:block;"> </iframe>
 
 Once you've got MobaXTerm on your computer you're ready to learn about how to connect to the HPC systems. Next you'll need to read more about [Connecting on campus](./logon/logon-campus.html#connecting-from-windows) or [Connecting from off campus](./logon/logon-off-campus.html#connecting-from-windows) depending on your circumstances.
+
+## Multiple login nodes
+
+There are two login nodes on each HPC, login1 and login2.  They are identical
+to each other, and identical to the normal node specification within the HPC
+clusters.  When you typically login via any of the suggested methods, you'll be
+assigned one or the other, and since they are functionally equivalent you don't
+normally mind which you're given.  If you do need a specific node, you can
+choose to target a specific login node, e.g. `login1.arc4.leeds.ac.uk`.
+
+By having two login nodes, we're able to apply updates, and fix issues without
+having to block access to the login nodes, and also provide additional capacity
+for interactive development work.

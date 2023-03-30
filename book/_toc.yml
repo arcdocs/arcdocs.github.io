@@ -76,6 +76,7 @@ sections:
     sections:
     - file: software/infrastructure/advisor.md
     - file: software/infrastructure/allinea.md
+    - file: software/infrastructure/apptainer.md
     - file: software/infrastructure/arm-forge.md
     - file: software/infrastructure/bazel.md
     - file: software/infrastructure/cmake.md

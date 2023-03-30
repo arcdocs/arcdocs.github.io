@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="ARC Acknowledgement" href="acknowledgement.html" />
-    <link rel="prev" title="Temporary/Scratch Storage on Compute nodes" href="scratch.html" />
+    <link rel="prev" title="Job Examples" href="examples.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -228,6 +228,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="scratch.html">
      Temporary/Scratch Storage on Compute nodes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples.html">
+     Job Examples
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -1211,6 +1216,16 @@ title="Print to PDF"
    Job Dependencies
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#restartable-jobs">
+   Restartable jobs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#non-integer-task-array-sequences">
+   Non integer task array sequences
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -1247,6 +1262,16 @@ title="Print to PDF"
    Job Dependencies
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#restartable-jobs">
+   Restartable jobs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#non-integer-task-array-sequences">
+   Non integer task array sequences
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -1259,73 +1284,169 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="advanced-job-examples">
 <h1>Advanced Job Examples<a class="headerlink" href="#advanced-job-examples" title="Permalink to this headline">#</a></h1>
+<p>These are provided to give you a starting point, and give you ideas on what can
+be done.</p>
 <section id="submitting-mixed-mode-jobs">
 <h2>Submitting Mixed Mode Jobs<a class="headerlink" href="#submitting-mixed-mode-jobs" title="Permalink to this headline">#</a></h2>
-<p>The ‘mixed mode’ (MPI+OpenMP) programming model typically involves MPI processes running across nodes and OpenMP threads upon each node with the total number of processes (MPI*OpenMP) equalling the number of physical processor cores.</p>
-<p>Your code will need to call MPI_Init and make use of OpenMP directives. You will compile your code using an MPI wrapper and enabling OpenMP support, for example:</p>
+<p>The ‘mixed mode’ (MPI+OpenMP) programming model typically involves MPI
+processes running across nodes and OpenMP threads upon each node with the total
+number of processes (MPI*OpenMP) equalling the number of physical processor
+cores.</p>
+<p>Your code will need to call MPI_Init and make use of OpenMP directives. You
+will compile your code using an MPI wrapper and enabling OpenMP support, for
+example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mpif90<span class="w"> </span>-openmp<span class="w"> </span>example.f90<span class="w"> </span>-o<span class="w"> </span>mixed.exe
 </pre></div>
 </div>
-<p>You will need to determine <code class="docutils literal notranslate"><span class="pre">ppn</span></code>, the number of MPI processes per node, and <code class="docutils literal notranslate"><span class="pre">tpp</span></code>, the number of OpenMP threads per MPI process.</p>
-<p>Additionally, you can either ask for a given number of nodes nodes or for the total number of MPI processes <code class="docutils literal notranslate"><span class="pre">np</span></code>. Note that <code class="docutils literal notranslate"><span class="pre">ppn</span></code> is related to <code class="docutils literal notranslate"><span class="pre">np</span></code> since <code class="docutils literal notranslate"><span class="pre">ppn</span></code> = <code class="docutils literal notranslate"><span class="pre">np</span></code>/nodes.</p>
+<p>You will need to determine <code class="docutils literal notranslate"><span class="pre">ppn</span></code>, the number of MPI processes per node, and
+<code class="docutils literal notranslate"><span class="pre">tpp</span></code>, the number of OpenMP threads per MPI process.</p>
+<p>Additionally, you can either ask for a given number of nodes nodes or for the
+total number of MPI processes <code class="docutils literal notranslate"><span class="pre">np</span></code>. Note that <code class="docutils literal notranslate"><span class="pre">ppn</span></code> is related to <code class="docutils literal notranslate"><span class="pre">np</span></code> since
+<code class="docutils literal notranslate"><span class="pre">ppn</span></code> = <code class="docutils literal notranslate"><span class="pre">np</span></code>/<code class="docutils literal notranslate"><span class="pre">nodes</span></code>.</p>
 <p>Your submission script would then need to contain:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -V</span>
-<span class="c1">#$ -l hr_t=01:00:00</span>
+<span class="c1">#$ -l h_rt=01:00:00</span>
 <span class="c1">#$ -l nodes=&lt;nodes&gt;, ppn=&lt;ppn&gt;, tpp=&lt;tpp&gt;</span>
 mpirun<span class="w"> </span>./a.out
 </pre></div>
 </div>
 <p>or</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -V</span>
-<span class="c1">#$ -l hr_t=01:00:00</span>
+<span class="c1">#$ -l h_rt=01:00:00</span>
 <span class="c1">#$ -l np=&lt;np&gt;, ppn=&lt;ppn&gt;, tpp=&lt;tpp&gt;</span>
 mpirun<span class="w"> </span>./a.out
 </pre></div>
 </div>
-<p>There are 24 cores per node on ARC3 , so you would typically ensure <code class="docutils literal notranslate"><span class="pre">ppn</span></code>*<code class="docutils literal notranslate"><span class="pre">tpp</span></code>=24.
-There are 40 cores per node on ARC4 , so you would typically ensure <code class="docutils literal notranslate"><span class="pre">ppn</span></code>*<code class="docutils literal notranslate"><span class="pre">tpp</span></code>=40.</p>
+<p>There are 24 cores per node on ARC3, so you would typically ensure <code class="docutils literal notranslate"><span class="pre">ppn</span></code>*<code class="docutils literal notranslate"><span class="pre">tpp</span></code>=24.
+There are 40 cores per node on ARC4, so you would typically ensure <code class="docutils literal notranslate"><span class="pre">ppn</span></code>*<code class="docutils literal notranslate"><span class="pre">tpp</span></code>=40.</p>
 <section id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
-<p>Using ARC4, To run an MPI+OpenMP executable mixed.exe with 80 MPI processes each launching 4 OpenMP threads, the following submission script would be needed:</p>
+<p>Using ARC4, To run an MPI+OpenMP executable mixed.exe with 80 MPI processes
+each launching 4 OpenMP threads, the following submission script would be
+needed:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -V</span>
 <span class="c1">#$ -cwd</span>
-<span class="c1">#$ -l hr_t=01:00:00</span>
+<span class="c1">#$ -l h_rt=01:00:00</span>
 <span class="c1">#$ -l np=80, ppn=10, tpp=4</span>
 mpirun<span class="w"> </span>./mixed.exe
 </pre></div>
 </div>
 <p>This will allocate 8 nodes (=8*40=320 cores).
-Each node will have 10 MPI processes, each of which will have 4 OpenMP threads (so 10*4=40 processes per node in total, and 8*140=320 (=80MPI*4OpenMP) processes in total.</p>
+Each node will have 10 MPI processes, each of which will have 4 OpenMP threads
+(so 10*4=40 processes per node in total, and 8*140=320 (=80MPI*4OpenMP)
+processes in total.</p>
 <p>Alternatively, the same effect can be achieved by:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -V</span>
 <span class="c1">#$ -cwd</span>
-<span class="c1">#$ -l hr_t=01:00:00</span>
+<span class="c1">#$ -l h_rt=01:00:00</span>
 <span class="c1">#$ -l nodes=8, ppn=10, tpp=4</span>
 mpirun<span class="w"> </span>./mixed.exe
 </pre></div>
 </div>
-<p>Note that the <code class="docutils literal notranslate"><span class="pre">OMP_NUM_THREADS</span></code> environment variable is automatically set by the batch system and so you do not need to set this in your environment.</p>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">OMP_NUM_THREADS</span></code> environment variable is automatically set by
+the batch system and so you do not need to set this in your environment.</p>
 </section>
 </section>
 <section id="job-dependencies">
 <h2>Job Dependencies<a class="headerlink" href="#job-dependencies" title="Permalink to this headline">#</a></h2>
-<p>The SGE scheduler allows you to submit a job but then hold them in the queue until certain job dependencies are met, ie. it will hold the job until a previous job (or number of jobs have completed).</p>
+<p>The SGE scheduler allows you to submit a job but then hold them in the queue
+until certain job dependencies are met, ie. it will hold the job until a
+previous job (or number of jobs have completed).</p>
 <p>To do this, submit the first job as normal:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>job1.sh
 </pre></div>
 </div>
 <p>As usual, the scheduler will give you a job ID <code class="docutils literal notranslate"><span class="pre">&lt;jobid&gt;</span></code>.</p>
-<p>if you then want to submit another job that is dependent on the first one completing, use the <code class="docutils literal notranslate"><span class="pre">-hold_jid</span></code> option for qsub:</p>
+<p>If you then want to submit another job that is dependent on the first one
+completing, use the <code class="docutils literal notranslate"><span class="pre">-hold_jid</span></code> option for qsub:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>-hold_jid<span class="w"> </span>&lt;jobid&gt;<span class="w"> </span>job2.sh
 </pre></div>
 </div>
 <p>Job 2 will remain in the queue until job 1 has completed.</p>
-<p>Alternatively, if you have given the job a name (using the <code class="docutils literal notranslate"><span class="pre">-N</span></code> option), then you can put a hold on subsequent jobs using the name instead:</p>
+<p>Alternatively, if you have given the job a name (using the <code class="docutils literal notranslate"><span class="pre">-N</span></code> option), then
+you can put a hold on subsequent jobs using the name instead:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>-hold_jid<span class="w"> </span>&lt;jobname&gt;<span class="w"> </span>job2.sh
 </pre></div>
 </div>
-<p>If you give several jobs the same name, then the job will be held until all the named jobs have been completed.
-See <a class="reference external" href="./batchjob.html#list-of-sge-options">Batch jobs</a> for more details on <code class="docutils literal notranslate"><span class="pre">hold_jid</span></code>.</p>
+<p>If you give several jobs the same name, then the job will be held until all the
+named jobs have been completed.
+See <a class="reference external" href="./batchjob.html#list-of-sge-options">Batch jobs</a> for more details on
+<code class="docutils literal notranslate"><span class="pre">hold_jid</span></code>.</p>
+</section>
+<section id="restartable-jobs">
+<h2>Restartable jobs<a class="headerlink" href="#restartable-jobs" title="Permalink to this headline">#</a></h2>
+<p>SGE supports jobs that exit telling the scheduler that they’re not finished,
+and so should be rescheduled.  This is very useful when you have a long running
+job that ultimately will take longer than 48 hours to complete, but you can
+easily save the current progress as you go along.  Here is a dummy example to
+hopefully give you ideas on how this could be used:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#$ -l h_rt=0:10:0</span>
+
+<span class="c1"># Which subtask we&#39;re currently processing.  This script assumes we&#39;re only</span>
+<span class="c1"># completing one subtask per SGE job, but there&#39;s no reason you couldn&#39;t</span>
+<span class="c1"># process more.</span>
+<span class="nv">counter</span><span class="o">=</span><span class="m">1</span>
+
+<span class="c1"># Read the restartfile, if present, to continue from where we got up to</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span>restartfile<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="k">then</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span>loading<span class="w"> </span>restart<span class="w"> </span>file
+<span class="w">  </span>.<span class="w"> </span>restartfile
+<span class="k">fi</span>
+
+<span class="c1"># If we detected we&#39;ve been restarted, we may need to run differently, so</span>
+<span class="c1"># here&#39;s how you could detect it.</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$RESTARTED</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="k">then</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span>Auto-submitted<span class="w"> </span>job<span class="w"> </span>continuing
+<span class="k">fi</span>
+
+<span class="c1"># Complete a unit of work</span>
+<span class="nb">echo</span><span class="w"> </span>Doing<span class="w"> </span>work<span class="w"> </span>-<span class="w"> </span>counter:<span class="w"> </span><span class="nv">$counter</span>
+
+<span class="c1"># Increment the counter once we&#39;ve done a unit of work</span>
+<span class="nb">let</span><span class="w"> </span>counter++
+
+<span class="c1"># Write the next task number to the restartfile</span>
+<span class="nb">echo</span><span class="w"> </span><span class="nv">counter</span><span class="o">=</span><span class="nv">$counter</span><span class="w"> </span>&gt;<span class="w"> </span>restartfile
+
+<span class="c1"># If we&#39;ve not yet completed all our tasks, tell the scheduler that we&#39;ll need</span>
+<span class="c1"># to run again</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$counter</span><span class="w"> </span>-le<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="k">then</span>
+<span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="m">99</span>
+<span class="k">fi</span>
+
+<span class="c1"># We&#39;ve completed all tasks, so don&#39;t restart.</span>
+<span class="nb">echo</span><span class="w"> </span>Complete!
+</pre></div>
+</div>
+</section>
+<section id="non-integer-task-array-sequences">
+<h2>Non integer task array sequences<a class="headerlink" href="#non-integer-task-array-sequences" title="Permalink to this headline">#</a></h2>
+<p>This shows how you can run a task array with two sets of parameters where one
+of them is non-integer.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run a total of 72 tasks</span>
+<span class="c1">#$ -t 1-72</span>
+<span class="c1"># Put the logs into a separate directory</span>
+<span class="c1">#$ -o logs</span>
+<span class="c1">#$ -e logs</span>
+<span class="c1">#$ -cwd -V</span>
+<span class="c1">#$ -l h_rt=0:10:0</span>
+
+<span class="c1"># Define array dimensions, lining up with the 72 tasks we&#39;re running</span>
+<span class="nv">rows</span><span class="o">=</span><span class="m">18</span>
+<span class="nv">columns</span><span class="o">=</span><span class="m">4</span>
+
+<span class="c1"># Calculate row and column indexes</span>
+<span class="nv">row_index</span><span class="o">=</span><span class="k">$((</span><span class="w"> </span><span class="o">(</span><span class="nv">$SGE_TASK_ID</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span><span class="o">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nv">$columns</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="k">))</span>
+<span class="nv">col_index</span><span class="o">=</span><span class="k">$((</span><span class="w"> </span><span class="o">(</span><span class="nv">$SGE_TASK_ID</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span><span class="o">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="nv">$columns</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="k">))</span>
+
+<span class="c1"># Map the integer value into the floating point value we actually wanted</span>
+<span class="nv">calculated_float</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span>%.4f<span class="se">\\</span>n<span class="w"> </span><span class="s2">&quot;</span><span class="k">$((</span><span class="nv">$col_index</span><span class="k">))</span><span class="s2">e-4&quot;</span><span class="k">)</span>
+
+<span class="c1"># Run the experiment passing those values in</span>
+./run_code<span class="w"> </span><span class="nv">$calculated_float</span><span class="w"> </span><span class="nv">$row_index</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -1356,11 +1477,11 @@ See <a class="reference external" href="./batchjob.html#list-of-sge-options">Bat
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="scratch.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="examples.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Temporary/Scratch Storage on Compute nodes</p>
+            <p class="prev-next-title">Job Examples</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="acknowledgement.html" title="next page">

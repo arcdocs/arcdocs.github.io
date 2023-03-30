@@ -1211,6 +1211,11 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-login-nodes">
+   Multiple login nodes
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -1247,6 +1252,11 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-login-nodes">
+   Multiple login nodes
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -1263,8 +1273,8 @@ title="Print to PDF"
 <p>The rest of this page covers setting your machine up with the appropriate software for connecting.
 Other pages in this section are outlined below.</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="logon/logon-campus.html"><span class="doc std std-doc">Connecting from campus</span></a></p></li>
-<li><p><a class="reference internal" href="logon/logon-off-campus.html"><span class="doc std std-doc">Connecting from off-campus</span></a></p></li>
+<li><p><a class="reference internal" href="logon/logon-campus.html"><span class="doc std std-doc">Connecting from campus</span></a> (wired network)</p></li>
+<li><p><a class="reference internal" href="logon/logon-off-campus.html"><span class="doc std std-doc">Connecting from off-campus</span></a> (this includes Eduroam)</p></li>
 <li><p><a class="reference internal" href="logon/x11-graphics.html"><span class="doc std std-doc">Setting up X11 graphical forwarding for graphical applications</span></a></p></li>
 <li><p><a class="reference internal" href="logon/fingerprint-details.html"><span class="doc std std-doc">Details on host fingerprints when connecting</span></a></p></li>
 </ul>
@@ -1286,6 +1296,18 @@ Other pages in this section are outlined below.</p>
 <iframe src="https://mymedia.leeds.ac.uk/Mediasite/Play/7c25b8af4c7f43f7898efeba0ec6dd311d" width="100%" height="300" frameborder="0" marginwidth="0" marginheight="0" scrolling="auto" allowfullscreen="allowfullscreen" style="display:block;"> </iframe>
 <p>Once you’ve got MobaXTerm on your computer you’re ready to learn about how to connect to the HPC systems. Next you’ll need to read more about <a class="reference external" href="./logon/logon-campus.html#connecting-from-windows">Connecting on campus</a> or <a class="reference external" href="./logon/logon-off-campus.html#connecting-from-windows">Connecting from off campus</a> depending on your circumstances.</p>
 </section>
+</section>
+<section id="multiple-login-nodes">
+<h2>Multiple login nodes<a class="headerlink" href="#multiple-login-nodes" title="Permalink to this headline">#</a></h2>
+<p>There are two login nodes on each HPC, login1 and login2.  They are identical
+to each other, and identical to the normal node specification within the HPC
+clusters.  When you typically login via any of the suggested methods, you’ll be
+assigned one or the other, and since they are functionally equivalent you don’t
+normally mind which you’re given.  If you do need a specific node, you can
+choose to target a specific login node, e.g. <code class="docutils literal notranslate"><span class="pre">login1.arc4.leeds.ac.uk</span></code>.</p>
+<p>By having two login nodes, we’re able to apply updates, and fix issues without
+having to block access to the login nodes, and also provide additional capacity
+for interactive development work.</p>
 </section>
 <div class="toctree-wrapper compound">
 </div>

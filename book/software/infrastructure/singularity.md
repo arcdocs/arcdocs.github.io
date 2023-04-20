@@ -2,6 +2,8 @@
 
 Singularity is a free, cross-platform and open-source computer program that performs operating-system-level virtualization also known as containerization. You can read more about at the [Singularity website](https://singularity.lbl.gov/).
 
+It has been superceded on ARC4 by [Apptainer](apptainer).
+
 ## The Singularity module on the HPC
 
 The Singularity module can be loaded into your environment with the following command:

@@ -190,7 +190,15 @@ putting file testfile as \\medacola\\testfile (0.0 kb/s) (average 0.0 kb/s)
 
 ### rclone
 
-When transferring large data sets from external sources, it is useful to be able to connect directly to the external sources (such as OneDrive, DropBox, Google Cloud, etc) from ARC to transfer the data sets more efficiently. You can do this using a tool called Rclone which is installed on both ARC3 and ARC4. You will need to configure a remote shell connection with X11 forwarding (e.g. on ARC4 using `ssh -Y user@arc4.leeds.ac.uk`) before you can use it.
+When transferring large data sets from external sources, it is useful to be
+able to connect directly to the external sources (such as OneDrive, DropBox,
+Google Cloud, etc) from ARC to transfer the data sets more efficiently. You can
+do this using a tool called Rclone which is installed on both ARC3 and ARC4.
+You will need to configure a remote shell connection with X11 forwarding (e.g.
+on ARC4 using `ssh -Y user@arc4.leeds.ac.uk`) before you can use it.
+
+You can refer to our page on [Graphics Forwarding with (X11)](logon/x11-graphics) for
+details on how to set this up.
 
 #### Adding a new OneDrive remote to Rclone
 

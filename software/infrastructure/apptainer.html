@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Licenses &#8212; ARC Documentation</title>
+    <title>Apptainer &#8212; ARC Documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,12 +50,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://arcdocs.leeds.ac.uk/software/infrastructure/licenses.html" />
+    <link rel="canonical" href="https://arcdocs.leeds.ac.uk/software/infrastructure/apptainer.html" />
     <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="GNU Parallel" href="parallel.html" />
-    <link rel="prev" title="Inspector" href="inspector.html" />
+    <link rel="next" title="Arm Forge" href="arm-forge.html" />
+    <link rel="prev" title="Allinea" href="allinea.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -505,8 +505,8 @@ const thebe_selector_output = ".output, .cell_output"
        Allinea
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="apptainer.html">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
        Apptainer
       </a>
      </li>
@@ -540,8 +540,8 @@ const thebe_selector_output = ".output, .cell_output"
        Inspector
       </a>
      </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
+     <li class="toctree-l3">
+      <a class="reference internal" href="licenses.html">
        Licenses
       </a>
      </li>
@@ -1100,7 +1100,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/arcdocs/arcdocs-jupyterbook/issues/new?title=Issue%20on%20page%20%2Fsoftware/infrastructure/licenses.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/arcdocs/arcdocs-jupyterbook/issues/new?title=Issue%20on%20page%20%2Fsoftware/infrastructure/apptainer.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1117,7 +1117,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/arcdocs/arcdocs-jupyterbook/edit/working-master/book/software/infrastructure/licenses.md"
+        <a href="https://github.com/arcdocs/arcdocs-jupyterbook/edit/working-master/book/software/infrastructure/apptainer.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1145,7 +1145,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/software/infrastructure/licenses.md"
+        <a href="../../_sources/software/infrastructure/apptainer.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1182,23 +1182,60 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-apptainer-module-on-the-hpc">
+   The Apptainer module on the HPC
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Licenses</h1>
+                <h1>Apptainer</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-apptainer-module-on-the-hpc">
+   The Apptainer module on the HPC
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -1206,13 +1243,41 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="licenses">
-<h1>Licenses<a class="headerlink" href="#licenses" title="Permalink to this headline">#</a></h1>
-<p>The licenses module is a special module loaded by default that includes general license information for common applications on the HPC.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For some specific application you will be required to request from your supervisor additional license information so that it can be used on the HPC. Please consult an applications specific <a class="reference internal" href="../start.html"><span class="doc std std-doc">software page</span></a> for more information.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="apptainer">
+<h1>Apptainer<a class="headerlink" href="#apptainer" title="Permalink to this headline">#</a></h1>
+<p>Apptainer is a free, cross-platform and open-source computer program that
+performs operating-system-level virtualization also known as containerization.
+You can read more about at the <a class="reference external" href="https://apptainer.org/">Apptainer website</a>.</p>
+<p>There are additional pointers on Apptainer within the Container section of
+<a class="reference external" href="https://arctraining.github.io/hpc2-software/course/containers.html">HPC2</a></p>
+<section id="the-apptainer-module-on-the-hpc">
+<h2>The Apptainer module on the HPC<a class="headerlink" href="#the-apptainer-module-on-the-hpc" title="Permalink to this headline">#</a></h2>
+<p>The Apptainer module can be loaded into your environment with the following
+command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>apptainer
+</pre></div>
 </div>
+<p>The apptainer module is available on ARC4:</p>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 50%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>System</p></th>
+<th class="head"><p>Version</p></th>
+<th class="head"><p>Command</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ARC4</p></td>
+<td><p>Apptainer 1.1.6</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">add</span> <span class="pre">apptainer/1.1.6</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1242,17 +1307,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="inspector.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="allinea.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Inspector</p>
+            <p class="prev-next-title">Allinea</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="parallel.html" title="next page">
+    <a class='right-next' id="next-link" href="arm-forge.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">GNU Parallel</p>
+        <p class="prev-next-title">Arm Forge</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -76,7 +76,7 @@ hdd - refers to a mechanical hard disk with a spinning platter, which has good p
 * - GPGPU
   - 3 – each with 4 NVIDIA V100 GPUs
   - 192GB
-  - 128B
+  - 128GB
   - ssd
 ```
 

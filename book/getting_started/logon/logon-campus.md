@@ -1,5 +1,13 @@
 # Connecting from campus
 
+```{note}
+As far as ARC is concerned, you're on campus if you're using the wired campus
+network, or connected to the [VPN](https://it.leeds.ac.uk/it?id=kb_article_view&table=kb_knowledge&sys_kb_id=ecd4bcaa1bd1ed104d79b455464bcb82).
+
+If you're trying to connect via Eduroam, please follow the instructions for
+[off campus access](logon-off-campus)
+```
+
 ## Connecting from Linux/MacOS systems
 
 Linux and MacOS systems all come with a Terminal application that opens a command-line shell. In the following example code snippets we'll be connecting with the username `exuser`. When you come to log in to a system you'll need to use your own university username in place of `exuser`.

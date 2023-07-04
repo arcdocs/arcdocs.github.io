@@ -11,3 +11,15 @@ apply if you're accessing another service, like OneDrive, or other filestores
 on campus.
 ```
 
+## Find details on:
+
+- [Using Mobaxterm](./file_transfer/mobaxterm)
+
+- [Using a terminal](./file_transfer/terminal)
+
+- [Using smbclient](./file_transfer/smbclient)
+
+- [Using rclone](./file_transfer/rclone)
+
+- [Using sftp](./file_transfer/sftp)
+

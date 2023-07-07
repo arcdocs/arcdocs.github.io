@@ -39,7 +39,7 @@ If the keys do not match do **not** continue and contact Research Computing imme
 
 You will then be prompted for your password.
 
-```bash
+```
 $ ssh exuser@arc4
 exuser@arc4's password:
 ```

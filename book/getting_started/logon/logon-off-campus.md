@@ -80,7 +80,7 @@ Passcode or option (1-2):
 
 Enter your prefered option and authenticate using Duo and you will be prompted to enter your password for ARC4.
 
-```bash
+```
 $ ssh arc4.leeds.ac.uk
 Password:
 Duo two-factor login for exuser@leeds.ac.uk

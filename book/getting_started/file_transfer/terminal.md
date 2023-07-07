@@ -4,6 +4,7 @@ We can also download and upload files to HPC using commands in a Terminal. The f
 
 ```{note} **MobaXTerm users** <br>
 If you're using MobaXTerm's local terminal make sure you've configured it properly using the steps outlined in [Logging on](../logon.html#configuring-mobaxterm-terminal).
+```
 
 ## Using scp
 

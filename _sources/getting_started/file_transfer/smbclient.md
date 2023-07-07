@@ -4,6 +4,8 @@ It is also possible to transfer files from your University ` M drive ` and from 
 
 To connect to your ` M drive ` you are required to know the ds path to your M drive. This should follow the pattern ` \\ds.leeds.ac.uk\<group>\<groupNUMBER>\ `. Connecting to the shared N drive is possible using the folowing ds path `\\ds.leeds.ac.uk\shared\`.
 
+To find the ds path to your M drive open the file explorer on a campus PC or a [Virtual Windows Desktop](https://it.leeds.ac.uk/it?id=kb_article&sysparm_article=KB0014480) and select your M drive from the shortcut list, or type `M:\` into the navigation bar and press return. The navigation bar will now display your M drive ds path in the format ` \\ds.leeds.ac.uk\<group>\<groupNUMBER>\ `.
+
 Once you know the ds path to your M drive you can connect to it within the ` smbclient ` when on ARC using the command:
 
 ```bash

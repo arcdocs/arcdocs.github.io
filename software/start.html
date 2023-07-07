@@ -1237,8 +1237,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#currently-installed-modules">
-   Currently installed modules
+  <a class="reference internal nav-link" href="#searching-installed-modules">
+   Searching installed modules
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1266,8 +1266,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#currently-installed-modules">
-   Currently installed modules
+  <a class="reference internal nav-link" href="#searching-installed-modules">
+   Searching installed modules
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1295,18 +1295,21 @@ title="Print to PDF"
 <li><p><a class="reference internal" href="compilers/start.html"><span class="doc std std-doc">Compilers</span></a> - Compilers and interpreters for a range of languages</p></li>
 <li><p><a class="reference internal" href="libraries/start.html"><span class="doc std std-doc">Libraries</span></a> - Useful system utilities</p></li>
 </ul>
-<section id="currently-installed-modules">
-<h2>Currently installed modules<a class="headerlink" href="#currently-installed-modules" title="Permalink to this headline">#</a></h2>
-<p>We regularly update the list of installed modules. You can view these by either following the links below:</p>
-<ul class="simple">
-<li><p><span class="xref myst">ARC3 modules</span></p></li>
-<li><p><a class="reference internal" href="arc4.html"><span class="doc std std-doc">ARC4 modules</span></a></p></li>
-</ul>
-<p>or logging into each system and using the <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">avail</span></code> command.</p>
+<section id="searching-installed-modules">
+<h2>Searching installed modules<a class="headerlink" href="#searching-installed-modules" title="Permalink to this headline">#</a></h2>
+<p>A list of installed modules can be seen on both arc3 and arc4 by running the comman:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>avail
+</pre></div>
+</div>
+<p>In order to search for specific modules a combination of the <code class="docutils literal notranslate"><span class="pre">module</span></code> and <code class="docutils literal notranslate"><span class="pre">grep</span></code> commands can be used:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>-l<span class="w"> </span>avail<span class="w"> </span><span class="p">|&amp;</span><span class="w"> </span>grep<span class="w"> </span>name_of_module
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">name_of_module</span></code> is the name of the module you wish to load</p>
 </section>
 <section id="module-system">
 <h2>Module system<a class="headerlink" href="#module-system" title="Permalink to this headline">#</a></h2>
-<p>A large number of applications are available through the module system and can be loaded with the <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">add</span></code> command, in this example where <code class="docutils literal notranslate"><span class="pre">name_of_module</span></code> is the name of the module you wish to load:</p>
+<p>A large number of applications are available through the module system and can be loaded with the <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">add</span></code> command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>add<span class="w"> </span>name_of_module
 </pre></div>
 </div>

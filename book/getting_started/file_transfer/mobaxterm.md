@@ -25,5 +25,5 @@ We can also download files and directories from HPC to our local machine using t
 
 ![Example gif of dragging and dropping directory from HPC onto local machine](../../assets/img/filetransfer/mobaWindow1download.gif)
 
-This allows us to performance basic file transfer steps using the MobaXTerm GUI. We can also make use of the MobaXTerm terminal to perform command based file transfer as outlined the in next section [Using a Terminal](#Using-a-Terminal).
+This allows us to performance basic file transfer steps using the MobaXTerm GUI. We can also make use of the MobaXTerm terminal to perform command based file transfer as outlined the in next section [Using a Terminal](./terminal).
 

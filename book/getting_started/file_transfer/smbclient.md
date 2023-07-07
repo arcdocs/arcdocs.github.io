@@ -1,6 +1,6 @@
 # Using smbclient
 
-It is also possible to transfer files from your University ` M drive ` and from the shared ` N drive ` using the ` smbclient ` tool. This is a command line tool included by default on ARC that allows for file transfer experience similar to SFTP [(outlined below)](#sftp).
+It is also possible to transfer files from your University ` M drive ` and from the shared ` N drive ` using the ` smbclient ` tool. This is a command line tool included by default on ARC that allows for file transfer experience similar to [SFTP](./sftp).
 
 To connect to your ` M drive ` you are required to know the ds path to your M drive. This should follow the pattern ` \\ds.leeds.ac.uk\<group>\<groupNUMBER>\ `. Connecting to the shared N drive is possible using the folowing ds path `\\ds.leeds.ac.uk\shared\`.
 

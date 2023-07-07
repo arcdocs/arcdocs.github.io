@@ -3,6 +3,7 @@ root: welcome
 sections:
 - file: getting_started/start
   sections:
+  - file: getting_started/what_is_hpc
   - file: getting_started/request_hpc_acct
   - file: getting_started/request_install
   - file: getting_started/logon

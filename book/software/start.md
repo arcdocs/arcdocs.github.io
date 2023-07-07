@@ -20,7 +20,7 @@ module avail
 In order to search for specific modules a combination of the `module` and `grep` commands can be used:
 
 ```bash
-module avail |& grep name_of_module
+module -l avail |& grep name_of_module
 ```
 
 Where `name_of_module` is the name of the module you wish to load

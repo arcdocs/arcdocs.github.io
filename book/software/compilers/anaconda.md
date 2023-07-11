@@ -103,6 +103,9 @@ To avoid this you can use the following steps to move your `.conda` directory to
 ```bash
 $ cd ~
 
+# delete symlink, if already present
+$ rm -f .conda
+
 # create these directories if they don't already exist
 $ mkdir -p .conda /nobackup/$USER
 

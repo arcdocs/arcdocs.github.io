@@ -1,6 +1,6 @@
 # Batch jobs
 
-The computational power of the HPC facilities at Leeds is organised through a batch job scheduling system. This involves users submitting a script that outlines the resources required, and the program to be run, to the scheduler which allocates that job a position in the queue of jobs. The scheduler software that runs on both ARC3 and ARC4 is [Son of Grid Engine](https://arc.liv.ac.uk/trac/SGE), plus locally developed and implemented patches.
+The computational power of the HPC facilities at Leeds is organised through a batch job scheduling system. This involves users submitting a script that outlines the resources required, and the program to be run, to the scheduler which allocates that job a position in the queue of jobs. The scheduler software that runs on both ARC3 and ARC4 is [Son of Grid Engine](https://github.com/daimh/sge), plus locally developed and implemented patches.
 
 ## Job scripts
 

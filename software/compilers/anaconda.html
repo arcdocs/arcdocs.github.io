@@ -1448,6 +1448,9 @@ conda<span class="w"> </span>deactivate
 <p>To avoid this you can use the following steps to move your <code class="docutils literal notranslate"><span class="pre">.conda</span></code> directory to your <a class="reference internal" href="../../getting_started/nobackup.html"><span class="doc std std-doc">/nobackup directory</span></a> instead.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~
 
+<span class="c1"># delete symlink, if already present</span>
+$<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>.conda
+
 <span class="c1"># create these directories if they don&#39;t already exist</span>
 $<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>.conda<span class="w"> </span>/nobackup/<span class="nv">$USER</span>
 

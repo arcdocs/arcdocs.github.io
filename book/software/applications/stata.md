@@ -4,17 +4,17 @@
 
 ### ARC 4
 
-Stata 15 and Stata 16 are currently available on ARC4 for all users
-via our site wide license that supports jobs running on up to 2 cores.
+A number of different versions of Stata are currently available on ARC4 for all
+users via our site wide license that supports jobs running on up to 2 cores.
 
-Stata should be primarily run through batch queuing system, however
-short interactive runs can done on the login nodes. You can run Stata
-interactively though the batch queue system.
+Stata should be primarily run through batch queuing system, however short
+interactive runs can done on the login nodes. You can run Stata interactively
+though the batch queue system.
 
 ## Setting the module environment
 
-Before you can run the software you will need to load the Stata module.
-To load the module from the command line, do:
+Before you can run the software you will need to load the Stata module.  To
+load the latest version of the module from the command line, do:
 
     module add stata
 
@@ -24,59 +24,55 @@ To check that module is loaded you can use:
 
 ## Interactive Stata sessions
 
-It is anticipated that the main benefit of running Stata on the facility
-will be from running non-interactive/unattended batch sessions. However,
-it is also possible to run in interactive more for short test for
-visualisation of data for instance.
+It is anticipated that the main benefit of running Stata on the facility will
+be from running non-interactive/unattended batch sessions. However, it is also
+possible to run interactively for short tests or for visualisation of data for
+instance.
 
-### Interactive sessions on the login nodes -- for short tests only
+### Interactive sessions on the login nodes
 
-Stata can be launched on the login nodes for short tests, ideally less
-than 5 minutes computation, by using the appropriate executable name at
-the command prompt. For the Stata command line interface use:
+Stata can be launched on the login nodes for short tests, by using the
+appropriate executable name at the command prompt. For the Stata command line
+interface use:
 
     stata-mp
 
-and for the full graphical interface (providing you have connected using
-`ssh -X` or `ssh -Y` ) using:
+and for the full graphical interface (providing you have connected using `ssh
+-Y` ) using:
 
     xstata-mp
 
 ### Interactive sessions through interactive shells
 
-For longer interactive sessions, it will be necessary to launch Stata
-through batch queues, using the command `qrsh` . The length of time required is specified
-as an option to the queueing system and specified in the format
-`<hh:mm:ss>` . For instance
-to request an interactive session for two hours, the full command takes
-the form:
+For longer interactive sessions, it will be necessary to launch Stata through
+batch queues, using the command `qrsh` . The length of time required is
+specified as an option to the queueing system and specified in the format
+`<hh:mm:ss>` . For instance to request an interactive session for two hours,
+the full command takes the form:
 
-    qrsh -cwd -V -pe smp 8 -l h_rt=02:00:00,h_vmem=1536M xstata-mp
+    qrsh -cwd -V -pe smp 2 -l h_rt=02:00:00,h_vmem=4.8G xstata-mp
 
 where:
 
 -   `-cwd -V` : run from
     current directory and with current environment, i.e. loaded module.
--   `-pe smp 8` : request 8
-    cores in shared memory environment. The requests appropriate number
-    of computational cores to take advantage of the multicore nature of
-    Stata.
--   `00:02:00` : is the
+-   `-pe smp 2` : request 2 cores in shared memory environment. This requests
+    an appropriate number of computational cores to take advantage of the
+    2-core site license for Stata.
+-   `02:00:00` : is the
     length of time needed for the job, 2 hours in this case. Job will be
     killed when this time has elapsed.
--   `h_vmem=1536M` : Amount
-    of memory requested per core. The value given here will make use of
-    all available memory on the majority of the nodes.
+-   `h_vmem=4.8G` : Amount of memory requested per core. The value given here
+    is a sensible default, but you can use more or less as necessary.
 
-For more details about these and other available options please look at
-the page on [Interactive jobs](../../usage/interactive).
+For more details about these and other available options please look at the
+page on [Interactive jobs](../../usage/interactive).
 
 ## Batch execution
 
 In oder to submit a batch job to the cluster it is necessary to use a
-submission script. An example submission script for ARC2,
-`stata_sub_example.sh` ,
-takes the form:
+submission script. An example submission script for ARC4,
+`stata_sub_example.sh`, takes the form:
 
     #!/bin/bash
     # Batch script to run a Stata/MP job
@@ -89,11 +85,13 @@ takes the form:
 
     # To get an email when the job begins and ends- fill in your
     #$ -m be
-    #$ -M @leeds.ac.uk
 
-    # Request 8 cores from the machine.
+    # Request 2 cores from the machine.
     #Current version of Stata can run on a maximum of 8 Cores
-    #$ -l np=8
+    #$ -pe smp 2
+
+    # Request 4.8Gbytes per core
+    #$ -l h_vmem=4.8G
 
     # Load the Stata module
     module add stata
@@ -106,34 +104,43 @@ The job can then be submitted to the queuing system using the command:
 
     qsub stata_sub_example.sh
 
-For more details on options used above and some of the other options
-available please look at the page on [Batch jobs](../../usage/batchjob).
+For more details on options used above and some of the other options available
+please look at the page on [Batch jobs](../../usage/batchjob).
 
 ## Using Stata Python integration
 
-Stata allows for integration of Python within a Stata session.
-From Stata 16 onwards it is possible to use Python from within Stata allowing you to embed and execute Python code directly.
+Stata allows for integration of Python within a Stata session.  From Stata 16
+onwards it is possible to use Python from within Stata allowing you to embed
+and execute Python code directly.
 
-For this to work Stata needs to be able to find an installation of Python on your system.
-On ARC4, Stata defaults to using the system Python 2.7 installation, which is not recommended.
+For this to work Stata needs to be able to find an installation of Python on
+your system.  On ARC4, Stata defaults to using the system Python 2.7
+installation, which is not recommended.
 
-We recommend taking the following steps to allow Stata to use the [Anaconda Python 3 distribution](../compilers/anaconda) that is installed on ARC4.
+We recommend taking the following steps to allow Stata to use the [Anaconda
+Python 3 distribution](../compilers/anaconda) that is installed on ARC4.
 
-First, create a new Conda environment using the Conda package manager tool, within which you can install your preferred Python version.
-Creating a [new Conda environment](../compilers/anaconda#creating-custom-environments) allows you to separate the dependencies required for your Stata Python integration from any other Python dependencies you may have.
+First, create a new Conda environment using the Conda package manager tool,
+within which you can install your preferred Python version.  Creating a [new
+Conda environment](../compilers/anaconda.html#creating-custom-environments)
+allows you to separate the dependencies required for your Stata Python
+integration from any other Python dependencies you may have.
 
 ```bash
-$ module add test anaconda stata/16
+$ module add test anaconda stata/17
 
-$ conda create -n statapy python=3.10
+$ conda create -yn statapy python=3.10
 
 $ source activate statapy
 ```
 
-Having activate our `statapy` environment we can now install any Python packages we require using `pip` or `conda`.
+Having activate our `statapy` environment we can now install any Python
+packages we require using `pip` or `conda`.
 
-Next, we need to configure our Stata session to use the Conda-installed version of Python.
-To do this we need to set two settings in Stata `python_exec` and `python_userpath`, you can view these settings directly within Stata by running `python query`.
+Next, we need to configure our Stata session to use the Conda-installed version
+of Python.  To do this we need to set two settings in Stata `python_exec` and
+`python_userpath`, you can view these settings directly within Stata by running
+`python query`.
 
 ```stata
 . python query
@@ -152,37 +159,48 @@ To do this we need to set two settings in Stata `python_exec` and `python_userpa
 Here you can see the default setting uses the system installation of Python 2.7.
 We can change this with the following steps:
 
-1. Find out the absolute path to your Conda-installed `python` executable
+1. Find out the absolute path to your Conda-installed `python` executable.  The
+   simplest way to do this is to activate your Conda environment and run `which
+   python` in the shell.  This should return a path location to your
+   Conda-installed Python.
+   To find the correct path for `python_userpath` you will need to identify
+   the location of `site-packages` in your Conda environment.  You can find
+   this out by running:
+   ```bash
+   python -c 'import sys; print(sys.path);'`
+   ```
+   in the shell.
+   This will return for you a list of entries one of which will have a format
+   of `/home/home01/arcuser/.conda/envs/ENV_NAME/lib/PY_VERSION/site-packages`
+   where `ENV_NAME` is the name of your Conda environment and `PY_VERSION` is
+   the version of Python you installed.
 
-    The simplest way to do this is to activate your Conda environment and run `which python` in the shell.
-    This should return a path location to your Conda-installed Python.
+2. Use the path from step 1. to set the `python_exec` and `python_userpath`
+   settings in Stata.
 
-    To find the correct path for `python_userpath` you will need to identify the location of `site-packages` in your Conda environment.
-    You can find this out by running ` python -c 'import sys; print(sys.path);'` in the shell.
-    This will return for you a list of entries one of which will have a format of
-    `/home/home01/arcuser/.conda/envs/ENV_NAME/lib/PY_VERSION/site-packages`
-    Where `ENV_NAME` is the name of your Conda environment and `PY_VERSION` is the version of Python you installed.
+   In the example below the paths are specified for the `arcuser`, you will
+   need to use the path provided by `which python` which will include the path
+   to your /home directory.
 
-2. Use the path from step 1. to set the `python_exec` and `python_userpath` settings in Stata
+   When setting `python_userpath` you should use the `site-package` path you
+   identified in step 1.
 
-    In the example below the paths are specified for the `arcuser`, you will need to use the path provided by `which python`
-    which will include the path to your /home directory.
+   You can set these settings with the following commands within Stata, using
+   example paths below:
 
-    When setting `python_userpath` you should use the `site-package` path you identified in step 1.
+   ```stata
+   . set python_exec ~/.conda/envs/statapy/bin/python, permanently
+   (python_exec preference recorded)
 
-    You can set these settings with the following commands, using example paths below:
+   . set python_userpath /home/home01/arcuser/.conda/envs/statapy/lib/python3.10/site-packages, permanently
+   (python_userpath preference recorded)
+   ```
 
-    ```stata
-    . set python_exec /home/home01/arcuser/.conda/envs/statapy/bin/python, permanently
-    (python_exec preference recorded)
+This will set these changes to the Python settings permanently for your user on
+ARC4, so that you do not have to change these settings in the future.
 
-    . set python_userpath /home/home01/arcuser/.conda/envs/statapy/lib/python3.10/site-packages, permanently
-    (python_userpath preference recorded)
-    ```
-
-This will set these changes to the Python settings permanently for your user on ARC4, so that you do not have to change these settings in the future.
-
-You can confirm these changes are in place by running `python query` in the Stata console again.
+You can confirm these changes are in place by running `python query` in the
+Stata console again.
 
 ```stata
 . python query
@@ -195,9 +213,8 @@ You can confirm these changes are in place by running `python query` in the Stat
       initialized          no
       version              3.10.4
       architecture         64-bit
-      library path         /home/home01/arcuser/.conda/envs/statapy/lib/libpython
-> 3.10m.so
-
+      library path         /home/home01/arcuser/.conda/envs/statapy/lib/libpython.3.10m.so
 ```
 
-Once these settings are configured you will be able to use Python from within Stata on ARC4.
+Once these settings are configured you will be able to use Python from within
+Stata on ARC4.

@@ -42,8 +42,8 @@ sections:
       sections:
       - file: software/applications/ansys/ansyscli
       - file: software/applications/ansys/cfx
-      - file: software/applications/ansys/fluent
       - file: software/applications/ansys/chemkin
+      - file: software/applications/ansys/fluent
       - file: software/applications/ansys/lsdyna
       - file: software/applications/ansys/rsm
     - file: software/applications/cesm

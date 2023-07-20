@@ -27,3 +27,8 @@ lsdyna I=example.k ncpu=$NSLOTS
 ```
 
 Remember to replace `<port@host>` with a suitable value for your license.
+
+### Version notes
+
+This uses the SMP Single Precision executable.  If you require other variants
+of LS-DYNA, please get in touch.

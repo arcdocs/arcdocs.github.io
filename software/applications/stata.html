@@ -1259,8 +1259,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#interactive-sessions-on-the-login-nodes-for-short-tests-only">
-     Interactive sessions on the login nodes – for short tests only
+    <a class="reference internal nav-link" href="#interactive-sessions-on-the-login-nodes">
+     Interactive sessions on the login nodes
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1322,8 +1322,8 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#interactive-sessions-on-the-login-nodes-for-short-tests-only">
-     Interactive sessions on the login nodes – for short tests only
+    <a class="reference internal nav-link" href="#interactive-sessions-on-the-login-nodes">
+     Interactive sessions on the login nodes
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1359,17 +1359,17 @@ title="Print to PDF"
 <h2>Access to Stata<a class="headerlink" href="#access-to-stata" title="Permalink to this headline">#</a></h2>
 <section id="arc-4">
 <h3>ARC 4<a class="headerlink" href="#arc-4" title="Permalink to this headline">#</a></h3>
-<p>Stata 15 and Stata 16 are currently available on ARC4 for all users
-via our site wide license that supports jobs running on up to 2 cores.</p>
-<p>Stata should be primarily run through batch queuing system, however
-short interactive runs can done on the login nodes. You can run Stata
-interactively though the batch queue system.</p>
+<p>A number of different versions of Stata are currently available on ARC4 for all
+users via our site wide license that supports jobs running on up to 2 cores.</p>
+<p>Stata should be primarily run through batch queuing system, however short
+interactive runs can done on the login nodes. You can run Stata interactively
+though the batch queue system.</p>
 </section>
 </section>
 <section id="setting-the-module-environment">
 <h2>Setting the module environment<a class="headerlink" href="#setting-the-module-environment" title="Permalink to this headline">#</a></h2>
-<p>Before you can run the software you will need to load the Stata module.
-To load the module from the command line, do:</p>
+<p>Before you can run the software you will need to load the Stata module.  To
+load the latest version of the module from the command line, do:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>module add stata
 </pre></div>
 </div>
@@ -1380,60 +1380,55 @@ To load the module from the command line, do:</p>
 </section>
 <section id="interactive-stata-sessions">
 <h2>Interactive Stata sessions<a class="headerlink" href="#interactive-stata-sessions" title="Permalink to this headline">#</a></h2>
-<p>It is anticipated that the main benefit of running Stata on the facility
-will be from running non-interactive/unattended batch sessions. However,
-it is also possible to run in interactive more for short test for
-visualisation of data for instance.</p>
-<section id="interactive-sessions-on-the-login-nodes-for-short-tests-only">
-<h3>Interactive sessions on the login nodes – for short tests only<a class="headerlink" href="#interactive-sessions-on-the-login-nodes-for-short-tests-only" title="Permalink to this headline">#</a></h3>
-<p>Stata can be launched on the login nodes for short tests, ideally less
-than 5 minutes computation, by using the appropriate executable name at
-the command prompt. For the Stata command line interface use:</p>
+<p>It is anticipated that the main benefit of running Stata on the facility will
+be from running non-interactive/unattended batch sessions. However, it is also
+possible to run interactively for short tests or for visualisation of data for
+instance.</p>
+<section id="interactive-sessions-on-the-login-nodes">
+<h3>Interactive sessions on the login nodes<a class="headerlink" href="#interactive-sessions-on-the-login-nodes" title="Permalink to this headline">#</a></h3>
+<p>Stata can be launched on the login nodes for short tests, by using the
+appropriate executable name at the command prompt. For the Stata command line
+interface use:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>stata-mp
 </pre></div>
 </div>
-<p>and for the full graphical interface (providing you have connected using
-<code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-X</span></code> or <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-Y</span></code> ) using:</p>
+<p>and for the full graphical interface (providing you have connected using <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-Y</span></code> ) using:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>xstata-mp
 </pre></div>
 </div>
 </section>
 <section id="interactive-sessions-through-interactive-shells">
 <h3>Interactive sessions through interactive shells<a class="headerlink" href="#interactive-sessions-through-interactive-shells" title="Permalink to this headline">#</a></h3>
-<p>For longer interactive sessions, it will be necessary to launch Stata
-through batch queues, using the command <code class="docutils literal notranslate"><span class="pre">qrsh</span></code> . The length of time required is specified
-as an option to the queueing system and specified in the format
-<code class="docutils literal notranslate"><span class="pre">&lt;hh:mm:ss&gt;</span></code> . For instance
-to request an interactive session for two hours, the full command takes
-the form:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qrsh -cwd -V -pe smp 8 -l h_rt=02:00:00,h_vmem=1536M xstata-mp
+<p>For longer interactive sessions, it will be necessary to launch Stata through
+batch queues, using the command <code class="docutils literal notranslate"><span class="pre">qrsh</span></code> . The length of time required is
+specified as an option to the queueing system and specified in the format
+<code class="docutils literal notranslate"><span class="pre">&lt;hh:mm:ss&gt;</span></code> . For instance to request an interactive session for two hours,
+the full command takes the form:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qrsh -cwd -V -pe smp 2 -l h_rt=02:00:00,h_vmem=4.8G xstata-mp
 </pre></div>
 </div>
 <p>where:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">-cwd</span> <span class="pre">-V</span></code> : run from
 current directory and with current environment, i.e. loaded module.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-pe</span> <span class="pre">smp</span> <span class="pre">8</span></code> : request 8
-cores in shared memory environment. The requests appropriate number
-of computational cores to take advantage of the multicore nature of
-Stata.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">00:02:00</span></code> : is the
+<li><p><code class="docutils literal notranslate"><span class="pre">-pe</span> <span class="pre">smp</span> <span class="pre">2</span></code> : request 2 cores in shared memory environment. This requests
+an appropriate number of computational cores to take advantage of the
+2-core site license for Stata.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">02:00:00</span></code> : is the
 length of time needed for the job, 2 hours in this case. Job will be
 killed when this time has elapsed.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">h_vmem=1536M</span></code> : Amount
-of memory requested per core. The value given here will make use of
-all available memory on the majority of the nodes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">h_vmem=4.8G</span></code> : Amount of memory requested per core. The value given here
+is a sensible default, but you can use more or less as necessary.</p></li>
 </ul>
-<p>For more details about these and other available options please look at
-the page on <a class="reference internal" href="../../usage/interactive.html"><span class="doc std std-doc">Interactive jobs</span></a>.</p>
+<p>For more details about these and other available options please look at the
+page on <a class="reference internal" href="../../usage/interactive.html"><span class="doc std std-doc">Interactive jobs</span></a>.</p>
 </section>
 </section>
 <section id="batch-execution">
 <h2>Batch execution<a class="headerlink" href="#batch-execution" title="Permalink to this headline">#</a></h2>
 <p>In oder to submit a batch job to the cluster it is necessary to use a
-submission script. An example submission script for ARC2,
-<code class="docutils literal notranslate"><span class="pre">stata_sub_example.sh</span></code> ,
-takes the form:</p>
+submission script. An example submission script for ARC4,
+<code class="docutils literal notranslate"><span class="pre">stata_sub_example.sh</span></code>, takes the form:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
 # Batch script to run a Stata/MP job
 
@@ -1445,11 +1440,13 @@ takes the form:</p>
 
 # To get an email when the job begins and ends- fill in your
 #$ -m be
-#$ -M @leeds.ac.uk
 
-# Request 8 cores from the machine.
+# Request 2 cores from the machine.
 #Current version of Stata can run on a maximum of 8 Cores
-#$ -l np=8
+#$ -pe smp 2
+
+# Request 4.8Gbytes per core
+#$ -l h_vmem=4.8G
 
 # Load the Stata module
 module add stata
@@ -1463,28 +1460,37 @@ stata-mp -b do your_do_script.do
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>qsub stata_sub_example.sh
 </pre></div>
 </div>
-<p>For more details on options used above and some of the other options
-available please look at the page on <a class="reference internal" href="../../usage/batchjob.html"><span class="doc std std-doc">Batch jobs</span></a>.</p>
+<p>For more details on options used above and some of the other options available
+please look at the page on <a class="reference internal" href="../../usage/batchjob.html"><span class="doc std std-doc">Batch jobs</span></a>.</p>
 </section>
 <section id="using-stata-python-integration">
 <h2>Using Stata Python integration<a class="headerlink" href="#using-stata-python-integration" title="Permalink to this headline">#</a></h2>
-<p>Stata allows for integration of Python within a Stata session.
-From Stata 16 onwards it is possible to use Python from within Stata allowing you to embed and execute Python code directly.</p>
-<p>For this to work Stata needs to be able to find an installation of Python on your system.
-On ARC4, Stata defaults to using the system Python 2.7 installation, which is not recommended.</p>
-<p>We recommend taking the following steps to allow Stata to use the <a class="reference internal" href="../compilers/anaconda.html"><span class="doc std std-doc">Anaconda Python 3 distribution</span></a> that is installed on ARC4.</p>
-<p>First, create a new Conda environment using the Conda package manager tool, within which you can install your preferred Python version.
-Creating a <a class="reference external" href="../compilers/anaconda#creating-custom-environments">new Conda environment</a> allows you to separate the dependencies required for your Stata Python integration from any other Python dependencies you may have.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span><span class="nb">test</span><span class="w"> </span>anaconda<span class="w"> </span>stata/16
+<p>Stata allows for integration of Python within a Stata session.  From Stata 16
+onwards it is possible to use Python from within Stata allowing you to embed
+and execute Python code directly.</p>
+<p>For this to work Stata needs to be able to find an installation of Python on
+your system.  On ARC4, Stata defaults to using the system Python 2.7
+installation, which is not recommended.</p>
+<p>We recommend taking the following steps to allow Stata to use the <a class="reference internal" href="../compilers/anaconda.html"><span class="doc std std-doc">Anaconda
+Python 3 distribution</span></a> that is installed on ARC4.</p>
+<p>First, create a new Conda environment using the Conda package manager tool,
+within which you can install your preferred Python version.  Creating a <a class="reference external" href="../compilers/anaconda.html#creating-custom-environments">new
+Conda environment</a>
+allows you to separate the dependencies required for your Stata Python
+integration from any other Python dependencies you may have.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span><span class="nb">test</span><span class="w"> </span>anaconda<span class="w"> </span>stata/17
 
-$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>statapy<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10
+$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-yn<span class="w"> </span>statapy<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10
 
 $<span class="w"> </span><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>statapy
 </pre></div>
 </div>
-<p>Having activate our <code class="docutils literal notranslate"><span class="pre">statapy</span></code> environment we can now install any Python packages we require using <code class="docutils literal notranslate"><span class="pre">pip</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code>.</p>
-<p>Next, we need to configure our Stata session to use the Conda-installed version of Python.
-To do this we need to set two settings in Stata <code class="docutils literal notranslate"><span class="pre">python_exec</span></code> and <code class="docutils literal notranslate"><span class="pre">python_userpath</span></code>, you can view these settings directly within Stata by running <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">query</span></code>.</p>
+<p>Having activate our <code class="docutils literal notranslate"><span class="pre">statapy</span></code> environment we can now install any Python
+packages we require using <code class="docutils literal notranslate"><span class="pre">pip</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code>.</p>
+<p>Next, we need to configure our Stata session to use the Conda-installed version
+of Python.  To do this we need to set two settings in Stata <code class="docutils literal notranslate"><span class="pre">python_exec</span></code> and
+<code class="docutils literal notranslate"><span class="pre">python_userpath</span></code>, you can view these settings directly within Stata by running
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">query</span></code>.</p>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span>. python<span class="k"> query</span>
 <span class="o">-------------------------------------------------------------------------------</span>
     Python Settings
@@ -1501,21 +1507,31 @@ To do this we need to set two settings in Stata <code class="docutils literal no
 <p>Here you can see the default setting uses the system installation of Python 2.7.
 We can change this with the following steps:</p>
 <ol>
-<li><p>Find out the absolute path to your Conda-installed <code class="docutils literal notranslate"><span class="pre">python</span></code> executable</p>
-<p>The simplest way to do this is to activate your Conda environment and run <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">python</span></code> in the shell.
-This should return a path location to your Conda-installed Python.</p>
-<p>To find the correct path for <code class="docutils literal notranslate"><span class="pre">python_userpath</span></code> you will need to identify the location of <code class="docutils literal notranslate"><span class="pre">site-packages</span></code> in your Conda environment.
-You can find this out by running <code class="docutils literal notranslate"> <span class="pre">python</span> <span class="pre">-c</span> <span class="pre">'import</span> <span class="pre">sys;</span> <span class="pre">print(sys.path);'</span></code> in the shell.
-This will return for you a list of entries one of which will have a format of
-<code class="docutils literal notranslate"><span class="pre">/home/home01/arcuser/.conda/envs/ENV_NAME/lib/PY_VERSION/site-packages</span></code>
-Where <code class="docutils literal notranslate"><span class="pre">ENV_NAME</span></code> is the name of your Conda environment and <code class="docutils literal notranslate"><span class="pre">PY_VERSION</span></code> is the version of Python you installed.</p>
+<li><p>Find out the absolute path to your Conda-installed <code class="docutils literal notranslate"><span class="pre">python</span></code> executable.  The
+simplest way to do this is to activate your Conda environment and run <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">python</span></code> in the shell.  This should return a path location to your
+Conda-installed Python.
+To find the correct path for <code class="docutils literal notranslate"><span class="pre">python_userpath</span></code> you will need to identify
+the location of <code class="docutils literal notranslate"><span class="pre">site-packages</span></code> in your Conda environment.  You can find
+this out by running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import sys; print(sys.path);&#39;</span><span class="sb">`</span>
+</pre></div>
+</div>
+<p>in the shell.
+This will return for you a list of entries one of which will have a format
+of <code class="docutils literal notranslate"><span class="pre">/home/home01/arcuser/.conda/envs/ENV_NAME/lib/PY_VERSION/site-packages</span></code>
+where <code class="docutils literal notranslate"><span class="pre">ENV_NAME</span></code> is the name of your Conda environment and <code class="docutils literal notranslate"><span class="pre">PY_VERSION</span></code> is
+the version of Python you installed.</p>
 </li>
-<li><p>Use the path from step 1. to set the <code class="docutils literal notranslate"><span class="pre">python_exec</span></code> and <code class="docutils literal notranslate"><span class="pre">python_userpath</span></code> settings in Stata</p>
-<p>In the example below the paths are specified for the <code class="docutils literal notranslate"><span class="pre">arcuser</span></code>, you will need to use the path provided by <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">python</span></code>
-which will include the path to your /home directory.</p>
-<p>When setting <code class="docutils literal notranslate"><span class="pre">python_userpath</span></code> you should use the <code class="docutils literal notranslate"><span class="pre">site-package</span></code> path you identified in step 1.</p>
-<p>You can set these settings with the following commands, using example paths below:</p>
-<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span>.<span class="k"> set</span> python_exec <span class="o">/</span>home<span class="o">/</span>home01<span class="o">/</span>arcuser<span class="o">/</span>.conda<span class="o">/</span>envs<span class="o">/</span>statapy<span class="o">/</span>bin<span class="o">/</span>python, permanently
+<li><p>Use the path from step 1. to set the <code class="docutils literal notranslate"><span class="pre">python_exec</span></code> and <code class="docutils literal notranslate"><span class="pre">python_userpath</span></code>
+settings in Stata.</p>
+<p>In the example below the paths are specified for the <code class="docutils literal notranslate"><span class="pre">arcuser</span></code>, you will
+need to use the path provided by <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">python</span></code> which will include the path
+to your /home directory.</p>
+<p>When setting <code class="docutils literal notranslate"><span class="pre">python_userpath</span></code> you should use the <code class="docutils literal notranslate"><span class="pre">site-package</span></code> path you
+identified in step 1.</p>
+<p>You can set these settings with the following commands within Stata, using
+example paths below:</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span>.<span class="k"> set</span> python_exec <span class="o">~/</span>.conda<span class="o">/</span>envs<span class="o">/</span>statapy<span class="o">/</span>bin<span class="o">/</span>python, permanently
 (python_exec preference recorded)
 
 .<span class="k"> set</span> python_userpath <span class="o">/</span>home<span class="o">/</span>home01<span class="o">/</span>arcuser<span class="o">/</span>.conda<span class="o">/</span>envs<span class="o">/</span>statapy<span class="o">/</span>lib<span class="o">/</span>python3<span class="m">.10</span><span class="o">/</span>site<span class="o">-</span>packages, permanently
@@ -1524,8 +1540,10 @@ which will include the path to your /home directory.</p>
 </div>
 </li>
 </ol>
-<p>This will set these changes to the Python settings permanently for your user on ARC4, so that you do not have to change these settings in the future.</p>
-<p>You can confirm these changes are in place by running <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">query</span></code> in the Stata console again.</p>
+<p>This will set these changes to the Python settings permanently for your user on
+ARC4, so that you do not have to change these settings in the future.</p>
+<p>You can confirm these changes are in place by running <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">query</span></code> in the
+Stata console again.</p>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span>. python<span class="k"> query</span>
 <span class="o">-------------------------------------------------------------------------------</span>
     Python Settings
@@ -1536,11 +1554,11 @@ which will include the path to your /home directory.</p>
       initialized         <span class="k"> no</span>
 <span class="k">      version</span>              <span class="m">3.10.4</span>
       architecture         <span class="m">64</span><span class="o">-</span>bit
-      library path         <span class="o">/</span>home<span class="o">/</span>home01<span class="o">/</span>arcuser<span class="o">/</span>.conda<span class="o">/</span>envs<span class="o">/</span>statapy<span class="o">/</span>lib<span class="o">/</span>libpython
-<span class="o">&gt;</span> <span class="m">3.</span>10m<span class="m">.</span>so
+      library path         <span class="o">/</span>home<span class="o">/</span>home01<span class="o">/</span>arcuser<span class="o">/</span>.conda<span class="o">/</span>envs<span class="o">/</span>statapy<span class="o">/</span>lib<span class="o">/</span>libpython<span class="m">.3.</span>10m<span class="m">.</span>so
 </pre></div>
 </div>
-<p>Once these settings are configured you will be able to use Python from within Stata on ARC4.</p>
+<p>Once these settings are configured you will be able to use Python from within
+Stata on ARC4.</p>
 </section>
 </section>
 

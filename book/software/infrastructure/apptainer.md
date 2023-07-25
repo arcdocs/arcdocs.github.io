@@ -16,7 +16,7 @@ command:
 $ module add apptainer
 ```
 
-The apptainer module is available on ARC4:
+The apptainer module is available on both ARC3 and ARC4:
 
 ```{list-table}
 :header-rows: 1

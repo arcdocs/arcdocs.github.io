@@ -19,7 +19,7 @@ the MPP version should be used for larger problems.
 
 Remember to replace `<port@host>` with a suitable value for your license.
 
-### SMP Single Precision
+### SMP Single Precision, 4 cores
 ```bash
 #!/bin/bash
 #$ -cwd -V
@@ -33,7 +33,7 @@ export LSTC_LICENSE=ANSYS
 lsdyna I=example.k ncpu=$NSLOTS
 ```
 
-### SMP Double Precision
+### SMP Double Precision, 4 cores
 ```bash
 #!/bin/bash
 #$ -cwd -V
@@ -47,12 +47,11 @@ export LSTC_LICENSE=ANSYS
 lsdyna -dp I=example.k ncpu=$NSLOTS
 ```
 
-### MPP Single Precision
+### MPP Single Precision, on a whole node
 ```bash
 #!/bin/bash
 #$ -cwd -V
 #$ -l h_rt=1:00:00
-#$ -l h_vmem=4.8G
 #$ -m be
 #$ -l nodes=1
 module add ansys/2022R1
@@ -61,12 +60,11 @@ export LSTC_LICENSE=ANSYS
 lsdyna -dis -np $NSLOTS -lsdynampp I=example.k
 ```
 
-### MPP Double Precision
+### MPP Double Precision, on a whole node
 ```bash
 #!/bin/bash
 #$ -cwd -V
 #$ -l h_rt=1:00:00
-#$ -l h_vmem=4.8G
 #$ -m be
 #$ -l nodes=1
 module add ansys/2022R1

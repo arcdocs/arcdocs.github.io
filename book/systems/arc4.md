@@ -17,6 +17,7 @@ System will turbo where it can. Using fewer cores will mean active cores can tur
 
 There are three types of node on this cluster: **standard nodes**; **high memory nodes** and **GPU nodes**.
 
+(arc4:standard-nodes)=
 #### Standard nodes
 
 149 nodes with 40 cores and 192GB of memory each and an SSD within the node with 170GB of storage. This provides **5960** cores of **standard compute**.
@@ -31,10 +32,12 @@ These can be requested by adding this line to submission scripts:
 
 `#$ -l node_type=40core-768G`
 
+(arc4:gpgpu)=
 #### GPGPU nodes
 3 nodes each with 40 cores, 192GB of system memory, a hard disk drive within the node with 800GB of storage and **4 x NVIDIA V100 GPUs**.
 [See GPU section below](#using-the-v100-gpu-nodes) on how to access these nodes
 
+(arc4:lustre)=
 ### Lustre Storage
 
 Two fail-over pairs delivering 11GB/s via the InfiniBand network to **1.2PB** usable storage on **/nobackup**

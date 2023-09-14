@@ -62,6 +62,7 @@ Image Copyright © [geohackweek](https://geohackweek.github.io/datasharing/01-co
 
 Each environments packages and installed python versions are isolated from one another preventing notorious package 'dependency hell' situations. Conda also allows us to share environment specifications through the creation of simple text files, aiding reproducibility.
 
+(anaconda:creating-custom-environments)=
 ### Creating custom environments
 
 To create a new Python 3 environment with the Pandas, Numpy and Scipy libraries named example_env_1, use the command:
@@ -96,9 +97,9 @@ $ conda env list
 
 #### First time .conda setup
 
-By default conda stores files relating to environments in the `.conda` directory which lives in your home directory. This `.conda` directory can often get quite large with all the different packages installed for different environments which can fill up a users [home directory quota](../../getting_started/nobackup#HOME-directory).
+By default conda stores files relating to environments in the `.conda` directory which lives in your home directory. This `.conda` directory can often get quite large with all the different packages installed for different environments which can fill up a users [home directory quota](storage:home-directory).
 
-To avoid this you can use the following steps to move your `.conda` directory to your [/nobackup directory](../../getting_started/nobackup) instead.
+To avoid this you can use the following steps to move your `.conda` directory to your [/nobackup directory](storage:nobackup) instead.
 
 ```bash
 $ cd ~

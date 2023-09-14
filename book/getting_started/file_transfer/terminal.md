@@ -3,7 +3,7 @@
 We can also download and upload files to HPC using commands in a Terminal. The following steps will outline the use of two commands `scp` and `rsync` that allow for file transfer from a local machine to a remote machine or vice versa.
 
 ```{note} **MobaXTerm users** <br>
-If you're using MobaXTerm's local terminal make sure you've configured it properly using the steps outlined in [Logging on](../logon.html#configuring-mobaxterm-terminal).
+If you're using MobaXTerm's local terminal make sure you've configured it properly using the steps outlined in [Logging on](logon:installing-mobaxterm).
 ```
 
 ## Using scp

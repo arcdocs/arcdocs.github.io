@@ -21,7 +21,7 @@ You will also need to include this within any job submission scripts to ensure y
 
 ## Documentation
 
-Documentation is available for Schrodinger on ARC3/ARC4. It is possible to load this directly on ARC3/ARC4 when connecting with [X11 graphical forwarding](../../getting_started/logon#graphics-forwarding-x11), using FireFox to open the HTML documentation pages with the following command:
+Documentation is available for Schrodinger on ARC3/ARC4. It is possible to load this directly on ARC3/ARC4 when connecting with [X11 graphical forwarding](../../getting_started/logon/x11-graphics), using FireFox to open the HTML documentation pages with the following command:
 
 ```bash
 $ module add schrodinger/2020-1
@@ -41,7 +41,7 @@ This allows you to access a number of executables from the command line and adds
 ## Maestro
 
 ```{warning}
-To use maestro from ARC3/ARC4 you will need to connect with [X11 graphical forwarding](../../getting_started/logon#graphics-forwarding-x11) enabled
+To use maestro from ARC3/ARC4 you will need to connect with [X11 graphical forwarding](../../getting_started/logon/x11-graphics) enabled
 ```
 
 Maestro is the primary graphic user interface to the Schrodinger suite of tools and can be used to submit jobs directly to the scheduling system.
@@ -66,7 +66,7 @@ It is not recommended to use maestro for developing your workflows via this meth
 Current licensing restrictions mean glide is only able to run on one core at any one time.
 ```
 
-Glide is a tool that allows for high speed computation docking for screening large numbers of compounds. It is available from the command line or can be specified from within the Maestro GUI. You can access the glide documentation on ARC4 using the following command (if you are connected with [X11 graphical forwarding](../../getting_started/logon#graphics-forwarding-x11)).
+Glide is a tool that allows for high speed computation docking for screening large numbers of compounds. It is available from the command line or can be specified from within the Maestro GUI. You can access the glide documentation on ARC4 using the following command (if you are connected with [X11 graphical forwarding](../../getting_started/logon/x11-graphics)).
 
 ```bash
 $ xdg-open $SCHRODINGER_HOME/docs/glide_user_manual/glide_intro.htm
@@ -130,7 +130,7 @@ Covalent docking is a functionality within the glide tool within Schrodinger tha
 
 > The Covalent Docking protocol addresses the process as follows. First, it determines whether ligands can associate with the receptor in a suitable pose. This is done by mutating the reactive residue on the receptor to glycine, so that the pose of the side chain does not unduly influence the association of the ligand, then docking the ligands with Glide, with constraints between the reactive residue and the reactive group on the ligand. Once suitable poses are found, the receptor is restored, and the poses of the side chain on the reactive residue are explored in the presence of the associated ligand, to find the best poses for reaction. The covalent bond is formed, and the ligand and reactive residue are minimized to relieve strain. The poses for a given ligand are clustered, and a representative pose is chosen from each cluster. These poses undergo a full minimization, and the representatives are ranked by their Prime energy.
 
-You can read more about using covalent docking from the Schrodinger documentation that can be read directly on ARC4 using the following command (if you are connected with [X11 graphical forwarding](../../getting_started/logon#graphics-forwarding-x11)).
+You can read more about using covalent docking from the Schrodinger documentation that can be read directly on ARC4 using the following command (if you are connected with [X11 graphical forwarding](../../getting_started/logon/x11-graphics)).
 
 ```bash
 $ xdg-open $SCHRODINGER_HOME/docs/covalent_docking_user_manual/covalent_docking.htm

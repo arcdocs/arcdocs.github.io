@@ -12,7 +12,7 @@ sections:
     - file: getting_started/logon/x11-graphics
     - file: getting_started/logon/fingerprint-details
   - file: getting_started/linuxbasics
-  - file: getting_started/nobackup
+  - file: getting_started/storage
   - file: getting_started/file_transfer
     sections:
     - file: getting_started/file_transfer/mobaxterm
@@ -182,3 +182,5 @@ sections:
 - url: https://arc.leeds.ac.uk/training/
   title: Training
 - file: contact/start
+- url: https://arc.leeds.ac.uk
+  title: Research Computing Website

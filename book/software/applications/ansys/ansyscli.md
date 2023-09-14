@@ -30,7 +30,7 @@ This runs it graphically, so it's important you have X forwarding enabled or are
 
 When running through the [batch queues](../../../usage/batchjob), no interactive input is possible. It is possible to create a journal file which contains all of the commands that would normally be entered within Ansys CLI, in a similar way to how it works with Fluent.
 
-It is then necessary to construct a [job submission script](../../../usage/batchjob.html#resource-specification) that will run Ansys CLI. The job submission script begins with a request for resources and the executable to be run, e.g.:
+It is then necessary to construct a [job submission script](batchjob:resource-specification) that will run Ansys CLI. The job submission script begins with a request for resources and the executable to be run, e.g.:
 
 ```bash
 #!/bin/bash

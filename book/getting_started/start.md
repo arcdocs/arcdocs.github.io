@@ -5,6 +5,8 @@ queries people have around using the High Performance Computing facilities (ARC3
 
 ## Find details on:
 
+- [What is HPC?](./what_is_hpc)
+
 - [Requesting an account for HPC systems](./request_hpc_acct)
 
 - [Requesting software installation on HPC](./request_install)
@@ -13,6 +15,8 @@ queries people have around using the High Performance Computing facilities (ARC3
 
 - [Linux basics](./linuxbasics)
 
+- [Storage on HPC](./nobackup)
+
 - [File Transfer on HPC](./file_transfer)
 
-- [Storage on HPC](./nobackup)
+- [Remote Graphics – X2GO](./x2go)

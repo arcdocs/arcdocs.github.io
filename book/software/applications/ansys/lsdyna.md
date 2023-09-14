@@ -12,7 +12,14 @@ More information about LS-DYNA can be found on the [Ansys Website](https://www.a
 More details about using Ansys for the first time and setting license server details can be found on the [Ansys page](../ansys.html#Additional-Step-for-Using-Ansys-the-First-Time).
 ```
 
-### Batch job example
+### Batch job examples
+
+Guidance provided by Oasys suggests that SMP can scale to ~8 cores, and that
+the MPP version should be used for larger problems.
+
+Remember to replace `<port@host>` with a suitable value for your license.
+
+### SMP Single Precision
 ```bash
 #!/bin/bash
 #$ -cwd -V
@@ -26,9 +33,44 @@ export LSTC_LICENSE=ANSYS
 lsdyna I=example.k ncpu=$NSLOTS
 ```
 
-Remember to replace `<port@host>` with a suitable value for your license.
+### SMP Double Precision
+```bash
+#!/bin/bash
+#$ -cwd -V
+#$ -l h_rt=1:00:00
+#$ -l h_vmem=4.8G
+#$ -m be
+#$ -pe smp 4
+module add ansys/2022R1
+export ANSYSLMD_LICENSE_FILE=<port@host>
+export LSTC_LICENSE=ANSYS
+lsdyna -dp I=example.k ncpu=$NSLOTS
+```
 
-### Version notes
+### MPP Single Precision
+```bash
+#!/bin/bash
+#$ -cwd -V
+#$ -l h_rt=1:00:00
+#$ -l h_vmem=4.8G
+#$ -m be
+#$ -l nodes=1
+module add ansys/2022R1
+export ANSYSLMD_LICENSE_FILE=<port@host>
+export LSTC_LICENSE=ANSYS
+lsdyna -dis -np $NSLOTS -lsdynampp I=example.k
+```
 
-This uses the SMP Single Precision executable.  If you require other variants
-of LS-DYNA, please get in touch.
+### MPP Double Precision
+```bash
+#!/bin/bash
+#$ -cwd -V
+#$ -l h_rt=1:00:00
+#$ -l h_vmem=4.8G
+#$ -m be
+#$ -l nodes=1
+module add ansys/2022R1
+export ANSYSLMD_LICENSE_FILE=<port@host>
+export LSTC_LICENSE=ANSYS
+lsdyna -dis -np $NSLOTS -lsdynampp -dp I=example.k
+```

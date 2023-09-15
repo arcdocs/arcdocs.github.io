@@ -122,7 +122,7 @@ Python 3 distribution](../compilers/anaconda) that is installed on ARC4.
 
 First, create a new Conda environment using the Conda package manager tool,
 within which you can install your preferred Python version.  Creating a [new
-Conda environment](../compilers/anaconda.html#creating-custom-environments)
+Conda environment](anaconda:creating-custom-environments)
 allows you to separate the dependencies required for your Stata Python
 integration from any other Python dependencies you may have.
 

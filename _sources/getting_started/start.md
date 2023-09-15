@@ -15,4 +15,4 @@ queries people have around using the High Performance Computing facilities (ARC3
 
 - [File Transfer on HPC](./file_transfer)
 
-- [Storage on HPC](./nobackup)
+- [Storage on HPC](./storage)

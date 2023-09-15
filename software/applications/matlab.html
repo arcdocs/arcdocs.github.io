@@ -1,48 +1,60 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>MATLAB &#8212; ARC Documentation</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,63 +62,104 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'software/applications/matlab';</script>
     <link rel="canonical" href="https://arcdocs.leeds.ac.uk/software/applications/matlab.html" />
     <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Molpro" href="molpro.html" />
     <link rel="prev" title="IDL" href="idl.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
 
-    
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../welcome.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">ARC Documentation</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -116,1341 +169,451 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../getting_started/start.html">
-   Getting Started
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../getting_started/request_hpc_acct.html">
-     Requesting an HPC Account
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../getting_started/request_install.html">
-     Requesting a software install on HPC
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../getting_started/logon.html">
-     Logging on
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-    <label for="toctree-checkbox-2">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../getting_started/logon/logon-campus.html">
-       Connecting from campus
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../getting_started/logon/logon-off-campus.html">
-       Connecting from off campus
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../getting_started/logon/x11-graphics.html">
-       Graphics forwarding (X11) from a Terminal
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../getting_started/logon/fingerprint-details.html">
-       Fingerprint details
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../getting_started/linuxbasics.html">
-     Linux basics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../getting_started/nobackup.html">
-     Storage on HPC
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../getting_started/file_transfer.html">
-     File Transfer
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-    <label for="toctree-checkbox-3">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../getting_started/file_transfer/mobaxterm.html">
-       Using MobaXTerm
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../getting_started/file_transfer/terminal.html">
-       Using a Terminal
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../getting_started/file_transfer/smbclient.html">
-       Using smbclient
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../getting_started/file_transfer/rclone.html">
-       Using rclone
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../getting_started/file_transfer/sftp.html">
-       Using SFTP
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../getting_started/x2go.html">
-     Remote Graphics – X2GO
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../usage/start.html">
-   Usage
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../usage/batchjob.html">
-     Batch jobs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../usage/interactive.html">
-     Interactive jobs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../usage/troubleshooting.html">
-     Troubleshooting jobs on HPC
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../usage/taskarrays.html">
-     Task arrays
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../usage/gpgpu.html">
-     General Purpose GPU
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../usage/scratch.html">
-     Temporary/Scratch Storage on Compute nodes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../usage/examples.html">
-     Job Examples
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../usage/advanced.html">
-     Advanced Job Examples
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../usage/acknowledgement.html">
-     ARC Acknowledgement
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../start.html">
-   Software
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active has-children">
-    <a class="reference internal" href="start.html">
-     Applications
-    </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-    <label for="toctree-checkbox-6">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul class="current">
-     <li class="toctree-l3">
-      <a class="reference internal" href="abaqus.html">
-       Abaqus
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="amber.html">
-       Amber
-      </a>
-     </li>
-     <li class="toctree-l3 has-children">
-      <a class="reference internal" href="ansys.html">
-       Ansys
-      </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-      <label for="toctree-checkbox-7">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="ansys/ansyscli.html">
-         Ansys CLI
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="ansys/cfx.html">
-         Cfx
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="ansys/chemkin.html">
-         Chemkin
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="ansys/fluent.html">
-         Fluent
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="ansys/lsdyna.html">
-         LS-DYNA
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="ansys/rsm.html">
-         RSM
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="cesm.html">
-       CESM
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="comsol.html">
-       Comsol
-      </a>
-     </li>
-     <li class="toctree-l3 has-children">
-      <a class="reference internal" href="dl_poly.html">
-       DL_POLY
-      </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-      <label for="toctree-checkbox-8">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="dlpoly/license.html">
-         DLpoly license terms
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="gaussian.html">
-       Gaussian
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="gromacs.html">
-       Gromacs
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="gurobi.html">
-       Gurobi
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="idl.html">
-       IDL
-      </a>
-     </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
-       MATLAB
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="molpro.html">
-       Molpro
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="namd.html">
-       NAMD
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="openfoam.html">
-       OpenFoam
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="paraview.html">
-       Paraview
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="R.html">
-       R
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="schrodinger.html">
-       Schrodinger
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="stata.html">
-       Stata
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="visit.html">
-       VisIt
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="vmd.html">
-       VMD (Visual Molecular Dynamics)
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../compilers/start.html">
-     Compilers
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-    <label for="toctree-checkbox-9">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../compilers/anaconda.html">
-       Anaconda
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../compilers/cuda.html">
-       Cuda
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../compilers/gnu.html">
-       GNU
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../compilers/go.html">
-       Go
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../compilers/intel.html">
-       Intel
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../compilers/java.html">
-       Java
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../compilers/julia.html">
-       Julia
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../compilers/llvm.html">
-       LLVM
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../compilers/lua.html">
-       Lua
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../compilers/pgi.html">
-       PGI
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../compilers/python.html">
-       Python
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../compilers/yasm.html">
-       YASM
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../infrastructure/start.html">
-     Infrastructure
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-    <label for="toctree-checkbox-10">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/advisor.html">
-       Advisor
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/allinea.html">
-       Allinea
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/apptainer.html">
-       Apptainer
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/arm-forge.html">
-       Arm Forge
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/bazel.html">
-       Bazel
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/cmake.html">
-       Cmake
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/gdb.html">
-       GDB
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/git.html">
-       Git
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/inspector.html">
-       Inspector
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/licenses.html">
-       Licenses
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/parallel.html">
-       GNU Parallel
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/sge.html">
-       SGE
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/singularity.html">
-       Singularity
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/subversion.html">
-       Subversion
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/system.html">
-       System
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/test.html">
-       Test
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/unison.html">
-       Unison
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/user.html">
-       User
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/virtualgl.html">
-       Virtual GL
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/vtune.html">
-       Vtune
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../libraries/start.html">
-     Libraries
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-    <label for="toctree-checkbox-11">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/linalg.html">
-       Numerical Libraries
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/armadillo.html">
-       Armadillo
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/atlas.html">
-       ATLAS
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/boost.html">
-       Boost
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/cgal.html">
-       CGAL
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/cube.html">
-       Cube
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/cudnn.html">
-       cuDNN
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/darshan.html">
-       Darshan
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/dyninst.html">
-       Dyninst
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/eigen.html">
-       Eigen
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/extrae.html">
-       Extrae
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/ffmpeg.html">
-       FFmpeg
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/fftw.html">
-       FFTW
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/gdal.html">
-       GDAL
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/geos.html">
-       GEOS
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/glew.html">
-       GLEW
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/glfw.html">
-       GLFW
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/glpk.html">
-       GLPK
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/gsl.html">
-       GSL
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/gstreamer.html">
-       GStreamer
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/hdf5.html">
-       HDF5
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/hpctoolkit.html">
-       HPCToolkit
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/hypre.html">
-       HYPRE
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/intelmpi.html">
-       IntelMPI
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/itac.html">
-       ITAC
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/libdwarf.html">
-       Libdwarf
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/libx264.html">
-       Libx264
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/libxmlplusplus.html">
-       Libxmlplusplus
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/matlab-runtime.html">
-       MATLAB-Runtime
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/mdbtools.html">
-       MDBTools
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/mesa.html">
-       Mesa
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/mkl.html">
-       MKL
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/mpe2.html">
-       MPE2
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/mpiP.html">
-       mpiP
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/must.html">
-       MUST
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/mvapich2.html">
-       MVAPICH2
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/nag-matlab.html">
-       NAG-MATLAB
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/netcdf.html">
-       Netcdf
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/netlib.html">
-       Netlib
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/ompP.html">
-       ompP
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/opencv.html">
-       OpenCV
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/openmpi.html">
-       OpenMPI
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/openslide.html">
-       OpenSlide
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/openspeedshop.html">
-       Open|SpeedShop
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/osmesa.html">
-       Osmesa
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/otf2.html">
-       OTF2
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/papi.html">
-       PAPI
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/paraver.html">
-       Paraver
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/pdt.html">
-       PDT
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/petsc.html">
-       PETSc
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/pgplot.html">
-       PGPLOT
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/python-libs.html">
-       Python-Libs
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/qt.html">
-       Qt
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/root.html">
-       ROOT
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/scalasca.html">
-       Scalasca
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/scorep.html">
-       Score-P
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/silo.html">
-       Silo
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/suitesparse.html">
-       Suitesparse
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/superlu.html">
-       SuperLU
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/tau.html">
-       TAU
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/udunits.html">
-       UDUNITS
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/valgrind.html">
-       Valgrind
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/vtk.html">
-       VTK
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/zeromq.html">
-       ZeroMQ
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../systems/start.html">
-   Systems
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-  <label for="toctree-checkbox-12">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../systems/arc4.html">
-     ARC4
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../systems/arc3.html">
-     ARC3
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../systems/cloud-computing.html">
-     Cloud Computing
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../systems/secure-systems.html">
-     Secure Research Infrastructure
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../guidance/start.html">
-   Guidance
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../guidance/data_management.html">
-     Data Management
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../guidance/software_management.html">
-     Software Management
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../guidance/software_licensing.html">
-     Software Licensing
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../guidance/recommended_platforms.html">
-     Recommended Platforms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../guidance/recommended_courses.html">
-     Recommended Courses
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://arc.leeds.ac.uk/training/">
-   Training
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../contact/start.html">
-   Contact Us
-  </a>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../getting_started/start.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started/request_hpc_acct.html">Requesting an HPC Account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started/request_install.html">Requesting a software install on HPC</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../getting_started/logon.html">Logging on</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/logon/logon-campus.html">Connecting from campus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/logon/logon-off-campus.html">Connecting from off campus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/logon/x11-graphics.html">Graphics forwarding (X11) from a Terminal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/logon/fingerprint-details.html">Fingerprint details</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started/linuxbasics.html">Linux basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started/storage.html">Storage on HPC</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../getting_started/file_transfer.html">File Transfer</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/file_transfer/mobaxterm.html">Using MobaXTerm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/file_transfer/terminal.html">Using a Terminal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/file_transfer/smbclient.html">Using smbclient</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/file_transfer/rclone.html">Using rclone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/file_transfer/sftp.html">Using SFTP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started/x2go.html">Remote Graphics – X2GO</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../usage/start.html">Usage</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/batchjob.html">Batch jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/interactive.html">Interactive jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/troubleshooting.html">Troubleshooting jobs on HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/taskarrays.html">Task arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/gpgpu.html">General Purpose GPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/scratch.html">Temporary/Scratch Storage on Compute nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/examples.html">Job Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/advanced.html">Advanced Job Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/acknowledgement.html">ARC Acknowledgement</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../start.html">Software</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="start.html">Applications</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="abaqus.html">Abaqus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="amber.html">Amber</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="ansys.html">Ansys</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="ansys/ansyscli.html">Ansys CLI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys/cfx.html">Cfx</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys/chemkin.html">Chemkin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys/fluent.html">Fluent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys/lsdyna.html">LS-DYNA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys/rsm.html">RSM</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cesm.html">CESM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comsol.html">Comsol</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dl_poly.html">DL_POLY</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dlpoly/license.html">DLpoly license terms</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gaussian.html">Gaussian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gromacs.html">Gromacs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gurobi.html">Gurobi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="idl.html">IDL</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">MATLAB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="molpro.html">Molpro</a></li>
+<li class="toctree-l3"><a class="reference internal" href="namd.html">NAMD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="openfoam.html">OpenFoam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.html">Paraview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R.html">R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="schrodinger.html">Schrodinger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stata.html">Stata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visit.html">VisIt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vmd.html">VMD (Visual Molecular Dynamics)</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../compilers/start.html">Compilers</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../compilers/anaconda.html">Anaconda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compilers/cuda.html">Cuda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compilers/gnu.html">GNU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compilers/go.html">Go</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compilers/intel.html">Intel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compilers/java.html">Java</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compilers/julia.html">Julia</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compilers/llvm.html">LLVM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compilers/lua.html">Lua</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compilers/pgi.html">PGI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compilers/python.html">Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compilers/yasm.html">YASM</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../infrastructure/start.html">Infrastructure</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/advisor.html">Advisor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/allinea.html">Allinea</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/apptainer.html">Apptainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/arm-forge.html">Arm Forge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/bazel.html">Bazel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/cmake.html">Cmake</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/gdb.html">GDB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/git.html">Git</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/inspector.html">Inspector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/licenses.html">Licenses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/parallel.html">GNU Parallel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/sge.html">SGE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/singularity.html">Singularity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/subversion.html">Subversion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/system.html">System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/test.html">Test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/unison.html">Unison</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/user.html">User</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/virtualgl.html">Virtual GL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/vtune.html">Vtune</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../libraries/start.html">Libraries</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/linalg.html">Numerical Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/armadillo.html">Armadillo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/atlas.html">ATLAS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/boost.html">Boost</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/cgal.html">CGAL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/cube.html">Cube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/cudnn.html">cuDNN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/darshan.html">Darshan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/dyninst.html">Dyninst</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/eigen.html">Eigen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/extrae.html">Extrae</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/ffmpeg.html">FFmpeg</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/fftw.html">FFTW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/gdal.html">GDAL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/geos.html">GEOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/glew.html">GLEW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/glfw.html">GLFW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/glpk.html">GLPK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/gsl.html">GSL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/gstreamer.html">GStreamer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/hdf5.html">HDF5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/hpctoolkit.html">HPCToolkit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/hypre.html">HYPRE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/intelmpi.html">IntelMPI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/itac.html">ITAC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/libdwarf.html">Libdwarf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/libx264.html">Libx264</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/libxmlplusplus.html">Libxmlplusplus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/matlab-runtime.html">MATLAB-Runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/mdbtools.html">MDBTools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/mesa.html">Mesa</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/mkl.html">MKL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/mpe2.html">MPE2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/mpiP.html">mpiP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/must.html">MUST</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/mvapich2.html">MVAPICH2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/nag-matlab.html">NAG-MATLAB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/netcdf.html">Netcdf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/netlib.html">Netlib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/ompP.html">ompP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/opencv.html">OpenCV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/openmpi.html">OpenMPI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/openslide.html">OpenSlide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/openspeedshop.html">Open|SpeedShop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/osmesa.html">Osmesa</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/otf2.html">OTF2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/papi.html">PAPI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/paraver.html">Paraver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/pdt.html">PDT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/petsc.html">PETSc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/pgplot.html">PGPLOT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/python-libs.html">Python-Libs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/qt.html">Qt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/root.html">ROOT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/scalasca.html">Scalasca</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/scorep.html">Score-P</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/silo.html">Silo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/suitesparse.html">Suitesparse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/superlu.html">SuperLU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/tau.html">TAU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/udunits.html">UDUNITS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/valgrind.html">Valgrind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/vtk.html">VTK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/zeromq.html">ZeroMQ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../systems/start.html">Systems</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../systems/arc4.html">ARC4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../systems/arc3.html">ARC3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../systems/cloud-computing.html">Cloud Computing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../systems/secure-systems.html">Secure Research Infrastructure</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../guidance/start.html">Guidance</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../guidance/data_management.html">Data Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guidance/software_management.html">Software Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guidance/software_licensing.html">Software Licensing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guidance/recommended_platforms.html">Recommended Platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guidance/recommended_courses.html">Recommended Courses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://arc.leeds.ac.uk/training/">Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact/start.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://arc.leeds.ac.uk">Research Computing Website</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Visit the <a href="https://arc.leeds.ac.uk">Research Computing Home Site</a> <div> This book is powered by <a href="https://jupyterbook.org">Jupyter Book</a> </div>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/arcdocs/arcdocs-jupyterbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/arcdocs/arcdocs-jupyterbook/edit/working-master/book/software/applications/matlab.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/arcdocs/arcdocs-jupyterbook/issues/new?title=Issue%20on%20page%20%2Fsoftware/applications/matlab.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
 
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
 
 
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/software/applications/matlab.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
   </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/arcdocs/arcdocs-jupyterbook"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/arcdocs/arcdocs-jupyterbook/issues/new?title=Issue%20on%20page%20%2Fsoftware/applications/matlab.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/arcdocs/arcdocs-jupyterbook/edit/working-master/book/software/applications/matlab.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/software/applications/matlab.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setting-up-the-environment">
-   Setting up the environment
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-on-the-login-nodes">
-   Running on the login nodes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-through-the-batch-scheduler">
-   Running through the batch scheduler
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#running-through-an-interactive-shell">
-     Running through an interactive shell
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#batch-execution">
-     Batch Execution
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#parallel-matlab-jobs">
-   Parallel Matlab jobs
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#multi-threaded-support">
-     Multi-threaded support
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#multiple-worker-support-on-a-single-host">
-     Multiple “worker” support (on a single host)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#multiple-worker-support-on-multiple-hosts">
-     Multiple “worker” support (on multiple hosts)
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#hybrid-multiple-workers-and-multithreading-parallelisation">
-       Hybrid multiple workers and multithreading parallelisation
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#troubleshooting-distributed-computing-server">
-       Troubleshooting Distributed Computing Server:
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#gpu-matlab-jobs">
-   GPU Matlab jobs
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#compiling-matlab">
-   Compiling Matlab
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#code-preparation">
-     Code preparation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compiling">
-     Compiling
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#running-the-application">
-     Running the application
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>MATLAB</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setting-up-the-environment">
-   Setting up the environment
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-on-the-login-nodes">
-   Running on the login nodes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-through-the-batch-scheduler">
-   Running through the batch scheduler
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#running-through-an-interactive-shell">
-     Running through an interactive shell
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#batch-execution">
-     Batch Execution
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#parallel-matlab-jobs">
-   Parallel Matlab jobs
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#multi-threaded-support">
-     Multi-threaded support
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#multiple-worker-support-on-a-single-host">
-     Multiple “worker” support (on a single host)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#multiple-worker-support-on-multiple-hosts">
-     Multiple “worker” support (on multiple hosts)
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#hybrid-multiple-workers-and-multithreading-parallelisation">
-       Hybrid multiple workers and multithreading parallelisation
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#troubleshooting-distributed-computing-server">
-       Troubleshooting Distributed Computing Server:
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#gpu-matlab-jobs">
-   GPU Matlab jobs
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#compiling-matlab">
-   Compiling Matlab
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#code-preparation">
-     Code preparation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compiling">
-     Compiling
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#running-the-application">
-     Running the application
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>MATLAB</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-environment">Setting up the environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-on-the-login-nodes">Running on the login nodes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-through-the-batch-scheduler">Running through the batch scheduler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-through-an-interactive-shell">Running through an interactive shell</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-execution">Batch Execution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-matlab-jobs">Parallel Matlab jobs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-threaded-support">Multi-threaded support</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-worker-support-on-a-single-host">Multiple “worker” support (on a single host)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-worker-support-on-multiple-hosts">Multiple “worker” support (on multiple hosts)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-multiple-workers-and-multithreading-parallelisation">Hybrid multiple workers and multithreading parallelisation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-distributed-computing-server">Troubleshooting Distributed Computing Server:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-matlab-jobs">GPU Matlab jobs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling-matlab">Compiling Matlab</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-preparation">Code preparation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling">Compiling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-application">Running the application</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="matlab">
-<h1>MATLAB<a class="headerlink" href="#matlab" title="Permalink to this headline">#</a></h1>
+<h1>MATLAB<a class="headerlink" href="#matlab" title="Permalink to this heading">#</a></h1>
 <p>Matlab is installed on the HPC clusters and is licensed for academic use only.</p>
 <section id="setting-up-the-environment">
-<h2>Setting up the environment<a class="headerlink" href="#setting-up-the-environment" title="Permalink to this headline">#</a></h2>
+<h2>Setting up the environment<a class="headerlink" href="#setting-up-the-environment" title="Permalink to this heading">#</a></h2>
 <p>All required environment variables can be set by loading the Matlab module, to do this type the command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>matlab
 </pre></div>
@@ -1458,14 +621,14 @@ title="Print to PDF"
 <p>Matlab is now centrally licenced and managed so there is no need to set a licence server before using it.</p>
 </section>
 <section id="running-on-the-login-nodes">
-<h2>Running on the login nodes<a class="headerlink" href="#running-on-the-login-nodes" title="Permalink to this headline">#</a></h2>
-<p>Matlab can be launched by entering the <code class="docutils literal notranslate"><span class="pre">matlab</span></code> command in the terminal. This will start a matlab session either in the terminal or in a new window (if you have connected with <a class="reference external" href="../../getting_started/logon.html#graphics-forwarding-x11">X-forwarding</a>). Please note that this method should not be used for long computational use.</p>
+<h2>Running on the login nodes<a class="headerlink" href="#running-on-the-login-nodes" title="Permalink to this heading">#</a></h2>
+<p>Matlab can be launched by entering the <code class="docutils literal notranslate"><span class="pre">matlab</span></code> command in the terminal. This will start a matlab session either in the terminal or in a new window (if you have connected with <a class="reference internal" href="../../getting_started/logon/x11-graphics.html"><span class="doc std std-doc">X-forwarding</span></a>). Please note that this method should not be used for long computational use.</p>
 </section>
 <section id="running-through-the-batch-scheduler">
-<h2>Running through the batch scheduler<a class="headerlink" href="#running-through-the-batch-scheduler" title="Permalink to this headline">#</a></h2>
+<h2>Running through the batch scheduler<a class="headerlink" href="#running-through-the-batch-scheduler" title="Permalink to this heading">#</a></h2>
 <p>The batch scheduler allows both interactive and batch jobs to be submitted during which users will have exclusive access to the resources they request.</p>
 <section id="running-through-an-interactive-shell">
-<h3>Running through an interactive shell<a class="headerlink" href="#running-through-an-interactive-shell" title="Permalink to this headline">#</a></h3>
+<h3>Running through an interactive shell<a class="headerlink" href="#running-through-an-interactive-shell" title="Permalink to this heading">#</a></h3>
 <p>The following will launch Matlab interactively, displaying the full GUI:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qrsh<span class="w"> </span>-V<span class="w"> </span>-l<span class="w"> </span><span class="nv">h_rt</span><span class="o">=</span>hh:mm:ss<span class="w"> </span>matlab<span class="w"> </span>-desktop<span class="w"> </span>-singleCompThread
 </pre></div>
@@ -1483,7 +646,7 @@ title="Print to PDF"
 <p>Where, <code class="docutils literal notranslate"><span class="pre">hh:mm:ss</span></code> is the length of time the interactive session will exist for.</p>
 </section>
 <section id="batch-execution">
-<h3>Batch Execution<a class="headerlink" href="#batch-execution" title="Permalink to this headline">#</a></h3>
+<h3>Batch Execution<a class="headerlink" href="#batch-execution" title="Permalink to this heading">#</a></h3>
 <p>To run matlab in batch-mode you must first generate a list of commands for matlab to process in a <code class="docutils literal notranslate"><span class="pre">.m</span></code> file.</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% MATLAB M-file example to approximate a sawtooth</span>
 <span class="c">% with a truncated Fourier expansion.</span>
@@ -1525,9 +688,9 @@ matlab<span class="w"> </span>-nodisplay<span class="w"> </span>-batch<span clas
 </section>
 </section>
 <section id="parallel-matlab-jobs">
-<h2>Parallel Matlab jobs<a class="headerlink" href="#parallel-matlab-jobs" title="Permalink to this headline">#</a></h2>
+<h2>Parallel Matlab jobs<a class="headerlink" href="#parallel-matlab-jobs" title="Permalink to this heading">#</a></h2>
 <p>Recent versions of Matlab support three methods of making use of multiple CPU cores:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Multi-threaded support in various Matlab routines and toolboxes</p></li>
 <li><p>Multiple “worker” support (on a single host)</p></li>
 <li><p>Multiple “worker” support (on multiple hosts)</p></li>
@@ -1540,19 +703,19 @@ matlab<span class="w"> </span>-nodisplay<span class="w"> </span>-batch<span clas
 </div>
 </div>
 <section id="multi-threaded-support">
-<h3>Multi-threaded support<a class="headerlink" href="#multi-threaded-support" title="Permalink to this headline">#</a></h3>
+<h3>Multi-threaded support<a class="headerlink" href="#multi-threaded-support" title="Permalink to this heading">#</a></h3>
 <p>This is the simplest method of allowing Matlab to use more than one CPU core. Many functions and toolboxes, for example <code class="docutils literal notranslate"><span class="pre">fft()</span></code> and various linear algebra routines, automatically make use of multiple cores where available.</p>
 <p>To do this, we would recommend adding the flag <code class="docutils literal notranslate"><span class="pre">-l</span> <span class="pre">nodes=1,ppn=1</span></code> to your qsub command and job scripts. This will ask for an entire compute node. Note that this will <strong>NOT</strong> speed up Matlab while it is not using functions that are able to take advantage of multiple cores.</p>
 <p>Please see the Matlab product documentation for details on what functions are multithreaded.</p>
 </section>
 <section id="multiple-worker-support-on-a-single-host">
-<h3>Multiple “worker” support (on a single host)<a class="headerlink" href="#multiple-worker-support-on-a-single-host" title="Permalink to this headline">#</a></h3>
+<h3>Multiple “worker” support (on a single host)<a class="headerlink" href="#multiple-worker-support-on-a-single-host" title="Permalink to this heading">#</a></h3>
 <p>Matlab can launch multiple copies of itself, called workers, that are able to communicate and share work between them. This functionality is called the Parallel Toolbox and you may need to adjust code to work properly in this fashion. For example, <code class="docutils literal notranslate"><span class="pre">for</span></code> loops that can be run in parallel may be distributed across all workers by use of the <code class="docutils literal notranslate"><span class="pre">parfor</span></code> Matlab command.</p>
 <p>To do this, launch a parallel job, for example by adding the <code class="docutils literal notranslate"><span class="pre">-pe</span> <span class="pre">smp</span> <span class="pre">8</span></code> flag to the qrsh or qsub commands from above. This requests 8 cores on a single compute node and stores the number of cores granted in the <code class="docutils literal notranslate"><span class="pre">NSLOTS</span></code> environment variable. Once it has started, execute the Matlab command <code class="docutils literal notranslate"><span class="pre">parpool('local',</span> <span class="pre">8)</span></code> or, more generally, <code class="docutils literal notranslate"><span class="pre">parpool('local',</span> <span class="pre">str2num(getenv('NSLOTS')))</span></code>, which in this case would launch 8 workers.</p>
 <p>According to Matlab’s documentation, there may be a limit on the number of workers that can be requested in this way; however, this has been tested on ARC3 on up to 24 cores.</p>
 </section>
 <section id="multiple-worker-support-on-multiple-hosts">
-<h3>Multiple “worker” support (on multiple hosts)<a class="headerlink" href="#multiple-worker-support-on-multiple-hosts" title="Permalink to this headline">#</a></h3>
+<h3>Multiple “worker” support (on multiple hosts)<a class="headerlink" href="#multiple-worker-support-on-multiple-hosts" title="Permalink to this heading">#</a></h3>
 <p>The multiple workers in the Parallel Toolbox can be spread across multiple hosts in order to make use of a greater number of cores and/or memory: Matlab calls this the Distributed Computing Server. Although this is very similar technology, Mathworks license it differently: at the time of writing we can only support a maximum of 32 distributed workers - please get in touch with the reserach computing team via our <a class="reference external" href="https://it.leeds.ac.uk/it?id=sc_cat_item&amp;sys_id=7587b2530f675f00a82247ece1050eda">contact form</a> if you have any queries about this.</p>
 <p>The same code that can make use of the Parallel Toolbox can also make use of Distributed Computing Server; however, there are currently a few setup steps required and the method of launching it is different.</p>
 <div class="admonition note">
@@ -1560,7 +723,7 @@ matlab<span class="w"> </span>-nodisplay<span class="w"> </span>-batch<span clas
 <p>These instructions were put together using Matlab 2017b.</p>
 </div>
 <p>Setup steps:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><em>Configure Matlab to use an appropriate MPI.</em> Execute the following commands:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">mkdir</span> <span class="pre">~/matlab</span></code></p></li>
@@ -1584,7 +747,7 @@ on ARC)</em></p>
 <li><p>This causes Matlab to submit a 32 core job. Once it has started running, you will be able to type further commands.</p></li>
 </ul>
 <p>By default, a Gridengine parpool requests one core and 1G RAM per worker for 48 hours. Control over the type of job can be achieved by editing the cluster profile within Matlab. For example, to change the job runtime (<code class="docutils literal notranslate"><span class="pre">h_rt</span></code>), memory per worker (<code class="docutils literal notranslate"><span class="pre">h_vmem</span></code>) or add arbitrary qsub flags (<code class="docutils literal notranslate"><span class="pre">qsub_args</span></code>):</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>From toolbar, select: <em>HOME -&gt; Parallel -&gt; Manage Cluster Profiles</em></p></li>
 <li><p>Click on <em>Gridengine</em> (on left hand side)</p></li>
 <li><p>Click on <em>Properties</em> tab (on right hand side)</p></li>
@@ -1594,7 +757,7 @@ on ARC)</em></p>
 <li><p>Click on <em>Done</em> button (bottom right)</p></li>
 </ol>
 <section id="hybrid-multiple-workers-and-multithreading-parallelisation">
-<h4>Hybrid multiple workers and multithreading parallelisation<a class="headerlink" href="#hybrid-multiple-workers-and-multithreading-parallelisation" title="Permalink to this headline">#</a></h4>
+<h4>Hybrid multiple workers and multithreading parallelisation<a class="headerlink" href="#hybrid-multiple-workers-and-multithreading-parallelisation" title="Permalink to this heading">#</a></h4>
 <p>It may be useful to try combining both Matlab’s multithreading and Distributed Computing Server features (for example, your Matlab code spends all its time in a parfor loop and each trip through that loop spends all of its time in multithreaded routines like fft()): if appropriate, this would make the best use of our limited Distributed Computing Server licenses.</p>
 <p>To do this:</p>
 <ul class="simple">
@@ -1604,7 +767,7 @@ on ARC)</em></p>
 </ul>
 </section>
 <section id="troubleshooting-distributed-computing-server">
-<h4>Troubleshooting Distributed Computing Server:<a class="headerlink" href="#troubleshooting-distributed-computing-server" title="Permalink to this headline">#</a></h4>
+<h4>Troubleshooting Distributed Computing Server:<a class="headerlink" href="#troubleshooting-distributed-computing-server" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p><em>No matter how many workers I ask for, parpool reports there is only 1 worker!</em> MPI has probably not been configured correctly and Matlab is running multiple workers that cannot communicate with each other. Ensure you have copied mpiLibConf.m (see above) and restart Matlab.</p></li>
 <li><p><em>When the pool is shutdown, the job goes into an error state (“Eqw”).</em> Matlab often deletes the files associated with the jobs it submits before the jobs themselves are deleted. If this happens, please qdel the job manually.</p></li>
@@ -1613,7 +776,7 @@ on ARC)</em></p>
 </section>
 </section>
 <section id="gpu-matlab-jobs">
-<h2>GPU Matlab jobs<a class="headerlink" href="#gpu-matlab-jobs" title="Permalink to this headline">#</a></h2>
+<h2>GPU Matlab jobs<a class="headerlink" href="#gpu-matlab-jobs" title="Permalink to this heading">#</a></h2>
 <p>Matlab can take advantage of GPU hardware. To do this, first launch Matlab inside a job where GPU resources have been requested (see
 <a class="reference internal" href="../../usage/gpgpu.html"><span class="doc std std-doc">here</span></a>). Within Matlab, the <code class="docutils literal notranslate"><span class="pre">gpuDevices</span></code> command will provide details of the available GPU(s):</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">gpuDevice</span>
@@ -1649,14 +812,14 @@ on ARC)</em></p>
 <p>Multiple GPUs can also be taken advantage of; however, this must be in conjunction with the Parallel Toolbox feature (see the above section on parallel jobs and the Matlab website) as a single worker can only use one GPU at a time.</p>
 </section>
 <section id="compiling-matlab">
-<h2>Compiling Matlab<a class="headerlink" href="#compiling-matlab" title="Permalink to this headline">#</a></h2>
+<h2>Compiling Matlab<a class="headerlink" href="#compiling-matlab" title="Permalink to this heading">#</a></h2>
 <p>To run a large number of matlab jobs simultaneously it may be necessary to use the matlab compiler to create a stand-alone application. This will also avoid using too many license tokens. For a full description of the compiler please look at the in-program help or the <a class="reference external" href="http://www.mathworks.co.uk/help/toolbox/compiler/index.html">Matlab compiler user guide</a>.</p>
 <section id="code-preparation">
-<h3>Code preparation<a class="headerlink" href="#code-preparation" title="Permalink to this headline">#</a></h3>
+<h3>Code preparation<a class="headerlink" href="#code-preparation" title="Permalink to this heading">#</a></h3>
 <p><em><strong>Script</strong></em> m-files cannot be compiled directly, first they have to be converted to <em><strong>function</strong></em> m-files. In general, this is a case of wrapping the main section of code within a function. For more details look at <a class="reference external" href="http://www-rohan.sdsu.edu/doc/matlab/toolbox/compiler/ch03get9.html">converting script m-files</a> section in the user guide.</p>
 </section>
 <section id="compiling">
-<h3>Compiling<a class="headerlink" href="#compiling" title="Permalink to this headline">#</a></h3>
+<h3>Compiling<a class="headerlink" href="#compiling" title="Permalink to this heading">#</a></h3>
 <p>The Matlab compiler makes use of the GNU C compilers and as the Intel compiler is loaded by default you shouldswitch to the correct version of GNU compiler via the command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>switch<span class="w"> </span>intel<span class="w"> </span>gnu
 </pre></div>
@@ -1673,7 +836,7 @@ on ARC)</em></p>
 </ul>
 </section>
 <section id="running-the-application">
-<h3>Running the application<a class="headerlink" href="#running-the-application" title="Permalink to this headline">#</a></h3>
+<h3>Running the application<a class="headerlink" href="#running-the-application" title="Permalink to this heading">#</a></h3>
 <p>Once the matlab module is loaded, you can run your stand-alone application via the wrapper and specifing the correct path to various Matlab components. This can easily be done via the environment variable <code class="docutils literal notranslate"><span class="pre">$MATLAB_HOME</span></code>. An example job script for submission to the batch queue would look like:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Export current environment</span>
 <span class="c1">#$ -V</span>
@@ -1701,7 +864,7 @@ module<span class="w"> </span>add<span class="w"> </span>matlab
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./software/applications"
         },
         predefinedOutput: true
@@ -1709,50 +872,124 @@ module<span class="w"> </span>add<span class="w"> </span>matlab
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="idl.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">IDL</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="idl.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">IDL</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="molpro.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="molpro.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Molpro</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-environment">Setting up the environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-on-the-login-nodes">Running on the login nodes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-through-the-batch-scheduler">Running through the batch scheduler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-through-an-interactive-shell">Running through an interactive shell</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-execution">Batch Execution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-matlab-jobs">Parallel Matlab jobs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-threaded-support">Multi-threaded support</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-worker-support-on-a-single-host">Multiple “worker” support (on a single host)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-worker-support-on-multiple-hosts">Multiple “worker” support (on multiple hosts)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hybrid-multiple-workers-and-multithreading-parallelisation">Hybrid multiple workers and multithreading parallelisation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-distributed-computing-server">Troubleshooting Distributed Computing Server:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-matlab-jobs">GPU Matlab jobs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling-matlab">Compiling Matlab</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-preparation">Code preparation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling">Compiling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-application">Running the application</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By University of Leeds Research Computing Team<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By University of Leeds Research Computing Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

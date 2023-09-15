@@ -33,11 +33,11 @@ This output tells us our job script is acceptable to the scheduler and should en
 Jobs can fail during the job run for a wide variety of reasons such as:
 
 - insufficient resources, if your job tries to use more memory or run for more time than requested the job is automatically killed by the scheduler
-- lack of space in your [home directory](./nobackup#home-directory)
+- lack of space in your [home directory](storage:home-directory)
 - bad line ending characters in your job submission script
 - failure to checkout software licenses
 
-Your first step to try and identify why a job has failed is to check the [job output and error files](./batchjob#job-output) for any of the following:
+Your first step to try and identify why a job has failed is to check the [job output and error files](batchjob:job-output) for any of the following:
 
 - code failures and exit codes
 - code failures because file or directory do not exist

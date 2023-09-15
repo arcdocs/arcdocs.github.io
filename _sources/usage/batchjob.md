@@ -71,6 +71,7 @@ This returns some text to confirm our job has been submitted and provides us wit
 If you intend to runs multiple similar jobs with the same resource specification, we recommend using the [task array system](./taskarrays).
 ```
 
+(batchjob:resource-specification)=
 ### Resource specification
 
 The job script specified above includes a number of lines that request some amount of compute resource for our job. This is defined by the syntax `#$ <option>`. These lines are commented out of the shell script but are read by the scheduler to determine how much compute resource is required and thus how to fit the job into the queue.
@@ -113,6 +114,7 @@ Next we have options to request notifications about the job:
 
 The option `-m` will specify that we wish to receive an email about the job, in this case `be` at the start and the end of the job. This will automatically be sent to your University of Leeds email address.
 
+(batchjob:list-of-sge-options)=
 #### List of SGE options
 
 ```{list-table}
@@ -224,6 +226,7 @@ $ qstat -u '*'
 # will return the entire queue
 ```
 
+(deleting-jobs)=
 #### Deleting jobs
 
 Sometimes a situation might arise where you need to delete one of your submitted jobs from the queue. You can do this with the straightforward command `qdel JOBID` where `JOBID` is the unique numeric ID of the job we wish to delete.
@@ -239,6 +242,7 @@ exuser has deleted job 42
 You can only use `qdel` to delete your own submitted jobs from the queue, so don't try and be smart and clear the queue just for your jobs as it won't work.
 ```
 
+(batchjob:job-output)=
 ### Job output
 
 When a job runs it produces two output files by default even if you haven't specified your code to write a results file. These contain information from the standard output and standard error produced by your job and are are named following the pattern `submission_script.sh.oJOBID` and `submission_script.sh.eJOBID`. Where `submission_script.sh` is the name of your job script and `JOBID` is the unique numeric ID of the job when it was submitted.
@@ -270,6 +274,7 @@ Your job 627 ("job2.sh") has been submitted
 
 This allows for developing a workflow of jobs that run one after another to complete long stepwise tasks.
 
+(batchjob:fair-share-policy)=
 ### Fair-share policy
 
 The fair-share policy is two-tiered policy that takes into account the usage of a faculty as a whole and the past usage of the user. In the first tier of the policy faculties are allocated a share of the queue space on the basis of funding, meaning that faculties do not have equal shares of system capacity. The fair-share policy then determines an initial faculty level priority based on the faculties share and the total usage by all faculty member users.

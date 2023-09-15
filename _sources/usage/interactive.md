@@ -2,7 +2,7 @@
 
 It is also possible to runs jobs in interactive mode on both ARC3 and ARC4. This means rather than queueing for your job to run on the batch system you request resource for an interactive sessions via the shell. When the resource becomes available an interactive shell session is created in which you can run code directly on compute resource.
 
-This process still involves requesting resource and queueing for that resource under the [fair-share policy](./batchjob#fair-share-policy) so be prepared to wait if you request a significant amount of resource.
+This process still involves requesting resource and queueing for that resource under the [fair-share policy](batchjob:fair-share-policy) so be prepared to wait if you request a significant amount of resource.
 
 ```{warning}
 We strongly discourage users from using interactive sessions for interactive code development using platforms like jupyter, spyder or Rstudio. Code development should be done before deploying code on the HPC.

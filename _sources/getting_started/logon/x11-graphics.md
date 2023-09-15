@@ -1,7 +1,7 @@
 # Graphics forwarding (X11) from a Terminal
 
 ```{note}
-For Windows users, graphical forwarding is automatically configured by MobaXTerm when [connecting using a session](./logon-campus#Creating-an-SSH-session)
+For Windows users, graphical forwarding is automatically configured by MobaXTerm when [connecting using a session](logon-campus:creating-an-ssh-session)
 ```
 
 Secure shell allows X display (GUI) traffic to be tunnelled (and encrypted) through the SSH connection. Provided your local display is set up correctly, the -Y flag can be used to allow trusted X11 forwarding:

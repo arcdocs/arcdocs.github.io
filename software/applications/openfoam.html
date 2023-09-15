@@ -1,48 +1,60 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>OpenFoam &#8212; ARC Documentation</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,63 +62,104 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'software/applications/openfoam';</script>
     <link rel="canonical" href="https://arcdocs.leeds.ac.uk/software/applications/openfoam.html" />
     <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Paraview" href="paraview.html" />
     <link rel="prev" title="NAMD" href="namd.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
 
-    
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../welcome.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">ARC Documentation</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -116,1354 +169,448 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../getting_started/start.html">
-   Getting Started
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../getting_started/request_hpc_acct.html">
-     Requesting an HPC Account
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../getting_started/request_install.html">
-     Requesting a software install on HPC
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../getting_started/logon.html">
-     Logging on
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-    <label for="toctree-checkbox-2">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../getting_started/logon/logon-campus.html">
-       Connecting from campus
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../getting_started/logon/logon-off-campus.html">
-       Connecting from off campus
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../getting_started/logon/x11-graphics.html">
-       Graphics forwarding (X11) from a Terminal
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../getting_started/logon/fingerprint-details.html">
-       Fingerprint details
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../getting_started/linuxbasics.html">
-     Linux basics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../getting_started/nobackup.html">
-     Storage on HPC
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../getting_started/file_transfer.html">
-     File Transfer
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-    <label for="toctree-checkbox-3">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../getting_started/file_transfer/mobaxterm.html">
-       Using MobaXTerm
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../getting_started/file_transfer/terminal.html">
-       Using a Terminal
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../getting_started/file_transfer/smbclient.html">
-       Using smbclient
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../getting_started/file_transfer/rclone.html">
-       Using rclone
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../getting_started/file_transfer/sftp.html">
-       Using SFTP
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../getting_started/x2go.html">
-     Remote Graphics – X2GO
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../usage/start.html">
-   Usage
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../usage/batchjob.html">
-     Batch jobs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../usage/interactive.html">
-     Interactive jobs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../usage/troubleshooting.html">
-     Troubleshooting jobs on HPC
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../usage/taskarrays.html">
-     Task arrays
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../usage/gpgpu.html">
-     General Purpose GPU
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../usage/scratch.html">
-     Temporary/Scratch Storage on Compute nodes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../usage/examples.html">
-     Job Examples
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../usage/advanced.html">
-     Advanced Job Examples
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../usage/acknowledgement.html">
-     ARC Acknowledgement
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../start.html">
-   Software
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active has-children">
-    <a class="reference internal" href="start.html">
-     Applications
-    </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-    <label for="toctree-checkbox-6">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul class="current">
-     <li class="toctree-l3">
-      <a class="reference internal" href="abaqus.html">
-       Abaqus
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="amber.html">
-       Amber
-      </a>
-     </li>
-     <li class="toctree-l3 has-children">
-      <a class="reference internal" href="ansys.html">
-       Ansys
-      </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-      <label for="toctree-checkbox-7">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="ansys/ansyscli.html">
-         Ansys CLI
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="ansys/cfx.html">
-         Cfx
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="ansys/chemkin.html">
-         Chemkin
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="ansys/fluent.html">
-         Fluent
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="ansys/lsdyna.html">
-         LS-DYNA
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="ansys/rsm.html">
-         RSM
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="cesm.html">
-       CESM
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="comsol.html">
-       Comsol
-      </a>
-     </li>
-     <li class="toctree-l3 has-children">
-      <a class="reference internal" href="dl_poly.html">
-       DL_POLY
-      </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-      <label for="toctree-checkbox-8">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="dlpoly/license.html">
-         DLpoly license terms
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="gaussian.html">
-       Gaussian
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="gromacs.html">
-       Gromacs
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="gurobi.html">
-       Gurobi
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="idl.html">
-       IDL
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="matlab.html">
-       MATLAB
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="molpro.html">
-       Molpro
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="namd.html">
-       NAMD
-      </a>
-     </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
-       OpenFoam
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="paraview.html">
-       Paraview
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="R.html">
-       R
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="schrodinger.html">
-       Schrodinger
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="stata.html">
-       Stata
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="visit.html">
-       VisIt
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="vmd.html">
-       VMD (Visual Molecular Dynamics)
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../compilers/start.html">
-     Compilers
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-    <label for="toctree-checkbox-9">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../compilers/anaconda.html">
-       Anaconda
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../compilers/cuda.html">
-       Cuda
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../compilers/gnu.html">
-       GNU
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../compilers/go.html">
-       Go
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../compilers/intel.html">
-       Intel
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../compilers/java.html">
-       Java
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../compilers/julia.html">
-       Julia
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../compilers/llvm.html">
-       LLVM
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../compilers/lua.html">
-       Lua
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../compilers/pgi.html">
-       PGI
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../compilers/python.html">
-       Python
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../compilers/yasm.html">
-       YASM
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../infrastructure/start.html">
-     Infrastructure
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-    <label for="toctree-checkbox-10">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/advisor.html">
-       Advisor
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/allinea.html">
-       Allinea
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/apptainer.html">
-       Apptainer
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/arm-forge.html">
-       Arm Forge
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/bazel.html">
-       Bazel
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/cmake.html">
-       Cmake
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/gdb.html">
-       GDB
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/git.html">
-       Git
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/inspector.html">
-       Inspector
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/licenses.html">
-       Licenses
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/parallel.html">
-       GNU Parallel
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/sge.html">
-       SGE
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/singularity.html">
-       Singularity
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/subversion.html">
-       Subversion
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/system.html">
-       System
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/test.html">
-       Test
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/unison.html">
-       Unison
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/user.html">
-       User
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/virtualgl.html">
-       Virtual GL
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/vtune.html">
-       Vtune
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../libraries/start.html">
-     Libraries
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-    <label for="toctree-checkbox-11">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/linalg.html">
-       Numerical Libraries
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/armadillo.html">
-       Armadillo
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/atlas.html">
-       ATLAS
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/boost.html">
-       Boost
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/cgal.html">
-       CGAL
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/cube.html">
-       Cube
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/cudnn.html">
-       cuDNN
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/darshan.html">
-       Darshan
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/dyninst.html">
-       Dyninst
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/eigen.html">
-       Eigen
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/extrae.html">
-       Extrae
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/ffmpeg.html">
-       FFmpeg
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/fftw.html">
-       FFTW
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/gdal.html">
-       GDAL
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/geos.html">
-       GEOS
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/glew.html">
-       GLEW
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/glfw.html">
-       GLFW
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/glpk.html">
-       GLPK
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/gsl.html">
-       GSL
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/gstreamer.html">
-       GStreamer
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/hdf5.html">
-       HDF5
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/hpctoolkit.html">
-       HPCToolkit
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/hypre.html">
-       HYPRE
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/intelmpi.html">
-       IntelMPI
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/itac.html">
-       ITAC
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/libdwarf.html">
-       Libdwarf
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/libx264.html">
-       Libx264
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/libxmlplusplus.html">
-       Libxmlplusplus
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/matlab-runtime.html">
-       MATLAB-Runtime
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/mdbtools.html">
-       MDBTools
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/mesa.html">
-       Mesa
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/mkl.html">
-       MKL
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/mpe2.html">
-       MPE2
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/mpiP.html">
-       mpiP
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/must.html">
-       MUST
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/mvapich2.html">
-       MVAPICH2
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/nag-matlab.html">
-       NAG-MATLAB
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/netcdf.html">
-       Netcdf
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/netlib.html">
-       Netlib
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/ompP.html">
-       ompP
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/opencv.html">
-       OpenCV
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/openmpi.html">
-       OpenMPI
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/openslide.html">
-       OpenSlide
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/openspeedshop.html">
-       Open|SpeedShop
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/osmesa.html">
-       Osmesa
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/otf2.html">
-       OTF2
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/papi.html">
-       PAPI
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/paraver.html">
-       Paraver
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/pdt.html">
-       PDT
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/petsc.html">
-       PETSc
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/pgplot.html">
-       PGPLOT
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/python-libs.html">
-       Python-Libs
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/qt.html">
-       Qt
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/root.html">
-       ROOT
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/scalasca.html">
-       Scalasca
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/scorep.html">
-       Score-P
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/silo.html">
-       Silo
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/suitesparse.html">
-       Suitesparse
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/superlu.html">
-       SuperLU
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/tau.html">
-       TAU
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/udunits.html">
-       UDUNITS
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/valgrind.html">
-       Valgrind
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/vtk.html">
-       VTK
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../libraries/zeromq.html">
-       ZeroMQ
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../systems/start.html">
-   Systems
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-  <label for="toctree-checkbox-12">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../systems/arc4.html">
-     ARC4
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../systems/arc3.html">
-     ARC3
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../systems/cloud-computing.html">
-     Cloud Computing
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../systems/secure-systems.html">
-     Secure Research Infrastructure
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../guidance/start.html">
-   Guidance
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../guidance/data_management.html">
-     Data Management
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../guidance/software_management.html">
-     Software Management
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../guidance/software_licensing.html">
-     Software Licensing
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../guidance/recommended_platforms.html">
-     Recommended Platforms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../guidance/recommended_courses.html">
-     Recommended Courses
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://arc.leeds.ac.uk/training/">
-   Training
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../contact/start.html">
-   Contact Us
-  </a>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../getting_started/start.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started/request_hpc_acct.html">Requesting an HPC Account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started/request_install.html">Requesting a software install on HPC</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../getting_started/logon.html">Logging on</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/logon/logon-campus.html">Connecting from campus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/logon/logon-off-campus.html">Connecting from off campus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/logon/x11-graphics.html">Graphics forwarding (X11) from a Terminal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/logon/fingerprint-details.html">Fingerprint details</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started/linuxbasics.html">Linux basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started/storage.html">Storage on HPC</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../getting_started/file_transfer.html">File Transfer</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/file_transfer/mobaxterm.html">Using MobaXTerm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/file_transfer/terminal.html">Using a Terminal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/file_transfer/smbclient.html">Using smbclient</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/file_transfer/rclone.html">Using rclone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../getting_started/file_transfer/sftp.html">Using SFTP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../getting_started/x2go.html">Remote Graphics – X2GO</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../usage/start.html">Usage</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/batchjob.html">Batch jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/interactive.html">Interactive jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/troubleshooting.html">Troubleshooting jobs on HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/taskarrays.html">Task arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/gpgpu.html">General Purpose GPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/scratch.html">Temporary/Scratch Storage on Compute nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/examples.html">Job Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/advanced.html">Advanced Job Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usage/acknowledgement.html">ARC Acknowledgement</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../start.html">Software</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="start.html">Applications</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="abaqus.html">Abaqus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="amber.html">Amber</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="ansys.html">Ansys</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="ansys/ansyscli.html">Ansys CLI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys/cfx.html">Cfx</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys/chemkin.html">Chemkin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys/fluent.html">Fluent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys/lsdyna.html">LS-DYNA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys/rsm.html">RSM</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cesm.html">CESM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comsol.html">Comsol</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="dl_poly.html">DL_POLY</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="dlpoly/license.html">DLpoly license terms</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gaussian.html">Gaussian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gromacs.html">Gromacs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gurobi.html">Gurobi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="idl.html">IDL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="matlab.html">MATLAB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="molpro.html">Molpro</a></li>
+<li class="toctree-l3"><a class="reference internal" href="namd.html">NAMD</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">OpenFoam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.html">Paraview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="R.html">R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="schrodinger.html">Schrodinger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stata.html">Stata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visit.html">VisIt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vmd.html">VMD (Visual Molecular Dynamics)</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../compilers/start.html">Compilers</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../compilers/anaconda.html">Anaconda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compilers/cuda.html">Cuda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compilers/gnu.html">GNU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compilers/go.html">Go</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compilers/intel.html">Intel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compilers/java.html">Java</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compilers/julia.html">Julia</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compilers/llvm.html">LLVM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compilers/lua.html">Lua</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compilers/pgi.html">PGI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compilers/python.html">Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compilers/yasm.html">YASM</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../infrastructure/start.html">Infrastructure</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/advisor.html">Advisor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/allinea.html">Allinea</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/apptainer.html">Apptainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/arm-forge.html">Arm Forge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/bazel.html">Bazel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/cmake.html">Cmake</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/gdb.html">GDB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/git.html">Git</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/inspector.html">Inspector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/licenses.html">Licenses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/parallel.html">GNU Parallel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/sge.html">SGE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/singularity.html">Singularity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/subversion.html">Subversion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/system.html">System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/test.html">Test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/unison.html">Unison</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/user.html">User</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/virtualgl.html">Virtual GL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../infrastructure/vtune.html">Vtune</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../libraries/start.html">Libraries</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/linalg.html">Numerical Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/armadillo.html">Armadillo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/atlas.html">ATLAS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/boost.html">Boost</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/cgal.html">CGAL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/cube.html">Cube</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/cudnn.html">cuDNN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/darshan.html">Darshan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/dyninst.html">Dyninst</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/eigen.html">Eigen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/extrae.html">Extrae</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/ffmpeg.html">FFmpeg</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/fftw.html">FFTW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/gdal.html">GDAL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/geos.html">GEOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/glew.html">GLEW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/glfw.html">GLFW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/glpk.html">GLPK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/gsl.html">GSL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/gstreamer.html">GStreamer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/hdf5.html">HDF5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/hpctoolkit.html">HPCToolkit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/hypre.html">HYPRE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/intelmpi.html">IntelMPI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/itac.html">ITAC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/libdwarf.html">Libdwarf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/libx264.html">Libx264</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/libxmlplusplus.html">Libxmlplusplus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/matlab-runtime.html">MATLAB-Runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/mdbtools.html">MDBTools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/mesa.html">Mesa</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/mkl.html">MKL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/mpe2.html">MPE2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/mpiP.html">mpiP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/must.html">MUST</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/mvapich2.html">MVAPICH2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/nag-matlab.html">NAG-MATLAB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/netcdf.html">Netcdf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/netlib.html">Netlib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/ompP.html">ompP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/opencv.html">OpenCV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/openmpi.html">OpenMPI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/openslide.html">OpenSlide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/openspeedshop.html">Open|SpeedShop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/osmesa.html">Osmesa</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/otf2.html">OTF2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/papi.html">PAPI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/paraver.html">Paraver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/pdt.html">PDT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/petsc.html">PETSc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/pgplot.html">PGPLOT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/python-libs.html">Python-Libs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/qt.html">Qt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/root.html">ROOT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/scalasca.html">Scalasca</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/scorep.html">Score-P</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/silo.html">Silo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/suitesparse.html">Suitesparse</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/superlu.html">SuperLU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/tau.html">TAU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/udunits.html">UDUNITS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/valgrind.html">Valgrind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/vtk.html">VTK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../libraries/zeromq.html">ZeroMQ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../systems/start.html">Systems</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../systems/arc4.html">ARC4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../systems/arc3.html">ARC3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../systems/cloud-computing.html">Cloud Computing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../systems/secure-systems.html">Secure Research Infrastructure</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../guidance/start.html">Guidance</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../guidance/data_management.html">Data Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guidance/software_management.html">Software Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guidance/software_licensing.html">Software Licensing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guidance/recommended_platforms.html">Recommended Platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../guidance/recommended_courses.html">Recommended Courses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://arc.leeds.ac.uk/training/">Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact/start.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://arc.leeds.ac.uk">Research Computing Website</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Visit the <a href="https://arc.leeds.ac.uk">Research Computing Home Site</a> <div> This book is powered by <a href="https://jupyterbook.org">Jupyter Book</a> </div>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/arcdocs/arcdocs-jupyterbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/arcdocs/arcdocs-jupyterbook/edit/working-master/book/software/applications/openfoam.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/arcdocs/arcdocs-jupyterbook/issues/new?title=Issue%20on%20page%20%2Fsoftware/applications/openfoam.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
 
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
 
 
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/software/applications/openfoam.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
   </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/arcdocs/arcdocs-jupyterbook"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/arcdocs/arcdocs-jupyterbook/issues/new?title=Issue%20on%20page%20%2Fsoftware/applications/openfoam.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/arcdocs/arcdocs-jupyterbook/edit/working-master/book/software/applications/openfoam.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/software/applications/openfoam.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview-of-case-setup">
-   Overview of case setup
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#building-the-computational-domain">
-   Building the computational domain
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setting-boundary-conditions-for-export-and-changing-filetype">
-   Setting boundary conditions for export and changing filetype
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#control-dictionary-settings">
-   Control dictionary settings
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ras-les-properties-and-transportdict">
-   RAS/LES properties and transportDict
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rasproperties">
-     RASProperties
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lesproperties">
-     LESProperties
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fvschemes-and-fvsolutions">
-   fvSchemes and fvSolutions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#initial-fields-and-their-boundary-conditions">
-   Initial Fields and their boundary conditions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-a-simulation-and-viewing-the-results">
-   Running a simulation and viewing the results
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#general-advice-and-starting-tips">
-   General advice and starting tips
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-openfoam">
-   Running OpenFOAM
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#setting-up-the-environment">
-     Setting up the environment
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#launching-on-the-front-end">
-     Launching on the front end
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-sun-grid-engine">
-     Using Sun Grid Engine
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#running-through-an-interactive-shell">
-       Running through an interactive shell
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#batch-execution">
-       Batch Execution
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#parallel-execution">
-       Parallel Execution
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>OpenFoam</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview-of-case-setup">
-   Overview of case setup
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#building-the-computational-domain">
-   Building the computational domain
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setting-boundary-conditions-for-export-and-changing-filetype">
-   Setting boundary conditions for export and changing filetype
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#control-dictionary-settings">
-   Control dictionary settings
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ras-les-properties-and-transportdict">
-   RAS/LES properties and transportDict
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rasproperties">
-     RASProperties
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lesproperties">
-     LESProperties
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fvschemes-and-fvsolutions">
-   fvSchemes and fvSolutions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#initial-fields-and-their-boundary-conditions">
-   Initial Fields and their boundary conditions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-a-simulation-and-viewing-the-results">
-   Running a simulation and viewing the results
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#general-advice-and-starting-tips">
-   General advice and starting tips
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-openfoam">
-   Running OpenFOAM
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#setting-up-the-environment">
-     Setting up the environment
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#launching-on-the-front-end">
-     Launching on the front end
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-sun-grid-engine">
-     Using Sun Grid Engine
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#running-through-an-interactive-shell">
-       Running through an interactive shell
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#batch-execution">
-       Batch Execution
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#parallel-execution">
-       Parallel Execution
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>OpenFoam</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-of-case-setup">Overview of case setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-computational-domain">Building the computational domain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-boundary-conditions-for-export-and-changing-filetype">Setting boundary conditions for export and changing filetype</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-dictionary-settings">Control dictionary settings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ras-les-properties-and-transportdict">RAS/LES properties and transportDict</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rasproperties">RASProperties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lesproperties">LESProperties</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fvschemes-and-fvsolutions">fvSchemes and fvSolutions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-fields-and-their-boundary-conditions">Initial Fields and their boundary conditions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-a-simulation-and-viewing-the-results">Running a simulation and viewing the results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-advice-and-starting-tips">General advice and starting tips</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-openfoam">Running OpenFOAM</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-environment">Setting up the environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-on-the-front-end">Launching on the front end</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-sun-grid-engine">Using Sun Grid Engine</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#running-through-an-interactive-shell">Running through an interactive shell</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-execution">Batch Execution</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-execution">Parallel Execution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="openfoam">
-<h1>OpenFoam<a class="headerlink" href="#openfoam" title="Permalink to this headline">#</a></h1>
+<h1>OpenFoam<a class="headerlink" href="#openfoam" title="Permalink to this heading">#</a></h1>
 <p>OpenFOAM is an open-source set of C++ based command tools which can be used to perform Computational Fluid Dynamics simulations, it is entirely based inside the terminal and has no direct user interface. Results from the simulations can be viewed by running the command <code class="docutils literal notranslate"><span class="pre">paraFoam</span></code> to launch an external viewing application. This wiki will run through how to set up a case for running OpenFoam, as well as listing some of the basic tips on performing a simulation without error, primarily using the software available inside Mechanical Engineering.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1471,9 +618,9 @@ title="Print to PDF"
 <p>It also assumes you’re using the default module environment, and haven’t altered compilers being used.  If you have, please adjust accordingly.</p>
 </div>
 <section id="overview-of-case-setup">
-<h2>Overview of case setup<a class="headerlink" href="#overview-of-case-setup" title="Permalink to this headline">#</a></h2>
+<h2>Overview of case setup<a class="headerlink" href="#overview-of-case-setup" title="Permalink to this heading">#</a></h2>
 <p>An OpenFoam case will consist of 3 separate directories:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>The ‘0’ time folder, this is where the files which contain the boundary and initial conditions for each of the variables being calculated are stored.</p></li>
 <li><p>The ‘constant’ folder, this contains the transport properties ditionary, the settings for the particular RANS/LES model being used and the ‘polymesh’ folder which stores the blockMesh file used in the mesh creation stage.</p></li>
 <li><p>The ‘system’ folder, which contains the control dictionary which handles the time step and solver settings and the files used to control the solver schemes and tolerances of the variables.</p></li>
@@ -1482,7 +629,7 @@ title="Print to PDF"
 <p>Useful information on how to install the required modules and the submission of scripts to the queuing system can be found at the bottom of this page.</p>
 </section>
 <section id="building-the-computational-domain">
-<h2>Building the computational domain<a class="headerlink" href="#building-the-computational-domain" title="Permalink to this headline">#</a></h2>
+<h2>Building the computational domain<a class="headerlink" href="#building-the-computational-domain" title="Permalink to this heading">#</a></h2>
 <p>Once you have decided which solver will be best for your particular case, the first thing to do is to create the computational domain and mesh it. There are two ways to go about this, the first is to use OpenFoams own application, blockmesh and the second is to import a file meshed using an external piece of software which can then be converted for use with OpenFoam.</p>
 <p><strong>BlockMesh:</strong> In my personal experience with blockMesh, it is both time-consuming and difficult to understand when starting out with this software. The lack of any kind of visual interface means that even the simplest errors are difficult to spot without viewing your mesh in an application such as paraFoam, the way in which the blocks of the mesh are defined can be found in the userguide and are not too taxing for simple and small geometries, however when modelling more complex shapes with small details requires far more effort.</p>
 <p>The blockMesh file is located in the ‘polymesh’ directory of the ‘constant’ folder in the openFoam case, to build the mesh, simple type the command:</p>
@@ -1499,7 +646,7 @@ title="Print to PDF"
 <p>Once the flat sketch has been completed, you can extrude each section to the required height, however you must <strong>not</strong> select the option to merge the extrudes together otherwise this will just create a single shape and any features such as smaller inlets or circiles will disappear entirely. From this point any more complex features such as rounding or tapering, etc can be performed until you have satisfactory representation of your geometry and all its impoertant features. Save this file as a solidworks part and close the application. Check all measurements are correct before saving the part as you will <strong>not</strong> be able to come back and alter them from this point on without some difficulty.</p>
 <p>Next open ICEM which can be found in the ANSYS-13.0 directory, select file on the top taskbar and find the ‘workbench readers’ option for importing a file; simply attempting to open/import the file by normal means will return an empty directory. Load the model through ‘workbench readers’ and selecting the file type to look for as ‘solidworks part’. This will then appear on the main screen inside ICEM. Tutorials on how to use ICEM can be found under the ‘help’ taskbar and will guide you through how to effectively mesh your model.</p>
 <p>The guidelines to ensure that your model is ready for importing to OpenFoam are as follows:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Does every face have the correct name assigned to it e.g. inlet, outlet, walls, etc?</p></li>
 <li><p>Has the mesh been blocked correctly?</p></li>
 <li><p>Has sufficient density been selected for your simulation?</p></li>
@@ -1508,7 +655,7 @@ title="Print to PDF"
 <p>If your geometry is meshed to the correct standard then it can be exported for use in OpenFoam, there is an optional step to set the boundary conditions at this stage as you can perform this task once the mesh is in OpenFoam format. but it may be easier to set up at this stage.</p>
 </section>
 <section id="setting-boundary-conditions-for-export-and-changing-filetype">
-<h2>Setting boundary conditions for export and changing filetype<a class="headerlink" href="#setting-boundary-conditions-for-export-and-changing-filetype" title="Permalink to this headline">#</a></h2>
+<h2>Setting boundary conditions for export and changing filetype<a class="headerlink" href="#setting-boundary-conditions-for-export-and-changing-filetype" title="Permalink to this heading">#</a></h2>
 <p>From the taskbar in ICEM, select the ‘boundary conditions’ option under x and assign each feature the appropriate condition e.g. pressureOutlet, velocityInlet, solidWall, etc, these conditions will be passed through to openFoam along with the model geometry and mesh, this means that the initial conditions files in the ‘0’ directory will be set up ready for use and should not require any alteration after this point.</p>
 <p>To save your model ready for export, it must be in the Fluent_V6 format, solver settings and the like can remain at default and there is no need to check any additional options in the save boxes. This single model file can now be transferred into your OpenFoam case directory. To convert the file for use, type the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fluent3DMeshToFoam</span>
@@ -1517,7 +664,7 @@ title="Print to PDF"
 <p>It is a good idea at this point to run checkMesh to ensure that the process has gone smoothly and there have been no errors which may affect the simulation. This mesh can now be viewed in paraFoam.</p>
 </section>
 <section id="control-dictionary-settings">
-<h2>Control dictionary settings<a class="headerlink" href="#control-dictionary-settings" title="Permalink to this headline">#</a></h2>
+<h2>Control dictionary settings<a class="headerlink" href="#control-dictionary-settings" title="Permalink to this heading">#</a></h2>
 <p>When the geometry has been set up, either by importing or manual generation, the settings for the case need attention. What solver you are using for the case must be entered in the controlDict file located in the “system” folder. This will typically be the first line underneath the header, a practical example of this can be found in the tutorials section of the OpenFoam installation (tutorials can be viewed on your own local installation). Most of the other settings in the controlDict file can remain untouched however should you want to alter the timestep and how often the results of t your simulation are written to disk, the following options will be of interest:</p>
 <p><strong>deltaT</strong> – this controls the timestep and is how much time elapses in seconds between each set of calculations performed. A lower timestep results in far better accuracy but takes longer to run, a reasonable value to begin with is 1e-04 or 1e-05. As a rule of thumb, an estimated value can be (1/Reynolds Number of the flow).</p>
 <p><strong>writeControl</strong> – there are two settings for this option, either: runTime or timeStep. runTime means that the writeInterval is specified in seconds and the given value will be how long, in seconds, it will be between each set of results written to disk. e.g. if deltaT is set to 1e-05 and writeInterval is set to 1e-04, the results will be written to disk every 10 steps. timeStep will mean that an integer should be specified as to how many steps it will be between each recording e.g. a value of 3 will write the results every 3rd timestep.</p>
@@ -1529,7 +676,7 @@ title="Print to PDF"
 <p>where “relevant extension” leads to the correct library for the application e.g. <a class="reference external" href="http://libsuserRAS.so">libsuserRAS.so</a>, for your own compiled RAS turbulence models.</p>
 </section>
 <section id="ras-les-properties-and-transportdict">
-<h2>RAS/LES properties and transportDict<a class="headerlink" href="#ras-les-properties-and-transportdict" title="Permalink to this headline">#</a></h2>
+<h2>RAS/LES properties and transportDict<a class="headerlink" href="#ras-les-properties-and-transportdict" title="Permalink to this heading">#</a></h2>
 <p>Depending upon whether you are using a RAS or LES based models, there are several files which must be present in the “constant” folder. The first of the these is general to either type of case and is called “transportDict”. This contains the properties for the type of transport model relevant to the solver and the required properties of the fluid under examination. e.g. a simple example for a newtonian model requires the kinematic viscosity property in order to run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">transportModel</span> <span class="n">Newtonian</span><span class="p">;</span>
 
@@ -1539,7 +686,7 @@ title="Print to PDF"
 <p>The type of model must be specified along with the name of the fluid property, its correct dimensionSet and a value. The dimensionSet allows OpenFOAm to determine the units of the quantity in question.</p>
 <p>The second file will either be: RASProperties or LESProperties depending upon the type of simulation required, in essence they accomplish the same job which is to identify which model should be used with the solver along with any required coefficients not present elsewhere in the code. A typical file structure will be as follows:</p>
 <section id="rasproperties">
-<h3>RASProperties<a class="headerlink" href="#rasproperties" title="Permalink to this headline">#</a></h3>
+<h3>RASProperties<a class="headerlink" href="#rasproperties" title="Permalink to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">RASModel</span>          <span class="n">kOmegaSST</span>
 <span class="n">printcoeffs</span>          <span class="n">off</span><span class="p">;</span>
 <span class="n">turbulence</span>          <span class="n">on</span><span class="p">;</span>
@@ -1547,7 +694,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="lesproperties">
-<h3>LESProperties<a class="headerlink" href="#lesproperties" title="Permalink to this headline">#</a></h3>
+<h3>LESProperties<a class="headerlink" href="#lesproperties" title="Permalink to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LESModel</span>            <span class="n">Smagornisky</span><span class="p">;</span>
 <span class="n">printCoeffs</span>           <span class="n">off</span><span class="p">;</span>
 <span class="n">delta</span>                    <span class="n">vanDriest</span><span class="p">;</span>
@@ -1557,12 +704,12 @@ title="Print to PDF"
 </section>
 </section>
 <section id="fvschemes-and-fvsolutions">
-<h2>fvSchemes and fvSolutions<a class="headerlink" href="#fvschemes-and-fvsolutions" title="Permalink to this headline">#</a></h2>
+<h2>fvSchemes and fvSolutions<a class="headerlink" href="#fvschemes-and-fvsolutions" title="Permalink to this heading">#</a></h2>
 <p>Before the setting up of the boundary and initial conditions for each of the fields to be solved, they must be declared and assigned a solver scheme along with any required model settings. The <strong>fvSchemes</strong> file contains the schemes which will be used to solve the model equations and each term present in the transport equations must be assigned a scheme. Depending upon the choice, they can improve stability or the solution so it is important to choose an appropriate scheme for the term being solved. If the name of the discretisation scheme should be entered incorrectly than error will be encountered when trying to run the simulation along with a list of the available schemes.</p>
 <p>The <strong>fvSolution</strong> file contains the solver scheme, preconditioner and tolerance for each field, alteration of these values can result in either better or worse convergence for the solution along with its accuracy, the tighter the tolerance, the more accurate the value but may take longer to solve or even fail to converge properly. The other set of commands present in the file deal with the controls relevant to the solver such as the relaxation factors (SIMPLE) or the number of correction steps (PISO), These controls must be set correctly for the solver to run, in many cases, the default values can be set to those found in the tutorials section for the relevant solver. A further rule of thumb is that the relaxation factors for pressure and velocity (p/u) in SIMPLE cases should total to a value of 1, frequently this is (0.3/0.7).</p>
 </section>
 <section id="initial-fields-and-their-boundary-conditions">
-<h2>Initial Fields and their boundary conditions<a class="headerlink" href="#initial-fields-and-their-boundary-conditions" title="Permalink to this headline">#</a></h2>
+<h2>Initial Fields and their boundary conditions<a class="headerlink" href="#initial-fields-and-their-boundary-conditions" title="Permalink to this heading">#</a></h2>
 <p>Once the mesh has been successfully created and the settings for the solver established along with the run-time, the initial values for all the fields being solved need to be assigned to the appropriate location on the model. All values for the initial time step will be located in the time folder marked:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span>
 </pre></div>
@@ -1603,7 +750,7 @@ title="Print to PDF"
 <p>It is important to note that each field which is being solved e.g. pressure, velocity, will require its own file in the ‘0’ time directory before the simulation will run correctly. Attempting to run this with an incomplete setup will provoke an error message, frequently telling the user what is missing from the directory in question.</p>
 </section>
 <section id="running-a-simulation-and-viewing-the-results">
-<h2>Running a simulation and viewing the results<a class="headerlink" href="#running-a-simulation-and-viewing-the-results" title="Permalink to this headline">#</a></h2>
+<h2>Running a simulation and viewing the results<a class="headerlink" href="#running-a-simulation-and-viewing-the-results" title="Permalink to this heading">#</a></h2>
 <p>In order to begin a simulation, simply move to the directory in which all 3 directories relevant to the case are present and type the name of the solver you wish to run in the terminal e.g.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>simpleFoam
 </pre></div>
@@ -1615,7 +762,7 @@ title="Print to PDF"
 <p>This will launch the viewing application recommended for use with OpenFoam, paraView. Pressing the green ‘play’ button on the taskbar will run through each set of results mapped onto the mesh, various data extraction tools can then be employed for analysis.</p>
 </section>
 <section id="general-advice-and-starting-tips">
-<h2>General advice and starting tips<a class="headerlink" href="#general-advice-and-starting-tips" title="Permalink to this headline">#</a></h2>
+<h2>General advice and starting tips<a class="headerlink" href="#general-advice-and-starting-tips" title="Permalink to this heading">#</a></h2>
 <p>To begin with, run the tutorial cases (incompressible flow) for a few time steps and then examine the results. Attempt to alter the settings in the initial conditions for velocity/pressure to get a feel what alterations provoke which errors or how they affect the flow. Do not try and code anything from scratch for either simple model setups or your own solvers, try and find a tutorial case similar to what you require, copy and paste the 3 directories over to your own folder and alter step by step.</p>
 <p>When coding your own solvers/models compile using wmake/wmake libso as necessary and make sure to add the appropriate library to controlDict file otherwise your files will not be recognised. The easiest to use incompressible flow solvers, depending upon requirements are: icoFoam, pisoFoam and SimpleFoam.</p>
 <p>Some compressible solvers may not be entirely complete/have a number of errors and may require modification before correctly working, check the <a class="reference external" href="http://www.cfd-online.com/Forums/openfoam/">CFD-online forums</a> for references/advice in
@@ -1629,10 +776,10 @@ these matters.</p>
 <p>An initial estimate for the length scale/turbulence intensity may be required before certain boundary conditions can be correctly assigned a value.</p>
 </section>
 <section id="running-openfoam">
-<h2>Running OpenFOAM<a class="headerlink" href="#running-openfoam" title="Permalink to this headline">#</a></h2>
+<h2>Running OpenFOAM<a class="headerlink" href="#running-openfoam" title="Permalink to this heading">#</a></h2>
 <p>OpenFOAM is a free, open source CFD software package; this does not require a license to use.</p>
 <section id="setting-up-the-environment">
-<h3>Setting up the environment<a class="headerlink" href="#setting-up-the-environment" title="Permalink to this headline">#</a></h3>
+<h3>Setting up the environment<a class="headerlink" href="#setting-up-the-environment" title="Permalink to this heading">#</a></h3>
 <p>The openfoam installed on our systems is compiled with a gnu compiler rather than the intel one which is the default in your environment. Before you can load the openfoam module you will need to switch compilers.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>swap<span class="w"> </span>intel<span class="w"> </span>gnu/6.3.0
 $<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>openfoam/v1906
@@ -1648,7 +795,7 @@ $<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </spa
 </div>
 </section>
 <section id="launching-on-the-front-end">
-<h3>Launching on the front end<a class="headerlink" href="#launching-on-the-front-end" title="Permalink to this headline">#</a></h3>
+<h3>Launching on the front end<a class="headerlink" href="#launching-on-the-front-end" title="Permalink to this heading">#</a></h3>
 <p>Visualisation of OpenFOAM results can be done using paraFoam at the command prompt. You need to have an openfoam case file to do this fully:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>paraFoam
 </pre></div>
@@ -1656,10 +803,10 @@ $<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </spa
 <p>If you’re visualising large data sets this should not be done on thelogin nodes, since this can use a considerable amount of RAM and CPU. Instead, this should be done using an interactive job with SGE.</p>
 </section>
 <section id="using-sun-grid-engine">
-<h3>Using Sun Grid Engine<a class="headerlink" href="#using-sun-grid-engine" title="Permalink to this headline">#</a></h3>
+<h3>Using Sun Grid Engine<a class="headerlink" href="#using-sun-grid-engine" title="Permalink to this heading">#</a></h3>
 <p>Sun Grid engine allows both interactive and batch jobs to be submitted during which users will have exclusive access to the resources they request.</p>
 <section id="running-through-an-interactive-shell">
-<h4>Running through an interactive shell<a class="headerlink" href="#running-through-an-interactive-shell" title="Permalink to this headline">#</a></h4>
+<h4>Running through an interactive shell<a class="headerlink" href="#running-through-an-interactive-shell" title="Permalink to this heading">#</a></h4>
 <p>The following will launch paraFoam interactively, displaying the full GUI:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qrsh<span class="w"> </span>-cwd<span class="w"> </span>-V<span class="w"> </span>-l<span class="w"> </span><span class="nv">h_rt</span><span class="o">=</span>&lt;hh:mm:ss&gt;<span class="w"> </span>paraFoam
 </pre></div>
@@ -1671,7 +818,7 @@ $<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </spa
 <p>This will run paraFoam within the terminal from which it was launched.</p>
 </section>
 <section id="batch-execution">
-<h4>Batch Execution<a class="headerlink" href="#batch-execution" title="Permalink to this headline">#</a></h4>
+<h4>Batch Execution<a class="headerlink" href="#batch-execution" title="Permalink to this heading">#</a></h4>
 <p>To run OpenFOAM in batch-mode you first need to setup your case.</p>
 <p>A script must then be created that will request resources from the queuing system and launch the desired OpenFOAM executables; script <code class="docutils literal notranslate"><span class="pre">runfoam.sh</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
@@ -1694,7 +841,7 @@ icoFoam
 </div>
 </section>
 <section id="parallel-execution">
-<h4>Parallel Execution<a class="headerlink" href="#parallel-execution" title="Permalink to this headline">#</a></h4>
+<h4>Parallel Execution<a class="headerlink" href="#parallel-execution" title="Permalink to this heading">#</a></h4>
 <p>If you’ve configured your OpenFOAM job to be solved in parallel, you need to submit it differently. It uses OpenMPI under the hood, so this is an example of a suitable submission script:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -l h_rt=00:10:00</span>
 <span class="c1">#$ -l h_vmem=2G</span>
@@ -1729,7 +876,7 @@ mpirun<span class="w"> </span>interFoam<span class="w"> </span>-parallel
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./software/applications"
         },
         predefinedOutput: true
@@ -1737,50 +884,124 @@ mpirun<span class="w"> </span>interFoam<span class="w"> </span>-parallel
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="namd.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">NAMD</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="namd.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">NAMD</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="paraview.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="paraview.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Paraview</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-of-case-setup">Overview of case setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-computational-domain">Building the computational domain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-boundary-conditions-for-export-and-changing-filetype">Setting boundary conditions for export and changing filetype</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-dictionary-settings">Control dictionary settings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ras-les-properties-and-transportdict">RAS/LES properties and transportDict</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rasproperties">RASProperties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lesproperties">LESProperties</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fvschemes-and-fvsolutions">fvSchemes and fvSolutions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-fields-and-their-boundary-conditions">Initial Fields and their boundary conditions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-a-simulation-and-viewing-the-results">Running a simulation and viewing the results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-advice-and-starting-tips">General advice and starting tips</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-openfoam">Running OpenFOAM</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-environment">Setting up the environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-on-the-front-end">Launching on the front end</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-sun-grid-engine">Using Sun Grid Engine</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#running-through-an-interactive-shell">Running through an interactive shell</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-execution">Batch Execution</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-execution">Parallel Execution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By University of Leeds Research Computing Team<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By University of Leeds Research Computing Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

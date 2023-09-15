@@ -27,7 +27,7 @@ $ molpro -d /nobackup/your_scratch_directory
 
 The directory `/nobackup/your_scratch_directory` is a directory that you create
 in the `/nobackup` area. Read more about the `/nobackup` filesystem
-[here](../../getting_started/nobackup).
+[here](storage:nobackup).
 
 ## Example job scripts
 

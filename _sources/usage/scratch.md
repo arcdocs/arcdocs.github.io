@@ -1,6 +1,6 @@
 # Temporary/Scratch Storage on Compute nodes
 
-Each HPC compute node contains a limited amount of dedicated storage and its capacity and performance is different for each type of node. As this storage is local to the compute node, it can offer more predictable performance than writing to the high performance filesystem, [`/nobackup`](../getting_started/nobackup) , which is shared between all compute nodes
+Each HPC compute node contains a limited amount of dedicated storage and its capacity and performance is different for each type of node. As this storage is local to the compute node, it can offer more predictable performance than writing to the high performance filesystem, [`/nobackup`](storage:nobackup) , which is shared between all compute nodes
 
 On our previous clusters, such storage is available for use by jobs – mostly under `/scratch` and via the directory name contained in the `$TMPDIR` environment variable, but also a small amount under `/tmp`. However, jobs could not reserve the local space they need and so could fail unexpectedly if another job running on the same node was also writing to local disk.
 

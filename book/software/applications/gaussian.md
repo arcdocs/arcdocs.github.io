@@ -180,7 +180,7 @@ The above script can be submitted to the batch queues through the qsub command:
 
     $ qsub
 
-When it runs, it creates the input file, formaldehyde.com, and then runs the
+When it runs, it creates the input file, formaldehyde\\.com, and then runs the
 job, such that the .log file and .chk file are saved in the current working
 directory. The .rwf files are written to local disk on the compute node where
 the job runs, and deleted upon completion of the job.

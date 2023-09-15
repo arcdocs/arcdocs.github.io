@@ -87,7 +87,7 @@ Name: ARC4
 \
 HPC type: UGE (SGE)
 \
-Submit host: arc4.leeds.ac.uk
+Submit host: arc4\\.leeds.ac.uk
 \
 Shared memory parallel: smp
 \

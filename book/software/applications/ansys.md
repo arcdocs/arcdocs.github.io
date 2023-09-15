@@ -26,21 +26,25 @@ To load a specific version of Ansys, specify this on the module command
 $ module add ansys/17.1
 ```
 
-### [Running Fluent](./ansys/fluent)
+### [Running Ansys CLI](./ansys/ansyscli)
 
-Fluent specific information can be found by clicking the link above.
-
-### [Running CFX](./ansys/cfx)
-
-CFX specific information can be found by clicking the link above.
+Ansys CLI specific information can be found by clicking the link above.
 
 ### [Running Chemkin](./ansys/chemkin)
 
 Chemkin specific information can be found by clicking the link above.
 
-### [Running Ansys CLI](./ansys/ansyscli)
+### [Running CFX](./ansys/cfx)
 
-Ansys CLI specific information can be found by clicking the link above.
+CFX specific information can be found by clicking the link above.
+
+### [Running Fluent](./ansys/fluent)
+
+Fluent specific information can be found by clicking the link above.
+
+### [Running LS-DYNA](./ansys/lsdyna)
+
+LS-DYNA specific information can be found by clicking the link above.
 
 ### [Using the Remote Solve Manager](./ansys/rsm)
 

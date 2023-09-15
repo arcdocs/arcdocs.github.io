@@ -107,7 +107,7 @@ A sample script follows:
     #$ -l h_vmem=1G
     module add gaussian
     export GAUSS_SCRDIR=$TMPDIR
-    g09 formaldeyhde.co
+    g09 formaldeyhde.com
 
 This will request 1 hour of runtime on a single processor with 1GB memory, this
 is the default amount of memory so the line `#$ -l h_vmem=1G` does not really

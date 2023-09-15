@@ -14,7 +14,7 @@ Matlab is now centrally licenced and managed so there is no need to set a licenc
 
 ## Running on the login nodes
 
-Matlab can be launched by entering the `matlab` command in the terminal. This will start a matlab session either in the terminal or in a new window (if you have connected with [X-forwarding](../../getting_started/logon.html#graphics-forwarding-x11)). Please note that this method should not be used for long computational use.
+Matlab can be launched by entering the `matlab` command in the terminal. This will start a matlab session either in the terminal or in a new window (if you have connected with [X-forwarding](../../getting_started/logon/x11-graphics)). Please note that this method should not be used for long computational use.
 
 ## Running through the batch scheduler
 

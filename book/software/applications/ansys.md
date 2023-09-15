@@ -50,6 +50,7 @@ LS-DYNA specific information can be found by clicking the link above.
 
 Ansys RSM specific information can be found by clicking the link above.
 
+(ansys:additional-steps)=
 ## Additional Step for Using Ansys the First Time
 
 Before running the Ansys module for the first time, there is a per-user setting that chooses whether commercial (default) or academic licenses should be used.
@@ -58,7 +59,7 @@ Before running the Ansys module for the first time, there is a per-user setting 
 
 **Check with your supervisor if you need clarification on this.**
 
-You will need a SSH connection with X-forwarding enabled to configure this setting. For more information on how to connect to the ARC systems and to enable X-forwarding visit the [Logging on page](../../getting_started/logon.html#graphics-forwarding-x11).
+You will need a SSH connection with X-forwarding enabled to configure this setting. For more information on how to connect to the ARC systems and to enable X-forwarding visit the [Logging on page](../../getting_started/logon/x11-graphics).
 
 If you have not already done so, set the license server and port using the details provided by your supervisor:
 

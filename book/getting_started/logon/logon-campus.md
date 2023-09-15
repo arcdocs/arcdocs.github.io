@@ -1,5 +1,6 @@
 # Connecting from campus
 
+(logon-campus:linux-macos)=
 ## Connecting from Linux/MacOS systems
 
 Linux and MacOS systems all come with a Terminal application that opens a command-line shell. In the following example code snippets we'll be connecting with the username `exuser`. When you come to log in to a system you'll need to use your own university username in place of `exuser`.
@@ -39,7 +40,7 @@ If the keys do not match do **not** continue and contact Research Computing imme
 
 You will then be prompted for your password.
 
-```bash
+```
 $ ssh exuser@arc4
 exuser@arc4's password:
 ```
@@ -68,9 +69,10 @@ ________________________________________________________________________
 [exuser@login1.arc4 ~]$
 ```
 
+(logon-campus:windows)=
 ## Connecting from Windows
 
-Connecting from Windows requires the installation of an SSH client. We recommend and support users using MobaXTerm, please consult the [setup section](../logon.html#installing-mobaxterm) about installing this application.
+Connecting from Windows requires the installation of an SSH client. We recommend and support users using MobaXTerm, please consult the [setup section](logon:installing-mobaxterm) about installing this application.
 
 ### Connecting via MobaXTerm
 
@@ -79,8 +81,9 @@ Connecting from Windows requires the installation of an SSH client. We recommend
 You will need to make sure you have [enrolled with Duo with your University account](https://it.leeds.ac.uk/it?id=kb_article&sysparm_article=KB0014659) and will be required to [use Duo to authenticate](https://it.leeds.ac.uk/it?id=kb_article&sysparm_article=KB0014641) after submitting your password to remote-access.
 ```
 
-Once you have MobaXTerm downloaded you can connect to ARC via two mechanisms: using the [builtin local terminal to connect using SSH commands](#using-the-mobaxterm-terminal); or creating an [SSH session via the GUI](#creating-an-ssh-session).
+Once you have MobaXTerm downloaded you can connect to ARC via two mechanisms: using the [builtin local terminal to connect using SSH commands](#sshing-via-the-mobaxterm-terminal); or creating an [SSH session via the GUI](#creating-an-ssh-session).
 
+(logon-campus:creating-an-ssh-session)=
 #### Creating an SSH session
 
 You can create an SSH session to connect to ARC using the following steps:

@@ -15,21 +15,23 @@ Other pages in this section are outlined below.
 Before you can begin connecting to the University HPC systems you'll need to complete the following setup:
 
 - Have requested and had confirmation that your HPC account has been created. You can find out more on our [Requesting a HPC Account page](./request_hpc_acct)
-- Have an SSH client installed on your device. See below for different details depending on your operating system ([MacOS/Linux](#macos-linux-terminal) or [Windows](#installing-mobaxterm))
+- Have an SSH client installed on your device. See below for different details depending on your operating system ([MacOS/Linux](logon:macos-linux-terminal) or [Windows](#installing-mobaxterm))
 
+(logon:macos-linux-terminal)=
 ### MacOS/Linux Terminal
 
 If you are a MacOS or Linux user you will probably have an SSH client already installed that can be used via the Terminal application on your device.
 
-Open the Terminal application and you're ready to to connect. Next you'll need to read more about [Connecting on campus](./logon/logon-campus.html#connecting-from-linux-macos-systems) or [Connecting from off campus](./logon/logon-off-campus.html#connecting-from-linux-macos-systems) depending on your circumstances.
+Open the Terminal application and you're ready to to connect. Next you'll need to read more about [Connecting on campus](logon-campus:linux-macos) or [Connecting from off campus](logon-off-campus:linux-macos) depending on your circumstances.
 
+(logon:installing-mobaxterm)=
 ### Installing MobaXTerm
 
 To get started you need to install MobaXTerm. You can do this by downloading the **Portable Home edition** [(Click here to go to the download page)](https://mobaxterm.mobatek.net/download-home-edition.html) which is a .zip file containing the software. You can follow the steps in the below video to help walkthrough getting set up.
 
 <iframe src="https://mymedia.leeds.ac.uk/Mediasite/Play/7c25b8af4c7f43f7898efeba0ec6dd311d" width="100%" height="300" frameborder="0" marginwidth="0" marginheight="0" scrolling="auto" allowfullscreen="allowfullscreen" style="display:block;"> </iframe>
 
-Once you've got MobaXTerm on your computer you're ready to learn about how to connect to the HPC systems. Next you'll need to read more about [Connecting on campus](./logon/logon-campus.html#connecting-from-windows) or [Connecting from off campus](./logon/logon-off-campus.html#connecting-from-windows) depending on your circumstances.
+Once you've got MobaXTerm on your computer you're ready to learn about how to connect to the HPC systems. Next you'll need to read more about [Connecting on campus](logon-campus:windows) or [Connecting from off campus](logon-off-campus:windows) depending on your circumstances.
 
 ## Multiple login nodes
 

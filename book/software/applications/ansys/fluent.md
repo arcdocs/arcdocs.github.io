@@ -11,7 +11,7 @@ There are three ways in which to launch fluent in serial:
 - As a [batch job](../../../usage/batchjob)
 
 ```{note}
-When launching the Fluent GUI you must have an X-server running locally and have enabled [X11 forwarding](../../../getting_started/logon.html#graphics-forwarding-x11) through your SSH client.
+When launching the Fluent GUI you must have an X-server running locally and have enabled [X11 forwarding](../../../getting_started/logon/x11-graphics) through your SSH client.
 ```
 
 ### Using on Login nodes

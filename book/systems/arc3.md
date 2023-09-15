@@ -9,6 +9,7 @@ ARC3 is the third phase of the ARC service here at Leeds and provides a Linux-ba
 
 All compute are Broadwell E5-2650v4 CPUs: Clock rate for non-AVX instructions is 2.2GHz and for AVX instructions is 1.8GHz. memory bandwidth per core is 800MHz/core System will turbo where it can. Using fewer cores will mean active cores can turbo more. The are 3 types of node.
 
+(arc3:standard-nodes)=
 #### Standard nodes
 
 252 nodes with 24 cores and 128GB of memory each and an SSD within the node with 100GB of storage. This provides **6048** cores of **standard compute**. These are the default nodes for jobs and do not need to be requested explicitly.
@@ -19,6 +20,7 @@ These can be requested by adding this line to submission scripts:
 
 `#$ -l node_type=24core-768G`
 
+(arc3:gpgpu)=
 #### GPGPU nodes
 
 2 nodes each with 24 cores, 128GB of system memory, a hard disk drive within the node with 800GB of storage and **2 x NVIDIA K80s**.
@@ -28,6 +30,7 @@ These can be requested by adding this line to submission scripts:
 #### Intel Xeon Phi nodes
 2 nodes each with a single Intel **Xeon Phi Knight’s Landing** processor, 96GB system memory, 16GB MCDRAM and a 800GB hard drive.
 
+(arc3:lustre)=
 #### Lustre Storage
 
 Two fail-over pairs delivering 4GB/s via the InfiniBand network to 836TB usable storage on /nobackup

@@ -58,7 +58,7 @@ An example job submission script (`example_serial.sh`) that runs a gromacs execu
 mdrun_d  <args>
 ```
 
-This requests 10 hours of runtime, to run in the current directory `-cwd` and using the current environment `-V`, using the double precision version of mdrun, and where `<args>` represents the arguments to mdrun. More memory per core can be requested, 2Gb for instance, by adding the line `#$ -l h_vmem=2G` to the script. You can find more submission options on the [batch job page](../../usage/batchjob.html#list-of-sge-options).
+This requests 10 hours of runtime, to run in the current directory `-cwd` and using the current environment `-V`, using the double precision version of mdrun, and where `<args>` represents the arguments to mdrun. More memory per core can be requested, 2Gb for instance, by adding the line `#$ -l h_vmem=2G` to the script. You can find more submission options on the [batch job page](batchjob:list-of-sge-options).
 
 The script can be submitted with:
 
@@ -82,7 +82,7 @@ mpirun mdrun_mpi_d <args>
 
 This requests 10 hours of runtime, to run in the current directory `-cwd`, using the current environment `-V`, running on 4 cores `-pe ib 4`, using the double precision parallel version of mdrun, and where `<args>` represents the arguments to `mdrun` .
 
-More memory per core can be requested, 2Gb for instance, by adding the line `#$ -l h_vmem=2G` to the script. You can find more submission options on the [batch job page](../../usage/batchjob.html#list-of-sge-options).
+More memory per core can be requested, 2Gb for instance, by adding the line `#$ -l h_vmem=2G` to the script. You can find more submission options on the [batch job page](batchjob:list-of-sge-options).
 
 The script can be submitted with:
 

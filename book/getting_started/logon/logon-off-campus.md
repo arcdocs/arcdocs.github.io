@@ -3,6 +3,7 @@
 When connecting from off campus additional steps are required to enable you to connect as the University HPC systems are only reachable from within the University network.
 In the following example code snippets we'll be connecting with the username `exuser`. When you come to log in to a system you'll need to use your own university username in place of `exuser`.
 
+(logon-off-campus:linux-macos)=
 ## Connecting from Linux/MacOS systems
 
 ```{warning}
@@ -80,7 +81,7 @@ Passcode or option (1-2):
 
 Enter your prefered option and authenticate using Duo and you will be prompted to enter your password for ARC4.
 
-```bash
+```
 $ ssh arc4.leeds.ac.uk
 Password:
 Duo two-factor login for exuser@leeds.ac.uk
@@ -111,9 +112,10 @@ ________________________________________________________________________
 [exuser@login1.arc4 ~]$
 ```
 
+(logon-off-campus:windows)=
 ## Connecting from Windows
 
-Connecting from Windows requires the installation of an SSH client. We recommend and support users using MobaXTerm, please consult the [setup section](../logon.html#installing-mobaxterm) about installing this application.
+Connecting from Windows requires the installation of an SSH client. We recommend and support users using MobaXTerm, please consult the [setup section](logon:installing-mobaxterm) about installing this application.
 
 ### Connecting via MobaXTerm
 

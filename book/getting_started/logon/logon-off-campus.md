@@ -57,7 +57,7 @@ $ ssh arc4.leeds.ac.uk
 $ ssh arc3.leeds.ac.uk
 ```
 
-You'll be prompted to login to remote-access.leeds.ac.uk first and may be presented with an interactive login that looks like below:
+You'll be prompted to login to `remote-access.leeds.ac.uk` first and may be presented with an interactive login that looks like below:
 
 ```bash
 $ ssh arc4.leeds.ac.uk

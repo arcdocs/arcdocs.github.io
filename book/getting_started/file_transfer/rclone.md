@@ -226,7 +226,7 @@ Once you've set up the remote drive, you don't need to do it again. To list file
 $ rclone ls onedrive:[directory]
 ```
 
-To copy file <file> from directory [directory] in OneDrive to your current local directory:
+To copy file `<file>` from directory [directory] in OneDrive to your current local directory:
 
 ```bash
 $ rclone copy onedrive:[path]/<file> .
@@ -279,7 +279,7 @@ Get help on rclone:
 ```
 $ rclone help
 ```
-<!-- 
+<!--
 Usage:
   rclone [flags]
   rclone [command]

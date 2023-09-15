@@ -135,17 +135,17 @@ A sample script is:
     export OMP_NUM_THREADS=1
     g09 formaldeyhde.com
 
-This will request \<np\> processors, each with 1GB memory.
+This will request `<np>` processors, each with 1GB memory.
 
 On ARC3 the maximum size of job is 24 cores and a total of 128GB on a standard
 node or 768GB on a high memory node.  On ARC4 this increases to 40 cores and a
 total of 192GB on a standard node or 768GB on a high memory node.
 
-To instruct Gaussian to start \<np\> threads, `%NProcShared=\<np\>` should be set
+To instruct Gaussian to start `<np>` threads, `%NProcShared=<np>` should be set
 in the Gaussian input file.
 
 It is possible to combine the submission script and input file into a single
-script so that the np in the submission script always matches `%NProcShared=\<np\>`
+script so that the np in the submission script always matches `%NProcShared=<np>`
 in the Gaussian input file:
 
     #$ -cwd

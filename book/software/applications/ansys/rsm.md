@@ -43,8 +43,11 @@ leaves it running in the taskbar).
 ### Test this with putty
 
 Run putty
+\
 Enter `arc4.leeds.ac.uk` as the host
+\
 Accept the host key (you can verify this against the fingerprint here)
+\
 Enter your username
 
 If all has gone well, this connects using your key, and doesn't prompt for a
@@ -81,14 +84,21 @@ Click the Add HPC Resource button, top left.
 #### HPC Resource tab
 
 Name: ARC4
+\
 HPC type: UGE (SGE)
+\
 Submit host: arc4.leeds.ac.uk
+\
 Shared memory parallel: smp
+\
 Distributed parallel: ib
+\
 UGE Job submission arguments: `-l h_rt=48:0:0`
+\
 Deselect Use SSH protocol for inter and intra-node communication (Linux only)
 
 Select Use SSH or custom communication to the submit host
+\
 Enter you username for Account name
 
 Click Apply
@@ -96,6 +106,7 @@ Click Apply
 #### File Management tab
 
 Select External mechanism for file transfer (SCP via SSH)
+\
 Set the Staging directory path to where you want to store these files on ARC.
 For example, `/nobackup/alice/ansys-rsm`
 
@@ -107,6 +118,7 @@ and create this directory at this point.
 #### Queues
 
 Click Import/Refresh HPC queues.
+\
 This should then show you all the queues it has found on ARC4.  Deselect the
 one it has selected, and select the queue you want to use.  If you're not use,
 use 40core-192G.q.

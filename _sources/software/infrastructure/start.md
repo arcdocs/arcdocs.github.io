@@ -2,10 +2,11 @@
 
 This page is an overview of the infrastructure section of software available on the HPC.
 
-## Compilers Index
+## Infrastructure Index
 
 - [Intel Advisor](./advisor)
 - [Allinea](./allinea)
+- [Apptainer](./apptainer)
 - [Arm Forge](./arm-forge)
 - [Bazel](./bazel)
 - [Cmake](./cmake)

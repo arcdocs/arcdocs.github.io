@@ -9,7 +9,7 @@ More information about LS-DYNA can be found on the [Ansys Website](https://www.a
 ## Running LS-DYNA
 
 ```{note}
-More details about using Ansys for the first time and setting license server details can be found on the [Ansys page](../ansys.html#Additional-Step-for-Using-Ansys-the-First-Time).
+More details about using Ansys for the first time and setting license server details can be found on the [Ansys page](ansys:additional-steps).
 ```
 
 ### Batch job examples

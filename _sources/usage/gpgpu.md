@@ -42,7 +42,7 @@ To request K80 GPU resource you should use the flag:
 #$ -l coproc_k80=<cards_per_compute_node>
 ```
 
-Where <cards_per_compute_node> should be set to 1 or 2.
+Where `<cards_per_compute_node>` should be set to 1 or 2.
 
 ```{list-table}
 :header-rows: 1
@@ -64,7 +64,7 @@ To request P100 GPU resource you should use the flag:
 #$ -l coproc_p100=<cards_per_compute_node>
 ```
 
-Where <cards_per_compute_node> should be set to 1, 2, 3 or 4.
+Where `<cards_per_compute_node>` should be set to 1, 2, 3 or 4.
 
 ```{list-table}
 :header-rows: 1
@@ -98,7 +98,7 @@ To request V100 GPU resource you should use the flag:
 #$ -l coproc_v100=<cards_per_compute_node>
 ```
 
-Where <cards_per_compute_node> should be set to 1, 2, 3 or 4.
+Where `<cards_per_compute_node>` should be set to 1, 2, 3 or 4.
 
 ```{list-table}
 :header-rows: 1

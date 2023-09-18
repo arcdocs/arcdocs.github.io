@@ -62,4 +62,4 @@ If the resources are not available at the point the scheduler tries to allocate 
 You may find you have to submit the request a few times until it is successful.
 ```
 
-You can read more about interactive sessions on HPC in the [Useage section](../../usage/interactive).
+You can read more about interactive sessions on HPC in the [Usage section](../../usage/interactive).

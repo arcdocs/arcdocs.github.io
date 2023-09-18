@@ -639,8 +639,11 @@ leaves it running in the taskbar).</p>
 <section id="test-this-with-putty">
 <h3>Test this with putty<a class="headerlink" href="#test-this-with-putty" title="Permalink to this heading">#</a></h3>
 <p>Run putty
+<br />
 Enter <code class="docutils literal notranslate"><span class="pre">arc4.leeds.ac.uk</span></code> as the host
+<br />
 Accept the host key (you can verify this against the fingerprint here)
+<br />
 Enter your username</p>
 <p>If all has gone well, this connects using your key, and doesn’t prompt for a
 password.  At this point, edit your ~/.bashrc file and add these two lines:</p>
@@ -671,19 +674,27 @@ Configuration 2022 R1.</p>
 <section id="hpc-resource-tab">
 <h4>HPC Resource tab<a class="headerlink" href="#hpc-resource-tab" title="Permalink to this heading">#</a></h4>
 <p>Name: ARC4
+<br />
 HPC type: UGE (SGE)
-Submit host: <a class="reference external" href="http://arc4.leeds.ac.uk">arc4.leeds.ac.uk</a>
+<br />
+Submit host: arc4.leeds.ac.uk
+<br />
 Shared memory parallel: smp
+<br />
 Distributed parallel: ib
+<br />
 UGE Job submission arguments: <code class="docutils literal notranslate"><span class="pre">-l</span> <span class="pre">h_rt=48:0:0</span></code>
+<br />
 Deselect Use SSH protocol for inter and intra-node communication (Linux only)</p>
 <p>Select Use SSH or custom communication to the submit host
+<br />
 Enter you username for Account name</p>
 <p>Click Apply</p>
 </section>
 <section id="file-management-tab">
 <h4>File Management tab<a class="headerlink" href="#file-management-tab" title="Permalink to this heading">#</a></h4>
 <p>Select External mechanism for file transfer (SCP via SSH)
+<br />
 Set the Staging directory path to where you want to store these files on ARC.
 For example, <code class="docutils literal notranslate"><span class="pre">/nobackup/alice/ansys-rsm</span></code></p>
 <p>Click Apply</p>
@@ -693,6 +704,7 @@ and create this directory at this point.</p>
 <section id="queues">
 <h4>Queues<a class="headerlink" href="#queues" title="Permalink to this heading">#</a></h4>
 <p>Click Import/Refresh HPC queues.
+<br />
 This should then show you all the queues it has found on ARC4.  Deselect the
 one it has selected, and select the queue you want to use.  If you’re not use,
 use 40core-192G.q.</p>

@@ -107,7 +107,7 @@ A sample script follows:
     #$ -l h_vmem=1G
     module add gaussian
     export GAUSS_SCRDIR=$TMPDIR
-    g09 formaldeyhde.co
+    g09 formaldeyhde.com
 
 This will request 1 hour of runtime on a single processor with 1GB memory, this
 is the default amount of memory so the line `#$ -l h_vmem=1G` does not really
@@ -135,17 +135,17 @@ A sample script is:
     export OMP_NUM_THREADS=1
     g09 formaldeyhde.com
 
-This will request \<np\> processors, each with 1GB memory.
+This will request `<np>` processors, each with 1GB memory.
 
 On ARC3 the maximum size of job is 24 cores and a total of 128GB on a standard
 node or 768GB on a high memory node.  On ARC4 this increases to 40 cores and a
 total of 192GB on a standard node or 768GB on a high memory node.
 
-To instruct Gaussian to start \<np\> threads, `%NProcShared=\<np\>` should be set
+To instruct Gaussian to start `<np>` threads, `%NProcShared=<np>` should be set
 in the Gaussian input file.
 
 It is possible to combine the submission script and input file into a single
-script so that the np in the submission script always matches `%NProcShared=\<np\>`
+script so that the np in the submission script always matches `%NProcShared=<np>`
 in the Gaussian input file:
 
     #$ -cwd
@@ -180,7 +180,7 @@ The above script can be submitted to the batch queues through the qsub command:
 
     $ qsub
 
-When it runs, it creates the input file, formaldehyde.com, and then runs the
+When it runs, it creates the input file, formaldehyde\\.com, and then runs the
 job, such that the .log file and .chk file are saved in the current working
 directory. The .rwf files are written to local disk on the compute node where
 the job runs, and deleted upon completion of the job.

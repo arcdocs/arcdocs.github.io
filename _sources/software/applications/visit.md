@@ -52,9 +52,9 @@ Or, where using more than one cpu is useful, to launch visit in parallel
     $ module load visit
     $ qrsh -cwd -V -l h_rt=<hh:mm:ss> -l h_vmem=<vmem> -pe ib <num> visit -np <num>
 
-In the above commands, <hh:mm:ss> is the length of real time the program
-will be run for, <vmem> is the amount of memory required per core (e.g.
-"1G" for 1 GB RAM), and <num> is the number of cores required (please note
+In the above commands, `<hh:mm:ss>` is the length of real time the program
+will be run for, `<vmem>` is the amount of memory required per core (e.g.
+"1G" for 1 GB RAM), and `<num>` is the number of cores required (please note
 it appears twice in the command).
 
 ## Running VisIT on your workstation, offload storage and processing to the ARC systems

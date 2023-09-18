@@ -85,7 +85,7 @@ There is one final option which may be relevant when moving into compiling your 
 libs ("libs.so")
 ```
 
-where "relevant extension" leads to the correct library for the application e.g. libsuserRAS.so, for your own compiled RAS turbulence models.
+where "relevant extension" leads to the correct library for the application e.g. libsuserRAS\\.so, for your own compiled RAS turbulence models.
 
 ## RAS/LES properties and transportDict
 

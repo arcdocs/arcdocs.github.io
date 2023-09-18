@@ -57,7 +57,7 @@ $ ssh arc4.leeds.ac.uk
 $ ssh arc3.leeds.ac.uk
 ```
 
-You'll be prompted to login to remote-access.leeds.ac.uk first and may be presented with an interactive login that looks like below:
+You'll be prompted to login to remote-access\\.leeds.ac.uk first and may be presented with an interactive login that looks like below:
 
 ```bash
 $ ssh arc4.leeds.ac.uk
@@ -224,7 +224,7 @@ In order to successfully connect off-campus you are required to adjust some sett
 
 | 10. Type the contents of the file as follows where `exuser` is your university username                                                                                                                                                             |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <pre id="codecell0"> Host \*.leeds.ac.uk !remote-access.leeds.ac.uk <br> ProxyJump exuser@remote-access.leeds.ac.uk <br> User exuser <br> <br> Host remote-access.leeds.ac.uk <br> PreferredAuthentications publickey,keyboard-interactive </pre> |
+| <pre id="codecell0"> Host \*.leeds.ac.uk !remote-access\\.leeds.ac.uk <br> ProxyJump exuser\@remote-access.leeds.ac.uk <br> User exuser <br> <br> Host remote-access\\.leeds.ac.uk <br> PreferredAuthentications publickey,keyboard-interactive </pre> |
 | ![This takes you to the MobaXTerm terminal view](../../assets/img/logon/offcampus/mobaSSH10.png)                                                                                                                                                      |
 
 | 11. Once complete go to File > Save As                                                |

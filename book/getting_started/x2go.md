@@ -35,7 +35,7 @@ places on the window where you need to provide information on the image below.
 The information needs is:
 
 1.  The name of the session -- I have used arc3
-2.  The name of the host which is arc3.leeds.ac.uk
+2.  The name of the host which is arc3\\.leeds.ac.uk
 3.  Your userid
 4.  Select the option "Published Applications"
 
@@ -76,8 +76,8 @@ type:
 Normally when you login you are allocated login1 or login2 randomly. If you
 wish to restart a X2GO session then you need to login explicitly to the login
 node that you paused the session on. If you want to use this feature then you
-will need to explicitly login to login1.arc3.leeds.ac.uk or
-login2.arc3.leeds.ac.uk.
+will need to explicitly login to login1\\.arc3.leeds.ac.uk or
+login2\\.arc3.leeds.ac.uk.
 
 We have not currently tested all the modes that you can login with. The shells
 available with the way I have described are xterm or MATE Terminal.

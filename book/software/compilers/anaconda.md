@@ -4,7 +4,7 @@ Anaconda is a distribution of Python and R for scientific computing that include
 
 ```{admonition} Tip
 :class: tip
-Anaconda is our actively supported Python distribution on both ARC3 and ARC4.
+Anaconda is our actively supported Python distribution on both ARC3 and ARC4.  For best performance, we recommend exploring using it [within a container](../../usage/conda-containers)
 ```
 
 ## Usage

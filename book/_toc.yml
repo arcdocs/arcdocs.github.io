@@ -31,6 +31,7 @@ sections:
   - file: usage/scratch
   - file: usage/examples
   - file: usage/advanced
+  - file: usage/conda-containers
   - file: usage/acknowledgement
 - file: software/start
   sections:

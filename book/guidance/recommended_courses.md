@@ -40,7 +40,7 @@ They are useful complements to your studies and the various [Training Courses](h
 (python)=
 #### Python
 
-- [Composing Programs](https://composingprograms.com/), John DeNero, 61A course, UC Berkeley.
+- [Composing Programs](https://www.composingprograms.com/), John DeNero, 61A course, UC Berkeley.
     - [Video lectures](https://www.youtube.com/c/JohnDeNero/playlists).
 - [Python Distilled](https://www.dabeaz.com/python-distilled/), David Beazley, 2021.
     - [Course](https://dabeaz-course.github.io/practical-python/)

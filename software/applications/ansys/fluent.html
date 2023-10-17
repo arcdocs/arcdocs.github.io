@@ -584,6 +584,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-in-parallel">Running in parallel</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-a-large-mesh-interactively">Running a large mesh interactively</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-execution-through-the-batch-queues">Parallel execution through the batch queues</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smaller-parallel-jobs">Smaller parallel jobs</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-execution-using-the-batch-queues">GPU execution using the batch queues</a></li>
 </ul>
 </li>
@@ -736,6 +737,28 @@ fluent<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </spa
 </div>
 <p>The job will be run once the requested resources become available.</p>
 </section>
+<section id="smaller-parallel-jobs">
+<h3>Smaller parallel jobs<a class="headerlink" href="#smaller-parallel-jobs" title="Permalink to this heading">#</a></h3>
+<p>If you want to run on multiple cores but use less than a whole node, it’s
+recommended that you use the smp parallel environment, and use a slightly
+different fluent command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1"># use current working directory</span>
+<span class="c1">#$ -cwd</span>
+<span class="c1"># Request three hours of runtime</span>
+<span class="c1">#$ -l h_rt=3:00:00</span>
+<span class="c1"># Run on 8 cores</span>
+<span class="c1">#$ -pem smp 8</span>
+<span class="c1"># Request 4Gbytes per core</span>
+<span class="c1">#$ -l h_vmem=4G</span>
+<span class="c1"># define license and load module</span>
+module<span class="w"> </span>add<span class="w"> </span>ansys/2020R2
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
+<span class="c1">#Launch the executable</span>
+fluent<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </span>test_para.jou<span class="w"> </span>3ddp
+</pre></div>
+</div>
+</section>
 <section id="gpu-execution-using-the-batch-queues">
 <h3>GPU execution using the batch queues<a class="headerlink" href="#gpu-execution-using-the-batch-queues" title="Permalink to this heading">#</a></h3>
 <p>Fluent supports the use of GPUs, although we’ve not currently seen significant benefit from doing so on ARC.  To submit a GPU job:</p>
@@ -864,6 +887,7 @@ fluent<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </spa
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-in-parallel">Running in parallel</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-a-large-mesh-interactively">Running a large mesh interactively</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-execution-through-the-batch-queues">Parallel execution through the batch queues</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smaller-parallel-jobs">Smaller parallel jobs</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-execution-using-the-batch-queues">GPU execution using the batch queues</a></li>
 </ul>
 </li>

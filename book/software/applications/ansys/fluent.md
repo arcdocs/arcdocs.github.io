@@ -157,6 +157,29 @@ $ qsub fluent_para.sh
 
 The job will be run once the requested resources become available.
 
+### Smaller parallel jobs
+
+If you want to run on multiple cores but use less than a whole node, it's
+recommended that you use the smp parallel environment, and use a slightly
+different fluent command:
+
+```bash
+#!/bin/bash
+# use current working directory
+#$ -cwd
+# Request three hours of runtime
+#$ -l h_rt=3:00:00
+# Run on 8 cores
+#$ -pem smp 8
+# Request 4Gbytes per core
+#$ -l h_vmem=4G
+# define license and load module
+module add ansys/2020R2
+export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
+#Launch the executable
+fluent -g -i test_para.jou 3ddp
+```
+
 ### GPU execution using the batch queues
 
 Fluent supports the use of GPUs, although we've not currently seen significant benefit from doing so on ARC.  To submit a GPU job:

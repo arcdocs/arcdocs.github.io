@@ -286,8 +286,8 @@ A script must then be created that will request resources from the queuing syste
 
 ```bash
 #!/bin/bash
-# Run in current working directory
-#$ -cwd
+# Run in current working directory and import the current environment
+#$ -cwd -V
 # Set a 6 hour limit
 #$ -l h_rt=6:00:00
 # Load OpenFOAM module

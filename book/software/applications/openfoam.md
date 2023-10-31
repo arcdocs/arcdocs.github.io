@@ -35,18 +35,17 @@ load the openfoam module you will need to switch compilers.
 
 ```bash
 $ module swap intel gnu/6.3.0
-$ module add openfoam/v1906
+$ module add openfoam/9
 ```
 
 The environment is not yet fully loaded. To check what you need to do you can
 run the command:
 
 ```bash
-$ module help openfoam/v1906
+$ module help openfoam/9
 ```
 
-For v1906, next run the following command to access the openFoam command line
-variables:
+Next run the following command to access the openFoam command line variables:
 
 ```bash
 $ source $FOAM_SRC_FILE
@@ -98,7 +97,7 @@ system and launch the desired OpenFOAM executables; script `runfoam.sh`:
 #$ -l h_rt=6:00:00
 # Load OpenFOAM module
 module swap intel gnu/6.3.0
-module add openfoam/v1906
+module add openfoam/9
 source $FOAM_SRC_FILE
 # Run actual OpenFoam commands
 blockMesh
@@ -125,7 +124,7 @@ main job.  Here is an example of a suitable submission script:
 #$ -pe smp 4
 #$ -cwd -V
 module swap intel gnu/6.3.0
-module add openfoam/v1906
+module add openfoam/9
 source $FOAM_SRC_FILE
 mpirun interFoam -parallel
 ```
@@ -141,7 +140,7 @@ asking for more cores rather than more RAM per core, if possible.
 #$ -l np=40
 #$ -cwd -V
 module swap intel gnu/6.3.0
-module add openfoam/v1906
+module add openfoam/9
 source $FOAM_SRC_FILE
 mpirun interFoam -parallel
 ```

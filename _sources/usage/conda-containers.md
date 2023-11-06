@@ -2,7 +2,9 @@
 
 This is a set of instructions for creating and using a conda environment within
 a container.  This can be used on the HPC or elsewhere.  We recommend
-[Apptainer](../software/infrastructure/apptainer)
+[Apptainer](../software/infrastructure/apptainer).  This is tested as working
+on ARC4 only, although containers built this way on ARC4 should also work on
+ARC3.
 
 ## Why you want to use containers for Conda environments
 

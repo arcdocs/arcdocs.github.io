@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Paraview &#8212; ARC Documentation</title>
+    <title>ParaView &#8212; ARC Documentation</title>
   
   
   
@@ -233,7 +233,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="molpro.html">Molpro</a></li>
 <li class="toctree-l3"><a class="reference internal" href="namd.html">NAMD</a></li>
 <li class="toctree-l3"><a class="reference internal" href="openfoam.html">OpenFoam</a></li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">Paraview</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">ParaView</a></li>
 <li class="toctree-l3"><a class="reference internal" href="R.html">R</a></li>
 <li class="toctree-l3"><a class="reference internal" href="schrodinger.html">Schrodinger</a></li>
 <li class="toctree-l3"><a class="reference internal" href="stata.html">Stata</a></li>
@@ -566,7 +566,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Paraview</h1>
+    <h1>ParaView</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -577,19 +577,19 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-paraview-graphical-interface">Running the paraview graphical interface</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-paraview-graphical-interface">Running the ParaView graphical interface</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-a-cluster-login-node-quick-start">On a cluster login node (quick start)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-a-cluster-compute-node">On a cluster compute node</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-your-local-workstation">On your local workstation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-paraview-server">Running the paraview server</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-paraview-server">Running the ParaView server</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-a-cluster-login-node">On a cluster login node</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-a-cluster-compute-node-serial">On a cluster compute node (serial)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-a-cluster-compute-node-parallel">On a cluster compute node (parallel)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-a-paraview-server-with-the-graphical-interface">Connecting to a paraview server with the graphical interface</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-a-paraview-server-with-the-graphical-interface">Connecting to a ParaView server with the graphical interface</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphical-interface-running-on-a-cluster-login-or-compute-node">Graphical interface running on a cluster login or compute node</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphical-interface-running-on-your-local-workstation">Graphical interface running on your local workstation</a></li>
 </ul>
@@ -606,25 +606,20 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="paraview">
-<h1>Paraview<a class="headerlink" href="#paraview" title="Permalink to this heading">#</a></h1>
+<h1>ParaView<a class="headerlink" href="#paraview" title="Permalink to this heading">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
-<p><a class="reference external" href="http://www.paraview.org/">Paraview</a> is a data analysis and visualisation application, developed to be able to analyse large datasets. We show here how to start the program on our facilities; however, please refer to the project documentation for details on how to use the application itself.  You can also use <a class="reference internal" href="../../getting_started/x2go.html"><span class="doc std std-doc">X2GO</span></a> when you login and the images will render better and you will get rid of the OpenGL warnings that may appear.</p>
-<p>Although paraview is flexible in the way it is deployed, the simplest method of invoking it is to run these commands on a login node:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>paraview
-$<span class="w"> </span>paraview<span class="w"> </span>--mesa-llvm<span class="w"> </span><span class="p">&amp;</span>
-</pre></div>
-</div>
-<p>or</p>
+<p><a class="reference external" href="http://www.paraview.org/">ParaView</a> is a data analysis and visualisation application, developed to be able to analyse large datasets. We show here how to start the program on our facilities; however, please refer to the project documentation for details on how to use the application itself.  You can also use <a class="reference internal" href="../../getting_started/x2go.html"><span class="doc std std-doc">X2GO</span></a> when you log in and the images will render better and you will get rid of the OpenGL warnings that may appear.</p>
+<p>Although ParaView is flexible in the way it is deployed, the simplest method of invoking it is to run these commands on a login node:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>mesa<span class="w"> </span>paraview
-$<span class="w"> </span>paraview<span class="w"> </span><span class="p">&amp;</span>
+$<span class="w"> </span>paraview
 </pre></div>
 </div>
 <p>This will provide the core functionality. More complicated methods are described below, offering different levels of performance. For example, the graphical interface can be run locally on a low-end workstation/laptop, while the rendering takes place in parallel on the cluster – taking advantage of the CPU, memory and storage resources available. Although not making use of the acceleration that graphics cards provide, it can allow larger datasets that cannot fit onto a graphics card to be analysed.</p>
 </section>
 <section id="running-the-paraview-graphical-interface">
-<h2>Running the paraview graphical interface<a class="headerlink" href="#running-the-paraview-graphical-interface" title="Permalink to this heading">#</a></h2>
-<p>The paraview graphical interface can be run in several ways. Once running, the graphical interface can either be used as-is, or paired with a separate server program that can offload the rendering and storage access to one or more cluster compute nodes.</p>
+<h2>Running the ParaView graphical interface<a class="headerlink" href="#running-the-paraview-graphical-interface" title="Permalink to this heading">#</a></h2>
+<p>The ParaView graphical interface can be run in several ways. Once running, the graphical interface can either be used as-is, or paired with a separate server program that can offload the rendering and storage access to one or more cluster compute nodes.</p>
 <p>Please note that methods (1) and (2) depend on your workstation having an X server running and for you to have enabled X11 forwarding through your SSH client.</p>
 <section id="on-a-cluster-login-node-quick-start">
 <h3>On a cluster login node (quick start)<a class="headerlink" href="#on-a-cluster-login-node-quick-start" title="Permalink to this heading">#</a></h3>
@@ -635,7 +630,7 @@ $<span class="w"> </span>paraview<span class="w"> </span>--mesa-llvm
 </div>
 <p>If you’re not using X2Go, then depending on your own local machine, you may find that doesn’t work.  Try this instead:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>mesa<span class="w"> </span>paraview
-$<span class="w"> </span>paraview<span class="w"> </span><span class="p">&amp;</span>
+$<span class="w"> </span>paraview
 </pre></div>
 </div>
 <p>Please note that, as they are shared between all users, it is important not to tackle very large pieces of work on the login nodes.</p>
@@ -643,8 +638,8 @@ $<span class="w"> </span>paraview<span class="w"> </span><span class="p">&amp;</
 <section id="on-a-cluster-compute-node">
 <h3>On a cluster compute node<a class="headerlink" href="#on-a-cluster-compute-node" title="Permalink to this heading">#</a></h3>
 <p>Recommended for larger pieces of work:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module add paraview
-$ qrsh -cwd -V -l h_rt=&lt;hh:mm:ss&gt; -l h_vmem=&lt;vmem&gt; paraview --mesa-llvm
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module add mesa paraview
+$ qrsh -cwd -V -l h_rt=&lt;hh:mm:ss&gt; -l h_vmem=&lt;vmem&gt; paraview
 </pre></div>
 </div>
 <p>In the above command, <code class="docutils literal notranslate"><span class="pre">&lt;hh:mm:ss&gt;</span></code> is the length of real time the program will be run for and <code class="docutils literal notranslate"><span class="pre">&lt;vmem&gt;</span></code> is the amount of memory required.</p>
@@ -652,16 +647,16 @@ $ qrsh -cwd -V -l h_rt=&lt;hh:mm:ss&gt; -l h_vmem=&lt;vmem&gt; paraview --mesa-l
 <section id="on-your-local-workstation">
 <h3>On your local workstation<a class="headerlink" href="#on-your-local-workstation" title="Permalink to this heading">#</a></h3>
 <p>Recommended where the graphical interface (menu items, etc.) feels sluggish, or where the best possible performance is required.</p>
-<p>Select a version number from the list of installed versions of the paraview server, then download and install a copy of that version appropriate to your machine from the <a class="reference external" href="http://www.paraview.org/">ParaView website</a>. The list of installed versions is provided by the command:</p>
+<p>Select a version number from the list of installed versions of the ParaView server, then download and install a copy of that version appropriate to your machine from the <a class="reference external" href="http://www.paraview.org/">ParaView website</a>. The list of installed versions is provided by the command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>avail<span class="w"> </span>paraview-osmesa
 </pre></div>
 </div>
-<p>Once installed and running, it can be used to connect to a paraview server running on the cluster (see below).</p>
+<p>Once installed and running, it can be used to connect to a ParaView server running on the cluster (see below).</p>
 </section>
 </section>
 <section id="running-the-paraview-server">
-<h2>Running the paraview server<a class="headerlink" href="#running-the-paraview-server" title="Permalink to this heading">#</a></h2>
-<p>The paraview server does not need to be run on the same computer as the graphical interface and takes on the role of file access and graphics rendering. Warning – there is no authentication step when connecting to a paraview server! Between the time of start of the server and the time at which a client is connected to it, anyone logged into the cluster can connect a client to it!</p>
+<h2>Running the ParaView server<a class="headerlink" href="#running-the-paraview-server" title="Permalink to this heading">#</a></h2>
+<p>The ParaView server does not need to be run on the same computer as the graphical interface and takes on the role of file access and graphics rendering. Warning – there is no authentication step when connecting to a ParaView server! Between the time of start of the server and the time at which a client is connected to it, anyone logged into the cluster can connect a client to it!</p>
 <p>Once started, it will print a line of the form:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Accepting<span class="w"> </span>connection<span class="o">(</span>s<span class="o">)</span>:<span class="w"> </span>hostname:port
 </pre></div>
@@ -694,8 +689,8 @@ $ qrsh -cwd -V -l h_rt=&lt;hh:mm:ss&gt; -l nodes=&lt;nodes&gt; pvserver --server
 </section>
 </section>
 <section id="connecting-to-a-paraview-server-with-the-graphical-interface">
-<h2>Connecting to a paraview server with the graphical interface<a class="headerlink" href="#connecting-to-a-paraview-server-with-the-graphical-interface" title="Permalink to this heading">#</a></h2>
-<p>Once a paraview server is running, a graphical interface can connect to it. Select the menu item File-&gt;Connect to bring up the Choose Server Configuration box. Assuming you have not already created a suitable configuration, select Add Server for the Edit Server Configuration box.</p>
+<h2>Connecting to a ParaView server with the graphical interface<a class="headerlink" href="#connecting-to-a-paraview-server-with-the-graphical-interface" title="Permalink to this heading">#</a></h2>
+<p>Once a ParaView server is running, a graphical interface can connect to it. Select the menu item File-&gt;Connect to bring up the Choose Server Configuration box. Assuming you have not already created a suitable configuration, select Add Server for the Edit Server Configuration box.</p>
 <p>The server configuration details depend on where the graphical interface is running (below). Once done, click Configure, leave Startup Type and Manual and click Save. Double-click on the configuration to attempt to contact the server.</p>
 <section id="graphical-interface-running-on-a-cluster-login-or-compute-node">
 <h3>Graphical interface running on a cluster login or compute node<a class="headerlink" href="#graphical-interface-running-on-a-cluster-login-or-compute-node" title="Permalink to this heading">#</a></h3>
@@ -704,11 +699,11 @@ $ qrsh -cwd -V -l h_rt=&lt;hh:mm:ss&gt; -l nodes=&lt;nodes&gt; pvserver --server
 <section id="graphical-interface-running-on-your-local-workstation">
 <h3>Graphical interface running on your local workstation<a class="headerlink" href="#graphical-interface-running-on-your-local-workstation" title="Permalink to this heading">#</a></h3>
 <p>Please give the configuration a memorable name, leave Server Type as Client/Server, enter localhost into the Host field and 11111 into the Port field. Note that you will not be able to save the configuration unless it is given a name.</p>
-<p>Configure your workstation’s SSH client to forward local port 11111 to the hostname and port from the output of pvserver. On a Linux workstation and paraview running somewhere on ARC4, this can be achieved via the following command:</p>
+<p>Configure your workstation’s SSH client to forward local port 11111 to the hostname and port from the output of pvserver. On a Linux workstation and ParaView running somewhere on ARC4, this can be achieved via the following command:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ ssh -L 11111:localhost:11111 login1.arc4.leeds.ac.uk
 </pre></div>
 </div>
-<p>If you’re needing to connect to a compute node, after you have run your qrsh command, you’ll get a string telling you which host it’s running on e.g.:</p>
+<p>If you need to connect to a compute node, after you have run your qrsh command, you’ll get a string telling you which host it’s running on e.g.:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Accepting connection(s): d10s7b1.arc4.leeds.ac.uk:11111
 </pre></div>
 </div>
@@ -784,19 +779,19 @@ $ qrsh -cwd -V -l h_rt=&lt;hh:mm:ss&gt; -l nodes=&lt;nodes&gt; pvserver --server
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-paraview-graphical-interface">Running the paraview graphical interface</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-paraview-graphical-interface">Running the ParaView graphical interface</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-a-cluster-login-node-quick-start">On a cluster login node (quick start)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-a-cluster-compute-node">On a cluster compute node</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-your-local-workstation">On your local workstation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-paraview-server">Running the paraview server</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-paraview-server">Running the ParaView server</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-a-cluster-login-node">On a cluster login node</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-a-cluster-compute-node-serial">On a cluster compute node (serial)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-a-cluster-compute-node-parallel">On a cluster compute node (parallel)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-a-paraview-server-with-the-graphical-interface">Connecting to a paraview server with the graphical interface</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-a-paraview-server-with-the-graphical-interface">Connecting to a ParaView server with the graphical interface</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphical-interface-running-on-a-cluster-login-or-compute-node">Graphical interface running on a cluster login or compute node</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphical-interface-running-on-your-local-workstation">Graphical interface running on your local workstation</a></li>
 </ul>

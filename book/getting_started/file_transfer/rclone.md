@@ -273,7 +273,19 @@ y) Yes (default)
 n) No
 y/n> n
 ```
-Alternatively, from Linux, Mac or MobaXterm you can use ssh tunelling to authorise your account by [following the instructions here](http://127.0.0.1:53682/).
+Alternatively, from Linux, Mac or MobaXterm you can use ssh tunelling to authorise your account by [following the instructions here](http://127.0.0.1:53682/). First, configure your connection and set up a proxy jump on [Linux or Mac](https://arcdocs.leeds.ac.uk/getting_started/logon/logon-off-campus.html#connecting-from-linux-macos-systems) or on Windows through [MobaXterm](https://arcdocs.leeds.ac.uk/getting_started/logon/logon-off-campus.html#using-the-mobaxterm-terminal). Then, connect to ARC4 from your terminal (or from the MobaXterm local terminal) without graphics forwarding, with your arc4 username:
+
+```
+ssh <<YOUR USERNAME HERE>>@arc4.leeds.ac.uk
+```
+and follow the required password and Duo Security prompts. Make note of your login node. Then, launch another local
+terminal, and run (with username and login node changed to relevant values):
+
+```
+ssh -N -f -L localhost:53682:localhost:53682 <<YOUR USERNAME HERE>>@<<LOGIN NODE HERE>>.arc4.leeds.ac.uk
+```
+Again, you will be prompted for credentials to log in.
+Back in your Arc4 session, run rclone config as normal, and choose `y` when prompted re. automatic configuration. Copy and paste the URL into your local machine's browser. You should be able to access the authentication website from here. If for some reason a remote firefox browser pops up (automatic X-forwarding on MobaXterm, for example), close this. You can continue the rest of the rclone config from the terminal once authentication has been completed.
 
 ## Using rclone on HPC
 

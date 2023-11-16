@@ -260,7 +260,7 @@ q) Quit config
 e/n/d/r/c/s/q> q
 ```
 
-### If remotely opening the browser does not work
+### If launching the remote browser does not work
 
 Forwarding the Firefox browser in order to authenticate Microsoft OneDrive can be a slow process, but will usually load when given time. If this does not work however, you can follow the remote configuration suggestions given [here](https://rclone.org/remote_setup/). If you have rclone installed on your local pc you can select `n` in response to this prompt and configure it locally as detailed in the [rclone documentation](https://rclone.org/remote_setup/).
 

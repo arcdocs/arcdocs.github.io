@@ -260,6 +260,21 @@ q) Quit config
 e/n/d/r/c/s/q> q
 ```
 
+### If remotely opening the browser does not work
+
+Forwarding the Firefox browser in order to authenticate Microsoft OneDrive can be a slow process, but will usually load when given time. If this does not work however, you can follow the remote configuration suggestions given [here](https://rclone.org/remote_setup/). If you have rclone installed on your local pc you can select `n` in response to this prompt and configure it locally as detailed in the [rclone documentation](https://rclone.org/remote_setup/).
+
+```
+Remote config
+Use auto config?
+ * Say Y if not sure
+ * Say N if you are working on a remote or headless machine
+y) Yes (default)
+n) No
+y/n> n
+```
+Alternatively, from Linux, Mac or MobaXterm you can use ssh tunelling to authorise your account by [following the instructions here](http://127.0.0.1:53682/).
+
 ## Using rclone on HPC
 
 One of our users has written a small utility to make it easier to copy multiple files from OneDrive onto ARC. If you don't fancy the command line options below, you might want to take a look at: [Copy multiple files from OneDrive to ARC](https://foqueiroz.github.io/web/public/arc/index.html)

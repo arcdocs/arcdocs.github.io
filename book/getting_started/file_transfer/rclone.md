@@ -35,19 +35,19 @@ Next enter the name you want to use for the new remote connection (I use onedriv
 name> onedrive
 ```
 
-After pressing `Enter`, a list of supported storage types is shown. You should select the Microsoft OneDrive option (currently 19 but may change in the future):
+After pressing `Enter`, a list of supported storage types is shown. You should select the Microsoft OneDrive option (the output below is the current version, but will change in the future so please check the number value of OneDrive):
 
 ```bash
 Type of storage to configure.
 Enter a string value. Press Enter for the default ("").
 Choose a number from below, or type in your own value
- 1 / A stackable unification remote, which can appear to merge the contents of several remotes
-   \ "union"
- 2 / Alias for a existing remote
+ 1 / 1Fichier
+   \ "fichier"
+ 2 / Alias for an existing remote
    \ "alias"
  3 / Amazon Drive
    \ "amazon cloud drive"
- 4 / Amazon S3 Compliant Storage Provider (AWS, Alibaba, Ceph, Digital Ocean, Dreamhost, IBM COS, Minio, etc)
+ 4 / Amazon S3 Compliant Storage Providers including AWS, Alibaba, Ceph, Digital Ocean, Dreamhost, IBM COS, Minio, and Tencent COS
    \ "s3"
  5 / Backblaze B2
    \ "b2"
@@ -55,62 +55,106 @@ Choose a number from below, or type in your own value
    \ "box"
  7 / Cache a remote
    \ "cache"
- 8 / Dropbox
+ 8 / Citrix Sharefile
+   \ "sharefile"
+ 9 / Compress a remote
+   \ "compress"
+10 / Dropbox
    \ "dropbox"
- 9 / Encrypt/Decrypt a remote
+11 / Encrypt/Decrypt a remote
    \ "crypt"
-10 / FTP Connection
+12 / Enterprise File Fabric
+   \ "filefabric"
+13 / FTP Connection
    \ "ftp"
-11 / Google Cloud Storage (this is not Google Drive)
+14 / Google Cloud Storage (this is not Google Drive)
    \ "google cloud storage"
-12 / Google Drive
+15 / Google Drive
    \ "drive"
-13 / Hubic
+16 / Google Photos
+   \ "google photos"
+17 / Hadoop distributed file system
+   \ "hdfs"
+18 / Hubic
    \ "hubic"
-14 / JottaCloud
+19 / In memory object storage system.
+   \ "memory"
+20 / Jottacloud
    \ "jottacloud"
-15 / Koofr
+21 / Koofr
    \ "koofr"
-16 / Local Disk
+22 / Local Disk
    \ "local"
-17 / Mega
+23 / Mail.ru Cloud
+   \ "mailru"
+24 / Mega
    \ "mega"
-18 / Microsoft Azure Blob Storage
+25 / Microsoft Azure Blob Storage
    \ "azureblob"
-19 / Microsoft OneDrive
+26 / Microsoft OneDrive
    \ "onedrive"
-20 / OpenDrive
+27 / OpenDrive
    \ "opendrive"
-21 / Openstack Swift (Rackspace Cloud Files, Memset Memstore, OVH)
+28 / OpenStack Swift (Rackspace Cloud Files, Memset Memstore, OVH)
    \ "swift"
-22 / Pcloud
+29 / Pcloud
    \ "pcloud"
-23 / QingCloud Object Storage
+30 / Put.io
+   \ "putio"
+31 / QingCloud Object Storage
    \ "qingstor"
-24 / SSH/SFTP Connection
+32 / SSH/SFTP Connection
    \ "sftp"
-25 / Webdav
+33 / Sugarsync
+   \ "sugarsync"
+34 / Tardigrade Decentralized Cloud Storage
+   \ "tardigrade"
+35 / Transparently chunk/split large files
+   \ "chunker"
+36 / Union merges the contents of several upstream fs
+   \ "union"
+37 / Webdav
    \ "webdav"
-26 / Yandex Disk
+38 / Yandex Disk
    \ "yandex"
-27 / http Connection
+39 / Zoho
+   \ "zoho"
+40 / http Connection
    \ "http"
-Storage> 19
+41 / premiumize.me
+   \ "premiumizeme"
+42 / seafile
+   \ "seafile"
+Storage> 26
 ```
 
-For the next 2 steps, just accept the defaults by pressing `Enter` twice:
+For the next 3 steps, just accept the defaults by pressing `Enter` twice:
 
 ```bash
 ** See help for onedrive backend at: https://rclone.org/onedrive/ **
 
-Microsoft App Client Id
+OAuth Client Id
 Leave blank normally.
 Enter a string value. Press Enter for the default ("").
 client_id>
-Microsoft App Client Secret
+
+OAuth Client Secret
 Leave blank normally.
 Enter a string value. Press Enter for the default ("").
 client_secret>
+
+Choose national cloud region for OneDrive.
+Enter a string value. Press Enter for the default ("global").
+Choose a number from below, or type in your own value
+ 1 / Microsoft Cloud Global
+   \ "global"
+ 2 / Microsoft Cloud for US Government
+   \ "us"
+ 3 / Microsoft Cloud Germany
+   \ "de"
+ 4 / Azure and Office 365 operated by 21Vianet in China
+   \ "cn"
+region>
 ```
 
 Unless you need to edit the advanced configuration, choose `n`

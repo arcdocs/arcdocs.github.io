@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -141,6 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../welcome.html">
@@ -536,6 +537,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -545,6 +547,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -576,7 +579,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-new-onedrive-remote-to-rclone">Adding a new OneDrive remote to Rclone</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-new-onedrive-remote-to-rclone">Adding a new OneDrive remote to Rclone</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-launching-the-remote-browser-does-not-work">If launching the remote browser does not work</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-rclone-on-hpc">Using rclone on HPC</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-shared-folders">Using shared folders</a></li>
 </ul>
@@ -619,17 +625,17 @@ n/s/q&gt;<span class="w"> </span>n
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>name&gt;<span class="w"> </span>onedrive
 </pre></div>
 </div>
-<p>After pressing <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, a list of supported storage types is shown. You should select the Microsoft OneDrive option (currently 19 but may change in the future):</p>
+<p>After pressing <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, a list of supported storage types is shown. You should select the Microsoft OneDrive option (the output below is the current version, but will change in the future so please check the number value of OneDrive):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Type<span class="w"> </span>of<span class="w"> </span>storage<span class="w"> </span>to<span class="w"> </span>configure.
 Enter<span class="w"> </span>a<span class="w"> </span>string<span class="w"> </span>value.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span><span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
 Choose<span class="w"> </span>a<span class="w"> </span>number<span class="w"> </span>from<span class="w"> </span>below,<span class="w"> </span>or<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>own<span class="w"> </span>value
-<span class="w"> </span><span class="m">1</span><span class="w"> </span>/<span class="w"> </span>A<span class="w"> </span>stackable<span class="w"> </span>unification<span class="w"> </span>remote,<span class="w"> </span>which<span class="w"> </span>can<span class="w"> </span>appear<span class="w"> </span>to<span class="w"> </span>merge<span class="w"> </span>the<span class="w"> </span>contents<span class="w"> </span>of<span class="w"> </span>several<span class="w"> </span>remotes
-<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;union&quot;</span>
-<span class="w"> </span><span class="m">2</span><span class="w"> </span>/<span class="w"> </span>Alias<span class="w"> </span><span class="k">for</span><span class="w"> </span>a<span class="w"> </span>existing<span class="w"> </span>remote
+<span class="w"> </span><span class="m">1</span><span class="w"> </span>/<span class="w"> </span>1Fichier
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;fichier&quot;</span>
+<span class="w"> </span><span class="m">2</span><span class="w"> </span>/<span class="w"> </span>Alias<span class="w"> </span><span class="k">for</span><span class="w"> </span>an<span class="w"> </span>existing<span class="w"> </span>remote
 <span class="w">   </span><span class="se">\ </span><span class="s2">&quot;alias&quot;</span>
 <span class="w"> </span><span class="m">3</span><span class="w"> </span>/<span class="w"> </span>Amazon<span class="w"> </span>Drive
 <span class="w">   </span><span class="se">\ </span><span class="s2">&quot;amazon cloud drive&quot;</span>
-<span class="w"> </span><span class="m">4</span><span class="w"> </span>/<span class="w"> </span>Amazon<span class="w"> </span>S3<span class="w"> </span>Compliant<span class="w"> </span>Storage<span class="w"> </span>Provider<span class="w"> </span><span class="o">(</span>AWS,<span class="w"> </span>Alibaba,<span class="w"> </span>Ceph,<span class="w"> </span>Digital<span class="w"> </span>Ocean,<span class="w"> </span>Dreamhost,<span class="w"> </span>IBM<span class="w"> </span>COS,<span class="w"> </span>Minio,<span class="w"> </span>etc<span class="o">)</span>
+<span class="w"> </span><span class="m">4</span><span class="w"> </span>/<span class="w"> </span>Amazon<span class="w"> </span>S3<span class="w"> </span>Compliant<span class="w"> </span>Storage<span class="w"> </span>Providers<span class="w"> </span>including<span class="w"> </span>AWS,<span class="w"> </span>Alibaba,<span class="w"> </span>Ceph,<span class="w"> </span>Digital<span class="w"> </span>Ocean,<span class="w"> </span>Dreamhost,<span class="w"> </span>IBM<span class="w"> </span>COS,<span class="w"> </span>Minio,<span class="w"> </span>and<span class="w"> </span>Tencent<span class="w"> </span>COS
 <span class="w">   </span><span class="se">\ </span><span class="s2">&quot;s3&quot;</span>
 <span class="w"> </span><span class="m">5</span><span class="w"> </span>/<span class="w"> </span>Backblaze<span class="w"> </span>B2
 <span class="w">   </span><span class="se">\ </span><span class="s2">&quot;b2&quot;</span>
@@ -637,60 +643,104 @@ Choose<span class="w"> </span>a<span class="w"> </span>number<span class="w"> </
 <span class="w">   </span><span class="se">\ </span><span class="s2">&quot;box&quot;</span>
 <span class="w"> </span><span class="m">7</span><span class="w"> </span>/<span class="w"> </span>Cache<span class="w"> </span>a<span class="w"> </span>remote
 <span class="w">   </span><span class="se">\ </span><span class="s2">&quot;cache&quot;</span>
-<span class="w"> </span><span class="m">8</span><span class="w"> </span>/<span class="w"> </span>Dropbox
+<span class="w"> </span><span class="m">8</span><span class="w"> </span>/<span class="w"> </span>Citrix<span class="w"> </span>Sharefile
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;sharefile&quot;</span>
+<span class="w"> </span><span class="m">9</span><span class="w"> </span>/<span class="w"> </span>Compress<span class="w"> </span>a<span class="w"> </span>remote
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;compress&quot;</span>
+<span class="m">10</span><span class="w"> </span>/<span class="w"> </span>Dropbox
 <span class="w">   </span><span class="se">\ </span><span class="s2">&quot;dropbox&quot;</span>
-<span class="w"> </span><span class="m">9</span><span class="w"> </span>/<span class="w"> </span>Encrypt/Decrypt<span class="w"> </span>a<span class="w"> </span>remote
+<span class="m">11</span><span class="w"> </span>/<span class="w"> </span>Encrypt/Decrypt<span class="w"> </span>a<span class="w"> </span>remote
 <span class="w">   </span><span class="se">\ </span><span class="s2">&quot;crypt&quot;</span>
-<span class="m">10</span><span class="w"> </span>/<span class="w"> </span>FTP<span class="w"> </span>Connection
+<span class="m">12</span><span class="w"> </span>/<span class="w"> </span>Enterprise<span class="w"> </span>File<span class="w"> </span>Fabric
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;filefabric&quot;</span>
+<span class="m">13</span><span class="w"> </span>/<span class="w"> </span>FTP<span class="w"> </span>Connection
 <span class="w">   </span><span class="se">\ </span><span class="s2">&quot;ftp&quot;</span>
-<span class="m">11</span><span class="w"> </span>/<span class="w"> </span>Google<span class="w"> </span>Cloud<span class="w"> </span>Storage<span class="w"> </span><span class="o">(</span>this<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>Google<span class="w"> </span>Drive<span class="o">)</span>
+<span class="m">14</span><span class="w"> </span>/<span class="w"> </span>Google<span class="w"> </span>Cloud<span class="w"> </span>Storage<span class="w"> </span><span class="o">(</span>this<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>Google<span class="w"> </span>Drive<span class="o">)</span>
 <span class="w">   </span><span class="se">\ </span><span class="s2">&quot;google cloud storage&quot;</span>
-<span class="m">12</span><span class="w"> </span>/<span class="w"> </span>Google<span class="w"> </span>Drive
+<span class="m">15</span><span class="w"> </span>/<span class="w"> </span>Google<span class="w"> </span>Drive
 <span class="w">   </span><span class="se">\ </span><span class="s2">&quot;drive&quot;</span>
-<span class="m">13</span><span class="w"> </span>/<span class="w"> </span>Hubic
+<span class="m">16</span><span class="w"> </span>/<span class="w"> </span>Google<span class="w"> </span>Photos
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;google photos&quot;</span>
+<span class="m">17</span><span class="w"> </span>/<span class="w"> </span>Hadoop<span class="w"> </span>distributed<span class="w"> </span>file<span class="w"> </span>system
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;hdfs&quot;</span>
+<span class="m">18</span><span class="w"> </span>/<span class="w"> </span>Hubic
 <span class="w">   </span><span class="se">\ </span><span class="s2">&quot;hubic&quot;</span>
-<span class="m">14</span><span class="w"> </span>/<span class="w"> </span>JottaCloud
+<span class="m">19</span><span class="w"> </span>/<span class="w"> </span>In<span class="w"> </span>memory<span class="w"> </span>object<span class="w"> </span>storage<span class="w"> </span>system.
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;memory&quot;</span>
+<span class="m">20</span><span class="w"> </span>/<span class="w"> </span>Jottacloud
 <span class="w">   </span><span class="se">\ </span><span class="s2">&quot;jottacloud&quot;</span>
-<span class="m">15</span><span class="w"> </span>/<span class="w"> </span>Koofr
+<span class="m">21</span><span class="w"> </span>/<span class="w"> </span>Koofr
 <span class="w">   </span><span class="se">\ </span><span class="s2">&quot;koofr&quot;</span>
-<span class="m">16</span><span class="w"> </span>/<span class="w"> </span>Local<span class="w"> </span>Disk
+<span class="m">22</span><span class="w"> </span>/<span class="w"> </span>Local<span class="w"> </span>Disk
 <span class="w">   </span><span class="se">\ </span><span class="s2">&quot;local&quot;</span>
-<span class="m">17</span><span class="w"> </span>/<span class="w"> </span>Mega
+<span class="m">23</span><span class="w"> </span>/<span class="w"> </span>Mail.ru<span class="w"> </span>Cloud
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;mailru&quot;</span>
+<span class="m">24</span><span class="w"> </span>/<span class="w"> </span>Mega
 <span class="w">   </span><span class="se">\ </span><span class="s2">&quot;mega&quot;</span>
-<span class="m">18</span><span class="w"> </span>/<span class="w"> </span>Microsoft<span class="w"> </span>Azure<span class="w"> </span>Blob<span class="w"> </span>Storage
+<span class="m">25</span><span class="w"> </span>/<span class="w"> </span>Microsoft<span class="w"> </span>Azure<span class="w"> </span>Blob<span class="w"> </span>Storage
 <span class="w">   </span><span class="se">\ </span><span class="s2">&quot;azureblob&quot;</span>
-<span class="m">19</span><span class="w"> </span>/<span class="w"> </span>Microsoft<span class="w"> </span>OneDrive
+<span class="m">26</span><span class="w"> </span>/<span class="w"> </span>Microsoft<span class="w"> </span>OneDrive
 <span class="w">   </span><span class="se">\ </span><span class="s2">&quot;onedrive&quot;</span>
-<span class="m">20</span><span class="w"> </span>/<span class="w"> </span>OpenDrive
+<span class="m">27</span><span class="w"> </span>/<span class="w"> </span>OpenDrive
 <span class="w">   </span><span class="se">\ </span><span class="s2">&quot;opendrive&quot;</span>
-<span class="m">21</span><span class="w"> </span>/<span class="w"> </span>Openstack<span class="w"> </span>Swift<span class="w"> </span><span class="o">(</span>Rackspace<span class="w"> </span>Cloud<span class="w"> </span>Files,<span class="w"> </span>Memset<span class="w"> </span>Memstore,<span class="w"> </span>OVH<span class="o">)</span>
+<span class="m">28</span><span class="w"> </span>/<span class="w"> </span>OpenStack<span class="w"> </span>Swift<span class="w"> </span><span class="o">(</span>Rackspace<span class="w"> </span>Cloud<span class="w"> </span>Files,<span class="w"> </span>Memset<span class="w"> </span>Memstore,<span class="w"> </span>OVH<span class="o">)</span>
 <span class="w">   </span><span class="se">\ </span><span class="s2">&quot;swift&quot;</span>
-<span class="m">22</span><span class="w"> </span>/<span class="w"> </span>Pcloud
+<span class="m">29</span><span class="w"> </span>/<span class="w"> </span>Pcloud
 <span class="w">   </span><span class="se">\ </span><span class="s2">&quot;pcloud&quot;</span>
-<span class="m">23</span><span class="w"> </span>/<span class="w"> </span>QingCloud<span class="w"> </span>Object<span class="w"> </span>Storage
+<span class="m">30</span><span class="w"> </span>/<span class="w"> </span>Put.io
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;putio&quot;</span>
+<span class="m">31</span><span class="w"> </span>/<span class="w"> </span>QingCloud<span class="w"> </span>Object<span class="w"> </span>Storage
 <span class="w">   </span><span class="se">\ </span><span class="s2">&quot;qingstor&quot;</span>
-<span class="m">24</span><span class="w"> </span>/<span class="w"> </span>SSH/SFTP<span class="w"> </span>Connection
+<span class="m">32</span><span class="w"> </span>/<span class="w"> </span>SSH/SFTP<span class="w"> </span>Connection
 <span class="w">   </span><span class="se">\ </span><span class="s2">&quot;sftp&quot;</span>
-<span class="m">25</span><span class="w"> </span>/<span class="w"> </span>Webdav
+<span class="m">33</span><span class="w"> </span>/<span class="w"> </span>Sugarsync
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;sugarsync&quot;</span>
+<span class="m">34</span><span class="w"> </span>/<span class="w"> </span>Tardigrade<span class="w"> </span>Decentralized<span class="w"> </span>Cloud<span class="w"> </span>Storage
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;tardigrade&quot;</span>
+<span class="m">35</span><span class="w"> </span>/<span class="w"> </span>Transparently<span class="w"> </span>chunk/split<span class="w"> </span>large<span class="w"> </span>files
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;chunker&quot;</span>
+<span class="m">36</span><span class="w"> </span>/<span class="w"> </span>Union<span class="w"> </span>merges<span class="w"> </span>the<span class="w"> </span>contents<span class="w"> </span>of<span class="w"> </span>several<span class="w"> </span>upstream<span class="w"> </span>fs
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;union&quot;</span>
+<span class="m">37</span><span class="w"> </span>/<span class="w"> </span>Webdav
 <span class="w">   </span><span class="se">\ </span><span class="s2">&quot;webdav&quot;</span>
-<span class="m">26</span><span class="w"> </span>/<span class="w"> </span>Yandex<span class="w"> </span>Disk
+<span class="m">38</span><span class="w"> </span>/<span class="w"> </span>Yandex<span class="w"> </span>Disk
 <span class="w">   </span><span class="se">\ </span><span class="s2">&quot;yandex&quot;</span>
-<span class="m">27</span><span class="w"> </span>/<span class="w"> </span>http<span class="w"> </span>Connection
+<span class="m">39</span><span class="w"> </span>/<span class="w"> </span>Zoho
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;zoho&quot;</span>
+<span class="m">40</span><span class="w"> </span>/<span class="w"> </span>http<span class="w"> </span>Connection
 <span class="w">   </span><span class="se">\ </span><span class="s2">&quot;http&quot;</span>
-Storage&gt;<span class="w"> </span><span class="m">19</span>
+<span class="m">41</span><span class="w"> </span>/<span class="w"> </span>premiumize.me
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;premiumizeme&quot;</span>
+<span class="m">42</span><span class="w"> </span>/<span class="w"> </span>seafile
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;seafile&quot;</span>
+Storage&gt;<span class="w"> </span><span class="m">26</span>
 </pre></div>
 </div>
-<p>For the next 2 steps, just accept the defaults by pressing <code class="docutils literal notranslate"><span class="pre">Enter</span></code> twice:</p>
+<p>For the next 3 steps, just accept the defaults by pressing <code class="docutils literal notranslate"><span class="pre">Enter</span></code> twice:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>**<span class="w"> </span>See<span class="w"> </span><span class="nb">help</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>onedrive<span class="w"> </span>backend<span class="w"> </span>at:<span class="w"> </span>https://rclone.org/onedrive/<span class="w"> </span>**
 
-Microsoft<span class="w"> </span>App<span class="w"> </span>Client<span class="w"> </span>Id
+OAuth<span class="w"> </span>Client<span class="w"> </span>Id
 Leave<span class="w"> </span>blank<span class="w"> </span>normally.
 Enter<span class="w"> </span>a<span class="w"> </span>string<span class="w"> </span>value.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span><span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
 client_id&gt;
-Microsoft<span class="w"> </span>App<span class="w"> </span>Client<span class="w"> </span>Secret
+
+OAuth<span class="w"> </span>Client<span class="w"> </span>Secret
 Leave<span class="w"> </span>blank<span class="w"> </span>normally.
 Enter<span class="w"> </span>a<span class="w"> </span>string<span class="w"> </span>value.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span><span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span>.
 client_secret&gt;
+
+Choose<span class="w"> </span>national<span class="w"> </span>cloud<span class="w"> </span>region<span class="w"> </span><span class="k">for</span><span class="w"> </span>OneDrive.
+Enter<span class="w"> </span>a<span class="w"> </span>string<span class="w"> </span>value.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span><span class="o">(</span><span class="s2">&quot;global&quot;</span><span class="o">)</span>.
+Choose<span class="w"> </span>a<span class="w"> </span>number<span class="w"> </span>from<span class="w"> </span>below,<span class="w"> </span>or<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>own<span class="w"> </span>value
+<span class="w"> </span><span class="m">1</span><span class="w"> </span>/<span class="w"> </span>Microsoft<span class="w"> </span>Cloud<span class="w"> </span>Global
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;global&quot;</span>
+<span class="w"> </span><span class="m">2</span><span class="w"> </span>/<span class="w"> </span>Microsoft<span class="w"> </span>Cloud<span class="w"> </span><span class="k">for</span><span class="w"> </span>US<span class="w"> </span>Government
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;us&quot;</span>
+<span class="w"> </span><span class="m">3</span><span class="w"> </span>/<span class="w"> </span>Microsoft<span class="w"> </span>Cloud<span class="w"> </span>Germany
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;de&quot;</span>
+<span class="w"> </span><span class="m">4</span><span class="w"> </span>/<span class="w"> </span>Azure<span class="w"> </span>and<span class="w"> </span>Office<span class="w"> </span><span class="m">365</span><span class="w"> </span>operated<span class="w"> </span>by<span class="w"> </span>21Vianet<span class="w"> </span><span class="k">in</span><span class="w"> </span>China
+<span class="w">   </span><span class="se">\ </span><span class="s2">&quot;cn&quot;</span>
+region&gt;
 </pre></div>
 </div>
 <p>Unless you need to edit the advanced configuration, choose <code class="docutils literal notranslate"><span class="pre">n</span></code></p>
@@ -778,6 +828,30 @@ q<span class="o">)</span><span class="w"> </span>Quit<span class="w"> </span>con
 e/n/d/r/c/s/q&gt;<span class="w"> </span>q
 </pre></div>
 </div>
+<section id="if-launching-the-remote-browser-does-not-work">
+<h3>If launching the remote browser does not work<a class="headerlink" href="#if-launching-the-remote-browser-does-not-work" title="Permalink to this heading">#</a></h3>
+<p>Forwarding the Firefox browser in order to authenticate Microsoft OneDrive can be a slow process, but will usually load when given time. If this does not work however, you can follow the remote configuration suggestions given <a class="reference external" href="https://rclone.org/remote_setup/">here</a>. If you have rclone installed on your local pc you can select <code class="docutils literal notranslate"><span class="pre">n</span></code> in response to this prompt and configure it locally as detailed in the <a class="reference external" href="https://rclone.org/remote_setup/">rclone documentation</a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Remote config
+Use auto config?
+ * Say Y if not sure
+ * Say N if you are working on a remote or headless machine
+y) Yes (default)
+n) No
+y/n&gt; n
+</pre></div>
+</div>
+<p>Alternatively, from Linux, Mac or MobaXterm you can use ssh tunelling to authorise your account by <a class="reference external" href="http://127.0.0.1:53682/">following the instructions here</a>. First, configure your connection and set up a proxy jump on <a class="reference external" href="https://arcdocs.leeds.ac.uk/getting_started/logon/logon-off-campus.html#connecting-from-linux-macos-systems">Linux or Mac</a> or on Windows through <a class="reference external" href="https://arcdocs.leeds.ac.uk/getting_started/logon/logon-off-campus.html#using-the-mobaxterm-terminal">MobaXterm</a>. Then, connect to ARC4 from your terminal (or from the MobaXterm local terminal) without graphics forwarding, with your arc4 username:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">&lt;&lt;</span><span class="n">YOUR</span> <span class="n">USERNAME</span> <span class="n">HERE</span><span class="o">&gt;&gt;</span><span class="nd">@arc4</span><span class="o">.</span><span class="n">leeds</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">uk</span>
+</pre></div>
+</div>
+<p>and follow the required password and Duo Security prompts. Make note of your login node. Then, launch another local
+terminal, and run (with username and login node changed to relevant values):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">N</span> <span class="o">-</span><span class="n">f</span> <span class="o">-</span><span class="n">L</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">53682</span><span class="p">:</span><span class="n">localhost</span><span class="p">:</span><span class="mi">53682</span> <span class="o">&lt;&lt;</span><span class="n">YOUR</span> <span class="n">USERNAME</span> <span class="n">HERE</span><span class="o">&gt;&gt;@&lt;&lt;</span><span class="n">LOGIN</span> <span class="n">NODE</span> <span class="n">HERE</span><span class="o">&gt;&gt;.</span><span class="n">arc4</span><span class="o">.</span><span class="n">leeds</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">uk</span>
+</pre></div>
+</div>
+<p>Again, you will be prompted for credentials to log in.
+Back in your Arc4 session, run rclone config as normal, and choose <code class="docutils literal notranslate"><span class="pre">y</span></code> when prompted re. automatic configuration. Copy and paste the URL into your local machine’s browser. You should be able to access the authentication website from here. If for some reason a remote firefox browser pops up (automatic X-forwarding on MobaXterm, for example), close this. You can continue the rest of the rclone config from the terminal once authentication has been completed.</p>
+</section>
 </section>
 <section id="using-rclone-on-hpc">
 <h2>Using rclone on HPC<a class="headerlink" href="#using-rclone-on-hpc" title="Permalink to this heading">#</a></h2>
@@ -935,7 +1009,7 @@ Use "rclone help backends" for a list of supported services.
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="smbclient.html"
@@ -970,7 +1044,10 @@ Use "rclone help backends" for a list of supported services.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-new-onedrive-remote-to-rclone">Adding a new OneDrive remote to Rclone</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-new-onedrive-remote-to-rclone">Adding a new OneDrive remote to Rclone</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-launching-the-remote-browser-does-not-work">If launching the remote browser does not work</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-rclone-on-hpc">Using rclone on HPC</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-shared-folders">Using shared folders</a></li>
 </ul>
@@ -994,6 +1071,7 @@ By University of Leeds Research Computing Team
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023.
@@ -1020,8 +1098,8 @@ By University of Leeds Research Computing Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

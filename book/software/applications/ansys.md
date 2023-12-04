@@ -70,7 +70,7 @@ $ export ANSYSLMD_LICENSE_FILE=<port>@<host>
 Next, ensure that you have the Ansys module loaded for the particular version you wish to configure its licenses, e.g.:
 
 ```bash
-$ module load ansys/17.1
+$ module add ansys/17.1
 ```
 
 For ansys version 17.1 (the latest version on the ARC clusters)

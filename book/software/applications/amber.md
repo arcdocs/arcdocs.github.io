@@ -11,7 +11,7 @@ print out and sign a copy for your own reference.
 To access Amber, load its module through:
 
 ```bash
-$ module load amber
+$ module add amber
 ```
 
 This sets the `AMBERHOME` environment variable and your path to include the `bin` directory, with common executables as follows:

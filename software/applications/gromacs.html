@@ -582,11 +582,18 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-the-module-environment">Setting the module environment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#executable-naming-conventions">Executable naming conventions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-execution">Batch execution</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-execution-with-current-versions">Batch execution with current versions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#serial-execution">Serial execution</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-execution">Parallel execution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-a-gpu">Using a GPU</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-execution-with-legacy-versions">Batch execution with legacy versions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Serial execution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Parallel execution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-tuning-gromacs">Performance tuning Gromacs</a></li>
 </ul>
             </nav>
         </div>
@@ -602,25 +609,54 @@ document.write(`
 <h1>Gromacs<a class="headerlink" href="#gromacs" title="Permalink to this heading">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
-<p>Gromacs is freely available and open source software.</p>
+<p><a class="reference external" href="https://www.gromacs.org">Gromacs</a> is freely available and open source software.</p>
 </section>
 <section id="setting-the-module-environment">
 <h2>Setting the module environment<a class="headerlink" href="#setting-the-module-environment" title="Permalink to this heading">#</a></h2>
 <p>A number of versions of Gromacs are available on the facility.</p>
-<p>To load gromacs into your environment when you log in, use (for example):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>gromacs/4.5.3
+<p>To load gromacs into your environment use (for example):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>gromacs/2020.3gpu
 </pre></div>
 </div>
-<p>This will now provide you with access to the gromacs executeables from the command line.</p>
-<p>Alternatively you can load the default version of gromacs installed on ARC with the command:</p>
+<p>This will now provide you with access to the gromacs executables from the
+command line.  Older versions were built separately with and without GPU
+support.  Since 2023.1 there is only one version, which supports single
+precision and GPUs.</p>
+<p>Alternatively you can load the default version of gromacs installed on ARC with
+the command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>gromacs
 </pre></div>
 </div>
-<p>Will load the executables for the default 4.6.3 version.</p>
 </section>
 <section id="executable-naming-conventions">
 <h2>Executable naming conventions<a class="headerlink" href="#executable-naming-conventions" title="Permalink to this heading">#</a></h2>
-<p>The main executables available are :</p>
+<p>Modern Gromacs tends to use just one main command:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Executable</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gmx</span></code></p></td>
+<td><p>single precision serial executable</p></td>
+</tr>
+</tbody>
+</table>
+<p>Non-GPU builds also provide:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Executable</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gmx_d</span></code></p></td>
+<td><p>double precision serial executable</p></td>
+</tr>
+</tbody>
+</table>
+<p>With older versions, there were also:</p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Executable</p></th>
@@ -642,7 +678,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
-<p>However, the naming convention for <code class="docutils literal notranslate"><span class="pre">Gromacs</span></code> versions below <code class="docutils literal notranslate"><span class="pre">4.6.3</span></code> are a little different:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Gromacs</span></code> versions below <code class="docutils literal notranslate"><span class="pre">4.6.3</span></code>:</p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Executable</p></th>
@@ -658,21 +694,30 @@ document.write(`
 </tr>
 </tbody>
 </table>
-<p>There are also single/double precision versions of the tools that come with the application, with the same naming scheme as above. For more information look at the <a class="reference external" href="http://www.gromacs.org/">Gromacs</a> homepage and at the <a class="reference external" href="http://www.gromacs.org/Documentation">Gromacs documentation</a>.</p>
+<p>There are also single/double precision versions of the tools that come with the
+application for CPU builds, with the same naming scheme as above. For more
+information look at the <a class="reference external" href="http://www.gromacs.org/">Gromacs</a> homepage and at the
+<a class="reference external" href="http://www.gromacs.org/Documentation">Gromacs documentation</a>.</p>
 </section>
-<section id="batch-execution">
-<h2>Batch execution<a class="headerlink" href="#batch-execution" title="Permalink to this heading">#</a></h2>
+<section id="batch-execution-with-current-versions">
+<h2>Batch execution with current versions<a class="headerlink" href="#batch-execution-with-current-versions" title="Permalink to this heading">#</a></h2>
 <section id="serial-execution">
 <h3>Serial execution<a class="headerlink" href="#serial-execution" title="Permalink to this heading">#</a></h3>
-<p>An example job submission script (<code class="docutils literal notranslate"><span class="pre">example_serial.sh</span></code>) that runs a gromacs executeable is shown below:</p>
+<p>An example job submission script (<code class="docutils literal notranslate"><span class="pre">example_serial.sh</span></code>) that runs a gromacs
+executable is shown below:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#$ -cwd -V</span>
 <span class="c1"># request 10 hours of runtime</span>
 <span class="c1">#$ -l h_rt=10:00:00</span>
-mdrun_d<span class="w">  </span>&lt;args&gt;
+gmx<span class="w"> </span>mdrun<span class="w"> </span>&lt;args&gt;
 </pre></div>
 </div>
-<p>This requests 10 hours of runtime, to run in the current directory <code class="docutils literal notranslate"><span class="pre">-cwd</span></code> and using the current environment <code class="docutils literal notranslate"><span class="pre">-V</span></code>, using the double precision version of mdrun, and where <code class="docutils literal notranslate"><span class="pre">&lt;args&gt;</span></code> represents the arguments to mdrun. More memory per core can be requested, 2Gb for instance, by adding the line <code class="docutils literal notranslate"><span class="pre">#$</span> <span class="pre">-l</span> <span class="pre">h_vmem=2G</span></code> to the script. You can find more submission options on the <a class="reference internal" href="../../usage/batchjob.html#batchjob-list-of-sge-options"><span class="std std-ref">batch job page</span></a>.</p>
+<p>This requests 10 hours of runtime, to run in the current directory <code class="docutils literal notranslate"><span class="pre">-cwd</span></code> and
+using the current environment <code class="docutils literal notranslate"><span class="pre">-V</span></code>, using the single precision version of
+mdrun, and where <code class="docutils literal notranslate"><span class="pre">&lt;args&gt;</span></code> represents the arguments to mdrun. More memory per
+core can be requested, 2Gb for instance, by adding the line <code class="docutils literal notranslate"><span class="pre">#$</span> <span class="pre">-l</span> <span class="pre">h_vmem=2G</span></code>
+to the script. You can find more submission options on the <a class="reference internal" href="../../usage/batchjob.html#batchjob-list-of-sge-options"><span class="std std-ref">batch job
+page</span></a>.</p>
 <p>The script can be submitted with:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>example_serial.sh
 </pre></div>
@@ -681,7 +726,83 @@ mdrun_d<span class="w">  </span>&lt;args&gt;
 </section>
 <section id="parallel-execution">
 <h2>Parallel execution<a class="headerlink" href="#parallel-execution" title="Permalink to this heading">#</a></h2>
-<p>An example submission script (<code class="docutils literal notranslate"><span class="pre">example_parallel.sh</span></code>) looking to use the parallel executeable is shown below:</p>
+<p>An example submission script (<code class="docutils literal notranslate"><span class="pre">example_parallel.sh</span></code>) looking to use the
+parallel executable is shown below:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#$ -cwd -V</span>
+<span class="c1"># request 10 hours of runtime</span>
+<span class="c1">#$ -l h_rt=10:00:00</span>
+<span class="c1"># request 40 cores</span>
+<span class="c1">#$ -l np=40</span>
+mpirun<span class="w"> </span>gmx_mpi<span class="w"> </span>mdrun<span class="w"> </span>&lt;args&gt;
+</pre></div>
+</div>
+<p>This requests 10 hours of runtime, to run in the current directory <code class="docutils literal notranslate"><span class="pre">-cwd</span></code>,
+using the current environment <code class="docutils literal notranslate"><span class="pre">-V</span></code>, running on 40 cores <code class="docutils literal notranslate"><span class="pre">-l</span> <span class="pre">np=40</span></code>, using the
+single precision parallel version of mdrun, and where <code class="docutils literal notranslate"><span class="pre">&lt;args&gt;</span></code> represents the
+arguments to <code class="docutils literal notranslate"><span class="pre">mdrun</span></code> .</p>
+<p>Since we’re using a whole node here, you’ll get the maximum 4.8Gbytes per core
+allocated.  You can find more submission options on the <a class="reference internal" href="../../usage/batchjob.html#batchjob-list-of-sge-options"><span class="std std-ref">batch job
+page</span></a>.</p>
+<p>The script can be submitted with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>example_parallel.sh
+</pre></div>
+</div>
+</section>
+<section id="using-a-gpu">
+<h2>Using a GPU<a class="headerlink" href="#using-a-gpu" title="Permalink to this heading">#</a></h2>
+<p>An example submission script (<code class="docutils literal notranslate"><span class="pre">example_gpu.sh</span></code>) looking to use the parallel
+executable is shown below:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#$ -cwd -V</span>
+<span class="c1"># request 10 hours of runtime</span>
+<span class="c1">#$ -l h_rt=10:00:00</span>
+<span class="c1"># request a GPU on ARC4</span>
+<span class="c1">#$ -l coproc_v100=1</span>
+gmx<span class="w"> </span>mdrun<span class="w"> </span>&lt;args&gt;
+</pre></div>
+</div>
+<p>This requests 10 hours of runtime, to run in the current directory <code class="docutils literal notranslate"><span class="pre">-cwd</span></code>,
+using the current environment <code class="docutils literal notranslate"><span class="pre">-V</span></code>, running with 1 GPU, 10 cores, and 48Gbytes
+of RAM <code class="docutils literal notranslate"><span class="pre">-l</span> <span class="pre">coproc_v100=1</span></code>, using the single precision version of mdrun, and
+where <code class="docutils literal notranslate"><span class="pre">&lt;args&gt;</span></code> represents the arguments to <code class="docutils literal notranslate"><span class="pre">mdrun</span></code> .</p>
+<p>More memory per core cannot be requested, without also requesting more GPUs.
+You can find more submission options on the <a class="reference internal" href="../../usage/batchjob.html#batchjob-list-of-sge-options"><span class="std std-ref">batch job
+page</span></a>.</p>
+<p>The script can be submitted with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>example_gpu.sh
+</pre></div>
+</div>
+</section>
+<section id="batch-execution-with-legacy-versions">
+<h2>Batch execution with legacy versions<a class="headerlink" href="#batch-execution-with-legacy-versions" title="Permalink to this heading">#</a></h2>
+<section id="id1">
+<h3>Serial execution<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>An example job submission script (<code class="docutils literal notranslate"><span class="pre">example_serial.sh</span></code>) that runs a gromacs
+executable is shown below:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#$ -cwd -V</span>
+<span class="c1"># request 10 hours of runtime</span>
+<span class="c1">#$ -l h_rt=10:00:00</span>
+mdrun_d<span class="w">  </span>&lt;args&gt;
+</pre></div>
+</div>
+<p>This requests 10 hours of runtime, to run in the current directory <code class="docutils literal notranslate"><span class="pre">-cwd</span></code> and
+using the current environment <code class="docutils literal notranslate"><span class="pre">-V</span></code>, using the double precision version of
+mdrun, and where <code class="docutils literal notranslate"><span class="pre">&lt;args&gt;</span></code> represents the arguments to mdrun. More memory per
+core can be requested, 2Gb for instance, by adding the line <code class="docutils literal notranslate"><span class="pre">#$</span> <span class="pre">-l</span> <span class="pre">h_vmem=2G</span></code>
+to the script. You can find more submission options on the <a class="reference internal" href="../../usage/batchjob.html#batchjob-list-of-sge-options"><span class="std std-ref">batch job
+page</span></a>.</p>
+<p>The script can be submitted with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>example_serial.sh
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id2">
+<h2>Parallel execution<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>An example submission script (<code class="docutils literal notranslate"><span class="pre">example_parallel.sh</span></code>) looking to use the
+parallel executable is shown below:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#$ -cwd -V</span>
 <span class="c1"># request 10 hours of runtime</span>
@@ -691,12 +812,21 @@ mdrun_d<span class="w">  </span>&lt;args&gt;
 mpirun<span class="w"> </span>mdrun_mpi_d<span class="w"> </span>&lt;args&gt;
 </pre></div>
 </div>
-<p>This requests 10 hours of runtime, to run in the current directory <code class="docutils literal notranslate"><span class="pre">-cwd</span></code>, using the current environment <code class="docutils literal notranslate"><span class="pre">-V</span></code>, running on 4 cores <code class="docutils literal notranslate"><span class="pre">-pe</span> <span class="pre">ib</span> <span class="pre">4</span></code>, using the double precision parallel version of mdrun, and where <code class="docutils literal notranslate"><span class="pre">&lt;args&gt;</span></code> represents the arguments to <code class="docutils literal notranslate"><span class="pre">mdrun</span></code> .</p>
-<p>More memory per core can be requested, 2Gb for instance, by adding the line <code class="docutils literal notranslate"><span class="pre">#$</span> <span class="pre">-l</span> <span class="pre">h_vmem=2G</span></code> to the script. You can find more submission options on the <a class="reference internal" href="../../usage/batchjob.html#batchjob-list-of-sge-options"><span class="std std-ref">batch job page</span></a>.</p>
+<p>This requests 10 hours of runtime, to run in the current directory <code class="docutils literal notranslate"><span class="pre">-cwd</span></code>,
+using the current environment <code class="docutils literal notranslate"><span class="pre">-V</span></code>, running on 4 cores <code class="docutils literal notranslate"><span class="pre">-pe</span> <span class="pre">ib</span> <span class="pre">4</span></code>, using the
+double precision parallel version of mdrun, and where <code class="docutils literal notranslate"><span class="pre">&lt;args&gt;</span></code> represents the
+arguments to <code class="docutils literal notranslate"><span class="pre">mdrun</span></code> .</p>
+<p>More memory per core can be requested, 2Gb for instance, by adding the line <code class="docutils literal notranslate"><span class="pre">#$</span> <span class="pre">-l</span> <span class="pre">h_vmem=2G</span></code> to the script. You can find more submission options on the <a class="reference internal" href="../../usage/batchjob.html#batchjob-list-of-sge-options"><span class="std std-ref">batch
+job page</span></a>.</p>
 <p>The script can be submitted with:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>example_parallel.sh
 </pre></div>
 </div>
+</section>
+<section id="performance-tuning-gromacs">
+<h2>Performance tuning Gromacs<a class="headerlink" href="#performance-tuning-gromacs" title="Permalink to this heading">#</a></h2>
+<p>General advice can be found at the
+<a class="reference external" href="https://manual.gromacs.org/documentation/2023.1/user-guide/mdrun-performance.html">Gromacs website</a>.</p>
 </section>
 </section>
 
@@ -766,11 +896,18 @@ mpirun<span class="w"> </span>mdrun_mpi_d<span class="w"> </span>&lt;args&gt;
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-the-module-environment">Setting the module environment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#executable-naming-conventions">Executable naming conventions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-execution">Batch execution</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-execution-with-current-versions">Batch execution with current versions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#serial-execution">Serial execution</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-execution">Parallel execution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-a-gpu">Using a GPU</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-execution-with-legacy-versions">Batch execution with legacy versions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Serial execution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Parallel execution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-tuning-gromacs">Performance tuning Gromacs</a></li>
 </ul>
   </nav></div>
 

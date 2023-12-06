@@ -583,7 +583,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#versions-available">Versions available</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-software">Accessing the software</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-script">Example script</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-batch-license">Using batch license</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-batch-licenses">Using batch licenses</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-comsol-memory-usage-while-running">Managing comsol memory usage while running</a></li>
 </ul>
             </nav>
@@ -600,7 +600,9 @@ document.write(`
 <h1>Comsol<a class="headerlink" href="#comsol" title="Permalink to this heading">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
-<p>COMSOL Multiphysics provides a range of simulation, finite element analysis and solver functionality. More information on the package is available from the <a class="reference external" href="http://www.comsol.com/">COMSOL website</a>.</p>
+<p>COMSOL Multiphysics provides a range of simulation, finite element analysis and
+solver functionality. More information on the package is available from the
+<a class="reference external" href="http://www.comsol.com/">COMSOL website</a>.</p>
 </section>
 <section id="versions-available">
 <h2>Versions available<a class="headerlink" href="#versions-available" title="Permalink to this heading">#</a></h2>
@@ -619,49 +621,55 @@ document.write(`
 <tbody>
 <tr class="row-even"><td><p>ARC3</p></td>
 <td><p>5.2</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">comsol/5.2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">add</span> <span class="pre">comsol/5.2</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>ARC3</p></td>
 <td><p>5.2a</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">comsol/5.2a</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">add</span> <span class="pre">comsol/5.2a</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>ARC3</p></td>
 <td><p>5.3</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">comsol/5.3</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">add</span> <span class="pre">comsol/5.3</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>ARC3</p></td>
 <td><p>5.3a</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">comsol/5.3a</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">add</span> <span class="pre">comsol/5.3a</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>ARC3</p></td>
 <td><p>5.4</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">comsol/5.4</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">add</span> <span class="pre">comsol/5.4</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>ARC3</p></td>
 <td><p>5.5</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">comsol/5.5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">add</span> <span class="pre">comsol/5.5</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>ARC4</p></td>
 <td><p>5.3a</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">comsol/5.3a</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">add</span> <span class="pre">comsol/5.3a</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>ARC4</p></td>
 <td><p>5.4</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">comsol/5.4</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">add</span> <span class="pre">comsol/5.4</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>ARC4</p></td>
 <td><p>5.5</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">comsol/5.5</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">add</span> <span class="pre">comsol/5.5</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>ARC4</p></td>
+<td><p>6.0</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">add</span> <span class="pre">comsol/6.0</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>ARC4</p></td>
+<td><p>6.1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">add</span> <span class="pre">comsol/6.1</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="accessing-the-software">
 <h2>Accessing the software<a class="headerlink" href="#accessing-the-software" title="Permalink to this heading">#</a></h2>
-<p>To make COMSOL available in your environment, enter the command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>comsol
-</pre></div>
-</div>
+<p>To make COMSOL available in your environment, use the desired <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">add</span></code>
+command from the table above.</p>
 </section>
 <section id="example-script">
 <h2>Example script<a class="headerlink" href="#example-script" title="Permalink to this heading">#</a></h2>
@@ -679,25 +687,37 @@ document.write(`
 <span class="c1">#the line below sets the number of cores and nodes</span>
 <span class="c1">#$ -l nodes=1</span>
 
-module<span class="w"> </span>load<span class="w"> </span>comsol/5.1
+module<span class="w"> </span>add<span class="w"> </span>comsol/5.1
 <span class="nb">export</span><span class="w"> </span><span class="nv">LM_LICENSE_FILE</span><span class="o">=</span>&lt;port@server&gt;:<span class="nv">$LM_LICENSE_FILE</span>
-comsol<span class="w"> </span>batch<span class="w"> </span>-np<span class="w"> </span><span class="nv">$NSLOTS</span><span class="w"> </span>-tmpdir<span class="w"> </span><span class="nv">$TMPDIR</span><span class="w"> </span>-inputfile<span class="w"> </span>input.mph<span class="w"> </span>-outputfile<span class="w"> </span>outphysics.mph<span class="w"> </span>-recoverydir<span class="w"> </span>/nobackup/<span class="nv">$USER</span>/comsolrecovery
+comsol<span class="w"> </span>batch<span class="w"> </span>-np<span class="w"> </span><span class="nv">$NSLOTS</span><span class="w"> </span><span class="se">\</span>
+<span class="w">             </span>-tmpdir<span class="w"> </span><span class="nv">$TMPDIR</span><span class="w"> </span><span class="se">\</span>
+<span class="w">             </span>-inputfile<span class="w"> </span>input.mph<span class="w"> </span><span class="se">\</span>
+<span class="w">             </span>-outputfile<span class="w"> </span>outphysics.mph<span class="w"> </span><span class="se">\</span>
+<span class="w">             </span>-recoverydir<span class="w"> </span>/nobackup/<span class="nv">$USER</span>/comsolrecovery
 </pre></div>
 </div>
 <p>In the script above:</p>
-<p>Change <code class="docutils literal notranslate"><span class="pre">&lt;port&#64;server&gt;</span></code> to the license server details obtained from your supervisor. For example if you are given <code class="docutils literal notranslate"><span class="pre">1322&#64;server</span></code> :</p>
+<p>Change <code class="docutils literal notranslate"><span class="pre">&lt;port&#64;server&gt;</span></code> to the license server details obtained from your
+supervisor. For example if you are given <code class="docutils literal notranslate"><span class="pre">1322&#64;server</span></code> :</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">LM_LICENSE_FILE</span><span class="o">=</span><span class="m">1322</span>@server:<span class="nv">$LM_LICENSE_FILE</span>
 </pre></div>
 </div>
 </section>
-<section id="using-batch-license">
-<h2>Using batch license<a class="headerlink" href="#using-batch-license" title="Permalink to this heading">#</a></h2>
-<p>In addition to the default licenses available for COMSOL, additional batch licenses are available.  These can be used by adding an additional flag to you COMSOL command <code class="docutils literal notranslate"><span class="pre">-usebatchlic</span></code>.</p>
+<section id="using-batch-licenses">
+<h2>Using batch licenses<a class="headerlink" href="#using-batch-licenses" title="Permalink to this heading">#</a></h2>
+<p>In addition to the default licenses available for COMSOL, additional batch
+licenses are available.  These can be used by adding an additional flag to you
+COMSOL command <code class="docutils literal notranslate"><span class="pre">-usebatchlic</span></code>.</p>
 </section>
 <section id="managing-comsol-memory-usage-while-running">
 <h2>Managing comsol memory usage while running<a class="headerlink" href="#managing-comsol-memory-usage-while-running" title="Permalink to this heading">#</a></h2>
-<p>Running comsol in command line can often create a large number of temporary files in the <code class="docutils literal notranslate"><span class="pre">.comsol</span></code> directory in your home directory (<a class="reference external" href="https://www.hpc.dtu.dk/?page_id=1257">Details on running comsol in command line</a>). This can often lead to a quota exceeded error on jobs.</p>
-<p>To resolve this we recommend creating a comsolrecovery directory in your nobackup and adding the following line to your comsol batch command in your submission script <code class="docutils literal notranslate"><span class="pre">-recoverydir</span> <span class="pre">/nobackup/$USER/comsolrecovery</span></code>.</p>
+<p>Running comsol in command line can often create a large number of temporary
+files in the <code class="docutils literal notranslate"><span class="pre">.comsol</span></code> directory in your home directory (<a class="reference external" href="https://www.hpc.dtu.dk/?page_id=1257">Details on running
+comsol in command line</a>). This can often
+lead to a quota exceeded error on jobs.</p>
+<p>To resolve this we recommend creating a comsolrecovery directory in your
+nobackup and adding the following line to your comsol batch command in your
+submission script <code class="docutils literal notranslate"><span class="pre">-recoverydir</span> <span class="pre">/nobackup/$USER/comsolrecovery</span></code>.</p>
 </section>
 </section>
 
@@ -768,7 +788,7 @@ comsol<span class="w"> </span>batch<span class="w"> </span>-np<span class="w"> <
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#versions-available">Versions available</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-software">Accessing the software</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-script">Example script</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-batch-license">Using batch license</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-batch-licenses">Using batch licenses</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-comsol-memory-usage-while-running">Managing comsol memory usage while running</a></li>
 </ul>
   </nav></div>

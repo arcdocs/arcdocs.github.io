@@ -648,7 +648,13 @@ file saving, memory allocation, running in parallel, etc. is available at:</p>
 <section id="initial-setup">
 <h2>Initial setup<a class="headerlink" href="#initial-setup" title="Permalink to this heading">#</a></h2>
 <p>To set up Gaussian, at the command prompt, enter:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ module add gaussian
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>add<span class="w"> </span>gaussian
+</pre></div>
+</div>
+<p>Two versions are available on ARC4, and you can select a specific version as
+below:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>add<span class="w"> </span>gaussian/G09.D01
+module<span class="w"> </span>add<span class="w"> </span>gaussian/G16.C02
 </pre></div>
 </div>
 <section id="using-scratch-for-temporary-files">
@@ -659,15 +665,15 @@ If you do not specify this variable, files are written to /tmp which can
 quickly fill up, causing problems for you job and other users.  If you’re
 wanting to use fast local disk you’re better off using $TMPDIR by adding this
 to your submission script before running g09:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>export GAUSS_SCRDIR=$TMPDIR
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">GAUSS_SCRDIR</span><span class="o">=</span><span class="nv">$TMPDIR</span>
 </pre></div>
 </div>
 <p>For details on how you request more local storage, see our page on
 <a class="reference internal" href="../../usage/scratch.html"><span class="doc std std-doc">local storage</span></a>.</p>
 <p>Sometimes, the Gausssian temporary files can be large and the
-$TMPDIR directory will not be large enough.\ In this case we advise setting
+$TMPDIR directory will not be large enough.  In this case we advise setting
 the GAUSS_SCRDIR to a directory on /nobackup instead:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>export GAUSS_SCRDIR=/nobackup/your_directory
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">GAUSS_SCRDIR</span><span class="o">=</span>/nobackup/your_directory
 </pre></div>
 </div>
 <p>As /nobackup is a parallel filesystem it should offer better performance than
@@ -688,17 +694,19 @@ use is described in detail in the Gaussian manual):</p>
 </section>
 <section id="running-the-code">
 <h2>Running the code<a class="headerlink" href="#running-the-code" title="Permalink to this heading">#</a></h2>
+<p>Examples are shown and tested using <code class="docutils literal notranslate"><span class="pre">g09</span></code> but likely will behave the same with
+<code class="docutils literal notranslate"><span class="pre">g16</span></code>.</p>
 <section id="launching-on-the-login-nodes">
 <h3>Launching on the login nodes<a class="headerlink" href="#launching-on-the-login-nodes" title="Permalink to this heading">#</a></h3>
 <p>Gaussian can be launched by entering g09 on the command line followed by the
 input filename:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ g09 inputfile
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>g09<span class="w"> </span>inputfile
 </pre></div>
 </div>
 <p><strong>Only very short runs should be launched on the login nodes.</strong> Compute
 intensive runs should be executed through the batch queues (see below).</p>
 <p>For further information on the usage of Gaussian, please consult the
-<a class="reference external" href="https://gaussian.com/man/">online documentation</a>.</p>
+<a class="reference external" href="https://gaussian.com/man/">Gaussian online documentation</a>.</p>
 </section>
 <section id="launching-through-the-batch-queues">
 <h3>Launching through the batch queues<a class="headerlink" href="#launching-through-the-batch-queues" title="Permalink to this heading">#</a></h3>
@@ -706,17 +714,15 @@ intensive runs should be executed through the batch queues (see below).</p>
 required for the job. It may be appropriate to consider both memory usage and
 CPU time limits for the job.</p>
 <p>A sample script follows:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#$ -cwd
-#$ -l h_rt=1:00:00
-#$ -l h_vmem=1G
-module add gaussian
-export GAUSS_SCRDIR=$TMPDIR
-g09 formaldeyhde.com
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -cwd</span>
+<span class="c1">#$ -l h_rt=1:00:00</span>
+<span class="c1">#$ -l h_vmem=1G</span>
+module<span class="w"> </span>add<span class="w"> </span>gaussian
+<span class="nb">export</span><span class="w"> </span><span class="nv">GAUSS_SCRDIR</span><span class="o">=</span><span class="nv">$TMPDIR</span>
+g09<span class="w"> </span>formaldeyhde.com
 </pre></div>
 </div>
-<p>This will request 1 hour of runtime on a single processor with 1GB memory, this
-is the default amount of memory so the line <code class="docutils literal notranslate"><span class="pre">#$</span> <span class="pre">-l</span> <span class="pre">h_vmem=1G</span></code> does not really
-need to be included.</p>
+<p>This will request 1 hour of runtime on a single processor with 1GB memory.</p>
 </section>
 <section id="running-in-parallel-shared-memory">
 <h3>Running in Parallel (Shared Memory)<a class="headerlink" href="#running-in-parallel-shared-memory" title="Permalink to this heading">#</a></h3>
@@ -727,15 +733,15 @@ therefore important to set both the Gaussian input file (link 0 command:
 of execution threads. The OMP_NUM_THREADS variable should only be set to 1 or
 not at all (the default) for Gaussian to work correctly.</p>
 <p>A sample script is:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#$ -cwd
-#$ -l h_rt=1:00:00
-#$ -l h_vmem=1G
-#$ -l h_stack=100M
-#$ -pe smp &lt;np&gt;
-module add gaussian
-export GAUSS_SCRDIR=$TMPDIR
-export OMP_NUM_THREADS=1
-g09 formaldeyhde.com
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -cwd</span>
+<span class="c1">#$ -l h_rt=1:00:00</span>
+<span class="c1">#$ -l h_vmem=1G</span>
+<span class="c1">#$ -l h_stack=100M</span>
+<span class="c1">#$ -pe smp &lt;np&gt;</span>
+module<span class="w"> </span>add<span class="w"> </span>gaussian
+<span class="nb">export</span><span class="w"> </span><span class="nv">GAUSS_SCRDIR</span><span class="o">=</span><span class="nv">$TMPDIR</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span>
+g09<span class="w"> </span>formaldeyhde.com
 </pre></div>
 </div>
 <p>This will request <code class="docutils literal notranslate"><span class="pre">&lt;np&gt;</span></code> processors, each with 1GB memory.</p>
@@ -747,37 +753,37 @@ in the Gaussian input file.</p>
 <p>It is possible to combine the submission script and input file into a single
 script so that the np in the submission script always matches <code class="docutils literal notranslate"><span class="pre">%NProcShared=&lt;np&gt;</span></code>
 in the Gaussian input file:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#$ -cwd
-#$ -l h_rt=1:00:00
-#$ -l h_vmem=1G
-#$ -pe smp 8
-module add gaussian
-export GAUSS_SCRDIR=$TMPDIR
-export OMP_NUM_THREADS=1
-cat &lt; formaldeyhde.com
-%NprocShared=${NSLOTS}
-%mem=200MB
-%rwf=/scratch/formaldehyde
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -cwd</span>
+<span class="c1">#$ -l h_rt=1:00:00</span>
+<span class="c1">#$ -l h_vmem=1G</span>
+<span class="c1">#$ -pe smp 8</span>
+module<span class="w"> </span>add<span class="w"> </span>gaussian
+<span class="nb">export</span><span class="w"> </span><span class="nv">GAUSS_SCRDIR</span><span class="o">=</span><span class="nv">$TMPDIR</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">1</span>
+cat<span class="w"> </span>&lt;<span class="w"> </span>formaldeyhde.com
+%NprocShared<span class="o">=</span><span class="si">${</span><span class="nv">NSLOTS</span><span class="si">}</span>
+%mem<span class="o">=</span>200MB
+%rwf<span class="o">=</span>/scratch/formaldehyde
 %NoSave
-%chk=formaldehyde
-# b3lyp/6-31g scf=(tight,maxcycle=1000)
+%chk<span class="o">=</span>formaldehyde
+<span class="c1"># b3lyp/6-31g scf=(tight,maxcycle=1000)</span>
 
-formaldehyde single point DFT calculation, Cs symmetry
+formaldehyde<span class="w"> </span>single<span class="w"> </span>point<span class="w"> </span>DFT<span class="w"> </span>calculation,<span class="w"> </span>Cs<span class="w"> </span>symmetry
 
-0 1
- C                 -1.54150194    0.53359683    0.00000000
- H                 -1.00833820   -0.39410809    0.00000000
- H                 -2.61150194    0.53359683    0.00000000
- O                 -0.91446151    1.62464718    0.00000000
+<span class="m">0</span><span class="w"> </span><span class="m">1</span>
+<span class="w"> </span>C<span class="w">                 </span>-1.54150194<span class="w">    </span><span class="m">0</span>.53359683<span class="w">    </span><span class="m">0</span>.00000000
+<span class="w"> </span>H<span class="w">                 </span>-1.00833820<span class="w">   </span>-0.39410809<span class="w">    </span><span class="m">0</span>.00000000
+<span class="w"> </span>H<span class="w">                 </span>-2.61150194<span class="w">    </span><span class="m">0</span>.53359683<span class="w">    </span><span class="m">0</span>.00000000
+<span class="w"> </span>O<span class="w">                 </span>-0.91446151<span class="w">    </span><span class="m">1</span>.62464718<span class="w">    </span><span class="m">0</span>.00000000
 
 EOF
 
-g09 formaldeyhde.com
-rm ${GAUSS_SCRDIR}/*
+g09<span class="w"> </span>formaldeyhde.com
+rm<span class="w"> </span><span class="si">${</span><span class="nv">GAUSS_SCRDIR</span><span class="si">}</span>/*
 </pre></div>
 </div>
-<p>The above script can be submitted to the batch queues through the qsub command:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ qsub
+<p>The above script saved as <a class="reference external" href="http://gauss.sh">gauss.sh</a> can be submitted to the queue with the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qsub<span class="w"> </span>gauss.sh
 </pre></div>
 </div>
 <p>When it runs, it creates the input file, formaldehyde.com, and then runs the
@@ -802,26 +808,26 @@ environment.</p>
 <p>This requires adding some additional instructions to both the job submission
 script and the input file.</p>
 <p>Submission script for ARC3:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#$ -V
-#$ -cwd
-#$ -l h_rt=30:00:00
-#$ -l nodes=2,ppn=1,tpp=24
-#$ -N Pt33-31et.com
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -V</span>
+<span class="c1">#$ -cwd</span>
+<span class="c1">#$ -l h_rt=30:00:00</span>
+<span class="c1">#$ -l nodes=2,ppn=1,tpp=24</span>
+<span class="c1">#$ -N Pt33-31et.com</span>
 
-# set prefix to be your input filename
-prefix=Pt33-31et
-export GAUSS_SCRDIR=$TMPDIR
+<span class="c1"># set prefix to be your input filename</span>
+<span class="nv">prefix</span><span class="o">=</span>Pt33-31et
+<span class="nb">export</span><span class="w"> </span><span class="nv">GAUSS_SCRDIR</span><span class="o">=</span><span class="nv">$TMPDIR</span>
 
-# prepare a valid MACHINEFILE and set it to be used:
-echo &quot;%LindaWorkers=&quot;`awk -vORS=, &#39;{print $1}&#39; $PE_HOSTFILE | sed &#39;s/,$/\n/&#39;` &gt; ${prefix}-LINDA.com
-cat ${prefix}.com &gt;&gt; ${prefix}-LINDA.com
+<span class="c1"># prepare a valid MACHINEFILE and set it to be used:</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;%LindaWorkers=&quot;</span><span class="sb">`</span>awk<span class="w"> </span>-vORS<span class="o">=</span>,<span class="w"> </span><span class="s1">&#39;{print $1}&#39;</span><span class="w"> </span><span class="nv">$PE_HOSTFILE</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/,$/\n/&#39;</span><span class="sb">`</span><span class="w"> </span>&gt;<span class="w"> </span><span class="si">${</span><span class="nv">prefix</span><span class="si">}</span>-LINDA.com
+cat<span class="w"> </span><span class="si">${</span><span class="nv">prefix</span><span class="si">}</span>.com<span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="si">${</span><span class="nv">prefix</span><span class="si">}</span>-LINDA.com
 
-export GAUSS_LFLAGS=&#39; -opt &quot;Tsnet.Node.lindarsharg: ssh&quot;&#39;
+<span class="nb">export</span><span class="w"> </span><span class="nv">GAUSS_LFLAGS</span><span class="o">=</span><span class="s1">&#39; -opt &quot;Tsnet.Node.lindarsharg: ssh&quot;&#39;</span>
 
-# run Gaussian 09
-module add gaussian/G09.D01
-g09 &lt; ${prefix}.com
-rm ${GAUSS_SCRDIR}/*
+<span class="c1"># run Gaussian 09</span>
+module<span class="w"> </span>add<span class="w"> </span>gaussian/G09.D01
+g09<span class="w"> </span>&lt;<span class="w"> </span><span class="si">${</span><span class="nv">prefix</span><span class="si">}</span>.com
+rm<span class="w"> </span><span class="si">${</span><span class="nv">GAUSS_SCRDIR</span><span class="si">}</span>/*
 </pre></div>
 </div>
 <p>This will set up:</p>
@@ -846,16 +852,17 @@ Pt31-35et
 </section>
 <section id="managing-temporary-files">
 <h3>Managing temporary files<a class="headerlink" href="#managing-temporary-files" title="Permalink to this heading">#</a></h3>
-<p>Gaussian creates large temporary files in the $GAUSS_SCRDIR. To prevent this
+<p>Gaussian creates large temporary files in the $GAUSS_SCRDIR.  If you find
+yourself having to use a directory other than $TMPDIR, then to prevent this
 directory filling up, it is best to clear it out at the end of the run. An
 example script which runs Gaussian, then clears the temporary files is:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#$ -cwd
-#$ -l h_rt=23:00:00
-#$ -l h_vmem=1G
-module add gaussian
-export GAUSS_SCRDIR=$TMPDIR
-g09 CH3CH2CHCOOCH3_opt.com
-rm ${GAUSS_SCRDIR}/*
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -cwd</span>
+<span class="c1">#$ -l h_rt=23:00:00</span>
+<span class="c1">#$ -l h_vmem=1G</span>
+module<span class="w"> </span>add<span class="w"> </span>gaussian
+<span class="nb">export</span><span class="w"> </span><span class="nv">GAUSS_SCRDIR</span><span class="o">=</span>/nobackup/<span class="nv">$USER</span>/gaussian-temp
+g09<span class="w"> </span>CH3CH2CHCOOCH3_opt.com
+rm<span class="w"> </span><span class="si">${</span><span class="nv">GAUSS_SCRDIR</span><span class="si">}</span>/*
 </pre></div>
 </div>
 </section>
@@ -863,13 +870,15 @@ rm ${GAUSS_SCRDIR}/*
 <section id="using-gaussview">
 <h2>Using Gaussview<a class="headerlink" href="#using-gaussview" title="Permalink to this heading">#</a></h2>
 <p>Gaussview is installed for the preparation of Gaussian input files and viewing
-of output.</p>
+of output.  It is only available with g09, and is not included with our install
+of g16.</p>
 <p>It may be better to install this application on a local workstation, rather
 than viewing the graphics over the network.</p>
 <p>An X-server should be running on the local machine &amp; your SSH connection should
 have X11 forwarding enabled to use the Gaussview GUI.  Documentation for
 gaining ssh access to the ARC systems is in the web pages that describe how to
-login in from each of the 3 main operating systems - <a class="reference internal" href="../../getting_started/logon.html"><span class="doc std std-doc">How to connect and log on to ARC3/ARC4</span></a>.</p>
+login in from each of the 3 main operating systems - <a class="reference internal" href="../../getting_started/logon.html"><span class="doc std std-doc">How to connect and log on
+to ARC3/ARC4</span></a>.</p>
 <p>Note the X-server needs to have 3D OpenGL extensions, most Linux/Mac X servers
 will have this functionality, however older versions of Exceed may not support
 this. Gaussview appears to work with Cygwin X-server, but has made Xming crash.
@@ -880,7 +889,7 @@ to your shell.</p>
 <section id="launching-on-the-front-end">
 <h3>Launching on the front end<a class="headerlink" href="#launching-on-the-front-end" title="Permalink to this heading">#</a></h3>
 <p>The Gaussian module sets up an alias to Gaussview gv:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ gview
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gview
 </pre></div>
 </div>
 <section id="note-for-macos-users">
@@ -896,9 +905,10 @@ gview.exe: xcb_io.c:259: poll_for_event: Assertion `!xcb_xlib_threads_sequence_l
 </pre></div>
 </div>
 <p>To resolve this problem you will need to uninstall XQuartz 2.7.11 and install
-an earlier version XQuartz 2.7.8 (<a class="reference external" href="https://dl.bintray.com/xquartz/downloads/XQuartz-2.7.8.dmg">Click here to download the .dmg file</a>).  You will
+an earlier version XQuartz 2.7.8 (<a class="reference external" href="https://dl.bintray.com/xquartz/downloads/XQuartz-2.7.8.dmg">Click here to download the .dmg
+file</a>).  You will
 then need to run the following command in your macOS Terminal <strong>(Not on ARC)</strong>:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ defaults write org.macosforge.xquartz.X11 enable_iglx -bool true
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>defaults write org.macosforge.xquartz.X11 enable_iglx -bool true
 </pre></div>
 </div>
 <p>You should then be able to open gview over X forwarding.</p>
@@ -909,7 +919,7 @@ then need to run the following command in your macOS Terminal <strong>(Not on AR
 <p>If your use of Gaussview is compute intensive, you are encouraged to submit it
 as an interactive job to the batch queues. The following line can be used for
 this:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ qrsh -V -cwd -l h_rt=1:00:00 gview
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qrsh<span class="w"> </span>-V<span class="w"> </span>-cwd<span class="w"> </span>-l<span class="w"> </span><span class="nv">h_rt</span><span class="o">=</span><span class="m">1</span>:00:00<span class="w"> </span>gview
 </pre></div>
 </div>
 <p>This will ask for 1 hour of runtime.</p>

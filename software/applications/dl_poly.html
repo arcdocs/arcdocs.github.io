@@ -583,7 +583,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#licensing">Licensing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-module">Loading the module</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dl-poly-4-09">DL_POLY 4.09</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dl-poly-4-09-4-10">DL_POLY 4.09/4.10</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-execution">Parallel execution</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#serial-execution">Serial execution</a></li>
 </ul>
@@ -609,46 +609,59 @@ document.write(`
 <h1>DL_POLY<a class="headerlink" href="#dl-poly" title="Permalink to this heading">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
-<p>DL_POLY is a general purpose molecular dynamics simulation tool developed and provisioned for UK academia. You can read more about it on the <a class="reference external" href="https://www.scd.stfc.ac.uk/Pages/DL_POLY.aspx">DL_POLY web page</a>.</p>
+<p>DL_POLY is a general purpose molecular dynamics simulation tool developed and
+provisioned for UK academia. You can read more about it on the <a class="reference external" href="https://www.scd.stfc.ac.uk/Pages/DL_POLY.aspx">DL_POLY web
+page</a>.</p>
 </section>
 <section id="licensing">
 <h2>Licensing<a class="headerlink" href="#licensing" title="Permalink to this heading">#</a></h2>
-<p>To access this software you need to agree to the license terms, please submit a request to the Research Computing team via our <a class="reference external" href="https://it.leeds.ac.uk/it?id=sc_cat_item&amp;sys_id=7587b2530f675f00a82247ece1050eda">contact form</a> confirming you accept the license terms and wish to be added to the DL_POLY user group.</p>
+<p>To access this software you need to agree to the license terms, please submit a
+request to the Research Computing team via our <a class="reference external" href="https://it.leeds.ac.uk/it?id=sc_cat_item&amp;sys_id=7587b2530f675f00a82247ece1050eda">contact
+form</a>
+confirming you accept the license terms and wish to be added to the DL_POLY
+user group.</p>
 <p>The licence terms are available on the <a class="reference internal" href="dlpoly/license.html"><span class="doc std std-doc">DLpoly license page</span></a>.</p>
 </section>
 <section id="loading-the-module">
 <h2>Loading the module<a class="headerlink" href="#loading-the-module" title="Permalink to this heading">#</a></h2>
-<p>DL_POLY versions 4.08 and 4.09 are currently available on ARC3 and 4.09 on ARC4.
-You can add the DL_POLY module by using the command:</p>
+<p>DL_POLY versions 4.08 and 4.09 are currently available on ARC3 and 4.09 and
+4.10 on ARC4.  You can add the DL_POLY module by using a command like this:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>dl_poly/4.09
 </pre></div>
 </div>
-<p>This adds the DL_POLY executable files to your environment and must be included in your job submission script to ensure your jobs can also access DL_POLY.</p>
+<p>This adds the DL_POLY 4.09 executable files to your environment and must be
+included in your job submission script to ensure your jobs can also access
+DL_POLY.</p>
 </section>
 <section id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h2>
-<section id="dl-poly-4-09">
-<h3>DL_POLY 4.09<a class="headerlink" href="#dl-poly-4-09" title="Permalink to this heading">#</a></h3>
-<p>DL_POLY 4.09 is built with to both run in serial and in parallel depending on the resources available using the single executable <code class="docutils literal notranslate"><span class="pre">DLPOLY.Z</span></code>.</p>
+<section id="dl-poly-4-09-4-10">
+<h3>DL_POLY 4.09/4.10<a class="headerlink" href="#dl-poly-4-09-4-10" title="Permalink to this heading">#</a></h3>
+<p>DL_POLY 4.09/4.10 is built with to both run in serial and in parallel depending
+on the resources available using the single executable <code class="docutils literal notranslate"><span class="pre">DLPOLY.Z</span></code>.</p>
 <section id="parallel-execution">
 <h4>Parallel execution<a class="headerlink" href="#parallel-execution" title="Permalink to this heading">#</a></h4>
 <p>An example job submission script that calls DLpoly is shown below:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -cwd -V</span>
 <span class="c1">#$ -l h_rt=48:00:00</span>
 <span class="c1">#$ -pe ib 16</span>
+module<span class="w"> </span>add<span class="w"> </span>dl_poly/4.10
 mpirun<span class="w"> </span>-np<span class="w"> </span><span class="nv">$NSLOTS</span><span class="w"> </span>DLPOLY.Z
 </pre></div>
 </div>
-<p>This requests 48 hours of runtime on 16 processes spread over Infiniband. It can be submitted to the queue with the command:</p>
+<p>This requests 48 hours of runtime on 16 processes spread over Infiniband. Saved
+as <a class="reference external" href="http://dlpoly.sh">dlpoly.sh</a> this can be submitted to the queue with the command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>dlpoly.sh
 </pre></div>
 </div>
 </section>
 <section id="serial-execution">
 <h4>Serial execution<a class="headerlink" href="#serial-execution" title="Permalink to this heading">#</a></h4>
-<p>DL_POLY can be run in serial using the same executeable without prepending the call with <code class="docutils literal notranslate"><span class="pre">mpirun</span></code>.</p>
+<p>DL_POLY can be run in serial using the same executable without prepending the
+call with <code class="docutils literal notranslate"><span class="pre">mpirun</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -cwd -V</span>
 <span class="c1">#$ -l h_rt=48:00:00</span>
+module<span class="w"> </span>add<span class="w"> </span>dl_poly/4.10
 DLPOLY.Z
 </pre></div>
 </div>
@@ -660,13 +673,16 @@ DLPOLY.Z
 </section>
 <section id="dl-poly-4-08">
 <h3>DL_POLY 4.08<a class="headerlink" href="#dl-poly-4-08" title="Permalink to this heading">#</a></h3>
-<p>Version 4.08 is built on ARC3 and has a slightly different executable that can be used as follows:</p>
+<p>Version 4.08 is built on ARC3 and has a slightly different executable that can
+be used as follows:</p>
 <section id="job-submission-example">
 <h4>Job submission example<a class="headerlink" href="#job-submission-example" title="Permalink to this heading">#</a></h4>
-<p>An example job submission script that calls to the <code class="docutils literal notranslate"><span class="pre">DL_POLY.Z.parallel</span></code> executable and requests multiple cores over Infiniband.</p>
+<p>An example job submission script that calls to the <code class="docutils literal notranslate"><span class="pre">DL_POLY.Z.parallel</span></code>
+executable and requests multiple cores over Infiniband.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#$ -cwd -V</span>
 <span class="c1">#$ -l h_rt=48:00:00</span>
 <span class="c1">#$ -pe ib 16</span>
+module<span class="w"> </span>add<span class="w"> </span>dl_poly/4.08
 mpirun<span class="w"> </span>DLPOLY.Z.parallel
 </pre></div>
 </div>
@@ -745,7 +761,7 @@ mpirun<span class="w"> </span>DLPOLY.Z.parallel
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#licensing">Licensing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-the-module">Loading the module</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dl-poly-4-09">DL_POLY 4.09</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dl-poly-4-09-4-10">DL_POLY 4.09/4.10</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-execution">Parallel execution</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#serial-execution">Serial execution</a></li>
 </ul>

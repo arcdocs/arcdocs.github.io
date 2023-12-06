@@ -604,7 +604,7 @@ document.write(`
 </pre></div>
 </div>
 <p>After that, you should be able to load the IDL module:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>idl
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>add<span class="w"> </span>idl
 </pre></div>
 </div>
 <p>and then run the application by entering the command <code class="docutils literal notranslate"><span class="pre">idl</span></code>.</p>
@@ -616,7 +616,7 @@ document.write(`
 <span class="c1">#$ -l h_rt=6:00:00</span>
 <span class="c1">#$ -l h_vmem=1G</span>
 
-module<span class="w"> </span>load<span class="w"> </span>idl
+module<span class="w"> </span>add<span class="w"> </span>idl
 idl
 </pre></div>
 </div>
@@ -635,7 +635,7 @@ idl
 <h2>Running IDL as an interactive job on the compute nodes<a class="headerlink" href="#running-idl-as-an-interactive-job-on-the-compute-nodes" title="Permalink to this heading">#</a></h2>
 <p>IDL can also be launched as an interactive job on a compute node through <code class="docutils literal notranslate"><span class="pre">qrsh</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">LM_LICENSE_FILE</span><span class="o">=</span>port@machine:<span class="nv">$LM_LICENSE_FILE</span>
-module<span class="w"> </span>load<span class="w"> </span>idl
+module<span class="w"> </span>add<span class="w"> </span>idl
 qrsh<span class="w"> </span>-cwd<span class="w"> </span>-V<span class="w"> </span>-l<span class="w"> </span><span class="nv">h_rt</span><span class="o">=</span><span class="m">6</span>:00:00,h_vmem<span class="o">=</span>1G<span class="w"> </span>-pty<span class="w"> </span>y<span class="w"> </span><span class="nv">$IDL_HOME</span>/idl/bin/idl
 </pre></div>
 </div>

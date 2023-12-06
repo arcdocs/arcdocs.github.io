@@ -613,7 +613,7 @@ to the project documentation for details on how to use the application
 itself.</p>
 <p>Although VisIt is flexible in the way it is deployed, the simplest
 method of invoking it is to run these commands on a login node:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ module load visit
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ module add visit
 $ visit
 </pre></div>
 </div>
@@ -635,7 +635,7 @@ SSH client.</p>
 <h3>On a cluster login node (quick start)<a class="headerlink" href="#on-a-cluster-login-node-quick-start" title="Permalink to this heading">#</a></h3>
 <p>Recommended for very short or undemanding pieces of work. Login to the
 cluster and execute:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ module load visit
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ module add visit
 $ visit
 </pre></div>
 </div>
@@ -645,12 +645,12 @@ not to tackle large pieces of work on the login nodes.</p>
 <section id="on-the-cluster-compute-nodes">
 <h3>On the cluster compute nodes<a class="headerlink" href="#on-the-cluster-compute-nodes" title="Permalink to this heading">#</a></h3>
 <p>Recommended for larger pieces of work:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ module load visit
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ module add visit
 $ qrsh -cwd -V -l h_rt=&lt;hh:mm:ss&gt; -l h_vmem=&lt;vmem&gt; visit
 </pre></div>
 </div>
 <p>Or, where using more than one cpu is useful, to launch visit in parallel</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ module load visit
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ module add visit
 $ qrsh -cwd -V -l h_rt=&lt;hh:mm:ss&gt; -l h_vmem=&lt;vmem&gt; -pe ib &lt;num&gt; visit -np &lt;num&gt;
 </pre></div>
 </div>
@@ -695,7 +695,7 @@ the host files saved earlier. For each host in turn:</p>
 <ol class="arabic">
 <li><p>Log into the cluster. Find the location of VisIT by loading the
 module for the version you want and examining a variable.</p>
-<p>module load visit/
+<p>module add visit
 echo $VISIT_HOME</p>
 </li>
 <li><p>Highlight the hostname by clicking on it. On the right hand side,<br />
@@ -744,7 +744,7 @@ using the version from the VisIt website, loading the
 <code class="docutils literal notranslate"><span class="pre">visit</span></code> module will set
 environment variable <code class="docutils literal notranslate"><span class="pre">VISIT_BUILD_MODULES</span></code> to contain the list of modules used build it. For
 example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ module load visit
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ module add visit
 $ echo $VISIT_BUILD_MODULES
 gnu/native openmpi mkl qt
 </pre></div>

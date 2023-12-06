@@ -42,13 +42,17 @@ file saving, memory allocation, running in parallel, etc. is available at:
 
 To set up Gaussian, at the command prompt, enter:
 
-    module add gaussian
+```bash
+module add gaussian
+```
 
 Two versions are available on ARC4, and you can select a specific version as
 below:
 
-    module add gaussian/G09.D01
-    module add gaussian/G16.C02
+```bash
+module add gaussian/G09.D01
+module add gaussian/G16.C02
+```
 
 ### Using Scratch for Temporary Files
 
@@ -59,7 +63,9 @@ quickly fill up, causing problems for you job and other users.  If you're
 wanting to use fast local disk you're better off using \$TMPDIR by adding this
 to your submission script before running g09:
 
-    export GAUSS_SCRDIR=$TMPDIR
+```bash
+export GAUSS_SCRDIR=$TMPDIR
+```
 
 For details on how you request more local storage, see our page on
 [local storage](../../usage/scratch).
@@ -68,7 +74,9 @@ Sometimes, the Gausssian temporary files can be large and the
 \$TMPDIR directory will not be large enough.  In this case we advise setting
 the GAUSS\_SCRDIR to a directory on /nobackup instead:
 
-    export GAUSS_SCRDIR=/nobackup/your_directory
+```bash
+export GAUSS_SCRDIR=/nobackup/your_directory
+```
 
 As /nobackup is a parallel filesystem it should offer better performance than
 other network drives on the system although this will be slower than using the
@@ -95,7 +103,9 @@ Examples are shown and tested using `g09` but likely will behave the same with
 Gaussian can be launched by entering g09 on the command line followed by the
 input filename:
 
-    g09 inputfile
+```bash
+g09 inputfile
+```
 
 **Only very short runs should be launched on the login nodes.** Compute
 intensive runs should be executed through the batch queues (see below).
@@ -111,12 +121,14 @@ CPU time limits for the job.
 
 A sample script follows:
 
-    #$ -cwd
-    #$ -l h_rt=1:00:00
-    #$ -l h_vmem=1G
-    module add gaussian
-    export GAUSS_SCRDIR=$TMPDIR
-    g09 formaldeyhde.com
+```bash
+#$ -cwd
+#$ -l h_rt=1:00:00
+#$ -l h_vmem=1G
+module add gaussian
+export GAUSS_SCRDIR=$TMPDIR
+g09 formaldeyhde.com
+```
 
 This will request 1 hour of runtime on a single processor with 1GB memory.
 
@@ -132,15 +144,17 @@ not at all (the default) for Gaussian to work correctly.
 
 A sample script is:
 
-    #$ -cwd
-    #$ -l h_rt=1:00:00
-    #$ -l h_vmem=1G
-    #$ -l h_stack=100M
-    #$ -pe smp <np>
-    module add gaussian
-    export GAUSS_SCRDIR=$TMPDIR
-    export OMP_NUM_THREADS=1
-    g09 formaldeyhde.com
+```bash
+#$ -cwd
+#$ -l h_rt=1:00:00
+#$ -l h_vmem=1G
+#$ -l h_stack=100M
+#$ -pe smp <np>
+module add gaussian
+export GAUSS_SCRDIR=$TMPDIR
+export OMP_NUM_THREADS=1
+g09 formaldeyhde.com
+```
 
 This will request `<np>` processors, each with 1GB memory.
 
@@ -155,37 +169,41 @@ It is possible to combine the submission script and input file into a single
 script so that the np in the submission script always matches `%NProcShared=<np>`
 in the Gaussian input file:
 
-    #$ -cwd
-    #$ -l h_rt=1:00:00
-    #$ -l h_vmem=1G
-    #$ -pe smp 8
-    module add gaussian
-    export GAUSS_SCRDIR=$TMPDIR
-    export OMP_NUM_THREADS=1
-    cat < formaldeyhde.com
-    %NprocShared=${NSLOTS}
-    %mem=200MB
-    %rwf=/scratch/formaldehyde
-    %NoSave
-    %chk=formaldehyde
-    # b3lyp/6-31g scf=(tight,maxcycle=1000)
+```bash
+#$ -cwd
+#$ -l h_rt=1:00:00
+#$ -l h_vmem=1G
+#$ -pe smp 8
+module add gaussian
+export GAUSS_SCRDIR=$TMPDIR
+export OMP_NUM_THREADS=1
+cat < formaldeyhde.com
+%NprocShared=${NSLOTS}
+%mem=200MB
+%rwf=/scratch/formaldehyde
+%NoSave
+%chk=formaldehyde
+# b3lyp/6-31g scf=(tight,maxcycle=1000)
 
-    formaldehyde single point DFT calculation, Cs symmetry
+formaldehyde single point DFT calculation, Cs symmetry
 
-    0 1
-     C                 -1.54150194    0.53359683    0.00000000
-     H                 -1.00833820   -0.39410809    0.00000000
-     H                 -2.61150194    0.53359683    0.00000000
-     O                 -0.91446151    1.62464718    0.00000000
+0 1
+ C                 -1.54150194    0.53359683    0.00000000
+ H                 -1.00833820   -0.39410809    0.00000000
+ H                 -2.61150194    0.53359683    0.00000000
+ O                 -0.91446151    1.62464718    0.00000000
 
-    EOF
+EOF
 
-    g09 formaldeyhde.com
-    rm ${GAUSS_SCRDIR}/*
+g09 formaldeyhde.com
+rm ${GAUSS_SCRDIR}/*
+```
 
-The above script can be submitted to the batch queues through the qsub command:
+The above script saved as gauss.sh can be submitted to the queue with the command:
 
-    qsub
+```bash
+qsub gauss.sh
+```
 
 When it runs, it creates the input file, formaldehyde\\.com, and then runs the
 job, such that the .log file and .chk file are saved in the current working
@@ -214,26 +232,28 @@ script and the input file.
 
 Submission script for ARC3:
 
-    #$ -V
-    #$ -cwd
-    #$ -l h_rt=30:00:00
-    #$ -l nodes=2,ppn=1,tpp=24
-    #$ -N Pt33-31et.com
+```bash
+#$ -V
+#$ -cwd
+#$ -l h_rt=30:00:00
+#$ -l nodes=2,ppn=1,tpp=24
+#$ -N Pt33-31et.com
 
-    # set prefix to be your input filename
-    prefix=Pt33-31et
-    export GAUSS_SCRDIR=$TMPDIR
+# set prefix to be your input filename
+prefix=Pt33-31et
+export GAUSS_SCRDIR=$TMPDIR
 
-    # prepare a valid MACHINEFILE and set it to be used:
-    echo "%LindaWorkers="`awk -vORS=, '{print $1}' $PE_HOSTFILE | sed 's/,$/\n/'` > ${prefix}-LINDA.com
-    cat ${prefix}.com >> ${prefix}-LINDA.com
+# prepare a valid MACHINEFILE and set it to be used:
+echo "%LindaWorkers="`awk -vORS=, '{print $1}' $PE_HOSTFILE | sed 's/,$/\n/'` > ${prefix}-LINDA.com
+cat ${prefix}.com >> ${prefix}-LINDA.com
 
-    export GAUSS_LFLAGS=' -opt "Tsnet.Node.lindarsharg: ssh"'
+export GAUSS_LFLAGS=' -opt "Tsnet.Node.lindarsharg: ssh"'
 
-    # run Gaussian 09
-    module add gaussian/G09.D01
-    g09 < ${prefix}.com
-    rm ${GAUSS_SCRDIR}/*
+# run Gaussian 09
+module add gaussian/G09.D01
+g09 < ${prefix}.com
+rm ${GAUSS_SCRDIR}/*
+```
 
 This will set up:
 
@@ -261,13 +281,15 @@ yourself having to use a directory other than \$TMPDIR, then to prevent this
 directory filling up, it is best to clear it out at the end of the run. An
 example script which runs Gaussian, then clears the temporary files is:
 
-    #$ -cwd
-    #$ -l h_rt=23:00:00
-    #$ -l h_vmem=1G
-    module add gaussian
-    export GAUSS_SCRDIR=/nobackup/$USER/gaussian-temp
-    g09 CH3CH2CHCOOCH3_opt.com
-    rm ${GAUSS_SCRDIR}/*
+```bash
+#$ -cwd
+#$ -l h_rt=23:00:00
+#$ -l h_vmem=1G
+module add gaussian
+export GAUSS_SCRDIR=/nobackup/$USER/gaussian-temp
+g09 CH3CH2CHCOOCH3_opt.com
+rm ${GAUSS_SCRDIR}/*
+```
 
 ## Using Gaussview
 
@@ -296,7 +318,9 @@ to your shell.
 
 The Gaussian module sets up an alias to Gaussview gv:
 
-    gview
+```bash
+gview
+```
 
 #### Note for macOS users
 
@@ -325,7 +349,9 @@ If your use of Gaussview is compute intensive, you are encouraged to submit it
 as an interactive job to the batch queues. The following line can be used for
 this:
 
-    qrsh -V -cwd -l h_rt=1:00:00 gview
+```bash
+qrsh -V -cwd -l h_rt=1:00:00 gview
+```
 
 This will ask for 1 hour of runtime.
 

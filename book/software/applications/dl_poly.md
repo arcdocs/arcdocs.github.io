@@ -48,8 +48,8 @@ module add dl_poly/4.10
 mpirun -np $NSLOTS DLPOLY.Z
 ```
 
-This requests 48 hours of runtime on 16 processes spread over Infiniband. It
-can be submitted to the queue with the command:
+This requests 48 hours of runtime on 16 processes spread over Infiniband. Saved
+as dlpoly.sh this can be submitted to the queue with the command:
 
 ```bash
 $ qsub dlpoly.sh

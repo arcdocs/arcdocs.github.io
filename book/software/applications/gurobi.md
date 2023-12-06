@@ -1,8 +1,8 @@
 # Gurobi
 
-The [Gurobi](https://www.gurobi.com/) mathmatical optimisation solver is
-available to use on HPC. You can find the official documentation on their
-[website](https://www.gurobi.com/documentation/9.1/).
+The [Gurobi](https://www.gurobi.com/) mathematical optimisation solver is
+available to use on HPC. For details see the
+[Gurobi Documentation](https://www.gurobi.com/documentation/9.1/).
 
 ## Gurobi module
 

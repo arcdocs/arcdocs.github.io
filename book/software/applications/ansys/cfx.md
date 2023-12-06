@@ -21,7 +21,7 @@ More details about using Ansys for the first time and setting license server det
 You can start the cfx5 graphical interface by running the `cfx5` command.
 
 ```bash
-$ module load ansys
+$ module add ansys
 
 $ cfx5
 ```

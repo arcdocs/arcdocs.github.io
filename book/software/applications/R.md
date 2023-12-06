@@ -14,7 +14,7 @@ However, if you want another version of R you can install it through the conda p
 
 ```bash
 # load the anaconda module
-$ module load anaconda
+$ module add anaconda
 
 # use conda to create an environment in which we install r version 4.0.3, using the conda forge channel
 $ conda create -n r4 -c conda-forge r-base=4.0.3

@@ -11,7 +11,7 @@ itself.
 Although VisIt is flexible in the way it is deployed, the simplest
 method of invoking it is to run these commands on a login node:
 
-    $ module load visit
+    $ module add visit
     $ visit
 
 This will provide the core functionality. More complicated methods are
@@ -34,7 +34,7 @@ SSH client.
 Recommended for very short or undemanding pieces of work. Login to the
 cluster and execute:
 
-    $ module load visit
+    $ module add visit
     $ visit
 
 Please note that, as they are shared between all users, it is important
@@ -44,12 +44,12 @@ not to tackle large pieces of work on the login nodes.
 
 Recommended for larger pieces of work:
 
-    $ module load visit
+    $ module add visit
     $ qrsh -cwd -V -l h_rt=<hh:mm:ss> -l h_vmem=<vmem> visit
 
 Or, where using more than one cpu is useful, to launch visit in parallel
 
-    $ module load visit
+    $ module add visit
     $ qrsh -cwd -V -l h_rt=<hh:mm:ss> -l h_vmem=<vmem> -pe ib <num> visit -np <num>
 
 In the above commands, `<hh:mm:ss>` is the length of real time the program
@@ -102,7 +102,7 @@ the host files saved earlier. For each host in turn:
 1. Log into the cluster. Find the location of VisIT by loading the
 module for the version you want and examining a variable.
 
-    module load visit/
+    module add visit
     echo $VISIT_HOME
 
 2. Highlight the hostname by clicking on it. On the right hand side,\
@@ -157,6 +157,6 @@ using the version from the VisIt website, loading the
 environment variable `VISIT_BUILD_MODULES` to contain the list of modules used build it. For
 example:
 
-    $ module load visit
+    $ module add visit
     $ echo $VISIT_BUILD_MODULES
     gnu/native openmpi mkl qt

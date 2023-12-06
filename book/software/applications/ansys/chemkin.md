@@ -19,7 +19,7 @@ More details about using Ansys for the first time and setting license server det
 Then run the `run_chemkin.sh` script passing it the argument Pro to start up Chemkin.
 
 ```bash
-$ module load ansys
+$ module add ansys
 
 $ run_chemkin.sh Pro
 ```

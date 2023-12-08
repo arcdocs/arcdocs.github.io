@@ -41,7 +41,7 @@ will request an interactive shell with 1 hour of run-time (the `-l h_rt`
 parameter). Once in the interactive shell, enter these two commands to\
 start a graphical session:
 
-    module load vmd
+    module add vmd
     vmd
 
 After exiting VMD, enter the `exit` command in the interactive window to close the session.

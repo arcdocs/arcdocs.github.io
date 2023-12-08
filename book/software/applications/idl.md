@@ -15,7 +15,7 @@ export LM_LICENSE_FILE=port@machine:$LM_LICENSE_FILE
 After that, you should be able to load the IDL module:
 
 ```bash
-module load idl
+module add idl
 ```
 
 and then run the application by entering the command `idl`.
@@ -29,7 +29,7 @@ An example job submission script that runs IDL is shown below:
 #$ -l h_rt=6:00:00
 #$ -l h_vmem=1G
 
-module load idl
+module add idl
 idl
 ```
 
@@ -51,7 +51,7 @@ IDL can also be launched as an interactive job on a compute node through `qrsh`:
 
 ```bash
 export LM_LICENSE_FILE=port@machine:$LM_LICENSE_FILE
-module load idl
+module add idl
 qrsh -cwd -V -l h_rt=6:00:00,h_vmem=1G -pty y $IDL_HOME/idl/bin/idl
 ```
 

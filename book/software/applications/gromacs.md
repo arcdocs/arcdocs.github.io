@@ -58,8 +58,8 @@ With older versions, there were also:
 
 There are also single/double precision versions of the tools that come with the
 application for CPU builds, with the same naming scheme as above. For more
-information look at the [Gromacs](http://www.gromacs.org/) homepage and at the
-[Gromacs documentation](http://www.gromacs.org/Documentation).
+information look at the [Gromacs](https://www.gromacs.org/) homepage and at the
+[Gromacs documentation](https://manual.gromacs.org/).
 
 ## Batch execution with current versions
 

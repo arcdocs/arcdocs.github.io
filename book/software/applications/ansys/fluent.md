@@ -170,7 +170,7 @@ different fluent command:
 # Request three hours of runtime
 #$ -l h_rt=3:00:00
 # Run on 8 cores
-#$ -pem smp 8
+#$ -pe smp 8
 # Request 4Gbytes per core
 #$ -l h_vmem=4G
 # define license and load module

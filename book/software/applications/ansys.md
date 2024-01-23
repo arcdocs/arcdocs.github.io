@@ -10,6 +10,7 @@ The license is obtained by setting the `ANSYSLMD_LICENSE_FILE` variable. To set 
 
 ```bash
 $ export ANSYSLMD_LICENSE_FILE=<port>@<host>
+$ export LSTC_LICENSE=ANSYS
 ```
 
 If accessing for the first time, there is an additional step (see the next section on this page) required to choose whether you are using commercial or academic licenses. To get the values of `<port>@<host>` specific to your group/department please contact the Client IT Team via [Service Now](https://it.leeds.ac.uk/it).
@@ -20,10 +21,12 @@ To make Ansys Fluent and CFX available for use:
 $ module add ansys
 ```
 
-To load a specific version of Ansys, specify this on the module command
+The command above loads the default version of Ansys (i.e. Ansys 17.2 on ARC3, and Ansys 2023R1 on ARC4).
+
+To load a specific version of Ansys, specify this on the module command:
 
 ```bash
-$ module add ansys/17.1
+$ module add ansys/2022R1
 ```
 
 ### [Running Ansys CLI](./ansys/ansyscli)
@@ -65,15 +68,16 @@ If you have not already done so, set the license server and port using the detai
 
 ```bash
 $ export ANSYSLMD_LICENSE_FILE=<port>@<host>
+$ export LSTC_LICENSE=ANSYS
 ```
 
 Next, ensure that you have the Ansys module loaded for the particular version you wish to configure its licenses, e.g.:
 
 ```bash
-$ module add ansys/17.1
+$ module add ansys/2023R1
 ```
 
-For ansys version 17.1 (the latest version on the ARC clusters)
+For Ansys version 2023R1 (the latest version on the ARC clusters)
 
 You now need to launch the license administration interface. The simplest way to do this is to start cfx:
 

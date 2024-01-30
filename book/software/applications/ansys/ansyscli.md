@@ -41,6 +41,7 @@ It is then necessary to construct a [job submission script](batchjob:resource-sp
 #Launch the executable
 module add ansys/2022R1
 export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
+export LSTC_LICENSE=ANSYS
 ansys221 -p ANSYS -b -i example.inp -o example.out
 ```
 
@@ -72,6 +73,7 @@ $ qsub ansys.sh
 # define license and load module
 module add ansys/2022R1
 export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
+export LSTC_LICENSE=ANSYS
 #Launch the executable
 ansys221 -np $NSLOTS -p ANSYS -b -i example.inp -o example.out
 ```
@@ -97,6 +99,7 @@ Ansys supports the use of GPUs, although we have no data on the performance spee
 # define license and load module
 module add ansys/2022R1
 export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
+export LSTC_LICENSE=ANSYS
 # Fix to make it launch correctly
 unset PE_HOSTFILE
 #Launch the executable

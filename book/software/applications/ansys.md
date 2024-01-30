@@ -53,10 +53,9 @@ LS-DYNA specific information can be found by clicking the link above.
 
 Ansys RSM specific information can be found by clicking the link above.
 
-(ansys:additional-steps)=
-## Additional Step for Using Ansys the First Time
+### [Additional steps for using old versions of Ansys the first time](./ansys/legacy)
 
-Before running the Ansys module for the first time, there is a per-user setting that chooses whether commercial (default) or academic licenses should be used.
+Before running the old versions of Ansys module (older than 19.2) for the first time, there is a per-user setting that chooses whether commercial (default) or academic licenses should be used.
 
 **For research purposes you should normally be using the academic licenses, unless you are untertaking commercially funded research.**
 
@@ -68,24 +67,21 @@ If you have not already done so, set the license server and port using the detai
 
 ```bash
 $ export ANSYSLMD_LICENSE_FILE=<port>@<host>
-$ export LSTC_LICENSE=ANSYS
 ```
 
 Next, ensure that you have the Ansys module loaded for the particular version you wish to configure its licenses, e.g.:
 
 ```bash
-$ module add ansys/2023R1
+$ module add ansys/17.1
 ```
 
-For Ansys version 2023R1 (the latest version on the ARC clusters)
-
-You now need to launch the license administration interface. The simplest way to do this is to start cfx:
+For legacy Ansys versions, you need to launch the license administration interface. The simplest way to do this is to start cfx:
 
 ```bash
 $ cfx5
 ```
 
-and select Tools/Ansys client Licensing Utility from the menu.
+and select `Tools -> ANSYS Client Licensing Utility` from the menu.
 
 This will present you with the following window:
 

@@ -1,4 +1,4 @@
-# Cfx
+# CFX
 
 ## Running CFX
 
@@ -18,7 +18,7 @@ To use CFX, you must have connected to ARC using [X graphical forwarding](../../
 More details about using the old versions of Ansys for the first time and setting license server details can be found in the License Set-up for Legacy Ansys Modules section.
 ```
 
-You can start the cfx5 graphical interface by running the `cfx5` command.
+You can start the CFX5 graphical interface by running the `cfx5` command.
 
 ```bash
 $ module add ansys

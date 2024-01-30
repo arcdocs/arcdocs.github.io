@@ -29,9 +29,9 @@ To load a specific version of Ansys, specify this on the module command:
 $ module add ansys/2022R1
 ```
 
-### [Running Ansys CLI](./ansys/ansyscli)
+### [Running Ansys Command-Line Interface](./ansys/ansyscli)
 
-Ansys CLI specific information can be found by clicking the link above.
+Ansys Command-Line Interface specific information can be found by clicking the link above.
 
 ### [Running Chemkin](./ansys/chemkin)
 

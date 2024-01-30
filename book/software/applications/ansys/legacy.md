@@ -30,17 +30,17 @@ and select `Tools -> ANSYS Client Licensing Utility` from the menu.
 
 This will present you with the following window:
 
-![Configuring a license for Ansys using the license manager.](../../assets/wp/2016/01/ansys_license.jpg)
+![Configuring a license for Ansys using the license manager.](../../../assets/wp/2016/01/ansys_license.jpg)
 
 Select "set license preferences for user abcxyz"
 
 In the next window, select the product you wish to configure (e.g. 12.1)
 
-![Selecting the right license preferences.](../../assets/wp/2016/01/ansys_license1.jpg)
+![Selecting the right license preferences.](../../../assets/wp/2016/01/ansys_license1.jpg)
 
 In the next window that appears, select the radio button that says Use academic licenses:
 
-![Finally select the academic license option.](../../assets/wp/2016/01/ansys_license3.jpg)
+![Finally select the academic license option.](../../../assets/wp/2016/01/ansys_license3.jpg)
 
 Select **OK**, then exit the license manager.
 

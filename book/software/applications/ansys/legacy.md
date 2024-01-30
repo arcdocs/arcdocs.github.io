@@ -6,7 +6,7 @@ Before running the old versions of Ansys module (older than 19.2) for the first 
 
 **Check with your supervisor if you need clarification on this.**
 
-You will need a SSH connection with X-forwarding enabled to configure this setting. For more information on how to connect to the ARC systems and to enable X-forwarding visit the [Logging on page](../../getting_started/logon/x11-graphics).
+You will need a SSH connection with X-forwarding enabled to configure this setting. For more information on how to connect to the ARC systems and to enable X-forwarding visit the [Logging on page](../../../getting_started/logon/x11-graphics).
 
 If you have not already done so, set the license server and port using the details provided by your supervisor:
 

@@ -2,7 +2,7 @@
 
 Versions of Ansys Fluent and CFX are installed for Leeds researchers who have access to either their own or a departmental license. This supports the Infiniband interconnect so can be used for jobs of \>24 (for ARC3) or \>40 (for ARC4) processors in size.
 
-Information on Ansys can be found on the [Ansys web site](http://www.ansys.com/en-GB).
+Information on Ansys can be found on the [Ansys website](http://www.ansys.com/en-GB).
 
 ## Setting up the license
 

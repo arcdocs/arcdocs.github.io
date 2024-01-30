@@ -47,6 +47,7 @@ sections:
       - file: software/applications/ansys/fluent
       - file: software/applications/ansys/lsdyna
       - file: software/applications/ansys/rsm
+      - file: software/applications/ansys/legacy
     - file: software/applications/cesm
     - file: software/applications/comsol
     - file: software/applications/dl_poly

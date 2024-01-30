@@ -1,3 +1,5 @@
+# Additional steps for using old versions of Ansys the first time
+
 Before running the old versions of Ansys module (older than 19.2) for the first time, there is a per-user setting that chooses whether commercial (default) or academic licenses should be used.
 
 **For research purposes you should normally be using the academic licenses, unless you are untertaking commercially funded research.**

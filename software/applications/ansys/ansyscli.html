@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Ansys CLI &#8212; ARC Documentation</title>
+    <title>Ansys Command-Line Interface &#8212; ARC Documentation</title>
   
   
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
-  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../../_static/favicon-32x32.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Cfx" href="cfx.html" />
+    <link rel="next" title="CFX" href="cfx.html" />
     <link rel="prev" title="Ansys" href="../ansys.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -81,7 +81,6 @@ const thebe_selector_output = ".output, .cell_output"
   <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -121,20 +120,15 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <header>
   
-    <div class="bd-header navbar navbar-expand-lg bd-navbar">
-    </div>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
-  </header>
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -220,12 +214,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="../abaqus.html">Abaqus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../amber.html">Amber</a></li>
 <li class="toctree-l3 current active has-children"><a class="reference internal" href="../ansys.html">Ansys</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l4 current active"><a class="current reference internal" href="#">Ansys CLI</a></li>
-<li class="toctree-l4"><a class="reference internal" href="cfx.html">Cfx</a></li>
+<li class="toctree-l4 current active"><a class="current reference internal" href="#">Ansys Command-Line Interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cfx.html">CFX</a></li>
 <li class="toctree-l4"><a class="reference internal" href="chemkin.html">Chemkin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="fluent.html">Fluent</a></li>
 <li class="toctree-l4"><a class="reference internal" href="lsdyna.html">LS-DYNA</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rsm.html">RSM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="legacy.html">Additional steps for using legacy Ansys modules the first time</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../cesm.html">CESM</a></li>
@@ -577,7 +572,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Ansys CLI</h1>
+    <h1>Ansys Command-Line Interface</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -607,9 +602,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ansys-cli">
-<h1>Ansys CLI<a class="headerlink" href="#ansys-cli" title="Permalink to this heading">#</a></h1>
-<p>Once the license and module have been set up correctly, Ansys CLI can be
+  <section class="tex2jax_ignore mathjax_ignore" id="ansys-command-line-interface">
+<h1>Ansys Command-Line Interface<a class="headerlink" href="#ansys-command-line-interface" title="Permalink to this heading">#</a></h1>
+<p>Once the license and module have been set up correctly, Ansys Command-Line Interface (CLI) can be
 run both in serial and in parallel.</p>
 <section id="running-ansys-cli-in-serial-mode">
 <h2>Running Ansys CLI in Serial mode<a class="headerlink" href="#running-ansys-cli-in-serial-mode" title="Permalink to this heading">#</a></h2>
@@ -625,9 +620,9 @@ run both in serial and in parallel.</p>
 <p class="admonition-title">Warning</p>
 <p>Please note you should not run full experiments on the login nodes. Only use this method for quick tests, or interactive exploring of the tool.</p>
 </div>
-<p>Once the Ansys module is loaded, Ansys can be run using a command with the version number included in the executable name.  For Ansys 2020R2, this is as follows:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>ansys/2020R2
-$<span class="w"> </span>ansys202<span class="w"> </span>-g
+<p>Once the Ansys module is loaded, Ansys can be run using a command with the version number included in the executable name.  For Ansys 2022R1, this is as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>module<span class="w"> </span>add<span class="w"> </span>ansys/2022R1
+$<span class="w"> </span>ansys221<span class="w"> </span>-g
 </pre></div>
 </div>
 <p>This runs it graphically, so it’s important you have X forwarding enabled or are using <a class="reference internal" href="../../../getting_started/x2go.html"><span class="doc std std-doc">X2Go</span></a>.</p>
@@ -642,9 +637,10 @@ $<span class="w"> </span>ansys202<span class="w"> </span>-g
 <span class="c1"># Request three hours of runtime</span>
 <span class="c1">#$ -l h_rt=3:00:00</span>
 <span class="c1">#Launch the executable</span>
-module<span class="w"> </span>add<span class="w"> </span>ansys/2020R2
+module<span class="w"> </span>add<span class="w"> </span>ansys/2022R1
 <span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
-ansys202<span class="w"> </span>-p<span class="w"> </span>ANSYS<span class="w"> </span>-b<span class="w"> </span>-i<span class="w"> </span>example.inp<span class="w"> </span>-o<span class="w"> </span>example.out
+<span class="nb">export</span><span class="w"> </span><span class="nv">LSTC_LICENSE</span><span class="o">=</span>ANSYS
+ansys221<span class="w"> </span>-p<span class="w"> </span>ANSYS<span class="w"> </span>-b<span class="w"> </span>-i<span class="w"> </span>example.inp<span class="w"> </span>-o<span class="w"> </span>example.out
 </pre></div>
 </div>
 <p>In this case, we’re running the Ansys CLI with:</p>
@@ -685,10 +681,11 @@ ansys202<span class="w"> </span>-p<span class="w"> </span>ANSYS<span class="w"> 
 <span class="c1"># Run on 8 processors</span>
 <span class="c1">#$ -pe smp 8</span>
 <span class="c1"># define license and load module</span>
-module<span class="w"> </span>add<span class="w"> </span>ansys/2020R2
+module<span class="w"> </span>add<span class="w"> </span>ansys/2022R1
 <span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
+<span class="nb">export</span><span class="w"> </span><span class="nv">LSTC_LICENSE</span><span class="o">=</span>ANSYS
 <span class="c1">#Launch the executable</span>
-ansys202<span class="w"> </span>-np<span class="w"> </span><span class="nv">$NSLOTS</span><span class="w"> </span>-p<span class="w"> </span>ANSYS<span class="w"> </span>-b<span class="w"> </span>-i<span class="w"> </span>example.inp<span class="w"> </span>-o<span class="w"> </span>example.out
+ansys221<span class="w"> </span>-np<span class="w"> </span><span class="nv">$NSLOTS</span><span class="w"> </span>-p<span class="w"> </span>ANSYS<span class="w"> </span>-b<span class="w"> </span>-i<span class="w"> </span>example.inp<span class="w"> </span>-o<span class="w"> </span>example.out
 </pre></div>
 </div>
 <p>The file can be submitted to the queue by typing this (assuming you’d written the above into a file called <a class="reference external" href="http://ansys.sh">ansys.sh</a>):</p>
@@ -706,12 +703,13 @@ ansys202<span class="w"> </span>-np<span class="w"> </span><span class="nv">$NSL
 <span class="c1"># Run on 1 GPUs on ARC4 (using coproc_p100=1 on ARC3)</span>
 <span class="c1">#$ -l coproc_v100=1</span>
 <span class="c1"># define license and load module</span>
-module<span class="w"> </span>add<span class="w"> </span>ansys/2020R2
+module<span class="w"> </span>add<span class="w"> </span>ansys/2022R1
 <span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
+<span class="nb">export</span><span class="w"> </span><span class="nv">LSTC_LICENSE</span><span class="o">=</span>ANSYS
 <span class="c1"># Fix to make it launch correctly</span>
 <span class="nb">unset</span><span class="w"> </span>PE_HOSTFILE
 <span class="c1">#Launch the executable</span>
-ansys202<span class="w"> </span>-np<span class="w"> </span><span class="nv">$NSLOTS</span><span class="w"> </span>-acc<span class="w"> </span>nvidia<span class="w"> </span>-na<span class="w"> </span><span class="nv">$ARC_SGE_RESOURCE_COPROC_V100</span><span class="w"> </span>-p<span class="w"> </span>ANSYS<span class="w"> </span>-b<span class="w"> </span>-i<span class="w"> </span>example.inp<span class="w"> </span>-o<span class="w"> </span>example.out
+ansys221<span class="w"> </span>-np<span class="w"> </span><span class="nv">$NSLOTS</span><span class="w"> </span>-acc<span class="w"> </span>nvidia<span class="w"> </span>-na<span class="w"> </span><span class="nv">$ARC_SGE_RESOURCE_COPROC_V100</span><span class="w"> </span>-p<span class="w"> </span>ANSYS<span class="w"> </span>-b<span class="w"> </span>-i<span class="w"> </span>example.inp<span class="w"> </span>-o<span class="w"> </span>example.out
 </pre></div>
 </div>
 <p>The file can be submitted to the queue by typing this (assuming you’d written the above into a file called <a class="reference external" href="http://ansys.sh">ansys.sh</a>):</p>
@@ -770,7 +768,7 @@ ansys202<span class="w"> </span>-np<span class="w"> </span><span class="nv">$NSL
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Cfx</p>
+        <p class="prev-next-title">CFX</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -847,8 +845,8 @@ By University of Leeds Research Computing Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

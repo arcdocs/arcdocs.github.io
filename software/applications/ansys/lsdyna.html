@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
-  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -81,7 +81,6 @@ const thebe_selector_output = ".output, .cell_output"
   <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -121,20 +120,15 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <header>
   
-    <div class="bd-header navbar navbar-expand-lg bd-navbar">
-    </div>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
-  </header>
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -220,12 +214,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="../abaqus.html">Abaqus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../amber.html">Amber</a></li>
 <li class="toctree-l3 current active has-children"><a class="reference internal" href="../ansys.html">Ansys</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="ansyscli.html">Ansys CLI</a></li>
-<li class="toctree-l4"><a class="reference internal" href="cfx.html">Cfx</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansyscli.html">Ansys Command-Line Interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cfx.html">CFX</a></li>
 <li class="toctree-l4"><a class="reference internal" href="chemkin.html">Chemkin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="fluent.html">Fluent</a></li>
 <li class="toctree-l4 current active"><a class="current reference internal" href="#">LS-DYNA</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rsm.html">RSM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="legacy.html">Additional steps for using legacy Ansys modules the first time</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../cesm.html">CESM</a></li>
@@ -589,10 +584,10 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-ls-dyna">Running LS-DYNA</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-job-examples">Batch job examples</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smp-single-precision-4-cores">SMP Single Precision, 4 cores</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smp-double-precision-4-cores">SMP Double Precision, 4 cores</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mpp-single-precision-on-a-whole-node">MPP Single Precision, on a whole node</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mpp-double-precision-on-a-whole-node">MPP Double Precision, on a whole node</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smp-single-precision-4-cores">SMP Single Precision (4 cores)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smp-double-precision-4-cores">SMP Double Precision (4 cores)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mpp-single-precision-on-a-whole-node">MPP Single Precision (on a whole node)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mpp-double-precision-on-a-whole-node">MPP Double Precision (on a whole node)</a></li>
 </ul>
 </li>
 </ul>
@@ -616,23 +611,23 @@ occupant safety, and more.</p>
 <h2>Running LS-DYNA<a class="headerlink" href="#running-ls-dyna" title="Permalink to this heading">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>More details about using Ansys for the first time and setting license server details can be found on the <a class="reference internal" href="../ansys.html#ansys-additional-steps"><span class="std std-ref">Ansys page</span></a>.</p>
+<p>More details about using the old versions of Ansys for the first time and setting license server details can be found in the License Set-up for Legacy Ansys Modules section.</p>
 </div>
 <section id="batch-job-examples">
 <h3>Batch job examples<a class="headerlink" href="#batch-job-examples" title="Permalink to this heading">#</a></h3>
 <p>Guidance provided by Oasys suggests that SMP can scale to ~8 cores, and that
-the MPP version should be used for larger problems.</p>
+the Massively Parallel Processing (MPP) version should be used for larger problems.</p>
 <p>Remember to replace <code class="docutils literal notranslate"><span class="pre">&lt;port&#64;host&gt;</span></code> with a suitable value for your license.</p>
 </section>
 <section id="smp-single-precision-4-cores">
-<h3>SMP Single Precision, 4 cores<a class="headerlink" href="#smp-single-precision-4-cores" title="Permalink to this heading">#</a></h3>
+<h3>SMP Single Precision (4 cores)<a class="headerlink" href="#smp-single-precision-4-cores" title="Permalink to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#$ -cwd -V</span>
 <span class="c1">#$ -l h_rt=1:00:00</span>
 <span class="c1">#$ -l h_vmem=4.8G</span>
 <span class="c1">#$ -m be</span>
 <span class="c1">#$ -pe smp 4</span>
-module<span class="w"> </span>add<span class="w"> </span>ansys/2022R1
+module<span class="w"> </span>add<span class="w"> </span>ansys/2023R1
 <span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;port@host&gt;
 <span class="nb">export</span><span class="w"> </span><span class="nv">LSTC_LICENSE</span><span class="o">=</span>ANSYS
 lsdyna<span class="w"> </span><span class="nv">I</span><span class="o">=</span>example.k<span class="w"> </span><span class="nv">ncpu</span><span class="o">=</span><span class="nv">$NSLOTS</span>
@@ -640,14 +635,14 @@ lsdyna<span class="w"> </span><span class="nv">I</span><span class="o">=</span>e
 </div>
 </section>
 <section id="smp-double-precision-4-cores">
-<h3>SMP Double Precision, 4 cores<a class="headerlink" href="#smp-double-precision-4-cores" title="Permalink to this heading">#</a></h3>
+<h3>SMP Double Precision (4 cores)<a class="headerlink" href="#smp-double-precision-4-cores" title="Permalink to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#$ -cwd -V</span>
 <span class="c1">#$ -l h_rt=1:00:00</span>
 <span class="c1">#$ -l h_vmem=4.8G</span>
 <span class="c1">#$ -m be</span>
 <span class="c1">#$ -pe smp 4</span>
-module<span class="w"> </span>add<span class="w"> </span>ansys/2022R1
+module<span class="w"> </span>add<span class="w"> </span>ansys/2023R1
 <span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;port@host&gt;
 <span class="nb">export</span><span class="w"> </span><span class="nv">LSTC_LICENSE</span><span class="o">=</span>ANSYS
 lsdyna<span class="w"> </span>-dp<span class="w"> </span><span class="nv">I</span><span class="o">=</span>example.k<span class="w"> </span><span class="nv">ncpu</span><span class="o">=</span><span class="nv">$NSLOTS</span>
@@ -655,13 +650,13 @@ lsdyna<span class="w"> </span>-dp<span class="w"> </span><span class="nv">I</spa
 </div>
 </section>
 <section id="mpp-single-precision-on-a-whole-node">
-<h3>MPP Single Precision, on a whole node<a class="headerlink" href="#mpp-single-precision-on-a-whole-node" title="Permalink to this heading">#</a></h3>
+<h3>MPP Single Precision (on a whole node)<a class="headerlink" href="#mpp-single-precision-on-a-whole-node" title="Permalink to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#$ -cwd -V</span>
 <span class="c1">#$ -l h_rt=1:00:00</span>
 <span class="c1">#$ -m be</span>
 <span class="c1">#$ -l nodes=1</span>
-module<span class="w"> </span>add<span class="w"> </span>ansys/2022R1
+module<span class="w"> </span>add<span class="w"> </span>ansys/2023R1
 <span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;port@host&gt;
 <span class="nb">export</span><span class="w"> </span><span class="nv">LSTC_LICENSE</span><span class="o">=</span>ANSYS
 lsdyna<span class="w"> </span>-dis<span class="w"> </span>-np<span class="w"> </span><span class="nv">$NSLOTS</span><span class="w"> </span>-lsdynampp<span class="w"> </span><span class="nv">I</span><span class="o">=</span>example.k
@@ -669,13 +664,13 @@ lsdyna<span class="w"> </span>-dis<span class="w"> </span>-np<span class="w"> </
 </div>
 </section>
 <section id="mpp-double-precision-on-a-whole-node">
-<h3>MPP Double Precision, on a whole node<a class="headerlink" href="#mpp-double-precision-on-a-whole-node" title="Permalink to this heading">#</a></h3>
+<h3>MPP Double Precision (on a whole node)<a class="headerlink" href="#mpp-double-precision-on-a-whole-node" title="Permalink to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#$ -cwd -V</span>
 <span class="c1">#$ -l h_rt=1:00:00</span>
 <span class="c1">#$ -m be</span>
 <span class="c1">#$ -l nodes=1</span>
-module<span class="w"> </span>add<span class="w"> </span>ansys/2022R1
+module<span class="w"> </span>add<span class="w"> </span>ansys/2023R1
 <span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;port@host&gt;
 <span class="nb">export</span><span class="w"> </span><span class="nv">LSTC_LICENSE</span><span class="o">=</span>ANSYS
 lsdyna<span class="w"> </span>-dis<span class="w"> </span>-np<span class="w"> </span><span class="nv">$NSLOTS</span><span class="w"> </span>-lsdynampp<span class="w"> </span>-dp<span class="w"> </span><span class="nv">I</span><span class="o">=</span>example.k
@@ -751,10 +746,10 @@ lsdyna<span class="w"> </span>-dis<span class="w"> </span>-np<span class="w"> </
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-ls-dyna">Running LS-DYNA</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-job-examples">Batch job examples</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smp-single-precision-4-cores">SMP Single Precision, 4 cores</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smp-double-precision-4-cores">SMP Double Precision, 4 cores</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mpp-single-precision-on-a-whole-node">MPP Single Precision, on a whole node</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mpp-double-precision-on-a-whole-node">MPP Double Precision, on a whole node</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smp-single-precision-4-cores">SMP Single Precision (4 cores)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smp-double-precision-4-cores">SMP Double Precision (4 cores)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mpp-single-precision-on-a-whole-node">MPP Single Precision (on a whole node)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mpp-double-precision-on-a-whole-node">MPP Double Precision (on a whole node)</a></li>
 </ul>
 </li>
 </ul>
@@ -805,8 +800,8 @@ By University of Leeds Research Computing Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

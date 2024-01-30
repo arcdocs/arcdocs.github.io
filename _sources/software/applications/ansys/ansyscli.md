@@ -1,6 +1,6 @@
-# Ansys CLI
+# Ansys Command-Line Interface
 
-Once the license and module have been set up correctly, Ansys CLI can be
+Once the license and module have been set up correctly, Ansys Command-Line Interface (CLI) can be
 run both in serial and in parallel.
 
 ## Running Ansys CLI in Serial mode
@@ -17,11 +17,11 @@ There are three ways in which to launch Ansys CLI in serial:
 Please note you should not run full experiments on the login nodes. Only use this method for quick tests, or interactive exploring of the tool.
 ```
 
-Once the Ansys module is loaded, Ansys can be run using a command with the version number included in the executable name.  For Ansys 2020R2, this is as follows:
+Once the Ansys module is loaded, Ansys can be run using a command with the version number included in the executable name.  For Ansys 2022R1, this is as follows:
 
 ```bash
-$ module add ansys/2020R2
-$ ansys202 -g
+$ module add ansys/2022R1
+$ ansys221 -g
 ```
 
 This runs it graphically, so it's important you have X forwarding enabled or are using [X2Go](../../../getting_started/x2go).
@@ -39,9 +39,10 @@ It is then necessary to construct a [job submission script](batchjob:resource-sp
 # Request three hours of runtime
 #$ -l h_rt=3:00:00
 #Launch the executable
-module add ansys/2020R2
+module add ansys/2022R1
 export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
-ansys202 -p ANSYS -b -i example.inp -o example.out
+export LSTC_LICENSE=ANSYS
+ansys221 -p ANSYS -b -i example.inp -o example.out
 ```
 
 In this case, we're running the Ansys CLI with:
@@ -70,10 +71,11 @@ $ qsub ansys.sh
 # Run on 8 processors
 #$ -pe smp 8
 # define license and load module
-module add ansys/2020R2
+module add ansys/2022R1
 export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
+export LSTC_LICENSE=ANSYS
 #Launch the executable
-ansys202 -np $NSLOTS -p ANSYS -b -i example.inp -o example.out
+ansys221 -np $NSLOTS -p ANSYS -b -i example.inp -o example.out
 ```
 
 The file can be submitted to the queue by typing this (assuming you'd written the above into a file called ansys.sh):
@@ -95,12 +97,13 @@ Ansys supports the use of GPUs, although we have no data on the performance spee
 # Run on 1 GPUs on ARC4 (using coproc_p100=1 on ARC3)
 #$ -l coproc_v100=1
 # define license and load module
-module add ansys/2020R2
+module add ansys/2022R1
 export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
+export LSTC_LICENSE=ANSYS
 # Fix to make it launch correctly
 unset PE_HOSTFILE
 #Launch the executable
-ansys202 -np $NSLOTS -acc nvidia -na $ARC_SGE_RESOURCE_COPROC_V100 -p ANSYS -b -i example.inp -o example.out
+ansys221 -np $NSLOTS -acc nvidia -na $ARC_SGE_RESOURCE_COPROC_V100 -p ANSYS -b -i example.inp -o example.out
 ```
 
 The file can be submitted to the queue by typing this (assuming you'd written the above into a file called ansys.sh):

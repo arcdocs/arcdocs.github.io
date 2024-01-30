@@ -13,7 +13,7 @@ More information about Chemkin can be found on the [Ansys Website](https://www.a
 To use Chemkin, you must have connected to ARC using [X graphical forwarding](../../../getting_started/logon/x11-graphics)), loaded ansys/19.2 and assigned licence server information.
 
 ```{note}
-More details about using Ansys for the first time and setting license server details can be found on the [Ansys page](ansys:additional-steps).
+More details about using Ansys for the first time and setting license server details can be found in the License Set-up for Legacy Ansys Modules section..
 ```
 
 Then run the `run_chemkin.sh` script passing it the argument Pro to start up Chemkin.

@@ -39,9 +39,9 @@ It is then necessary to construct a [job submission script](batchjob:resource-sp
 # Request three hours of runtime
 #$ -l h_rt=3:00:00
 #Launch the executable
-module add ansys/2020R2
+module add ansys/2022R1
 export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
-ansys202 -p ANSYS -b -i example.inp -o example.out
+ansys221 -p ANSYS -b -i example.inp -o example.out
 ```
 
 In this case, we're running the Ansys CLI with:
@@ -70,10 +70,10 @@ $ qsub ansys.sh
 # Run on 8 processors
 #$ -pe smp 8
 # define license and load module
-module add ansys/2020R2
+module add ansys/2022R1
 export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
 #Launch the executable
-ansys202 -np $NSLOTS -p ANSYS -b -i example.inp -o example.out
+ansys221 -np $NSLOTS -p ANSYS -b -i example.inp -o example.out
 ```
 
 The file can be submitted to the queue by typing this (assuming you'd written the above into a file called ansys.sh):
@@ -95,12 +95,12 @@ Ansys supports the use of GPUs, although we have no data on the performance spee
 # Run on 1 GPUs on ARC4 (using coproc_p100=1 on ARC3)
 #$ -l coproc_v100=1
 # define license and load module
-module add ansys/2020R2
+module add ansys/2022R1
 export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
 # Fix to make it launch correctly
 unset PE_HOSTFILE
 #Launch the executable
-ansys202 -np $NSLOTS -acc nvidia -na $ARC_SGE_RESOURCE_COPROC_V100 -p ANSYS -b -i example.inp -o example.out
+ansys221 -np $NSLOTS -acc nvidia -na $ARC_SGE_RESOURCE_COPROC_V100 -p ANSYS -b -i example.inp -o example.out
 ```
 
 The file can be submitted to the queue by typing this (assuming you'd written the above into a file called ansys.sh):

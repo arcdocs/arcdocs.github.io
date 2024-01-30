@@ -53,6 +53,6 @@ LS-DYNA specific information can be found by clicking the link above.
 
 Ansys RSM specific information can be found by clicking the link above.
 
-### [Additional steps for using old versions of Ansys the first time](./ansys/legacy)
+### [Additional steps for using legacy Ansys modules the first time](./ansys/legacy)
 
-License set-up for old versions of Ansys on ARC.
+Specific information about license set-up for legacy Ansys modules on ARC can be found by clicking the link above.

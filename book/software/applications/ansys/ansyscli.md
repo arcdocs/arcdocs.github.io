@@ -1,4 +1,4 @@
-# Ansys Command-Line Interface
+# Ansys CLI
 
 Once the license and module have been set up correctly, Ansys Command-Line Interface (CLI) can be
 run both in serial and in parallel.

@@ -1,6 +1,6 @@
-# Ansys CLI
+# Ansys Command-Line Interface
 
-Once the license and module have been set up correctly, Ansys CLI can be
+Once the license and module have been set up correctly, Ansys Command-Line Interface (CLI) can be
 run both in serial and in parallel.
 
 ## Running Ansys CLI in Serial mode
@@ -17,11 +17,11 @@ There are three ways in which to launch Ansys CLI in serial:
 Please note you should not run full experiments on the login nodes. Only use this method for quick tests, or interactive exploring of the tool.
 ```
 
-Once the Ansys module is loaded, Ansys can be run using a command with the version number included in the executable name.  For Ansys 2020R2, this is as follows:
+Once the Ansys module is loaded, Ansys can be run using a command with the version number included in the executable name.  For Ansys 2022R1, this is as follows:
 
 ```bash
-$ module add ansys/2020R2
-$ ansys202 -g
+$ module add ansys/2022R1
+$ ansys221 -g
 ```
 
 This runs it graphically, so it's important you have X forwarding enabled or are using [X2Go](../../../getting_started/x2go).

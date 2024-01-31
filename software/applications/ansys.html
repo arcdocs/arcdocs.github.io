@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Ansys Command-Line Interface" href="ansys/ansyscli.html" />
+    <link rel="next" title="Ansys CLI" href="ansys/ansyscli.html" />
     <link rel="prev" title="Amber" href="amber.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -214,13 +214,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="abaqus.html">Abaqus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="amber.html">Amber</a></li>
 <li class="toctree-l3 current active has-children"><a class="current reference internal" href="#">Ansys</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="ansys/ansyscli.html">Ansys Command-Line Interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys/ansyscli.html">Ansys CLI</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ansys/cfx.html">CFX</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ansys/chemkin.html">Chemkin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ansys/fluent.html">Fluent</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ansys/lsdyna.html">LS-DYNA</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ansys/rsm.html">RSM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ansys/legacy.html">Additional steps for using legacy Ansys modules the first time</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansys/legacy.html">License set-up for using legacy Ansys modules</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="cesm.html">CESM</a></li>
@@ -588,8 +588,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-cfx"><span class="xref myst">Running CFX</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-fluent"><span class="xref myst">Running Fluent</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-ls-dyna"><span class="xref myst">Running LS-DYNA</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-remote-solve-manager"><span class="xref myst">Using the Remote Solve Manager</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-steps-for-using-legacy-ansys-modules-the-first-time"><span class="xref myst">Additional steps for using legacy Ansys modules the first time</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-remote-solve-manager"><span class="xref myst">Using the Remote Solve Manager</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-steps-for-legacy-ansys-modules"><span class="xref myst">Additional steps for legacy Ansys modules</span></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -611,7 +613,6 @@ document.write(`
 <h2>Setting up the license<a class="headerlink" href="#setting-up-the-license" title="Permalink to this heading">#</a></h2>
 <p>The license is obtained by setting the <code class="docutils literal notranslate"><span class="pre">ANSYSLMD_LICENSE_FILE</span></code> variable. To set it in bash do:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;port&gt;@&lt;host&gt;
-$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">LSTC_LICENSE</span><span class="o">=</span>ANSYS
 </pre></div>
 </div>
 <p>To get the values of <code class="docutils literal notranslate"><span class="pre">&lt;port&gt;&#64;&lt;host&gt;</span></code> specific to your group/department please contact the Client IT Team via <a class="reference external" href="https://it.leeds.ac.uk/it">Service Now</a>.</p>
@@ -647,10 +648,10 @@ $<span class="w"> </span><span class="nb">export</span><span class="w"> </span><
 <section id="using-the-remote-solve-manager">
 <h3><a class="reference internal" href="ansys/rsm.html"><span class="doc std std-doc">Using the Remote Solve Manager</span></a><a class="headerlink" href="#using-the-remote-solve-manager" title="Permalink to this heading">#</a></h3>
 <p>Ansys RSM specific information can be found by clicking the link above.</p>
+<section id="additional-steps-for-legacy-ansys-modules">
+<h4><a class="reference internal" href="ansys/legacy.html"><span class="doc std std-doc">Additional steps for legacy Ansys modules</span></a><a class="headerlink" href="#additional-steps-for-legacy-ansys-modules" title="Permalink to this heading">#</a></h4>
+<p>Information about license set-up for legacy Ansys modules on ARC.</p>
 </section>
-<section id="additional-steps-for-using-legacy-ansys-modules-the-first-time">
-<h3><a class="reference internal" href="ansys/legacy.html"><span class="doc std std-doc">Additional steps for using legacy Ansys modules the first time</span></a><a class="headerlink" href="#additional-steps-for-using-legacy-ansys-modules-the-first-time" title="Permalink to this heading">#</a></h3>
-<p>Specific information about license set-up for legacy Ansys modules on ARC can be found by clicking the link above.</p>
 </section>
 </section>
 <div class="toctree-wrapper compound">
@@ -701,7 +702,7 @@ $<span class="w"> </span><span class="nb">export</span><span class="w"> </span><
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Ansys Command-Line Interface</p>
+        <p class="prev-next-title">Ansys CLI</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -727,8 +728,10 @@ $<span class="w"> </span><span class="nb">export</span><span class="w"> </span><
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-cfx"><span class="xref myst">Running CFX</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-fluent"><span class="xref myst">Running Fluent</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-ls-dyna"><span class="xref myst">Running LS-DYNA</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-remote-solve-manager"><span class="xref myst">Using the Remote Solve Manager</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-steps-for-using-legacy-ansys-modules-the-first-time"><span class="xref myst">Additional steps for using legacy Ansys modules the first time</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-remote-solve-manager"><span class="xref myst">Using the Remote Solve Manager</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-steps-for-legacy-ansys-modules"><span class="xref myst">Additional steps for legacy Ansys modules</span></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

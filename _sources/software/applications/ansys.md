@@ -10,7 +10,6 @@ The license is obtained by setting the `ANSYSLMD_LICENSE_FILE` variable. To set 
 
 ```bash
 $ export ANSYSLMD_LICENSE_FILE=<port>@<host>
-$ export LSTC_LICENSE=ANSYS
 ```
 
 To get the values of `<port>@<host>` specific to your group/department please contact the Client IT Team via [Service Now](https://it.leeds.ac.uk/it).
@@ -53,6 +52,6 @@ LS-DYNA specific information can be found by clicking the link above.
 
 Ansys RSM specific information can be found by clicking the link above.
 
-### [Additional steps for using legacy Ansys modules the first time](./ansys/legacy)
+#### [Additional steps for legacy Ansys modules](./ansys/legacy)
 
-Specific information about license set-up for legacy Ansys modules on ARC can be found by clicking the link above.
+Information about license set-up for legacy Ansys modules on ARC.

@@ -214,13 +214,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="../abaqus.html">Abaqus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../amber.html">Amber</a></li>
 <li class="toctree-l3 current active has-children"><a class="reference internal" href="../ansys.html">Ansys</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="ansyscli.html">Ansys Command-Line Interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansyscli.html">Ansys CLI</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cfx.html">CFX</a></li>
 <li class="toctree-l4"><a class="reference internal" href="chemkin.html">Chemkin</a></li>
 <li class="toctree-l4 current active"><a class="current reference internal" href="#">Fluent</a></li>
 <li class="toctree-l4"><a class="reference internal" href="lsdyna.html">LS-DYNA</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rsm.html">RSM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="legacy.html">Additional steps for using legacy Ansys modules the first time</a></li>
+<li class="toctree-l4"><a class="reference internal" href="legacy.html">License set-up for using legacy Ansys modules</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../cesm.html">CESM</a></li>
@@ -666,7 +666,8 @@ document.write(`
 <span class="c1"># Request three hours of runtime</span>
 <span class="c1">#$ -l h_rt=3:00:00</span>
 <span class="c1">#Launch the executable</span>
-module<span class="w"> </span>add<span class="w"> </span>ansys/2020R2
+module<span class="w"> </span>add<span class="w"> </span>ansys/2022R1
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;port&gt;@&lt;host&gt;
 fluent<span class="w"> </span>3ddp<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </span>test.jou
 </pre></div>
 </div>
@@ -681,7 +682,7 @@ fluent<span class="w"> </span>3ddp<span class="w"> </span>-g<span class="w"> </s
 <span class="c1"># Request three hours of runtime</span>
 <span class="c1">#$ -l h_rt=3:00:00</span>
 <span class="c1">#Launch the executable</span>
-module<span class="w"> </span>add<span class="w"> </span>ansys/2020R2
+module<span class="w"> </span>add<span class="w"> </span>ansys/2022R1
 <span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
 fluent<span class="w"> </span>3ddp<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </span>test.jou
 </pre></div>
@@ -732,8 +733,8 @@ Whilst it might be possible to use a login node to do this for a short period of
 <span class="c1"># Run on 40 processors on ARC4</span>
 <span class="c1">#$ -l nodes=1</span>
 <span class="c1"># define license and load module</span>
-module<span class="w"> </span>add<span class="w"> </span>ansys/2020R2
-<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
+module<span class="w"> </span>add<span class="w"> </span>ansys/2022R1
+<span class="nb">export</span><span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;port&gt;@&lt;host&gt;
 <span class="c1">#Launch the executable</span>
 fluent<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </span>test_para.jou<span class="w"> </span>3ddp<span class="w"> </span>-rsh<span class="w"> </span>-scheduler_tight_coupling
 </pre></div>
@@ -759,8 +760,8 @@ different fluent command:</p>
 <span class="c1"># Request 4Gbytes per core</span>
 <span class="c1">#$ -l h_vmem=4G</span>
 <span class="c1"># define license and load module</span>
-module<span class="w"> </span>add<span class="w"> </span>ansys/2020R2
-<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
+module<span class="w"> </span>add<span class="w"> </span>ansys/2022R1
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;port&gt;@&lt;host&gt;
 <span class="c1">#Launch the executable</span>
 fluent<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </span>test_para.jou<span class="w"> </span>3ddp
 </pre></div>
@@ -777,8 +778,8 @@ fluent<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </spa
 <span class="c1"># Run on 1 GPU on ARC4 (using coproc_p100=1 on ARC3)</span>
 <span class="c1">#$ -l coproc_v100=1</span>
 <span class="c1"># define license and load module</span>
-module<span class="w"> </span>add<span class="w"> </span>ansys/2020R2
-<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
+module<span class="w"> </span>add<span class="w"> </span>ansys/2022R1
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;port&gt;@&lt;host&gt;
 <span class="c1">#Launch the executable</span>
 fluent<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </span>-gpgpu<span class="o">=</span><span class="m">1</span><span class="w"> </span>test_para.jou<span class="w"> </span>3ddp<span class="w"> </span>-rsh<span class="w"> </span>-scheduler_tight_coupling
 </pre></div>
@@ -813,7 +814,7 @@ fluent<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </spa
 <span class="c1">#$ -l nodes=1</span>
 <span class="c1"># define license and load module</span>
 module<span class="w"> </span>add<span class="w"> </span>ansys/2020R2
-<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;port&gt;@&lt;host&gt;
 <span class="c1">#Launch the executable</span>
 fluent<span class="w"> </span>-g<span class="w"> </span>-i<span class="w"> </span>test_para.jou<span class="w"> </span>3ddp<span class="w"> </span>-rsh<span class="w"> </span>-scheduler_tight_coupling
 </pre></div>

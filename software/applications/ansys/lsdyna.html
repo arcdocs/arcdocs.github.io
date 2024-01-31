@@ -214,13 +214,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="../abaqus.html">Abaqus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../amber.html">Amber</a></li>
 <li class="toctree-l3 current active has-children"><a class="reference internal" href="../ansys.html">Ansys</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="ansyscli.html">Ansys Command-Line Interface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ansyscli.html">Ansys CLI</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cfx.html">CFX</a></li>
 <li class="toctree-l4"><a class="reference internal" href="chemkin.html">Chemkin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="fluent.html">Fluent</a></li>
 <li class="toctree-l4 current active"><a class="current reference internal" href="#">LS-DYNA</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rsm.html">RSM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="legacy.html">Additional steps for using legacy Ansys modules the first time</a></li>
+<li class="toctree-l4"><a class="reference internal" href="legacy.html">License set-up for using legacy Ansys modules</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../cesm.html">CESM</a></li>
@@ -617,7 +617,7 @@ occupant safety, and more.</p>
 <h3>Batch job examples<a class="headerlink" href="#batch-job-examples" title="Permalink to this heading">#</a></h3>
 <p>Guidance provided by Oasys suggests that SMP can scale to ~8 cores, and that
 the Massively Parallel Processing (MPP) version should be used for larger problems.</p>
-<p>Remember to replace <code class="docutils literal notranslate"><span class="pre">&lt;port&#64;host&gt;</span></code> with a suitable value for your license.</p>
+<p>Remember to replace <code class="docutils literal notranslate"><span class="pre">&lt;port&gt;&#64;&lt;host&gt;</span></code> with a suitable value for your license.</p>
 </section>
 <section id="smp-single-precision-4-cores">
 <h3>SMP Single Precision (4 cores)<a class="headerlink" href="#smp-single-precision-4-cores" title="Permalink to this heading">#</a></h3>
@@ -628,7 +628,7 @@ the Massively Parallel Processing (MPP) version should be used for larger proble
 <span class="c1">#$ -m be</span>
 <span class="c1">#$ -pe smp 4</span>
 module<span class="w"> </span>add<span class="w"> </span>ansys/2023R1
-<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;port@host&gt;
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;port&gt;@&lt;host&gt;
 <span class="nb">export</span><span class="w"> </span><span class="nv">LSTC_LICENSE</span><span class="o">=</span>ANSYS
 lsdyna<span class="w"> </span><span class="nv">I</span><span class="o">=</span>example.k<span class="w"> </span><span class="nv">ncpu</span><span class="o">=</span><span class="nv">$NSLOTS</span>
 </pre></div>
@@ -643,7 +643,7 @@ lsdyna<span class="w"> </span><span class="nv">I</span><span class="o">=</span>e
 <span class="c1">#$ -m be</span>
 <span class="c1">#$ -pe smp 4</span>
 module<span class="w"> </span>add<span class="w"> </span>ansys/2023R1
-<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;port@host&gt;
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;port&gt;@&lt;host&gt;
 <span class="nb">export</span><span class="w"> </span><span class="nv">LSTC_LICENSE</span><span class="o">=</span>ANSYS
 lsdyna<span class="w"> </span>-dp<span class="w"> </span><span class="nv">I</span><span class="o">=</span>example.k<span class="w"> </span><span class="nv">ncpu</span><span class="o">=</span><span class="nv">$NSLOTS</span>
 </pre></div>
@@ -657,7 +657,7 @@ lsdyna<span class="w"> </span>-dp<span class="w"> </span><span class="nv">I</spa
 <span class="c1">#$ -m be</span>
 <span class="c1">#$ -l nodes=1</span>
 module<span class="w"> </span>add<span class="w"> </span>ansys/2023R1
-<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;port@host&gt;
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;port&gt;@&lt;host&gt;
 <span class="nb">export</span><span class="w"> </span><span class="nv">LSTC_LICENSE</span><span class="o">=</span>ANSYS
 lsdyna<span class="w"> </span>-dis<span class="w"> </span>-np<span class="w"> </span><span class="nv">$NSLOTS</span><span class="w"> </span>-lsdynampp<span class="w"> </span><span class="nv">I</span><span class="o">=</span>example.k
 </pre></div>
@@ -671,7 +671,7 @@ lsdyna<span class="w"> </span>-dis<span class="w"> </span>-np<span class="w"> </
 <span class="c1">#$ -m be</span>
 <span class="c1">#$ -l nodes=1</span>
 module<span class="w"> </span>add<span class="w"> </span>ansys/2023R1
-<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;port@host&gt;
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;port&gt;@&lt;host&gt;
 <span class="nb">export</span><span class="w"> </span><span class="nv">LSTC_LICENSE</span><span class="o">=</span>ANSYS
 lsdyna<span class="w"> </span>-dis<span class="w"> </span>-np<span class="w"> </span><span class="nv">$NSLOTS</span><span class="w"> </span>-lsdynampp<span class="w"> </span>-dp<span class="w"> </span><span class="nv">I</span><span class="o">=</span>example.k
 </pre></div>

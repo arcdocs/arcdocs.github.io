@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Ansys Command-Line Interface &#8212; ARC Documentation</title>
+    <title>Ansys CLI &#8212; ARC Documentation</title>
   
   
   
@@ -214,13 +214,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="../abaqus.html">Abaqus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../amber.html">Amber</a></li>
 <li class="toctree-l3 current active has-children"><a class="reference internal" href="../ansys.html">Ansys</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l4 current active"><a class="current reference internal" href="#">Ansys Command-Line Interface</a></li>
+<li class="toctree-l4 current active"><a class="current reference internal" href="#">Ansys CLI</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cfx.html">CFX</a></li>
 <li class="toctree-l4"><a class="reference internal" href="chemkin.html">Chemkin</a></li>
 <li class="toctree-l4"><a class="reference internal" href="fluent.html">Fluent</a></li>
 <li class="toctree-l4"><a class="reference internal" href="lsdyna.html">LS-DYNA</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rsm.html">RSM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="legacy.html">Additional steps for using legacy Ansys modules the first time</a></li>
+<li class="toctree-l4"><a class="reference internal" href="legacy.html">License set-up for using legacy Ansys modules</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../cesm.html">CESM</a></li>
@@ -572,7 +572,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Ansys Command-Line Interface</h1>
+    <h1>Ansys CLI</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -602,8 +602,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ansys-command-line-interface">
-<h1>Ansys Command-Line Interface<a class="headerlink" href="#ansys-command-line-interface" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="ansys-cli">
+<h1>Ansys CLI<a class="headerlink" href="#ansys-cli" title="Permalink to this heading">#</a></h1>
 <p>Once the license and module have been set up correctly, Ansys Command-Line Interface (CLI) can be
 run both in serial and in parallel.</p>
 <section id="running-ansys-cli-in-serial-mode">
@@ -638,8 +638,7 @@ $<span class="w"> </span>ansys221<span class="w"> </span>-g
 <span class="c1">#$ -l h_rt=3:00:00</span>
 <span class="c1">#Launch the executable</span>
 module<span class="w"> </span>add<span class="w"> </span>ansys/2022R1
-<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
-<span class="nb">export</span><span class="w"> </span><span class="nv">LSTC_LICENSE</span><span class="o">=</span>ANSYS
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;port&gt;@&lt;host&gt;
 ansys221<span class="w"> </span>-p<span class="w"> </span>ANSYS<span class="w"> </span>-b<span class="w"> </span>-i<span class="w"> </span>example.inp<span class="w"> </span>-o<span class="w"> </span>example.out
 </pre></div>
 </div>
@@ -682,8 +681,7 @@ ansys221<span class="w"> </span>-p<span class="w"> </span>ANSYS<span class="w"> 
 <span class="c1">#$ -pe smp 8</span>
 <span class="c1"># define license and load module</span>
 module<span class="w"> </span>add<span class="w"> </span>ansys/2022R1
-<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
-<span class="nb">export</span><span class="w"> </span><span class="nv">LSTC_LICENSE</span><span class="o">=</span>ANSYS
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;port&gt;@&lt;host&gt;
 <span class="c1">#Launch the executable</span>
 ansys221<span class="w"> </span>-np<span class="w"> </span><span class="nv">$NSLOTS</span><span class="w"> </span>-p<span class="w"> </span>ANSYS<span class="w"> </span>-b<span class="w"> </span>-i<span class="w"> </span>example.inp<span class="w"> </span>-o<span class="w"> </span>example.out
 </pre></div>
@@ -704,8 +702,7 @@ ansys221<span class="w"> </span>-np<span class="w"> </span><span class="nv">$NSL
 <span class="c1">#$ -l coproc_v100=1</span>
 <span class="c1"># define license and load module</span>
 module<span class="w"> </span>add<span class="w"> </span>ansys/2022R1
-<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;LICENSESTRING&gt;
-<span class="nb">export</span><span class="w"> </span><span class="nv">LSTC_LICENSE</span><span class="o">=</span>ANSYS
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANSYSLMD_LICENSE_FILE</span><span class="o">=</span>&lt;port&gt;@&lt;host&gt;
 <span class="c1"># Fix to make it launch correctly</span>
 <span class="nb">unset</span><span class="w"> </span>PE_HOSTFILE
 <span class="c1">#Launch the executable</span>

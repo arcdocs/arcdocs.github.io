@@ -2,13 +2,13 @@
 
 ## Running CFX
 
-ANSYS CFX is a high-performance, general purpose fluid dynamics application.
+Ansys CFX is a high-performance, general purpose fluid dynamics application.
 
 ## Developer Website
 
 More information about CFX can be found on the [Ansys Website](https://www.ansys.com/en-GB/Products/Fluids/ANSYS-CFX).
 
-Ansys also provide face-to-face [training](https://www.ansys.com/Services/Training-Center).
+Training provided by Ansys can be found at [Ansys Training Center](https://www.ansys.com/Services/Training-Center).
 
 ## Getting started
 

@@ -17,7 +17,7 @@ More details about using the old versions of Ansys for the first time and settin
 Guidance provided by Oasys suggests that SMP can scale to ~8 cores, and that
 the Massively Parallel Processing (MPP) version should be used for larger problems.
 
-Remember to replace `<port@host>` with a suitable value for your license.
+Remember to replace `<port>@<host>` with a suitable value for your license.
 
 ### SMP Single Precision (4 cores)
 ```bash

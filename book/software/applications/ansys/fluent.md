@@ -67,7 +67,6 @@ It is then necessary to construct a job submission script that will run fluent. 
 #Launch the executable
 module add ansys/2022R1
 export ANSYSLMD_LICENSE_FILE=<port>@<host>
-export LSTC_LICENSE=ANSYS
 fluent 3ddp -g -i test.jou
 ```
 
@@ -88,7 +87,6 @@ The above job submission script assumes that the Ansys module is loaded and lice
 #Launch the executable
 module add ansys/2022R1
 export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
-export LSTC_LICENSE=ANSYS
 fluent 3ddp -g -i test.jou
 ```
 
@@ -148,7 +146,6 @@ Then a job submission script (`fluent_para.sh`) should be created, that requests
 # define license and load module
 module add ansys/2022R1
 export export ANSYSLMD_LICENSE_FILE=<port>@<host>
-export LSTC_LICENSE=ANSYS
 #Launch the executable
 fluent -g -i test_para.jou 3ddp -rsh -scheduler_tight_coupling
 ```
@@ -180,7 +177,6 @@ different fluent command:
 # define license and load module
 module add ansys/2022R1
 export ANSYSLMD_LICENSE_FILE=<port>@<host>
-export LSTC_LICENSE=ANSYS
 #Launch the executable
 fluent -g -i test_para.jou 3ddp
 ```
@@ -200,7 +196,6 @@ Fluent supports the use of GPUs, although we've not currently seen significant b
 # define license and load module
 module add ansys/2022R1
 export ANSYSLMD_LICENSE_FILE=<port>@<host>
-export LSTC_LICENSE=ANSYS
 #Launch the executable
 fluent -g -i -gpgpu=1 test_para.jou 3ddp -rsh -scheduler_tight_coupling
 ```

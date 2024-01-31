@@ -1,4 +1,4 @@
-# Additional steps for using legacy Ansys modules the first time
+# License set-up for using legacy Ansys modules
 
 Before running the old versions of Ansys module (older than 19.2) for the first time, there is a per-user setting that chooses whether commercial (default) or academic licenses should be used.
 

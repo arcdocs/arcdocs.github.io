@@ -1,4 +1,4 @@
-# Ansys Command-Line Interface
+# Ansys CLI
 
 Once the license and module have been set up correctly, Ansys Command-Line Interface (CLI) can be
 run both in serial and in parallel.
@@ -40,8 +40,7 @@ It is then necessary to construct a [job submission script](batchjob:resource-sp
 #$ -l h_rt=3:00:00
 #Launch the executable
 module add ansys/2022R1
-export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
-export LSTC_LICENSE=ANSYS
+export ANSYSLMD_LICENSE_FILE=<port>@<host>
 ansys221 -p ANSYS -b -i example.inp -o example.out
 ```
 
@@ -72,8 +71,7 @@ $ qsub ansys.sh
 #$ -pe smp 8
 # define license and load module
 module add ansys/2022R1
-export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
-export LSTC_LICENSE=ANSYS
+export ANSYSLMD_LICENSE_FILE=<port>@<host>
 #Launch the executable
 ansys221 -np $NSLOTS -p ANSYS -b -i example.inp -o example.out
 ```
@@ -98,8 +96,7 @@ Ansys supports the use of GPUs, although we have no data on the performance spee
 #$ -l coproc_v100=1
 # define license and load module
 module add ansys/2022R1
-export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
-export LSTC_LICENSE=ANSYS
+export ANSYSLMD_LICENSE_FILE=<port>@<host>
 # Fix to make it launch correctly
 unset PE_HOSTFILE
 #Launch the executable

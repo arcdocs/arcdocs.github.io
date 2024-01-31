@@ -10,7 +10,6 @@ The license is obtained by setting the `ANSYSLMD_LICENSE_FILE` variable. To set 
 
 ```bash
 $ export ANSYSLMD_LICENSE_FILE=<port>@<host>
-$ export LSTC_LICENSE=ANSYS
 ```
 
 To get the values of `<port>@<host>` specific to your group/department please contact the Client IT Team via [Service Now](https://it.leeds.ac.uk/it).

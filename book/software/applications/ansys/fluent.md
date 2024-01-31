@@ -65,7 +65,9 @@ It is then necessary to construct a job submission script that will run fluent. 
 # Request three hours of runtime
 #$ -l h_rt=3:00:00
 #Launch the executable
-module add ansys/2020R2
+module add ansys/2022R1
+export ANSYSLMD_LICENSE_FILE=<port>@<host>
+export LSTC_LICENSE=ANSYS
 fluent 3ddp -g -i test.jou
 ```
 
@@ -84,8 +86,9 @@ The above job submission script assumes that the Ansys module is loaded and lice
 # Request three hours of runtime
 #$ -l h_rt=3:00:00
 #Launch the executable
-module add ansys/2020R2
+module add ansys/2022R1
 export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
+export LSTC_LICENSE=ANSYS
 fluent 3ddp -g -i test.jou
 ```
 
@@ -143,8 +146,9 @@ Then a job submission script (`fluent_para.sh`) should be created, that requests
 # Run on 40 processors on ARC4
 #$ -l nodes=1
 # define license and load module
-module add ansys/2020R2
-export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
+module add ansys/2022R1
+export export ANSYSLMD_LICENSE_FILE=<port>@<host>
+export LSTC_LICENSE=ANSYS
 #Launch the executable
 fluent -g -i test_para.jou 3ddp -rsh -scheduler_tight_coupling
 ```
@@ -174,8 +178,9 @@ different fluent command:
 # Request 4Gbytes per core
 #$ -l h_vmem=4G
 # define license and load module
-module add ansys/2020R2
-export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
+module add ansys/2022R1
+export ANSYSLMD_LICENSE_FILE=<port>@<host>
+export LSTC_LICENSE=ANSYS
 #Launch the executable
 fluent -g -i test_para.jou 3ddp
 ```
@@ -193,8 +198,9 @@ Fluent supports the use of GPUs, although we've not currently seen significant b
 # Run on 1 GPU on ARC4 (using coproc_p100=1 on ARC3)
 #$ -l coproc_v100=1
 # define license and load module
-module add ansys/2020R2
-export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
+module add ansys/2022R1
+export ANSYSLMD_LICENSE_FILE=<port>@<host>
+export LSTC_LICENSE=ANSYS
 #Launch the executable
 fluent -g -i -gpgpu=1 test_para.jou 3ddp -rsh -scheduler_tight_coupling
 ```
@@ -233,7 +239,7 @@ There are also known inefficiencies when running fluent on part nodes on ARC, wh
 #$ -l nodes=1
 # define license and load module
 module add ansys/2020R2
-export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
+export ANSYSLMD_LICENSE_FILE=<port>@<host>
 #Launch the executable
 fluent -g -i test_para.jou 3ddp -rsh -scheduler_tight_coupling
 ```

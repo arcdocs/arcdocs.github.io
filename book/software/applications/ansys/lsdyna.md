@@ -28,7 +28,7 @@ Remember to replace `<port@host>` with a suitable value for your license.
 #$ -m be
 #$ -pe smp 4
 module add ansys/2023R1
-export ANSYSLMD_LICENSE_FILE=<port@host>
+export ANSYSLMD_LICENSE_FILE=<port>@<host>
 export LSTC_LICENSE=ANSYS
 lsdyna I=example.k ncpu=$NSLOTS
 ```
@@ -42,7 +42,7 @@ lsdyna I=example.k ncpu=$NSLOTS
 #$ -m be
 #$ -pe smp 4
 module add ansys/2023R1
-export ANSYSLMD_LICENSE_FILE=<port@host>
+export ANSYSLMD_LICENSE_FILE=<port>@<host>
 export LSTC_LICENSE=ANSYS
 lsdyna -dp I=example.k ncpu=$NSLOTS
 ```
@@ -55,7 +55,7 @@ lsdyna -dp I=example.k ncpu=$NSLOTS
 #$ -m be
 #$ -l nodes=1
 module add ansys/2023R1
-export ANSYSLMD_LICENSE_FILE=<port@host>
+export ANSYSLMD_LICENSE_FILE=<port>@<host>
 export LSTC_LICENSE=ANSYS
 lsdyna -dis -np $NSLOTS -lsdynampp I=example.k
 ```
@@ -68,7 +68,7 @@ lsdyna -dis -np $NSLOTS -lsdynampp I=example.k
 #$ -m be
 #$ -l nodes=1
 module add ansys/2023R1
-export ANSYSLMD_LICENSE_FILE=<port@host>
+export ANSYSLMD_LICENSE_FILE=<port>@<host>
 export LSTC_LICENSE=ANSYS
 lsdyna -dis -np $NSLOTS -lsdynampp -dp I=example.k
 ```

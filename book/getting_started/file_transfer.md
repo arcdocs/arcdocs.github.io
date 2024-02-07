@@ -15,11 +15,11 @@ on campus.
 
 - [Using Mobaxterm](./file_transfer/mobaxterm)
 
-- [Using a terminal](./file_transfer/terminal)
+- [Using a Terminal](./file_transfer/terminal)
 
 - [Using smbclient](./file_transfer/smbclient)
 
 - [Using rclone](./file_transfer/rclone)
 
-- [Using sftp](./file_transfer/sftp)
+- [Using SFTP](./file_transfer/sftp)
 

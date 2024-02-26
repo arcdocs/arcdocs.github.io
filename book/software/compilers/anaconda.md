@@ -139,6 +139,22 @@ You can also add channels to your conda configuration, so they are always search
 $ conda config --add channels bioconda
 ```
 
+### Installing packages that depend on CUDA
+
+There's a virtual package called "cuda" that is autodiscovered from the running
+system, to allow Conda to match installed packages to the current system.  When
+you're building an environment, you will often be doing this on a machine
+without the GPU you're planning on using at runtime.  This can be overridden in
+the recipe:
+
+```
+CONDA_OVERRIDE_CUDA=12.0 conda create --name example_env_1 conda-forge::tensorflow=2.15.0
+```
+
+You can check at the conda-forge website that the version of the package and
+the CUDA version is actually available.  At the time of writing, 12.0 is
+currently supported on the P100 cards on ARC3, and the V100 cards on ARC4.
+
 ## Example conda environments
 
 Below we cover some examples of more generic conda environments HPC users might wish to create depending on their research.

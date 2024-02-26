@@ -104,3 +104,19 @@ $ apptainer run mamba-example.sif python -c "import vivarium;print(vivarium.__ve
 
 Using the apptainer command directly allows you alter bind mounts, configure it
 to use GPUs, and other more advanced options.
+
+## Note on using conda packages that depends on cuda
+
+There's a virtual package called "cuda" that is autodiscovered from the running
+system, to allow Conda to match installed packages to the current system.  When
+you're building a container, you will often be doing this on a machine without
+the GPU you're planning on using at runtime.  This can be overridden in the
+recipe:
+
+```
+CONDA_OVERRIDE_CUDA=12.0 micromamba create -q -y -f environment.yml -p /opt/conda-env
+```
+
+The version here should match the version you're trying to build for.  At the
+time of writing, 12.0 is currently supported on the P100 cards on ARC3, and the
+V100 cards on ARC4.

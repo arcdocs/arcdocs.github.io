@@ -589,6 +589,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-channels">Conda channels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-packages-that-depend-on-cuda">Installing packages that depend on CUDA</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-conda-environments">Example conda environments</a><ul class="nav section-nav flex-column">
@@ -718,6 +719,20 @@ $<span class="w"> </span>conda<span class="w"> </span>config<span class="w"> </s
 </pre></div>
 </div>
 </section>
+<section id="installing-packages-that-depend-on-cuda">
+<h3>Installing packages that depend on CUDA<a class="headerlink" href="#installing-packages-that-depend-on-cuda" title="Permalink to this heading">#</a></h3>
+<p>There’s a virtual package called “cuda” that is autodiscovered from the running
+system, to allow Conda to match installed packages to the current system.  When
+you’re building an environment, you will often be doing this on a machine
+without the GPU you’re planning on using at runtime.  This can be overridden in
+the recipe:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CONDA_OVERRIDE_CUDA</span><span class="o">=</span><span class="mf">12.0</span> <span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">example_env_1</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span><span class="p">::</span><span class="n">tensorflow</span><span class="o">=</span><span class="mf">2.15.0</span>
+</pre></div>
+</div>
+<p>You can check at the conda-forge website that the version of the package and
+the CUDA version is actually available.  At the time of writing, 12.0 is
+currently supported on the P100 cards on ARC3, and the V100 cards on ARC4.</p>
+</section>
 </section>
 <section id="example-conda-environments">
 <h2>Example conda environments<a class="headerlink" href="#example-conda-environments" title="Permalink to this heading">#</a></h2>
@@ -826,6 +841,7 @@ $<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </s
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-channels">Conda channels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-packages-that-depend-on-cuda">Installing packages that depend on CUDA</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-conda-environments">Example conda environments</a><ul class="nav section-nav flex-column">

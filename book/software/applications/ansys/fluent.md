@@ -86,7 +86,7 @@ The above job submission script assumes that the Ansys module is loaded and lice
 #$ -l h_rt=3:00:00
 #Launch the executable
 module add ansys/2022R1
-export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
+export ANSYSLMD_LICENSE_FILE=<port>@<host>
 fluent 3ddp -g -i test.jou
 ```
 

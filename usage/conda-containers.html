@@ -651,6 +651,7 @@ content.  We’re going to use this example, and write it to a file called
 <span class="o">%</span><span class="n">post</span>
     <span class="n">micromamba</span> <span class="n">create</span> <span class="o">-</span><span class="n">q</span> <span class="o">-</span><span class="n">y</span> <span class="o">-</span><span class="n">f</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">conda</span><span class="o">-</span><span class="n">env</span>
     <span class="n">micromamba</span> <span class="n">clean</span> <span class="o">-</span><span class="n">aqy</span>
+    <span class="n">micromamba</span> <span class="n">config</span> <span class="nb">set</span> <span class="o">--</span><span class="n">system</span> <span class="n">use_lockfiles</span> <span class="n">false</span>
 
 <span class="o">%</span><span class="n">runscript</span>
     <span class="n">micromamba</span> <span class="n">run</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">conda</span><span class="o">-</span><span class="n">env</span> <span class="s2">&quot;$@&quot;</span>

@@ -52,6 +52,7 @@ From: mambaorg/micromamba
 %post
     micromamba create -q -y -f environment.yml -p /opt/conda-env
     micromamba clean -aqy
+    micromamba config set --system use_lockfiles false
 
 %runscript
     micromamba run -p /opt/conda-env "$@"

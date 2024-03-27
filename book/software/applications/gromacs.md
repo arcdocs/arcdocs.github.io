@@ -28,24 +28,25 @@ $ module add gromacs
 
 ## Executable naming conventions
 
-Modern Gromacs tends to use just one main command:
+Modern Gromacs:
 
 |Executable               |Description
 |-------------------------|--------------------------
-|`gmx`                    |single precision serial executable
+|`gmx`                    |single precision threaded executable
+|`gmx_mpi`                |single precision parallel MPI executable
 
 Non-GPU builds also provide:
 
 |Executable               |Description
 |-------------------------|--------------------------
-|`gmx_d`                  |double precision serial executable
+|`gmx_d`                  |double precision threaded executable
 
 With older versions, there were also:
 
 |Executable               |Description
 |-------------------------|--------------------------
-|`mdrun`                  |single precision serial executable
-|`mdrun_d`                |double precision serial executable
+|`mdrun`                  |single precision threaded executable
+|`mdrun_d`                |double precision threaded executable
 |`mpirun mdrun_mpi`       |single precision parallel MPI executable
 |`mpirun mdrun_mpi_d`     |double precision parallel MPI exectable
 
@@ -53,8 +54,8 @@ With older versions, there were also:
 
 |Executable               |Description
 |-------------------------|--------------------------
-|`mdrun.MPI`              |single precision, parallel MPI executable
-|`mdrun_d.MPI`            |double precision, parallel MPI executable
+|`mdrun.MPI`              |single precision parallel MPI executable
+|`mdrun_d.MPI`            |double precision parallel MPI executable
 
 There are also single/double precision versions of the tools that come with the
 application for CPU builds, with the same naming scheme as above. For more
@@ -91,8 +92,9 @@ $ qsub example_serial.sh
 
 ## Parallel execution
 
-An example submission script (`example_parallel.sh`) looking to use the
-parallel executable is shown below:
+### Threaded
+An example submission script (`example_threaded.sh`) looking to use the
+threaded executable is shown below:
 
 ```bash
 #!/bin/bash
@@ -101,17 +103,47 @@ parallel executable is shown below:
 #$ -l h_rt=10:00:00
 # request 40 cores
 #$ -l np=40
-mpirun gmx_mpi mdrun <args>
+gmx mdrun <args>
 ```
 
 This requests 10 hours of runtime, to run in the current directory `-cwd`,
 using the current environment `-V`, running on 40 cores `-l np=40`, using the
-single precision parallel version of mdrun, and where `<args>` represents the
+single precision threaded version of mdrun, and where `<args>` represents the
 arguments to `mdrun` .
 
 Since we're using a whole node here, you'll get the maximum 4.8Gbytes per core
-allocated.  You can find more submission options on the [batch job
+allocated (on ARC4).  You can find more submission options on the [batch job
 page](batchjob:list-of-sge-options).
+
+The script can be submitted with:
+
+```bash
+$ qsub example_threaded.sh
+```
+
+### MPI
+
+An example submission script (`example_parallel.sh`) looking to use the
+parallel executable is shown below:
+
+```bash
+#!/bin/bash
+#$ -cwd -V
+# request 10 hours of runtime
+#$ -l h_rt=10:00:00
+# request 80 cores
+#$ -l nodes=2
+mpirun gmx_mpi mdrun <args>
+```
+
+This requests 10 hours of runtime, to run in the current directory `-cwd`,
+using the current environment `-V`, running on 2 nodes (80 cores on ARC4)
+`-l nodes=2`, using the single precision parallel version of mdrun, and where
+`<args>` represents the arguments to `mdrun` .
+
+Since we're using a whole nodes here, you'll get the maximum 4.8Gbytes per
+core allocated (on ARC4).  You can find more submission options on the
+[batch job page](batchjob:list-of-sge-options).
 
 The script can be submitted with:
 

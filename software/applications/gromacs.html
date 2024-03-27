@@ -589,7 +589,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#serial-execution">Serial execution</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-execution">Parallel execution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-execution">Parallel execution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#threaded">Threaded</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mpi">MPI</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-a-gpu">Using a GPU</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-execution-with-legacy-versions">Batch execution with legacy versions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Serial execution</a></li>
@@ -633,7 +637,7 @@ the command:</p>
 </section>
 <section id="executable-naming-conventions">
 <h2>Executable naming conventions<a class="headerlink" href="#executable-naming-conventions" title="Permalink to this heading">#</a></h2>
-<p>Modern Gromacs tends to use just one main command:</p>
+<p>Modern Gromacs:</p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Executable</p></th>
@@ -642,7 +646,10 @@ the command:</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gmx</span></code></p></td>
-<td><p>single precision serial executable</p></td>
+<td><p>single precision threaded executable</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">gmx_mpi</span></code></p></td>
+<td><p>single precision parallel MPI executable</p></td>
 </tr>
 </tbody>
 </table>
@@ -655,7 +662,7 @@ the command:</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gmx_d</span></code></p></td>
-<td><p>double precision serial executable</p></td>
+<td><p>double precision threaded executable</p></td>
 </tr>
 </tbody>
 </table>
@@ -668,10 +675,10 @@ the command:</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mdrun</span></code></p></td>
-<td><p>single precision serial executable</p></td>
+<td><p>single precision threaded executable</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mdrun_d</span></code></p></td>
-<td><p>double precision serial executable</p></td>
+<td><p>double precision threaded executable</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mpirun</span> <span class="pre">mdrun_mpi</span></code></p></td>
 <td><p>single precision parallel MPI executable</p></td>
@@ -690,10 +697,10 @@ the command:</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mdrun.MPI</span></code></p></td>
-<td><p>single precision, parallel MPI executable</p></td>
+<td><p>single precision parallel MPI executable</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mdrun_d.MPI</span></code></p></td>
-<td><p>double precision, parallel MPI executable</p></td>
+<td><p>double precision parallel MPI executable</p></td>
 </tr>
 </tbody>
 </table>
@@ -729,28 +736,56 @@ page</span></a>.</p>
 </section>
 <section id="parallel-execution">
 <h2>Parallel execution<a class="headerlink" href="#parallel-execution" title="Permalink to this heading">#</a></h2>
-<p>An example submission script (<code class="docutils literal notranslate"><span class="pre">example_parallel.sh</span></code>) looking to use the
-parallel executable is shown below:</p>
+<section id="threaded">
+<h3>Threaded<a class="headerlink" href="#threaded" title="Permalink to this heading">#</a></h3>
+<p>An example submission script (<code class="docutils literal notranslate"><span class="pre">example_threaded.sh</span></code>) looking to use the
+threaded executable is shown below:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#$ -cwd -V</span>
 <span class="c1"># request 10 hours of runtime</span>
 <span class="c1">#$ -l h_rt=10:00:00</span>
 <span class="c1"># request 40 cores</span>
 <span class="c1">#$ -l np=40</span>
-mpirun<span class="w"> </span>gmx_mpi<span class="w"> </span>mdrun<span class="w"> </span>&lt;args&gt;
+gmx<span class="w"> </span>mdrun<span class="w"> </span>&lt;args&gt;
 </pre></div>
 </div>
 <p>This requests 10 hours of runtime, to run in the current directory <code class="docutils literal notranslate"><span class="pre">-cwd</span></code>,
 using the current environment <code class="docutils literal notranslate"><span class="pre">-V</span></code>, running on 40 cores <code class="docutils literal notranslate"><span class="pre">-l</span> <span class="pre">np=40</span></code>, using the
-single precision parallel version of mdrun, and where <code class="docutils literal notranslate"><span class="pre">&lt;args&gt;</span></code> represents the
+single precision threaded version of mdrun, and where <code class="docutils literal notranslate"><span class="pre">&lt;args&gt;</span></code> represents the
 arguments to <code class="docutils literal notranslate"><span class="pre">mdrun</span></code> .</p>
 <p>Since we’re using a whole node here, you’ll get the maximum 4.8Gbytes per core
-allocated.  You can find more submission options on the <a class="reference internal" href="../../usage/batchjob.html#batchjob-list-of-sge-options"><span class="std std-ref">batch job
+allocated (on ARC4).  You can find more submission options on the <a class="reference internal" href="../../usage/batchjob.html#batchjob-list-of-sge-options"><span class="std std-ref">batch job
 page</span></a>.</p>
+<p>The script can be submitted with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>example_threaded.sh
+</pre></div>
+</div>
+</section>
+<section id="mpi">
+<h3>MPI<a class="headerlink" href="#mpi" title="Permalink to this heading">#</a></h3>
+<p>An example submission script (<code class="docutils literal notranslate"><span class="pre">example_parallel.sh</span></code>) looking to use the
+parallel executable is shown below:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#$ -cwd -V</span>
+<span class="c1"># request 10 hours of runtime</span>
+<span class="c1">#$ -l h_rt=10:00:00</span>
+<span class="c1"># request 80 cores</span>
+<span class="c1">#$ -l nodes=2</span>
+mpirun<span class="w"> </span>gmx_mpi<span class="w"> </span>mdrun<span class="w"> </span>&lt;args&gt;
+</pre></div>
+</div>
+<p>This requests 10 hours of runtime, to run in the current directory <code class="docutils literal notranslate"><span class="pre">-cwd</span></code>,
+using the current environment <code class="docutils literal notranslate"><span class="pre">-V</span></code>, running on 2 nodes (80 cores on ARC4)
+<code class="docutils literal notranslate"><span class="pre">-l</span> <span class="pre">nodes=2</span></code>, using the single precision parallel version of mdrun, and where
+<code class="docutils literal notranslate"><span class="pre">&lt;args&gt;</span></code> represents the arguments to <code class="docutils literal notranslate"><span class="pre">mdrun</span></code> .</p>
+<p>Since we’re using a whole nodes here, you’ll get the maximum 4.8Gbytes per
+core allocated (on ARC4).  You can find more submission options on the
+<a class="reference internal" href="../../usage/batchjob.html#batchjob-list-of-sge-options"><span class="std std-ref">batch job page</span></a>.</p>
 <p>The script can be submitted with:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>qsub<span class="w"> </span>example_parallel.sh
 </pre></div>
 </div>
+</section>
 </section>
 <section id="using-a-gpu">
 <h2>Using a GPU<a class="headerlink" href="#using-a-gpu" title="Permalink to this heading">#</a></h2>
@@ -904,7 +939,11 @@ job page</span></a>.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#serial-execution">Serial execution</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-execution">Parallel execution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-execution">Parallel execution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#threaded">Threaded</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mpi">MPI</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-a-gpu">Using a GPU</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-execution-with-legacy-versions">Batch execution with legacy versions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Serial execution</a></li>
